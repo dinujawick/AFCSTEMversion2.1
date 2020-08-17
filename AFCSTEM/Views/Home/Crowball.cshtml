@@ -1578,17 +1578,28 @@
 
         graph.font = "12px sans-serif";
 
-        graph.fillStyle = "#DCDCDC"
-        for (var i = 0; i < 380; i) {
-            graph.fillRect(0, i, 700, 1);
-            i += 80;
+        var gridText = 0;
+        for (var i = 380; i > 0; i) {
+
+            graph.fillStyle = "#DCDCDC"
+            graph.fillRect(20, i, 660, 1);
+            graph.fillStyle = "black";
+            if (gridText != 0 && gridText != 35) {
+                graph.fillText(gridText, 5, i)
+
+            }
+            i -= 50;
+            gridText += 5;
         }
 
         //graph lines
         graph.fillStyle = "black";
-        graph.fillRect(0, 0, 1, 380);
+
      
-        graph.fillRect(0, 380, 1000, 2);
+        graph.fillRect(20, 30, 1, 350);
+        graph.fillRect(20, 380, 660, 1)
+        graph.fillRect(20, 30, 660, 1)
+        graph.fillRect(680, 30, 1, 350);
         
         
 
@@ -1612,9 +1623,9 @@
         graph.fillText("Kicks: ", 260, 20);
         graph.fillText("Handballs: ", 360, 20);
         graph.fillText("Disposals: ", 460, 20);
-        graph.fillText("|", 175, 393);
-        graph.fillText("|", 350, 393);
-        graph.fillText("|", 525, 393);
+        graph.fillRect(175, 380,1,20);
+        graph.fillRect(350, 380,1,20);
+        graph.fillRect(525, 380,1,20);
         graph.fillText("Defenders", 50, 393);
         graph.fillText("Midfielders/Rucks ", 220, 393);
         graph.fillText("Forwards", 405, 393);
@@ -1624,62 +1635,62 @@
         //defenders
         graph.fillStyle = "#e31937";
         graph.fillRect(300, 10, 10, 10);
-        graph.fillRect(10, 380 - (10 * (defKicks / defMatches/defCount)), 20, 10 * (defKicks / defMatches/defCount));
+        graph.fillRect(30, 380 - (10 * (defKicks / defMatches/defCount)), 20, 10 * (defKicks / defMatches/defCount));
         graph.fillStyle = "black";
 
         //text
-        graph.fillText(parseInt(defKicks / defMatches/defCount), 14, 380 - (10 * (defKicks / defMatches/defCount) + 2));
+        graph.fillText(parseInt(defKicks / defMatches/defCount), 34, 380 - (10 * (defKicks / defMatches/defCount) + 2));
 
 
         graph.fillStyle = "#ffd200";
         graph.fillRect(420, 10, 10, 10);
-        graph.fillRect(50, 380 - (10 * (defHandballs / defMatches/defCount)),20, 10 * (defHandballs / defMatches/defCount));
+        graph.fillRect(70, 380 - (10 * (defHandballs / defMatches/defCount)),20, 10 * (defHandballs / defMatches/defCount));
         graph.fillStyle = "black";
 
-        graph.fillText(parseInt(defHandballs / defMatches/defCount),54, 380-(10 * (defHandballs / defMatches/defCount) + 2))
+        graph.fillText(parseInt(defHandballs / defMatches/defCount),74, 380-(10 * (defHandballs / defMatches/defCount) + 2))
 
 
         graph.fillStyle = "#33619e";
         graph.fillRect(520, 10, 10, 10);
-        graph.fillRect(90, 380 - (10 * (defDisposals / defMatches / defCount)), 20, 10 * (defDisposals / defMatches / defCount));
+        graph.fillRect(110, 380 - (10 * (defDisposals / defMatches / defCount)), 20, 10 * (defDisposals / defMatches / defCount));
         graph.fillStyle = "black";
 
-        graph.fillText(parseInt(defDisposals / defMatches / defCount), 94, 380 - (10 * (defDisposals / defMatches / defCount) + 2))
+        graph.fillText(parseInt(defDisposals / defMatches / defCount), 114, 380 - (10 * (defDisposals / defMatches / defCount) + 2))
 
 
         //midfields/ruck
         graph.fillStyle = "#e31937";
-        graph.fillRect(195, 380 - (10 * (midKicks/midCount/midMatches)),20, 10 * (midKicks / midMatches/midCount));
+        graph.fillRect(215, 380 - (10 * (midKicks/midCount/midMatches)),20, 10 * (midKicks / midMatches/midCount));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(midKicks / midMatches/midCount), 199, 380-(10* (midKicks / midMatches/midCount) + 2))
+        graph.fillText(parseInt(midKicks / midMatches/midCount), 219, 380-(10* (midKicks / midMatches/midCount) + 2))
 
         graph.fillStyle = "#ffd200";
-        graph.fillRect(245, 380 - (10 * (midHandballs / midMatches / midCount)), 20, 10 * (midHandballs / midMatches / midCount));
+        graph.fillRect(265, 380 - (10 * (midHandballs / midMatches / midCount)), 20, 10 * (midHandballs / midMatches / midCount));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(midHandballs / midMatches / midCount), 249, 380 - (10 * (midHandballs / midMatches / midCount) + 2));
+        graph.fillText(parseInt(midHandballs / midMatches / midCount), 269, 380 - (10 * (midHandballs / midMatches / midCount) + 2));
 
         graph.fillStyle = "#33619e";
-        graph.fillRect(295, 380 - (10 * (midDisposals / midMatches / midCount)), 20, 10 * (midDisposals / midMatches / midCount));
+        graph.fillRect(315, 380 - (10 * (midDisposals / midMatches / midCount)), 20, 10 * (midDisposals / midMatches / midCount));
 
         graph.fillStyle = "black";
-        graph.fillText(parseInt(midDisposals / midMatches / midCount), 299, 380 - (10 * (midDisposals / midMatches / midCount) + 2));
+        graph.fillText(parseInt(midDisposals / midMatches / midCount), 319, 380 - (10 * (midDisposals / midMatches / midCount) + 2));
 
 
         //forwards
         graph.fillStyle = "#e31937";
-        graph.fillRect(370, 380 - (10 * (fwdKicks / fwdMatches/fwdCount)),20, 10 * (fwdKicks / fwdMatches/fwdCount));
+        graph.fillRect(390, 380 - (10 * (fwdKicks / fwdMatches/fwdCount)),20, 10 * (fwdKicks / fwdMatches/fwdCount));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(fwdKicks / fwdMatches / fwdCount), 374, 380 - (10 * (fwdKicks / fwdMatches / fwdCount) + 2));
+        graph.fillText(parseInt(fwdKicks / fwdMatches / fwdCount), 394, 380 - (10 * (fwdKicks / fwdMatches / fwdCount) + 2));
 
         graph.fillStyle = "#ffd200";
-        graph.fillRect(410, 380 - (10 * (fwdHandballs / fwdMatches / fwdCount)), 20, 10 * (fwdHandballs / fwdMatches / fwdCount));
+        graph.fillRect(430, 380 - (10 * (fwdHandballs / fwdMatches / fwdCount)), 20, 10 * (fwdHandballs / fwdMatches / fwdCount));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(fwdHandballs / fwdMatches / fwdCount), 414, 380 - (10 * (fwdHandballs / fwdMatches / fwdCount) + 2));
+        graph.fillText(parseInt(fwdHandballs / fwdMatches / fwdCount), 434, 380 - (10 * (fwdHandballs / fwdMatches / fwdCount) + 2));
 
         graph.fillStyle = "#33619e";
-        graph.fillRect(450, 380 - (10 * (fwdDisposals / fwdMatches / fwdCount)), 20, 10 * (fwdDisposals / fwdMatches / fwdCount));
+        graph.fillRect(470, 380 - (10 * (fwdDisposals / fwdMatches / fwdCount)), 20, 10 * (fwdDisposals / fwdMatches / fwdCount));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(fwdDisposals / fwdMatches / fwdCount), 454, 380 - (10 * (fwdDisposals / fwdMatches / fwdCount) + 2));
+        graph.fillText(parseInt(fwdDisposals / fwdMatches / fwdCount), 474, 380 - (10 * (fwdDisposals / fwdMatches / fwdCount) + 2));
 
         ////total
      
@@ -1723,19 +1734,19 @@
         
 
         graph.fillStyle = "#e31937";
-        graph.fillRect(545, 380 - 10 * (totalkicks1), 20, 10 * (totalkicks1));
+        graph.fillRect(565, 380 - 10 * (totalkicks1), 20, 10 * (totalkicks1));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(totalkicks1), 549, 380 - (10 * (totalkicks1) + 2));
+        graph.fillText(parseInt(totalkicks1), 569, 380 - (10 * (totalkicks1) + 2));
 
         graph.fillStyle = "#ffd200";
-        graph.fillRect(585, 380 - 10 * (totalhand1), 20, 10 * (totalhand1));
+        graph.fillRect(605, 380 - 10 * (totalhand1), 20, 10 * (totalhand1));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(totalhand1), 589, 380 - (10 * (totalhand1) + 2));
+        graph.fillText(parseInt(totalhand1), 609, 380 - (10 * (totalhand1) + 2));
 
         graph.fillStyle = "#33619e";
-        graph.fillRect(625, 380 - 10 * (totaldis1), 20, 10 * (totaldis1));
+        graph.fillRect(645, 380 - 10 * (totaldis1), 20, 10 * (totaldis1));
         graph.fillStyle = "black";
-        graph.fillText(parseInt(totaldis1), 629, 380 - (10 * (totaldis1) + 2));
+        graph.fillText(parseInt(totaldis1), 649, 380 - (10 * (totaldis1) + 2));
 
     }// end of function
 
