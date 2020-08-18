@@ -1752,7 +1752,7 @@
             data: teamSelection,
             traditional: true
         }).done(function (data) {
-            alert(data.success);
+            //alert(data.success);
         }).fail(function (jqXhr, textStatus, errorThrown) {
             alert("error");
         });
@@ -1804,7 +1804,8 @@
             }
         }
         updatePos();
-        updateCheckpoint()
+        updateCheckpoint();
+        saveTeam();
     }
 
     function pdfTeam() {
@@ -1891,6 +1892,7 @@
         }
         updatePos();
         updateCheckpoint();
+        saveTeam();
     }
 
     // update checkpoint count
