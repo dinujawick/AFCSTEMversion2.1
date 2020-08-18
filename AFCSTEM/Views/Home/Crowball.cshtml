@@ -5,7 +5,7 @@
 @inject UserManager<ApplicationUser> UserManager
 @inject AFCSTEM.Models.ITeamRepository TeamModel
 @{
-    ViewBag.title = "Home";
+    ViewBag.title = "Crowball";
     var allPlayers = playerModel.getAllPlayers();
     Layout = "~/Views/Shared/_Layout.cshtml";
     var user = await UserManager.GetUserAsync(User);
