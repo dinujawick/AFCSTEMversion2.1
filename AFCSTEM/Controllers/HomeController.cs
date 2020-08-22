@@ -25,6 +25,31 @@ namespace AFCSTEM.Controllers
 
         }
 
+        public IActionResult Activity1()
+        {
+            return View();
+        }
+
+        public IActionResult Activity2()
+        {
+            return View();
+        }
+
+        public IActionResult Activity3()
+        {
+            return View();
+        }
+
+        public IActionResult Activity4()
+        {
+            return View();
+        }
+
+
+        public IActionResult Activity5()
+        {
+            return View();
+        }
         public IActionResult Unit1Home()
         {
             return View();
