@@ -25,6 +25,11 @@ namespace AFCSTEM.Controllers
 
         }
 
+        public IActionResult Whatisfooty()
+        {
+            return View();
+        }
+
         public IActionResult Activity1()
         {
             return View();
