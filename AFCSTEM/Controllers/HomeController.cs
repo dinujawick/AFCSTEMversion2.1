@@ -25,6 +25,7 @@ namespace AFCSTEM.Controllers
 
         }
 
+
         public IActionResult Whatisfooty()
         {
             return View();
@@ -55,6 +56,64 @@ namespace AFCSTEM.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Activity6()
+        {
+            return View();
+        }
+
+        public IActionResult Activity7()
+        {
+            return View();
+        }
+
+        public IActionResult Activity8()
+        {
+            return View();
+        }
+
+        public IActionResult Activity9()
+        {
+            return View();
+        }
+
+        public IActionResult Activity10()
+        {
+            return View();
+        }
+
+        public IActionResult Activity11()
+        {
+            return View();
+        }
+
+        public IActionResult Activity12()
+        {
+            return View();
+        }
+
+        public IActionResult Activity13()
+        {
+            return View();
+        }
+
+        public IActionResult Activity14()
+        {
+            return View();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         public IActionResult Unit1Home()
         {
             return View();
