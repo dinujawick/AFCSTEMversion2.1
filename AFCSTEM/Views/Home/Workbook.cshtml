@@ -184,6 +184,7 @@
 
     #coin, #coin2 {
   position: relative;
+  display:inline-block;
   margin: 0 auto;
   width: 100px;
   height:100px;
@@ -236,31 +237,31 @@
 }
 
 #coin.heads {
-  -webkit-animation: flipHeads 3s ease-out forwards;
-  -moz-animation: flipHeads 3s ease-out forwards;
-    -o-animation: flipHeads 3s ease-out forwards;
-       animation: flipHeads 3s ease-out forwards;
+  -webkit-animation: flipHeads 2s ease-out forwards;
+  -moz-animation: flipHeads 2s ease-out forwards;
+    -o-animation: flipHeads 2s ease-out forwards;
+       animation: flipHeads 2s ease-out forwards;
 }
 #coin.tails {
-  -webkit-animation: flipTails 3s ease-out forwards;
-  -moz-animation: flipTails 3s ease-out forwards;
-    -o-animation: flipTails 3s ease-out forwards;
-       animation: flipTails 3s ease-out forwards;
+  -webkit-animation: flipTails 2s ease-out forwards;
+  -moz-animation: flipTails 2s ease-out forwards;
+    -o-animation: flipTails 2s ease-out forwards;
+       animation: flipTails 2s ease-out forwards;
 }
 
 
 #coin2.heads {
-    -webkit-animation: flipHeads 3s ease-out forwards;
-    -moz-animation: flipHeads 3s ease-out forwards;
-    -o-animation: flipHeads 3s ease-out forwards;
-    animation: flipHeads 3s ease-out forwards;
+    -webkit-animation: flipHeads 2s ease-out forwards;
+    -moz-animation: flipHeads 2s ease-out forwards;
+    -o-animation: flipHeads 2s ease-out forwards;
+    animation: flipHeads 2s ease-out forwards;
 }
 
 #coin2.tails {
-    -webkit-animation: flipTails 3s ease-out forwards;
-    -moz-animation: flipTails 3s ease-out forwards;
-    -o-animation: flipTails 3s ease-out forwards;
-    animation: flipTails 3s ease-out forwards;
+    -webkit-animation: flipTails 2s ease-out forwards;
+    -moz-animation: flipTails 2s ease-out forwards;
+    -o-animation: flipTails 2s ease-out forwards;
+    animation: flipTails 2s ease-out forwards;
 }
 
 
@@ -540,70 +541,70 @@
     </tr>
     <tr>
         <th>1</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh1"></td>
+        <td id="ht1"></td>
+        <td id="tt1"></td>
 
     </tr>
     <tr>
         <th>2</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh2"></td>
+        <td id="ht2"></td>
+        <td id="tt2"></td>
     </tr>
     <tr>
         <th>3</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh3"></td>
+        <td id="ht3"></td>
+        <td id="tt3"></td>
     </tr>
     <tr>
         <th>4</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh4"></td>
+        <td id="ht4"></td>
+        <td id="tt4"></td>
     </tr>
     <tr>
         <th>5</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh5"></td>
+        <td id="ht5"></td>
+        <td id="tt5"></td>
     </tr>
     <tr>
         <th>6</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh6"></td>
+        <td id="ht6"></td>
+        <td id="tt6"></td>
     </tr>
     <tr>
         <th>7</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh7"></td>
+        <td id="ht7"></td>
+        <td id="tt7"></td>
     </tr>
     <tr>
         <th>8</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh8"></td>
+        <td id="ht8"></td>
+        <td id="tt8"></td>
     </tr>
     <tr>
         <th>9</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh9"></td>
+        <td id="ht9"></td>
+        <td id="tt9"></td>
     </tr>
     <tr>
         <th>10</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="hh10"></td>
+        <td id="ht10"></td>
+        <td id="tt10"></td>
     </tr>
     <tr>
         <th>TOTAL</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="gc">0</td>
+        <td id="bc">0</td>
+        <td id="mc">0</td>
     </tr>
 
 </table>
@@ -616,9 +617,16 @@
 
 <script>
 
-    jQuery(document).ready(function ($) {
 
+    var coinCount = 0;
+    goalCount = 0;
+    behindCount = 0;
+    missCount = 0;
+
+    jQuery(document).ready(function ($) {
+        
         $('#coin, #coin2').on('click', function () {
+            coinCount++;
             var flipResult = Math.random();
             var flipResult2 = Math.random();
             $('#coin').removeClass();
@@ -641,6 +649,42 @@
                     $('#coin2').addClass('tails');
                     console.log('coin2  - it is tails');
                 }
+                console.log($("#hh1").text());
+
+
+
+
+
+                if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
+                    console.log(" in hh ")
+                    var id = "hh" + coinCount;
+                    $("#" + id).text("Goal");
+                    goalCount++;
+                }
+
+                else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
+                    console.log(" in tt " )
+                    var id = "tt" + coinCount;
+                    $("#" + id).text("Miss");
+                    missCount++;
+                }
+
+                else {
+                    var id = "ht" + coinCount;
+                    $("#" + id).text("Behind");
+                    behindCount++;
+
+                }
+
+                $("#gc").text(goalCount);
+                $("#mc").text(missCount);
+                $("#bc").text(behindCount);
+
+
+                
+
+
+
             }, 100);
         });
 
