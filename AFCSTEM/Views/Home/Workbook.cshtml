@@ -6,8 +6,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
     <style>
+        h3 {
+            color: #002b5c;
+        }
+
         #col1 {
+            text-align: center;
+            font-size: 20px;
             width: 10%;
+            border-width: 5px;
+            border-color: #002b5c;
+            color: #33619e;
         }
 
         #col2 {
@@ -16,14 +25,20 @@
             text-align: center;
             font-size: 20px;
             height: 35px;
+            border-width: 5px;
+            border-color: #002b5c;
+            color: #33619e;
         }
 
         #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
         #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-        #c20, #c21, #c22{
+        #c20, #c21 {
             padding: 2px;
             text-align: center;
             font-size: 20px;
+            border-width: 5px;
+            border-color: #002b5c;
+            color: #33619e;
         }
 
         .dot {
@@ -33,6 +48,11 @@
             display: inline-block;
             text-align: center;
             padding-top: 10px;
+        }
+
+        #act1Table1 {
+            border-width: 5px;
+            border-color: blue;
         }
 
         #act1Field {
@@ -57,59 +77,65 @@
 
         #f1 {
             background-color: #ffffff;
-            border: solid 5px yellow;
+            border: solid 5px #ffd200;
             margin-left: 175px;
             margin-right: 75px;
+            font-weight: bold;
         }
 
         #f2t {
             background-color: #ffffff;
-            border: solid 5px yellow;
+            border: solid 5px #ffd200;
             margin-right: 75px;
             margin-top: -25px;
         }
 
         #f2m {
             background-color: #ffffff;
-            border: solid 5px yellow;
+            border: solid 5px #ffd200;
             margin-left: 50px;
             margin-right: 75px;
+            font-weight: bold;
         }
 
         #f2b {
             background-color: #ffffff;
-            border: solid 5px yellow;
+            border: solid 5px #ffd200;
             margin-right: 75px;
             margin-top: 25px;
+            font-weight: bold;
         }
 
         #m1 {
             background-color: #ffffff;
-            border: solid 5px red;
+            border: solid 5px #e31937;
             margin-right: 75px;
             margin-left: 12px;
         }
 
         #m1t {
             background-color: #ffffff;
-            border: solid 5px red;
+            border: solid 5px #e31937;
             margin-right: 75px;
             margin-top: -30px;
             margin-left: 12px;
+            font-weight: bold;
         }
 
         #m1b {
             background-color: #ffffff;
-            border: solid 5px red;
+            border: solid 5px #e31937;
             margin-right: 75px;
             margin-top: 30px;
             margin-left: 12px;
+            font-weight: bold;
         }
 
         #m2 {
             background-color: #ffffff;
             border: solid 5px red;
             margin-right: 75px;
+            font-weight: bold;
         }
 
         #m2t {
@@ -117,6 +143,7 @@
             border: solid 5px red;
             margin-right: 75px;
             margin-top: -30px;
+            font-weight: bold;
         }
 
         #m2b {
@@ -124,47 +151,80 @@
             border: solid 5px red;
             margin-right: 75px;
             margin-top: 30px;
+            font-weight: bold;
         }
 
         #d1 {
             background-color: #ffffff;
-            border: solid 5px blue;
+            border: solid 5px #002b5c;
             margin-right: 75px;
             margin-left: 10px;
+            font-weight: bold;
         }
 
         #d1t {
             background-color: #ffffff;
-            border: solid 5px blue;
+            border: solid 5px #002b5c;
             margin-right: 75px;
             margin-top: -30px;
             margin-left: 10px;
+            font-weight: bold;
         }
 
         #d1b {
             background-color: #ffffff;
-            border: solid 5px blue;
+            border: solid 5px #002b5c;
             margin-right: 75px;
             margin-top: 30px;
             margin-left: 10px;
+            font-weight: bold;
         }
 
         #d2 {
             background-color: #ffffff;
-            border: solid 5px blue;
+            border: solid 5px #002b5c;
             margin-left: 50px;
+            font-weight: bold;
         }
 
         #d2t, #d2b {
             background-color: #ffffff;
-            border: solid 5px blue;
+            border: solid 5px #002b5c;
+            font-weight: bold;
+        }
+        #int1 {
+            margin-left: 425px;
+            background-color: #ffffff;
+            border: solid 5px black;
+            font-weight: bold;
+        }
+        #int {
+            margin-left:20px;
+            background-color: #ffffff;
+            border: solid 5px black;
+            font-weight: bold;
         }
 
         #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
         #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22{
+        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
             text-align: center;
             padding: 3px;
+            border-width: 3px;
+            border-color: #002b5c;
+            font-size: 20px;
+        }
+
+        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6{
+            color: #ffd200;
+        }
+
+        #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
+            color: #e31937;
+        }
+
+        #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
+            color: #004b8d;
         }
     </style>
 
@@ -176,23 +236,23 @@
     <br />
     <a class="btn1" asp-area="" asp-controller="Home" asp-action="Survey">Go To survey</a>
 </div>
-    
-<div class="row">
+
+<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
     <h3>AFL Positions: Activity 1 (Class Activity/Discussion)</h3>
     <p>
-        Sorting Challenge: In the AFL each team has 22 players, 18 players on the field and 4 substitutes. In this next
+        <span style="color: red;">Sorting Challenge:</span> In the AFL each team has 22 players, 18 players on the field and 4 substitutes. In this next
         activity we want you in small groups, work as a team and look at the 22 AFL positions and sort where you
         think they start on the field.
     </p>
     <p>
-        Hint:
+        <span style="color: red;">Hint:</span>
         There are 4 zones/groups that the positions are split evenly into. The name of the position can help you to
         group them into these zones. We have started the sorting for you with some answers already, it’s up to you
         to put the rest of the positions on the table.
     </p>
     <div class="col-md-12">
         <div class="row">
-            <table class="table table-bordered">
+            <table class="table table-bordered" >
                 <tbody>
                     <tr>
                         <td draggable="true" ondragstart="drag(event);" id="c1">Ruck</td>
@@ -205,7 +265,7 @@
                         <td draggable="true" ondragstart="drag(event);" id="c6">Half Forward Flank</td>
                     </tr>
                     <tr>
-                        <td draggable="true" ondragstart="drag(event);" id="c7">Full Forward</td>
+                        <td draggable="true" ondragstart="drag(event);" id="c7">Back Pocket</td>
                         <td draggable="true" ondragstart="drag(event);" id="c8">Centre</td>
                         <td draggable="true" ondragstart="drag(event);" id="c9">Interchange 3</td>
                     </tr>
@@ -229,31 +289,26 @@
                         <td draggable="true" ondragstart="drag(event);" id="c20">Ruck Rover</td>
                         <td draggable="true" ondragstart="drag(event);" id="c21">Interchange 4</td>
                     </tr>
-                    <tr>
-                        <td draggable="true" ondragstart="drag(event);" id="c22">Back Pocket</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
         <br />
-        <p>
-            Record your groups answers on the table below:
+        <p style="font-size:25px;margin-left:-15px;color:#004b8d;">
+            Drag your group's answers from the above table to the table below:
         </p>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                    <tr>
-                        <th>Zone</th>
-                        <th colspan="3" style="text-align:center;">Positions</th>
+                    <tr style="background-color:#002b5c; color:white;">
+                        <th style="border-width:5px;border-color:#002b5c;">ZONE/GROUPS</th>
+                        <th colspan="3" style="text-align:center;border-width: 5px;border-color:#002b5c;">POSITIONS</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td rowspan="2" id="col1">Forward</td>
                         <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" >Full Forward</td>
+                        <td id="col2">Full Forward</td>
                         <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
                     <tr>
@@ -302,13 +357,13 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
     <h3>AFL Positions: Activity 1 (Exploration Task)</h3>
-    <p>
+    <p style="font-size: 20px;">
         Abbreviations can be used to shorten a word, in this case we have made abbreviations for the positions on an AFL Field.
         For Example: Forward Pocket = FP
     </p>
-    <p>Using the abbreviations in the table below, label the 22 starting positions on the AFL field.</p>
+    <br />
     <div class="col-md-12">
         <div id="act1Field">
             <div class="row" id="a1-1R1">
@@ -336,13 +391,23 @@
                 <div class="dot" id="d2b" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
             </div>
         </div>
+        <div class="row">
+            <div class="dot" id="int1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+        </div>
         <br />
+        <p style="font-size: 20px;margin-left:-15px;"><b>
+            Using the abbreviations in the table below, label the 22 starting 
+            positions on the AFL field by dragging them into the correct position     
+        </b></p>
         <br />
         <div class="row">
             <table class="table table-bordered">
                 <tbody>
                     <tr>
-                        <td rowspan="2">FORWARDS</td>
+                        <td rowspan="2" style="color:#004b8d;background-color:#ffd200; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">FORWARDS</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos1">Forward Pocket (FP)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos2">Full Forward (FF)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos3">Forward Pocket (FP)</td>
@@ -353,7 +418,7 @@
                         <td draggable="true" ondragstart="drag(event);" id="pos6">Half Forward Flank (HFF)</td>
                     </tr>
                     <tr>
-                        <td rowspan="2">MIDFIELDERS</td>
+                        <td rowspan="2" style="color:#004b8d;background-color:#e31937; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">MIDFIELDERS</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos7">Ruck (R)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos8">Centre (C)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos9">Ruck Rover (RR)</td>
@@ -364,7 +429,7 @@
                         <td draggable="true" ondragstart="drag(event);" id="pos12">Wing (W)</td>
                     </tr>
                     <tr>
-                        <td rowspan="2">DEFENDERS</td>
+                        <td rowspan="2" style="color:white;background-color:#002b5c; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">DEFENDERS</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos13">Half Bank Flank (HBF)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos14">Centre Half Back (CHB)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos15">Half Bank Flank (HBF)</td>
@@ -375,15 +440,15 @@
                         <td draggable="true" ondragstart="drag(event);" id="pos18">Back Pocket (BP)</td>
                     </tr>
                     <tr>
-                        <td rowspan="2">Interchange</td>
+                        <td rowspan="2" style="border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">Interchange</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos19">Interchange 1 (IP1)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos20">Interchange 2 (IP2)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos21">Interchange 3 (IP3)</td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td style="border-color:white;"></td>
                         <td draggable="true" ondragstart="drag(event);" id="pos22">Interchange 4 (IP4)</td>
-                        <td></td>
+                        <td style="border-color:white;"></td>
                     </tr>
                 </tbody>
             </table>
@@ -391,55 +456,87 @@
     </div>
 </div>
 
-<div class="row">
-    <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Class Activity / Discussion)</h3>
-    <div class="col-md-12" style="margin-left:-15px;">
-        <p><b>Centre Sqaure (MCG Area)</b></p>
-        <p>CS Area = Length x Width</p>
-        <label for="lenCS">CS Area = </label>
-        <input type="number" id="lenCS" name="Length" />
-        <label for="widCS">m x</label>
-        <input type="number" id="widCS" name="Width" /><label>m</label><br />
-        <label for="aTotalCS">CS Area = </label>
-        <input type="number" id="aTotalCS" name="Total" /><label>m<sup>2</sup></label>
+<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+    <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Class Activity / Discussion)</h3><br />
+    <p style="font-size:20px;color:#002b5c;">An AFL field has many regions that we can calculate the area of:</p>
+    <div class="row">
+        <img src="~/images/Unit1/goals.PNG" alt="Goals" style="width: 45%;margin-left:20px" />
+        <img src="~/images/Unit1/Oval.PNG" alt="Oval" style="width: 45%; margin-left:15px;" />
+    </div>
+    <p style="margin-top:50px;font-size:20px;color:#002b5c;">As a class calculate the area of the Centre Square: </p><br />
+    <div class="row">
+        <div class="col-md-5">
+            <img src="~/images/Unit1/centre square.PNG" style="width:90%;" />
+        </div>
+        <div class="col-md-7">
+            <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
+            <p style="font-size:15px;">CS Area = Length x Width</p>
+            <label for="lenCS">CS Area = </label>
+            <input type="number" id="lenCS" name="Length" style="padding:5px;" />
+            <label for="widCS">m x</label>
+            <input type="number" id="widCS" name="Width" maxlength="2" style="padding:5px;" />
+            <label>m</label><br />
+            <label for="aTotalCS">CS Area = </label>
+            <input type="number" id="aTotalCS" name="Total" style="padding:5px;" />
+            <label>m<sup>2</sup></label>
+        </div>
     </div>
 </div>
 
-<div class="row">
-    <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Exploration Task)</h3>
-    <div class="col-md-12" style="margin-left:-15px;">
-        <p><b>GOAL SQUARE AREA (GS AREA)</b></p>
-        <p>GS Area = Length x Width</p>
-        <label for="lenGS">GS Area = </label>
-        <input type="number" id="lenGS" name="Length" />
-        <label for="widGS">m x</label>
-        <input type="number" id="widGS" name="Width" /><label> m</label><br />
-        <label for="aTotalGS">GS Area = </label>
-        <input type="number" id="aTotalGS" name="Total" /><label> m<sup>2</sup></label>
-        <br />
-        <br />
-        <p><b>GOAL POST AREA (GP AREA)</b></p>
-        <p>GP Area = Length x Width</p>
-        <label for="lenGP">GP Area = </label>
-        <input type="number" id="lenGP" name="Length" />
-        <label for="widGP">m x</label>
-        <input type="number" id="widGP" name="Width" /><label> m</label><br />
-        <label for="aTotalGP">GP Area = </label>
-        <input type="number" id="aTotalGP" name="Total" /><label> m<sup>2</sup></label>
-        <br />
-        <br />
-        <p><b>BEHIND POST AREA (BP AREA)</b></p>
-        <p>BP Area = Length x Width</p>
-        <label for="lenBP">BP Area = </label>
-        <input type="number" id="lenBP" name="Length" />
-        <label for="widBP">m x</label>
-        <input type="number" id="widBP" name="Width" /><label> m</label><br />
-        <label for="aTotalBP">BP Area = </label>
-        <input type="number" id="aTotalBP" name="Total" /><label> m<sup>2</sup></label>
+<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+    <br />
+    <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Exploration Task)</h3><br />
+    <div class="row">
+        <div class="col-md-6">
+            <p style="color:#002b5c;"><b>GOAL SQUARE AREA (GS AREA)</b></p>
+            <p>GS Area = Length x Width</p>
+            <label for="lenGS">GS Area = </label>
+            <input type="number" id="lenGS" name="Length" />
+            <label for="widGS">m x</label>
+            <input type="number" id="widGS" name="Width" />
+            <label>m</label><br />
+            <label for="aTotalGS">GS Area = </label>
+            <input type="number" id="aTotalGS" name="Total" />
+            <label>m<sup>2</sup></label>
+            <br /><br />
+            <p style="color:#002b5c;"><b>GOAL POST AREA (GP AREA)</b></p>
+            <p>GP Area = Length x Width</p>
+            <label for="lenGP">GP Area = </label>
+            <input type="number" id="lenGP" name="Length" />
+            <label for="widGP">m x</label>
+            <input type="number" id="widGP" name="Width" />
+            <label>m</label><br />
+            <label for="aTotalGP">GP Area = </label>
+            <input type="number" id="aTotalGP" name="Total" />
+            <label>m<sup>2</sup></label>
+        </div>
+        <div class="col-md-6">
+            <img src="~/images/Unit1/goals.PNG" alt="goals" style="width:80%; margin-left:18px;"/>
+        </div>
+    </div>  
+
+    <div class="row" style="margin-top:10px;width:100%;">
+        <div class="col-md-6">
+            <p style="color:#002b5c;"><b>BEHIND POST AREA (BP AREA)</b></p>
+            <p>BP Area = Length x Width</p>
+            <label for="lenBP">BP Area = </label>
+            <input type="number" id="lenBP" name="Length" />
+            <label for="widBP">m x</label>
+            <input type="number" id="widBP" name="Width" />
+            <label>m</label><br />
+            <label for="aTotalBP">BP Area = </label>
+            <input type="number" id="aTotalBP" name="Total" />
+            <label>m<sup>2</sup></label>
+            <div class="col-md-12" style="margin-left:-15px;">
+            </div>
+        </div>
+        <div class="col-md-6" style="text-align:center;">
+            <img src="~/images/Unit1/goal square.PNG" alt="goal square" style="width:25%;" />
+        </div>
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
     <h4>MEASUREMENT OF AFL GROUNDS: Activity 2 (Extension / Group Work Challenge)</h4>
     <div class="col-md-12" style="margin-left:-15px;">
         <p><b>Analysis: </b></p>
@@ -503,12 +600,13 @@
 
     function drop(ev) {
         ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
+        var id = ev.dataTransfer.getData("text");
         var target = ev.target;
-        var text = document.getElementById(data).innerHTML;
+        var text = document.getElementById(id).innerHTML;
 
-        document.getElementById(data).innerHTML = "";
-        target.innerHTML = text;        
+        document.getElementById(id).innerHTML = "";
+        document.getElementById(id).style.visibility = "hidden";
+        target.innerHTML = text;
     }
 
     function act1Drop(ev) {
@@ -518,6 +616,7 @@
         var sentence = document.getElementById(id).innerHTML;
         var position = splitString(sentence);
 
+        document.getElementById(id).innerHTML = "";
         target.innerHTML = position;
 
 
