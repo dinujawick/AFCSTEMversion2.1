@@ -996,26 +996,8 @@
             <img src="~/images/Unit1/Activity 3/STEMfooty - Metricon Stadium.jpg" alt="Metricon Stadium" style="width:70%;" />
         </div>
     </div>
-
-
-    <br /><br />
-    <p><b>Practical Activity: ‘Measure Your School Oval’</b></p>
-    <p>
-        Now you know the correct measurements for
-        the distance between the goal posts and the
-        goal square. If you have goals on your school
-        oval, go out with the large measuring tape
-        and measure their location and compare it
-        to the AFL standards.
-    </p>
-    <p>
-        Record the measurements and discuss the
-        results as a class:
-    </p>
-    <label for="area1">CS Area = </label>
-    <input type="text" id="area1" name="area" />
 </div>
-</div>
+
 
 <!--Activity 3: part 2-->
 <div class="row containRow">
@@ -1062,98 +1044,78 @@
 </div>
 
 
-<br />
-<br />
+<!--Activity 5-->
+<div class="row containRow" style="margin-bottom:25px;">
+    <h3> SCORING IN AFL: Activity 5 (Exploration Task)</h3>
+    <div class="col-md-12">
 
-<div>
-    <div><h4>Activity 5</h4></div>
+        <div id="coinDiv">
+            <div id="coin">
+                <div class="side-a"></div>
+                <div class="side-b"></div>
+            </div>
 
-    <div id="coinDiv">
-        <div id="coin">
-            <div class="side-a"></div>
-            <div class="side-b"></div>
+            <div id="coin2">
+                <div class="side-a"></div>
+                <div class="side-b"></div>
+            </div>
         </div>
 
-        <div id="coin2">
-            <div class="side-a"></div>
-            <div class="side-b"></div>
-        </div>
+        <table id="coinTable" style="width:60%" class="table table-bordered">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>TOSS#</th>
+                <th>HEADS/HEAD(GOAL)</th>
+                <th>HEAD/TAILS(BEHIND)</th>
+                <th>TAILS/TAILS(MISS)</th>
+            </tr>
+            <tr>
+            </tr>
+
+            <tr>
+                <td>TOTAL</td>
+                <td id="gc">0</td>
+                <td id="bc">0</td>
+                <td id="mc">0</td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div>CLICK THE VALUES TO ADD IT TO THE GRAPH</div>
+        <table style="width:60%" id="texTable">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>Year</th>
+                <th>2015</th>
+                <th>2016</th>
+                <th>2017</th>
+                <th>2018</th>
+                <th>2019</th>
+            </tr>
+            <tr>
+                <th>Average Goals</th>
+                <td style="cursor: pointer;" onclick="drawGraphOnClick(100,2.6)">2.6</td>
+                <td style="cursor: pointer;" onclick="drawGraphOnClick(200,2.0)">2.0</td>
+                <td style="cursor: pointer;" onclick="drawGraphOnClick(300,2.5)">2.5</td>
+                <td style="cursor: pointer;" onclick="drawGraphOnClick(400,1.9)">1.9</td>
+                <td style="cursor: pointer;" onclick="drawGraphOnClick(500,2.0)">2.0</td>
+            </tr>
+
+        </table>
+        <br />
+
+        <div>TEX WALKER AVERAGE GOALS/GAMES</div>
+        <canvas id="texGraph" width="600" height="400" style="border:1px solid"></canvas>
+        <br /><br /><br />
     </div>
-
-
-
-
-    <table id="coinTable" style="width:60%" class="table table-bordered">
-        <tr style="background-color:#002b5c; color:white;">
-            <th>TOSS#</th>
-            <th>HEADS/HEAD(GOAL)</th>
-            <th>HEAD/TAILS(BEHIND)</th>
-            <th>TAILS/TAILS(MISS)</th>
-        </tr>
-        <tr>
-        </tr>
-
-        <tr>
-            <td>TOTAL</td>
-            <td id="gc">0</td>
-            <td id="bc">0</td>
-            <td id="mc">0</td>
-        </tr>
-
-    </table>
-    <br />
-    <br />
-    <br />
-
-
-    <br />
-
-
-    <div>CLICK THE VALUES TO ADD IT TO THE GRAPH</div>
-    <table style="width:60%" id="texTable">
-        <tr style="background-color:#002b5c; color:white;">
-            <th>Year</th>
-            <th>2015</th>
-            <th>2016</th>
-            <th>2017</th>
-            <th>2018</th>
-            <th>2019</th>
-        </tr>
-        <tr>
-            <th>Average Goals</th>
-            <td style="cursor: pointer;" onclick="drawGraphOnClick(100,2.6)">2.6</td>
-            <td style="cursor: pointer;" onclick="drawGraphOnClick(200,2.0)">2.0</td>
-            <td style="cursor: pointer;" onclick="drawGraphOnClick(300,2.5)">2.5</td>
-            <td style="cursor: pointer;" onclick="drawGraphOnClick(400,1.9)">1.9</td>
-            <td style="cursor: pointer;" onclick="drawGraphOnClick(500,2.0)">2.0</td>
-        </tr>
-
-
-    </table>
-
-    <br />
-
-    <div>TEX WALKER AVERAGE GOALS/GAMES</div>
-    <canvas id="texGraph" width="600" height="400" style="border:1px solid"></canvas>
-    
-    <br />
-    <br />
-    <br />
-    <br />
-    </div>
+</div>
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
     <script>
-
-
-
-
-
-
         drawGraph();
-
 
         function drawGraph() {
             var count = 3.0;
@@ -1170,9 +1132,6 @@
             graph.fillText("2017", 300, 360)
             graph.fillText("2018", 400, 360)
             graph.fillText("2019", 500, 360)
-
-
-
 
         }
 
@@ -1255,27 +1214,10 @@
                         $("#mc").text(missCount);
                         $("#bc").text(behindCount);
 
-
-
-
-
-
-
-
                     }, 100);
-
-
-
                 }
-
-
-
             });
-
-
         });
-
-
 
 
         function allowDrop(ev) {
