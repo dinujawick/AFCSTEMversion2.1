@@ -50,9 +50,8 @@
         padding-top: 10px;
     }
 
-    #act1Table1 {
-        border-width: 5px;
-        border-color: blue;
+    #coinTable td, #texTable td {
+        color: #002b5c;
     }
 
     #act1Field {
@@ -1044,296 +1043,268 @@
 <br />
 <br />
 
+<div>
+    <div><h4>Activity 5</h4></div>
 
-<div><h4>Activity 5</h4></div>
+    <div id="coinDiv">
+        <div id="coin">
+            <div class="side-a"></div>
+            <div class="side-b"></div>
+        </div>
 
-<div id="coinDiv">
-    <div id="coin">
-        <div class="side-a"></div>
-        <div class="side-b"></div>
+        <div id="coin2">
+            <div class="side-a"></div>
+            <div class="side-b"></div>
+        </div>
     </div>
 
-    <div id="coin2">
-        <div class="side-a"></div>
-        <div class="side-b"></div>
+
+
+
+    <table id="coinTable" style="width:60%" class="table table-bordered">
+        <tr style="background-color:#002b5c; color:white;">
+            <th>TOSS#</th>
+            <th>HEADS/HEAD(GOAL)</th>
+            <th>HEAD/TAILS(BEHIND)</th>
+            <th>TAILS/TAILS(MISS)</th>
+        </tr>
+        <tr>
+        </tr>
+
+        <tr>
+            <td>TOTAL</td>
+            <td id="gc">0</td>
+            <td id="bc">0</td>
+            <td id="mc">0</td>
+        </tr>
+
+    </table>
+    <br />
+    <br />
+    <br />
+
+
+    <br />
+
+
+    <div>CLICK THE VALUES TO ADD IT TO THE GRAPH</div>
+    <table style="width:60%" id="texTable">
+        <tr style="background-color:#002b5c; color:white;">
+            <th>Year</th>
+            <th>2015</th>
+            <th>2016</th>
+            <th>2017</th>
+            <th>2018</th>
+            <th>2019</th>
+        </tr>
+        <tr>
+            <th>Average Goals</th>
+            <td style="cursor: pointer;" onclick="drawGraphOnClick(100,2.6)">2.6</td>
+            <td style="cursor: pointer;" onclick="drawGraphOnClick(200,2.0)">2.0</td>
+            <td style="cursor: pointer;" onclick="drawGraphOnClick(300,2.5)">2.5</td>
+            <td style="cursor: pointer;" onclick="drawGraphOnClick(400,1.9)">1.9</td>
+            <td style="cursor: pointer;" onclick="drawGraphOnClick(500,2.0)">2.0</td>
+        </tr>
+
+
+    </table>
+
+    <br />
+
+    <div>TEX WALKER AVERAGE GOALS/GAMES</div>
+    <canvas id="texGraph" width="600" height="400" style="border:1px solid"></canvas>
+    
+    <br />
+    <br />
+    <br />
+    <br />
     </div>
-</div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script>
 
 
 
 
-<table style="width:60%">
-    <tr>
-        <th>TOSS#</th>
-        <th>HEADS/HEAD(GOAL)</th>
-        <th>HEAD/TAILS(BEHIND)</th>
-        <th>TAILS/TAILS(MISS)</th>
-    </tr>
-    <tr>
-        <th>1</th>
-        <td id="hh1"></td>
-        <td id="ht1"></td>
-        <td id="tt1"></td>
-
-    </tr>
-    <tr>
-        <th>2</th>
-        <td id="hh2"></td>
-        <td id="ht2"></td>
-        <td id="tt2"></td>
-    </tr>
-    <tr>
-        <th>3</th>
-        <td id="hh3"></td>
-        <td id="ht3"></td>
-        <td id="tt3"></td>
-    </tr>
-    <tr>
-        <th>4</th>
-        <td id="hh4"></td>
-        <td id="ht4"></td>
-        <td id="tt4"></td>
-    </tr>
-    <tr>
-        <th>5</th>
-        <td id="hh5"></td>
-        <td id="ht5"></td>
-        <td id="tt5"></td>
-    </tr>
-    <tr>
-        <th>6</th>
-        <td id="hh6"></td>
-        <td id="ht6"></td>
-        <td id="tt6"></td>
-    </tr>
-    <tr>
-        <th>7</th>
-        <td id="hh7"></td>
-        <td id="ht7"></td>
-        <td id="tt7"></td>
-    </tr>
-    <tr>
-        <th>8</th>
-        <td id="hh8"></td>
-        <td id="ht8"></td>
-        <td id="tt8"></td>
-    </tr>
-    <tr>
-        <th>9</th>
-        <td id="hh9"></td>
-        <td id="ht9"></td>
-        <td id="tt9"></td>
-    </tr>
-    <tr>
-        <th>10</th>
-        <td id="hh10"></td>
-        <td id="ht10"></td>
-        <td id="tt10"></td>
-    </tr>
-    <tr>
-        <th>TOTAL</th>
-        <td id="gc">0</td>
-        <td id="bc">0</td>
-        <td id="mc">0</td>
-    </tr>
-
-</table>
-<br />
-<br />
-<br />
 
 
-<br />
+        drawGraph();
 
 
-<div>CLICK THE VALUES TO ADD IT TO THE GRAPH</div>
-<table style="width:60%">
-    <tr>
-        <th>Year</th>
-        <th>2015</th>
-        <th>2016</th>
-        <th>2017</th>
-        <th>2018</th>
-        <th>2019</th>
-    </tr>
-    <tr>
-        <th>Average Goals</th>
-        <td style="cursor: pointer;" onclick="drawGraphOnClick(100,2.6)">2.6</td>
-        <td style="cursor: pointer;" onclick="drawGraphOnClick(200,2.0)">2.0</td>
-        <td style="cursor: pointer;" onclick="drawGraphOnClick(300,2.5)">2.5</td>
-        <td style="cursor: pointer;" onclick="drawGraphOnClick(400,1.9)">1.9</td>
-        <td style="cursor: pointer;" onclick="drawGraphOnClick(500,2.0)">2.0</td>
-    </tr>
+        function drawGraph() {
+            var count = 3.0;
+            var graph = document.getElementById("texGraph").getContext("2d");
+            for (var i = 50; i < 400; i) {
+                graph.fillRect(30, i, 500, 1);
+                graph.fillText(count, 10, i)
+                count -= 0.5;
+                i += 50;
+            }
 
-
-</table>
-
-<br />
-
-<div>TEX WALKER AVERAGE GOALS/GAMES</div>
-<canvas id="texGraph" width="600" height="400" style="border:1px solid"></canvas>
+            graph.fillText("2015", 100, 360)
+            graph.fillText("2016", 200, 360)
+            graph.fillText("2017", 300, 360)
+            graph.fillText("2018", 400, 360)
+            graph.fillText("2019", 500, 360)
 
 
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-<script>
-
-    drawGraph();
-
-
-    function drawGraph() {
-        var count = 3.0;
-        var graph = document.getElementById("texGraph").getContext("2d");
-        for (var i = 50; i < 400; i) {
-            graph.fillRect(30, i, 500, 1);
-            graph.fillText(count, 10, i)
-            count -= 0.5;
-            i += 50;
         }
 
-        graph.fillText("2015", 100, 360)
-        graph.fillText("2016", 200, 360)
-        graph.fillText("2017", 300, 360)
-        graph.fillText("2018", 400, 360)
-        graph.fillText("2019", 500, 360)
+        function drawGraphOnClick(x, val) {
+            var graph = document.getElementById("texGraph").getContext("2d");
+            graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
+        }
+
+        var coinCount = 0;
+        goalCount = 0;
+        behindCount = 0;
+        missCount = 0;
+
+        jQuery(document).ready(function ($) {
+
+            $('#coin, #coin2').on('click', function () {
+                if (coinCount < 10) {
+                    coinCount++;
+                    var flipResult = Math.random();
+                    var flipResult2 = Math.random();
+
+                    var table = document.getElementById("coinTable");
+                    var row = table.insertRow(coinCount);
+                    var cell = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    cell.innerHTML = coinCount;
+
+                    cell2.setAttribute("id", "hh" + coinCount);
+                    cell3.setAttribute("id", "ht" + coinCount);
+                    cell4.setAttribute("id", "tt" + coinCount);
+
+
+                    $('#coin').removeClass();
+                    $('#coin2').removeClass();
+                    setTimeout(function () {
+                        if (flipResult <= 0.5) {
+                            $('#coin').addClass('heads');
+                            console.log('coin1 - it is head');
+                        }
+                        if (flipResult2 <= 0.5) {
+                            $('#coin2').addClass('heads');
+                            console.log('coin2 - it is head');
+                        }
+                        if (flipResult > 0.5) {
+                            $('#coin').addClass('tails');
+                            console.log('coin1 - it is tails');
+                        }
+
+                        if (flipResult2 > 0.5) {
+                            $('#coin2').addClass('tails');
+                            console.log('coin2  - it is tails');
+                        }
+
+                        if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
+                            console.log(" in hh ")
+                            var id = "hh" + coinCount;
+                            $("#" + id).text("Goal");
+                            goalCount++;
+                        }
+
+                        else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
+                            console.log(" in tt ")
+                            var id = "tt" + coinCount;
+                            $("#" + id).text("Miss");
+                            missCount++;
+                        }
+
+                        else {
+                            var id = "ht" + coinCount;
+                            $("#" + id).text("Behind");
+                            behindCount++;
+
+                        }
+
+
+
+                        $("#gc").text(goalCount);
+                        $("#mc").text(missCount);
+                        $("#bc").text(behindCount);
 
 
 
 
-    }
 
-    function drawGraphOnClick(x, val) {
-        var graph = document.getElementById("texGraph").getContext("2d");
-        graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
-    }
 
-    var coinCount = 0;
-    goalCount = 0;
-    behindCount = 0;
-    missCount = 0;
 
-    jQuery(document).ready(function ($) {
 
-        $('#coin, #coin2').on('click', function () {
-            coinCount++;
-            var flipResult = Math.random();
-            var flipResult2 = Math.random();
-            $('#coin').removeClass();
-            $('#coin2').removeClass();
-            setTimeout(function () {
-                if (flipResult <= 0.5) {
-                    $('#coin').addClass('heads');
-                    console.log('coin1 - it is head');
+                    }, 100);
+
+
+
                 }
-                if (flipResult2 <= 0.5) {
-                    $('#coin2').addClass('heads');
-                    console.log('coin2 - it is head');
-                }
-                if (flipResult > 0.5) {
-                    $('#coin').addClass('tails');
-                    console.log('coin1 - it is tails');
-                }
-
-                if (flipResult2 > 0.5) {
-                    $('#coin2').addClass('tails');
-                    console.log('coin2  - it is tails');
-                }
-                console.log($("#hh1").text());
 
 
 
+            });
 
 
-                if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
-                    console.log(" in hh ")
-                    var id = "hh" + coinCount;
-                    $("#" + id).text("Goal");
-                    goalCount++;
-                }
-
-                else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
-                    console.log(" in tt ")
-                    var id = "tt" + coinCount;
-                    $("#" + id).text("Miss");
-                    missCount++;
-                }
-
-                else {
-                    var id = "ht" + coinCount;
-                    $("#" + id).text("Behind");
-                    behindCount++;
-
-                }
-
-                $("#gc").text(goalCount);
-                $("#mc").text(missCount);
-                $("#bc").text(behindCount);
-
-
-
-
-
-
-            }, 100);
         });
 
 
-    });
 
 
-
-
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
-
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-
-    // Activity 1: part 1 Drop function
-    function drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var text = document.getElementById(id).innerHTML;
-
-        document.getElementById(id).innerHTML = "";
-        document.getElementById(id).style.visibility = "hidden";
-        target.innerHTML = text;
-    }
-
-    //Activity 1: part 2 Drop function
-    function act1Drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var sentence = document.getElementById(id).innerHTML;
-        var position = splitString(sentence);
-
-        document.getElementById(id).innerHTML = "";
-        target.innerHTML = position;
-    }
-
-    function splitString(sentence) {
-        var string = sentence;
-        var code = "";
-        string = string.split(" ");
-        //console.log(string);
-        for (i = 0; i < string.length; i++) {
-            var word = string[i];
-            var subcode = word.charAt(0);
-            if (subcode == '(') { } else {
-                code = code + subcode;
-            }
-            //console.log(code);
+        function allowDrop(ev) {
+            ev.preventDefault();
         }
-        return code;
-    }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        // Activity 1: part 1 Drop function
+        function drop(ev) {
+            ev.preventDefault();
+            var id = ev.dataTransfer.getData("text");
+            var target = ev.target;
+            var text = document.getElementById(id).innerHTML;
+
+            document.getElementById(id).innerHTML = "";
+            document.getElementById(id).style.visibility = "hidden";
+            target.innerHTML = text;
+        }
+
+        //Activity 1: part 2 Drop function
+        function act1Drop(ev) {
+            ev.preventDefault();
+            var id = ev.dataTransfer.getData("text");
+            var target = ev.target;
+            var sentence = document.getElementById(id).innerHTML;
+            var position = splitString(sentence);
+
+            document.getElementById(id).innerHTML = "";
+            target.innerHTML = position;
+        }
+
+        function splitString(sentence) {
+            var string = sentence;
+            var code = "";
+            string = string.split(" ");
+            //console.log(string);
+            for (i = 0; i < string.length; i++) {
+                var word = string[i];
+                var subcode = word.charAt(0);
+                if (subcode == '(') { } else {
+                    code = code + subcode;
+                }
+                //console.log(code);
+            }
+            return code;
+        }
 
 
 
 
-</script>
+    </script>
