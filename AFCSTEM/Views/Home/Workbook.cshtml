@@ -6,8 +6,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
     <style>
+        .containRow {
+            margin-top:80px;
+            border: solid 5px #ffe694;
+        }
+        .containInside{
+            margin-left:10px;
+        }
+        table {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
         h3 {
             color: #002b5c;
+            margin-left:5px;
+            width:100%;
+            text-align:center;
         }
 
         #col1 {
@@ -372,14 +386,14 @@
 </div>
 
 <!--Activity 1: part 1-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <h3>AFL Positions: Activity 1 (Class Activity/Discussion)</h3>
-    <p>
+    <p style="margin-left:10px;">
         <span style="color:#e31937;">Sorting Challenge:</span> In the AFL each team has 22 players, 18 players on the field and 4 substitutes. In this next
         activity we want you in small groups, work as a team and look at the 22 AFL positions and sort where you
         think they start on the field.
     </p>
-    <p>
+    <p style="margin-left:10px;">
         <span style="color:#e31937;">Hint:</span>
         There are 4 zones/groups that the positions are split evenly into. The name of the position can help you to
         group them into these zones. We have started the sorting for you with some answers already, it’s up to you
@@ -493,7 +507,7 @@
 </div>
 
 <!--Activity 1: part 2-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <h3>AFL Positions: Activity 1 (Exploration Task)</h3>
     <p style="font-size: 20px;margin-left:5px;">
         Abbreviations can be used to shorten a word, in this case we have made abbreviations for the positions on an AFL Field.
@@ -593,15 +607,15 @@
 </div>
 
 <!--Activity 2: part 1-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Class Activity / Discussion)</h3><br />
-    <p style="font-size:20px;color:#002b5c;">An AFL field has many regions that we can calculate the area of:</p>
-    <div class="row">
+    <p style="font-size:20px;color:#002b5c; margin-left:10px;">An AFL field has many regions that we can calculate the area of:</p>
+    <div class="row containInside">
         <img src="~/images/Unit1/goals.PNG" alt="Goals" style="width: 45%;margin-left:20px" />
         <img src="~/images/Unit1/Oval.PNG" alt="Oval" style="width: 45%; margin-left:15px;" />
     </div>
-    <p style="margin-top:50px;font-size:20px;color:#002b5c;">As a class calculate the area of the Centre Square: </p><br />
-    <div class="row">
+    <p style="margin-top:50px;font-size:20px;color:#002b5c;margin-left:10px;">As a class calculate the area of the Centre Square: </p><br />
+    <div class="row containInside">
         <div class="col-md-5">
             <img src="~/images/Unit1/centre square.PNG" style="width:90%;" />
         </div>
@@ -621,10 +635,10 @@
 </div>
 
 <!--Activity 2: part 2-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <br />
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Exploration Task)</h3><br />
-    <div class="row">
+    <div class="row containInside">
         <div class="col-md-6">
             <p style="color:#002b5c;"><b>GOAL SQUARE AREA (GS AREA)</b></p>
             <p>GS Area = Length x Width</p>
@@ -653,7 +667,7 @@
         </div>
     </div>  
 
-    <div class="row" style="margin-top:10px;width:100%;">
+    <div class="row containInside" style="margin-top:10px;width:100%;">
         <div class="col-md-6">
             <p style="color:#002b5c;"><b>BEHIND POST AREA (BP AREA)</b></p>
             <p>BP Area = Length x Width</p>
@@ -675,9 +689,9 @@
 </div>
 
 <!--Activity 2: part 3-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <h4>MEASUREMENT OF AFL GROUNDS: Activity 2 (Extension / Group Work Challenge)</h4>
-    <div class="row">
+    <div class="row containInside">
         <div class="col-md-12">
             <br />
             <p style="font-size:20px;"><b>Analysis: </b></p>
@@ -716,7 +730,7 @@
             <br /><br />
         </div>
     </div>
-    <div class="row">
+    <div class="row containInside">
         <div class="col-md-6">
             <p><b>Practical Activity: ‘Measure Your School Oval’</b></p>
             <p>
@@ -739,9 +753,9 @@
 </div>
 
 <!--Activity 3: part 1-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 3 (Exploration Task) </h3>
-    <div class="row">
+    <div class="row" style="width:100%;">
         <div class="col-md-12">
             <table class="table table-bordered" style="text-align:center;">
                 <thead>
@@ -814,9 +828,9 @@
             </table>
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
+
+    <div class="row containInside" style="width:100%; margin-top:20px;">
         <div class="col-md-9">
             <p><b>MCG (MCG AREA)</b></p>
             <p>MCG Area = &#189 L x &#189 W x π</p>
@@ -829,12 +843,12 @@
             <input type="number" id="mcgArea" name="MCG Area" />
         </div>
         <div class="col-md-3" >
-            <img src="~/images/Unit1/Activity 3/STEMfooty - MCG.jpg" alt="MCG" style="width:200px;" class="text-center"/>
+            <img src="~/images/Unit1/Activity 3/STEMfooty - MCG.jpg" alt="MCG" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>MARVEL STADIUM (MS AREA)</b></p>
             <p>MS Area = &#189 L x &#189 W x π</p>
@@ -846,13 +860,13 @@
             <label for="msArea">MS AREA= </label>
             <input type="number" id="msArea" name="MS Area" />
         </div>
-        <div class="col-md-3" style="text-align:right;">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - Marvel Stadium.jpg" alt="Marvel Stadium" style="width:200px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - Marvel Stadium.jpg" alt="Marvel Stadium" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>GMHBA STADIUM (GMH AREA)</b></p>
             <p>GMH Area = &#189 L x &#189 W x π</p>
@@ -864,14 +878,14 @@
             <label for="gmhArea">MS AREA= </label>
             <input type="number" id="gmhArea" name="GMH Area" />
         </div>
-        <div class="col-md-3" style="text-align:center;">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - GMHBA.jpg" alt="GMHBA Stadium" style="width:200px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - GMHBA.jpg" alt="GMHBA Stadium" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
-        <div class="col-md-8">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
+        <div class="col-md-9">
             <p><b>SCG (SCG AREA)</b></p>
             <p>SCG Area = &#189 L x &#189 W x π</p>
             <label>SCG AREA = &#189 X </label>
@@ -882,14 +896,14 @@
             <label for="scgArea">SCG AREA= </label>
             <input type="number" id="scgArea" name="SCG Area" />
         </div>
-        <div class="col-md-4">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - SCG.jpg" alt="SCG" style="width:200px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - SCG.jpg" alt="SCG" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
-        <div class="col-md-8">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
+        <div class="col-md-9">
             <p><b>SPOTLESS STADIUM (SS AREA)</b></p>
             <p>SS Area = &#189 L x &#189 W x π</p>
             <label>SS AREA = &#189 X </label>
@@ -900,14 +914,14 @@
             <label for="ssArea">SS AREA= </label>
             <input type="number" id="ssArea" name="SS Area" />
         </div>
-        <div class="col-md-4">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - Spotless Stadium.jpg" alt="Spotless Stadium" style="width:150px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - Spotless Stadium.jpg" alt="Spotless Stadium" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
-        <div class="col-md-8">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
+        <div class="col-md-9">
             <p><b>OPTUS STADIUM (OS AREA)</b></p>
             <p>OS Area = &#189 L x &#189 W x π</p>
             <label>OS AREA = &#189 X </label>
@@ -918,14 +932,14 @@
             <label for="osArea">SS AREA= </label>
             <input type="number" id="osArea" name="OS Area" />
         </div>
-        <div class="col-md-4">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - Optus Stadium.jpg" alt="Optus Stadium" style="width:150px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - Optus Stadium.jpg" alt="Optus Stadium" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
-        <div class="col-md-8">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
+        <div class="col-md-9">
             <p><b>GABBA STADIUM (G AREA)</b></p>
             <p>G Area = &#189 L x &#189 W x π</p>
             <label>G AREA = &#189 X </label>
@@ -936,14 +950,14 @@
             <label for="gArea">SS AREA= </label>
             <input type="number" id="gArea" name="G Area" />
         </div>
-        <div class="col-md-4">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - Gabba Stadium.jpg" alt="Gabba Stadium" style="width:150px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - Gabba Stadium.jpg" alt="Gabba Stadium" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
-    <div class="row">
-        <div class="col-md-8">
+
+    <div class="row containInside" style="width:100%;margin-top:20px;">
+        <div class="col-md-9">
             <p><b>METRICON STADIUM (MET AREA)</b></p>
             <p>MET Area = &#189 L x &#189 W x π</p>
             <label>MET AREA = &#189 X </label>
@@ -954,11 +968,10 @@
             <label for="metArea">MET AREA= </label>
             <input type="number" id="metArea" name="MET Area" />
         </div>
-        <div class="col-md-4">
-            <img src="~/images/Unit1/Activity 3/STEMfooty - Metricon Stadium.jpg" alt="Metricon Stadium" style="width:150px;" />
+        <div class="col-md-3">
+            <img src="~/images/Unit1/Activity 3/STEMfooty - Metricon Stadium.jpg" alt="Metricon Stadium" style="width:70%;" />
         </div>
     </div>
-    <br /><br /><br /><br />
 
 
         <br /><br />
@@ -981,37 +994,46 @@
 </div>
 
 <!--Activity 3: part 2-->
-<div class="row" style="margin-top:80px; border:solid 2px #ffe694;">
+<div class="row containRow">
     <h3> MEASUREMENT OF AFL GROUNDS: Activity 3 (Extension / Group Work Challenge) </h3>
-    <div class="col-md-12">
-        <p><b>Exploration Questions:</b></p>
-        <label for="largestArea">Which AFL ground has the largest area? </label>
-        <input type="text" id="largestArea" name="largest Area" /> <br />
-        <label for="smallestArea">Which AFL ground has the smallest area?</label>
-        <input type="text" id="smallestArea" name="smallest Area" /> <br />
-        <label for="crowdCapacity">Which has the largest crowd capacity?</label>
-        <input type="text" id="crowdCapacity" name="crowd Capacity" /> <br />
-        <br />
+    <p style="font-size:20px;margin-left:10px;"><b>Exploration Questions:</b></p>
 
-        <label for="correlation">Is there any correlation between area of oval and capacity? Explain.</label>
-        <input type="text" id="correlation" name="Correlation" /><br />
-        <br />
+    <div class="row containInside">
+        <div class="col-md-4">
+            <label for="largestArea" style="font-size: 18px;">Which AFL ground has the largest area? </label>
+            <label for="smallestArea" style="margin-top: 10px;margin-bottom:10px;font-size: 18px;">Which AFL ground has the smallest area?</label>
+            <label for="crowdCapacity" style="font-size: 18px;">Which has the largest crowd capacity?</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="largestArea" name="largest Area" /><br />
+            <input type="text" id="smallestArea" name="smallest Area" style="margin-top:10px;margin-bottom:10px;" /><br />
+            <input type="text" id="crowdCapacity" name="crowd Capacity" />
+        </div>
+    </div>
 
-        <label for="mostLike">Which ground would you most like to play on and why?</label>
-        <input type="text" id="mostLike" name="most like" /><br />
-        <br />
+    <div class="row containInside" style="margin-top:25px;">
+        <div class="col-md-12">
+            <label for="correlation" style="font-size: 18px;">Is there any correlation between area of oval and capacity? Explain.</label>
+            <textarea name="Correlations" rows="3" style="width:65%;"></textarea>
+            <br />
 
-        <label for="longDis">What ground would suit a team with lots of long-distance runners? Give reasons why.</label>
-        <input type="text" id="longDis" name="long distance" /><br />
-        <br />
+            <label for="mostLike" style="font-size: 18px;">Which ground would you most like to play on and why?</label>
+            <textarea name="Most like" rows="3" style="width:65%;"></textarea>
+            <br />
 
-        <label for="accurate">What ground would suit a team with lots of accurate kickers? Give reasons why.</label>
-        <input type="text" id="accurate" name="accurate kickers" /><br />
-        <br />
+            <label for="longDis" style="font-size: 18px;">What ground would suit a team with lots of long-distance runners? Give reasons why.</label>
+            <textarea name="long distance" rows="3" style="width:65%;"></textarea>
+            <br />
 
-        <label for="defend">What grounds would be harder/easier to defend on? Give reasons why.</label>
-        <input type="text" id="defend" name="defend" /><br />
-        <br />
+            <label for="accurate" style="font-size: 18px;">What ground would suit a team with lots of accurate kickers? Give reasons why.</label>
+            <textarea name="Accurate" rows="3" style="width:65%;"></textarea>
+            <br />
+
+            <label for="defend" style="font-size: 18px;">What grounds would be harder/easier to defend on? Give reasons why.</label>
+            <textarea name="Defend" rows="3" style="width:65%;"></textarea>
+            <br />
+
+        </div>
     </div>
 </div>
 
