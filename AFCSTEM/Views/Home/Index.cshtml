@@ -17,7 +17,8 @@
             width: 100%;
             height: auto;
             margin-bottom: 15px;
-        }
+        } 
+        
 
         /* Style the button and place it in the middle of the container/image */
         .text-center .btn {
@@ -77,6 +78,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <a class="btn1" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
+        <a class="btn3" asp-area="" asp-controller="Home" asp-action="Workbook">Go To Student Workbook</a>
 
     }
     else

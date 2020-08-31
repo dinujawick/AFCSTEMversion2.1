@@ -8,7 +8,7 @@
     <style>
         .containRow {
             margin-top:80px;
-            border: solid 5px #ffe694;
+            border: solid 8px #ffd200;
         }
         .containInside{
             margin-left:10px;
@@ -53,6 +53,7 @@
             border-width: 5px;
             border-color: #002b5c;
             color: #33619e;
+            height:5px;
         }
 
         .dot {
@@ -102,6 +103,7 @@
             border: solid 5px #ffd200;
             margin-right: 75px;
             margin-top: -25px;
+            font-weight: bold;
         }
 
         #f2m {
@@ -125,6 +127,7 @@
             border: solid 5px #e31937;
             margin-right: 75px;
             margin-left: 12px;
+            font-weight: bold;
         }
 
         #m1t {
@@ -229,6 +232,7 @@
             border-width: 3px;
             border-color: #002b5c;
             font-size: 20px;
+            height:10px;
         }
 
         #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
@@ -241,6 +245,15 @@
 
         #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
             color: #004b8d;
+        }
+
+        .areaHint {
+            font-size:20px;
+            color:#0c2037;
+        }
+        .areaLabel{
+            font-size:18px;
+            color:#002b5c;
         }
 
         #act3Body {
@@ -495,7 +508,9 @@
 <!--Activity 2: part 1-->
 <div class="row containRow">
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Class Activity / Discussion)</h3><br />
-    <p style="font-size:20px;color:#002b5c; margin-left:10px;">An AFL field has many regions that we can calculate the area of:</p>
+    <p style="font-size:20px;color:#002b5c; margin-left:10px;">
+        An AFL field has many regions that we can calculate the area of, below are a couple of examples of these regions
+    </p>
     <div class="row containInside">
         <img src="~/images/Unit1/goals.PNG" alt="Goals" style="width: 45%;margin-left:20px" />
         <img src="~/images/Unit1/Oval.PNG" alt="Oval" style="width: 45%; margin-left:15px;" />
@@ -507,15 +522,16 @@
         </div>
         <div class="col-md-7">
             <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
-            <p style="font-size:15px;">CS Area = Length x Width</p>
-            <label for="lenCS">CS Area = </label>
-            <input type="number" id="lenCS" name="Length" style="padding:5px;" />
-            <label for="widCS">m x</label>
-            <input type="number" id="widCS" name="Width" maxlength="2" style="padding:5px;" />
-            <label>m</label><br />
-            <label for="aTotalCS">CS Area = </label>
-            <input type="number" id="aTotalCS" name="Total" style="padding:5px;" />
-            <label>m<sup>2</sup></label>
+            <p class="areaHint">CS Area = Length x Width</p>
+            
+            <label class="areaLabel" for="lenCS">CS Area = </label>
+            <input type="number" id="lenCS" name="Length" />
+            <label class="areaLabel" for="widCS">m x</label>
+            <input type="number" id="widCS" name="Width"  />
+            <label class="areaLabel">m</label><br />
+            <label class="areaLabel" for="aTotalCS">CS Area = </label>
+            <input type="number" id="aTotalCS" name="Total" />
+            <label class="areaLabel">m<sup>2</sup></label>
         </div>
     </div>
 </div>
@@ -527,26 +543,28 @@
     <div class="row containInside">
         <div class="col-md-6">
             <p style="color:#002b5c;"><b>GOAL SQUARE AREA (GS AREA)</b></p>
-            <p>GS Area = Length x Width</p>
-            <label for="lenGS">GS Area = </label>
+            <p class="areaHint">GS Area = Length x Width</p>
+
+            <label class="areaLabel" for="lenGS">GS Area = </label>
             <input type="number" id="lenGS" name="Length" />
-            <label for="widGS">m x</label>
+            <label class="areaLabel" for="widGS">m x</label>
             <input type="number" id="widGS" name="Width" />
-            <label>m</label><br />
-            <label for="aTotalGS">GS Area = </label>
+            <label class="areaLabel">m</label><br />
+            <label class="areaLabel" for="aTotalGS">GS Area = </label>
             <input type="number" id="aTotalGS" name="Total" />
-            <label>m<sup>2</sup></label>
+            <label class="areaLabel">m<sup>2</sup></label>
             <br /><br />
+
             <p style="color:#002b5c;"><b>GOAL POST AREA (GP AREA)</b></p>
-            <p>GP Area = Length x Width</p>
-            <label for="lenGP">GP Area = </label>
+            <p class="areaHint">GP Area = Length x Width</p>
+            <label class="areaLabel" for="lenGP">GP Area = </label>
             <input type="number" id="lenGP" name="Length" />
-            <label for="widGP">m x</label>
+            <label class="areaLabel" for="widGP">m x</label>
             <input type="number" id="widGP" name="Width" />
-            <label>m</label><br />
-            <label for="aTotalGP">GP Area = </label>
+            <label class="areaLabel">m</label><br />
+            <label class="areaLabel" for="aTotalGP">GP Area = </label>
             <input type="number" id="aTotalGP" name="Total" />
-            <label>m<sup>2</sup></label>
+            <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6">
             <img src="~/images/Unit1/goals.PNG" alt="goals" style="width:80%; margin-left:18px;"/>
@@ -556,17 +574,16 @@
     <div class="row containInside" style="margin-top:10px;width:100%;">
         <div class="col-md-6">
             <p style="color:#002b5c;"><b>BEHIND POST AREA (BP AREA)</b></p>
-            <p>BP Area = Length x Width</p>
-            <label for="lenBP">BP Area = </label>
+            <p class="areaHint">BP Area = Length x Width</p>
+
+            <label class="areaLabel" for="lenBP">BP Area = </label>
             <input type="number" id="lenBP" name="Length" />
-            <label for="widBP">m x</label>
+            <label class="areaLabel" for="widBP">m x</label>
             <input type="number" id="widBP" name="Width" />
-            <label>m</label><br />
-            <label for="aTotalBP">BP Area = </label>
+            <label class="areaLabel">m</label><br />
+            <label class="areaLabel" for="aTotalBP">BP Area = </label>
             <input type="number" id="aTotalBP" name="Total" />
-            <label>m<sup>2</sup></label>
-            <div class="col-md-12" style="margin-left:-15px;">
-            </div>
+            <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6" style="text-align:center;">
             <img src="~/images/Unit1/goal square.PNG" alt="goal square" style="width:25%;" />
@@ -595,7 +612,7 @@
                 <div style="margin-left: 240px;">Largest</div>
             </div>
 
-            <p style="font-size:15px;">Is the goal square actually square? Explain why/why not</p>
+            <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
             <textarea name="goalSquare" rows="3" style="width:65%;"></textarea>
             <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
             <textarea name="dimensions" rows="3" style="width:65%;"></textarea>
@@ -603,15 +620,16 @@
             <br /><br />
             <p style="font-size:20px;">Calculate the area of your Goal Square:</p>
             <p><b>GOAL SQUARE AREA (GS AREA)</b></p>
-            <p>GS Area = Length x Width</p>
-            <label for="lenGS2">GS Area = </label>
+            <p class="areaHint">GS Area = Length x Width</p>
+
+            <label class="areaLabel" for="lenGS2">GS Area = </label>
             <input type="number" id="lenGS2" name="Length" />
-            <label for="widGS2">m x</label>
+            <label class="areaLabel" for="widGS2">m x</label>
             <input type="number" id="widGS2" name="Width" />
-            <label> m</label><br />
-            <label for="aTotalGS2">GS Area = </label>
+            <label class="areaLabel"> m</label><br />
+            <label class="areaLabel" for="aTotalGS2">GS Area = </label>
             <input type="number" id="aTotalGS2" name="Total" />
-            <label> m<sup>2</sup></label>
+            <label class="areaLabel"> m<sup>2</sup></label>
 
             <br /><br />
         </div>
@@ -718,15 +736,16 @@
 
     <div class="row containInside" style="width:100%; margin-top:20px;">
         <div class="col-md-9">
-            <p><b>MCG (MCG AREA)</b></p>
-            <p>MCG Area = &#189 L x &#189 W x π</p>
-            <label>MCG AREA = &#189 X </label>
-            <input type="number" id="mcgLength" name="MCG Length" />
-            <label for="mcgLength"> X &#189 X </label>
+            <p class="areaHint"><b>MCG (MCG AREA)</b></p>
+            <p class="areaLabel">MCG Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">MCG AREA = &#189 X </label>
+            <input type="number" id="mcgLength" name="MCG Length" /> 
+            <label class="areaLabel" for="mcgLength"> X &#189 X </label>
             <input type="number" id="mcgWidth" name="MCG Width" />
-            <label for="mcgWidth"> X π</label><br />
-            <label for="mcgArea">MCG AREA= </label>
-            <input type="number" id="mcgArea" name="MCG Area" />
+            <label class="areaLabel" for="mcgWidth"> X π</label><br />
+            <label class="areaLabel" for="mcgArea">MCG AREA = </label>
+            <input type="number" id="mcgArea" name="MCG Area" style="margin-left:38px;"/>
         </div>
         <div class="col-md-3" >
             <img src="~/images/Unit1/Activity 3/STEMfooty - MCG.jpg" alt="MCG" style="width:70%;" />
@@ -737,14 +756,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>MARVEL STADIUM (MS AREA)</b></p>
-            <p>MS Area = &#189 L x &#189 W x π</p>
-            <label>MS AREA = &#189 X </label>
+            <p class="areaHint">MS Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">MS AREA = &#189 X </label>
             <input type="number" id="msLength" name="MS Length" />
-            <label for="msLength"> X &#189 X </label>
+            <label class="areaLabel" for="msLength"> X &#189 X </label>
             <input type="number" id="msWidth" name="MS Width" />
-            <label for="msWidth"> X π</label><br />
-            <label for="msArea">MS AREA= </label>
-            <input type="number" id="msArea" name="MS Area" />
+            <label class="areaLabel" for="msWidth"> X π</label><br />
+            <label class="areaLabel" for="msArea">MS AREA = </label>
+            <input type="number" id="msArea" name="MS Area" style="margin-left:38px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Marvel Stadium.jpg" alt="Marvel Stadium" style="width:70%;" />
@@ -755,14 +775,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>GMHBA STADIUM (GMH AREA)</b></p>
-            <p>GMH Area = &#189 L x &#189 W x π</p>
-            <label>GMH AREA = &#189 X </label>
+            <p class="areaHint">GMH Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">GMH AREA = &#189 X </label>
             <input type="number" id="gmhLength" name="GMH Length" />
-            <label for="gmhLength"> X &#189 X </label>
+            <label class="areaLabel" for="gmhLength"> X &#189 X </label>
             <input type="number" id="gmhWidth" name="GMH Width" />
-            <label for="gmhWidth"> X π</label><br />
-            <label for="gmhArea">MS AREA= </label>
-            <input type="number" id="gmhArea" name="GMH Area" />
+            <label class="areaLabel" for="gmhWidth"> X π</label><br />
+            <label class="areaLabel" for="gmhArea">MS AREA = </label>
+            <input type="number" id="gmhArea" name="GMH Area" style="margin-left:52px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - GMHBA.jpg" alt="GMHBA Stadium" style="width:70%;" />
@@ -773,14 +794,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>SCG (SCG AREA)</b></p>
-            <p>SCG Area = &#189 L x &#189 W x π</p>
-            <label>SCG AREA = &#189 X </label>
+            <p class="areaHint">SCG Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">SCG AREA = &#189 X </label>
             <input type="number" id="scgLength" name="SCG Length" />
-            <label for="scgLength"> X &#189 X </label>
+            <label class="areaLabel" for="scgLength"> X &#189 X </label>
             <input type="number" id="scgWidth" name="SCG Width" />
-            <label for="scgWidth"> X π</label><br />
-            <label for="scgArea">SCG AREA= </label>
-            <input type="number" id="scgArea" name="SCG Area" />
+            <label class="areaLabel" for="scgWidth"> X π</label><br />
+            <label class="areaLabel" for="scgArea">SCG AREA = </label>
+            <input type="number" id="scgArea" name="SCG Area" style="margin-left:38px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - SCG.jpg" alt="SCG" style="width:70%;" />
@@ -791,14 +813,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>SPOTLESS STADIUM (SS AREA)</b></p>
-            <p>SS Area = &#189 L x &#189 W x π</p>
-            <label>SS AREA = &#189 X </label>
+            <p class="areaHint">SS Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">SS AREA = &#189 X </label>
             <input type="number" id="ssLength" name="SS Length" />
-            <label for="ssLength"> X &#189 X </label>
+            <label class="areaLabel" for="ssLength"> X &#189 X </label>
             <input type="number" id="ssWidth" name="SS Width" />
-            <label for="ssWidth"> X π</label><br />
-            <label for="ssArea">SS AREA= </label>
-            <input type="number" id="ssArea" name="SS Area" />
+            <label class="areaLabel" for="ssWidth"> X π</label><br />
+            <label class="areaLabel" for="ssArea">SS AREA = </label>
+            <input type="number" id="ssArea" name="SS Area" style="margin-left:38px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Spotless Stadium.jpg" alt="Spotless Stadium" style="width:70%;" />
@@ -809,14 +832,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>OPTUS STADIUM (OS AREA)</b></p>
-            <p>OS Area = &#189 L x &#189 W x π</p>
-            <label>OS AREA = &#189 X </label>
+            <p class="areaHint">OS Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">OS AREA = &#189 X </label>
             <input type="number" id="osLength" name="OS Length" />
-            <label for="osLength"> X &#189 X </label>
+            <label class="areaLabel" for="osLength"> X &#189 X </label>
             <input type="number" id="osWidth" name="OS Width" />
-            <label for="osWidth"> X π</label><br />
-            <label for="osArea">SS AREA= </label>
-            <input type="number" id="osArea" name="OS Area" />
+            <label class="areaLabel" for="osWidth"> X π</label><br />
+            <label class="areaLabel" for="osArea">SS AREA = </label>
+            <input type="number" id="osArea" name="OS Area" style="margin-left:41px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Optus Stadium.jpg" alt="Optus Stadium" style="width:70%;" />
@@ -827,14 +851,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>GABBA STADIUM (G AREA)</b></p>
-            <p>G Area = &#189 L x &#189 W x π</p>
-            <label>G AREA = &#189 X </label>
+            <p class="areaHint">G Area = &#189 L x &#189 W x π</p>
+           
+            <label class="areaLabel">G AREA = &#189 X </label>
             <input type="number" id="gLength" name="G Length" />
-            <label for="gLength"> X &#189 X </label>
+            <label class="areaLabel" for="gLength"> X &#189 X </label>
             <input type="number" id="gWidth" name="G Width" />
-            <label for="gWidth"> X π</label><br />
-            <label for="gArea">SS AREA= </label>
-            <input type="number" id="gArea" name="G Area" />
+            <label class="areaLabel" for="gWidth"> X π</label><br />
+            <label class="areaLabel" for="gArea">SS AREA = </label>
+            <input type="number" id="gArea" name="G Area" style="margin-left:32px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Gabba Stadium.jpg" alt="Gabba Stadium" style="width:70%;" />
@@ -845,14 +870,15 @@
     <div class="row containInside" style="width:100%;margin-top:20px;">
         <div class="col-md-9">
             <p><b>METRICON STADIUM (MET AREA)</b></p>
-            <p>MET Area = &#189 L x &#189 W x π</p>
-            <label>MET AREA = &#189 X </label>
+            <p class="areaHint">MET Area = &#189 L x &#189 W x π</p>
+
+            <label class="areaLabel">MET AREA = &#189 X </label>
             <input type="number" id="metLength" name="met Length" />
-            <label for="metLength"> X &#189 X </label>
+            <label class="areaLabel" for="metLength"> X &#189 X </label>
             <input type="number" id="metWidth" name="MET Width" />
-            <label for="metWidth"> X π</label><br />
-            <label for="metArea">MET AREA= </label>
-            <input type="number" id="metArea" name="MET Area" />
+            <label class="areaLabel" for="metWidth"> X π</label><br />
+            <label class="areaLabel" for="metArea">MET AREA = </label>
+            <input type="number" id="metArea" name="MET Area" style="margin-left:37px;"/>
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Metricon Stadium.jpg" alt="Metricon Stadium" style="width:70%;" />
@@ -926,7 +952,7 @@
         var text = document.getElementById(id).innerHTML;
 
         document.getElementById(id).innerHTML = "";
-        document.getElementById(id).style.visibility = "hidden";
+        //document.getElementById(id).style.visibility = "hidden";
         target.innerHTML = text;
     }
 
@@ -942,19 +968,20 @@
         target.innerHTML = position;
     }
 
+    // Method to split positions into the abbreviated versions. i.e Full Forward == FF
     function splitString(sentence) {
         var string = sentence;
         var code = "";
         string = string.split(" ");
-        //console.log(string);
+        
         for (i = 0; i < string.length; i++) {
             var word = string[i];
             var subcode = word.charAt(0);
             if (subcode == '(') { } else {
                 code = code + subcode;
             }
-            //console.log(code);
         }
         return code;
     }
+
 </script>
