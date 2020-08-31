@@ -5,24 +5,27 @@
     ViewBag.title = "Student Workbook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <style>
-        .containRow {
-            margin-top:80px;
-            border: solid 5px #ffe694;
-        }
-        .containInside{
-            margin-left:10px;
-        }
-        table {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        h3 {
-            color: #002b5c;
-            margin-left:5px;
-            width:100%;
-            text-align:center;
-        }
+<style>
+    .containRow {
+        margin-top: 80px;
+        border: solid 5px #ffe694;
+    }
+
+    .containInside {
+        margin-left: 10px;
+    }
+
+    table {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h3 {
+        color: #002b5c;
+        margin-left: 5px;
+        width: 100%;
+        text-align: center;
+    }
 
     #col1 {
         text-align: center;
@@ -42,6 +45,13 @@
         border-width: 5px;
         border-color: #002b5c;
         color: #33619e;
+    }
+
+    #TexImage{
+        display:inline-block;
+        width:35%;
+        height:45%;
+
     }
 
     #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
@@ -866,7 +876,7 @@
             <label for="mcgArea">MCG AREA= </label>
             <input type="number" id="mcgArea" name="MCG Area" />
         </div>
-        <div class="col-md-3" >
+        <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - MCG.jpg" alt="MCG" style="width:70%;" />
         </div>
     </div>
@@ -1048,6 +1058,17 @@
 <div class="row containRow" style="margin-bottom:25px;">
     <h3> SCORING IN AFL: Activity 5 (Exploration Task)</h3>
     <div class="col-md-12">
+        <p>
+            <b>Scoring REMINDER:</b>
+            <br />
+            Heads/heads = goal! (record the result)
+            <br />
+            Heads/tails = behind! (record the result)
+            <br />
+            Tails/tails = miss! (record the result)
+            <br /> <br />
+            <b>Record your results and calculate the average:</b>
+        </p>
 
         <div id="coinDiv">
             <div id="coin">
@@ -1081,10 +1102,34 @@
         </table>
         <br />
         <br />
+        <label for="act5q1" style="font-size: 18px;">Did you score more goals, points or misses?</label>
         <br />
+        <textarea name="act5q1" rows="2" style="width:65%;"></textarea>
         <br />
 
-        <div>CLICK THE VALUES TO ADD IT TO THE GRAPH</div>
+        <label for="act5q2" style="font-size: 18px;">Does this match what you predicted before you collected the data? Explain your results.</label>
+        <br />
+        <textarea name="act5q2" rows="2" style="width:65%;"></textarea>
+
+        <br />
+
+
+    </div>
+</div>
+<div class="row containRow" style="margin-bottom:25px;">
+    <h3>
+        <b>SCORING IN AFL:</b> Activity 5
+        <br />
+        Extension / Group Challenge
+    </h3>
+    <div class="col-md-12">
+        <p>
+            <br />
+            Tex Walker is well known for his ability to kick goals. Let’s compare <br />his
+            season average goals with your results from the ‘Goals and Behinds’ Game.
+
+            <br />
+        </p>
         <table style="width:60%" id="texTable">
             <tr style="background-color:#002b5c; color:white;">
                 <th>Year</th>
@@ -1106,169 +1151,194 @@
         </table>
         <br />
 
-        <div>TEX WALKER AVERAGE GOALS/GAMES</div>
+        <p><b>TEX WALKER AVERAGE GOALS/GAMES</b></p>
         <canvas id="texGraph" width="600" height="400" style="border:1px solid"></canvas>
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
+        <img id="TexImage" src="~/images/Unit1/Activity 5/texwact5.jpeg" />
+        <div style="float:right">
+            <label for="act5q3" style="font-size: 18px;">In what year was Tex’s highest goal per game average?</label>
+            <br />
+            <textarea name="act5q3" rows="1" style="width:65%;"></textarea>
+            <label for="act5q4" style="font-size: 18px;">
+                Rank in order Tex’s total average goals per season from highest <br />
+                to lowest?
+            </label>
+            <br />
+            <textarea name="act5q4" rows="2" style="width:65%;"></textarea>
+            <br />
+            <label for="act5q5" style="font-size: 18px;">
+                Tex started playing for the AFC in 2009. Over his 10 years <br />
+                calculate his total goals per season average
+            </label>
+            <br />
+            <textarea name="act5q5" rows="2" style="width:65%;"></textarea>
+            <br />
+        </div>
     </div>
+    
 </div>
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>
-        drawGraph();
 
-        function drawGraph() {
-            var count = 3.0;
-            var graph = document.getElementById("texGraph").getContext("2d");
-            for (var i = 50; i < 400; i) {
-                graph.fillRect(30, i, 500, 1);
-                graph.fillText(count, 10, i)
-                count -= 0.5;
-                i += 50;
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+            drawGraph();
+
+            function drawGraph() {
+                var count = 3.0;
+                var graph = document.getElementById("texGraph").getContext("2d");
+                for (var i = 50; i < 400; i) {
+                    graph.fillRect(30, i, 500, 1);
+                    graph.fillText(count, 10, i)
+                    count -= 0.5;
+                    i += 50;
+                }
+
+                graph.fillText("2015", 100, 360)
+                graph.fillText("2016", 200, 360)
+                graph.fillText("2017", 300, 360)
+                graph.fillText("2018", 400, 360)
+                graph.fillText("2019", 500, 360)
+
             }
 
-            graph.fillText("2015", 100, 360)
-            graph.fillText("2016", 200, 360)
-            graph.fillText("2017", 300, 360)
-            graph.fillText("2018", 400, 360)
-            graph.fillText("2019", 500, 360)
+            function drawGraphOnClick(x, val) {
+                var graph = document.getElementById("texGraph").getContext("2d");
+                graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
+            }
 
-        }
+            var coinCount = 0;
+            goalCount = 0;
+            behindCount = 0;
+            missCount = 0;
 
-        function drawGraphOnClick(x, val) {
-            var graph = document.getElementById("texGraph").getContext("2d");
-            graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
-        }
+            jQuery(document).ready(function ($) {
 
-        var coinCount = 0;
-        goalCount = 0;
-        behindCount = 0;
-        missCount = 0;
+                $('#coin, #coin2').on('click', function () {
+                    if (coinCount < 10) {
+                        coinCount++;
+                        var flipResult = Math.random();
+                        var flipResult2 = Math.random();
 
-        jQuery(document).ready(function ($) {
+                        var table = document.getElementById("coinTable");
+                        var row = table.insertRow(coinCount);
+                        var cell = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        cell.innerHTML = coinCount;
 
-            $('#coin, #coin2').on('click', function () {
-                if (coinCount < 10) {
-                    coinCount++;
-                    var flipResult = Math.random();
-                    var flipResult2 = Math.random();
-
-                    var table = document.getElementById("coinTable");
-                    var row = table.insertRow(coinCount);
-                    var cell = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
-                    var cell4 = row.insertCell(3);
-                    cell.innerHTML = coinCount;
-
-                    cell2.setAttribute("id", "hh" + coinCount);
-                    cell3.setAttribute("id", "ht" + coinCount);
-                    cell4.setAttribute("id", "tt" + coinCount);
+                        cell2.setAttribute("id", "hh" + coinCount);
+                        cell3.setAttribute("id", "ht" + coinCount);
+                        cell4.setAttribute("id", "tt" + coinCount);
 
 
-                    $('#coin').removeClass();
-                    $('#coin2').removeClass();
-                    setTimeout(function () {
-                        if (flipResult <= 0.5) {
-                            $('#coin').addClass('heads');
-                            console.log('coin1 - it is head');
-                        }
-                        if (flipResult2 <= 0.5) {
-                            $('#coin2').addClass('heads');
-                            console.log('coin2 - it is head');
-                        }
-                        if (flipResult > 0.5) {
-                            $('#coin').addClass('tails');
-                            console.log('coin1 - it is tails');
-                        }
+                        $('#coin').removeClass();
+                        $('#coin2').removeClass();
+                        setTimeout(function () {
+                            if (flipResult <= 0.5) {
+                                $('#coin').addClass('heads');
+                                console.log('coin1 - it is head');
+                            }
+                            if (flipResult2 <= 0.5) {
+                                $('#coin2').addClass('heads');
+                                console.log('coin2 - it is head');
+                            }
+                            if (flipResult > 0.5) {
+                                $('#coin').addClass('tails');
+                                console.log('coin1 - it is tails');
+                            }
 
-                        if (flipResult2 > 0.5) {
-                            $('#coin2').addClass('tails');
-                            console.log('coin2  - it is tails');
-                        }
+                            if (flipResult2 > 0.5) {
+                                $('#coin2').addClass('tails');
+                                console.log('coin2  - it is tails');
+                            }
 
-                        if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
-                            console.log(" in hh ")
-                            var id = "hh" + coinCount;
-                            $("#" + id).text("Goal");
-                            goalCount++;
-                        }
+                            if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
+                                console.log(" in hh ")
+                                var id = "hh" + coinCount;
+                                $("#" + id).text("Goal");
+                                goalCount++;
+                            }
 
-                        else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
-                            console.log(" in tt ")
-                            var id = "tt" + coinCount;
-                            $("#" + id).text("Miss");
-                            missCount++;
-                        }
+                            else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
+                                console.log(" in tt ")
+                                var id = "tt" + coinCount;
+                                $("#" + id).text("Miss");
+                                missCount++;
+                            }
 
-                        else {
-                            var id = "ht" + coinCount;
-                            $("#" + id).text("Behind");
-                            behindCount++;
+                            else {
+                                var id = "ht" + coinCount;
+                                $("#" + id).text("Behind");
+                                behindCount++;
 
-                        }
+                            }
 
 
 
-                        $("#gc").text(goalCount);
-                        $("#mc").text(missCount);
-                        $("#bc").text(behindCount);
+                            $("#gc").text(goalCount);
+                            $("#mc").text(missCount);
+                            $("#bc").text(behindCount);
 
-                    }, 100);
-                }
+                        }, 100);
+                    }
+                });
             });
-        });
 
 
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        // Activity 1: part 1 Drop function
-        function drop(ev) {
-            ev.preventDefault();
-            var id = ev.dataTransfer.getData("text");
-            var target = ev.target;
-            var text = document.getElementById(id).innerHTML;
-
-            document.getElementById(id).innerHTML = "";
-            document.getElementById(id).style.visibility = "hidden";
-            target.innerHTML = text;
-        }
-
-        //Activity 1: part 2 Drop function
-        function act1Drop(ev) {
-            ev.preventDefault();
-            var id = ev.dataTransfer.getData("text");
-            var target = ev.target;
-            var sentence = document.getElementById(id).innerHTML;
-            var position = splitString(sentence);
-
-            document.getElementById(id).innerHTML = "";
-            target.innerHTML = position;
-        }
-
-        function splitString(sentence) {
-            var string = sentence;
-            var code = "";
-            string = string.split(" ");
-            //console.log(string);
-            for (i = 0; i < string.length; i++) {
-                var word = string[i];
-                var subcode = word.charAt(0);
-                if (subcode == '(') { } else {
-                    code = code + subcode;
-                }
-                //console.log(code);
+            function allowDrop(ev) {
+                ev.preventDefault();
             }
-            return code;
-        }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            // Activity 1: part 1 Drop function
+            function drop(ev) {
+                ev.preventDefault();
+                var id = ev.dataTransfer.getData("text");
+                var target = ev.target;
+                var text = document.getElementById(id).innerHTML;
+
+                document.getElementById(id).innerHTML = "";
+                document.getElementById(id).style.visibility = "hidden";
+                target.innerHTML = text;
+            }
+
+            //Activity 1: part 2 Drop function
+            function act1Drop(ev) {
+                ev.preventDefault();
+                var id = ev.dataTransfer.getData("text");
+                var target = ev.target;
+                var sentence = document.getElementById(id).innerHTML;
+                var position = splitString(sentence);
+
+                document.getElementById(id).innerHTML = "";
+                target.innerHTML = position;
+            }
+
+            function splitString(sentence) {
+                var string = sentence;
+                var code = "";
+                string = string.split(" ");
+                //console.log(string);
+                for (i = 0; i < string.length; i++) {
+                    var word = string[i];
+                    var subcode = word.charAt(0);
+                    if (subcode == '(') { } else {
+                        code = code + subcode;
+                    }
+                    //console.log(code);
+                }
+                return code;
+            }
 
 
 
 
-    </script>
+        </script>
