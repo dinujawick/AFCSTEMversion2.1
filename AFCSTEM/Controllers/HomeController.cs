@@ -103,6 +103,22 @@ namespace AFCSTEM.Controllers
             return View();
         }
 
+        public IActionResult Activity15()
+        {
+            return View();
+        }
+        public IActionResult Activity16()
+        {
+            return View();
+        }
+        public IActionResult Activity17()
+        {
+            return View();
+        }
+
+
+
+
 
 
 
