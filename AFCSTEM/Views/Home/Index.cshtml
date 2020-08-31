@@ -52,8 +52,8 @@
             font-family: 'Titillium Web', sans-serif;
         }
         /* Style the button and place it in the middle of the container/image */
-        .text-center .btn1 {
-            position: absolute;
+        .text-center .btn1{
+            position: relative;
             top: 85%;
             left: 25%;
             transform: translate(-50%, -50%);
@@ -71,12 +71,20 @@
         .text-center .btn:hover {
             background-color: black;
         }
+
+
+
 </style>
 <div class="text-center">
     <img src="~/Images/Home-page.png" />
     @if (SignInManager.IsSignedIn(User))
     {
-        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
+
+        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Workbook">Go To Workbook</a>
+        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit1Home" >Go To Unit1</a>
+        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit2Home">Go To Unit2</a>
+        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit3Home">Go To Unit3</a>
+        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit4Home">Go To Unit4</a>
 
     }
     else
