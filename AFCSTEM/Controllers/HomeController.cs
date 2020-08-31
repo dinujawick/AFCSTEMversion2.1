@@ -130,6 +130,10 @@ namespace AFCSTEM.Controllers
 
 
 
+        public IActionResult StemID()
+        {
+            return View();
+        }
         public IActionResult Unit1Home()
         {
             return View();
