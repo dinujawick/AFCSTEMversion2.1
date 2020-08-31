@@ -23,7 +23,23 @@
         /* Style the button and place it in the middle of the container/image */
         .text-center .btn {
             position: absolute;
-            top: 85%;
+            top: 20%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #e31937;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        /* Style the button and place it in the middle of the container/image */
+        .text-center .btn1 {
+            position: absolute;
+            top: 20%;
             left: 30%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
@@ -37,10 +53,44 @@
             font-family: 'Titillium Web', sans-serif;
         }
         /* Style the button and place it in the middle of the container/image */
-        .text-center .btn2 {
+        .text-center .btn2{
+            position:absolute;
+            top: 40%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #e31937;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Titillium Web', sans-serif;
+            margin-bottom:25px;
+        }
+
+        .text-center .btn3 {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #e31937;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Titillium Web', sans-serif;
+            margin-bottom: 25px;
+        }
+
+        .text-center .btn4 {
             position: absolute;
             top: 85%;
-            left: 17%;
+            left: 20%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             background-color: #e31937;
@@ -51,22 +101,7 @@
             cursor: pointer;
             border-radius: 5px;
             font-family: 'Titillium Web', sans-serif;
-        }
-        /* Style the button and place it in the middle of the container/image */
-        .text-center .btn1{
-            position: relative;
-            top: 85%;
-            left: 25%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            background-color: #e31937;
-            color: white;
-            font-size: 16px;
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Titillium Web', sans-serif;
+            margin-bottom: 25px;
         }
 
         .text-center .btn:hover {
@@ -81,11 +116,11 @@
     @if (SignInManager.IsSignedIn(User))
     {
 
-        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Workbook">Go To Workbook</a>
-        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit1Home" >Go To Unit1</a>
+        <a class="btn4" asp-area="" asp-controller="Home" asp-action="Workbook">Go To Workbook</a>
+        <a class="btn" asp-area="" asp-controller="Home" asp-action="Unit1Home" >Go To Unit1</a>
         <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit2Home">Go To Unit2</a>
-        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit3Home">Go To Unit3</a>
-        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Unit4Home">Go To Unit4</a>
+        <a class="btn2" asp-area="" asp-controller="Home" asp-action="Unit3Home">Go To Unit3</a>
+        <a class="btn3" asp-area="" asp-controller="Home" asp-action="Unit4Home">Go To Unit4</a>
 
     }
     else
