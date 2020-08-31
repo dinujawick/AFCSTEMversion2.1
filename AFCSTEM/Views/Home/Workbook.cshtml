@@ -16,7 +16,7 @@
     }
 
     input {
-        border:none;
+        border: none;
     }
 
     table {
@@ -51,11 +51,31 @@
         color: #33619e;
     }
 
-    #TexImage{
-        display:inline-block;
-        width:35%;
-        height:45%;
+    #TexImage {
+        position:relative;
+        float:left;
+        width: 35%;
+        height: 45%;
+    }
 
+    #ebImage {
+        position: relative;
+        width: 30%;
+        height: 50%;
+        float:right;
+    }
+
+    #act10table3{
+        float:left;
+    }
+
+    #goalpic 
+    {
+        float:right;
+        width:45%;
+        height:45%;
+        display: inline-block;
+        margin: 0 auto;
     }
 
     #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
@@ -1181,24 +1201,27 @@
             <br />
         </div>
     </div>
-    
+
 </div>
 <div class="row containRow" style="margin-bottom:25px;">
-    <h3>
-        <b>AFCW STEM ID PROFILES: </b> Activity 6
-        <br />
-        Exploration Task
-
-    </h3>
-    <br />
-    <p>
-        In pairs, choose 10 of the AFCW STEM ID Profiles, fill in the table and calculate <br /> the average height and age
-        of the players.
-    </p>
-
     
-
     <div class="col-md-12">
+        <h3>
+            <b>AFCW STEM ID PROFILES: </b> Activity 6
+            <br />
+            Exploration Task
+
+        </h3>
+        <br />
+        <p>
+            In pairs, choose 10 of the AFCW STEM ID Profiles, fill in the table and calculate <br /> the average height and age
+            of the players.
+        </p>
+
+
+
+
+
         <table style="width:50%" id="act6table">
             <tr style="background-color:#002b5c; color:white;">
                 <th>NAME:</th>
@@ -1219,7 +1242,7 @@
 
         </table>
         <button onclick="addPlayer()" id="addPlayerButton" style="position:relative;float:right;">Click to Add Player</button>
-        </br>
+        <br />
         <table style="width:25%;" id="act6table">
             <tr color:white;">
                 <th style="background-color:#002b5c; color:white;">AVERAGE HEIGHT</th>
@@ -1241,8 +1264,255 @@
         </label>
         <br />
         <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
+        <br/>
+
+    </div>
+
+</div>
+
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>GOAL KICKING DATA:</b> Activity 10
+            <br />
+            Exploration Task
+
+        </h3>
+        <br />
+        <p>
+            Practical Activity: ‘Goal Kick Challenge’ Using the STEMfooty numbered cones and footballs. Set up 10 positions with <br />
+            the cones to have shots at goal (outside on your oval).
+
+            <br />
+            Individually take it in turns and have 1 shot from each of the positions and record your results as a ‘Goal or Behind’
+            <br />
+            Record Sheet:
+        </p>
+
+        <table style="width:50%" id="act10table1">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>POSITION:</th>
+                <th>GOAL:</th>
+                <th>BEHIND:</th>
+
+            </tr>
+            <tr>
+                <th>1</th>
+                <td><input type="radio" name="1" /> </td>
+                <td><input type="radio" name="1" /> </td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td><input type="radio" name="2" /> </td>
+                <td><input type="radio" name="2" /> </td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td><input type="radio" name="3" /> </td>
+                <td><input type="radio" name="3" /> </td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td><input type="radio" name="4" /> </td>
+                <td><input type="radio" name="4" /> </td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td><input type="radio" name="5" /> </td>
+                <td><input type="radio" name="5" /> </td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td><input type="radio" name="6" /> </td>
+                <td><input type="radio" name="6" /> </td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td><input type="radio" name="7" /> </td>
+                <td><input type="radio" name="7" /> </td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td><input type="radio" name="8" /> </td>
+                <td><input type="radio" name="8" /> </td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td><input type="radio" name="9" /> </td>
+                <td><input type="radio" name="9" /> </td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td><input type="radio" name="10" /> </td>
+                <td><input type="radio" name="10" /> </td>
+            </tr>
+
+            <tr>
+                <th tr style="background-color:#002b5c; color:white;">Total</th>
+                <td><input type="text" /></td>
+                <td><input type="text" /> </td>
+            </tr>
+
+        </table>
+        <p>
+            <br /><b>Analysis Questions</b><br />
+
+        </p>
+        <br />
+        <label for="act10q1" style="font-size: 18px;">
+            What was the main factor that affected your accuracy? How can you improve this?
+        </label>
+        <br />
+        <textarea name="act10q1" rows="3" style="width:65%;"></textarea>
+        <br />
+
+        <label for="act10q2" style="font-size: 18px;">
+            Explain what factors affect AFL players’ accuracy in a real AFL game. How are these different to the game <br/>
+            you just played?
+        </label>
+        <br />
+        <textarea name="act10q2" rows="4" style="width:65%;"></textarea>
+        <br />
 
 
+
+    </div>
+</div>
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>GOAL KICKING DATA:</b> Activity 10
+            <br />
+            Extension / Group Work Challenge
+
+        </h3>
+
+
+        <p>
+            <br />Collect 10 students’ Goal Kick Challenge results and record them.
+            For example:<br />
+            Nick scored 1 goal 6 behinds. For this activity his results will be recorded as 1.6 as shown below.
+        </p>
+        <table style="width:50%" id="act10table2">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>STUDENT NAME:</th>
+                <th>RESULTS AS A DECIMAL:</th>
+            </tr>
+            <tr>
+                <td><input type="text" value="EG.Nick"/></td>
+                <td><input type="number" value="1.6"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Your Results"/></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="number" /></td>
+            </tr>
+        </table>
+        <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />
+        
+    </div>
+
+</div>
+
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>GOAL KICKING DATA:</b> Activity 10
+            <br />
+            Extension / Group Work Challenge
+            <br />
+            <br />
+            <br />
+            Create a Stem and-Leaf-plot comparing the class Goal Kick Challenge results.
+            <br />
+
+        </h3>
+        <table style="width:40%;position:relative" id="act10table3">
+            <tr>
+                <th style="background-color:#00FF00; color:white;">STEM<br/>(GOALS)</th>
+                <th style="background-color: #FFFF00; color: #002b5c;">LEAF:<br/>(BEHINDS)</th>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+        </table>
+        <img id="goalpic"src="~/images/Unit2/Activity 10/goalpic.jpeg" />
+        
+        <br />
+        <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
+        <br />
+        <textarea name="act10q3" rows="3" style="width:65%;"></textarea>
+        <br />
+        <br/>
     </div>
 </div>
 
@@ -1255,7 +1525,7 @@
 
             var playerCount = 1;
             function addPlayer() {
-                
+
                 if (playerCount < 10) {
 
                     var table = document.getElementById("act6table");
