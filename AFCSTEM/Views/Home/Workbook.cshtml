@@ -5,295 +5,295 @@
     ViewBag.title = "Student Workbook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <style>
-        .containRow {
-            margin-top: 80px;
-            border: solid 8px #ffd200;
-        }
+<style>
+    .containRow {
+        margin-top: 80px;
+        border: solid 8px #ffd200;
+    }
 
-        .containInside {
-            margin-left: 10px;
-        }
+    .containInside {
+        margin-left: 10px;
+    }
 
-        table {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+    table {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
-        h3 {
-            color: #002b5c;
-            margin-left: 5px;
-            width: 100%;
-            text-align: center;
-        }
+    h3 {
+        color: #002b5c;
+        margin-left: 5px;
+        width: 100%;
+        text-align: center;
+    }
 
-        #col1 {
-            text-align: center;
-            font-size: 20px;
-            width: 10%;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
+    #col1 {
+        text-align: center;
+        font-size: 20px;
+        width: 10%;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
 
-        #col2 {
-            width: 30%;
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            height: 35px;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
+    #col2 {
+        width: 30%;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        height: 35px;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
 
-        #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
-        #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-        #c20, #c21 {
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-            height: 5px;
-        }
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
+    #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
+    #c20, #c21 {
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+        height: 5px;
+    }
 
-        .dot {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            display: inline-block;
-            text-align: center;
-            padding-top: 10px;
-        }
+    .dot {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        padding-top: 10px;
+    }
 
-        #act1Table1 {
-            border-width: 5px;
-            border-color: blue;
-        }
+    #act1Table1 {
+        border-width: 5px;
+        border-color: blue;
+    }
 
-        #act1Field {
-            background-image: url('../images/Football_Oval-01.jpg');
-            background-size: 100% 100%;
-            height: 450px;
-        }
+    #act1Field {
+        background-image: url('../images/Football_Oval-01.jpg');
+        background-size: 100% 100%;
+        height: 450px;
+    }
 
-        #a1-1R1 {
-            padding-top: 100px;
-            padding-left: 50px;
-        }
+    #a1-1R1 {
+        padding-top: 100px;
+        padding-left: 50px;
+    }
 
-        #a1-1R2 {
-            padding-top: 45px;
-        }
+    #a1-1R2 {
+        padding-top: 45px;
+    }
 
-        #a1-1R3 {
-            padding-top: 45px;
-            padding-left: 50px;
-        }
+    #a1-1R3 {
+        padding-top: 45px;
+        padding-left: 50px;
+    }
 
-        #f1 {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-left: 175px;
-            margin-right: 75px;
-            font-weight: bold;
-        }
+    #f1 {
+        background-color: #ffffff;
+        border: solid 5px #ffd200;
+        margin-left: 175px;
+        margin-right: 75px;
+        font-weight: bold;
+    }
 
-        #f2t {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-right: 75px;
-            margin-top: -25px;
-            font-weight: bold;
-        }
+    #f2t {
+        background-color: #ffffff;
+        border: solid 5px #ffd200;
+        margin-right: 75px;
+        margin-top: -25px;
+        font-weight: bold;
+    }
 
-        #f2m {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-left: 50px;
-            margin-right: 75px;
-            font-weight: bold;
-        }
+    #f2m {
+        background-color: #ffffff;
+        border: solid 5px #ffd200;
+        margin-left: 50px;
+        margin-right: 75px;
+        font-weight: bold;
+    }
 
-        #f2b {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-right: 75px;
-            margin-top: 25px;
-            font-weight: bold;
-        }
+    #f2b {
+        background-color: #ffffff;
+        border: solid 5px #ffd200;
+        margin-right: 75px;
+        margin-top: 25px;
+        font-weight: bold;
+    }
 
-        #m1 {
-            background-color: #ffffff;
-            border: solid 5px #e31937;
-            margin-right: 75px;
-            margin-left: 12px;
-            font-weight: bold;
-        }
+    #m1 {
+        background-color: #ffffff;
+        border: solid 5px #e31937;
+        margin-right: 75px;
+        margin-left: 12px;
+        font-weight: bold;
+    }
 
-        #m1t {
-            background-color: #ffffff;
-            border: solid 5px #e31937;
-            margin-right: 75px;
-            margin-top: -30px;
-            margin-left: 12px;
-            font-weight: bold;
-        }
+    #m1t {
+        background-color: #ffffff;
+        border: solid 5px #e31937;
+        margin-right: 75px;
+        margin-top: -30px;
+        margin-left: 12px;
+        font-weight: bold;
+    }
 
-        #m1b {
-            background-color: #ffffff;
-            border: solid 5px #e31937;
-            margin-right: 75px;
-            margin-top: 30px;
-            margin-left: 12px;
-            font-weight: bold;
-        }
+    #m1b {
+        background-color: #ffffff;
+        border: solid 5px #e31937;
+        margin-right: 75px;
+        margin-top: 30px;
+        margin-left: 12px;
+        font-weight: bold;
+    }
 
-        #m2 {
-            background-color: #ffffff;
-            border: solid 5px red;
-            margin-right: 75px;
-            font-weight: bold;
-        }
+    #m2 {
+        background-color: #ffffff;
+        border: solid 5px red;
+        margin-right: 75px;
+        font-weight: bold;
+    }
 
-        #m2t {
-            background-color: #ffffff;
-            border: solid 5px red;
-            margin-right: 75px;
-            margin-top: -30px;
-            font-weight: bold;
-        }
+    #m2t {
+        background-color: #ffffff;
+        border: solid 5px red;
+        margin-right: 75px;
+        margin-top: -30px;
+        font-weight: bold;
+    }
 
-        #m2b {
-            background-color: #ffffff;
-            border: solid 5px red;
-            margin-right: 75px;
-            margin-top: 30px;
-            font-weight: bold;
-        }
+    #m2b {
+        background-color: #ffffff;
+        border: solid 5px red;
+        margin-right: 75px;
+        margin-top: 30px;
+        font-weight: bold;
+    }
 
-        #d1 {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-right: 75px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
+    #d1 {
+        background-color: #ffffff;
+        border: solid 5px #002b5c;
+        margin-right: 75px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
 
-        #d1t {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-right: 75px;
-            margin-top: -30px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
+    #d1t {
+        background-color: #ffffff;
+        border: solid 5px #002b5c;
+        margin-right: 75px;
+        margin-top: -30px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
 
-        #d1b {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-right: 75px;
-            margin-top: 30px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
+    #d1b {
+        background-color: #ffffff;
+        border: solid 5px #002b5c;
+        margin-right: 75px;
+        margin-top: 30px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
 
-        #d2 {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-left: 50px;
-            font-weight: bold;
-        }
+    #d2 {
+        background-color: #ffffff;
+        border: solid 5px #002b5c;
+        margin-left: 50px;
+        font-weight: bold;
+    }
 
-        #d2t, #d2b {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            font-weight: bold;
-        }
+    #d2t, #d2b {
+        background-color: #ffffff;
+        border: solid 5px #002b5c;
+        font-weight: bold;
+    }
 
-        #int1 {
-            margin-left: 425px;
-            background-color: #ffffff;
-            border: solid 5px black;
-            font-weight: bold;
-        }
+    #int1 {
+        margin-left: 425px;
+        background-color: #ffffff;
+        border: solid 5px black;
+        font-weight: bold;
+    }
 
-        #int {
-            margin-left: 20px;
-            background-color: #ffffff;
-            border: solid 5px black;
-            font-weight: bold;
-        }
+    #int {
+        margin-left: 20px;
+        background-color: #ffffff;
+        border: solid 5px black;
+        font-weight: bold;
+    }
 
-        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
-        #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            font-size: 20px;
-            height: 10px;
-        }
+    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
+    #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
+    #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
+        text-align: center;
+        padding: 3px;
+        border-width: 3px;
+        border-color: #002b5c;
+        font-size: 20px;
+        height: 10px;
+    }
 
-        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
-            color: #ffd200;
-        }
+    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
+        color: #ffd200;
+    }
 
-        #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
-            color: #e31937;
-        }
+    #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
+        color: #e31937;
+    }
 
-        #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
-            color: #004b8d;
-        }
+    #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
+        color: #004b8d;
+    }
 
-        .areaHint {
-            font-size: 20px;
-            color: #0c2037;
-        }
+    .areaHint {
+        font-size: 20px;
+        color: #0c2037;
+    }
 
-        .areaLabel {
-            font-size: 18px;
-            color: #002b5c;
-        }
+    .areaLabel {
+        font-size: 18px;
+        color: #002b5c;
+    }
 
-        #act3Body {
-            text-align: center;
-            padding: 3px;
-            border-width: 4px;
-            border-color: #002b5c;
-            font-size: 20px;
-        }
+    #act3Body {
+        text-align: center;
+        padding: 3px;
+        border-width: 4px;
+        border-color: #002b5c;
+        font-size: 20px;
+    }
 
-        #act3head {
-            text-align: center;
-            padding: 3px;
-            border-width: 4px;
-            border-color: #002b5c;
-            background-color: #002b5c;
-            font-size: 20px;
-            color: white;
-        }
+    #act3head {
+        text-align: center;
+        padding: 3px;
+        border-width: 4px;
+        border-color: #002b5c;
+        background-color: #002b5c;
+        font-size: 20px;
+        color: white;
+    }
 
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-        input {
-            border: none;
-        }
-    </style>
+    input {
+        border: none;
+    }
+</style>
 
 
 <div style="display:none;">
@@ -320,7 +320,7 @@
     </p>
     <div class="col-md-12">
         <div class="row">
-            <table class="table table-bordered" >
+            <table class="table table-bordered">
                 <tbody>
                     <tr>
                         <td draggable="true" ondragstart="drag(event);" id="c1">Ruck</td>
@@ -467,10 +467,12 @@
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
         </div>
         <br />
-        <p style="font-size: 20px;"><b>
-            Using the abbreviations in the table below, label the 22 starting 
-            positions on the AFL field by dragging them into the correct position     
-        </b></p>
+        <p style="font-size: 20px;">
+            <b>
+                Using the abbreviations in the table below, label the 22 starting
+                positions on the AFL field by dragging them into the correct position
+            </b>
+        </p>
         <br />
         <div class="row">
             <table class="table table-bordered">
@@ -543,11 +545,11 @@
         <div class="col-md-7">
             <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
             <p class="areaHint">CS Area = Length x Width</p>
-            
+
             <label class="areaLabel" for="lenCS">CS Area = </label>
             <input type="number" id="lenCS" name="Length" />
             <label class="areaLabel" for="widCS">m x</label>
-            <input type="number" id="widCS" name="Width"  />
+            <input type="number" id="widCS" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalCS">CS Area = </label>
             <input type="number" id="aTotalCS" name="Total" />
@@ -587,9 +589,9 @@
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6">
-            <img src="~/images/Unit1/goals.PNG" alt="goals" style="width:80%; margin-left:18px;"/>
+            <img src="~/images/Unit1/goals.PNG" alt="goals" style="width:80%; margin-left:18px;" />
         </div>
-    </div>  
+    </div>
 
     <div class="row containInside" style="margin-top:10px;width:100%;">
         <div class="col-md-6">
@@ -618,7 +620,7 @@
         <div class="col-md-12">
             <br />
             <p style="font-size:20px;"><b>Analysis: </b></p>
-            
+
             <label style="font-size:15px;">Which is the largest?</label>
             <input type="text" id="text1" name="largest" />
             <p style="font-size:15px;">Order the areas from smallest to largest:</p>
@@ -671,7 +673,7 @@
             </p>
         </div>
         <div class="col-md-6">
-            <img src="~/images/Unit1/measure_oval.PNG" alt="measure your oval" style="width:60%;"/>
+            <img src="~/images/Unit1/measure_oval.PNG" alt="measure your oval" style="width:60%;" />
         </div>
     </div>
 </div>
@@ -760,14 +762,14 @@
             <p class="areaLabel">MCG Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">MCG AREA = &#189 X </label>
-            <input type="number" id="mcgLength" name="MCG Length" /> 
+            <input type="number" id="mcgLength" name="MCG Length" />
             <label class="areaLabel" for="mcgLength"> X &#189 X </label>
             <input type="number" id="mcgWidth" name="MCG Width" />
             <label class="areaLabel" for="mcgWidth"> X π</label><br />
             <label class="areaLabel" for="mcgArea">MCG AREA = </label>
-            <input type="number" id="mcgArea" name="MCG Area" style="margin-left:38px;"/>
+            <input type="number" id="mcgArea" name="MCG Area" style="margin-left:38px;" />
         </div>
-        <div class="col-md-3" >
+        <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - MCG.jpg" alt="MCG" style="width:70%;" />
         </div>
     </div>
@@ -784,7 +786,7 @@
             <input type="number" id="msWidth" name="MS Width" />
             <label class="areaLabel" for="msWidth"> X π</label><br />
             <label class="areaLabel" for="msArea">MS AREA = </label>
-            <input type="number" id="msArea" name="MS Area" style="margin-left:38px;"/>
+            <input type="number" id="msArea" name="MS Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Marvel Stadium.jpg" alt="Marvel Stadium" style="width:70%;" />
@@ -803,7 +805,7 @@
             <input type="number" id="gmhWidth" name="GMH Width" />
             <label class="areaLabel" for="gmhWidth"> X π</label><br />
             <label class="areaLabel" for="gmhArea">MS AREA = </label>
-            <input type="number" id="gmhArea" name="GMH Area" style="margin-left:52px;"/>
+            <input type="number" id="gmhArea" name="GMH Area" style="margin-left:52px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - GMHBA.jpg" alt="GMHBA Stadium" style="width:70%;" />
@@ -822,7 +824,7 @@
             <input type="number" id="scgWidth" name="SCG Width" />
             <label class="areaLabel" for="scgWidth"> X π</label><br />
             <label class="areaLabel" for="scgArea">SCG AREA = </label>
-            <input type="number" id="scgArea" name="SCG Area" style="margin-left:38px;"/>
+            <input type="number" id="scgArea" name="SCG Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - SCG.jpg" alt="SCG" style="width:70%;" />
@@ -841,7 +843,7 @@
             <input type="number" id="ssWidth" name="SS Width" />
             <label class="areaLabel" for="ssWidth"> X π</label><br />
             <label class="areaLabel" for="ssArea">SS AREA = </label>
-            <input type="number" id="ssArea" name="SS Area" style="margin-left:38px;"/>
+            <input type="number" id="ssArea" name="SS Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Spotless Stadium.jpg" alt="Spotless Stadium" style="width:70%;" />
@@ -860,7 +862,7 @@
             <input type="number" id="osWidth" name="OS Width" />
             <label class="areaLabel" for="osWidth"> X π</label><br />
             <label class="areaLabel" for="osArea">SS AREA = </label>
-            <input type="number" id="osArea" name="OS Area" style="margin-left:41px;"/>
+            <input type="number" id="osArea" name="OS Area" style="margin-left:41px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Optus Stadium.jpg" alt="Optus Stadium" style="width:70%;" />
@@ -872,14 +874,14 @@
         <div class="col-md-9">
             <p><b>GABBA STADIUM (G AREA)</b></p>
             <p class="areaHint">G Area = &#189 L x &#189 W x π</p>
-           
+
             <label class="areaLabel">G AREA = &#189 X </label>
             <input type="number" id="gLength" name="G Length" />
             <label class="areaLabel" for="gLength"> X &#189 X </label>
             <input type="number" id="gWidth" name="G Width" />
             <label class="areaLabel" for="gWidth"> X π</label><br />
             <label class="areaLabel" for="gArea">SS AREA = </label>
-            <input type="number" id="gArea" name="G Area" style="margin-left:32px;"/>
+            <input type="number" id="gArea" name="G Area" style="margin-left:32px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Gabba Stadium.jpg" alt="Gabba Stadium" style="width:70%;" />
@@ -898,7 +900,7 @@
             <input type="number" id="metWidth" name="MET Width" />
             <label class="areaLabel" for="metWidth"> X π</label><br />
             <label class="areaLabel" for="metArea">MET AREA = </label>
-            <input type="number" id="metArea" name="MET Area" style="margin-left:37px;"/>
+            <input type="number" id="metArea" name="MET Area" style="margin-left:37px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/STEMfooty - Metricon Stadium.jpg" alt="Metricon Stadium" style="width:70%;" />
@@ -953,7 +955,7 @@
 </div>
 
 <!--Activity 6: part 1-->
-<div class="row containRow" style="margin-bottom:25px;">
+<div class="row containRow">
     <h3><b>AFCW STEM ID PROFILES: </b> Activity 6 (Exploration Task)</h3>
     <br />
     <p style="font-size:18px; margin-left:10px;">
@@ -1014,6 +1016,54 @@
         <br />
         <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
         <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
+    </div>
+</div>
+
+<!--Activity 6: part 2-->
+<div class="row containRow">
+    <h3>AFCW STEM ID PROFILES: Activity 6 (Exploration Task)</h3>
+
+    <div class="col-md-12">
+        <img src="~/images/Unit2/RANGE.PNG" alt="RANGE" style="width:100%;" />
+        <img src="~/images/Unit2/MEAN.PNG" alt="MEAN" style="width:100%;" />
+
+        <p style="margin-top:25px;"><b>Age Analysis</b></p><br />
+        <label for="playerAge" style="font-size:18px;">How did you calculate your players age? Explain:</label><br />
+        <textarea name="playerAge" rows="1" style="width:65%;"></textarea>
+
+        <label for="ageRange" style="font-size:18px;">What is the age range for the 10 AFCW players you selected? </label><br />
+        <textarea name="ageRange" rows="1" style="width:65%;"></textarea><br />
+
+        <label for="average" style="font-size:18px;">What is the average (mean) age of the 10 AFCW players selected?</label><br />
+        <textarea name="average" rows="1" style="width:65%;"></textarea><br />
+
+        <label for="average" style="font-size:18px;">
+            Does there appear to be a link between the age of the player and when they made their debut?
+            Explain the reasoning behind your answer.
+        </label><br />
+        <textarea name="average" rows="3" style="width:65%;"></textarea><br />
+    </div>
+
+</div>
+
+<!--Activity 6: part 3-->
+<div class="row containRow">
+    <h3><b>AFCW STEM ID PROFILESL Activity 6 (Exploration Task)</b></h3>
+    <div class="col-md-12">
+        <p style="margin-top:25px;"><b>Height Analysis</b></p>
+        <br />
+
+        <label for="heightRange" style="font-size:18px;">What is the height range of your chosen 10 AFCW players you selected?</label><br />
+        <textarea name="heightRange" rows="2" style="width:65%;"></textarea><br />
+
+        <label for="tallestPlayer" style="font-size:18px;">Who is the tallest player out of your 10 AFCW players?</label><br />
+        <textarea name="tallestPlayer" rows="2" style="width:65%;"></textarea><br />
+
+        <label for="shortestPlayer" style="font-size:18px;">Who is the shortest player out of your 10 AFCW players?</label><br />
+        <textarea name="shortestPlayer" rows="2" style="width:65%;"></textarea><br />
+
+        <label for="shortestPlayer" style="font-size:18px;">The average height in the 2019 Crows AFLW team was 171cm. Explain where your 10 players sit in comparision:</label><br />
+        <textarea name="shortestPlayer" rows="3" style="width:65%;"></textarea><br />
     </div>
 </div>
 
@@ -1097,7 +1147,7 @@
         var string = sentence;
         var code = "";
         string = string.split(" ");
-        
+
         for (i = 0; i < string.length; i++) {
             var word = string[i];
             var subcode = word.charAt(0);
