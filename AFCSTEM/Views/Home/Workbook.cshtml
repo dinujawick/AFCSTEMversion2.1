@@ -5,474 +5,495 @@
     ViewBag.title = "Student Workbook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    .containRow {
-        margin-top: 80px;
-        border: solid 5px #ffe694;
-    }
+    <style>
+        .containRow {
+            margin-top: 80px;
+            border: solid 5px #ffe694;
+        }
 
-    .containInside {
-        margin-left: 10px;
-    }
+        .containInside {
+            margin-left: 10px;
+        }
 
-    input {
-        border: none;
-    }
+        input {
+            border: none;
+        }
 
-    table {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
+        table {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 
-    h3 {
-        color: #002b5c;
-        margin-left: 5px;
-        width: 100%;
-        text-align: center;
-    }
-
-    #col1 {
-        text-align: center;
-        font-size: 20px;
-        width: 10%;
-        border-width: 5px;
-        border-color: #002b5c;
-        color: #33619e;
-    }
-
-    #col2 {
-        width: 30%;
-        padding: 2px;
-        text-align: center;
-        font-size: 20px;
-        height: 35px;
-        border-width: 5px;
-        border-color: #002b5c;
-        color: #33619e;
-    }
-
-    #TexImage {
-        position: relative;
-        float: left;
-        width: 35%;
-        height: 45%;
-    }
-
-    #ebImage {
-        position: relative;
-        width: 30%;
-        height: 50%;
-        float: right;
-        margin-right: 10px;
-    }
-
-    #act10table3 {
-        float: left;
-    }
-
-    #goalpic {
-        float: right;
-        width: 45%;
-        height: 45%;
-        display: inline-block;
-        margin: 0 auto;
-    }
-
-    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
-    #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-    #c20, #c21 {
-        padding: 2px;
-        text-align: center;
-        font-size: 20px;
-        border-width: 5px;
-        border-color: #002b5c;
-        color: #33619e;
-    }
-
-    .dot {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        display: inline-block;
-        text-align: center;
-        padding-top: 10px;
-    }
-
-    #act1Table1 {
-        border-width: 5px;
-        border-color: blue;
-    }
-    #coinTable td, #texTable td {
-        color: #002b5c;
-    }
-
-    #act1Field {
-        background-image: url('../images/Football_Oval-01.jpg');
-        background-size: 100% 100%;
-        height: 450px;
-    }
-
-    #a1-1R1 {
-        padding-top: 100px;
-        padding-left: 50px;
-    }
-
-    #a1-1R2 {
-        padding-top: 45px;
-    }
-
-    #a1-1R3 {
-        padding-top: 45px;
-        padding-left: 50px;
-    }
-
-    #f1 {
-        background-color: #ffffff;
-        border: solid 5px #ffd200;
-        margin-left: 175px;
-        margin-right: 75px;
-        font-weight: bold;
-    }
-
-    #f2t {
-        background-color: #ffffff;
-        border: solid 5px #ffd200;
-        margin-right: 75px;
-        margin-top: -25px;
-        font-weight: bold;
-    }
-
-    #f2m {
-        background-color: #ffffff;
-        border: solid 5px #ffd200;
-        margin-left: 50px;
-        margin-right: 75px;
-        font-weight: bold;
-    }
-
-    #f2b {
-        background-color: #ffffff;
-        border: solid 5px #ffd200;
-        margin-right: 75px;
-        margin-top: 25px;
-        font-weight: bold;
-    }
-
-    #m1 {
-        background-color: #ffffff;
-        border: solid 5px #e31937;
-        margin-right: 75px;
-        margin-left: 12px;
-        font-weight: bold;
-    }
-
-    #m1t {
-        background-color: #ffffff;
-        border: solid 5px #e31937;
-        margin-right: 75px;
-        margin-top: -30px;
-        margin-left: 12px;
-        font-weight: bold;
-    }
-
-    #m1b {
-        background-color: #ffffff;
-        border: solid 5px #e31937;
-        margin-right: 75px;
-        margin-top: 30px;
-        margin-left: 12px;
-        font-weight: bold;
-    }
-
-    #m2 {
-        background-color: #ffffff;
-        border: solid 5px red;
-        margin-right: 75px;
-        font-weight: bold;
-    }
-
-    #m2t {
-        background-color: #ffffff;
-        border: solid 5px red;
-        margin-right: 75px;
-        margin-top: -30px;
-        font-weight: bold;
-    }
-
-    #m2b {
-        background-color: #ffffff;
-        border: solid 5px red;
-        margin-right: 75px;
-        margin-top: 30px;
-        font-weight: bold;
-    }
-
-    #d1 {
-        background-color: #ffffff;
-        border: solid 5px #002b5c;
-        margin-right: 75px;
-        margin-left: 10px;
-        font-weight: bold;
-    }
-
-    #d1t {
-        background-color: #ffffff;
-        border: solid 5px #002b5c;
-        margin-right: 75px;
-        margin-top: -30px;
-        margin-left: 10px;
-        font-weight: bold;
-    }
-
-    #d1b {
-        background-color: #ffffff;
-        border: solid 5px #002b5c;
-        margin-right: 75px;
-        margin-top: 30px;
-        margin-left: 10px;
-        font-weight: bold;
-    }
-
-    #d2 {
-        background-color: #ffffff;
-        border: solid 5px #002b5c;
-        margin-left: 50px;
-        font-weight: bold;
-    }
-
-    #d2t, #d2b {
-        background-color: #ffffff;
-        border: solid 5px #002b5c;
-        font-weight: bold;
-    }
-
-    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
-    #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-    #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
-        text-align: center;
-        padding: 3px;
-    }
-
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-
-
-    #coin, #coin2 {
-        position: relative;
-        display: inline-block;
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
-        cursor: pointer;
-    }
-
-
-
-
-        #coin div, #coin2 div {
+        h3 {
+            color: #002b5c;
+            margin-left: 5px;
             width: 100%;
-            height: 100%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
+            text-align: center;
+        }
+
+        #col1 {
+            text-align: center;
+            font-size: 20px;
+            width: 10%;
+            border-width: 5px;
+            border-color: #002b5c;
+            color: #33619e;
+        }
+
+        #col2 {
+            width: 30%;
+            padding: 2px;
+            text-align: center;
+            font-size: 20px;
+            height: 35px;
+            border-width: 5px;
+            border-color: #002b5c;
+            color: #33619e;
+        }
+
+        #TexImage {
+            position: relative;
+            float: left;
+            width: 35%;
+            height: 45%;
+        }
+
+        #ebImage {
+            position: relative;
+            width: 30%;
+            height: 50%;
+            float: right;
+            margin-right: 10px;
+        }
+
+        #act10table3 {
+            float: left;
+        }
+
+        #goalpic {
+            float: right;
+            width: 45%;
+            height: 45%;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
+        #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
+        #c20, #c21 {
+            padding: 2px;
+            text-align: center;
+            font-size: 20px;
+            border-width: 5px;
+            border-color: #002b5c;
+            color: #33619e;
+        }
+
+        .dot {
+            height: 50px;
+            width: 50px;
             border-radius: 50%;
-            -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-            -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-            box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            display: inline-block;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        #act1Table1 {
+            border-width: 5px;
+            border-color: blue;
+        }
+
+        #coinTable td, #texTable td {
+            color: #002b5c;
+        }
+
+        #act1Field {
+            background-image: url('../images/Football_Oval-01.jpg');
+            background-size: 100% 100%;
+            height: 450px;
+        }
+
+        #a1-1R1 {
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+
+        #a1-1R2 {
+            padding-top: 45px;
+        }
+
+        #a1-1R3 {
+            padding-top: 45px;
+            padding-left: 50px;
+        }
+
+        #f1 {
+            background-color: #ffffff;
+            border: solid 5px #ffd200;
+            margin-left: 175px;
+            margin-right: 75px;
+            font-weight: bold;
+        }
+
+        #f2t {
+            background-color: #ffffff;
+            border: solid 5px #ffd200;
+            margin-right: 75px;
+            margin-top: -25px;
+            font-weight: bold;
+        }
+
+        #f2m {
+            background-color: #ffffff;
+            border: solid 5px #ffd200;
+            margin-left: 50px;
+            margin-right: 75px;
+            font-weight: bold;
+        }
+
+        #f2b {
+            background-color: #ffffff;
+            border: solid 5px #ffd200;
+            margin-right: 75px;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        #m1 {
+            background-color: #ffffff;
+            border: solid 5px #e31937;
+            margin-right: 75px;
+            margin-left: 12px;
+            font-weight: bold;
+        }
+
+        #m1t {
+            background-color: #ffffff;
+            border: solid 5px #e31937;
+            margin-right: 75px;
+            margin-top: -30px;
+            margin-left: 12px;
+            font-weight: bold;
+        }
+
+        #m1b {
+            background-color: #ffffff;
+            border: solid 5px #e31937;
+            margin-right: 75px;
+            margin-top: 30px;
+            margin-left: 12px;
+            font-weight: bold;
+        }
+
+        #m2 {
+            background-color: #ffffff;
+            border: solid 5px red;
+            margin-right: 75px;
+            font-weight: bold;
+        }
+
+        #m2t {
+            background-color: #ffffff;
+            border: solid 5px red;
+            margin-right: 75px;
+            margin-top: -30px;
+            font-weight: bold;
+        }
+
+        #m2b {
+            background-color: #ffffff;
+            border: solid 5px red;
+            margin-right: 75px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        #d1 {
+            background-color: #ffffff;
+            border: solid 5px #002b5c;
+            margin-right: 75px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #d1t {
+            background-color: #ffffff;
+            border: solid 5px #002b5c;
+            margin-right: 75px;
+            margin-top: -30px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #d1b {
+            background-color: #ffffff;
+            border: solid 5px #002b5c;
+            margin-right: 75px;
+            margin-top: 30px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #d2 {
+            background-color: #ffffff;
+            border: solid 5px #002b5c;
+            margin-left: 50px;
+            font-weight: bold;
+        }
+
+        #d2t, #d2b {
+            background-color: #ffffff;
+            border: solid 5px #002b5c;
+            font-weight: bold;
+        }
+
+        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
+        #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
+        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
+            text-align: center;
+            padding: 3px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
         }
 
 
 
-    .side-a {
-        background-image: url('../images/Workbooklet/coinheads.PNG');
-        background-repeat: no-repeat;
-        background-size: auto;
-    }
-
-    .side-b {
-        background-image: url('../images/Workbooklet/cointails.PNG');
-    }
-
-    #coin, #coin2 {
-        transition: -webkit-transform 1s ease-in;
-        -webkit-transform-style: preserve-3d;
-    }
-
-        #coin div, #coin2 div {
-            position: absolute;
-            -webkit-backface-visibility: hidden;
+        #coin, #coin2 {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
         }
 
 
 
 
-    .side-a {
-        z-index: 100;
-    }
-
-    .side-b {
-        -webkit-transform: rotateY(-180deg);
-    }
-
-    #coin.heads {
-        -webkit-animation: flipHeads 3s ease-out forwards;
-        -moz-animation: flipHeads 3s ease-out forwards;
-        -o-animation: flipHeads 3s ease-out forwards;
-        animation: flipHeads 3s ease-out forwards;
-    }
-
-    #coin.tails {
-        -webkit-animation: flipTails 3s ease-out forwards;
-        -moz-animation: flipTails 3s ease-out forwards;
-        -o-animation: flipTails 3s ease-out forwards;
-        animation: flipTails 3s ease-out forwards;
-    }
+            #coin div, #coin2 div {
+                width: 100%;
+                height: 100%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+                -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+                box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            }
 
 
-    #coin2.heads {
-        -webkit-animation: flipHeads 3s ease-out forwards;
-        -moz-animation: flipHeads 3s ease-out forwards;
-        -o-animation: flipHeads 3s ease-out forwards;
-        animation: flipHeads 3s ease-out forwards;
-    }
 
-    #coin2.tails {
-        -webkit-animation: flipTails 3s ease-out forwards;
-        -moz-animation: flipTails 3s ease-out forwards;
-        -o-animation: flipTails 3s ease-out forwards;
-        animation: flipTails 3s ease-out forwards;
-    }
-
-
-    @@keyframes flipHeads {
-        from {
-            -webkit-transform: rotateY(0);
-            -moz-transform: rotateY(0);
-            transform: rotateY(0);
+        .side-a {
+            background-image: url('../images/Workbooklet/coinheads.PNG');
+            background-repeat: no-repeat;
+            background-size: auto;
         }
 
-        to {
-            -webkit-transform: rotateY(1800deg);
-            -moz-transform: rotateY(1800deg);
-            transform: rotateY(1800deg);
-        }
-    }
-
-    @@keyframes flipTails {
-        from {
-            -webkit-transform: rotateY(0);
-            -moz-transform: rotateY(0);
-            transform: rotateY(0);
+        .side-b {
+            background-image: url('../images/Workbooklet/cointails.PNG');
         }
 
-        to {
-            -webkit-transform: rotateY(1980deg);
-            -moz-transform: rotateY(1980deg);
-            transform: rotateY(1980deg);
+        #coin, #coin2 {
+            transition: -webkit-transform 1s ease-in;
+            -webkit-transform-style: preserve-3d;
         }
-    }
+
+            #coin div, #coin2 div {
+                position: absolute;
+                -webkit-backface-visibility: hidden;
+            }
 
 
 
-    #int1 {
-        margin-left: 425px;
-        background-color: #ffffff;
-        border: solid 5px black;
-        font-weight: bold;
-    }
 
-    #int {
-        margin-left: 20px;
-        background-color: #ffffff;
-        border: solid 5px black;
-        font-weight: bold;
-    }
+        .side-a {
+            z-index: 100;
+        }
 
-    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
-    #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-    #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
-        text-align: center;
-        padding: 3px;
-        border-width: 3px;
-        border-color: #002b5c;
-        font-size: 20px;
-        height: 10px;
-    }
+        .side-b {
+            -webkit-transform: rotateY(-180deg);
+        }
 
-    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
-        color: #ffd200;
-    }
+        #coin.heads {
+            -webkit-animation: flipHeads 3s ease-out forwards;
+            -moz-animation: flipHeads 3s ease-out forwards;
+            -o-animation: flipHeads 3s ease-out forwards;
+            animation: flipHeads 3s ease-out forwards;
+        }
 
-    #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
-        color: #e31937;
-    }
-
-    #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
-        color: #004b8d;
-    }
-
-    .areaHint {
-        font-size: 20px;
-        color: #0c2037;
-    }
-
-    .areaLabel {
-        font-size: 18px;
-        color: #002b5c;
-    }
-
-    #act3Body {
-        text-align: center;
-        padding: 3px;
-        border-width: 4px;
-        border-color: #002b5c;
-        font-size: 20px;
-    }
-
-    #act3head {
-        text-align: center;
-        padding: 3px;
-        border-width: 4px;
-        border-color: #002b5c;
-        background-color: #002b5c;
-        font-size: 20px;
-        color: white;
-    }
-
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    input {
-        border: none;
-    }
-</style>
+        #coin.tails {
+            -webkit-animation: flipTails 3s ease-out forwards;
+            -moz-animation: flipTails 3s ease-out forwards;
+            -o-animation: flipTails 3s ease-out forwards;
+            animation: flipTails 3s ease-out forwards;
+        }
 
 
-<div style="display:none;">
-    <a class="btn1" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
-    <br />
-    <a class="btn1" asp-area="" asp-controller="Home" asp-action="MVP">Go To MVP</a>
-    <br />
-    <a class="btn1" asp-area="" asp-controller="Home" asp-action="Survey">Go To survey</a>
+        #coin2.heads {
+            -webkit-animation: flipHeads 3s ease-out forwards;
+            -moz-animation: flipHeads 3s ease-out forwards;
+            -o-animation: flipHeads 3s ease-out forwards;
+            animation: flipHeads 3s ease-out forwards;
+        }
+
+        #coin2.tails {
+            -webkit-animation: flipTails 3s ease-out forwards;
+            -moz-animation: flipTails 3s ease-out forwards;
+            -o-animation: flipTails 3s ease-out forwards;
+            animation: flipTails 3s ease-out forwards;
+        }
+
+
+        @@keyframes flipHeads {
+            from {
+                -webkit-transform: rotateY(0);
+                -moz-transform: rotateY(0);
+                transform: rotateY(0);
+            }
+
+            to {
+                -webkit-transform: rotateY(1800deg);
+                -moz-transform: rotateY(1800deg);
+                transform: rotateY(1800deg);
+            }
+        }
+
+        @@keyframes flipTails {
+            from {
+                -webkit-transform: rotateY(0);
+                -moz-transform: rotateY(0);
+                transform: rotateY(0);
+            }
+
+            to {
+                -webkit-transform: rotateY(1980deg);
+                -moz-transform: rotateY(1980deg);
+                transform: rotateY(1980deg);
+            }
+        }
+
+
+
+        #int1 {
+            margin-left: 425px;
+            background-color: #ffffff;
+            border: solid 5px black;
+            font-weight: bold;
+        }
+
+        #int {
+            margin-left: 20px;
+            background-color: #ffffff;
+            border: solid 5px black;
+            font-weight: bold;
+        }
+
+        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
+        #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
+        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
+            text-align: center;
+            padding: 3px;
+            border-width: 3px;
+            border-color: #002b5c;
+            font-size: 20px;
+            height: 10px;
+        }
+
+        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
+            color: #ffd200;
+        }
+
+        #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
+            color: #e31937;
+        }
+
+        #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
+            color: #004b8d;
+        }
+
+        .areaHint {
+            font-size: 20px;
+            color: #0c2037;
+        }
+
+        .areaLabel {
+            font-size: 18px;
+            color: #002b5c;
+        }
+
+        #act3Body {
+            text-align: center;
+            padding: 3px;
+            border-width: 4px;
+            border-color: #002b5c;
+            font-size: 20px;
+        }
+
+        #act3head {
+            text-align: center;
+            padding: 3px;
+            border-width: 4px;
+            border-color: #002b5c;
+            background-color: #002b5c;
+            font-size: 20px;
+            color: white;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        input {
+            border: none;
+        }
+
+        #mySideNav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        
+        #main{
+            margin-left:100px;
+        }
+    </style>
+
+
+<div>
+    <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
+    <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="MVP" style="margin-left:15px;margin-right:15px;">Go To MVP</a>
+    <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Survey">Go To survey</a>
 </div>
+
+<nav id="mySideNav" class="sidenav">
+    <div class="container">
+        <h3 style="color:white;">TEST BAR</h3>
+    </div>
+</nav>
 
 <!--Activity 1: part 1-->
 <div class="row containRow">
