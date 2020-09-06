@@ -102,6 +102,7 @@
         border-width: 5px;
         border-color: blue;
     }
+
     #coinTable td, #texTable td {
         color: #002b5c;
     }
@@ -463,6 +464,25 @@
     input {
         border: none;
     }
+
+
+    table.calcTable input[type="button"] {
+            background-color: #e31937;
+            color: black;
+            width: 100%;
+            border: none;
+        }
+
+    table.calcTable td {
+        border: none;
+    }
+
+    table.calcTable input[type="text"] {
+        background-color: #ffd200;
+        border: solid black 2px;
+        width: 100%
+    }
+    
 </style>
 
 
@@ -473,6 +493,47 @@
 </div>
 
 <!--Activity 1: part 1-->
+<button id="calButton" style="position: fixed; bottom: 5px;right: 350px;font-size:20px;font:bold" onclick="unhideCal()">+/-</button>
+<div id="calculator" style="display:none;position: fixed; bottom: 5px;right: 50px;">
+    <table class="calcTable" width="7%" height="15%" border="1" style="background-color: #004b8d; border: solid black 3px">
+
+        <tr>
+            <td colspan="3"><input disabled type="text" id="result" /></td>
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+        </tr>
+        <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')" /> </td>
+            <td><input type="button" value="2" onclick="dis('2')" /> </td>
+            <td><input type="button" value="3" onclick="dis('3')" /> </td>
+            <td><input type="button" value="/" onclick="dis('/')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" /> </td>
+            <td><input type="button" value="5" onclick="dis('5')" /> </td>
+            <td><input type="button" value="6" onclick="dis('6')" /> </td>
+            <td><input type="button" value="-" onclick="dis('-')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" /> </td>
+            <td><input type="button" value="8" onclick="dis('8')" /> </td>
+            <td><input type="button" value="9" onclick="dis('9')" /> </td>
+            <td><input type="button" value="+" onclick="dis('+')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="dis('.')" /> </td>
+            <td><input type="button" value="0" onclick="dis('0')" /> </td>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" onclick="solve()" /> </td>
+            <td><input type="button" value="*" onclick="dis('*')" /> </td>
+        </tr>
+    </table>
+</div>
+
+
+
 <div class="row containRow">
     <h3>AFL Positions: Activity 1 (Class Activity/Discussion)</h3>
     <p style="margin-left:10px;">
@@ -1537,9 +1598,9 @@
                 </tr>
             </table>
 
-            <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />    
+            <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />
         </div>
-        
+
     </div>
 </div>
 
@@ -1662,6 +1723,19 @@
         }
     }
 
+
+    //unhide calculator div
+    function unhideCal() {
+        if (document.getElementById("calculator").style.display == "none") {
+            document.getElementById("calculator").style.display = "inline-block";
+        }
+        else {
+            document.getElementById("calculator").style.display = "none";
+        }
+
+
+    }
+
     function drawGraph() {
         var count = 3.0;
         var graph = document.getElementById("texGraph").getContext("2d");
@@ -1771,6 +1845,23 @@
 
     function drag(ev) {
         ev.dataTransfer.setData("text", ev.target.id);
+    }
+    //calculator script
+
+    function dis(val) {
+        document.getElementById("result").value += val
+    }
+
+    //function that evaluates the digit and return result
+    function solve() {
+        let x = document.getElementById("result").value
+        let y = eval(x)
+        document.getElementById("result").value = y
+    }
+
+    //function that clear the display
+    function clr() {
+        document.getElementById("result").value = ""
     }
 
     // Activity 1: part 1 Drop function
