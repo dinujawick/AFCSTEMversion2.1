@@ -67,7 +67,7 @@
                         @if (SignInManager.IsSignedIn(User))
                         {
                         <li class="dropdown nav-item nav-link text-light">
-                            Unit 1   ⮟
+                            <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit1Home">Unit 1   ⮟</a>
                             <div class="dropdown-content">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Whatisfooty">What is Footy?</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit1" asp-action="Activity1">Activity 1</a>
@@ -78,7 +78,7 @@
                             </div>
                         </li>
                         <li class="dropdown nav-item nav-link text-light">
-                            Unit 2   ⮟
+                            <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit2Home">Unit 2   ⮟</a>
                             <div class="dropdown-content">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity6">Activity 6</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity7">Activity 7</a>
@@ -88,7 +88,7 @@
                             </div>
                         </li>
                         <li class="dropdown nav-item nav-link text-light">
-                            Unit 3   ⮟
+                            <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit3Home">Unit 3   ⮟</a>
                             <div class="dropdown-content">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit3" asp-action="Activity11">Activity 11</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit3" asp-action="Activity12">Activity 12</a>
@@ -98,7 +98,7 @@
                             </div>
                         </li>
                         <li class="dropdown nav-item nav-link text-light">
-                            Unit 4  ⮟
+                            <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit4Home">Unit 4   ⮟</a>
                             <div class="dropdown-content">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit4" asp-action="Activity15">Activity 15</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Unit4" asp-action="Activity16">Activity 16</a>
@@ -106,7 +106,7 @@
 
                             </div>
                         </li>
-                            <li class="nav-item">
+                            <li class="nav-item nav-link">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Workbook">Workbook</a>
                             </li>
                         }
