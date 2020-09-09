@@ -15,6 +15,11 @@
         margin-left: 10px;
     }
 
+    #medianPic{
+        width:100%;
+        height:25%;
+    }
+
     input {
         border: none;
     }
@@ -40,6 +45,21 @@
         color: #33619e;
     }
 
+    #ebFooty {
+        animation-name: footkick;
+        -webkit-animation-play-state: paused;
+        animation-duration: 2s;
+        position: absolute;
+        left: 500px
+    }
+
+   
+
+    @@keyframes footkick {
+        from {left:500px;width:100px;height:100px;bottom:50px;transform:rotate(0deg);opacity:1;}
+        to {left:0px;bottom:-400px;height:200px;width:200px;transform:rotate(720deg);opacity:0;}
+    }
+
     #col2 {
         width: 30%;
         padding: 2px;
@@ -63,6 +83,7 @@
         width: 30%;
         height: 50%;
         float: right;
+        bottom:50px;
         margin-right: 10px;
     }
 
@@ -493,8 +514,8 @@
 </div>
 
 <!--Activity 1: part 1-->
-<button id="calButton" style="position: fixed; bottom: 5px;right: 350px;font-size:20px;font:bold" onclick="unhideCal()">+/-</button>
-<div id="calculator" style="display:none;position: fixed; bottom: 5px;right: 50px;">
+<button id="calButton" style="position: fixed; bottom: 0px;right: 320px;font-size:20px;font:bold;background-color:#e31937" onclick="unhideCal()">+/-</button>
+<div id="calculator" style="display:none;position: fixed; bottom: 0px;right: 50px; ">
     <table class="calcTable" width="7%" height="15%" border="1" style="background-color: #004b8d; border: solid black 3px">
 
         <tr>
@@ -1277,9 +1298,14 @@
                 <td style="cursor: pointer;" onclick="drawGraphOnClick(300,2.5)">2.5</td>
                 <td style="cursor: pointer;" onclick="drawGraphOnClick(400,1.9)">1.9</td>
                 <td style="cursor: pointer;" onclick="drawGraphOnClick(500,2.0)">2.0</td>
+
             </tr>
 
         </table>
+
+        <label for="imgClick" style="float:right;right:50px;font-size: 30px; font-weight:bold ">Click The Table Data</label>
+        <img name="imgClick" style="float:right;" width="200" height="200" src="~/images/Workbooklet/clickme.png" />
+
         <br />
 
         <p><b>TEX WALKER AVERAGE GOALS/GAMES</b></p>
@@ -1506,8 +1532,8 @@
 
             <tr>
                 <th tr style="background-color:#002b5c; color:white;">Total</th>
-                <td><input type="text" /></td>
-                <td><input type="text" /> </td>
+                <td><input type="number" /></td>
+                <td><input type="number" /> </td>
             </tr>
 
         </table>
@@ -1562,7 +1588,27 @@
                 </tr>
                 <tr>
                     <td><input type="text" value="Your Results" /></td>
-                    <td><input type="number" /></td>
+                    <td><input id="gg" type="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input id="gg" type="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input id="gg" type="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input id="gg" type="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input id="gg" type="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input  id="gg" type="number" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" /></td>
@@ -1570,34 +1616,14 @@
                 </tr>
                 <tr>
                     <td><input type="text" /></td>
-                    <td><input type="number" /></td>
+                    <td><input id="gg" type="number" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input type="number" /></td>
+                    <td><input id="gg" type="number" /></td>
                 </tr>
             </table>
-
+            <img id="ebFooty" style="position:absolute; left:500px"width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
             <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />
         </div>
 
@@ -1605,7 +1631,7 @@
 </div>
 
 <!--Activity 10: part 3-->
-<div class="row containRow" style="margin-bottom:25px;">
+<div class="row containRow" style="margin-bottom:25px;background-color:#f3f3f3">
     <div class="col-md-12">
         <h3>
             <b>GOAL KICKING DATA:</b> Activity 10
@@ -1618,7 +1644,8 @@
             <br />
 
         </h3>
-        <table style="width:40%;position:relative" id="act10table3">
+
+        <table style="width:40%;position:relative;" id="act10table3">
             <tr>
                 <th style="background-color:#00FF00; color:white;">STEM<br />(GOALS)</th>
                 <th style="background-color: #FFFF00; color: #002b5c;">LEAF:<br />(BEHINDS)</th>
@@ -1665,12 +1692,18 @@
             </tr>
 
         </table>
-        <img id="goalpic" src="~/images/Unit2/Activity 10/goalpic.jpeg" />
 
+
+        <img id="goalpic" src="~/images/Unit2/Activity 10/goalpic.jpeg" />
+        <br />
+        <button style="position:relative" id="stemButton" onclick="runfooty()"> Auto Populate The STEM and LEAF Table</button>
         <br />
         <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
         <br />
         <textarea name="act10q3" rows="3" style="width:65%;"></textarea>
+        <br />
+        <br />
+        <img id="medianPic" src="~/images/Workbooklet/medianpic.png" />
         <br />
         <br />
     </div>
@@ -1735,6 +1768,7 @@
 
 
     }
+   
 
     function drawGraph() {
         var count = 3.0;
@@ -1756,6 +1790,7 @@
 
     function drawGraphOnClick(x, val) {
         var graph = document.getElementById("texGraph").getContext("2d");
+        graph.fillStyle = "#004b8d"
         graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
     }
 
@@ -1851,6 +1886,68 @@
     function dis(val) {
         document.getElementById("result").value += val
     }
+
+    function runfooty() {
+
+        document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
+
+
+    
+
+
+
+        setTimeout(function () {
+            var table = document.getElementById('act10table2');
+            var table2 = document.getElementById('act10table3')
+            var stemList = []
+            for (var i = 1, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 1, col; col = row.cells[j]; j++) {
+                    //iterate through columns
+                    //columns would be accessed using the "col" variable assigned in the for loop'
+            
+                    var value = String(col.querySelector('input').value);
+                    stemList.push(value);
+                }
+            }
+
+
+            for (var i = 1, row; row = table2.rows[i]; i++) {
+                var value = parseFloat(stemList[i-1]).toFixed(1);
+
+                var newString = String(value).split('.');
+                var goal = newString[0];
+                var behind = newString[1];
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    //iterate through columns
+                    //columns would be accessed using the "col" variable assigned in the for loop'
+                    if (j == 0) {
+                        col.querySelector('input').value = goal;
+                    }
+                    if (j == 1) {
+                        col.querySelector('input').value = behind;
+                    }
+                }
+            }
+
+ 
+          
+
+
+        }
+
+        , 1500);
+        
+       
+    }
+
+    
+        
+
+    
 
     //function that evaluates the digit and return result
     function solve() {
