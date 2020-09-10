@@ -73,7 +73,7 @@
             background-color: black;
         }
 </style>
-<div class="text-center">
+<div class="text-center" id="clear">
     <img src="~/Images/Home-page.png" />
     @if (SignInManager.IsSignedIn(User))
     {
@@ -87,3 +87,11 @@
         <a class="btn2" asp-area="Identity" asp-page="/Account/Register">Register</a>
     }
 </div>
+
+<script>
+    document.getElementById('clear').addEventListener("load", clearLS());
+    function clearLS() {
+        localStorage.clear();
+        console.log("test");
+    }
+</script>
