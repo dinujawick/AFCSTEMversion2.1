@@ -5,10 +5,14 @@
     ViewBag.title = "Student Workbook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
+    <style>
     .containRow {
         margin-top: 80px;
         border: solid 5px #ffe694;
+    }
+
+    textarea{
+        resize:none;
     }
 
     .containInside {
@@ -36,6 +40,37 @@
         text-align: center;
     }
 
+    
+
+    #batteryImg {
+        animation: blink-animation 1s steps(5, start) infinite;
+
+    }
+
+    #timerImg {
+        animation: roll-animation 1s infinite;
+    }
+
+
+    
+
+    @@keyframes roll-animation{
+        from {
+            transform: rotate(0deg)
+        }
+        to {
+            transform: rotate(360deg)
+        }
+    }
+
+
+
+    @@keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+
     #col1 {
         text-align: center;
         font-size: 20px;
@@ -53,7 +88,7 @@
         left: 500px
     }
 
-   
+
 
     @@keyframes footkick {
         from {left:500px;width:100px;height:100px;bottom:50px;transform:rotate(0deg);opacity:1;}
@@ -503,8 +538,8 @@
         border: solid black 2px;
         width: 100%
     }
-    
-</style>
+
+    </style>
 
 
 <div style="">
@@ -1631,7 +1666,7 @@
 </div>
 
 <!--Activity 10: part 3-->
-<div class="row containRow" style="margin-bottom:25px;background-color:#f3f3f3">
+<div class="row containRow" style="margin-bottom:25px;">
     <div class="col-md-12">
         <h3>
             <b>GOAL KICKING DATA:</b> Activity 10
@@ -1708,297 +1743,378 @@
         <br />
     </div>
 </div>
-
-
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>
-    drawGraph();
-
-    var playerCount = 1;
-    function addPlayer() {
-
-        if (playerCount < 10) {
-
-            var table = document.getElementById("act6table");
-            var row = table.insertRow(playerCount + 1);
-            var cell = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            var cell6 = row.insertCell(5);
-
-            var input30 = document.createElement("input");
-            var input31 = document.createElement("input");
-            var input3 = document.createElement("input");
-            var input4 = document.createElement("input");
-            var input5 = document.createElement("input");
-            var input6 = document.createElement("input");
-
-            input30.size = 30;
-            input31.size = 30;
-            input3.size = 3;
-            input4.size = 3;
-            input5.size = 3;
-            input6.size = 3;
-
-            cell.appendChild(input30);
-            cell2.appendChild(input3);
-            cell3.appendChild(input4);
-            cell4.appendChild(input5);
-            cell5.appendChild(input6);
-            cell6.appendChild(input31);
-
-            playerCount++;
-            console.log(playerCount);
-        }
-    }
-
-
-    //unhide calculator div
-    function unhideCal() {
-        if (document.getElementById("calculator").style.display == "none") {
-            document.getElementById("calculator").style.display = "inline-block";
-        }
-        else {
-            document.getElementById("calculator").style.display = "none";
-        }
-
-
-    }
-   
-
-    function drawGraph() {
-        var count = 3.0;
-        var graph = document.getElementById("texGraph").getContext("2d");
-        for (var i = 50; i < 400; i) {
-            graph.fillRect(30, i, 500, 1);
-            graph.fillText(count, 10, i)
-            count -= 0.5;
-            i += 50;
-        }
-
-        graph.fillText("2015", 100, 360)
-        graph.fillText("2016", 200, 360)
-        graph.fillText("2017", 300, 360)
-        graph.fillText("2018", 400, 360)
-        graph.fillText("2019", 500, 360)
-
-    }
-
-    function drawGraphOnClick(x, val) {
-        var graph = document.getElementById("texGraph").getContext("2d");
-        graph.fillStyle = "#004b8d"
-        graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
-    }
-
-    var coinCount = 0;
-    goalCount = 0;
-    behindCount = 0;
-    missCount = 0;
-
-    jQuery(document).ready(function ($) {
-
-        $('#coin, #coin2').on('click', function () {
-            if (coinCount < 10) {
-                coinCount++;
-                var flipResult = Math.random();
-                var flipResult2 = Math.random();
-
-                var table = document.getElementById("coinTable");
-                var row = table.insertRow(coinCount);
-                var cell = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                cell.innerHTML = coinCount;
-
-                cell2.setAttribute("id", "hh" + coinCount);
-                cell3.setAttribute("id", "ht" + coinCount);
-                cell4.setAttribute("id", "tt" + coinCount);
-
-
-                $('#coin').removeClass();
-                $('#coin2').removeClass();
-                setTimeout(function () {
-                    if (flipResult <= 0.5) {
-                        $('#coin').addClass('heads');
-                        console.log('coin1 - it is head');
-                    }
-                    if (flipResult2 <= 0.5) {
-                        $('#coin2').addClass('heads');
-                        console.log('coin2 - it is head');
-                    }
-                    if (flipResult > 0.5) {
-                        $('#coin').addClass('tails');
-                        console.log('coin1 - it is tails');
-                    }
-
-                    if (flipResult2 > 0.5) {
-                        $('#coin2').addClass('tails');
-                        console.log('coin2  - it is tails');
-                    }
-
-                    if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
-                        console.log(" in hh ")
-                        var id = "hh" + coinCount;
-                        $("#" + id).text("Goal");
-                        goalCount++;
-                    }
-
-                    else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
-                        console.log(" in tt ")
-                        var id = "tt" + coinCount;
-                        $("#" + id).text("Miss");
-                        missCount++;
-                    }
-
-                    else {
-                        var id = "ht" + coinCount;
-                        $("#" + id).text("Behind");
-                        behindCount++;
-
-                    }
-
-
-
-                    $("#gc").text(goalCount);
-                    $("#mc").text(missCount);
-                    $("#bc").text(behindCount);
-
-                }, 100);
-            }
-        });
-    });
-
-
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
-
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-    //calculator script
-
-    function dis(val) {
-        document.getElementById("result").value += val
-    }
-
-    function runfooty() {
-
-        document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
-
-
-    
-
-
-
-        setTimeout(function () {
-            var table = document.getElementById('act10table2');
-            var table2 = document.getElementById('act10table3')
-            var stemList = []
-            for (var i = 1, row; row = table.rows[i]; i++) {
-                //iterate through rows
-                //rows would be accessed using the "row" variable assigned in the for loop
-                for (var j = 1, col; col = row.cells[j]; j++) {
-                    //iterate through columns
-                    //columns would be accessed using the "col" variable assigned in the for loop'
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>DAILY NUTRIENTS:</b> Activity 11
+            <br />
+            Exploration Task
+            <br />
+            <br />
+            <br />
+            Below is an activity chart for an AFC Men’s player.
+            <br />
+        </h3>
+        <p>
+            Estimate what you think their daily energy intake needs to be<input type="text" placeholder="........................................" />kJ/day<br />
+            <br/>
+            <img id="timerImg" style="left:10px;width:10%;height:10%;position:relative" src="~/images/Workbooklet/24roller.png" />
+            <img id="batteryImg" style="left: 10px; width: 20%; height: 20%; position: relative" src="~/images/Workbooklet/battery.png" />
+            <br />
+            <br />
+            Using the values stated in the table on page 96, calculate the total kJ used for each of the activities
+            <br />
+            Player’s Daily Kilojoules Calculation
+        </p>
+        <table style="width:90%" id="act11table1">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>ACTIVITY:</th>
+                <th>NO.OF HOURS/DAY:</th>
+                <th>KILOJOULES (kJ) USED DURING ACTIVITY</th>
+            </tr>
+            <tr>
+                <th>SLEEPING</th>
+                <td>10 Hrs/Day</td>
+                <td>359.1 x 10 = 3,591kJ</td>
+            </tr>
+            <tr>
+                <th>DRIVING TO AND FROM AFC</th>
+                <td>1 Hrs/Day</td>
+                <td><input type ="text" /></td>
+            </tr>
+            <tr>
+                <th>TEAM MEETINGS (SITTING)</th>
+                <td>3 Hrs/Day</td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>AFC TRAINING (HIGH INTENSITY)</th>
+                <td>3 Hrs/Day</td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>GYM / WEIGHTS SESSION</th>
+                <td>1 Hrs/Day</td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>INJURY PREVENTION SESSION</th>
+                <td>2 Hrs/Day</td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>YOGA / STRETCHING </th>
+                <td>1 Hrs/Day</td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>REJUVENATION (RELAXING/TV)</th>
+                <td>3 Hrs/Day</td>
+                <td><input type="number" /></td>
+            </tr>
             
-                    var value = String(col.querySelector('input').value);
-                    stemList.push(value);
+
+        </table>
+        <br/>
+        <label for="act11q1">Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR. </label>
+        <br/>
+        <textarea style="width:100%;" name="act11q1" rows="2"></textarea>
+
+
+    </div>
+</div>
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+            drawGraph();
+
+            var playerCount = 1;
+            function addPlayer() {
+
+                if (playerCount < 10) {
+
+                    var table = document.getElementById("act6table");
+                    var row = table.insertRow(playerCount + 1);
+                    var cell = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+
+                    var input30 = document.createElement("input");
+                    var input31 = document.createElement("input");
+                    var input3 = document.createElement("input");
+                    var input4 = document.createElement("input");
+                    var input5 = document.createElement("input");
+                    var input6 = document.createElement("input");
+
+                    input30.size = 30;
+                    input31.size = 30;
+                    input3.size = 3;
+                    input4.size = 3;
+                    input5.size = 3;
+                    input6.size = 3;
+
+                    cell.appendChild(input30);
+                    cell2.appendChild(input3);
+                    cell3.appendChild(input4);
+                    cell4.appendChild(input5);
+                    cell5.appendChild(input6);
+                    cell6.appendChild(input31);
+
+                    playerCount++;
+                    console.log(playerCount);
                 }
             }
 
 
-            for (var i = 1, row; row = table2.rows[i]; i++) {
-                var value = parseFloat(stemList[i-1]).toFixed(1);
+            //unhide calculator div
+            function unhideCal() {
+                if (document.getElementById("calculator").style.display == "none") {
+                    document.getElementById("calculator").style.display = "inline-block";
+                }
+                else {
+                    document.getElementById("calculator").style.display = "none";
+                }
 
-                var newString = String(value).split('.');
-                var goal = newString[0];
-                var behind = newString[1];
-                //iterate through rows
-                //rows would be accessed using the "row" variable assigned in the for loop
-                for (var j = 0, col; col = row.cells[j]; j++) {
-                    //iterate through columns
-                    //columns would be accessed using the "col" variable assigned in the for loop'
-                    if (j == 0) {
-                        col.querySelector('input').value = goal;
+
+            }
+
+
+            function drawGraph() {
+                var count = 3.0;
+                var graph = document.getElementById("texGraph").getContext("2d");
+                for (var i = 50; i < 400; i) {
+                    graph.fillRect(30, i, 500, 1);
+                    graph.fillText(count, 10, i)
+                    count -= 0.5;
+                    i += 50;
+                }
+
+                graph.fillText("2015", 100, 360)
+                graph.fillText("2016", 200, 360)
+                graph.fillText("2017", 300, 360)
+                graph.fillText("2018", 400, 360)
+                graph.fillText("2019", 500, 360)
+
+            }
+
+            function drawGraphOnClick(x, val) {
+                var graph = document.getElementById("texGraph").getContext("2d");
+                graph.fillStyle = "#004b8d"
+                graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
+            }
+
+            var coinCount = 0;
+            goalCount = 0;
+            behindCount = 0;
+            missCount = 0;
+
+            jQuery(document).ready(function ($) {
+
+                $('#coin, #coin2').on('click', function () {
+                    
+                    if (coinCount < 10) {
+                        coinCount++;
+                        var flipResult = Math.random();
+                        var flipResult2 = Math.random();
+
+                        var table = document.getElementById("coinTable");
+                        var row = table.insertRow(coinCount);
+                        var cell = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        cell.innerHTML = coinCount;
+
+                        cell2.setAttribute("id", "hh" + coinCount);
+                        cell3.setAttribute("id", "ht" + coinCount);
+                        cell4.setAttribute("id", "tt" + coinCount);
+
+
+                        $('#coin').removeClass();
+                        $('#coin2').removeClass();
+                        setTimeout(function () {
+                            if (flipResult <= 0.5) {
+                                $('#coin').addClass('heads');
+                                console.log('coin1 - it is head');
+                            }
+                            if (flipResult2 <= 0.5) {
+                                $('#coin2').addClass('heads');
+                                console.log('coin2 - it is head');
+                            }
+                            if (flipResult > 0.5) {
+                                $('#coin').addClass('tails');
+                                console.log('coin1 - it is tails');
+                            }
+
+                            if (flipResult2 > 0.5) {
+                                $('#coin2').addClass('tails');
+                                console.log('coin2  - it is tails');
+                            }
+
+                            if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
+                                console.log(" in hh ")
+                                var id = "hh" + coinCount;
+                                $("#" + id).text("Goal");
+                                goalCount++;
+                            }
+
+                            else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
+                                console.log(" in tt ")
+                                var id = "tt" + coinCount;
+                                $("#" + id).text("Miss");
+                                missCount++;
+                            }
+
+                            else {
+                                var id = "ht" + coinCount;
+                                $("#" + id).text("Behind");
+                                behindCount++;
+
+                            }
+
+
+
+                            $("#gc").text(goalCount);
+                            $("#mc").text(missCount);
+                            $("#bc").text(behindCount);
+
+                        }, 100);
                     }
-                    if (j == 1) {
-                        col.querySelector('input').value = behind;
+                });
+            });
+
+
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+            //calculator script
+
+            function dis(val) {
+                document.getElementById("result").value += val
+            }
+
+            function runfooty() {
+
+                document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
+
+
+
+
+
+
+                setTimeout(function () {
+                    var table = document.getElementById('act10table2');
+                    var table2 = document.getElementById('act10table3')
+                    var stemList = []
+                    for (var i = 1, row; row = table.rows[i]; i++) {
+                        //iterate through rows
+                        //rows would be accessed using the "row" variable assigned in the for loop
+                        for (var j = 1, col; col = row.cells[j]; j++) {
+                            //iterate through columns
+                            //columns would be accessed using the "col" variable assigned in the for loop'
+
+                            var value = String(col.querySelector('input').value);
+                            stemList.push(value);
+                        }
+                    }
+
+
+                    for (var i = 1, row; row = table2.rows[i]; i++) {
+                        var value = parseFloat(stemList[i - 1]).toFixed(1);
+
+                        var newString = String(value).split('.');
+                        var goal = newString[0];
+                        var behind = newString[1];
+                        //iterate through rows
+                        //rows would be accessed using the "row" variable assigned in the for loop
+                        for (var j = 0, col; col = row.cells[j]; j++) {
+                            //iterate through columns
+                            //columns would be accessed using the "col" variable assigned in the for loop'
+                            if (j == 0) {
+                                col.querySelector('input').value = goal;
+                            }
+                            if (j == 1) {
+                                col.querySelector('input').value = behind;
+                            }
+                        }
+                    }
+
+
+
+
+
+                }
+
+                    , 1500);
+
+
+            }
+
+
+
+
+
+
+            //function that evaluates the digit and return result
+            function solve() {
+                let x = document.getElementById("result").value
+                let y = eval(x)
+                document.getElementById("result").value = y
+            }
+
+            //function that clear the display
+            function clr() {
+                document.getElementById("result").value = ""
+            }
+
+            // Activity 1: part 1 Drop function
+            function drop(ev) {
+                ev.preventDefault();
+                var id = ev.dataTransfer.getData("text");
+                var target = ev.target;
+                var text = document.getElementById(id).innerHTML;
+
+                document.getElementById(id).innerHTML = "";
+                //document.getElementById(id).style.visibility = "hidden";
+                target.innerHTML = text;
+            }
+
+            //Activity 1: part 2 Drop function
+            function act1Drop(ev) {
+                ev.preventDefault();
+                var id = ev.dataTransfer.getData("text");
+                var target = ev.target;
+                var sentence = document.getElementById(id).innerHTML;
+                var position = splitString(sentence);
+
+                document.getElementById(id).innerHTML = "";
+                target.innerHTML = position;
+            }
+
+            // Method to split positions into the abbreviated versions. i.e Full Forward == FF
+            function splitString(sentence) {
+                var string = sentence;
+                var code = "";
+                string = string.split(" ");
+
+                for (i = 0; i < string.length; i++) {
+                    var word = string[i];
+                    var subcode = word.charAt(0);
+                    if (subcode == '(') { } else {
+                        code = code + subcode;
                     }
                 }
+                return code;
             }
 
- 
-          
-
-
-        }
-
-        , 1500);
-        
-       
-    }
-
-    
-        
-
-    
-
-    //function that evaluates the digit and return result
-    function solve() {
-        let x = document.getElementById("result").value
-        let y = eval(x)
-        document.getElementById("result").value = y
-    }
-
-    //function that clear the display
-    function clr() {
-        document.getElementById("result").value = ""
-    }
-
-    // Activity 1: part 1 Drop function
-    function drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var text = document.getElementById(id).innerHTML;
-
-        document.getElementById(id).innerHTML = "";
-        //document.getElementById(id).style.visibility = "hidden";
-        target.innerHTML = text;
-    }
-
-    //Activity 1: part 2 Drop function
-    function act1Drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var sentence = document.getElementById(id).innerHTML;
-        var position = splitString(sentence);
-
-        document.getElementById(id).innerHTML = "";
-        target.innerHTML = position;
-    }
-
-    // Method to split positions into the abbreviated versions. i.e Full Forward == FF
-    function splitString(sentence) {
-        var string = sentence;
-        var code = "";
-        string = string.split(" ");
-
-        for (i = 0; i < string.length; i++) {
-            var word = string[i];
-            var subcode = word.charAt(0);
-            if (subcode == '(') { } else {
-                code = code + subcode;
-            }
-        }
-        return code;
-    }
-
-</script>
+        </script>
