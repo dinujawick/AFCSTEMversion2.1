@@ -15,11 +15,6 @@
         margin-left: 10px;
     }
 
-    table {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
     h3 {
         color: #002b5c;
         margin-left: 5px;
@@ -278,22 +273,6 @@
         color: white;
     }
 
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    input {
-        border: none;
-    }
-
     .card {
         text-align: center;
         margin-top: 20px;
@@ -314,7 +293,6 @@
     }
 
 </style>
-
 
 <div style="display:none;">
     <a class="btn1" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
@@ -1268,6 +1246,236 @@
                 </tbody>
             </table>
         </div>
+    </div>
+</div>
+
+<!--Activity 9: part 2-->
+<div class="row containRow">
+    <h3><b>GOAL KICKING DATA: Activity 9 (Exploration Task)</b></h3><br />
+    <p>Calculate the goal kicking average (mean) from the top 10 AFC 2019 Women's goal kickers list to 1 decimal place.</p><br />
+
+    <div class="row containInside">
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>PLAYERS (Top 10 AFC women's)</th>
+                        <th>GAMES PLAYED IN 2019</th>
+                        <th>GOALS (Total 2019)</th>
+                        <th>AVERAGE GOALS (Per Game)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>STEVIE-LEE THOMPSON</td>
+                        <td>9</td>
+                        <td>14</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>DANIELLE PONTER</td>
+                        <td>8</td>
+                        <td>13</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ERIN PHILLIPS</td>
+                        <td>9</td>
+                        <td>11</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ELOISE JONES</td>
+                        <td>9</td>
+                        <td>9</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>CHOLE SCHEER</td>
+                        <td>8</td>
+                        <td>8</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AILISH CONSIDINE</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JESS FOLEY</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ANEE HATCHARD</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>EBONY MARINOFF</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>HANNAH MARTIN</td>
+                        <td>8</td>
+                        <td>2</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+
+            <p>Erin Phillips</p>
+            <p>2019 Goals: <span>11</span></p>
+        </div>
+    </div>
+
+    <div class="row containInside">
+        <div class="col-md-6">
+            <p>
+                As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
+                (usually the last digit) graph: <br />
+                For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
+                <span>the left will be 3.</span>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>STEM:</th>
+                        <th>LEAF:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!--Activity 9: part 3-->
+<div class="row containRow">
+    <h3><b>GOAL KICKING DATA: Activity 9 (Extension / Group Work Challenge)</b></h3><br />
+    <p>When there are two sides or groups, we can use a two-sided Stem-and-Leaf plot.</p>
+    <p>Here is an example of a two-sided Stem-and-Leaf Plot.</p><br />
+
+    <img src="" alt="Holding"/><br />
+
+    <p>
+        Using your results from the first activity, create a Stem-and-Leaf plot comparing the ACL Men's (AFL)
+        average goals to the AFC Women's (AFLW) average goals (Round to one decimal place).
+    </p>
+
+    <div class="row containInside">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>LEAF: <br />(AFC MEN)</th>
+                    <th>STEM:</th>
+                    <th>LEAF: <br />(AFC WOMEN)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text"/></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
