@@ -2081,22 +2081,57 @@
             Class Activity / Discussion
             <br />
             <br />
-            Class Activity: Plot the players heiight and weight as a class on the scatterplot. Record the results in your <br />
+            Class Activity: Plot the players height and weight as a class on the scatterplot. Record the results in your <br />
             student workbook.
+            <br />
+            <br />
         </h3>
-        
-            <svg id="svgOne" style="float:right;border:1px solid black;left:200px" width="1000" height="700" onclick="graphClick(evt)">
-       
 
+        <svg id="svgOne" style="float:right;left:200px" width="1000" height="700" onclick="graphClick(evt)">
+            <text x="170" y="50" fill="black">110</text>
+            <text x="170" y="125" fill="black">105</text>
+            <text x="170" y="200" fill="black">100</text>
+            <text x="170" y="275" fill="black">95</text>
+            <text x="170" y="350" fill="black">90</text>
+            <text x="170" y="425" fill="black">85</text>
+            <text x="170" y="500" fill="black">80</text>
+            <text x="170" y="575" fill="black">75</text>
+            <text x="170" y="654.5" fill="black">70</text>
+            <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Weight (kg)</text>
 
+            <text x="500" y="690" fill="black">Height (cm)</text>
 
-
+            <text x="210" y="670" fill="black">150</text>
+            <text x="285" y="670" fill="black">155</text>
+            <text x="360" y="670" fill="black">160</text>
+            <text x="435" y="670" fill="black">165</text>
+            <text x="510" y="670" fill="black">170</text>
+            <text x="585" y="670" fill="black">175</text>
+            <text x="660" y="670" fill="black">180</text>
+            <text x="730" y="670" fill="black">185</text>
+            <text x="805" y="670" fill="black">190</text>
+            <text x="880" y="670" fill="black">200</text>
+            <text x="955" y="670" fill="black">205</text>
         </svg>
 
-            
 
-
-
+        <br />
+        <br />
+        <label for="act14q1">
+            <b>Class Discussion </b><br />
+            Is there a relationship between a player’s field position and their height and weight? Describe any correlations <br />
+            you perceive
+        </label>
+        <br />
+        <textarea rows="3" style="width:100%"></textarea>
+        <br />
+        <label for="act14q2">
+            Imagine an unnamed player’s height of 201cm and weight 105kg. Predict the position they would play. <br />
+            Explain your prediction.
+        </label>
+        <br />
+        <textarea rows="3" style="width:100%"></textarea>
+        <br />
 
     </div>
  </div>
@@ -2110,23 +2145,27 @@
 
 
 
-            for (var i = 15; i < 700; i) {
+
+
+     
+            for (var i = 50; i < 665; i) {
                 var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                rect.setAttribute('x', 0);
+                rect.setAttribute('x', 200);
                 rect.setAttribute('y', i);
                 rect.setAttribute('width', '1000');
                 rect.setAttribute('height', '1');
                 rect.setAttribute('fill', 'grey');
                 document.getElementById('svgOne').appendChild(rect);
                 i += 15.5;
+                
             }
 
-            for (var i = 13.88; i < 1000; i) {
+            for (var i = 200; i < 1000; i) {
                 var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
                 rect.setAttribute('x', i);
-                rect.setAttribute('y', 0);
+                rect.setAttribute('y', 50);
                 rect.setAttribute('width', '1');
-                rect.setAttribute('height', '1000');
+                rect.setAttribute('height', '605');
                 rect.setAttribute('fill', 'grey');
                 document.getElementById('svgOne').appendChild(rect);
                 i += 13.88;
@@ -2137,12 +2176,16 @@
                 var dim = e.getBoundingClientRect();
                 var x = evt.clientX - dim.left;
                 var y = evt.clientY - dim.top;
-                var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                rect.setAttribute('cx', x);
-                rect.setAttribute('cy', y);
-                rect.setAttribute('r', '5');
-                rect.setAttribute('fill', 'black');
-                document.getElementById('svgOne').appendChild(rect);
+
+                if (x > 200 && y < 654.5 && y > 50) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                    rect.setAttribute('cx', x);
+                    rect.setAttribute('cy', y);
+                    rect.setAttribute('r', '5');
+                    rect.setAttribute('fill', 'black');
+                    document.getElementById('svgOne').appendChild(rect);
+                }
+               
 
 
 
