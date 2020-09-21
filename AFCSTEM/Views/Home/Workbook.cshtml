@@ -2162,10 +2162,32 @@
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
+        <table style="width:20%" id="act12table2">
+            <tr style="background-color:#002b5c; color:white;">
+                <td>Player</td>
+                <td>Height</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Laird</td>
+                <td>177cm</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Hartigan</td>
+                <td>194</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Talia</td>
+                <td>197</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Smith</td>
+                <td>189</td>
+            </tr>
+        </table>
         <br />
         <br />
-        
-        
+
+
         <svg id="svgThree" style="float:right;left:200px" width="1000" height="700" onclick="graphClick2(evt)">
             <rect x="200" y="50" height="585" width="2"></rect>
             <rect x="200" y="635" height="2" width="900"></rect>
@@ -2182,6 +2204,35 @@
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
+        <table style="width:20%" id="act12table2">
+            <tr style="background-color:#002b5c; color:white;">
+                <td>Player</td>
+                <td>Height</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Sloane</td>
+                <td>182cm</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Crouch</td>
+                <td>182</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">Gibbs</td>
+                <td>188</td>
+            </tr>
+            <tr>
+                <td onclick="playerGraph(this)">McKay</td>
+                <td>181</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+
+
+
+
+
     </div>
 </div> 
 
@@ -2191,6 +2242,32 @@
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
             <script>
+
+                var colourPlayer = "blue";
+                var LairdC = 0;
+                var HartiC = 0;
+                var TaliaC = 0;
+                var SmithC = 0;
+                var SloaneC = 0;
+                var CrouchC = 0;
+                var GibbC = 0;
+                var MckayC = 0;
+
+                function playerGraph(e) {
+                    if (e.innerHTML == "Laird" || e.innerHTML == "Sloane") {
+                        colourPlayer = "blue";
+                    }
+
+                    else if (e.innerHTML == "Hartigan" || e.innerHTML == "Crouch") {
+                        colourPlayer = "red";
+                    }
+                    else if (e.innerHTML == "Talia" || e.innerHTML == "Gibbs") {
+                        colourPlayer = "yellow";
+                    }
+                    else {
+                        colourPlayer = "green";
+                    }
+                }
 
 
                 for (var i = 50; i < 665; i) {
@@ -2273,15 +2350,60 @@
                         var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
                         rect.setAttribute('cx', x);
                         rect.setAttribute('cy', y);
-                        rect.setAttribute('r', '5');
-                        rect.setAttribute('fill', 'black');
-                        document.getElementById('svgTwo').appendChild(rect);
+                        rect.setAttribute('r', '10');
+                        rect.setAttribute('fill', colourPlayer);
+                        if (colourPlayer == "blue") {
+                            if (LairdC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x-15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Laird";
+                                document.getElementById('svgTwo').appendChild(text);
+                                LairdC++;
+                            }
+                        }
+                        if (colourPlayer == "red") {
+                            if (HartiC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x-15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Hartigan";
+                                document.getElementById('svgTwo').appendChild(text);
+                                HartiC++;
+                            }
+                        }
+                        if (colourPlayer == "yellow") {
+                            if (TaliaC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x-15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Talia";
+                                document.getElementById('svgTwo').appendChild(text);
+                                TaliaC++;
+                            }
+                        }
                     }
+                    if (colourPlayer == "green") {
+                        if (SmithC == 0) {
+                            document.getElementById('svgTwo').appendChild(rect);
+                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                            text.setAttribute('x', x-15);
+                            text.setAttribute('y', y - 15);
+                            text.textContent = "Smith";
+                            document.getElementById('svgTwo').appendChild(text);
+                            SmithC++;
+                        }
 
-
-
-
+                    }
                 }
+
+
+
+
+                
                 function graphClick2(evt) {
                     var e = evt.target;
                     var dim = e.getBoundingClientRect();
@@ -2292,15 +2414,61 @@
                         var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
                         rect.setAttribute('cx', x);
                         rect.setAttribute('cy', y);
-                        rect.setAttribute('r', '5');
-                        rect.setAttribute('fill', 'black');
-                        document.getElementById('svgThree').appendChild(rect);
+                        rect.setAttribute('r', '10');
+                        rect.setAttribute('fill', colourPlayer);
+                        if (colourPlayer == "blue") {
+                            if (SloaneC == 0) {
+                                document.getElementById('svgThree').appendChild(rect)
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x-15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Sloane";
+                                document.getElementById('svgThree').appendChild(text);;
+                                SloaneC++;
+                            }
+                        }
+                        if (colourPlayer == "red") {
+                            if (CrouchC == 0) {
+                                document.getElementById('svgThree').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x-15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Crouch";
+                                document.getElementById('svgThree').appendChild(text);
+                                CrouchC++;
+                            } 
+                        }
+                        if (colourPlayer == "yellow") {
+                            if (GibbC == 0) {
+                                document.getElementById('svgThree').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x-15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Gibbs";
+                                document.getElementById('svgThree').appendChild(text);
+                                GibbC++;
+                            }
+                        }
+                        }
+                    if (colourPlayer == "green") {
+                        if (MckayC == 0) {
+                            document.getElementById('svgThree').appendChild(rect)
+                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                            text.setAttribute('x', x-15);
+                            text.setAttribute('y', y - 15);
+                            text.textContent = "McKay";
+                            document.getElementById('svgTwo').appendChild(text);
+                            MckayC++;
+                        }
+                            
+                        }
+                       
                     }
 
 
 
 
-                }
+                
 
 
                 drawGraph();
