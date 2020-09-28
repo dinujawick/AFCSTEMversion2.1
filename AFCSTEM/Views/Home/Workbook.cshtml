@@ -572,7 +572,7 @@
         width: 100%
     }
 </style>
-
+<script src="https://d3js.org/d3.v5.js"></script>
 
 <div style="">
     <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
@@ -2086,8 +2086,8 @@
             <br />
             <br />
         </h3>
-
-        <svg id="svgOne" style="float:right;left:200px" width="1000" height="700" onclick="graphClick(evt)">
+        <button onclick="clearGraph('One')">Clear Graph</button>
+        <svg id="svgOne" style="float:right;left:200px;cursor:pointer" width="1000" height="700" onclick="graphClick(evt)">
             <text x="170" y="50" fill="black">110</text>
             <text x="170" y="125" fill="black">105</text>
             <text x="170" y="200" fill="black">100</text>
@@ -2134,7 +2134,7 @@
         <br />
 
     </div>
- </div>
+</div>
 
 
 <div class="row containRow" style="margin-bottom:25px;">
@@ -2146,7 +2146,7 @@
             Task: plot the heights of Defenders & Midfielders. Identify the outliers. <br /><br /><br /><br />
             <b> Defenders:</b>
         </h3>
-        <svg id="svgTwo" style="float:right;left:200px" width="1000" height="700" onclick="graphClick1(evt)">
+        <svg id="svgTwo" style="float:right;left:200px;cursor:pointer" width="1000" height="700" onclick="graphClick1(evt)">
             <rect x="200" y="50" height="585" width="2"></rect>
             <rect x="200" y="635" height="2" width="900"></rect>
             <text x="170" y="50" fill="black">205</text>
@@ -2162,25 +2162,27 @@
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
+        <button onclick="clearGraph('Two')">Clear Graph</button>
+
         <table style="width:20%" id="act12table2">
             <tr style="background-color:#002b5c; color:white;">
                 <td>Player</td>
                 <td>Height</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Laird</td>
+                <td onclick="playerGraph(this)" style="background-color:blue;cursor:pointer">Laird</td>
                 <td>177cm</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Hartigan</td>
+                <td onclick="playerGraph(this)" style="background-color:red;cursor:pointer">Hartigan</td>
                 <td>194</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Talia</td>
+                <td onclick="playerGraph(this)" style="background-color:yellow;cursor:pointer">Talia</td>
                 <td>197</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Smith</td>
+                <td onclick="playerGraph(this)" style="background-color:green;cursor:pointer">Smith</td>
                 <td>189</td>
             </tr>
         </table>
@@ -2188,7 +2190,7 @@
         <br />
 
 
-        <svg id="svgThree" style="float:right;left:200px" width="1000" height="700" onclick="graphClick2(evt)">
+        <svg id="svgThree" style="float:right;left:200px;cursor:pointer" width="1000" height="700" onclick="graphClick2(evt)">
             <rect x="200" y="50" height="585" width="2"></rect>
             <rect x="200" y="635" height="2" width="900"></rect>
             <text x="170" y="50" fill="black">205</text>
@@ -2204,25 +2206,26 @@
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
+        <button onclick="clearGraph('Three')">Clear Graph</button>
         <table style="width:20%" id="act12table2">
             <tr style="background-color:#002b5c; color:white;">
                 <td>Player</td>
                 <td>Height</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Sloane</td>
+                <td onclick="playerGraph(this)" style="background-color:blue;cursor:pointer" >Sloane</td>
                 <td>182cm</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Crouch</td>
+                <td onclick="playerGraph(this)" style="background-color:red;cursor:pointer">Crouch</td>
                 <td>182</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">Gibbs</td>
+                <td onclick="playerGraph(this)" style="background-color:yellow;cursor:pointer">Gibbs</td>
                 <td>188</td>
             </tr>
             <tr>
-                <td onclick="playerGraph(this)">McKay</td>
+                <td onclick="playerGraph(this)" style="background-color:green;cursor:pointer">McKay</td>
                 <td>181</td>
             </tr>
         </table>
@@ -2234,529 +2237,704 @@
 
 
     </div>
-</div> 
+</div>
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>AFL PLAYER MORPHOLOGY:</b> Activity 14
+            <br />
+            Extension / Group Work Challenge <br />
+            <br />
+        </h3>
+        <img style="width:100%;height:90%" src="~/images/Workbooklet/act14pic1.png" />
+        <br />
+        <br />
+        
+    </div>
+</div>
+
+
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>AFL PLAYER MORPHOLOGY:</b> Activity 14
+            <br />
+            Extension / Group Work Challenge <br />
+            <br />
+            <br />
+            Height of AFC players: <br />
+            <img style="width:100%;height:30%" src="~/images/Workbooklet/act14tables.png" />
+            <br />
+            Using the data above calculate the mean, median, mode and range of the player’s heights <br />
+            (rounded to nearest tenth).
+        </h3>
+        <br />
+        <br />
+        MEAN is the average of the numbers.
+        <br />
+        <label for="act14q3">1. Add up the heights:</label>
+        <input name="act14q3" type="number" style="width:60%" />
+        <br />
+        <label for="act14q4">2. Divide the total by how many player's were used:</label>
+        <input name="act14q4" type="number" style="width:30%" />
+        <br />
+        <label for="act14q5">3. The MEAN is:</label>
+        <input name="act14q5" type="number" style="width:60%" />
+
+        <br />
+        <br />
+        MEDIAN is the middle value of a set of numbers.
+        <br />
+        <label for="act14q6">1. Put the nuymber (heights) in order (smallest to largest):</label>
+        <br />
+        <input name="act14q6" type="text" style="width:100%" />
+        <br />
+        2. Circle the middle number <br />
+        <label for="act14q7">3. The MEDIAN is</label>
+        <input name="act14q7" type="number" style="width:60%" />
+        <br />
+        <br />
+        MODE is when a number appears most frequently in a set of numbers.
+        <br />
+        Tally the player’s heights below to determine the MODE
+
+        <br />
+        <br />
+        RANGE is the difference between the largest and smallest value
+        <br/>
+        <label for="act14q8">1. Largest Height:</label>
+        <input name="act14q8" type="number" style="width:60%" />
+        <br />
+        <label for="act14q9">2. Smallest Height:</label>
+        <input name="act14q9" type="number" style="width:60%" />
+        <br />
+        <label for="act14q10">3. The RANGE is:</label>
+        <input name="act14q10" type="number" style="width:60%" />
+
+
+    </div>
+</div>
+
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>AFL CARTESIAN PLANE DISTANCES:</b> Activity 15
+            <br />
+            Exploration Task <br />
+            <br />
+            <br />
+            STUDENT ACTIVITY: <br />
+            1. Label the 4 quadrants <br />
+            2. Below is Adelaide Crows player Brodie Smith’s travel path for 3 plays in an AFL match. List the <br />
+            Cartesian coordinates for the 3 plays and identify his starting and finishing position on the ground, <br />
+            using your knowledge of AFL positions. <br />
+        </h3>
+        <svg id="quad1" style="float:right;left:200px;cursor:pointer" width="1000" height="1200">
+            <circle  r="43" cx="754" cy="680" id="play3quad1" stroke="red" stroke-width="2" fill="white"></circle>
+        </svg>
+
+
+    </div>
+</div>
 
 
 
 
 
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-            <script>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                <script>
 
-                var colourPlayer = "blue";
-                var LairdC = 0;
-                var HartiC = 0;
-                var TaliaC = 0;
-                var SmithC = 0;
-                var SloaneC = 0;
-                var CrouchC = 0;
-                var GibbC = 0;
-                var MckayC = 0;
+                    //for quad1
+                    var int1 = 11;
+                    for (var i = 0; i < 1033; i) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        rect.setAttribute('x', 0);
+                        rect.setAttribute('y', i);
+                        rect.setAttribute('width', '946');
+                        rect.setAttribute('height', '1');
+                        rect.setAttribute('fill', 'grey');
+                        text.setAttribute('x', i);
+                        text.setAttribute('font-size', '12');
+                        text.setAttribute('y', '473');
+                        text.textContent = int1;
+                        int1--;
+                        document.getElementById('quad1').appendChild(rect);
+                        document.getElementById('quad1').appendChild(text);
+                        i += 43;
 
-                function playerGraph(e) {
-                    if (e.innerHTML == "Laird" || e.innerHTML == "Sloane") {
-                        colourPlayer = "blue";
+                    }
+                    int1 = -11;
+                    for (var i = 0; i < 947; i) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        rect.setAttribute('x', i);
+                        rect.setAttribute('y', 0);
+                        rect.setAttribute('width', '1');
+                        rect.setAttribute('height', '946');
+                        rect.setAttribute('fill', 'grey');
+                        text.setAttribute('y', i+10);
+                        text.setAttribute('font-size', '12');
+                        text.setAttribute('x', '473');
+                        text.textContent = int1;
+                        
+                        if (int1 != 0) {
+                            document.getElementById('quad1').appendChild(text);
+                        }  
+                        int1++;
+                        document.getElementById('quad1').appendChild(rect);
+                        i += 43;
                     }
 
-                    else if (e.innerHTML == "Hartigan" || e.innerHTML == "Crouch") {
-                        colourPlayer = "red";
+
+                    function clearGraph(num) {
+                        var svgId = "svg" + num;
+
+                        var circles = d3.select("#" + svgId);
+                        circles.selectAll("circle").remove();
+                        circles.selectAll(".playertext").remove();
+
+                        if (num == "Three") {
+                            SloaneC = 0;
+                            CrouchC = 0;
+                            GibbC = 0;
+                            MckayC = 0;
+                        }
+
+                        if (num == "Two") {
+                            LairdC = 0;
+                            HartiC = 0;
+                            TaliaC = 0;
+                            SmithC = 0;
+                        }
+
+
                     }
-                    else if (e.innerHTML == "Talia" || e.innerHTML == "Gibbs") {
-                        colourPlayer = "yellow";
+
+
+                    var colourPlayer = "blue";
+                    var LairdC = 0;
+                    var HartiC = 0;
+                    var TaliaC = 0;
+                    var SmithC = 0;
+                    var SloaneC = 0;
+                    var CrouchC = 0;
+                    var GibbC = 0;
+                    var MckayC = 0;
+
+                    function playerGraph(e) {
+                        if (e.innerHTML == "Laird" || e.innerHTML == "Sloane") {
+                            colourPlayer = "blue";
+                        }
+
+                        else if (e.innerHTML == "Hartigan" || e.innerHTML == "Crouch") {
+                            colourPlayer = "red";
+                        }
+                        else if (e.innerHTML == "Talia" || e.innerHTML == "Gibbs") {
+                            colourPlayer = "yellow";
+                        }
+                        else {
+                            colourPlayer = "green";
+                        }
                     }
-                    else {
-                        colourPlayer = "green";
+
+
+                    for (var i = 50; i < 665; i) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rect.setAttribute('x', 200);
+                        rect.setAttribute('y', i);
+                        rect.setAttribute('width', '1000');
+                        rect.setAttribute('height', '1');
+                        rect.setAttribute('fill', 'grey');
+                        document.getElementById('svgThree').appendChild(rect);
+                        i += 65;
+
                     }
-                }
 
+                    for (var i = 50; i < 665; i) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rect.setAttribute('x', 200);
+                        rect.setAttribute('y', i);
+                        rect.setAttribute('width', '1000');
+                        rect.setAttribute('height', '1');
+                        rect.setAttribute('fill', 'grey');
+                        document.getElementById('svgTwo').appendChild(rect);
+                        i += 65;
 
-                for (var i = 50; i < 665; i) {
-                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    rect.setAttribute('x', 200);
-                    rect.setAttribute('y', i);
-                    rect.setAttribute('width', '1000');
-                    rect.setAttribute('height', '1');
-                    rect.setAttribute('fill', 'grey');
-                    document.getElementById('svgThree').appendChild(rect);
-                    i += 65;
-
-                }
-
-                for (var i = 50; i < 665; i) {
-                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    rect.setAttribute('x', 200);
-                    rect.setAttribute('y', i);
-                    rect.setAttribute('width', '1000');
-                    rect.setAttribute('height', '1');
-                    rect.setAttribute('fill', 'grey');
-                    document.getElementById('svgTwo').appendChild(rect);
-                    i += 65;
-
-                }
+                    }
 
 
 
 
-                for (var i = 50; i < 665; i) {
-                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    rect.setAttribute('x', 200);
-                    rect.setAttribute('y', i);
-                    rect.setAttribute('width', '1000');
-                    rect.setAttribute('height', '1');
-                    rect.setAttribute('fill', 'grey'); 
-                    document.getElementById('svgOne').appendChild(rect);
-                    i += 15.5;
-
-                }
-
-                for (var i = 200; i < 1000; i) {
-                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    rect.setAttribute('x', i);
-                    rect.setAttribute('y', 50);
-                    rect.setAttribute('width', '1');
-                    rect.setAttribute('height', '605');
-                    rect.setAttribute('fill', 'grey');
-                    document.getElementById('svgOne').appendChild(rect);
-                    i += 13.88;
-                }
-
-                function graphClick(evt) {
-                    var e = evt.target;
-                    var dim = e.getBoundingClientRect();
-                    var x = evt.clientX - dim.left;
-                    var y = evt.clientY - dim.top;
-
-                    if (x > 200 && y < 654.5 && y > 50) {
-                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                        rect.setAttribute('cx', x);
-                        rect.setAttribute('cy', y);
-                        rect.setAttribute('r', '5');
-                        rect.setAttribute('fill', 'black');
+                    for (var i = 50; i < 665; i) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rect.setAttribute('x', 200);
+                        rect.setAttribute('y', i);
+                        rect.setAttribute('width', '1000');
+                        rect.setAttribute('height', '1');
+                        rect.setAttribute('fill', 'grey');
                         document.getElementById('svgOne').appendChild(rect);
+                        i += 15.5;
+
+                    }
+
+                    for (var i = 200; i < 1000; i) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rect.setAttribute('x', i);
+                        rect.setAttribute('y', 50);
+                        rect.setAttribute('width', '1');
+                        rect.setAttribute('height', '605');
+                        rect.setAttribute('fill', 'grey');
+                        document.getElementById('svgOne').appendChild(rect);
+                        i += 13.88;
+                    }
+
+                    function graphClick(evt) {
+                        var e = evt.target;
+                        var dim = e.getBoundingClientRect();
+                        var x = evt.clientX - dim.left;
+                        var y = evt.clientY - dim.top;
+
+                        if (x > 200 && y < 654.5 && y > 50) {
+                            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                            rect.setAttribute('cx', x);
+                            rect.setAttribute('cy', y);
+                            rect.setAttribute('r', '5');
+                            rect.setAttribute('fill', 'black');
+                            document.getElementById('svgOne').appendChild(rect);
+                        }
+
+
+
+
+                    }
+
+                    function graphClick1(evt) {
+                        var e = evt.target;
+                        var dim = e.getBoundingClientRect();
+                        var x = evt.clientX - dim.left;
+                        var y = evt.clientY - dim.top;
+
+                        if (x > 200 && y < 654.5 && y > 50) {
+                            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                            rect.setAttribute('cx', x);
+                            rect.setAttribute('cy', y);
+                            rect.setAttribute('r', '10');
+                            rect.setAttribute('fill', colourPlayer);
+                            if (colourPlayer == "blue") {
+                                if (LairdC == 0) {
+                                    document.getElementById('svgTwo').appendChild(rect);
+                                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    text.setAttribute('x', x - 15);
+                                    text.setAttribute('y', y - 15);
+                                    text.textContent = "Laird";
+                                    text.setAttribute('class', "playertext")
+                                    document.getElementById('svgTwo').appendChild(text);
+                                    LairdC++;
+                                }
+                            }
+                            if (colourPlayer == "red") {
+                                if (HartiC == 0) {
+                                    document.getElementById('svgTwo').appendChild(rect);
+                                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    text.setAttribute('x', x - 15);
+                                    text.setAttribute('y', y - 15);
+                                    text.textContent = "Hartigan";
+                                    text.setAttribute('class', "playertext")
+                                    document.getElementById('svgTwo').appendChild(text);
+                                    HartiC++;
+                                }
+                            }
+                            if (colourPlayer == "yellow") {
+                                if (TaliaC == 0) {
+                                    document.getElementById('svgTwo').appendChild(rect);
+                                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    text.setAttribute('x', x - 15);
+                                    text.setAttribute('y', y - 15);
+                                    text.setAttribute('class', "playertext")
+                                    text.textContent = "Talia";
+                                    document.getElementById('svgTwo').appendChild(text);
+                                    TaliaC++;
+                                }
+                            }
+                        }
+                        if (colourPlayer == "green") {
+                            if (SmithC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.setAttribute('class', "playertext")
+                                text.textContent = "Smith";
+
+                                document.getElementById('svgTwo').appendChild(text);
+                                SmithC++;
+                            }
+
+                        }
                     }
 
 
 
 
-                }
 
-                function graphClick1(evt) {
-                    var e = evt.target;
-                    var dim = e.getBoundingClientRect();
-                    var x = evt.clientX - dim.left;
-                    var y = evt.clientY - dim.top;
+                    function graphClick2(evt) {
+                        var e = evt.target;
+                        var dim = e.getBoundingClientRect();
+                        var x = evt.clientX - dim.left;
+                        var y = evt.clientY - dim.top;
 
-                    if (x > 200 && y < 654.5 && y > 50) {
-                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                        rect.setAttribute('cx', x);
-                        rect.setAttribute('cy', y);
-                        rect.setAttribute('r', '10');
-                        rect.setAttribute('fill', colourPlayer);
-                        if (colourPlayer == "blue") {
-                            if (LairdC == 0) {
-                                document.getElementById('svgTwo').appendChild(rect);
-                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                text.setAttribute('x', x-15);
-                                text.setAttribute('y', y - 15);
-                                text.textContent = "Laird";
-                                document.getElementById('svgTwo').appendChild(text);
-                                LairdC++;
+                        if (x > 200 && y < 654.5 && y > 50) {
+                            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                            rect.setAttribute('cx', x);
+                            rect.setAttribute('cy', y);
+                            rect.setAttribute('r', '10');
+                            rect.setAttribute('fill', colourPlayer);
+                            if (colourPlayer == "blue") {
+                                if (SloaneC == 0) {
+                                    document.getElementById('svgThree').appendChild(rect)
+                                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    text.setAttribute('x', x - 15);
+                                    text.setAttribute('y', y - 15);
+                                    text.textContent = "Sloane";
+                                    text.setAttribute('class', "playertext")
+                                    document.getElementById('svgThree').appendChild(text);;
+                                    SloaneC++;
+                                }
+                            }
+                            if (colourPlayer == "red") {
+                                if (CrouchC == 0) {
+                                    document.getElementById('svgThree').appendChild(rect);
+                                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    text.setAttribute('x', x - 15);
+                                    text.setAttribute('y', y - 15);
+                                    text.textContent = "Crouch";
+                                    text.setAttribute('class', "playertext")
+                                    document.getElementById('svgThree').appendChild(text);
+                                    CrouchC++;
+                                }
+                            }
+                            if (colourPlayer == "yellow") {
+                                if (GibbC == 0) {
+                                    document.getElementById('svgThree').appendChild(rect);
+                                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                    text.setAttribute('x', x - 15);
+                                    text.setAttribute('y', y - 15);
+                                    text.textContent = "Gibbs";
+                                    text.setAttribute('class', "playertext")
+                                    document.getElementById('svgThree').appendChild(text);
+                                    GibbC++;
+                                }
                             }
                         }
-                        if (colourPlayer == "red") {
-                            if (HartiC == 0) {
-                                document.getElementById('svgTwo').appendChild(rect);
-                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                text.setAttribute('x', x-15);
-                                text.setAttribute('y', y - 15);
-                                text.textContent = "Hartigan";
-                                document.getElementById('svgTwo').appendChild(text);
-                                HartiC++;
-                            }
-                        }
-                        if (colourPlayer == "yellow") {
-                            if (TaliaC == 0) {
-                                document.getElementById('svgTwo').appendChild(rect);
-                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                text.setAttribute('x', x-15);
-                                text.setAttribute('y', y - 15);
-                                text.textContent = "Talia";
-                                document.getElementById('svgTwo').appendChild(text);
-                                TaliaC++;
-                            }
-                        }
-                    }
-                    if (colourPlayer == "green") {
-                        if (SmithC == 0) {
-                            document.getElementById('svgTwo').appendChild(rect);
-                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                            text.setAttribute('x', x-15);
-                            text.setAttribute('y', y - 15);
-                            text.textContent = "Smith";
-                            document.getElementById('svgTwo').appendChild(text);
-                            SmithC++;
-                        }
-
-                    }
-                }
-
-
-
-
-                
-                function graphClick2(evt) {
-                    var e = evt.target;
-                    var dim = e.getBoundingClientRect();
-                    var x = evt.clientX - dim.left;
-                    var y = evt.clientY - dim.top;
-
-                    if (x > 200 && y < 654.5 && y > 50) {
-                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                        rect.setAttribute('cx', x);
-                        rect.setAttribute('cy', y);
-                        rect.setAttribute('r', '10');
-                        rect.setAttribute('fill', colourPlayer);
-                        if (colourPlayer == "blue") {
-                            if (SloaneC == 0) {
+                        if (colourPlayer == "green") {
+                            if (MckayC == 0) {
                                 document.getElementById('svgThree').appendChild(rect)
                                 var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                text.setAttribute('x', x-15);
+                                text.setAttribute('x', x - 15);
                                 text.setAttribute('y', y - 15);
-                                text.textContent = "Sloane";
-                                document.getElementById('svgThree').appendChild(text);;
-                                SloaneC++;
-                            }
-                        }
-                        if (colourPlayer == "red") {
-                            if (CrouchC == 0) {
-                                document.getElementById('svgThree').appendChild(rect);
-                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                text.setAttribute('x', x-15);
-                                text.setAttribute('y', y - 15);
-                                text.textContent = "Crouch";
+                                text.textContent = "McKay";
+                                text.setAttribute('class', "playertext")
                                 document.getElementById('svgThree').appendChild(text);
-                                CrouchC++;
-                            } 
-                        }
-                        if (colourPlayer == "yellow") {
-                            if (GibbC == 0) {
-                                document.getElementById('svgThree').appendChild(rect);
-                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                                text.setAttribute('x', x-15);
-                                text.setAttribute('y', y - 15);
-                                text.textContent = "Gibbs";
-                                document.getElementById('svgThree').appendChild(text);
-                                GibbC++;
+                                MckayC++;
                             }
+
                         }
-                        }
-                    if (colourPlayer == "green") {
-                        if (MckayC == 0) {
-                            document.getElementById('svgThree').appendChild(rect)
-                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                            text.setAttribute('x', x-15);
-                            text.setAttribute('y', y - 15);
-                            text.textContent = "McKay";
-                            document.getElementById('svgTwo').appendChild(text);
-                            MckayC++;
-                        }
-                            
-                        }
-                       
+
                     }
 
 
 
 
-                
 
 
-                drawGraph();
 
-                var playerCount = 1;
-                function addPlayer() {
+                    drawGraph();
 
-                    if (playerCount < 10) {
+                    var playerCount = 1;
+                    function addPlayer() {
 
-                        var table = document.getElementById("act6table");
-                        var row = table.insertRow(playerCount + 1);
-                        var cell = row.insertCell(0);
-                        var cell2 = row.insertCell(1);
-                        var cell3 = row.insertCell(2);
-                        var cell4 = row.insertCell(3);
-                        var cell5 = row.insertCell(4);
-                        var cell6 = row.insertCell(5);
+                        if (playerCount < 10) {
 
-                        var input30 = document.createElement("input");
-                        var input31 = document.createElement("input");
-                        var input3 = document.createElement("input");
-                        var input4 = document.createElement("input");
-                        var input5 = document.createElement("input");
-                        var input6 = document.createElement("input");
-
-                        input30.size = 30;
-                        input31.size = 30;
-                        input3.size = 3;
-                        input4.size = 3;
-                        input5.size = 3;
-                        input6.size = 3;
-
-                        cell.appendChild(input30);
-                        cell2.appendChild(input3);
-                        cell3.appendChild(input4);
-                        cell4.appendChild(input5);
-                        cell5.appendChild(input6);
-                        cell6.appendChild(input31);
-
-                        playerCount++;
-                        console.log(playerCount);
-                    }
-                }
-
-
-                //unhide calculator div
-                function unhideCal() {
-                    if (document.getElementById("calculator").style.display == "none") {
-                        document.getElementById("calculator").style.display = "inline-block";
-                    }
-                    else {
-                        document.getElementById("calculator").style.display = "none";
-                    }
-
-
-                }
-
-
-                function drawGraph() {
-                    var count = 3.0;
-                    var graph = document.getElementById("texGraph").getContext("2d");
-                    for (var i = 50; i < 400; i) {
-                        graph.fillRect(30, i, 500, 1);
-                        graph.fillText(count, 10, i)
-                        count -= 0.5;
-                        i += 50;
-                    }
-
-                    graph.fillText("2015", 100, 360)
-                    graph.fillText("2016", 200, 360)
-                    graph.fillText("2017", 300, 360)
-                    graph.fillText("2018", 400, 360)
-                    graph.fillText("2019", 500, 360)
-
-                }
-
-                function drawGraphOnClick(x, val) {
-                    var graph = document.getElementById("texGraph").getContext("2d");
-                    graph.fillStyle = "#004b8d"
-                    graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
-                }
-
-                var coinCount = 0;
-                goalCount = 0;
-                behindCount = 0;
-                missCount = 0;
-
-                jQuery(document).ready(function ($) {
-
-                    $('#coin, #coin2').on('click', function () {
-
-                        if (coinCount < 10) {
-                            coinCount++;
-                            var flipResult = Math.random();
-                            var flipResult2 = Math.random();
-
-                            var table = document.getElementById("coinTable");
-                            var row = table.insertRow(coinCount);
+                            var table = document.getElementById("act6table");
+                            var row = table.insertRow(playerCount + 1);
                             var cell = row.insertCell(0);
                             var cell2 = row.insertCell(1);
                             var cell3 = row.insertCell(2);
                             var cell4 = row.insertCell(3);
-                            cell.innerHTML = coinCount;
+                            var cell5 = row.insertCell(4);
+                            var cell6 = row.insertCell(5);
 
-                            cell2.setAttribute("id", "hh" + coinCount);
-                            cell3.setAttribute("id", "ht" + coinCount);
-                            cell4.setAttribute("id", "tt" + coinCount);
+                            var input30 = document.createElement("input");
+                            var input31 = document.createElement("input");
+                            var input3 = document.createElement("input");
+                            var input4 = document.createElement("input");
+                            var input5 = document.createElement("input");
+                            var input6 = document.createElement("input");
 
+                            input30.size = 30;
+                            input31.size = 30;
+                            input3.size = 3;
+                            input4.size = 3;
+                            input5.size = 3;
+                            input6.size = 3;
 
-                            $('#coin').removeClass();
-                            $('#coin2').removeClass();
-                            setTimeout(function () {
-                                if (flipResult <= 0.5) {
-                                    $('#coin').addClass('heads');
-                                    console.log('coin1 - it is head');
-                                }
-                                if (flipResult2 <= 0.5) {
-                                    $('#coin2').addClass('heads');
-                                    console.log('coin2 - it is head');
-                                }
-                                if (flipResult > 0.5) {
-                                    $('#coin').addClass('tails');
-                                    console.log('coin1 - it is tails');
-                                }
+                            cell.appendChild(input30);
+                            cell2.appendChild(input3);
+                            cell3.appendChild(input4);
+                            cell4.appendChild(input5);
+                            cell5.appendChild(input6);
+                            cell6.appendChild(input31);
 
-                                if (flipResult2 > 0.5) {
-                                    $('#coin2').addClass('tails');
-                                    console.log('coin2  - it is tails');
-                                }
-
-                                if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
-                                    console.log(" in hh ")
-                                    var id = "hh" + coinCount;
-                                    $("#" + id).text("Goal");
-                                    goalCount++;
-                                }
-
-                                else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
-                                    console.log(" in tt ")
-                                    var id = "tt" + coinCount;
-                                    $("#" + id).text("Miss");
-                                    missCount++;
-                                }
-
-                                else {
-                                    var id = "ht" + coinCount;
-                                    $("#" + id).text("Behind");
-                                    behindCount++;
-
-                                }
-
-
-
-                                $("#gc").text(goalCount);
-                                $("#mc").text(missCount);
-                                $("#bc").text(behindCount);
-
-                            }, 100);
+                            playerCount++;
+                            console.log(playerCount);
                         }
+                    }
+
+
+                    //unhide calculator div
+                    function unhideCal() {
+                        if (document.getElementById("calculator").style.display == "none") {
+                            document.getElementById("calculator").style.display = "inline-block";
+                        }
+                        else {
+                            document.getElementById("calculator").style.display = "none";
+                        }
+
+
+                    }
+
+
+                    function drawGraph() {
+                        var count = 3.0;
+                        var graph = document.getElementById("texGraph").getContext("2d");
+                        for (var i = 50; i < 400; i) {
+                            graph.fillRect(30, i, 500, 1);
+                            graph.fillText(count, 10, i)
+                            count -= 0.5;
+                            i += 50;
+                        }
+
+                        graph.fillText("2015", 100, 360)
+                        graph.fillText("2016", 200, 360)
+                        graph.fillText("2017", 300, 360)
+                        graph.fillText("2018", 400, 360)
+                        graph.fillText("2019", 500, 360)
+
+                    }
+
+                    function drawGraphOnClick(x, val) {
+                        var graph = document.getElementById("texGraph").getContext("2d");
+                        graph.fillStyle = "#004b8d"
+                        graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
+                    }
+
+                    var coinCount = 0;
+                    goalCount = 0;
+                    behindCount = 0;
+                    missCount = 0;
+
+                    jQuery(document).ready(function ($) {
+
+                        $('#coin, #coin2').on('click', function () {
+
+                            if (coinCount < 10) {
+                                coinCount++;
+                                var flipResult = Math.random();
+                                var flipResult2 = Math.random();
+
+                                var table = document.getElementById("coinTable");
+                                var row = table.insertRow(coinCount);
+                                var cell = row.insertCell(0);
+                                var cell2 = row.insertCell(1);
+                                var cell3 = row.insertCell(2);
+                                var cell4 = row.insertCell(3);
+                                cell.innerHTML = coinCount;
+
+                                cell2.setAttribute("id", "hh" + coinCount);
+                                cell3.setAttribute("id", "ht" + coinCount);
+                                cell4.setAttribute("id", "tt" + coinCount);
+
+
+                                $('#coin').removeClass();
+                                $('#coin2').removeClass();
+                                setTimeout(function () {
+                                    if (flipResult <= 0.5) {
+                                        $('#coin').addClass('heads');
+                                        console.log('coin1 - it is head');
+                                    }
+                                    if (flipResult2 <= 0.5) {
+                                        $('#coin2').addClass('heads');
+                                        console.log('coin2 - it is head');
+                                    }
+                                    if (flipResult > 0.5) {
+                                        $('#coin').addClass('tails');
+                                        console.log('coin1 - it is tails');
+                                    }
+
+                                    if (flipResult2 > 0.5) {
+                                        $('#coin2').addClass('tails');
+                                        console.log('coin2  - it is tails');
+                                    }
+
+                                    if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
+                                        console.log(" in hh ")
+                                        var id = "hh" + coinCount;
+                                        $("#" + id).text("Goal");
+                                        goalCount++;
+                                    }
+
+                                    else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
+                                        console.log(" in tt ")
+                                        var id = "tt" + coinCount;
+                                        $("#" + id).text("Miss");
+                                        missCount++;
+                                    }
+
+                                    else {
+                                        var id = "ht" + coinCount;
+                                        $("#" + id).text("Behind");
+                                        behindCount++;
+
+                                    }
+
+
+
+                                    $("#gc").text(goalCount);
+                                    $("#mc").text(missCount);
+                                    $("#bc").text(behindCount);
+
+                                }, 100);
+                            }
+                        });
                     });
-                });
 
 
-                function allowDrop(ev) {
-                    ev.preventDefault();
-                }
+                    function allowDrop(ev) {
+                        ev.preventDefault();
+                    }
 
-                function drag(ev) {
-                    ev.dataTransfer.setData("text", ev.target.id);
-                }
-                //calculator script
+                    function drag(ev) {
+                        ev.dataTransfer.setData("text", ev.target.id);
+                    }
+                    //calculator script
 
-                function dis(val) {
-                    document.getElementById("result").value += val
-                }
+                    function dis(val) {
+                        document.getElementById("result").value += val
+                    }
 
-                function runfooty() {
+                    function runfooty() {
 
-                    document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
-
-
+                        document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
 
 
 
 
-                    setTimeout(function () {
-                        var table = document.getElementById('act10table2');
-                        var table2 = document.getElementById('act10table3')
-                        var stemList = []
-                        for (var i = 1, row; row = table.rows[i]; i++) {
-                            //iterate through rows
-                            //rows would be accessed using the "row" variable assigned in the for loop
-                            for (var j = 1, col; col = row.cells[j]; j++) {
-                                //iterate through columns
-                                //columns would be accessed using the "col" variable assigned in the for loop'
-
-                                var value = String(col.querySelector('input').value);
-                                stemList.push(value);
-                            }
-                        }
 
 
-                        for (var i = 1, row; row = table2.rows[i]; i++) {
-                            var value = parseFloat(stemList[i - 1]).toFixed(1);
+                        setTimeout(function () {
+                            var table = document.getElementById('act10table2');
+                            var table2 = document.getElementById('act10table3')
+                            var stemList = []
+                            for (var i = 1, row; row = table.rows[i]; i++) {
+                                //iterate through rows
+                                //rows would be accessed using the "row" variable assigned in the for loop
+                                for (var j = 1, col; col = row.cells[j]; j++) {
+                                    //iterate through columns
+                                    //columns would be accessed using the "col" variable assigned in the for loop'
 
-                            var newString = String(value).split('.');
-                            var goal = newString[0];
-                            var behind = newString[1];
-                            //iterate through rows
-                            //rows would be accessed using the "row" variable assigned in the for loop
-                            for (var j = 0, col; col = row.cells[j]; j++) {
-                                //iterate through columns
-                                //columns would be accessed using the "col" variable assigned in the for loop'
-                                if (j == 0) {
-                                    col.querySelector('input').value = goal;
-                                }
-                                if (j == 1) {
-                                    col.querySelector('input').value = behind;
+                                    var value = String(col.querySelector('input').value);
+                                    stemList.push(value);
                                 }
                             }
+
+
+                            for (var i = 1, row; row = table2.rows[i]; i++) {
+                                var value = parseFloat(stemList[i - 1]).toFixed(1);
+
+                                var newString = String(value).split('.');
+                                var goal = newString[0];
+                                var behind = newString[1];
+                                //iterate through rows
+                                //rows would be accessed using the "row" variable assigned in the for loop
+                                for (var j = 0, col; col = row.cells[j]; j++) {
+                                    //iterate through columns
+                                    //columns would be accessed using the "col" variable assigned in the for loop'
+                                    if (j == 0) {
+                                        col.querySelector('input').value = goal;
+                                    }
+                                    if (j == 1) {
+                                        col.querySelector('input').value = behind;
+                                    }
+                                }
+                            }
+
+
+
+
+
                         }
 
-
-
+                            , 1500);
 
 
                     }
 
-                        , 1500);
-
-
-                }
 
 
 
 
 
-
-                //function that evaluates the digit and return result
-                function solve() {
-                    let x = document.getElementById("result").value
-                    let y = eval(x)
-                    document.getElementById("result").value = y
-                }
-
-                //function that clear the display
-                function clr() {
-                    document.getElementById("result").value = ""
-                }
-
-                // Activity 1: part 1 Drop function
-                function drop(ev) {
-                    ev.preventDefault();
-                    var id = ev.dataTransfer.getData("text");
-                    var target = ev.target;
-                    var text = document.getElementById(id).innerHTML;
-
-                    document.getElementById(id).innerHTML = "";
-                    //document.getElementById(id).style.visibility = "hidden";
-                    target.innerHTML = text;
-                }
-
-                //Activity 1: part 2 Drop function
-                function act1Drop(ev) {
-                    ev.preventDefault();
-                    var id = ev.dataTransfer.getData("text");
-                    var target = ev.target;
-                    var sentence = document.getElementById(id).innerHTML;
-                    var position = splitString(sentence);
-
-                    document.getElementById(id).innerHTML = "";
-                    target.innerHTML = position;
-                }
-
-                // Method to split positions into the abbreviated versions. i.e Full Forward == FF
-                function splitString(sentence) {
-                    var string = sentence;
-                    var code = "";
-                    string = string.split(" ");
-
-                    for (i = 0; i < string.length; i++) {
-                        var word = string[i];
-                        var subcode = word.charAt(0);
-                        if (subcode == '(') { } else {
-                            code = code + subcode;
-                        }
+                    //function that evaluates the digit and return result
+                    function solve() {
+                        let x = document.getElementById("result").value
+                        let y = eval(x)
+                        document.getElementById("result").value = y
                     }
-                    return code;
-                }
 
-            </script>
+                    //function that clear the display
+                    function clr() {
+                        document.getElementById("result").value = ""
+                    }
+
+                    // Activity 1: part 1 Drop function
+                    function drop(ev) {
+                        ev.preventDefault();
+                        var id = ev.dataTransfer.getData("text");
+                        var target = ev.target;
+                        var text = document.getElementById(id).innerHTML;
+
+                        document.getElementById(id).innerHTML = "";
+                        //document.getElementById(id).style.visibility = "hidden";
+                        target.innerHTML = text;
+                    }
+
+                    //Activity 1: part 2 Drop function
+                    function act1Drop(ev) {
+                        ev.preventDefault();
+                        var id = ev.dataTransfer.getData("text");
+                        var target = ev.target;
+                        var sentence = document.getElementById(id).innerHTML;
+                        var position = splitString(sentence);
+
+                        document.getElementById(id).innerHTML = "";
+                        target.innerHTML = position;
+                    }
+
+                    // Method to split positions into the abbreviated versions. i.e Full Forward == FF
+                    function splitString(sentence) {
+                        var string = sentence;
+                        var code = "";
+                        string = string.split(" ");
+
+                        for (i = 0; i < string.length; i++) {
+                            var word = string[i];
+                            var subcode = word.charAt(0);
+                            if (subcode == '(') { } else {
+                                code = code + subcode;
+                            }
+                        }
+                        return code;
+                    }
+
+                </script>
