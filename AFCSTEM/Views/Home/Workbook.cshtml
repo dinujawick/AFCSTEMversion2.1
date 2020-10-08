@@ -2499,7 +2499,7 @@
     }
 
     function checkActivity1P1(id1, id2) {
-        var stillEmpty = 0;
+        var stillEmpty = 1; // 1 = table of players is empty. 0 = table of players is still populated.
         var forward = ['Forward Pocket', 'Half Forward Flank', 'Centre Half Forward', 'Full Forward'];
         var mid = ['Ruck', 'Wing', 'Ruck Rover', 'Rover', 'Centre'];
         var back = ['Back Pocket', 'Half back Flank', 'Full Back']
@@ -2510,7 +2510,7 @@
 
         stillEmpty = this.check('act1Table1');
 
-        if (stillEmpty == 1) {
+        if (stillEmpty == 0) {
             //when table still has empty cells
             alert('Please complete filling in the table');
         } else {
@@ -2642,17 +2642,16 @@
             var row = table.rows[i];
             for (j = 0; j < row.cells.length; j++) {
                 var cell = row.cells[j]
-                if (window.getComputedStyle(cell).visibility === "hidden") {
-                    // the table is empty
+                if (window.getComputedStyle(cell).visibility == "hidden") {
+                    // the player table is empty
                     isEmpty = 1;
                 } else {
-                    // The table is populated
+                    // The table is populated i.e there are still players in the table
                     isEmpty = 0;
                     break;
                 }
             }
         }
-        console.log(isEmpty)
         return isEmpty;
     }
 
