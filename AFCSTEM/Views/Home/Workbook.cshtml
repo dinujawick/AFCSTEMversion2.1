@@ -6,6 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
     <style>
+        .row {
+            width: 100%;
+        }
+
         .containRow {
             margin-top: 80px;
             border: solid 8px #ffd200;
@@ -13,25 +17,21 @@
 
         .containInside {
             margin-left: 10px;
-            margin-right:10px;
+            margin-right: 10px;
             width: 100%;
         }
 
-    input {
-        border: none;
-    }
+        table {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 
-    table {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    h3 {
-        color: #002b5c;
-        margin-left: 5px;
-        width: 100%;
-        text-align: center;
-    }
+        h3 {
+            color: #002b5c;
+            margin-left: 5px;
+            width: 100%;
+            text-align: center;
+        }
 
         #col1 {
             text-align: center;
@@ -42,7 +42,65 @@
             color: #33619e;
         }
 
-        #col2 {
+        #act1Table1, #act1Table3 {
+            border-collapse: separate;
+        }
+
+        .dot {
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 25px;
+            background-color: #ffffff;
+        }
+
+        #act1Field {
+            background-image: url('../images/Football_Oval-01.jpg');
+            background-size: 100% 100%;
+            height: 450px;
+        }
+
+        #act1-P2R1 {
+            padding-top: 100px;
+            padding-left: 175px;
+        }
+
+        #act1-P2R2 {
+            padding-top: 45px;
+            padding-left: 140px;
+        }
+
+        #act1-P2R3 {
+            padding-top: 45px;
+            padding-left: 175px;
+        }
+
+        .forward {
+            border: solid 5px #ffd200;
+            font-weight: bold;
+        }
+
+        .midfield {
+            border: solid 5px #e31937;
+            font-weight: bold;
+        }
+
+        .defender {
+            border: solid 5px #002b5c;
+            font-weight: bold;
+        }
+
+        #int {
+            margin-left: 20px;
+            background-color: #ffffff;
+            border: solid 5px black;
+            font-weight: bold;
+        }
+
+        #forward, #midfield, #interchange, #defender {
             width: 30%;
             padding: 2px;
             text-align: center;
@@ -53,350 +111,156 @@
             color: #33619e;
         }
 
-    #TexImage {
-        position: relative;
-        float: left;
-        width: 35%;
-        height: 45%;
-    }
+        #TexImage {
+            position: relative;
+            float: left;
+            width: 35%;
+            height: 45%;
+        }
 
-    #ebImage {
-        position: relative;
-        width: 30%;
-        height: 50%;
-        float: right;
-        margin-right: 10px;
-    }
+        #ebImage {
+            position: relative;
+            width: 30%;
+            height: 50%;
+            float: right;
+            margin-right: 10px;
+        }
 
-    #act10table3 {
-        float: left;
-    }
+        #act10table3 {
+            float: left;
+        }
 
-    #goalpic {
-        float: right;
-        width: 45%;
-        height: 45%;
-        display: inline-block;
-        margin: 0 auto;
-    }
-
-    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
-    #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-    #c20, #c21 {
-        padding: 2px;
-        text-align: center;
-        font-size: 20px;
-        border-width: 5px;
-        border-color: #002b5c;
-        color: #33619e;
-    }
-
-        .dot {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
+        #goalpic {
+            float: right;
+            width: 45%;
+            height: 45%;
             display: inline-block;
+            margin: 0 auto;
+        }
+
+        #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
+        #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
+        #c20, #c21 {
+            border: solid 5px #002b5c;
+            padding: 2px;
             text-align: center;
-            padding-top: 10px;
+            font-size: 20px;
+            color: #33619e;
         }
 
-    #act1Table1 {
-        border-width: 5px;
-        border-color: blue;
-    }
-    #coinTable td, #texTable td {
-        color: #002b5c;
-    }
-
-        #act1Field {
-            background-image: url('../images/Football_Oval-01.jpg');
-            background-size: 100% 100%;
-            height: 450px;
+        #coinTable td, #texTable td {
+            color: #002b5c;
         }
 
-        #a1-1R1 {
-            padding-top: 100px;
-            padding-left: 50px;
+        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
+        #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
+        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
+            text-align: center;
+            padding: 3px;
         }
 
-        #a1-1R2 {
-            padding-top: 45px;
+        #coin, #coin2 {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
         }
 
-        #a1-1R3 {
-            padding-top: 45px;
-            padding-left: 50px;
+            #coin div, #coin2 div {
+                width: 100%;
+                height: 100%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+                -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+                box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            }
+
+        .side-a {
+            background-image: url('../images/Workbooklet/coinheads.PNG');
+            background-repeat: no-repeat;
+            background-size: auto;
         }
 
-        #f1 {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-left: 175px;
-            margin-right: 75px;
-            font-weight: bold;
+        .side-b {
+            background-image: url('../images/Workbooklet/cointails.PNG');
         }
 
-        #f2t {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-right: 75px;
-            margin-top: -25px;
-            font-weight: bold;
+        #coin, #coin2 {
+            transition: -webkit-transform 1s ease-in;
+            -webkit-transform-style: preserve-3d;
         }
 
-        #f2m {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-left: 50px;
-            margin-right: 75px;
-            font-weight: bold;
+            #coin div, #coin2 div {
+                position: absolute;
+                -webkit-backface-visibility: hidden;
+            }
+
+        .side-a {
+            z-index: 100;
         }
 
-        #f2b {
-            background-color: #ffffff;
-            border: solid 5px #ffd200;
-            margin-right: 75px;
-            margin-top: 25px;
-            font-weight: bold;
+        .side-b {
+            -webkit-transform: rotateY(-180deg);
         }
 
-        #m1 {
-            background-color: #ffffff;
-            border: solid 5px #e31937;
-            margin-right: 75px;
-            margin-left: 12px;
-            font-weight: bold;
+        #coin.heads {
+            -webkit-animation: flipHeads 3s ease-out forwards;
+            -moz-animation: flipHeads 3s ease-out forwards;
+            -o-animation: flipHeads 3s ease-out forwards;
+            animation: flipHeads 3s ease-out forwards;
         }
 
-        #m1t {
-            background-color: #ffffff;
-            border: solid 5px #e31937;
-            margin-right: 75px;
-            margin-top: -30px;
-            margin-left: 12px;
-            font-weight: bold;
+        #coin.tails {
+            -webkit-animation: flipTails 3s ease-out forwards;
+            -moz-animation: flipTails 3s ease-out forwards;
+            -o-animation: flipTails 3s ease-out forwards;
+            animation: flipTails 3s ease-out forwards;
         }
 
-        #m1b {
-            background-color: #ffffff;
-            border: solid 5px #e31937;
-            margin-right: 75px;
-            margin-top: 30px;
-            margin-left: 12px;
-            font-weight: bold;
+        #coin2.heads {
+            -webkit-animation: flipHeads 3s ease-out forwards;
+            -moz-animation: flipHeads 3s ease-out forwards;
+            -o-animation: flipHeads 3s ease-out forwards;
+            animation: flipHeads 3s ease-out forwards;
         }
 
-        #m2 {
-            background-color: #ffffff;
-            border: solid 5px red;
-            margin-right: 75px;
-            font-weight: bold;
+        #coin2.tails {
+            -webkit-animation: flipTails 3s ease-out forwards;
+            -moz-animation: flipTails 3s ease-out forwards;
+            -o-animation: flipTails 3s ease-out forwards;
+            animation: flipTails 3s ease-out forwards;
         }
 
-        #m2t {
-            background-color: #ffffff;
-            border: solid 5px red;
-            margin-right: 75px;
-            margin-top: -30px;
-            font-weight: bold;
+        @@keyframes flipHeads {
+            from {
+                -webkit-transform: rotateY(0);
+                -moz-transform: rotateY(0);
+                transform: rotateY(0);
+            }
+
+            to {
+                -webkit-transform: rotateY(1800deg);
+                -moz-transform: rotateY(1800deg);
+                transform: rotateY(1800deg);
+            }
         }
 
-        #m2b {
-            background-color: #ffffff;
-            border: solid 5px red;
-            margin-right: 75px;
-            margin-top: 30px;
-            font-weight: bold;
-        }
+        @@keyframes flipTails {
+            from {
+                -webkit-transform: rotateY(0);
+                -moz-transform: rotateY(0);
+                transform: rotateY(0);
+            }
 
-        #d1 {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-right: 75px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
-
-        #d1t {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-right: 75px;
-            margin-top: -30px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
-
-        #d1b {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-right: 75px;
-            margin-top: 30px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
-
-        #d2 {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            margin-left: 50px;
-            font-weight: bold;
-        }
-
-        #d2t, #d2b {
-            background-color: #ffffff;
-            border: solid 5px #002b5c;
-            font-weight: bold;
-        }
-
-    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
-    #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-    #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
-        text-align: center;
-        padding: 3px;
-    }
-
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-
-
-    #coin, #coin2 {
-        position: relative;
-        display: inline-block;
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
-        cursor: pointer;
-    }
-
-
-
-
-        #coin div, #coin2 div {
-            width: 100%;
-            height: 100%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-            -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-            box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-        }
-
-
-
-    .side-a {
-        background-image: url('../images/Workbooklet/coinheads.PNG');
-        background-repeat: no-repeat;
-        background-size: auto;
-    }
-
-    .side-b {
-        background-image: url('../images/Workbooklet/cointails.PNG');
-    }
-
-    #coin, #coin2 {
-        transition: -webkit-transform 1s ease-in;
-        -webkit-transform-style: preserve-3d;
-    }
-
-        #coin div, #coin2 div {
-            position: absolute;
-            -webkit-backface-visibility: hidden;
-        }
-
-
-
-
-    .side-a {
-        z-index: 100;
-    }
-
-    .side-b {
-        -webkit-transform: rotateY(-180deg);
-    }
-
-    #coin.heads {
-        -webkit-animation: flipHeads 3s ease-out forwards;
-        -moz-animation: flipHeads 3s ease-out forwards;
-        -o-animation: flipHeads 3s ease-out forwards;
-        animation: flipHeads 3s ease-out forwards;
-    }
-
-    #coin.tails {
-        -webkit-animation: flipTails 3s ease-out forwards;
-        -moz-animation: flipTails 3s ease-out forwards;
-        -o-animation: flipTails 3s ease-out forwards;
-        animation: flipTails 3s ease-out forwards;
-    }
-
-
-    #coin2.heads {
-        -webkit-animation: flipHeads 3s ease-out forwards;
-        -moz-animation: flipHeads 3s ease-out forwards;
-        -o-animation: flipHeads 3s ease-out forwards;
-        animation: flipHeads 3s ease-out forwards;
-    }
-
-    #coin2.tails {
-        -webkit-animation: flipTails 3s ease-out forwards;
-        -moz-animation: flipTails 3s ease-out forwards;
-        -o-animation: flipTails 3s ease-out forwards;
-        animation: flipTails 3s ease-out forwards;
-    }
-
-
-    @@keyframes flipHeads {
-        from {
-            -webkit-transform: rotateY(0);
-            -moz-transform: rotateY(0);
-            transform: rotateY(0);
-        }
-
-        to {
-            -webkit-transform: rotateY(1800deg);
-            -moz-transform: rotateY(1800deg);
-            transform: rotateY(1800deg);
-        }
-    }
-
-    @@keyframes flipTails {
-        from {
-            -webkit-transform: rotateY(0);
-            -moz-transform: rotateY(0);
-            transform: rotateY(0);
-        }
-
-        to {
-            -webkit-transform: rotateY(1980deg);
-            -moz-transform: rotateY(1980deg);
-            transform: rotateY(1980deg);
-        }
-    }
-
-
-
-    #int1 {
-        margin-left: 425px;
-        background-color: #ffffff;
-        border: solid 5px black;
-        font-weight: bold;
-    }
-
-        #int {
-            margin-left: 20px;
-            background-color: #ffffff;
-            border: solid 5px black;
-            font-weight: bold;
+            to {
+                -webkit-transform: rotateY(1980deg);
+                -moz-transform: rotateY(1980deg);
+                transform: rotateY(1980deg);
+            }
         }
 
         #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
@@ -504,8 +368,10 @@
                 box-sizing: border-box;
             }
 
-        .number {
-            font-size: 30px;
+        #act9Table4 td, #act9Table5 td {
+            text-align: center;
+            border: 3px solid #002b5c;
+            font-size: 18px;
         }
 
         textarea {
@@ -536,7 +402,7 @@
     </p>
     <div class="col-md-12">
         <div class="row">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="act1Table1">
                 <tbody>
                     <tr>
                         <td draggable="true" ondragstart="drag(event);" id="c1">Ruck</td>
@@ -581,7 +447,7 @@
             Drag your group's answers from the above table to the table below:
         </p>
         <div class="row">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="act1Table2">
                 <thead>
                     <tr style="background-color:#002b5c; color:white;">
                         <th style="border-width:5px;border-color:#002b5c;">ZONE/GROUPS</th>
@@ -591,52 +457,56 @@
                 <tbody>
                     <tr>
                         <td rowspan="2" id="col1">Forward</td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2">Full Forward</td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="forward" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="forward">Full Forward</td>
+                        <td class="col2" id="forward" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
                     <tr>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" id="col1"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                    </tr>
-                    <tr>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="forward" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="forward" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="forward" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
                     <tr>
                         <td rowspan="2" id="col1"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="midfield" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="midfield" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="midfield" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
                     <tr>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="midfield" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="midfield" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="midfield" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" id="col1"></td>
+                        <td class="col2" id="defender" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="defender" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="defender" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                    </tr>
+                    <tr>
+                        <td class="col2" id="defender" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="defender" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="defender" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
                     <tr>
                         <td rowspan="2" id="col1">Interchange</td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
                     <tr>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td id="col2" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                     </tr>
 
                 </tbody>
-                <tbody></tbody>
             </table>
+            <br />
+
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+                <button class="btn btn-outline-primary" onclick="checkActivity1P1('act1Table1', 'act1Table2' )">Check Activity!!</button>
+            </div>
         </div>
     </div>
 </div>
@@ -651,33 +521,33 @@
     <br />
     <div class="col-md-12">
         <div id="act1Field">
-            <div class="row" id="a1-1R1">
-                <div class="dot" id="f1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="f2t" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="m1t" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="m2t" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="d1t" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="d2t" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            <div class="row" id="act1-P2R1">
+                <div class="dot forward" id="FP" style="margin-right:60px;margin-top:15px;margin-left:15px;">FP</div>
+                <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;"></div>
+                <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-30px;"></div>
+                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:65px;"></div>
+                <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;"></div>
+                <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style=""></div>
             </div>
-            <div class="row" id="a1-1R2">
-                <div class="dot" id="f1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="f2m" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="m1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="m2" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="d1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="d2" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            <div class="row" id="act1-P2R2">
+                <div class="dot forward" id="FF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:145px;margin-top:-75px;"></div>
+                <div class="dot forward" id="CHF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-75px;"></div>
+                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-100px;"></div>
+                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-25px;"></div>
+                <div class="dot defender" id="CHB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-75px;"></div>
+                <div class="dot defender" id="FB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-75px;"></div>
             </div>
-            <div class="row" id="a1-1R3">
-                <div class="dot" id="f1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="f2b" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="m1b" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="m2b" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="d1b" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                <div class="dot" id="d2b" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            <div class="row" id="act1-P2R3">
+                <div class="dot forward" id="FP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:60px;margin-top:-65px;margin-left:15px;"></div>
+                <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
+                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-95px;"></div>
+                <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:150px;"></div>
+                <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
+                <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-50px;"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="dot" id="int1" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+        <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;">
+            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
@@ -691,7 +561,7 @@
         </p>
         <br />
         <div class="row">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="act1Table3">
                 <tbody>
                     <tr>
                         <td rowspan="2" style="color:#004b8d;background-color:#ffd200; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">FORWARDS</td>
@@ -723,7 +593,7 @@
                     </tr>
                     <tr>
                         <td draggable="true" ondragstart="drag(event);" id="pos16">Back Pocket (BP)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos17">Full Back (FP)</td>
+                        <td draggable="true" ondragstart="drag(event);" id="pos17">Full Back (FB)</td>
                         <td draggable="true" ondragstart="drag(event);" id="pos18">Back Pocket (BP)</td>
                     </tr>
                     <tr>
@@ -739,6 +609,10 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1','act1-P2R2','act1-P2R3');">Check Activity!!</button>
         </div>
     </div>
 </div>
@@ -1124,7 +998,6 @@
     </div>
 </div>
 
-
 <!--Activity 3: part 2-->
 <div class="row containRow">
     <h3> MEASUREMENT OF AFL GROUNDS: Activity 3 (Extension / Group Work Challenge) </h3>
@@ -1168,7 +1041,6 @@
         </div>
     </div>
 </div>
-
 
 <!--Activity 5: part 1-->
 <div class="row containRow" style="margin-bottom:25px;">
@@ -1465,7 +1337,7 @@
                 <span style="margin-left:25px;"></span>
 
                 <label for="leftOver">LEFT OVER: </label>
-                <input name="left over" id="leftOver" type="number" style="text-align:center;margin-left:10px;"/>
+                <input name="left over" id="leftOver" type="number" style="text-align:center;margin-left:10px;" />
             </div>
             <br /><br />
         </div>
@@ -1511,7 +1383,7 @@
             <label><b>Total Disposals:</b> Add up the total average of kicks and handballs for each position.</label>
             <table class="table table-bordered" id="act8Table1">
                 <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
-                <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;"/></td></tr>
+                <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
                 <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
                 <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
             </table>
@@ -1632,7 +1504,7 @@
                         <td>TAYLOR WALKER</td>
                         <td>22</td>
                         <td>43</td>
-                        <td><input id="act9Part1TW" style="text-align:center;"/></td>
+                        <td><input id="act9Part1TW" style="text-align:center;" /></td>
                     </tr>
                     <tr>
                         <td>LACHLAN MURPHY</td>
@@ -1850,7 +1722,7 @@
     </div>
 
     <div class="row containInside">
-        <div class="col-md-5">
+        <div class="col-md-4">
             <p>
                 As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
                 (usually the last digit) graph: <br />
@@ -1869,7 +1741,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
                         <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
                     </tr>
                     <tr>
@@ -1912,21 +1784,21 @@
             </table>
         </div>
         <!-- 1 - 9 numbers -->
-        <div class="col-md-2">
-            <div class="row">
-                <div class="number" style="margin-left:25px;"><p draggable="true" ondragstart="drag(event)" id="1">1</p></div>
-                <div class="number" style="margin-left:40px;margin-right:40px;"><p draggable="true" ondragstart="drag(event)" id="2">2</p></div>
-                <div class="number"><p draggable="true" ondragstart="drag(event)" id="3">3</p></div>
+        <div class="col-md-3">
+            <div class="row" style="width:100%;">
+                <img src="~/images/Unit2/Activity9/numbers/1.png" style="width:25%;margin-top:5px;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num1" name="1" />
+                <img src="~/images/Unit2/Activity9/numbers/2.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num2" name="2" />
+                <img src="~/images/Unit2/Activity9/numbers/3.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num3" name="3" />
             </div>
-            <div class="row">
-                <div class="number" style="margin-left:25px;"><p draggable="true" ondragstart="drag(event)" id="4">4</p></div>
-                <div class="number" style="margin-left:40px;margin-right:40px;"><p draggable="true" ondragstart="drag(event)" id="5">5</p></div>
-                <div class="number"><p draggable="true" ondragstart="drag(event)" id="6">6</p></div>
+            <div class="row" style="width:100%;">
+                <img src="~/images/Unit2/Activity9/numbers/4.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num4" name="4"/>
+                <img src="~/images/Unit2/Activity9/numbers/5.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num5" name="5"/>
+                <img src="~/images/Unit2/Activity9/numbers/6.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num6" name="6"/>
             </div>
-            <div class="row">
-                <div class="number" style="margin-left:25px;"><p draggable="true" ondragstart="drag(event)" id="7">7</p></div>
-                <div class="number" style="margin-left:40px;margin-right:40px;"><p draggable="true" ondragstart="drag(event)" id="8">8</p></div>
-                <div class="number"><p draggable="true" ondragstart="drag(event)" id="9">9</p></div>
+            <div class="row" style="width:100%;">
+                <img src="~/images/Unit2/Activity9/numbers/7.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num7" name="7"/>
+                <img src="~/images/Unit2/Activity9/numbers/8.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num8" name="8"/>
+                <img src="~/images/Unit2/Activity9/numbers/9.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num9" name="9"/>
             </div>
         </div>
     </div>
@@ -1936,33 +1808,38 @@
 <!--Activity 9: part 3-->
 <div class="row containRow">
     <h3><b>GOAL KICKING DATA: Activity 9 (Extension / Group Work Challenge)</b></h3><br />
-    <p>When there are two sides or groups, we can use a two-sided Stem-and-Leaf plot.</p>
-    <p>Here is an example of a two-sided Stem-and-Leaf Plot.</p><br />
+    <p style="font-size:20px;color:#002b5c;margin-left:15px;">
+        When there are two sides or groups, we can use a two-sided Stem-and-Leaf plot.<br />
+        Here is an example of a two-sided Stem-and-Leaf Plot.
+    </p>
 
-    <img src="" alt="holding" /><br />
+    <div class="row" style="width:100%;margin-bottom:25px;padding-bottom:10px;height:350px;display:flex;justify-content:center;align-items:center;">
+        <img src="~/images/Unit2/Activity9/pg 28 table.png" alt="Holding" style="height:100%;margin-bottom:15px;" />
+    </div>
 
-    <p>
+
+    <p style="font-size:20px;color:#002b5c;margin-left:15px;">
         Using your results from the first activity, create a Stem-and-Leaf plot comparing the ACL Men's (AFL)
         average goals to the AFC Women's (AFLW) average goals (Round to one decimal place).
     </p><br />
 
     <div class="row containInside" style="width:100%;">
         <div class="col-md-3">
-            <br /><br /><br />
-            <div class="row">
-                <div class="number" style="margin-left:25px;"><p draggable="true" ondragstart="drag(event)" id="1">1</p></div>
-                <div class="number" style="margin-left:40px;margin-right:40px;"><p draggable="true" ondragstart="drag(event)" id="2">2</p></div>
-                <div class="number"><p draggable="true" ondragstart="drag(event)" id="3">3</p></div>
+            <br />
+            <div class="row" style="width:100%;">
+                <img src="~/images/Unit2/Activity9/numbers/1.png" style="width:25%;margin-top:5px;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num1" name="1" />
+                <img src="~/images/Unit2/Activity9/numbers/2.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num2" name="2" />
+                <img src="~/images/Unit2/Activity9/numbers/3.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num3" name="3" />
             </div>
-            <div class="row">
-                <div class="number" style="margin-left:25px;"><p draggable="true" ondragstart="drag(event)" id="4">4</p></div>
-                <div class="number" style="margin-left:40px;margin-right:40px;"><p draggable="true" ondragstart="drag(event)" id="5">5</p></div>
-                <div class="number"><p draggable="true" ondragstart="drag(event)" id="6">6</p></div>
+            <div class="row" style="width:100%;">
+                <img src="~/images/Unit2/Activity9/numbers/4.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num4" name="4" />
+                <img src="~/images/Unit2/Activity9/numbers/5.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num5" name="5" />
+                <img src="~/images/Unit2/Activity9/numbers/6.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num6" name="6" />
             </div>
-            <div class="row">
-                <div class="number" style="margin-left:25px;"><p draggable="true" ondragstart="drag(event)" id="7">7</p></div>
-                <div class="number" style="margin-left:40px;margin-right:40px;"><p draggable="true" ondragstart="drag(event)" id="8">8</p></div>
-                <div class="number"><p draggable="true" ondragstart="drag(event)" id="9">9</p></div>
+            <div class="row" style="width:100%;">
+                <img src="~/images/Unit2/Activity9/numbers/7.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num7" name="7" />
+                <img src="~/images/Unit2/Activity9/numbers/8.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num8" name="8" />
+                <img src="~/images/Unit2/Activity9/numbers/9.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num9" name="9" />
             </div>
         </div>
         <div class="col-md-5">
@@ -2033,8 +1910,6 @@
     </div>
 </div>
 
-<br />
-<br />
 <br />
 <br />
 <!--Activity 10: part 1-->
@@ -2209,9 +2084,9 @@
                 </tr>
             </table>
 
-            <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />    
+            <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />
         </div>
-        
+
     </div>
 </div>
 
@@ -2436,7 +2311,6 @@
         });
     });
 
-
     function allowDrop(ev) {
         ev.preventDefault();
     }
@@ -2451,10 +2325,14 @@
         var id = ev.dataTransfer.getData("text");
         var target = ev.target;
         var text = document.getElementById(id).innerHTML;
+        var isEmpty = target.innerHTML;
 
-        document.getElementById(id).innerHTML = "";
-        //document.getElementById(id).style.visibility = "hidden";
-        target.innerHTML = text;
+        if (isEmpty == '') {
+            document.getElementById(id).style.visibility = "hidden";
+            target.innerHTML = text;
+        } else {
+            console.log('full');
+        }
     }
 
     // Activity 1: part 2 Drop function
@@ -2464,9 +2342,15 @@
         var target = ev.target;
         var sentence = document.getElementById(id).innerHTML;
         var position = splitString(sentence);
+        var isEmpty = target.innerHTML;
 
-        document.getElementById(id).innerHTML = "";
-        target.innerHTML = position;
+        if (isEmpty == '') {
+            document.getElementById(id).style.visibility = "hidden";
+            target.innerHTML = position;
+        } else {
+            console.log('full');
+        }
+
     }
 
     // Activitt 9: Drag and Drop for the stem & leaf plots
@@ -2474,15 +2358,17 @@
         ev.preventDefault();
         var id = ev.dataTransfer.getData("text");
         var target = ev.target;
-        var number = document.getElementById(id).innerHTML;
-
+        var number = document.getElementById(id).name;
 
         if (target.id == 'stem') {
             target.innerHTML = number;
         } else {
-            target.innerHTML += number + ", ";
+            if (target.innerHTML == '') {
+                target.innerHTML += number;
+            } else {
+                target.innerHTML += ', ' + number;
+            }
         }
-
     }
 
     // Method to split positions into the abbreviated versions. i.e Full Forward == FF
@@ -2610,6 +2496,164 @@
                 </div>
             */
         }
+    }
+
+    function checkActivity1P1(id1, id2) {
+        var stillEmpty = 0;
+        var forward = ['Forward Pocket', 'Half Forward Flank', 'Centre Half Forward', 'Full Forward'];
+        var mid = ['Ruck', 'Wing', 'Ruck Rover', 'Rover', 'Centre'];
+        var back = ['Back Pocket', 'Half back Flank', 'Full Back']
+        var inter = ['Interchange 1', 'Interchange 2', 'Interchange 3', 'Interchange4'];
+
+        var table1 = document.getElementById(id1);
+        var table2 = document.getElementById(id2);
+
+        stillEmpty = this.check('act1Table1');
+
+        if (stillEmpty == 1) {
+            //when table still has empty cells
+            alert('Please complete filling in the table');
+        } else {
+            for (var i = 1; i < table2.rows.length; i++) {
+                row = table2.rows[i];
+                for (var j = 0; j < row.cells.length; j++) {
+                    var col = row.cells[j];
+                    var colText = col.innerHTML;
+
+                    if (i == 1 || i == 2) {
+                        for (a = 0; a < forward.length; a++) {
+                            var check = forward[a];
+                            var result = check.localeCompare(colText);
+                            if (result == 1) {
+                                col.style.color = 'green';
+                                console.log('YES!')
+                                console.log(result);
+                                console.log(colText);
+                            }
+                        }
+                    } else if (i == 3 || i == 4) {
+                        for (b = 0; b < mid.length; b++) {
+                            var check = mid[b];
+                            var result = check.localeCompare(colText);
+                            if (result == 1) {
+                                col.style.color = 'green';
+                                console.log('NO!')
+                                console.log(result);
+                                console.log(colText);
+                            }
+                        }
+                    } else if (i == 5 || i == 6) {
+                        for (c = 0; c < back.length; c++) {
+                            var check = back[c];
+                            var result = check.localeCompare(colText);
+                            if (result == 1) {
+                                col.style.color = 'green';
+                            }
+                        }
+                    } else if (i == 7 || i == 8) {
+                        for (d = 0; d < inter.length; d++) {
+                            var check = inter[d];
+                            var result = check.localeCompare(colText);
+                            if (result == 1) {
+                                col.style.color = 'green';
+                            }
+                        }
+                    } else {
+                        console.log("no!!");
+                    }
+                }
+            }
+        }
+    }
+
+    function checkActivity1P2(row1, row2, row3) {
+        var row1 = document.getElementById(row1);
+        var row2 = document.getElementById(row2);
+        var row3 = document.getElementById(row3);
+        var isEmpty = 0;
+        var isCorrect = 0;
+
+        console.log(row1.childNodes[1]);
+
+        // check if the field is all populated
+        for (i = 1; i < row1.childNodes.length; i = i + 2) {
+            var cell = row1.childNodes[i];
+            if (cell.innerHTML == '') {
+                isEmpty = 1;
+            }
+        }
+        for (i = 1; i < row2.childNodes.length; i = i + 2) {
+            var cell = row2.childNodes[i];
+            if (cell.innerHTML == '') {
+                isEmpty = 1;
+            }
+        }
+        for (i = 1; i < row3.childNodes.length; i = i + 2) {
+            var cell = row3.childNodes[i];
+            if (cell.innerHTML == '') {
+                isEmpty = 1;
+            }
+        }
+
+        if (isEmpty == 0) {
+            for (i = 1; i < row1.childNodes.length; i = i + 2) {
+                var cell = row1.childNodes[i];
+
+                if (cell.id == cell.innerHTML) {
+                    cell.style.color = 'green';
+                } else {
+                    cell.style.color = 'red';
+                    isCorrect = 1;
+                }
+            }
+
+            for (i = 1; i < row2.childNodes.length; i = i + 2) {
+                var cell = row2.childNodes[i];
+
+                if (cell.id == cell.innerHTML) {
+                    cell.style.color = 'green';
+                } else {
+                    cell.style.color = 'red';
+                    isCorrect = 1;
+                }
+            }
+
+            for (i = 1; i < row3.childNodes.length; i = i + 2) {
+                var cell = row3.childNodes[i];
+
+                if (cell.id == cell.innerHTML) {
+                    cell.style.color = 'green';
+                } else {
+                    cell.style.color = 'red';
+                    isCorrect = 1;
+                }
+            }
+        } else {
+            alert('Please complete the field');
+        }
+
+        
+    }
+
+    function check(id) {
+        var table = document.getElementById(id);
+        var isEmpty = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (window.getComputedStyle(cell).visibility === "hidden") {
+                    // the table is empty
+                    isEmpty = 1;
+                } else {
+                    // The table is populated
+                    isEmpty = 0;
+                    break;
+                }
+            }
+        }
+        console.log(isEmpty)
+        return isEmpty;
     }
 
 
