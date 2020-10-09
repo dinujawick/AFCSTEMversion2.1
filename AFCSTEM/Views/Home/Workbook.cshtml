@@ -54,7 +54,14 @@
         margin: 0 auto;
     }
 
-    input {
+    #act10table1 td,#act10table2 td,#act10table3 td,#act11table1 td,#act12table1 td,#act12table2 td, #act13table1 td,#act15table1 td , #act15table2 td, #act15table3 td, #act15table4 td{
+        border: 1px solid black;
+
+
+    }
+
+    #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input,#act12table2 input,
+    #act13table1 input,#act15table1 input,  #act15table2 input, #act15table3 input, #act15table4 input{
         border: none;
     }
 
@@ -321,10 +328,10 @@
         color: #33619e;
     }
 
-    #TexImage {
+    #TexImage image {
         position: relative;
         float: left;
-        width: 35%;
+        width: 20%;
         height: 45%;
     }
 
@@ -442,10 +449,10 @@
 
     #ebImage {
         position: relative;
-        width: 30%;
-        height: 50%;
-        float: right;
-        margin-right: 10px;
+        width: 20%;
+        height: 40%;
+        float:left;
+        right:200px;
     }
 
     #act10table3 {
@@ -729,7 +736,7 @@
 
 <!--Calculator-->
 <div id="calculator" style="display:none;position: fixed; bottom: 0px;right: 50px; ">
-    <table class="calcTable" width="7%" height="15%" border="1" style="background-color: #004b8d; border: solid black 3px">
+    <table class="calcTable" width="20%" height="25%" border="1" style="background-color: #004b8d; border: solid black 3px">
 
         <tr>
             <td colspan="3"><input disabled type="text" id="result" /></td>
@@ -2800,7 +2807,7 @@
         <br />
         <textarea rows="2" style="width:100%"></textarea>
         <br />
-        <table style="width:90%" id="act12table2">
+        <table style="width:90%" id="act13table1">
             <tr style="background-color:#002b5c; color:white;">
                 <th>YOUR MEASUREMENTS</th>
                 <th>LENGTH <br /> (cm)</th>
@@ -3450,15 +3457,7 @@
 
         </table>
 
-        <br />
-        <label style="position:relative;left:300px" for="quad2q3">Quadrant</label>
-        <input name="quad3q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
-
-        <label style="position:relative;left:700px" for="quad2q4">Quadrant</label>
-        <input name="quad3q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
-        <br />
-        <br />
-
+     
         <p>
             <b>
                 To plot the coordinates, click on the data on a certain column, then click on the graph to plot <br /> that point.
