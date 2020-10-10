@@ -3754,1143 +3754,1435 @@
     </div>
 </div>
 
-
-
-
-<script src="https://d3js.org/d3.v5.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>
-
-
-
-
-
-    //for drawing quad1,2 and 3;
-    var int1 = -11;
-    for (var i = 0; i < 1033; i) {
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        rect.setAttribute('x', 0);
-        rect.setAttribute('y', i);
-        rect.setAttribute('width', '946');
-        rect.setAttribute('height', '1');
-        rect.setAttribute('fill', 'grey');
-        text.setAttribute('x', i);
-        text.setAttribute('font-size', '12');
-        text.setAttribute('y', '516.5');
-        text.textContent = int1;
-        var rect2 = rect.cloneNode(true);
-        var text2 = text.cloneNode(true);
-        var rect3 = rect.cloneNode(true);
-        var text3 = text.cloneNode(true);
-        int1++;
-
-        document.getElementById('quad2group').appendChild(rect2);
-        document.getElementById('quad1group').appendChild(rect);
-        document.getElementById('quad3group').appendChild(rect3);
-
-        if (int1 != 13 && int1 != 14) {
-            document.getElementById('quad1group').appendChild(text);
-            document.getElementById('quad2group').appendChild(text2);
-            document.getElementById('quad3group').appendChild(text3);
-        }
-        i += 43;
-
-    }
-    int1 = 12;
-    for (var i = 0; i < 1033; i) {
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        rect.setAttribute('x', i);
-        rect.setAttribute('y', 0);
-        rect.setAttribute('width', '1');
-        rect.setAttribute('height', '1033');
-        rect.setAttribute('fill', 'grey');
-        text.setAttribute('y', i + 10);
-        text.setAttribute('font-size', '12');
-        text.setAttribute('x', '473');
-        text.textContent = int1;
-
-        var rect2 = rect.cloneNode(true);
-        var text2 = text.cloneNode(true);
-        var rect3 = rect.cloneNode(true);
-        var text3 = text.cloneNode(true);
-
-        if (int1 != 0) {
-            document.getElementById('quad1group').appendChild(text);
-            document.getElementById('quad2group').appendChild(text2);
-            document.getElementById('quad3group').appendChild(text3);
-        }
-        int1--;
-
-
-        if (i < 970) {
-            document.getElementById('quad1group').appendChild(rect);
-            document.getElementById('quad2group').appendChild(rect2);
-            document.getElementById('quad3group').appendChild(rect3);
-        }
-
-        i += 43;
-    }
-
-
-    function clearGraph(num) {
-        var svgId = "svg" + num;
-
-        var circles = d3.select("#" + svgId);
-        circles.selectAll("circle").remove();
-        circles.selectAll(".playertext").remove();
-
-        if (num == "Three") {
-            SloaneC = 0;
-            CrouchC = 0;
-            GibbC = 0;
-            MckayC = 0;
-        }
-
-        if (num == "Two") {
-            LairdC = 0;
-            HartiC = 0;
-            TaliaC = 0;
-            SmithC = 0;
-        }
-
-
-    }
-
-
-    var colourPlayer = "blue";
-    var LairdC = 0;
-    var HartiC = 0;
-    var TaliaC = 0;
-    var SmithC = 0;
-    var SloaneC = 0;
-    var CrouchC = 0;
-    var GibbC = 0;
-    var MckayC = 0;
-
-    function playerGraph(e) {
-        if (e.innerHTML == "Laird" || e.innerHTML == "Sloane") {
-            colourPlayer = "blue";
-        }
-
-        else if (e.innerHTML == "Hartigan" || e.innerHTML == "Crouch") {
-            colourPlayer = "red";
-        }
-        else if (e.innerHTML == "Talia" || e.innerHTML == "Gibbs") {
-            colourPlayer = "yellow";
-        }
-        else {
-            colourPlayer = "green";
-        }
-    }
-
-    //drawing the graphs for act 14
-    for (var i = 50; i < 665; i) {
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rect.setAttribute('x', 200);
-        rect.setAttribute('y', i);
-        rect.setAttribute('width', '1000');
-        rect.setAttribute('height', '1');
-        rect.setAttribute('fill', 'grey');
-        document.getElementById('svgThree').appendChild(rect);
-        i += 65;
-
-    }
-
-    for (var i = 50; i < 665; i) {
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rect.setAttribute('x', 200);
-        rect.setAttribute('y', i);
-        rect.setAttribute('width', '1000');
-        rect.setAttribute('height', '1');
-        rect.setAttribute('fill', 'grey');
-        document.getElementById('svgTwo').appendChild(rect);
-        i += 65;
-
-    }
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>AFL CARTESIAN PLANE DISTANCES:</b> Activity 16
+            <br />
+            Exploration<br />
+            <br />
+            <br />
 
 
 
 
-    for (var i = 50; i < 665; i) {
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rect.setAttribute('x', 200);
-        rect.setAttribute('y', i);
-        rect.setAttribute('width', '1000');
-        rect.setAttribute('height', '1');
-        rect.setAttribute('fill', 'grey');
-        document.getElementById('svgOne').appendChild(rect);
-        i += 15.5;
 
-    }
+        </h3>
+        <p>
+            Watch the FIRST Quarter Movement video as a class and record Wayne’s movements on the A3 sheet, <br />
+            then calculate metres covered in real life: <br />
+            <br />
+            Wayne’s 1st Quarter metres covered in real life:
+            <br />
+        </p>
 
-    for (var i = 200; i < 1000; i) {
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rect.setAttribute('x', i);
-        rect.setAttribute('y', 50);
-        rect.setAttribute('width', '1');
-        rect.setAttribute('height', '605');
-        rect.setAttribute('fill', 'grey');
-        document.getElementById('svgOne').appendChild(rect);
-        i += 13.88;
-    }
+        <table style="width:90%" id="act16table1">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>WHERE IS WAYNE?</th>
+                <th>CENTIMETRES MEASURED (CM)</th>
+                <th>METRES COVERED IN REAL LIFE (M)</th>
+            </tr>
+            <tr>
+                <th>Position 1 => 2</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>Position 2 => 3</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 3 => 4</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 4 => X</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th style="background-color:#002b5c">TOTAL</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+        </table>
+        <br />
+        <p>
+            <b>Record Sheet ‘Where is Wayne?’- SECOND Quarter metres covered in real life </b>
+            <br /> Wayne’s 2nd Quarter metres covered in real life: <br />
+        </p>
+
+        <table style="width:90%" id="act16table2">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>WHERE IS WAYNE?</th>
+                <th>CENTIMETRES MEASURED (CM)</th>
+                <th>METRES COVERED IN REAL LIFE (M)</th>
+            </tr>
+            <tr>
+                <th>Position 1 => 2</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>Position 2 => 3</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 3 => 4</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 4 => X</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th style="background-color:#002b5c">TOTAL</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+        </table>
+        <p>
+            <b>Record Sheet ‘Where is Wayne?’- THIRD Quarter metres covered in real life </b>
+            <br /> Wayne’s 3rd Quarter metres covered in real life: <br />
+        </p>
+        <table style="width:90%" id="act16table3">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>WHERE IS WAYNE?</th>
+                <th>CENTIMETRES MEASURED (CM)</th>
+                <th>METRES COVERED IN REAL LIFE (M)</th>
+            </tr>
+            <tr>
+                <th>Position 1 => 2</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>Position 2 => 3</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 3 => 4</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 4 => X</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th style="background-color:#002b5c">TOTAL</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+        </table>
+        <p>
+            <b>Record Sheet ‘Where is Wayne?’- FOURTH Quarter metres covered in real life </b>
+            <br /> Wayne’s 4th Quarter metres covered in real life: <br />
+
+        </p>
+
+        <table style="width:90%" id="act16table4">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>WHERE IS WAYNE?</th>
+                <th>CENTIMETRES MEASURED (CM)</th>
+                <th>METRES COVERED IN REAL LIFE (M)</th>
+            </tr>
+            <tr>
+                <th>Position 1 => 2</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>Position 2 => 3</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 3 => 4</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>Position 4 => X</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th style="background-color:#002b5c">TOTAL</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+        </table>
+        <p><b>Calculate the total distance travelled for Wayne in centimetres and metres</b></p><br />
+        <table style="width:90%" id="act16table5">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>WHERE IS WAYNE?</th>
+                <th>CENTIMETRES MEASURED (CM)</th>
+                <th>METRES COVERED IN REAL LIFE (M)</th>
+            </tr>
+            <tr>
+                <th>1st Quarter</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th>2nd Quarter</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>3rd Quarter</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+
+            <tr>
+                <th>4th Quarter</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+            <tr>
+                <th style="background-color:#002b5c">TOTAL</th>
+                <td><input type="number" /></td>
+                <td><input type="number" /></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br/>
+<div class="row containRow" style="margin-bottom:25px;">
+    <div class="col-md-12">
+        <h3>
+            <b>AFL CARTESIAN PLANE DISTANCES:</b> Activity 16
+            <br />
+            Extension / Group Work<br />
+            <br />
+            <br />
+        </h3>
+
+        <p>
+            In this activity you only plotted 4 of Wayne’s movements for each quarter, when he would actually <br />
+            complete over 100. GPS units record every player’s game distances for every match. Below are some of <br />
+            the leading distances for the AFC in 2018: <br />
+            1. Riley Knight 14.7 km/game <br />
+            2. Rory Atkins 14.7 km/game <br />
+            3. Rory Laird 14.4 km/game  <br />
+            The 2018 Adelaide Football Club Team Distance Record for a single AFL match was 2533.8km <br />
+            T-Chart Analysis of GPS Technology: <br />
+            Technology has come a long way in the AFL, from manual recording of player movements to using GPS <br />
+            units. Your challenge in groups is to use a T-chart to analyse what you believe to be the advantages <br />
+            and disadvantages of using technology in the AFL. <br />
+            A T-Chart is used to separate two different viewpoints of a topic. In this case we are evaluating the <br />
+            advantages and disadvantages of using technology, such as GPS trackers, in AFL. <br />
+            <br />
+        </p>
+
+        <table style="width:90%" id="act16table7">
+            <tr style="background-color:#002b5c; color:white;">
+                <th>ADVANTAGES</th>
+                <th>DISADVANTAGES</th>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr><tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr><tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr><tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr><tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr><tr>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr><tr>
+    <td><input type="text" /></td>
+    <td><input type="text" /></td>
+</tr>
+        </table>
+        <br />
+
+    </div>
+</div>
 
 
 
 
-    //functions for act14
-    function graphClick(evt) {
-        var e = evt.target;
-        var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
-
-        if (x > 200 && y < 654.5 && y > 50) {
-            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            rect.setAttribute('cx', x);
-            rect.setAttribute('cy', y);
-            rect.setAttribute('r', '5');
-            rect.setAttribute('fill', 'black');
-            document.getElementById('svgOne').appendChild(rect);
-        }
+            <script src="https://d3js.org/d3.v5.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script>
 
 
 
 
-    }
 
-    function graphClick1(evt) {
-        var e = evt.target;
-        var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
-
-        if (x > 200 && y < 654.5 && y > 50) {
-            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            rect.setAttribute('cx', x);
-            rect.setAttribute('cy', y);
-            rect.setAttribute('r', '10');
-            rect.setAttribute('fill', colourPlayer);
-            if (colourPlayer == "blue") {
-                if (LairdC == 0) {
-                    document.getElementById('svgTwo').appendChild(rect);
+                //for drawing quad1,2 and 3;
+                var int1 = -11;
+                for (var i = 0; i < 1033; i) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                    text.setAttribute('x', x - 15);
-                    text.setAttribute('y', y - 15);
-                    text.textContent = "Laird";
-                    text.setAttribute('class', "playertext")
-                    document.getElementById('svgTwo').appendChild(text);
-                    LairdC++;
+                    rect.setAttribute('x', 0);
+                    rect.setAttribute('y', i);
+                    rect.setAttribute('width', '946');
+                    rect.setAttribute('height', '1');
+                    rect.setAttribute('fill', 'grey');
+                    text.setAttribute('x', i);
+                    text.setAttribute('font-size', '12');
+                    text.setAttribute('y', '516.5');
+                    text.textContent = int1;
+                    var rect2 = rect.cloneNode(true);
+                    var text2 = text.cloneNode(true);
+                    var rect3 = rect.cloneNode(true);
+                    var text3 = text.cloneNode(true);
+                    int1++;
+
+                    document.getElementById('quad2group').appendChild(rect2);
+                    document.getElementById('quad1group').appendChild(rect);
+                    document.getElementById('quad3group').appendChild(rect3);
+
+                    if (int1 != 13 && int1 != 14) {
+                        document.getElementById('quad1group').appendChild(text);
+                        document.getElementById('quad2group').appendChild(text2);
+                        document.getElementById('quad3group').appendChild(text3);
+                    }
+                    i += 43;
+
                 }
-            }
-            if (colourPlayer == "red") {
-                if (HartiC == 0) {
-                    document.getElementById('svgTwo').appendChild(rect);
+                int1 = 12;
+                for (var i = 0; i < 1033; i) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                    text.setAttribute('x', x - 15);
-                    text.setAttribute('y', y - 15);
-                    text.textContent = "Hartigan";
-                    text.setAttribute('class', "playertext")
-                    document.getElementById('svgTwo').appendChild(text);
-                    HartiC++;
+                    rect.setAttribute('x', i);
+                    rect.setAttribute('y', 0);
+                    rect.setAttribute('width', '1');
+                    rect.setAttribute('height', '1033');
+                    rect.setAttribute('fill', 'grey');
+                    text.setAttribute('y', i + 10);
+                    text.setAttribute('font-size', '12');
+                    text.setAttribute('x', '473');
+                    text.textContent = int1;
+
+                    var rect2 = rect.cloneNode(true);
+                    var text2 = text.cloneNode(true);
+                    var rect3 = rect.cloneNode(true);
+                    var text3 = text.cloneNode(true);
+
+                    if (int1 != 0) {
+                        document.getElementById('quad1group').appendChild(text);
+                        document.getElementById('quad2group').appendChild(text2);
+                        document.getElementById('quad3group').appendChild(text3);
+                    }
+                    int1--;
+
+
+                    if (i < 970) {
+                        document.getElementById('quad1group').appendChild(rect);
+                        document.getElementById('quad2group').appendChild(rect2);
+                        document.getElementById('quad3group').appendChild(rect3);
+                    }
+
+                    i += 43;
                 }
-            }
-            if (colourPlayer == "yellow") {
-                if (TaliaC == 0) {
-                    document.getElementById('svgTwo').appendChild(rect);
-                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                    text.setAttribute('x', x - 15);
-                    text.setAttribute('y', y - 15);
-                    text.setAttribute('class', "playertext")
-                    text.textContent = "Talia";
-                    document.getElementById('svgTwo').appendChild(text);
-                    TaliaC++;
+
+
+                function clearGraph(num) {
+                    var svgId = "svg" + num;
+
+                    var circles = d3.select("#" + svgId);
+                    circles.selectAll("circle").remove();
+                    circles.selectAll(".playertext").remove();
+
+                    if (num == "Three") {
+                        SloaneC = 0;
+                        CrouchC = 0;
+                        GibbC = 0;
+                        MckayC = 0;
+                    }
+
+                    if (num == "Two") {
+                        LairdC = 0;
+                        HartiC = 0;
+                        TaliaC = 0;
+                        SmithC = 0;
+                    }
+
+
                 }
-            }
-        }
-        if (colourPlayer == "green") {
-            if (SmithC == 0) {
-                document.getElementById('svgTwo').appendChild(rect);
-                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                text.setAttribute('x', x - 15);
-                text.setAttribute('y', y - 15);
-                text.setAttribute('class', "playertext")
-                text.textContent = "Smith";
-
-                document.getElementById('svgTwo').appendChild(text);
-                SmithC++;
-            }
-
-        }
-    }
 
 
+                var colourPlayer = "blue";
+                var LairdC = 0;
+                var HartiC = 0;
+                var TaliaC = 0;
+                var SmithC = 0;
+                var SloaneC = 0;
+                var CrouchC = 0;
+                var GibbC = 0;
+                var MckayC = 0;
 
+                function playerGraph(e) {
+                    if (e.innerHTML == "Laird" || e.innerHTML == "Sloane") {
+                        colourPlayer = "blue";
+                    }
 
-
-    function graphClick2(evt) {
-        var e = evt.target;
-        var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
-
-        if (x > 200 && y < 654.5 && y > 50) {
-            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            rect.setAttribute('cx', x);
-            rect.setAttribute('cy', y);
-            rect.setAttribute('r', '10');
-            rect.setAttribute('fill', colourPlayer);
-            if (colourPlayer == "blue") {
-                if (SloaneC == 0) {
-                    document.getElementById('svgThree').appendChild(rect)
-                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                    text.setAttribute('x', x - 15);
-                    text.setAttribute('y', y - 15);
-                    text.textContent = "Sloane";
-                    text.setAttribute('class', "playertext")
-                    document.getElementById('svgThree').appendChild(text);;
-                    SloaneC++;
+                    else if (e.innerHTML == "Hartigan" || e.innerHTML == "Crouch") {
+                        colourPlayer = "red";
+                    }
+                    else if (e.innerHTML == "Talia" || e.innerHTML == "Gibbs") {
+                        colourPlayer = "yellow";
+                    }
+                    else {
+                        colourPlayer = "green";
+                    }
                 }
-            }
-            if (colourPlayer == "red") {
-                if (CrouchC == 0) {
+
+                //drawing the graphs for act 14
+                for (var i = 50; i < 665; i) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                    rect.setAttribute('x', 200);
+                    rect.setAttribute('y', i);
+                    rect.setAttribute('width', '1000');
+                    rect.setAttribute('height', '1');
+                    rect.setAttribute('fill', 'grey');
                     document.getElementById('svgThree').appendChild(rect);
-                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                    text.setAttribute('x', x - 15);
-                    text.setAttribute('y', y - 15);
-                    text.textContent = "Crouch";
-                    text.setAttribute('class', "playertext")
-                    document.getElementById('svgThree').appendChild(text);
-                    CrouchC++;
+                    i += 65;
+
                 }
-            }
-            if (colourPlayer == "yellow") {
-                if (GibbC == 0) {
-                    document.getElementById('svgThree').appendChild(rect);
-                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                    text.setAttribute('x', x - 15);
-                    text.setAttribute('y', y - 15);
-                    text.textContent = "Gibbs";
-                    text.setAttribute('class', "playertext")
-                    document.getElementById('svgThree').appendChild(text);
-                    GibbC++;
+
+                for (var i = 50; i < 665; i) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                    rect.setAttribute('x', 200);
+                    rect.setAttribute('y', i);
+                    rect.setAttribute('width', '1000');
+                    rect.setAttribute('height', '1');
+                    rect.setAttribute('fill', 'grey');
+                    document.getElementById('svgTwo').appendChild(rect);
+                    i += 65;
+
                 }
-            }
-        }
-        if (colourPlayer == "green") {
-            if (MckayC == 0) {
-                document.getElementById('svgThree').appendChild(rect)
-                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                text.setAttribute('x', x - 15);
-                text.setAttribute('y', y - 15);
-                text.textContent = "McKay";
-                text.setAttribute('class', "playertext")
-                document.getElementById('svgThree').appendChild(text);
-                MckayC++;
-            }
-
-        }
-
-    }
 
 
 
 
+                for (var i = 50; i < 665; i) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                    rect.setAttribute('x', 200);
+                    rect.setAttribute('y', i);
+                    rect.setAttribute('width', '1000');
+                    rect.setAttribute('height', '1');
+                    rect.setAttribute('fill', 'grey');
+                    document.getElementById('svgOne').appendChild(rect);
+                    i += 15.5;
 
+                }
 
-
-    drawGraph();
-
-    var playerCount = 1;
-    function addPlayer() {
-
-        if (playerCount < 10) {
-
-            var table = document.getElementById("act6table");
-            var row = table.insertRow(playerCount + 1);
-            var cell = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            var cell6 = row.insertCell(5);
-
-            var input30 = document.createElement("input");
-            var input31 = document.createElement("input");
-            var input3 = document.createElement("input");
-            var input4 = document.createElement("input");
-            var input5 = document.createElement("input");
-            var input6 = document.createElement("input");
-
-            input30.size = 30;
-            input31.size = 30;
-            input3.size = 3;
-            input4.size = 3;
-            input5.size = 3;
-            input6.size = 3;
-
-            cell.appendChild(input30);
-            cell2.appendChild(input3);
-            cell3.appendChild(input4);
-            cell4.appendChild(input5);
-            cell5.appendChild(input6);
-            cell6.appendChild(input31);
-
-            playerCount++;
-            console.log(playerCount);
-        }
-    }
-
-    var playColour = "blue";
-
-    var playText = "(-1,-1)";
-
-    function selectPlay(e) {
-        if (e.innerHTML == "(-1,-1)" || e.innerHTML == "(-6,-3)" || e.innerHTML == "(-6,-7)" || e.innerHTML == "(-2,-7)") {
-            playColour = "blue";
-        }
-
-        else {
-            playColour = "red";
-        }
-
-        playText = e.innerHTML;
-    }
-
-    var play2s = false;
-    var play21 = false;
-    var play22 = false;
-    var play2f = false;
-    var play3s = false;
-    var play31 = false;
-    var play32 = false;
-    var play3f = false;
-
-
-    var lineCount = 0;
-    var line1X;
-    var line1Y;
-
-
-    var isPoint = true;
-    function drawLineSwap() {
-
-        if (isPoint) {
-            document.getElementById("quad3").setAttribute("onclick", "lineDraw(evt);");
-            document.getElementById("drawLine").innerHTML = "Drawing a line"
-            isPoint = false;
-        }
-        else {
-            document.getElementById("quad3").setAttribute("onclick", "quadClick(evt);")
-            document.getElementById("drawLine").innerHTML = "Drawing a point"
-            isPoint = true;
-        }
-
-    }
-
-
-    //to draw a line in quad 3
-    function lineDraw(evt) {
-        var e = evt.target;
-        var dim = e.getBoundingClientRect();
-
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
-
-
-
-        if (lineCount == 0) {
-            lineCount++
-            line1X = x;
-            line1Y = y;
-        }
-
-        else {
-            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", x);
-            line.setAttribute("x2", line1X);
-            line.setAttribute("y1", y);
-            line.setAttribute("y2", line1Y);
-            line.setAttribute("stroke", playColour);
-            line.setAttribute("stroke-width", "2");
-            line.setAttribute("stroke-dasharray", "6");
-            document.getElementById('quad3lines').appendChild(line);
-            lineCount--;
-
-        }
-    }
-
-
-    function quadClick(evt) {
-
-
-        var e = evt.target;
-        var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
+                for (var i = 200; i < 1000; i) {
+                    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                    rect.setAttribute('x', i);
+                    rect.setAttribute('y', 50);
+                    rect.setAttribute('width', '1');
+                    rect.setAttribute('height', '605');
+                    rect.setAttribute('fill', 'grey');
+                    document.getElementById('svgOne').appendChild(rect);
+                    i += 13.88;
+                }
 
 
 
 
-        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        text.textContent = playText;
-        text.setAttribute('x', x + 25);
-        text.setAttribute('y', y)
+                //functions for act14
+                function graphClick(evt) {
+                    var e = evt.target;
+                    var dim = e.getBoundingClientRect();
+                    var x = evt.clientX - dim.left;
+                    var y = evt.clientY - dim.top;
 
-        var text2 = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        text2.textContent = "X";
-        text2.setAttribute('x', x - 6);
-        text2.setAttribute('y', y + 6);
-
-
-
-        if (x < 946 && y < 1032) {
-            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            rect.setAttribute('cx', x);
-            rect.setAttribute('cy', y);
-            rect.setAttribute('r', '20');
-            rect.setAttribute('stroke', playColour);
-            rect.setAttribute('stroke-width', "2")
-            rect.setAttribute('fill', "white");
-
-
-            //play 2
-            if (playColour == "blue") {
-                if (playText == "(-1,-1)") {
-                    if (!play2s) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
-                        play2s = true;
+                    if (x > 200 && y < 654.5 && y > 50) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        rect.setAttribute('cx', x);
+                        rect.setAttribute('cy', y);
+                        rect.setAttribute('r', '5');
+                        rect.setAttribute('fill', 'black');
+                        document.getElementById('svgOne').appendChild(rect);
                     }
-                }
-                if (playText == "(-6,-3)") {
-                    if (!play21) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        text2.textContent = "1X"
-                        document.getElementById('quad3').appendChild(text2);
-                        play21 = true;
-                    }
+
+
+
+
                 }
 
-                if (playText == "(-6,-7)") {
-                    if (!play22) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        text2.textContent = "2X"
-                        document.getElementById('quad3').appendChild(text2);
-                        play22 = true;
-                    }
-                }
+                function graphClick1(evt) {
+                    var e = evt.target;
+                    var dim = e.getBoundingClientRect();
+                    var x = evt.clientX - dim.left;
+                    var y = evt.clientY - dim.top;
 
-                if (playText == "(-2,-7)") {
-                    if (!play2f) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
-                        play2f = true;
+                    if (x > 200 && y < 654.5 && y > 50) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        rect.setAttribute('cx', x);
+                        rect.setAttribute('cy', y);
+                        rect.setAttribute('r', '10');
+                        rect.setAttribute('fill', colourPlayer);
+                        if (colourPlayer == "blue") {
+                            if (LairdC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Laird";
+                                text.setAttribute('class', "playertext")
+                                document.getElementById('svgTwo').appendChild(text);
+                                LairdC++;
+                            }
+                        }
+                        if (colourPlayer == "red") {
+                            if (HartiC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Hartigan";
+                                text.setAttribute('class', "playertext")
+                                document.getElementById('svgTwo').appendChild(text);
+                                HartiC++;
+                            }
+                        }
+                        if (colourPlayer == "yellow") {
+                            if (TaliaC == 0) {
+                                document.getElementById('svgTwo').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.setAttribute('class', "playertext")
+                                text.textContent = "Talia";
+                                document.getElementById('svgTwo').appendChild(text);
+                                TaliaC++;
+                            }
+                        }
+                    }
+                    if (colourPlayer == "green") {
+                        if (SmithC == 0) {
+                            document.getElementById('svgTwo').appendChild(rect);
+                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                            text.setAttribute('x', x - 15);
+                            text.setAttribute('y', y - 15);
+                            text.setAttribute('class', "playertext")
+                            text.textContent = "Smith";
+
+                            document.getElementById('svgTwo').appendChild(text);
+                            SmithC++;
+                        }
+
                     }
                 }
 
 
-            }
 
-            //play3
-            else if (playColour == "red") {
-                console.log("in red");
-                if (playText == "(7,9)") {
-                    console.log(playText);
-                    if (!play3s) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
-                        play3s = true;
-                    }
-                }
-                if (playText == "(4,7)") {
-                    if (!play31) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        text2.textContent = "1X"
-                        document.getElementById('quad3').appendChild(text2);
-                        play31 = true;
-                    }
-                }
-                if (playText == "(2,1)") {
-                    if (!play32) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        text2.textContent = "2X"
-                        document.getElementById('quad3').appendChild(text2);
-                        play32 = true;
-                    }
 
-                }
-                if (playText == "(8,0)") {
-                    if (!play3f) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
-                        play3f = true;
+
+                function graphClick2(evt) {
+                    var e = evt.target;
+                    var dim = e.getBoundingClientRect();
+                    var x = evt.clientX - dim.left;
+                    var y = evt.clientY - dim.top;
+
+                    if (x > 200 && y < 654.5 && y > 50) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        rect.setAttribute('cx', x);
+                        rect.setAttribute('cy', y);
+                        rect.setAttribute('r', '10');
+                        rect.setAttribute('fill', colourPlayer);
+                        if (colourPlayer == "blue") {
+                            if (SloaneC == 0) {
+                                document.getElementById('svgThree').appendChild(rect)
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Sloane";
+                                text.setAttribute('class', "playertext")
+                                document.getElementById('svgThree').appendChild(text);;
+                                SloaneC++;
+                            }
+                        }
+                        if (colourPlayer == "red") {
+                            if (CrouchC == 0) {
+                                document.getElementById('svgThree').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Crouch";
+                                text.setAttribute('class', "playertext")
+                                document.getElementById('svgThree').appendChild(text);
+                                CrouchC++;
+                            }
+                        }
+                        if (colourPlayer == "yellow") {
+                            if (GibbC == 0) {
+                                document.getElementById('svgThree').appendChild(rect);
+                                var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                                text.setAttribute('x', x - 15);
+                                text.setAttribute('y', y - 15);
+                                text.textContent = "Gibbs";
+                                text.setAttribute('class', "playertext")
+                                document.getElementById('svgThree').appendChild(text);
+                                GibbC++;
+                            }
+                        }
+                    }
+                    if (colourPlayer == "green") {
+                        if (MckayC == 0) {
+                            document.getElementById('svgThree').appendChild(rect)
+                            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                            text.setAttribute('x', x - 15);
+                            text.setAttribute('y', y - 15);
+                            text.textContent = "McKay";
+                            text.setAttribute('class', "playertext")
+                            document.getElementById('svgThree').appendChild(text);
+                            MckayC++;
+                        }
+
                     }
 
                 }
 
 
-            }
-
-
-
-        }
 
 
 
 
-    }
 
+                drawGraph();
 
-    //unhide calculator div
-    function unhideCal() {
-        if (document.getElementById("calculator").style.display == "none") {
-            document.getElementById("calculator").style.display = "inline-block";
-        }
-        else {
-            document.getElementById("calculator").style.display = "none";
-        }
+                var playerCount = 1;
+                function addPlayer() {
 
+                    if (playerCount < 10) {
 
-    }
+                        var table = document.getElementById("act6table");
+                        var row = table.insertRow(playerCount + 1);
+                        var cell = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        var cell5 = row.insertCell(4);
+                        var cell6 = row.insertCell(5);
 
+                        var input30 = document.createElement("input");
+                        var input31 = document.createElement("input");
+                        var input3 = document.createElement("input");
+                        var input4 = document.createElement("input");
+                        var input5 = document.createElement("input");
+                        var input6 = document.createElement("input");
 
-    function drawGraph() {
-        var count = 3.0;
-        var graph = document.getElementById("texGraph").getContext("2d");
-        for (var i = 50; i < 400; i) {
-            graph.fillRect(30, i, 500, 1);
-            graph.fillText(count, 10, i)
-            count -= 0.5;
-            i += 50;
-        }
+                        input30.size = 30;
+                        input31.size = 30;
+                        input3.size = 3;
+                        input4.size = 3;
+                        input5.size = 3;
+                        input6.size = 3;
 
-        graph.fillText("2015", 100, 360)
-        graph.fillText("2016", 200, 360)
-        graph.fillText("2017", 300, 360)
-        graph.fillText("2018", 400, 360)
-        graph.fillText("2019", 500, 360)
+                        cell.appendChild(input30);
+                        cell2.appendChild(input3);
+                        cell3.appendChild(input4);
+                        cell4.appendChild(input5);
+                        cell5.appendChild(input6);
+                        cell6.appendChild(input31);
 
-    }
-
-    function drawGraphOnClick(x, val) {
-        var graph = document.getElementById("texGraph").getContext("2d");
-        graph.fillStyle = "#004b8d"
-        graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
-    }
-
-    var coinCount = 0;
-    goalCount = 0;
-    behindCount = 0;
-    missCount = 0;
-
-    jQuery(document).ready(function ($) {
-
-        $('#coin, #coin2').on('click', function () {
-
-            if (coinCount < 10) {
-                coinCount++;
-                var flipResult = Math.random();
-                var flipResult2 = Math.random();
-
-                var table = document.getElementById("coinTable");
-                var row = table.insertRow(coinCount);
-                var cell = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                cell.innerHTML = coinCount;
-
-                cell2.setAttribute("id", "hh" + coinCount);
-                cell3.setAttribute("id", "ht" + coinCount);
-                cell4.setAttribute("id", "tt" + coinCount);
-
-
-                $('#coin').removeClass();
-                $('#coin2').removeClass();
-                setTimeout(function () {
-                    if (flipResult <= 0.5) {
-                        $('#coin').addClass('heads');
-                        console.log('coin1 - it is head');
+                        playerCount++;
+                        console.log(playerCount);
                     }
-                    if (flipResult2 <= 0.5) {
-                        $('#coin2').addClass('heads');
-                        console.log('coin2 - it is head');
-                    }
-                    if (flipResult > 0.5) {
-                        $('#coin').addClass('tails');
-                        console.log('coin1 - it is tails');
-                    }
+                }
 
-                    if (flipResult2 > 0.5) {
-                        $('#coin2').addClass('tails');
-                        console.log('coin2  - it is tails');
-                    }
+                var playColour = "blue";
 
-                    if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
-                        console.log(" in hh ")
-                        var id = "hh" + coinCount;
-                        $("#" + id).text("Goal");
-                        goalCount++;
-                    }
+                var playText = "(-1,-1)";
 
-                    else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
-                        console.log(" in tt ")
-                        var id = "tt" + coinCount;
-                        $("#" + id).text("Miss");
-                        missCount++;
+                function selectPlay(e) {
+                    if (e.innerHTML == "(-1,-1)" || e.innerHTML == "(-6,-3)" || e.innerHTML == "(-6,-7)" || e.innerHTML == "(-2,-7)") {
+                        playColour = "blue";
                     }
 
                     else {
-                        var id = "ht" + coinCount;
-                        $("#" + id).text("Behind");
-                        behindCount++;
-
+                        playColour = "red";
                     }
 
-
-
-                    $("#gc").text(goalCount);
-                    $("#mc").text(missCount);
-                    $("#bc").text(behindCount);
-
-                }, 100);
-            }
-        });
-    });
-
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
-
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-    //calculator script
-
-    function dis(val) {
-        document.getElementById("result").value += val
-    }
-
-    function runfooty() {
-
-        document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
-
-
-
-
-
-
-        setTimeout(function () {
-            var table = document.getElementById('act10table2');
-            var table2 = document.getElementById('act10table3')
-            var stemList = []
-            for (var i = 1, row; row = table.rows[i]; i++) {
-                //iterate through rows
-                //rows would be accessed using the "row" variable assigned in the for loop
-                for (var j = 1, col; col = row.cells[j]; j++) {
-                    //iterate through columns
-                    //columns would be accessed using the "col" variable assigned in the for loop'
-
-                    var value = String(col.querySelector('input').value);
-                    stemList.push(value);
+                    playText = e.innerHTML;
                 }
-            }
+
+                var play2s = false;
+                var play21 = false;
+                var play22 = false;
+                var play2f = false;
+                var play3s = false;
+                var play31 = false;
+                var play32 = false;
+                var play3f = false;
 
 
-            for (var i = 1, row; row = table2.rows[i]; i++) {
-                var value = parseFloat(stemList[i - 1]).toFixed(1);
+                var lineCount = 0;
+                var line1X;
+                var line1Y;
 
-                var newString = String(value).split('.');
-                var goal = newString[0];
-                var behind = newString[1];
-                //iterate through rows
-                //rows would be accessed using the "row" variable assigned in the for loop
-                for (var j = 0, col; col = row.cells[j]; j++) {
-                    //iterate through columns
-                    //columns would be accessed using the "col" variable assigned in the for loop'
-                    if (j == 0) {
-                        col.querySelector('input').value = goal;
+
+                var isPoint = true;
+                function drawLineSwap() {
+
+                    if (isPoint) {
+                        document.getElementById("quad3").setAttribute("onclick", "lineDraw(evt);");
+                        document.getElementById("drawLine").innerHTML = "Drawing a line"
+                        isPoint = false;
                     }
-                    if (j == 1) {
-                        col.querySelector('input').value = behind;
+                    else {
+                        document.getElementById("quad3").setAttribute("onclick", "quadClick(evt);")
+                        document.getElementById("drawLine").innerHTML = "Drawing a point"
+                        isPoint = true;
+                    }
+
+                }
+
+
+                //to draw a line in quad 3
+                function lineDraw(evt) {
+                    var e = evt.target;
+                    var dim = e.getBoundingClientRect();
+
+                    var x = evt.clientX - dim.left;
+                    var y = evt.clientY - dim.top;
+
+
+
+                    if (lineCount == 0) {
+                        lineCount++
+                        line1X = x;
+                        line1Y = y;
+                    }
+
+                    else {
+                        var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        line.setAttribute("x1", x);
+                        line.setAttribute("x2", line1X);
+                        line.setAttribute("y1", y);
+                        line.setAttribute("y2", line1Y);
+                        line.setAttribute("stroke", playColour);
+                        line.setAttribute("stroke-width", "2");
+                        line.setAttribute("stroke-dasharray", "6");
+                        document.getElementById('quad3lines').appendChild(line);
+                        lineCount--;
+
                     }
                 }
-            }
+
+
+                function quadClick(evt) {
+
+
+                    var e = evt.target;
+                    var dim = e.getBoundingClientRect();
+                    var x = evt.clientX - dim.left;
+                    var y = evt.clientY - dim.top;
+
+
+
+
+                    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                    text.textContent = playText;
+                    text.setAttribute('x', x + 25);
+                    text.setAttribute('y', y)
+
+                    var text2 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                    text2.textContent = "X";
+                    text2.setAttribute('x', x - 6);
+                    text2.setAttribute('y', y + 6);
+
+
+
+                    if (x < 946 && y < 1032) {
+                        var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        rect.setAttribute('cx', x);
+                        rect.setAttribute('cy', y);
+                        rect.setAttribute('r', '20');
+                        rect.setAttribute('stroke', playColour);
+                        rect.setAttribute('stroke-width', "2")
+                        rect.setAttribute('fill', "white");
+
+
+                        //play 2
+                        if (playColour == "blue") {
+                            if (playText == "(-1,-1)") {
+                                if (!play2s) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play2s = true;
+                                }
+                            }
+                            if (playText == "(-6,-3)") {
+                                if (!play21) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    text2.textContent = "1X"
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play21 = true;
+                                }
+                            }
+
+                            if (playText == "(-6,-7)") {
+                                if (!play22) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    text2.textContent = "2X"
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play22 = true;
+                                }
+                            }
+
+                            if (playText == "(-2,-7)") {
+                                if (!play2f) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play2f = true;
+                                }
+                            }
+
+
+                        }
+
+                        //play3
+                        else if (playColour == "red") {
+                            console.log("in red");
+                            if (playText == "(7,9)") {
+                                console.log(playText);
+                                if (!play3s) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play3s = true;
+                                }
+                            }
+                            if (playText == "(4,7)") {
+                                if (!play31) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    text2.textContent = "1X"
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play31 = true;
+                                }
+                            }
+                            if (playText == "(2,1)") {
+                                if (!play32) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    text2.textContent = "2X"
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play32 = true;
+                                }
+
+                            }
+                            if (playText == "(8,0)") {
+                                if (!play3f) {
+                                    document.getElementById('quad3').appendChild(text);
+                                    document.getElementById('quad3').appendChild(rect);
+                                    document.getElementById('quad3').appendChild(text2);
+                                    play3f = true;
+                                }
+
+                            }
+
+
+                        }
+
+
+
+                    }
+
+
+
+
+                }
+
+
+                //unhide calculator div
+                function unhideCal() {
+                    if (document.getElementById("calculator").style.display == "none") {
+                        document.getElementById("calculator").style.display = "inline-block";
+                    }
+                    else {
+                        document.getElementById("calculator").style.display = "none";
+                    }
+
+
+                }
+
+
+                function drawGraph() {
+                    var count = 3.0;
+                    var graph = document.getElementById("texGraph").getContext("2d");
+                    for (var i = 50; i < 400; i) {
+                        graph.fillRect(30, i, 500, 1);
+                        graph.fillText(count, 10, i)
+                        count -= 0.5;
+                        i += 50;
+                    }
+
+                    graph.fillText("2015", 100, 360)
+                    graph.fillText("2016", 200, 360)
+                    graph.fillText("2017", 300, 360)
+                    graph.fillText("2018", 400, 360)
+                    graph.fillText("2019", 500, 360)
+
+                }
+
+                function drawGraphOnClick(x, val) {
+                    var graph = document.getElementById("texGraph").getContext("2d");
+                    graph.fillStyle = "#004b8d"
+                    graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
+                }
+
+                var coinCount = 0;
+                goalCount = 0;
+                behindCount = 0;
+                missCount = 0;
+
+                jQuery(document).ready(function ($) {
+
+                    $('#coin, #coin2').on('click', function () {
+
+                        if (coinCount < 10) {
+                            coinCount++;
+                            var flipResult = Math.random();
+                            var flipResult2 = Math.random();
+
+                            var table = document.getElementById("coinTable");
+                            var row = table.insertRow(coinCount);
+                            var cell = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            var cell4 = row.insertCell(3);
+                            cell.innerHTML = coinCount;
+
+                            cell2.setAttribute("id", "hh" + coinCount);
+                            cell3.setAttribute("id", "ht" + coinCount);
+                            cell4.setAttribute("id", "tt" + coinCount);
+
+
+                            $('#coin').removeClass();
+                            $('#coin2').removeClass();
+                            setTimeout(function () {
+                                if (flipResult <= 0.5) {
+                                    $('#coin').addClass('heads');
+                                    console.log('coin1 - it is head');
+                                }
+                                if (flipResult2 <= 0.5) {
+                                    $('#coin2').addClass('heads');
+                                    console.log('coin2 - it is head');
+                                }
+                                if (flipResult > 0.5) {
+                                    $('#coin').addClass('tails');
+                                    console.log('coin1 - it is tails');
+                                }
+
+                                if (flipResult2 > 0.5) {
+                                    $('#coin2').addClass('tails');
+                                    console.log('coin2  - it is tails');
+                                }
+
+                                if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
+                                    console.log(" in hh ")
+                                    var id = "hh" + coinCount;
+                                    $("#" + id).text("Goal");
+                                    goalCount++;
+                                }
+
+                                else if (($('#coin').attr('class') == "tails") && ($('#coin2').attr('class') == "tails")) {
+                                    console.log(" in tt ")
+                                    var id = "tt" + coinCount;
+                                    $("#" + id).text("Miss");
+                                    missCount++;
+                                }
+
+                                else {
+                                    var id = "ht" + coinCount;
+                                    $("#" + id).text("Behind");
+                                    behindCount++;
+
+                                }
+
+
+
+                                $("#gc").text(goalCount);
+                                $("#mc").text(missCount);
+                                $("#bc").text(behindCount);
+
+                            }, 100);
+                        }
+                    });
+                });
+
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                }
+
+                function drag(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id);
+                }
+                //calculator script
+
+                function dis(val) {
+                    document.getElementById("result").value += val
+                }
+
+                function runfooty() {
+
+                    document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
 
 
 
 
 
-        }
 
-            , 1500);
+                    setTimeout(function () {
+                        var table = document.getElementById('act10table2');
+                        var table2 = document.getElementById('act10table3')
+                        var stemList = []
+                        for (var i = 1, row; row = table.rows[i]; i++) {
+                            //iterate through rows
+                            //rows would be accessed using the "row" variable assigned in the for loop
+                            for (var j = 1, col; col = row.cells[j]; j++) {
+                                //iterate through columns
+                                //columns would be accessed using the "col" variable assigned in the for loop'
 
-
-    }
-
-
-
-
-
-
-    //function that evaluates the digit and return result
-    function solve() {
-        let x = document.getElementById("result").value
-        let y = eval(x)
-        document.getElementById("result").value = y
-    }
-
-    //function that clear the display
-    function clr() {
-        document.getElementById("result").value = ""
-    }
-
-    // Activity 1: part 1 Drop function
-    function drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var text = document.getElementById(id).innerHTML;
-        var isEmpty = target.innerHTML;
-
-        if (isEmpty == '') {
-            document.getElementById(id).style.visibility = "hidden";
-            target.innerHTML = text;
-        } else {
-            console.log('full');
-        }
-    }
-
-    // Activity 1: part 2 Drop function
-    function act1Drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var sentence = document.getElementById(id).innerHTML;
-        var position = splitString(sentence);
-        var isEmpty = target.innerHTML;
-
-        if (isEmpty == '') {
-            document.getElementById(id).style.visibility = "hidden";
-            target.innerHTML = position;
-        } else {
-            console.log('full');
-        }
-
-    }
-
-    // Activitt 9: Drag and Drop for the stem & leaf plots
-    function act9Drop(ev) {
-        ev.preventDefault();
-        var id = ev.dataTransfer.getData("text");
-        var target = ev.target;
-        var number = document.getElementById(id).name;
-
-        if (target.id == 'stem') {
-            target.innerHTML = number;
-        } else {
-            if (target.innerHTML == '') {
-                target.innerHTML += number;
-            } else {
-                target.innerHTML += ', ' + number;
-            }
-        }
-    }
-
-    // Method to split positions into the abbreviated versions. i.e Full Forward == FF
-    function splitString(sentence) {
-        var string = sentence;
-        var code = "";
-        string = string.split(" ");
-
-        for (i = 0; i < string.length; i++) {
-            var word = string[i];
-            var subcode = word.charAt(0);
-            if (subcode == '(') { } else {
-                code = code + subcode;
-            }
-        }
-        return code;
-    }
-
-    // Method to get the student's 10 chosen STEM ID Profiles players
-    function getSTEMID() {
-
-        for (i = 0; i < 10; i++) {
-            var holdArray = localStorage.getItem(i);
-            var newArray = holdArray.split(',');
-
-            var row1 = document.getElementById('stemIDR1');
-            var row2 = document.getElementById('stemIDR2');
-
-            document.getElementById('STEMProfile').hidden = false;
-
-            var cardContainer = document.createElement('DIV');
-            cardContainer.className = "card";
-
-            var pNumText = document.createElement('P');
-            var numBold = document.createElement('B');
-
-            var imgSrc = document.createElement('IMG');
-
-            var divContainer = document.createElement('DIV');
-
-            var name = document.createElement('H4');
-            var nBold = document.createElement('B');
-
-            var height = document.createElement('P');
-            var hBold = document.createElement('B');
-
-            var DOB = document.createElement('P');
-            var dobBold = document.createElement('B');
-
-            var debut = document.createElement('P');
-            var dBold = document.createElement('B');
-
-            var recruit = document.createElement('P');
-            var rBold = document.createElement('B');
-            var rFrom = document.createElement('P');
-
-
-            var pNum = newArray[0];
-            var pImgSrc = newArray[1];
-            var pName = newArray[2];
-            var pHGT = newArray[3];
-            var pDOB = newArray[4];
-            var pDebut = newArray[5];
-            var pRecruit = newArray[6];
-            var pRFrom = newArray[7];
-
-            numBold.innerHTML = pNum;
-            pNumText.appendChild(numBold);
-
-
-            imgSrc.src = "~" + pImgSrc;
-            imgSrc.alt = pName;
-            imgSrc.className = 'imgs';
-
-            nBold.innerHTML = pName;
-            name.appendChild(nBold);
-
-            hBold.innerHTML = pHGT;
-            height.appendChild(hBold);
-
-            dobBold.innerHTML = pDOB;
-            DOB.appendChild(dobBold);
-
-            dBold.innerHTML = pDebut;
-            debut.appendChild(dBold);
-
-            rBold.innerHTML = pRecruit;
-            recruit.appendChild(rBold);
-
-            rFrom.innerHTML = pRFrom;
-
-            cardContainer.appendChild(pNumText);
-            cardContainer.appendChild(imgSrc);
-            cardContainer.appendChild(name);
-            cardContainer.appendChild(height);
-            cardContainer.appendChild(DOB);
-            cardContainer.appendChild(debut);
-            cardContainer.appendChild(recruit);
-            cardContainer.appendChild(rFrom);
-
-
-            row1.appendChild(cardContainer);
-
-            /*
-            console.log(pNum);
-            console.log(pImgSrc);
-            console.log(pName);
-            console.log(pHGT);
-            console.log(pDOB);
-            console.log(pDebut);
-            console.log(pRecruit);
-            console.log(pRFrom);
-
-            <div class="card">
-                    <p id="playerNumber"><b></b></p>
-                    <img src="~" alt="" class="imgs" />
-                    <div class="container">
-                        <h4><b></b></h4>
-                        <p><b id="title"></b></p>
-                        <p><b id="title"></b></p>
-                        <p><b id="title"></b></p>
-                        <p><b id="title"></b></p>
-                        <p></p>
-                    </div>
-                </div>
-            */
-        }
-    }
-
-    function checkActivity1P1(id1, id2) {
-        var stillEmpty = 1; // 1 = table of players is empty. 0 = table of players is still populated.
-        var forward = ['Forward Pocket', 'Half Forward Flank', 'Centre Half Forward', 'Full Forward'];
-        var mid = ['Ruck', 'Wing', 'Ruck Rover', 'Rover', 'Centre'];
-        var back = ['Back Pocket', 'Half back Flank', 'Full Back']
-        var inter = ['Interchange 1', 'Interchange 2', 'Interchange 3', 'Interchange4'];
-
-        var table1 = document.getElementById(id1);
-        var table2 = document.getElementById(id2);
-
-        stillEmpty = this.check('act1Table1');
-
-        if (stillEmpty == 0) {
-            //when table still has empty cells
-            alert('Please complete filling in the table');
-        } else {
-            for (var i = 1; i < table2.rows.length; i++) {
-                row = table2.rows[i];
-                for (var j = 0; j < row.cells.length; j++) {
-                    var col = row.cells[j];
-                    var colText = col.innerHTML;
-
-                    if (i == 1 || i == 2) {
-                        for (a = 0; a < forward.length; a++) {
-                            var check = forward[a];
-                            var result = check.localeCompare(colText);
-                            if (result == 1) {
-                                col.style.color = 'green';
-                                console.log('YES!')
-                                console.log(result);
-                                console.log(colText);
+                                var value = String(col.querySelector('input').value);
+                                stemList.push(value);
                             }
                         }
-                    } else if (i == 3 || i == 4) {
-                        for (b = 0; b < mid.length; b++) {
-                            var check = mid[b];
-                            var result = check.localeCompare(colText);
-                            if (result == 1) {
-                                col.style.color = 'green';
-                                console.log('NO!')
-                                console.log(result);
-                                console.log(colText);
+
+
+                        for (var i = 1, row; row = table2.rows[i]; i++) {
+                            var value = parseFloat(stemList[i - 1]).toFixed(1);
+
+                            var newString = String(value).split('.');
+                            var goal = newString[0];
+                            var behind = newString[1];
+                            //iterate through rows
+                            //rows would be accessed using the "row" variable assigned in the for loop
+                            for (var j = 0, col; col = row.cells[j]; j++) {
+                                //iterate through columns
+                                //columns would be accessed using the "col" variable assigned in the for loop'
+                                if (j == 0) {
+                                    col.querySelector('input').value = goal;
+                                }
+                                if (j == 1) {
+                                    col.querySelector('input').value = behind;
+                                }
                             }
                         }
-                    } else if (i == 5 || i == 6) {
-                        for (c = 0; c < back.length; c++) {
-                            var check = back[c];
-                            var result = check.localeCompare(colText);
-                            if (result == 1) {
-                                col.style.color = 'green';
+
+
+
+
+
+                    }
+
+                        , 1500);
+
+
+                }
+
+
+
+
+
+
+                //function that evaluates the digit and return result
+                function solve() {
+                    let x = document.getElementById("result").value
+                    let y = eval(x)
+                    document.getElementById("result").value = y
+                }
+
+                //function that clear the display
+                function clr() {
+                    document.getElementById("result").value = ""
+                }
+
+                // Activity 1: part 1 Drop function
+                function drop(ev) {
+                    ev.preventDefault();
+                    var id = ev.dataTransfer.getData("text");
+                    var target = ev.target;
+                    var text = document.getElementById(id).innerHTML;
+                    var isEmpty = target.innerHTML;
+
+                    if (isEmpty == '') {
+                        document.getElementById(id).style.visibility = "hidden";
+                        target.innerHTML = text;
+                    } else {
+                        console.log('full');
+                    }
+                }
+
+                // Activity 1: part 2 Drop function
+                function act1Drop(ev) {
+                    ev.preventDefault();
+                    var id = ev.dataTransfer.getData("text");
+                    var target = ev.target;
+                    var sentence = document.getElementById(id).innerHTML;
+                    var position = splitString(sentence);
+                    var isEmpty = target.innerHTML;
+
+                    if (isEmpty == '') {
+                        document.getElementById(id).style.visibility = "hidden";
+                        target.innerHTML = position;
+                    } else {
+                        console.log('full');
+                    }
+
+                }
+
+                // Activitt 9: Drag and Drop for the stem & leaf plots
+                function act9Drop(ev) {
+                    ev.preventDefault();
+                    var id = ev.dataTransfer.getData("text");
+                    var target = ev.target;
+                    var number = document.getElementById(id).name;
+
+                    if (target.id == 'stem') {
+                        target.innerHTML = number;
+                    } else {
+                        if (target.innerHTML == '') {
+                            target.innerHTML += number;
+                        } else {
+                            target.innerHTML += ', ' + number;
+                        }
+                    }
+                }
+
+                // Method to split positions into the abbreviated versions. i.e Full Forward == FF
+                function splitString(sentence) {
+                    var string = sentence;
+                    var code = "";
+                    string = string.split(" ");
+
+                    for (i = 0; i < string.length; i++) {
+                        var word = string[i];
+                        var subcode = word.charAt(0);
+                        if (subcode == '(') { } else {
+                            code = code + subcode;
+                        }
+                    }
+                    return code;
+                }
+
+                // Method to get the student's 10 chosen STEM ID Profiles players
+                function getSTEMID() {
+
+                    for (i = 0; i < 10; i++) {
+                        var holdArray = localStorage.getItem(i);
+                        var newArray = holdArray.split(',');
+
+                        var row1 = document.getElementById('stemIDR1');
+                        var row2 = document.getElementById('stemIDR2');
+
+                        document.getElementById('STEMProfile').hidden = false;
+
+                        var cardContainer = document.createElement('DIV');
+                        cardContainer.className = "card";
+
+                        var pNumText = document.createElement('P');
+                        var numBold = document.createElement('B');
+
+                        var imgSrc = document.createElement('IMG');
+
+                        var divContainer = document.createElement('DIV');
+
+                        var name = document.createElement('H4');
+                        var nBold = document.createElement('B');
+
+                        var height = document.createElement('P');
+                        var hBold = document.createElement('B');
+
+                        var DOB = document.createElement('P');
+                        var dobBold = document.createElement('B');
+
+                        var debut = document.createElement('P');
+                        var dBold = document.createElement('B');
+
+                        var recruit = document.createElement('P');
+                        var rBold = document.createElement('B');
+                        var rFrom = document.createElement('P');
+
+
+                        var pNum = newArray[0];
+                        var pImgSrc = newArray[1];
+                        var pName = newArray[2];
+                        var pHGT = newArray[3];
+                        var pDOB = newArray[4];
+                        var pDebut = newArray[5];
+                        var pRecruit = newArray[6];
+                        var pRFrom = newArray[7];
+
+                        numBold.innerHTML = pNum;
+                        pNumText.appendChild(numBold);
+
+
+                        imgSrc.src = "~" + pImgSrc;
+                        imgSrc.alt = pName;
+                        imgSrc.className = 'imgs';
+
+                        nBold.innerHTML = pName;
+                        name.appendChild(nBold);
+
+                        hBold.innerHTML = pHGT;
+                        height.appendChild(hBold);
+
+                        dobBold.innerHTML = pDOB;
+                        DOB.appendChild(dobBold);
+
+                        dBold.innerHTML = pDebut;
+                        debut.appendChild(dBold);
+
+                        rBold.innerHTML = pRecruit;
+                        recruit.appendChild(rBold);
+
+                        rFrom.innerHTML = pRFrom;
+
+                        cardContainer.appendChild(pNumText);
+                        cardContainer.appendChild(imgSrc);
+                        cardContainer.appendChild(name);
+                        cardContainer.appendChild(height);
+                        cardContainer.appendChild(DOB);
+                        cardContainer.appendChild(debut);
+                        cardContainer.appendChild(recruit);
+                        cardContainer.appendChild(rFrom);
+
+
+                        row1.appendChild(cardContainer);
+
+                        /*
+                        console.log(pNum);
+                        console.log(pImgSrc);
+                        console.log(pName);
+                        console.log(pHGT);
+                        console.log(pDOB);
+                        console.log(pDebut);
+                        console.log(pRecruit);
+                        console.log(pRFrom);
+
+                        <div class="card">
+                                <p id="playerNumber"><b></b></p>
+                                <img src="~" alt="" class="imgs" />
+                                <div class="container">
+                                    <h4><b></b></h4>
+                                    <p><b id="title"></b></p>
+                                    <p><b id="title"></b></p>
+                                    <p><b id="title"></b></p>
+                                    <p><b id="title"></b></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        */
+                    }
+                }
+
+                function checkActivity1P1(id1, id2) {
+                    var stillEmpty = 1; // 1 = table of players is empty. 0 = table of players is still populated.
+                    var forward = ['Forward Pocket', 'Half Forward Flank', 'Centre Half Forward', 'Full Forward'];
+                    var mid = ['Ruck', 'Wing', 'Ruck Rover', 'Rover', 'Centre'];
+                    var back = ['Back Pocket', 'Half back Flank', 'Full Back']
+                    var inter = ['Interchange 1', 'Interchange 2', 'Interchange 3', 'Interchange4'];
+
+                    var table1 = document.getElementById(id1);
+                    var table2 = document.getElementById(id2);
+
+                    stillEmpty = this.check('act1Table1');
+
+                    if (stillEmpty == 0) {
+                        //when table still has empty cells
+                        alert('Please complete filling in the table');
+                    } else {
+                        for (var i = 1; i < table2.rows.length; i++) {
+                            row = table2.rows[i];
+                            for (var j = 0; j < row.cells.length; j++) {
+                                var col = row.cells[j];
+                                var colText = col.innerHTML;
+
+                                if (i == 1 || i == 2) {
+                                    for (a = 0; a < forward.length; a++) {
+                                        var check = forward[a];
+                                        var result = check.localeCompare(colText);
+                                        if (result == 1) {
+                                            col.style.color = 'green';
+                                            console.log('YES!')
+                                            console.log(result);
+                                            console.log(colText);
+                                        }
+                                    }
+                                } else if (i == 3 || i == 4) {
+                                    for (b = 0; b < mid.length; b++) {
+                                        var check = mid[b];
+                                        var result = check.localeCompare(colText);
+                                        if (result == 1) {
+                                            col.style.color = 'green';
+                                            console.log('NO!')
+                                            console.log(result);
+                                            console.log(colText);
+                                        }
+                                    }
+                                } else if (i == 5 || i == 6) {
+                                    for (c = 0; c < back.length; c++) {
+                                        var check = back[c];
+                                        var result = check.localeCompare(colText);
+                                        if (result == 1) {
+                                            col.style.color = 'green';
+                                        }
+                                    }
+                                } else if (i == 7 || i == 8) {
+                                    for (d = 0; d < inter.length; d++) {
+                                        var check = inter[d];
+                                        var result = check.localeCompare(colText);
+                                        if (result == 1) {
+                                            col.style.color = 'green';
+                                        }
+                                    }
+                                } else {
+                                    console.log("no!!");
+                                }
                             }
                         }
-                    } else if (i == 7 || i == 8) {
-                        for (d = 0; d < inter.length; d++) {
-                            var check = inter[d];
-                            var result = check.localeCompare(colText);
-                            if (result == 1) {
-                                col.style.color = 'green';
+                    }
+                }
+
+                function checkActivity1P2(row1, row2, row3) {
+                    var row1 = document.getElementById(row1);
+                    var row2 = document.getElementById(row2);
+                    var row3 = document.getElementById(row3);
+                    var isEmpty = 0;
+                    var isCorrect = 0;
+
+                    console.log(row1.childNodes[1]);
+
+                    // check if the field is all populated
+                    for (i = 1; i < row1.childNodes.length; i = i + 2) {
+                        var cell = row1.childNodes[i];
+                        if (cell.innerHTML == '') {
+                            isEmpty = 1;
+                        }
+                    }
+                    for (i = 1; i < row2.childNodes.length; i = i + 2) {
+                        var cell = row2.childNodes[i];
+                        if (cell.innerHTML == '') {
+                            isEmpty = 1;
+                        }
+                    }
+                    for (i = 1; i < row3.childNodes.length; i = i + 2) {
+                        var cell = row3.childNodes[i];
+                        if (cell.innerHTML == '') {
+                            isEmpty = 1;
+                        }
+                    }
+
+                    if (isEmpty == 0) {
+                        for (i = 1; i < row1.childNodes.length; i = i + 2) {
+                            var cell = row1.childNodes[i];
+
+                            if (cell.id == cell.innerHTML) {
+                                cell.style.color = 'green';
+                            } else {
+                                cell.style.color = 'red';
+                                isCorrect = 1;
+                            }
+                        }
+
+                        for (i = 1; i < row2.childNodes.length; i = i + 2) {
+                            var cell = row2.childNodes[i];
+
+                            if (cell.id == cell.innerHTML) {
+                                cell.style.color = 'green';
+                            } else {
+                                cell.style.color = 'red';
+                                isCorrect = 1;
+                            }
+                        }
+
+                        for (i = 1; i < row3.childNodes.length; i = i + 2) {
+                            var cell = row3.childNodes[i];
+
+                            if (cell.id == cell.innerHTML) {
+                                cell.style.color = 'green';
+                            } else {
+                                cell.style.color = 'red';
+                                isCorrect = 1;
                             }
                         }
                     } else {
-                        console.log("no!!");
+                        alert('Please complete the field');
                     }
+
+
                 }
-            }
-        }
-    }
 
-    function checkActivity1P2(row1, row2, row3) {
-        var row1 = document.getElementById(row1);
-        var row2 = document.getElementById(row2);
-        var row3 = document.getElementById(row3);
-        var isEmpty = 0;
-        var isCorrect = 0;
-
-        console.log(row1.childNodes[1]);
-
-        // check if the field is all populated
-        for (i = 1; i < row1.childNodes.length; i = i + 2) {
-            var cell = row1.childNodes[i];
-            if (cell.innerHTML == '') {
-                isEmpty = 1;
-            }
-        }
-        for (i = 1; i < row2.childNodes.length; i = i + 2) {
-            var cell = row2.childNodes[i];
-            if (cell.innerHTML == '') {
-                isEmpty = 1;
-            }
-        }
-        for (i = 1; i < row3.childNodes.length; i = i + 2) {
-            var cell = row3.childNodes[i];
-            if (cell.innerHTML == '') {
-                isEmpty = 1;
-            }
-        }
-
-        if (isEmpty == 0) {
-            for (i = 1; i < row1.childNodes.length; i = i + 2) {
-                var cell = row1.childNodes[i];
-
-                if (cell.id == cell.innerHTML) {
-                    cell.style.color = 'green';
-                } else {
-                    cell.style.color = 'red';
-                    isCorrect = 1;
+                function check(id) {
+                    var table = document.getElementById(id);
+                    var isEmpty = 0;
+                    for (i = 0; i < table.rows.length; i++) {
+                        var row = table.rows[i];
+                        for (j = 0; j < row.cells.length; j++) {
+                            var cell = row.cells[j]
+                            if (window.getComputedStyle(cell).visibility == "hidden") {
+                                // the player table is empty
+                                isEmpty = 1;
+                            } else {
+                                // The table is populated i.e there are still players in the table
+                                isEmpty = 0;
+                                break;
+                            }
+                        }
+                    }
+                    return isEmpty;
                 }
-            }
-
-            for (i = 1; i < row2.childNodes.length; i = i + 2) {
-                var cell = row2.childNodes[i];
-
-                if (cell.id == cell.innerHTML) {
-                    cell.style.color = 'green';
-                } else {
-                    cell.style.color = 'red';
-                    isCorrect = 1;
-                }
-            }
-
-            for (i = 1; i < row3.childNodes.length; i = i + 2) {
-                var cell = row3.childNodes[i];
-
-                if (cell.id == cell.innerHTML) {
-                    cell.style.color = 'green';
-                } else {
-                    cell.style.color = 'red';
-                    isCorrect = 1;
-                }
-            }
-        } else {
-            alert('Please complete the field');
-        }
 
 
-    }
-
-    function check(id) {
-        var table = document.getElementById(id);
-        var isEmpty = 0;
-        for (i = 0; i < table.rows.length; i++) {
-            var row = table.rows[i];
-            for (j = 0; j < row.cells.length; j++) {
-                var cell = row.cells[j]
-                if (window.getComputedStyle(cell).visibility == "hidden") {
-                    // the player table is empty
-                    isEmpty = 1;
-                } else {
-                    // The table is populated i.e there are still players in the table
-                    isEmpty = 0;
-                    break;
-                }
-            }
-        }
-        return isEmpty;
-    }
-
-
-</script>
+            </script>
 
