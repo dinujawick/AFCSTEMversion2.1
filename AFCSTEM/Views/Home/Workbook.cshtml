@@ -739,12 +739,12 @@
                         <td rowspan="2" id="col1">Interchange</td>
                         <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                         <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);" hidden></td>
                     </tr>
                     <tr>
                         <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
                         <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
+                        <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);" hidden></td>
                     </tr>
 
                 </tbody>
@@ -793,7 +793,7 @@
                 <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-50px;"></div>
             </div>
         </div>
-        <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;">
+        <div class="row" id="act1-P2R4" style="width:100%;display:flex;justify-content:center;align-items:center;">
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
             <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
@@ -859,7 +859,8 @@
         </div>
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1','act1-P2R2','act1-P2R3');">Check Activity!!</button>
+            <button class="btn btn-outline-primary" onclick="" style="margin-right:20px;">Retry</button>
+            <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1','act1-P2R2','act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
         </div>
     </div>
 </div>
@@ -2796,12 +2797,13 @@
         }
     }
 
+    // Method for activity 1, part 1 to check if the players in the field are in correct positions
     function checkActivity1P1(id1, id2) {
         var stillEmpty = 0;
         var forward = ['Forward Pocket', 'Half Forward Flank', 'Centre Half Forward', 'Full Forward'];
         var mid = ['Ruck', 'Wing', 'Ruck Rover', 'Rover', 'Centre'];
         var back = ['Back Pocket', 'Half back Flank', 'Full Back']
-        var inter = ['Interchange 1', 'Interchange 2', 'Interchange 3', 'Interchange4'];
+        var inter = ['Interchange 1', 'Interchange 2', 'Interchange 3', 'Interchange 4'];
 
         var table1 = document.getElementById(id1);
         var table2 = document.getElementById(id2);
@@ -2812,66 +2814,56 @@
             //when table still has empty cells
             alert('Please complete filling in the table');
         } else {
-            for (var i = 1; i < table2.rows.length; i++) {
-                row = table2.rows[i];
-                for (var j = 0; j < row.cells.length; j++) {
-                    var col = row.cells[j];
-                    var colText = col.innerHTML;
-
+            for (i = 1; i < table2.rows.length; i++) {
+                var rows = table2.rows[i];
+                for (j = 0; j < rows.cells.length; j++) {
+                    var cell = rows.cells[j];
                     if (i == 1 || i == 2) {
                         for (a = 0; a < forward.length; a++) {
-                            var check = forward[a];
-                            var result = check.localeCompare(colText);
+                            var result = compare(forward[a], cell.innerHTML);
                             if (result == 1) {
-                                col.style.color = 'green';
-                                console.log('YES!')
-                                console.log(result);
-                                console.log(colText);
+                                cell.style.color = 'green';
                             }
                         }
                     } else if (i == 3 || i == 4) {
                         for (b = 0; b < mid.length; b++) {
-                            var check = mid[b];
-                            var result = check.localeCompare(colText);
+                            var result = compare(mid[b], cell.innerHTML);
                             if (result == 1) {
-                                col.style.color = 'green';
-                                console.log('NO!')
-                                console.log(result);
-                                console.log(colText);
+                                cell.style.color = 'green';
                             }
                         }
                     } else if (i == 5 || i == 6) {
                         for (c = 0; c < back.length; c++) {
-                            var check = back[c];
-                            var result = check.localeCompare(colText);
+                            var result = compare(back[c], cell.innerHTML);
                             if (result == 1) {
-                                col.style.color = 'green';
+                                cell.style.color = 'green';
                             }
                         }
                     } else if (i == 7 || i == 8) {
                         for (d = 0; d < inter.length; d++) {
-                            var check = inter[d];
-                            var result = check.localeCompare(colText);
+                            var result = compare(inter[d], cell.innerHTML);
                             if (result == 1) {
-                                col.style.color = 'green';
+                                cell.style.color = 'green';
                             }
                         }
                     } else {
-                        console.log("no!!");
+
                     }
                 }
             }
         }
     }
 
-    function checkActivity1P2(row1, row2, row3) {
+    // Method for activity 1, part 2 to check if the players in the field are in correct positions
+    function checkActivity1P2(row1, row2, row3, row4) {
         var row1 = document.getElementById(row1);
         var row2 = document.getElementById(row2);
         var row3 = document.getElementById(row3);
+        var row4 = document.getElementById(row4);
         var isEmpty = 0;
         var isCorrect = 0;
 
-        console.log(row1.childNodes[1]);
+        //console.log(row1.childNodes[1]);
 
         // check if the field is all populated
         for (i = 1; i < row1.childNodes.length; i = i + 2) {
@@ -2892,14 +2884,24 @@
                 isEmpty = 1;
             }
         }
+        for (i = 1; i < row4.childNodes.length; i = i + 2) {
+            var cell = row4.childNodes[i];
+            if (cell.innerHTML == '') {
+                isEmpty = 1;
+            }
+        }
 
+        // 0 = the field is all populated else 1 = field is not fully populated
         if (isEmpty == 0) {
             for (i = 1; i < row1.childNodes.length; i = i + 2) {
                 var cell = row1.childNodes[i];
 
                 if (cell.id == cell.innerHTML) {
                     cell.style.color = 'green';
-                } else {
+                } else if (cell.id == 'MID' && cell.innerHTML == 'C' || cell.innerHTML == 'R' || cell.innerHTML == 'RR') {
+                    cell.style.color = 'green';
+                }
+                else {
                     cell.style.color = 'red';
                     isCorrect = 1;
                 }
@@ -2910,7 +2912,10 @@
 
                 if (cell.id == cell.innerHTML) {
                     cell.style.color = 'green';
-                } else {
+                } else if (cell.id == 'MID' && cell.innerHTML == 'C' || cell.innerHTML == 'R' || cell.innerHTML == 'RR') {
+                    cell.style.color = 'green';
+                }
+                else {
                     cell.style.color = 'red';
                     isCorrect = 1;
                 }
@@ -2921,11 +2926,25 @@
 
                 if (cell.id == cell.innerHTML) {
                     cell.style.color = 'green';
-                } else {
+                } else if (cell.id == 'MID' && cell.innerHTML == 'C' || cell.innerHTML == 'R' || cell.innerHTML == 'RR') {
+                    cell.style.color = 'green';
+                }
+                else {
                     cell.style.color = 'red';
                     isCorrect = 1;
                 }
             }
+
+            for (i = 1; i < row4.childNodes.length; i = i + 2) {
+                var cell = row4.childNodes[i];
+
+                if (cell.innerHTML == 'I1' || cell.innerHTML == 'I2' || cell.innerHTML == 'I3' || cell.innerHTML == 'I4') {
+                    cell.style.color = 'green';
+                } else {
+                    cell.style.color = 'red';
+                }
+            }
+            //console.log(row4);
         } else {
             alert('Please complete the field');
         }
@@ -2950,8 +2969,16 @@
                 }
             }
         }
-        console.log(isEmpty)
+        console.log("is empty " + isEmpty)
         return isEmpty;
+    }
+
+    function compare(str1, str2) {
+        if (str1 == str2) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
 
