@@ -286,9 +286,8 @@
         border-collapse: separate;
     }
 
-    #ebFooty {
+    #ebFooty.ebFooty {
         animation-name: footkick;
-        -webkit-animation-play-state: paused;
         animation-duration: 2s;
         position: absolute;
         left: 500px;
@@ -328,13 +327,7 @@
 
    
 
-    #ebImage {
-        position: absolute;
-        width: 50%;
-        height: 80%;
-        left: 90%;
-        bottom: 50px;
-    }
+
 
     #act10table3 {
         float: left;
@@ -443,10 +436,11 @@
 
     #ebImage {
         position: relative;
-        width: 20%;
-        height: 40%;
-        float: left;
-        right: 200px;
+        width: 30%;
+        height: 50%;
+        float: right;
+        margin-bottom:25px;
+
     }
 
     #act10table3 {
@@ -2523,11 +2517,11 @@
 
         </p>
         <br />
-        <label for="act10q1" style="font-size: 18px;">
+        <label  for="act10q1" style="font-size: 18px;">
             What was the main factor that affected your accuracy? How can you improve this?
         </label>
         <br />
-        <textarea name="act10q1" rows="3" style="width:65%;"></textarea>
+        <textarea id="act10q1" name="act10q1" rows="3" style="width:65%;"></textarea>
         <br />
 
         <label for="act10q2" style="font-size: 18px;">
@@ -2535,9 +2529,13 @@
             you just played?
         </label>
         <br />
-        <textarea name="act10q2" rows="4" style="width:65%;"></textarea>
+        <textarea  id="act10q2" name="act10q2" rows="4" style="width:65%;"></textarea>
         <br />
+        <br/>
 
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button class="btn btn-outline-primary" onclick="checkActivity10P1(), checkActivity10(), loadBar()">Check Activity!!</button>
+        </div>
 
 
     </div>
@@ -2609,6 +2607,16 @@
             <br />
             <br />
             <br />
+            <br />
+            <br />
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+                <button class="btn btn-outline-primary" onclick="checkActivity10P2(), checkActivity10(), loadBar()">Check Activity!!</button>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+
 
 
         </div>
@@ -2686,12 +2694,17 @@
         <br />
         <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
         <br />
-        <textarea name="act10q3" rows="3" style="width:65%;"></textarea>
+        <textarea id="act10q5" name="act10q3" rows="3" style="width:65%;"></textarea>
         <br />
         <br />
         <img id="medianPic" src="~/images/Workbooklet/medianpic.png" />
         <br />
         <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button class="btn btn-outline-primary" onclick="checkActivity10P3(), checkActivity10(), loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
+        <br/>
     </div>
 </div>
 
@@ -5427,8 +5440,8 @@
     }
 
     function runfooty() {
-
-        document.getElementById('ebFooty').style.webkitAnimationPlayState = "running";
+      
+        $('#ebFooty').addClass('ebFooty');
 
 
 
@@ -5472,6 +5485,8 @@
                 }
             }
 
+            $('#ebFooty').removeClass();
+
 
 
 
@@ -5480,6 +5495,8 @@
 
             , 1500);
 
+        
+
 
     }
 
@@ -5487,14 +5504,22 @@
     var act5P2Check = false;
     var act5Check =false;
 
-    var loadbar = 0;
+
     function loadBar() {
         var elem = document.getElementById("myBar");
-
+        var width = 0.0;
 
         if (act5Check) {
-            elem.style.width += 6.25 + "%"
+            width += 6.25;
         }
+        if (act10Check) {
+            width += 6.25;
+        }
+
+
+        elem.style.width = width + "%";
+
+
     }
 
     function checkActivity5P1() {
@@ -5532,6 +5557,137 @@
             act5Check = true;
         }
     }
+
+
+    var act10P2Check = false;
+    var act10P1Check = false;
+    var act10P3Check = false;
+    var act10Check = false;
+
+    function checkActivity10P2() {
+        var table = document.getElementById("act10table2");
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+           
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var j = 0, col; col = row.cells[j]; j++) {
+
+                if (col.querySelector('input') != null) {
+                    if (col.querySelector('input').value == "") {
+                        checkTableBool = false;
+                    }
+                }
+
+                
+            }
+
+
+
+        }//end of loop
+        if (checkTableBool) {
+            act10P2Check = true;
+            console.log("Completed act10p2");
+        }
+        else {
+            alert("Not Completed")
+        }
+
+
+    }
+
+    function checkActivity10P1() {
+        var table = document.getElementById("act10table1");
+        var text1 = document.getElementById("act10q1").value;
+        var text2 = document.getElementById("act10q2").value;
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+
+
+                }
+
+
+
+            }
+        }//end of loop
+
+        
+
+        if (checkTableBool && text1 != "" & text2 != "" ) {
+            act10P1Check = true;
+            console.log("Completed act10p1");
+        }
+        else {
+            alert("Not Completed")
+        }
+    }
+
+    function checkActivity10P3() {
+        var table = document.getElementById("act10table3");
+        var text1 = document.getElementById("act10q5").value;
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+
+
+                }
+
+
+
+            }
+        }//end of loop
+
+
+
+        if (checkTableBool && text1 != "" ) {
+            act10P3Check = true;
+            console.log("Completed act10p3");
+        }
+        else {
+            alert("Not Completed")
+        }
+    }
+
+
+    function checkActivity10() {
+        if (act10P1Check && act10P2Check && act10P3Check) {
+            act10Check = true;
+            document.getElementById("act10bar").style.color = "green";
+        }
+    }
+
+
+
+
+    
 
 
 
