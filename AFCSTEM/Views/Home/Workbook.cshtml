@@ -2722,7 +2722,7 @@
             <br />
         </h3>
         <p>
-            Estimate what you think their daily energy intake needs to be<input type="number" placeholder="........................................" />kJ/day<br />
+            Estimate what you think their daily energy intake needs to be<input id="act11q1" type="number" placeholder="........................................" />kJ/day<br />
             <br />
             <img id="timerImg" style="left:10px;width:10%;height:10%;position:relative" src="~/images/Workbooklet/24roller.png" />
             <img id="batteryImg" style="left: 10px; width: 20%; height: 20%; position: relative" src="~/images/Workbooklet/battery.png" />
@@ -2784,7 +2784,12 @@
         <br />
         <label for="act11q1">Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR. </label>
         <br />
-        <textarea style="width:100%;" name="act11q1" rows="2"></textarea>
+        <textarea id="act11q2" style="width:100%;" name="act11q1" rows="2"></textarea>
+        <br />
+        <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act11btn1" class="btn btn-outline-primary" onclick="checkActivity11P1(this.id), checkActivity11(), loadBar()">Check Activity!!</button>
+        </div>
 
 
     </div>
@@ -5515,6 +5520,9 @@
         if (act10Check) {
             width += 6.25;
         }
+        if (act11Check) {
+            width += 6.25;
+        }
 
 
         elem.style.width = width + "%";
@@ -5682,6 +5690,56 @@
         if (act10P1Check && act10P2Check && act10P3Check) {
             act10Check = true;
             document.getElementById("act10bar").style.color = "green";
+        }
+    }
+
+
+    var act11P1Check = false;
+    var act11Check = false;
+
+    function checkActivity11P1(id) {
+        var table = document.getElementById("act11table1");
+        var text1 = document.getElementById("act11q1").value;
+        var text2 = document.getElementById("act11q2").value;
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+
+
+                }
+
+
+
+            }
+        }//end
+        if (checkTableBool && text1 != "" && text2 != "") {
+            act11P1Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+    }
+
+
+    function checkActivity11() {
+        if (act11P1Check) {
+            act11Check = true;
+            document.getElementById("act11bar").style.color = "green"
         }
     }
 
