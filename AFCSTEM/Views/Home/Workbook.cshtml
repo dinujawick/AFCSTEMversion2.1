@@ -1598,7 +1598,7 @@
 
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button class="btn btn-outline-primary" onclick="checkActivity5P1(),CheckActivity5(),loadBar()">Check Activity!!</button>
+            <button id="act5p1button" class="btn btn-outline-primary" onclick="checkActivity5P1(this.id),CheckActivity5(),loadBar()">Check Activity!!</button>
         </div>
 
  
@@ -1675,7 +1675,7 @@
         </div>
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:25px;">
-            <button class="btn btn-outline-primary" onclick="checkActivity5P2(),CheckActivity5(),loadBar()">Check Activity!!</button>
+            <button id="act5btn2" class="btn btn-outline-primary" onclick="checkActivity5P2(this.id),CheckActivity5(),loadBar()">Check Activity!!</button>
         </div>
         <br />
         <br />
@@ -2534,7 +2534,7 @@
         <br/>
 
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button class="btn btn-outline-primary" onclick="checkActivity10P1(), checkActivity10(), loadBar()">Check Activity!!</button>
+            <button id="act10btn1" class="btn btn-outline-primary" onclick="checkActivity10P1(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
         </div>
 
 
@@ -2610,7 +2610,7 @@
             <br />
             <br />
             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                <button class="btn btn-outline-primary" onclick="checkActivity10P2(), checkActivity10(), loadBar()">Check Activity!!</button>
+                <button id="act10btn2" class="btn btn-outline-primary" onclick="checkActivity10P2(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
             </div>
             <br />
             <br />
@@ -2701,7 +2701,7 @@
         <br />
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button class="btn btn-outline-primary" onclick="checkActivity10P3(), checkActivity10(), loadBar()">Check Activity!!</button>
+            <button id="act10btn3" class="btn btn-outline-primary" onclick="checkActivity10P3(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
         </div>
         <br/>
         <br/>
@@ -5522,31 +5522,32 @@
 
     }
 
-    function checkActivity5P1() {
+    function checkActivity5P1(id) {
         var table = document.getElementById("coinTable");
         var text1 = document.getElementById("act5q1").value;
         var text2 = document.getElementById("act5q2").value;
         if (table.rows.length > 11 && text1 != "" && text2 != "") {
             console.log("Completed");
             act5P1Check = true;
+            document.getElementById(id).style.color = "green";
         }
         else {
-            alert("Not Completed");
+            document.getElementById(id).style.color = "red";
         }
         
     }
 
-    function checkActivity5P2() {
+    function checkActivity5P2(id) {
         var text1 = document.getElementById("act5q3").value;
         var text2 = document.getElementById("act5q4").value;
         var text3 = document.getElementById("act5q5").value;
         if ( text1 != "" && text2 != "" && text3 != "") {
             console.log("Completed");
             act5P2Check = true;
-
+            document.getElementById(id).style.color = "green";
         }
         else {
-            alert("Not Completed");
+            document.getElementById(id).style.color = "red";
         }
 
     }
@@ -5564,7 +5565,7 @@
     var act10P3Check = false;
     var act10Check = false;
 
-    function checkActivity10P2() {
+    function checkActivity10P2(id) {
         var table = document.getElementById("act10table2");
         var checkTableBool = true;
         for (var i = 0, row; row = table.rows[i]; i++) {
@@ -5587,16 +5588,16 @@
         }//end of loop
         if (checkTableBool) {
             act10P2Check = true;
-            console.log("Completed act10p2");
+            document.getElementById(id).style.color = "green";
         }
         else {
-            alert("Not Completed")
+            document.getElementById(id).style.color = "red";
         }
 
 
     }
 
-    function checkActivity10P1() {
+    function checkActivity10P1(id) {
         var table = document.getElementById("act10table1");
         var text1 = document.getElementById("act10q1").value;
         var text2 = document.getElementById("act10q2").value;
@@ -5629,14 +5630,14 @@
 
         if (checkTableBool && text1 != "" & text2 != "" ) {
             act10P1Check = true;
-            console.log("Completed act10p1");
+            document.getElementById(id).style.color = "green";
         }
         else {
-            alert("Not Completed")
+            document.getElementById(id).style.color = "red";
         }
     }
 
-    function checkActivity10P3() {
+    function checkActivity10P3(id) {
         var table = document.getElementById("act10table3");
         var text1 = document.getElementById("act10q5").value;
 
@@ -5669,10 +5670,10 @@
 
         if (checkTableBool && text1 != "" ) {
             act10P3Check = true;
-            console.log("Completed act10p3");
+            document.getElementById(id).style.color = "green";
         }
         else {
-            alert("Not Completed")
+            document.getElementById(id).style.color = "red";
         }
     }
 
