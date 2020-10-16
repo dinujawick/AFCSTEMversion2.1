@@ -725,7 +725,7 @@
 
     #mySideNav {
         height: 100%;
-        width: 160px;
+        width: 10%;
         position: fixed;
         z-index: 1;
         top: 0;
@@ -832,7 +832,7 @@
             <li>
                 <div id="myProgress">
                     
-                    <div id="myBar"><div style="position:relative;margin-left:40px;" id="myBarNum"></div></div>
+                    <div id="myBar"><div style="position:relative;margin-left:50px;" id="myBarNum">0%</div></div>
                 </div>
             </li>
 
@@ -1144,6 +1144,13 @@
             <input type="number" id="aTotalCS" name="Total" />
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act2p1btn" class="btn btn-outline-primary" onclick="checkActivity2P1(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
+        <br/>
+
     </div>
 </div>
 
@@ -1199,6 +1206,12 @@
         <div class="col-md-6" style="text-align:center;">
             <img src="~/images/Unit1/Activity 2/goal square.PNG" alt="goal square" style="width:25%;" />
         </div>
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act2p2btn" class="btn btn-outline-primary" onclick="checkActivity2P2(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+        </div>
+        <br />
+        <br />
     </div>
 </div>
 
@@ -1214,9 +1227,9 @@
             <input type="text" id="text1" name="largest" />
             <p style="font-size:15px;">Order the areas from smallest to largest:</p>
             <div class="row" style="margin-left: 10px;">
-                <div id="box1" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input type="text" style="width:100px;margin-top:10px;" /></div>
-                <div id="box2" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input type="text" style="width:100px;margin-top:10px;" /></div>
-                <div id="box3" style="border: 1px solid black;width:125px; height:50px; text-align:center;"><input type="text" style="width:100px;margin-top:10px;" /></div>
+                <div id="box1" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input id="act2t1" type="text" style="width:100px;margin-top:10px;" /></div>
+                <div id="box2" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input  id="act2t2" type="text" style="width:100px;margin-top:10px;" /></div>
+                <div id="box3" style="border: 1px solid black;width:125px; height:50px; text-align:center;"><input id="act2t3" type="text" style="width:100px;margin-top:10px;" /></div>
             </div>
             <div class="row">
                 <div style="margin-left: 50px;">Smallest</div>
@@ -1224,9 +1237,9 @@
             </div>
 
             <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
-            <textarea name="goalSquare" rows="3" style="width:65%;"></textarea>
+            <textarea id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
             <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
-            <textarea name="dimensions" rows="3" style="width:65%;"></textarea>
+            <textarea id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
             <br /><br />
             <p style="font-size:20px;">Calculate the area of your Goal Square:</p>
@@ -1264,6 +1277,12 @@
         <div class="col-md-6">
             <img src="~/images/Unit1/Activity 2/measure_oval.PNG" alt="measure your oval" style="width:60%;" />
         </div>
+        <br />
+
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act2p3btn" class="btn btn-outline-primary" onclick="checkActivity2P3(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+        </div>
+        <br />
     </div>
 </div>
 
@@ -5517,6 +5536,10 @@
         var elem = document.getElementById("myBar");
         var width = 0.0;
 
+        if (act2Check) {
+            width += 6.25;
+            total++;
+        }
         if (act5Check) {
             width += 6.25;
             total++;
@@ -5743,10 +5766,85 @@
     }
 
 
+
+    var act2P1Check = false;
+    var act2P2Check = false;
+    var act2P3Check = false;
+    var act2Check = false;
+
+    function checkActivity2P1(id) {
+        var length1 = document.getElementById("lenCS").value;
+        var length2 = document.getElementById("widCS").value;
+        var length3 = document.getElementById("aTotalCS").value;
+
+        if (length1 == "50" || length2 == "50" || length3 == "2500") {
+            act2P1Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+
+    function checkActivity2P2(id) {
+        var length1 = document.getElementById("lenGS").value;
+        var length2 = document.getElementById("widGS").value;
+        var length3 = document.getElementById("aTotalGS").value;
+
+        var length11 = document.getElementById("lenGP").value;
+        var length21 = document.getElementById("widGP").value;
+        var length31 = document.getElementById("aTotalGP").value;
+
+
+        var length12 = document.getElementById("lenBP").value;
+        var length22 = document.getElementById("widBP").value;
+        var length32 = document.getElementById("aTotalBP").value;
+
+        if (length1 == "9" && length2 == "6.4" && length3 == "57.6" && length11 == "15" && length21 == "6.4" && length31 == "96" && length12 == "10" && length22 == "6.4" && length32 == "64") {
+            act2P2Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+    function checkActivity2P3(id) {
+        var length1 = document.getElementById("act2t1").value;
+        var length2 = document.getElementById("act2t2").value;
+        var length3 = document.getElementById("act2t3").value;
+        var length4 = document.getElementById("text1").value;
+
+
+        var length5 = document.getElementById("lenGS2").value;
+        var length6 = document.getElementById("widGS2").value;
+        var length7 = document.getElementById("aTotalGS2").value;
+
+        if (length1 != "" && length2 != "" && length3 != "" && length4 != "" && length5 == "6.4" && length6 == "6.4" && length7 == "40.96") {
+            act2P3Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+    function checkActivity2() {
+        if (act2P1Check && act2P2Check && act2P3Check) {
+            act2Check = true;
+            document.getElementById("act2bar").style.color = "green";
+        }
+    }
+
+
     function checkActivity11() {
         if (act11P1Check) {
             act11Check = true;
-            document.getElementById("act11bar").style.color = "green"
+            document.getElementById("act11bar").style.color = "green";
         }
     }
 
