@@ -1523,6 +1523,11 @@
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/goalcoast.png" alt="Metricon Stadium" style="width:70%;" />
         </div>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act3btn1" class="btn btn-outline-primary" onclick="checkActivity3P1(this.id),checkActivity3(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
+        
     </div>
 </div>
 
@@ -1565,6 +1570,10 @@
             <label for="defend" style="font-size: 18px;">What grounds would be harder/easier to defend on? Give reasons why.</label>
             <textarea name="Defend" rows="3" style="width:65%;"></textarea>
             <br />
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act3btn2" class="btn btn-outline-primary" onclick="checkActivity3P2(this.id),checkActivity3(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
 
         </div>
     </div>
@@ -2891,7 +2900,9 @@
         </label>
         <br />
         <textarea name="act12q2" style="width:100%" rows="3"></textarea>
-        <br />
+          <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act12btn1" class="btn btn-outline-primary" onclick="checkActivity12P1(this.id),checkActivity12(),loadBar()">Check Activity!!</button>
+        </div>
         <br />
         <br />
     </div>
@@ -2960,6 +2971,10 @@
 
         </table>
         <br />
+        <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act12btn2" class="btn btn-outline-primary" onclick="checkActivity12P2(this.id),checkActivity12(),loadBar()">Check Activity!!</button>
+        </div>
         <br />
     </div>
 </div>
@@ -5855,6 +5870,137 @@
         if (act11P1Check) {
             act11Check = true;
             document.getElementById("act11bar").style.color = "green";
+        }
+    }
+                                                                     
+                                                                     
+    var act3P1Check = false;
+    var act3P2Check = false;
+    var act3Check = false;
+    function checkActivity3P1(id) {
+        //mcg
+        var mcgL = document.getElementById("mcgLength").value;
+        var mcgW = document.getElementById("mcgWidth").value;
+        var mcgA = document.getElementById("mcgArea").value;
+        //marvel
+        var msL = document.getElementById("msLength").value;
+        var msW = document.getElementById("msWidth").value;
+        var msA = document.getElementById("msArea").value;
+        //gmhba 
+        var gmhL = document.getElementById("gmhLength").value;
+        var gmhW = document.getElementById("gmhWidth").value;
+        var gmhA = document.getElementById("gmhArea").value;
+        //scg
+        var scgL = document.getElementById("scgLength").value;
+        var scgW = document.getElementById("scgWidth").value; 
+        var scgA = document.getElementById("scgArea").value;
+        //ss
+        var ssL = document.getElementById("ssLength").value;
+        var ssW = document.getElementById("ssWidth").value;
+        var ssA = document.getElementById("ssArea").value;
+        //os
+        var osL = document.getElementById("osLength").value;
+        var osW = document.getElementById("osWidth").value;
+        var osA = document.getElementById("osArea").value;
+        //g
+        var gL = document.getElementById("gLength").value;
+        var gW = document.getElementById("gWidth").value;
+        var gA = document.getElementById("gArea").value;
+        //met
+        var metL = document.getElementById("metLength").value;
+        var metW = document.getElementById("metWidth").value;
+        var metA = document.getElementById("metArea").value;
+        if (mcgL == "161" && mcgW == "138" && mcgA == "17441.1" && msL == "160" && msW == "129" && msA == "16202.4" && gmhL == "170" && gmhW == "117" && gmhA == "15613.7" && scgL == "155" && scgW == "136" && scgA == "16547.8" && ssL == "164" && ssW == "128" && ssA == "16478.7" && osL == "165" && osW == "130" && osA == "16838.3" && gL == "156" && gW == "138" && gA == "16899.5" && metL == "158" && metW == "134" && metA =="16620.0") {
+            act3P1Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+    }
+    function checkActivity3P2(id) {
+        var lgArea = document.getElementById("largestArea").value;
+        var sArea = document.getElementById("smallestArea").value;
+        var cC = document.getElementById("crowdCapacity").value;
+        var q4 = document.getElementById("act3q4").value;
+        var q5 = document.getElementById("act3q5").value;
+        var q6 = document.getElementById("act3q6").value;
+        var q7 = document.getElementById("act3q7").value;
+        var q8 = document.getElementById("act3q8").value;
+        if (lgArea != "" && sArea != "" && cC != "" && q4 != "" && q5 != "" && q6 != "" && q7 != ""  && q8 != "") {
+            act3P2Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+    }
+    function checkActivity3() {
+        if (act3P1Check && act3P2Check) {
+            act3Check = true;
+            document.getElementById("act3bar").style.color = "green";
+        }
+    }
+    var act12P1Check = false;
+    var act12P2Check = false;
+    var act12Check = false;
+    function checkActivity12P1(id) {
+        var table = document.getElementById("act12table1");
+        var text1 = document.getElementById("act12q1").value;
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }//end
+        if (checkTableBool && text1 != "") {
+            act12P1Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+    }
+    function checkActivity12P2(id) {
+        var table = document.getElementById("act12table2");
+  
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }//end
+        if (checkTableBool ) {
+            act12P2Check = true;
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+    }
+    function checkActivity12() {
+        if (act12P1Check && act12P2Check) {
+            act12Check = true;
+            document.getElementById("act12bar").style.color = "green";
         }
     }
 
