@@ -832,7 +832,7 @@
             <li>
                 <div id="myProgress">
                     
-                    <div id="myBar"><div style="position:relative;margin-left:40px;" id="myBarNum"></div></div>
+                    <div id="myBar"><div style="position:relative;margin-left:50px;" id="myBarNum">0%</div></div>
                 </div>
             </li>
 
@@ -1144,6 +1144,13 @@
             <input type="number" id="aTotalCS" name="Total" />
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act2p1btn" class="btn btn-outline-primary" onclick="checkActivity2P1(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
+        <br/>
+
     </div>
 </div>
 
@@ -1199,6 +1206,12 @@
         <div class="col-md-6" style="text-align:center;">
             <img src="~/images/Unit1/Activity 2/goal square.PNG" alt="goal square" style="width:25%;" />
         </div>
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act2p2btn" class="btn btn-outline-primary" onclick="checkActivity2P2(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+        </div>
+        <br />
+        <br />
     </div>
 </div>
 
@@ -1214,9 +1227,9 @@
             <input type="text" id="text1" name="largest" />
             <p style="font-size:15px;">Order the areas from smallest to largest:</p>
             <div class="row" style="margin-left: 10px;">
-                <div id="box1" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input type="text" style="width:100px;margin-top:10px;" /></div>
-                <div id="box2" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input type="text" style="width:100px;margin-top:10px;" /></div>
-                <div id="box3" style="border: 1px solid black;width:125px; height:50px; text-align:center;"><input type="text" style="width:100px;margin-top:10px;" /></div>
+                <div id="box1" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input id="act2t1" type="text" style="width:100px;margin-top:10px;" /></div>
+                <div id="box2" style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; text-align:center;"><input  id="act2t2" type="text" style="width:100px;margin-top:10px;" /></div>
+                <div id="box3" style="border: 1px solid black;width:125px; height:50px; text-align:center;"><input id="act2t3" type="text" style="width:100px;margin-top:10px;" /></div>
             </div>
             <div class="row">
                 <div style="margin-left: 50px;">Smallest</div>
@@ -1224,9 +1237,9 @@
             </div>
 
             <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
-            <textarea name="goalSquare" rows="3" style="width:65%;"></textarea>
+            <textarea id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
             <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
-            <textarea name="dimensions" rows="3" style="width:65%;"></textarea>
+            <textarea id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
             <br /><br />
             <p style="font-size:20px;">Calculate the area of your Goal Square:</p>
@@ -1264,6 +1277,12 @@
         <div class="col-md-6">
             <img src="~/images/Unit1/Activity 2/measure_oval.PNG" alt="measure your oval" style="width:60%;" />
         </div>
+        <br />
+
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act2p3btn" class="btn btn-outline-primary" onclick="checkActivity2P3(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+        </div>
+        <br />
     </div>
 </div>
 
@@ -1494,6 +1513,11 @@
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/goalcoast.png" alt="Metricon Stadium" style="width:70%;" />
         </div>
+
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act3btn1" class="btn btn-outline-primary" onclick="checkActivity3P1(this.id),checkActivity3(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
     </div>
 </div>
 
@@ -1518,26 +1542,31 @@
     <div class="row containInside" style="margin-top:25px;">
         <div class="col-md-12">
             <label for="correlation" style="font-size: 18px;">Is there any correlation between area of oval and capacity? Explain.</label>
-            <textarea name="Correlations" rows="3" style="width:65%;"></textarea>
+            <textarea id="act3q4" name="Correlations" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="mostLike" style="font-size: 18px;">Which ground would you most like to play on and why?</label>
-            <textarea name="Most like" rows="3" style="width:65%;"></textarea>
+            <textarea  id="act3q5"  name="Most like" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="longDis" style="font-size: 18px;">What ground would suit a team with lots of long-distance runners? Give reasons why.</label>
-            <textarea name="long distance" rows="3" style="width:65%;"></textarea>
+            <textarea  id="act3q6" name="long distance" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="accurate" style="font-size: 18px;">What ground would suit a team with lots of accurate kickers? Give reasons why.</label>
-            <textarea name="Accurate" rows="3" style="width:65%;"></textarea>
+            <textarea  id="act3q7" name="Accurate" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="defend" style="font-size: 18px;">What grounds would be harder/easier to defend on? Give reasons why.</label>
-            <textarea name="Defend" rows="3" style="width:65%;"></textarea>
+            <textarea   id="act3q8"name="Defend" rows="3" style="width:65%;"></textarea>
             <br />
 
         </div>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act3btn2" class="btn btn-outline-primary" onclick="checkActivity3P2(this.id),checkActivity3(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
+
     </div>
 </div>
 
@@ -2861,8 +2890,14 @@
             What would you need to do to ensure it was accurate?
         </label>
         <br />
-        <textarea name="act12q2" style="width:100%" rows="3"></textarea>
+        <textarea id="act12q1" name="act12q2" style="width:100%" rows="3"></textarea>
         <br />
+        <br/>
+
+
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act12btn1" class="btn btn-outline-primary" onclick="checkActivity12P1(this.id),checkActivity12(),loadBar()">Check Activity!!</button>
+        </div>
         <br />
         <br />
     </div>
@@ -2931,6 +2966,10 @@
 
         </table>
         <br />
+        <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act12btn2" class="btn btn-outline-primary" onclick="checkActivity12P2(this.id),checkActivity12(),loadBar()">Check Activity!!</button>
+        </div>
         <br />
     </div>
 </div>
@@ -5517,6 +5556,15 @@
         var elem = document.getElementById("myBar");
         var width = 0.0;
 
+        if (act2Check) {
+            width += 6.25;
+            total++;
+        }
+
+        if (act3Check) {
+            width += 6.25;
+            total++;
+        }
         if (act5Check) {
             width += 6.25;
             total++;
@@ -5526,6 +5574,10 @@
             total++;
         }
         if (act11Check) {
+            width += 6.25;
+            total++;
+        }
+        if (act12Check) {
             width += 6.25;
             total++;
         }
@@ -5705,9 +5757,181 @@
     var act11Check = false;
 
     function checkActivity11P1(id) {
-        var table = document.getElementById("act11table1");
-        var text1 = document.getElementById("act11q1").value;
-        var text2 = document.getElementById("act11q2").value;
+
+
+    }
+
+
+
+    var act2P1Check = false;
+    var act2P2Check = false;
+    var act2P3Check = false;
+    var act2Check = false;
+
+    function checkActivity2P1(id) {
+        var length1 = document.getElementById("lenCS").value;
+        var length2 = document.getElementById("widCS").value;
+        var length3 = document.getElementById("aTotalCS").value;
+
+        if (length1 == "50" || length2 == "50" || length3 == "2500") {
+            act2P1Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+
+    function checkActivity2P2(id) {
+        var length1 = document.getElementById("lenGS").value;
+        var length2 = document.getElementById("widGS").value;
+        var length3 = document.getElementById("aTotalGS").value;
+
+        var length11 = document.getElementById("lenGP").value;
+        var length21 = document.getElementById("widGP").value;
+        var length31 = document.getElementById("aTotalGP").value;
+
+
+        var length12 = document.getElementById("lenBP").value;
+        var length22 = document.getElementById("widBP").value;
+        var length32 = document.getElementById("aTotalBP").value;
+
+        if (length1 == "9" && length2 == "6.4" && length3 == "57.6" && length11 == "15" && length21 == "6.4" && length31 == "96" && length12 == "10" && length22 == "6.4" && length32 == "64") {
+            act2P2Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+    function checkActivity2P3(id) {
+        var length1 = document.getElementById("act2t1").value;
+        var length2 = document.getElementById("act2t2").value;
+        var length3 = document.getElementById("act2t3").value;
+        var length4 = document.getElementById("text1").value;
+
+
+        var length5 = document.getElementById("lenGS2").value;
+        var length6 = document.getElementById("widGS2").value;
+        var length7 = document.getElementById("aTotalGS2").value;
+
+        if (length1 != "" && length2 != "" && length3 != "" && length4 != "" && length5 == "6.4" && length6 == "6.4" && length7 == "40.96") {
+            act2P3Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+    function checkActivity2() {
+        if (act2P1Check && act2P2Check && act2P3Check) {
+            act2Check = true;
+            document.getElementById("act2bar").style.color = "green";
+        }
+    }
+
+
+    var act3P1Check = false;
+    var act3P2Check = false;
+    var act3Check = false;
+
+    function checkActivity3P1(id) {
+        //mcg
+        var mcgL = document.getElementById("mcgLength").value;
+        var mcgW = document.getElementById("mcgWidth").value;
+        var mcgA = document.getElementById("mcgArea").value;
+
+        //marvel
+        var msL = document.getElementById("msLength").value;
+        var msW = document.getElementById("msWidth").value;
+        var msA = document.getElementById("msArea").value;
+
+
+        //gmhba 
+        var gmhL = document.getElementById("gmhLength").value;
+        var gmhW = document.getElementById("gmhWidth").value;
+        var gmhA = document.getElementById("gmhArea").value;
+
+        //scg
+        var scgL = document.getElementById("scgLength").value;
+        var scgW = document.getElementById("scgWidth").value; 
+        var scgA = document.getElementById("scgArea").value;
+
+        //ss
+        var ssL = document.getElementById("ssLength").value;
+        var ssW = document.getElementById("ssWidth").value;
+        var ssA = document.getElementById("ssArea").value;
+
+        //os
+        var osL = document.getElementById("osLength").value;
+        var osW = document.getElementById("osWidth").value;
+        var osA = document.getElementById("osArea").value;
+
+        //g
+        var gL = document.getElementById("gLength").value;
+        var gW = document.getElementById("gWidth").value;
+        var gA = document.getElementById("gArea").value;
+
+        //met
+        var metL = document.getElementById("metLength").value;
+        var metW = document.getElementById("metWidth").value;
+        var metA = document.getElementById("metArea").value;
+
+
+
+        if (mcgL == "161" && mcgW == "138" && mcgA == "17441.1" && msL == "160" && msW == "129" && msA == "16202.4" && gmhL == "170" && gmhW == "117" && gmhA == "15613.7" && scgL == "155" && scgW == "136" && scgA == "16547.8" && ssL == "164" && ssW == "128" && ssA == "16478.7" && osL == "165" && osW == "130" && osA == "16838.3" && gL == "156" && gW == "138" && gA == "16899.5" && metL == "158" && metW == "134" && metA =="16620.0") {
+            act3P1Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+    function checkActivity3P2(id) {
+
+        var lgArea = document.getElementById("largestArea").value;
+        var sArea = document.getElementById("smallestArea").value;
+        var cC = document.getElementById("crowdCapacity").value;
+        var q4 = document.getElementById("act3q4").value;
+        var q5 = document.getElementById("act3q5").value;
+        var q6 = document.getElementById("act3q6").value;
+        var q7 = document.getElementById("act3q7").value;
+        var q8 = document.getElementById("act3q8").value;
+
+        if (lgArea != "" && sArea != "" && cC != "" && q4 != "" && q5 != "" && q6 != "" && q7 != ""  && q8 != "") {
+            act3P2Check = true;
+            document.getElementById(id).style.color = "green";
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+
+    }
+
+    function checkActivity3() {
+        if (act3P1Check && act3P2Check) {
+            act3Check = true;
+            document.getElementById("act3bar").style.color = "green";
+        }
+    }
+
+
+    var act12P1Check = false;
+    var act12P2Check = false;
+    var act12Check = false;
+
+    function checkActivity12P1(id) {
+        var table = document.getElementById("act12table1");
+        var text1 = document.getElementById("act12q1").value;
+
 
         var checkTableBool = true;
         for (var i = 0, row; row = table.rows[i]; i++) {
@@ -5733,8 +5957,8 @@
 
             }
         }//end
-        if (checkTableBool && text1 != "" && text2 != "") {
-            act11P1Check = true;
+        if (checkTableBool && text1 != "") {
+            act12P1Check = true;
             document.getElementById(id).style.color = "green";
         }
         else {
@@ -5743,10 +5967,58 @@
     }
 
 
+    function checkActivity12P2(id) {
+        var table = document.getElementById("act12table2");
+  
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+
+
+                }
+
+
+
+            }
+        }//end
+        if (checkTableBool ) {
+            act12P2Check = true;
+
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+        }
+    }
+
+
+
+    function checkActivity12() {
+        if (act12P1Check && act12P2Check) {
+            act12Check = true;
+            document.getElementById("act12bar").style.color = "green";
+        }
+    }
+
+
+
     function checkActivity11() {
         if (act11P1Check) {
             act11Check = true;
-            document.getElementById("act11bar").style.color = "green"
+            document.getElementById("act11bar").style.color = "green";
         }
     }
 
