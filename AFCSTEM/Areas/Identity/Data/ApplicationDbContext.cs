@@ -28,5 +28,7 @@ namespace AFCSTEM.Data
         public DbSet<Player> Players { get; set; }
 
         public DbSet<Team> Teams { get; set; }
+
+        public DbSet<Workbook> Workbook { get; set; }
     }
 }

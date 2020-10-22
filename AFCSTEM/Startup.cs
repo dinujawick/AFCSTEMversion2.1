@@ -52,6 +52,7 @@ namespace AFCSTEM
 
             services.AddScoped<IPlayerRepository, SQLPlayerRepository>();
             services.AddScoped<ITeamRepository, SQLTeamRepository>();
+            services.AddScoped<IWorkbookRepository, SQLWorkbookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

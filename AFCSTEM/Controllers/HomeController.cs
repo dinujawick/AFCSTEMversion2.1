@@ -12,17 +12,18 @@ namespace AFCSTEM.Controllers
     public class HomeController : Controller
     {
         private readonly IPlayerRepository _playerRepository;
+        private readonly IWorkbookRepository _workbookRepository;
 
         private readonly ITeamRepository _teamRepository;
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IPlayerRepository playerRepository,ILogger<HomeController> logger, ITeamRepository teamRepository)
+        public HomeController(IPlayerRepository playerRepository, ILogger<HomeController> logger, ITeamRepository teamRepository, IWorkbookRepository workbook)
         {
             _logger = logger;
             _playerRepository = playerRepository;
             _teamRepository = teamRepository;
-
+            _workbookRepository = workbook;
         }
 
 
@@ -85,7 +86,7 @@ namespace AFCSTEM.Controllers
 
 
         [HttpPost]
-        public IActionResult SubmitTeam(String StudentId, int DEF2, int DEF3, int DEF4, int DEF5, int DEF6, 
+        public IActionResult SubmitTeam(String StudentId, int DEF2, int DEF3, int DEF4, int DEF5, int DEF6,
             int DEF1, int FWD1, int FWD2, int FWD3, int FWD4, int FWD5, int FWD6, int MID1, int MID2, int MID3, int MID4, int RUCK1, int RUCK2)
         {
             Team team = _teamRepository.GetTeam(StudentId);
@@ -94,10 +95,29 @@ namespace AFCSTEM.Controllers
             {
                 _teamRepository.CreateTeam(StudentId, DEF2, DEF3, DEF4, DEF5, DEF6, DEF1, FWD1, FWD2, FWD3, FWD4, FWD5, FWD6, MID1, MID2, MID3, MID4, RUCK1, RUCK2);
             }
-            else {
+            else
+            {
                 _teamRepository.UpdateTeam(team, DEF2, DEF3, DEF4, DEF5, DEF6, DEF1, FWD1, FWD2, FWD3, FWD4, FWD5, FWD6, MID1, MID2, MID3, MID4, RUCK1, RUCK2);
             }
             return Json(new { success = "Team Saved" });
+        }
+        
+        [HttpPost]
+        public IActionResult SubmitWorkbook(string studentID,
+            string act1table1, string act1table2, float cswidth1, float cslength1, float csarea1)
+        {
+
+            Workbook workbook = _workbookRepository.GetWorkbook(studentID);
+
+            if (workbook == null)
+            {
+                _workbookRepository.CreateWorkbookActivity(studentID, act1table1,act1table2);
+            }
+            else
+            {
+                _workbookRepository.UpdateWorkbookActivity(workbook, act1table1, act1table2, cswidth1, cslength1, csarea1);
+            }
+            return Json(new { success = "Workbook Saved" });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200529121930_Initial Load")]
-    partial class InitialLoad
+    [Migration("20201022030625_alex")]
+    partial class alex
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -191,6 +191,26 @@ namespace AFCSTEM.Migrations
                     b.HasKey("StudentId");
 
                     b.ToTable("Teams");
+                });
+
+            modelBuilder.Entity("AFCSTEM.Models.Workbook", b =>
+                {
+                    b.Property<string>("StudentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Act1Table1");
+
+                    b.Property<string>("Act1Table2");
+
+                    b.Property<float>("Act2CSArea");
+
+                    b.Property<float>("Act2CSLength");
+
+                    b.Property<float>("Act2CSWidth");
+
+                    b.HasKey("StudentId");
+
+                    b.ToTable("Workbook");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

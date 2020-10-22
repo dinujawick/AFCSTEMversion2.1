@@ -4,14 +4,16 @@ using AFCSTEM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201022011809_Workbook")]
+    partial class Workbook
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,12 +201,6 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("Act1Table1");
 
                     b.Property<string>("Act1Table2");
-
-                    b.Property<float>("Act2CSArea");
-
-                    b.Property<float>("Act2CSLength");
-
-                    b.Property<float>("Act2CSWidth");
 
                     b.HasKey("StudentId");
 
