@@ -120,6 +120,31 @@ namespace AFCSTEM.Controllers
             return Json(new { success = "Workbook Saved" });
         }
 
+        [HttpPost]
+        public IActionResult HidePlayer(string name, bool hide)
+        {
+            Player player = _playerRepository.getPlayerByName(name);
+
+            _playerRepository.HidePlayer(player, hide);
+           
+            return Json(new { success = "Workbook Saved" });
+        }
+        
+
+        [HttpGet]
+        public IActionResult GetPlayer(string name)
+        {
+            var player = _playerRepository.getPlayerByName(name);
+            if(player == null)
+            {
+                return Json(new { error = "NoPlayer" });
+            }
+
+            
+            
+            return Json(new { player });
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

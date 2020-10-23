@@ -147,6 +147,9 @@
      Select Your Team! 
 </h1>
 
+
+
+
 <div class="container">
     <!--This section is for display of field and selectons-->
     <div class="row" id="topRow">
@@ -1036,7 +1039,7 @@
                 <div id="DEF" class="tabcontent">
                     @foreach (var person in allPlayers)
                     {
-                        @if (person.Position.Equals("DEF") && (team == null || (person.ID != team.DEF1 && person.ID != team.DEF2 && person.ID != team.DEF3 && person.ID != team.DEF4 && person.ID != team.DEF5 && person.ID != team.DEF6)))
+                        @if (person.Position.Equals("DEF") && person.Hidden == false && (team == null || (person.ID != team.DEF1 && person.ID != team.DEF2 && person.ID != team.DEF3 && person.ID != team.DEF4 && person.ID != team.DEF5 && person.ID != team.DEF6)))
                         {
                             <div class="removable" draggable="true" ondragstart="drag(event)" id="@person.ID">
                                 <table style="width:100%; border:1px solid black; background-color:#004b8d">
@@ -1063,7 +1066,7 @@
                 <div id="MID" class="tabcontent">
                     @foreach (var person in allPlayers)
                     {
-                        @if (person.Position.Equals("MID") && (team == null || (person.ID != team.MID1 && person.ID != team.MID2 && person.ID != team.MID3 && person.ID != team.MID4)))
+                        @if (person.Position.Equals("MID") && person.Hidden == false && (team == null || (person.ID != team.MID1 && person.ID != team.MID2 && person.ID != team.MID3 && person.ID != team.MID4)))
                         {
                             <div class="removable" draggable="true" ondragstart="drag(event)" id="@person.ID">
                                 <table style="width:100%; border:1px solid black; background-color:#004b8d">
@@ -1090,7 +1093,7 @@
                 <div id="RUCK" class="tabcontent">
                     @foreach (var person in allPlayers)
                     {
-                        @if (person.Position.Equals("RUCK") && (team == null || (person.ID != team.RUCK1 && person.ID != team.RUCK2)))
+                        @if (person.Position.Equals("RUCK") && person.Hidden == false && (team == null || (person.ID != team.RUCK1 && person.ID != team.RUCK2)))
                         {
                             <div class="removable" draggable="true" ondragstart="drag(event)" id="@person.ID">
                                 <table style="width:100%; border:1px solid black; background-color:#004b8d">
@@ -1197,10 +1200,10 @@
                     @foreach (var person in allPlayers)
                     {
                         @if (team != null && (person.ID == team.DEF1 || person.ID == team.DEF2 || person.ID == team.DEF3 || person.ID == team.DEF4 ||
-                                        person.ID == team.DEF5 || person.ID == team.DEF6 || person.ID == team.MID1 || person.ID == team.MID2 ||
-                                        person.ID == team.MID3 || person.ID == team.MID4 || person.ID == team.RUCK1 || person.ID == team.RUCK2 ||
-                                        person.ID == team.FWD1 || person.ID == team.FWD2 || person.ID == team.FWD3 || person.ID == team.FWD4 ||
-                                        person.ID == team.FWD5 || person.ID == team.FWD6))
+                                   person.ID == team.DEF5 || person.ID == team.DEF6 || person.ID == team.MID1 || person.ID == team.MID2 ||
+                                   person.ID == team.MID3 || person.ID == team.MID4 || person.ID == team.RUCK1 || person.ID == team.RUCK2 ||
+                                   person.ID == team.FWD1 || person.ID == team.FWD2 || person.ID == team.FWD3 || person.ID == team.FWD4 ||
+                                   person.ID == team.FWD5 || person.ID == team.FWD6))
                         {
                             <tr style="" id="Stats @person.ID">
                                 <td class="position">@person.Position</td>
@@ -1334,13 +1337,120 @@
                 <canvas id="canvas" width="700" height="400" style="border: 1px solid black;"></canvas>
             </div>
 
+
+
         </div>
     </div>
 
+    <br />
+    <br />
+    <div  style="position:relative;float:right;display:none" id="adminDiv">
+
+        <input id="editPlayer" />
+        <button onclick="editPlayer()">Edit</button>
+
+        <label for"playerHide">Hide / Unhide an Existing Player</label>
+        <br />
+        <input id="playerHide" />
+        <button onclick="hidePlayer(false)">Unhide</button>
+        <button onclick="hidePlayer(true)">Hide</button>
+        <div id="editDiv" style="margin-top: 50px; margin-bottom: 200px; display:none; background-color: lightgray; width: 100%; height: 50%;">
+            <h3 id="editName"></h3>
+            <br />
+            <label>Position</label>
+            <input id="editPosition" />
+            <br />
+            <label>Age</label>
+            <input id="editAge" type="number" />
+            <br />
+            <label>Price</label>
+            <input id="editPrice" type="number" />
+            <br />
+            <label>Height</label>
+            <input id="editHeight" type="number" />
+            <br />
+            <label>Kicks Average</label>
+            <input id="editKickA" type="number" />
+            <br />
+            <label>Kicks Total</label>
+            <input id="editKickT" type="number" />
+            <br />
+            <label>Kicks Total</label>
+            <input id="editKickT" type="number" />
+            <br />
+            <label>Handball Average</label>
+            <input id="editHandA" type="number" />
+            <br />
+            <label>Handball Total</label>
+            <input id="editHandT" type="number" />
+            <br />
+            <label>Disposal Average</label>
+            <input id="editDisA" type="number" />
+            <br />
+            <label>Disposal Total</label>
+            <input id="editDisT" type="number" />
+            <br />
+            <label>Mark Average</label>
+            <input id="editMarkA" type="number" />
+            <br />
+            <label>Mark Total</label>
+            <input id="editMarkT" type="number" />
+            <br />
+            <label>Hitout Average</label>
+            <input id="editHOA" type="number" />
+            <br />
+            <label>Hitout Total</label>
+            <input id="editHOT" type="number" />
+            <br />
+            <label>Clearance Average</label>
+            <input id="editClearA" type="number" />
+            <br />
+            <label>Clearance Total</label>
+            <input id="editClearT" type="number" />
+            <br />
+            <label>Centre-Clearance Average</label>
+            <input id="editCClearA" type="number" />
+            <br />
+            <label>Centre-Clearance Total</label>
+            <input id="editCClearT" type="number" />
+            <br />
+            <label>Tackle Average</label>
+            <input id="editTackleA" type="number" />
+            <br />
+            <label>Tackle Total</label>
+            <input id="editTackleT" type="number" />
+            <br />
+            <label>Goal Average</label>
+            <input id="editGoalA" type="number" />
+            <br />
+            <label>Goal Total</label>
+            <input id="editGoalT" type="number" />
+            <br />
+            <label>Behind Average</label>
+            <input id="editBehindA" type="number" />
+            <br />
+            <label>Behind Total</label>
+            <input id="editBehindT" type="number" />
+            <br />
+
+            <label>Matches</label>
+            <input id="editMatches" type="number" />
+            <br />
+
+
+        </div>
+    </div>
+    <br />
+    <br/>
+    <br/>
+    <br />
+    <br />
+    <br />
 </div>
 
 <script>
-
+    
+    hideAdminDiv();
     colorRow()
     document.getElementById("selectedTable").addEventListener("load", updateCheckpoint());
     var allPlayersTable;
@@ -1350,6 +1460,8 @@
     var menCount = 0;
     var womenCount = 0;
     var teamCost = 0;
+
+    saveTeam();
 
     function showPost() {
         var x = document.getElementById("propAnal");
@@ -1760,7 +1872,7 @@
         var midTeam = [];
         var ruckTeam = [];
         var fwdTeam = [];
-
+        
          var teamSelection = {
             StudentId: "@student",
 
@@ -1823,8 +1935,88 @@
 
     }
 
+    
+
     function allowDrop(ev) {
         ev.preventDefault();
+    }
+
+
+    function hideAdminDiv() {
+      
+        if ("@student" == "admin") {
+            alert("loaded admin")
+            document.getElementById("adminDiv").style.display = "block";
+        }
+        else {
+            document.getElementById("adminDiv").remove();
+        }
+    }
+
+
+    
+
+    function hidePlayer(hide) {
+
+        var name = document.getElementById("playerHide").value;
+
+        
+        var player = {
+            name: name,
+            hide: hide
+        };
+
+        console.log(player);
+     
+        $.post({
+            url: '../Home/HidePlayer',
+            data: player,
+            traditional: true
+        }).done(function (data) {
+            location.reload(true);
+            //alert(data.success);
+        }).fail(function (jqXhr, textStatus, errorThrown) {
+            alert("error");
+        });
+
+        
+    }
+
+    function editPlayer() {
+        var name = document.getElementById("editPlayer").value;
+
+
+        var player = {
+            name: name,
+        };
+
+
+        $.get({
+            url: '../Home/GetPlayer',
+            data: player,
+            traditional: true
+        }).done(function (data) {
+            if (data.error == "NoPlayer") {
+                alert("No Player was Found")
+            }
+            else {
+                alert("We got him")
+                console.log(data.player);
+                document.getElementById("editName").innerHTML = data.player.name;
+                document.getElementById("editPosition").value = data.player.position;
+                document.getElementById("editAge").value = data.player.age;
+                document.getElementById("editPrice").value = data.player.price;
+                document.getElementById("editHeight").value = data.player.height;
+                document.getElementById("editKickA").value = data.player.kickAvg;
+                document.getElementById("editKickT").value = data.player.kickTotal;
+                document.getElementById("editDiv").style.display = "block";
+            }
+            
+            
+        }).fail(function (jqXhr, textStatus, errorThrown) {
+            alert("errorr");
+        });
+
     }
 
     // passes element id to drag movement

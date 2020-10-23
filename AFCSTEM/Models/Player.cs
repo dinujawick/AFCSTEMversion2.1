@@ -39,5 +39,6 @@ namespace AFCSTEM.Models
         public double BehindsAvg { get; set; }
         public int BehindsTotal { get; set; }
         public int Matches { get; set; }
+        public bool Hidden { get; set; }
     }
 }

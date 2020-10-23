@@ -9,5 +9,7 @@ namespace AFCSTEM.Models
     {
         Player getPlayer(int id);
         IEnumerable<Player> getAllPlayers();
+        Player getPlayerByName(string name);
+        Player HidePlayer(Player player,bool hide);
     }
 }
