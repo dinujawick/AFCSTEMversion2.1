@@ -20,6 +20,11 @@
 
 
 <style>
+
+    .row containRow {
+        background-color: #F2F4F3
+    }
+
     .row {
         width: 100%;
     }
@@ -68,13 +73,16 @@
         margin: 0 auto;
     }
 
-    #act10table1 td, #act10table2 td, #act10table3 td, #act11table1 td, #act12table1 td, #act12table2 td, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act16table1 td, #act16table2 td, #act16table3 td, #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td, #act17table6 td {
+
+    #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act12table1 td, #act12table1 th, #act12table2 td, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act16table1 td,
+    #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td, #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td, #act17table6 td {
         border: 1px solid black;
     }
 
     #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input, #act12table2 input,
     #act13table1 input, #act15table1 input, #act15table2 input, #act15table3 input, #act15table4 input, #act16table1 input, #act16table2 input, #act16table3 input, #act16table4 input, #act16table5 input, #act16table6 input, #act17table1 input, #act17table2 input, #act17table3 input, #act17table4 input, #act17table5 input, #act17table6 input {
         border: none;
+        width: 100%;
     }
 
     table {
@@ -748,6 +756,7 @@
         cursor: pointer;
     }
 
+
     #myProgress {
         width: 100%;
         height: 20%;
@@ -764,10 +773,10 @@
 <div style="">
     <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
     <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="MVP" style="margin-left:15px;margin-right:15px;">Go To MVP</a>
-    <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Survey">Go To survey</a>
+    <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Survey">Go To Surveys</a>
 </div>
 
-<nav id="mySideNav" class="sidenav">
+<nav id="mySideNav" class="sidenav nav-link nav-item text-light" style="font-family: 'Titillium Web', sans-serif">
     <div class="container">
 
 
@@ -778,7 +787,7 @@
             </li>
             <br />
             <li>
-                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Unit1Home">Unit 1</a>
+                <a class="nav-link text-light" id="unit1bar" href="#unit1">Unit 1</a>
             </li>
             <li>
                 <a class="nav-link" id="act1bar" href="#act1" style="color:#e31937;">Activity 1</a>
@@ -789,14 +798,12 @@
             <li>
                 <a class="nav-link" id="act3bar" href="#act3" style="color:#e31937;">Activity 3</a>
             </li>
-            <li>
-                <a class="nav-link" id="act4bar" href="#act4" style="color:#e31937;">Activity 4</a>
-            </li>
+
             <li>
                 <a class="nav-link" id="act5bar" href="#act5" style="color:#e31937;">Activity 5</a>
             </li>
             <li>
-                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Unit2Home">Unit 2</a>
+                <a class="nav-link text-light" id="unit2bar" href="#unit2">Unit 2</a>
             </li>
             <li>
                 <a class="nav-link" href="#act6" id="act6bar" style="color:#e31937;">Activity 6</a>
@@ -814,7 +821,7 @@
             </li>
 
             <li>
-                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Unit3Home">Unit 3</a>
+                <a class="nav-link text-light" id="unit3bar" href="#unit3">Unit 3</a>
             </li>
             <li>
                 <a class="nav-link" href="#act11" id="act11bar" style="color:#e31937;">Activity 11</a>
@@ -829,7 +836,7 @@
                 <a class="nav-link" href="#act14" id="act14bar" style="color:#e31937;">Activity 14</a>
             </li>
             <li>
-                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Unit4Home">Unit 4</a>
+                <a class="nav-link text-light" id="unit4bar" href="#unit4">Unit 4</a>
             </li>
             <li>
                 <a class="nav-link" href="#act15" id="act15bar" style="color:#e31937;">Activity 15</a>
@@ -842,9 +849,10 @@
             </li>
             <br />
             <li>
+                <div style="margin-left:30px;margin-bottom:5px;color:white">Completion</div>
                 <div id="myProgress">
 
-                    <div id="myBar"><div style="position:relative;margin-left:50px;" id="myBarNum">0%</div></div>
+                    <div id="myBar"><div style="position:relative;margin-left:50px;color:black" id="myBarNum">0%</div></div>
                 </div>
             </li>
 
@@ -898,6 +906,11 @@
 
 
 <!--Activity 1: part 1-->
+
+
+<div style="width:100%;height:20%;background-color:#ffd200;border:none" class="row containRow" id="unit1">
+    <div style="margin-left:25%;padding:50px;font-size:32px;">UNIT 1: INTRODUCTION TO AFL</div>
+</div>
 <div class="row containRow" id="act1">
     <h3>AFL Positions: Activity 1 (Class Activity/Discussion)</h3>
     <p style="margin-left:10px;">
@@ -1008,7 +1021,7 @@
                         </tr>
                         <tr>
                             <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);"></td>
-                        
+
                         </tr>
 
                     </tbody>
@@ -1019,8 +1032,8 @@
                     <button class="btn btn-outline-primary" onclick="checkActivity1P1('act1Table1', 'act1Table2' )">Check Activity!!</button>
                 </div>
             </div>
+        </div>
     </div>
-</div>
 </div>
 
 <!--Activity 1: part 2-->
@@ -1728,6 +1741,14 @@
     </div>
 
 </div>
+<br />
+<br />
+
+
+<div style="width:100%;height:20%;background-color:#002b5c;border:none" class="row containRow" id="unit2">
+    <div style="margin-left:30%;padding:50px;font-size:32px;color:white">UNIT 2: STATISTICS</div>
+</div>
+
 
 <!--Activity 6: part 1-->
 <div class="row containRow" id="act6">
@@ -2734,7 +2755,9 @@
 
         <img id="goalpic" src="~/images/Unit2/Activity 10/goalpic.jpeg" />
         <br />
-        <button style="position:relative" id="stemButton" onclick="runfooty()"> Auto Populate The STEM and LEAF Table</button>
+        <br />
+        <br />
+        <button style="margin-top:25px;position:relative" id="stemButton" onclick="runfooty()"> Auto Populate The STEM and LEAF Table</button>
         <br />
         <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
         <br />
@@ -2751,6 +2774,12 @@
         <br />
     </div>
 </div>
+<br />
+<br />
+
+<div style="width:100%;height:20%;background-color:#41ad48;border:none" class="row containRow" id="unit3">
+    <div style="margin-left:20%;padding:50px;font-size:32px;color:white">UNIT 3: NUTRITION AND MORPHOLOGY</div>
+</div>
 
 <!--Activity 11: part1-->
 <div class="row containRow" style="margin-bottom:25px;" id="act11">
@@ -2762,7 +2791,7 @@
             <br />
             <br />
             <br />
-            Below is an activity chart for an AFC Men’s player.
+            Below is an activity chart for an AFC Men’s player1
             <br />
         </h3>
         <p>
@@ -2826,7 +2855,7 @@
 
         </table>
         <br />
-        <label for="act11q1">Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR. </label>
+        <label for="act11q1"><b>Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR.</b> </label>
         <br />
         <textarea id="act11q2" style="width:100%;" name="act11q1" rows="2"></textarea>
         <br />
@@ -2855,7 +2884,7 @@
         <img id="scaleImg" src="~/images/Workbooklet/act12image.png" />
         <br />
         <p>
-            Method:<br />
+            <b>Method:</b><br />
             1. Guess the amount without any measuring<br />
             2. Measure out the correct serves/meals using Wayne's visual hand guide on page 11.
             3. Measure accurately with the scale and record weight (g). <br /><br />
@@ -2871,25 +2900,25 @@
                 <th>Difference of weight<br /> between method 1 and 2</th>
             </tr>
             <tr>
-                <td>1 serve of pasta (pasta tubes)<br /> 50g</td>
+                <th>1 serve of pasta (pasta tubes)<br /> 50g</th>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
             </tr>
             <tr>
-                <td>1 serve of salad (plastic lettuce)<br /> 30g</td>
+                <th>1 serve of salad (plastic lettuce)<br /> 30g</th>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
             </tr>
             <tr>
-                <td>1 serve of steak (red play doh)<br /> 65g</td>
+                <th>1 serve of steak (red play doh)<br /> 65g</th>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
             </tr>
             <tr>
-                <td>1 serve of cheese (yellow play doh)<br /> 40g</td>
+                <th>1 serve of cheese (yellow play doh)<br /> 40g</th>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
                 <td><input type="number" /></td>
@@ -2929,20 +2958,28 @@
             <b>
                 Everything we do uses energy. Sometimes we don’t realise some <br />
                 foods are good for physical activity and others are not. <br />
+                <br />
+                <br />
                 Angela Foley (School Teacher / Vice-Captain of AFCW team) uses: <br />
                 • 66 kilojoules per minute when playing a football game at a very <br />
                 high intensity <br />
+                <br />
                 • 9.5 kilojoules per minute when resting at half time during a <br />
                 football game <br />
+                <br />
                 • 15.8 kilojoules per minute when teaching a class STEM activity <br />
+                <br />
+                <br />
                 Your challenge is to calculate how many minutes it would take for <br />
                 Angela to expend the energy from certain foods during different <br />
                 career activities. To calculate this you need to use this formula: <br />
+                <br />
                 Minutes = Total Kilojoules in a food item ÷ kJ/min/activity <br />
             </b>
 
         </p>
-        <img id="foleyImg" style="left:250px;width:30%;height:40%;" src="~/images/Workbooklet/foleyImg.jpg" />
+        <label style="float:right" for="foleyImg">ANGELA FOLEY</label>
+        <img name="foleyImg" id="foleyImg" style="margin-bottom:10px;left:100px;width:30%;height:30%;" src="~/images/Workbooklet/foleyImg.jpg" />
 
         <table style="width:90%" id="act12table2">
             <tr style="background-color:#002b5c; color:white;">
@@ -3004,6 +3041,7 @@
         <label for="act13q1"> Explain why you multiply the area measurements (front x width) by 2.</label>
         <br />
         <textarea rows="2" style="width:100%"></textarea>
+        <br />
         <br />
         <table style="width:90%" id="act13table1">
             <tr style="background-color:#002b5c; color:white;">
@@ -3079,7 +3117,7 @@
             <br />
             <br />
         </h3>
-        <button onclick="clearGraph('One')">Clear Graph</button>
+        <button style="margin-bottom:50px" onclick="clearGraph('One')">Clear Graph</button>
         <svg id="svgOne" style="float:right;left:200px;cursor:pointer" width="1000" height="700" onclick="graphClick(evt)">
             <text x="170" y="50" fill="black">110</text>
             <text x="170" y="125" fill="black">105</text>
@@ -3155,7 +3193,7 @@
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
-        <button onclick="clearGraph('Two')">Clear Graph</button>
+        <button style="margin-bottom:50px" onclick="clearGraph('Two')">Clear Graph</button>
 
         <table style="width:20%" id="act12table2">
             <tr style="background-color:#002b5c; color:white;">
@@ -3199,7 +3237,7 @@
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
-        <button onclick="clearGraph('Three')">Clear Graph</button>
+        <button style="margin-bottom:50px" onclick="clearGraph('Three')">Clear Graph</button>
         <table style="width:20%" id="act12table2">
             <tr style="background-color:#002b5c; color:white;">
                 <td>Player</td>
@@ -3223,6 +3261,14 @@
             </tr>
         </table>
         <br />
+
+        <label for="act14con">
+            How do outliers change our conclusions
+            on positional requirements?
+        </label>
+        <br />
+        <textarea id="act14con" rows="2"></textarea>
+
         <br />
 
 
@@ -3308,6 +3354,11 @@
 
 
     </div>
+</div>
+<br/>
+<br/>
+<div style="width:100%;height:20%;background-color:#f15522;border:none" class="row containRow" id="unit4">
+    <div style="margin-left:35%;padding:50px;font-size:32px;color:white">UNIT 4: DISTANCES</div>
 </div>
 
 <!--Activity 15 part 1-->
@@ -4775,7 +4826,11 @@
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
+    //put checks above it
 
+
+
+    pageLoad = true;
 
 
 
@@ -5451,6 +5506,8 @@
                         console.log('coin2  - it is tails');
                     }
 
+
+
                     if (($('#coin').attr('class') == "heads") && ($('#coin2').attr('class') == "heads")) {
                         console.log(" in hh ")
                         var id = "hh" + coinCount;
@@ -5471,6 +5528,11 @@
                         behindCount++;
 
                     }
+
+
+
+
+
 
 
 
@@ -5607,9 +5669,15 @@
             console.log("Completed");
             act5P1Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
 
     }
@@ -5622,9 +5690,16 @@
             console.log("Completed");
             act5P2Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
 
     }
@@ -5633,6 +5708,9 @@
         if (act5P2Check && act5P1Check) {
             document.getElementById("act5bar").style.color = "green";
             act5Check = true;
+            if (pageLoad) {
+                alert("Activity 5 Completed!");
+            }
         }
     }
 
@@ -5819,8 +5897,14 @@
         if (length1 == "50" || length2 == "50" || length3 == "2500") {
             act2P1Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
+            if (pageLoad) {
+                alert("Please Correctly Complete the answers")
+            }
             document.getElementById(id).style.color = "red";
         }
 
@@ -5844,8 +5928,14 @@
         if (length1 == "9" && length2 == "6.4" && length3 == "57.6" && length11 == "15" && length21 == "6.4" && length31 == "96" && length12 == "10" && length22 == "6.4" && length32 == "64") {
             act2P2Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!")
+            }
         }
         else {
+            if (pageLoad) {
+                alert("Please Correctly Complete the answers")
+            }
             document.getElementById(id).style.color = "red";
         }
 
@@ -5865,9 +5955,15 @@
         if (length1 != "" && length2 != "" && length3 != "" && length4 != "" && length5 == "6.4" && length6 == "6.4" && length7 == "40.96") {
             act2P3Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!")
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Correctly Complete the answers");
+            }
         }
 
     }
@@ -5876,6 +5972,9 @@
         if (act2P1Check && act2P2Check && act2P3Check) {
             act2Check = true;
             document.getElementById("act2bar").style.color = "green";
+            if (pageLoad) {
+                Alert("Activty 2 Completed!")
+            }
         }
     }
 
@@ -5927,9 +6026,15 @@
         if (mcgL == "161" && mcgW == "138" && mcgA == "17441.1" && msL == "160" && msW == "129" && msA == "16202.4" && gmhL == "170" && gmhW == "117" && gmhA == "15613.7" && scgL == "155" && scgW == "136" && scgA == "16547.8" && ssL == "164" && ssW == "128" && ssA == "16478.7" && osL == "165" && osW == "130" && osA == "16838.3" && gL == "156" && gW == "138" && gA == "16899.5" && metL == "158" && metW == "134" && metA =="16620.0") {
             act3P1Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!")
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Correctly Complete The Answers (1 Decimal Place for Area)");
+            }
         }
     }
     function checkActivity3P2(id) {
@@ -5944,15 +6049,24 @@
         if (lgArea != "" && sArea != "" && cC != "" && q4 != "" && q5 != "" && q6 != "" && q7 != ""  && q8 != "") {
             act3P2Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!")
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Completed Correctly!")
+            }
         }
     }
     function checkActivity3() {
         if (act3P1Check && act3P2Check) {
             act3Check = true;
             document.getElementById("act3bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 3 Completed!")
+            }
         }
     }
     var act12P1Check = false;
@@ -6484,7 +6598,7 @@
         var csLength = "@workbook.Act2CSLength";
         var csArea = "@workbook.Act2CSArea";
 
-   
+
         document.getElementById("widCS").value = csWidth;
         document.getElementById("lenCS").value = csLength;
         document.getElementById("aTotalCS").value =  csArea;

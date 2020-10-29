@@ -125,11 +125,47 @@ namespace AFCSTEM.Controllers
         {
             Player player = _playerRepository.getPlayerByName(name);
 
+            if (player == null) {
+                return Json(new { error = "NoPlayer" });
+
+
+
+            }
             _playerRepository.HidePlayer(player, hide);
            
-            return Json(new { success = "Workbook Saved" });
+            return Json(new { success = "player updated" });
         }
-        
+
+
+
+        [HttpPost]
+        public IActionResult CreatePlayer(int Number, string Name, string Gender, string Position, int Price, int Height, DateTime DateOfBirth, int Age, double KickAvg, int KickTotal, double HandballAvg, int HandballTotal, double DisposalAvg, int DisposalTotal, double MarksAvg, int MarksTotal, double HOAvg,
+            int HOTotal, double ClearanceAvg, int ClearanceTotal, double CentreClearanceAvg, int CentreClearanceTotal, double TackleAvg, int TackleTotal, double GoalsAvg, int GoalsTotal, double BehindsAvg, int BehindsTotal, int Matches, bool Hidden)
+        {
+           
+
+            _playerRepository.createPlayer(Number,Name ,Gender, Position, Price, Height,DateOfBirth, Age, KickAvg, KickTotal, HandballAvg, HandballTotal, DisposalAvg, DisposalTotal, MarksAvg, MarksTotal, HOAvg,
+          HOTotal, ClearanceAvg, ClearanceTotal, CentreClearanceAvg, CentreClearanceTotal, TackleAvg, TackleTotal, GoalsAvg, GoalsTotal, BehindsAvg, BehindsTotal, Matches,Hidden);
+
+
+            return Json(new { success = "player updated" });
+        }
+
+
+
+        [HttpPost]
+        public IActionResult UpdatePlayer(string name, string Position, int Price, int Height, int Age, double KickAvg, int KickTotal, double HandballAvg, int HandballTotal, double DisposalAvg, int DisposalTotal, double MarksAvg, int MarksTotal, double HOAvg,
+          int HOTotal, double ClearanceAvg, int ClearanceTotal, double CentreClearanceAvg, int CentreClearanceTotal, double TackleAvg, int TackleTotal, double GoalsAvg, int GoalsTotal, double BehindsAvg, int BehindsTotal, int Matches,string Gender)
+        {
+            Player player = _playerRepository.getPlayerByName(name);
+
+            _playerRepository.updatePlayer(player, Position, Price, Height, Age, KickAvg, KickTotal, HandballAvg, HandballTotal, DisposalAvg, DisposalTotal, MarksAvg, MarksTotal, HOAvg,
+          HOTotal, ClearanceAvg, ClearanceTotal, CentreClearanceAvg, CentreClearanceTotal, TackleAvg, TackleTotal, GoalsAvg, GoalsTotal, BehindsAvg, BehindsTotal, Matches,Gender);
+          
+
+            return Json(new { success = "player updated" });
+        }
+
 
         [HttpGet]
         public IActionResult GetPlayer(string name)

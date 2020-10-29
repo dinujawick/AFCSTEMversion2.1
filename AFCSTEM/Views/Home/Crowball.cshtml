@@ -11,6 +11,7 @@
     var user = await UserManager.GetUserAsync(User);
     var student = User.Identity.Name;
     var team = TeamModel.GetTeam(student);
+
 }
 <style type="text/css">
     #topRow {
@@ -1344,17 +1345,19 @@
 
     <br />
     <br />
-    <div  style="position:relative;float:right;display:none" id="adminDiv">
-
-        <input id="editPlayer" />
-        <button onclick="editPlayer()">Edit</button>
-
+    <div style="position:relative;float:right;display:none" id="adminDiv">
         <label for"playerHide">Hide / Unhide an Existing Player</label>
         <br />
         <input id="playerHide" />
         <button onclick="hidePlayer(false)">Unhide</button>
         <button onclick="hidePlayer(true)">Hide</button>
-        <div id="editDiv" style="margin-top: 50px; margin-bottom: 200px; display:none; background-color: lightgray; width: 100%; height: 50%;">
+        <br />
+        <label>Edit Player / Create Player</label><br />
+        <input id="editPlayer" />
+        <button onclick="editPlayer()">Edit</button>
+        <button onclick="createPlayer()">Create</button>
+
+        <div id="editDiv" style="margin-top: 50px; float:left;margin-bottom: 200px; display:none; background-color: lightgray; width: 100%; height: 50%;">
             <h3 id="editName"></h3>
             <br />
             <label>Position</label>
@@ -1362,6 +1365,9 @@
             <br />
             <label>Age</label>
             <input id="editAge" type="number" />
+            <br />
+            <label>Gender</label>
+            <input id="editGender" />
             <br />
             <label>Price</label>
             <input id="editPrice" type="number" />
@@ -1371,9 +1377,6 @@
             <br />
             <label>Kicks Average</label>
             <input id="editKickA" type="number" />
-            <br />
-            <label>Kicks Total</label>
-            <input id="editKickT" type="number" />
             <br />
             <label>Kicks Total</label>
             <input id="editKickT" type="number" />
@@ -1435,7 +1438,11 @@
 
             <label>Matches</label>
             <input id="editMatches" type="number" />
+            <br/>
+            <label>Photo</label>
+            <input id="editImage" type="file" />
             <br />
+            <button style="float:right" id="updatePlayer" onclick="updatePlayer()">Update Player</button>
 
 
         </div>
@@ -1449,7 +1456,7 @@
 </div>
 
 <script>
-    
+
     hideAdminDiv();
     colorRow()
     document.getElementById("selectedTable").addEventListener("load", updateCheckpoint());
@@ -1609,14 +1616,14 @@
                         //number of mid/rucks
                         midCount++;
                     }
-                    
+
 
                 }
 
             }
 
 
-            
+
         }
         if (midMatches  != 0) {
             midMatches = midMatches / midCount;
@@ -1630,13 +1637,13 @@
             console.log(" IN ")
             defMatches = defMatches / defCount;
         }
-    
-        
+
+
 
 
 
         //defenders table update
-        
+
         document.getElementById("defPrice").innerHTML = parseInt(defPrice / defCount);
         document.getElementById("defGoals").innerHTML = parseFloat((defGoals / defMatches) / defCount).toFixed(2);
         document.getElementById("defBehinds").innerHTML = parseFloat((defBehinds / defMatches) / defCount).toFixed(2);
@@ -1707,23 +1714,23 @@
         //graph lines
         graph.fillStyle = "black";
 
-     
+
         graph.fillRect(20, 30, 1, 350);
         graph.fillRect(20, 380, 660, 1)
         graph.fillRect(20, 30, 660, 1)
         graph.fillRect(680, 30, 1, 350);
-        
-        
-
-
-      
-       
 
 
 
 
 
-       
+
+
+
+
+
+
+
 
 
 
@@ -1805,7 +1812,7 @@
         graph.fillText(parseInt(fwdDisposals / fwdMatches / fwdCount), 474, 380 - (10 * (fwdDisposals / fwdMatches / fwdCount) + 2));
 
         ////total
-     
+
         var defkick1 = (defKicks / defMatches) / defCount;
         var fwdkick1 = (fwdKicks / fwdMatches) / fwdCount;
         var midkick1 = (midKicks / midMatches) / midCount;
@@ -1842,8 +1849,8 @@
         var totalkicks1 = (defkick1 + fwdkick1 + midkick1) / count;
         var totalhand1 = (defhand1 + fwdhand1 + midhand1) / count;
         var totaldis1 = (defdis1 + middis1 + fwddis1)/count;
-  
-        
+
+
 
         graph.fillStyle = "#e31937";
         graph.fillRect(565, 380 - 10 * (totalkicks1), 20, 10 * (totalkicks1));
@@ -1872,7 +1879,7 @@
         var midTeam = [];
         var ruckTeam = [];
         var fwdTeam = [];
-        
+
          var teamSelection = {
             StudentId: "@student",
 
@@ -1935,7 +1942,7 @@
 
     }
 
-    
+
 
     function allowDrop(ev) {
         ev.preventDefault();
@@ -1943,9 +1950,8 @@
 
 
     function hideAdminDiv() {
-      
+
         if ("@student" == "admin") {
-            alert("loaded admin")
             document.getElementById("adminDiv").style.display = "block";
         }
         else {
@@ -1954,33 +1960,233 @@
     }
 
 
-    
+
 
     function hidePlayer(hide) {
 
         var name = document.getElementById("playerHide").value;
 
-        
+
         var player = {
             name: name,
             hide: hide
         };
 
         console.log(player);
-     
+
         $.post({
             url: '../Home/HidePlayer',
             data: player,
             traditional: true
         }).done(function (data) {
-            location.reload(true);
+            if (data.error == "NoPlayer") {
+                alert("No Player was Found")
+            }
+            else {
+                location.reload(true);
+            }
+
             //alert(data.success);
         }).fail(function (jqXhr, textStatus, errorThrown) {
             alert("error");
         });
 
-        
+
     }
+
+    function createPlayer() {
+
+        var name = document.getElementById("editPlayer").value;
+        var pos = "DEF"
+        var age = document.getElementById("editAge").value;
+        var price = 1000000;
+        var height = 180;
+        var kickA = 0;
+        var kickT = 0;
+        var handA = 0;
+        var handT = 0;
+        var markA = 0;
+        var markT = 0;
+        var date = new Date();
+        var behindA = 0;
+        var behindT = 0;
+        var clearA = 0;
+        var clearT = 0;
+        var cClearA = 0;
+        var cClearT = 0;
+        var hot = 0;
+        var hoa = 0;
+        var disA = 0;
+        var disT = 0;
+        var goalA = 0;
+        var goalT = 0;
+        var matches = 0;
+        var tackleA = 0;
+        var tackleT = 0;
+        var num = 99;
+        var gender = "M"
+        var hidden = true;
+
+
+            var player = {
+                name: name,
+                Position: pos,
+                Price: price,
+                Height: height,
+                Age: age,
+                KickAvg: kickA,
+                KickTotal: kickT,
+                HandballAvg: handA,
+                HandballTotal: handT,
+                MarksAvg: markA,
+                MarksTotal: markT,
+                DisposalAvg: disA,
+                DisposalTotal: disT,
+                HOAvg: hot,
+                HOTotal: hoa,
+                ClearanceAvg: clearA,
+                ClearanceTotal: clearT,
+                CentreClearanceAvg: cClearA,
+                CentreClearanceTotal: cClearT,
+                TackleAvg: tackleA,
+                TackleTotal: tackleT,
+                GoalsAvg: goalA,
+                GoalsTotal: goalT,
+                BehindsAvg: behindA,
+                BehindsTotal: behindT,
+                Matches: matches,
+                DateOfBirth: date,
+                Gender: gender,
+                Number: num,
+                Hidden: hidden,
+
+
+            };
+
+        if (name.replace(/\s/g, "") == "") {
+            alert("Cannot create a player without a name!")
+        }
+        else {
+            $.post({
+                url: '../Home/CreatePlayer',
+                data: player,
+                traditional: true
+            }).done(function (data) {
+                location.reload();
+            }).fail(function (jqXhr, textStatus, errorThrown) {
+                alert("error");
+            });
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+    function updatePlayer() {
+
+
+        var gender = document.getElementById("editGender").value;
+        var name = document.getElementById("editName").innerHTML;
+        var pos = document.getElementById("editPosition").value;
+        var age = document.getElementById("editAge").value;
+        var price = document.getElementById("editPrice").value;
+        var height = document.getElementById("editHeight").value;
+        var kickA = document.getElementById("editKickA").value;
+        var kickT = document.getElementById("editKickT").value;
+        var handA = document.getElementById("editHandA").value;
+        var handT = document.getElementById("editHandT").value;
+        var markA = document.getElementById("editMarkA").value;
+        var markT = document.getElementById("editMarkT").value;
+
+        var behindA = document.getElementById("editBehindA").value;
+        var behindT = document.getElementById("editBehindT").value;
+        var clearA = document.getElementById("editClearA").value;
+        var clearT = document.getElementById("editClearT").value;
+        var cClearA = document.getElementById("editCClearA").value;
+        var cClearT = document.getElementById("editCClearT").value;
+        var hot = document.getElementById("editHOT").value;
+        var hoa = document.getElementById("editHOA").value;
+        var disA = document.getElementById("editDisA").value;
+        var disT = document.getElementById("editDisT").value;
+        var goalA = document.getElementById("editGoalA").value;
+        var goalT = document.getElementById("editGoalT").value;
+        var matches = document.getElementById("editMatches").value;
+        var tackleA = document.getElementById("editTackleA").value;
+        var tackleT = document.getElementById("editTackleT").value;
+
+
+        if (pos == "" || age == "" || price == "" || height == "" || kickA == "" || kickT == "" || handA == "" || handT == "" || markA == "" || markT == "" || behindT == "" ||
+            behindA == "" || clearA == "" || clearT == "" || cClearA == "" || cClearT == "" || hot == "" || hoa == "" || disA == "" || disT == "" || goalA == "" || goalT == "" || matches == "" || tackleA == "" || tackleT == "" || gender == "") {
+            alert("One of the inputs is empty, fix and retry again");
+        }
+        else {
+
+            var player = {
+                name: name,
+                Position: pos,
+                Price: price,
+                Height: height,
+                Age: age,
+                KickAvg: kickA,
+                KickTotal: kickT,
+                HandballAvg: handA,
+                HandballTotal: handT,
+                MarksAvg: markA,
+                MarksTotal: markT,
+                DisposalAvg: disA,
+                DisposalTotal: disT,
+                HOAvg: hot,
+                HOTotal: hoa,
+                ClearanceAvg: clearA,
+                ClearanceTotal: clearT,
+                CentreClearanceAvg: cClearA,
+                CentreClearanceTotal: cClearT,
+                TackleAvg: tackleA,
+                TackleTotal: tackleT,
+                GoalsAvg: goalA,
+                GoalsTotal: goalT,
+                BehindsAvg: behindA,
+                BehindsTotal: behindT,
+                Matches: matches,
+                Gender:gender,
+
+
+
+            };
+
+
+
+
+
+
+
+            $.post({
+                url: '../Home/UpdatePlayer',
+                data: player,
+                traditional: true
+            }).done(function (data) {
+               
+
+
+
+                location.reload();
+            }).fail(function (jqXhr, textStatus, errorThrown) {
+                alert("error");
+            });
+        }
+
+
+
+
+
+    }
+
 
     function editPlayer() {
         var name = document.getElementById("editPlayer").value;
@@ -2000,7 +2206,7 @@
                 alert("No Player was Found")
             }
             else {
-                alert("We got him")
+                alert("Player Found")
                 console.log(data.player);
                 document.getElementById("editName").innerHTML = data.player.name;
                 document.getElementById("editPosition").value = data.player.position;
@@ -2009,12 +2215,33 @@
                 document.getElementById("editHeight").value = data.player.height;
                 document.getElementById("editKickA").value = data.player.kickAvg;
                 document.getElementById("editKickT").value = data.player.kickTotal;
+                document.getElementById("editHandA").value = data.player.handballAvg;
+                document.getElementById("editHandT").value = data.player.handballTotal;
+                document.getElementById("editMarkA").value = data.player.marksAvg;
+                document.getElementById("editMarkT").value = data.player.marksTotal;
+                document.getElementById("editBehindA").value = data.player.behindsAvg;
+                document.getElementById("editBehindT").value = data.player.behindsTotal;
+                document.getElementById("editClearA").value = data.player.clearanceAvg;
+                document.getElementById("editClearT").value = data.player.clearanceTotal;
+                document.getElementById("editCClearA").value = data.player.centreClearanceAvg;
+                document.getElementById("editCClearT").value = data.player.centreClearanceTotal;
+                document.getElementById("editHOT").value = data.player.hoTotal;
+                document.getElementById("editHOA").value = data.player.hoAvg;
+                document.getElementById("editDisA").value = data.player.disposalAvg;
+                document.getElementById("editDisT").value = data.player.disposalTotal;
+                document.getElementById("editGoalA").value = data.player.goalsAvg;
+                document.getElementById("editGoalT").value = data.player.goalsTotal;
+                document.getElementById("editMatches").value = data.player.matches;
+                document.getElementById("editTackleA").value = data.player.tackleAvg;
+                document.getElementById("editTackleT").value = data.player.tackleTotal;
+                document.getElementById("editGender").value = data.player.gender;
+
                 document.getElementById("editDiv").style.display = "block";
             }
-            
-            
+
+
         }).fail(function (jqXhr, textStatus, errorThrown) {
-            alert("errorr");
+            alert("error");
         });
 
     }
@@ -2100,7 +2327,7 @@
 
         doc.autoTable({
             headStyles: { fillColor: [0, 75, 141] },
-            columnStyles: { 0: { fillColor: [51, 97, 158], textColor: [255, 255, 255]} }, 
+            columnStyles: { 0: { fillColor: [51, 97, 158], textColor: [255, 255, 255]} },
             head: [headers],
             body: player
         }
