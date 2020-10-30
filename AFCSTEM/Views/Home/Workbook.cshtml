@@ -3667,7 +3667,7 @@
         </h3>
         <br />
 
-        <table id="act15table3">
+        <table id="act15table3" style="width:90%;height:10%">
             <tr style="background-color:#002b5c; color:white;">
                 <th>PLAY <br /> NUMBER</th>
                 <th>STARTING <br /> POSITION (S)</th>
@@ -3717,7 +3717,8 @@
         <br />
         <div onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
         <br />
-        <div id="drawLine">Drawing a point</div>
+        <br/>
+        <b><div id="drawLine">Drawing a point</div></b>
         <br />
         <br />
 
@@ -3729,6 +3730,8 @@
         <input name="quad3q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
         <br />
         <br />
+
+        <button onclick="clearQuad3()">Clear Graph</button>
 
         <div id="quad3div">
             <svg id="quad3" onclick="quadClick(evt)" style="position:relative;left:100px;" width="1100" height="1050">
@@ -3745,9 +3748,9 @@
                 <line x1="430" y1="946" x2="516" y2="946" stroke="green" stroke-wdith="3"></line>
 
                 <g id="quad3group"></g>
+
                 <g id="quad3lines"></g>
-
-
+                <g id="quad3points"></g>
 
             </svg>
         </div>
@@ -5262,7 +5265,10 @@
 
     //to draw a line in quad 3
     function lineDraw(evt) {
-        var e = evt.target;
+        var e = evt.target.parentNode;
+        if (e.getAttribute('id') != "quad3") {
+            e = evt.target.parentNode.parentNode;
+        }
         var dim = e.getBoundingClientRect();
 
         var x = evt.clientX - dim.left;
@@ -5295,7 +5301,12 @@
     function quadClick(evt) {
 
 
-        var e = evt.target;
+        var e = evt.target.parentNode;
+        if (e.getAttribute('id') != "quad3") {
+            e = evt.target.parentNode.parentNode;
+        }
+
+        console.log(e);
         var dim = e.getBoundingClientRect();
         var x = evt.clientX - dim.left;
         var y = evt.clientY - dim.top;
@@ -5329,37 +5340,37 @@
             if (playColour == "blue") {
                 if (playText == "(-1,-1)") {
                     if (!play2s) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text2);
                         play2s = true;
                     }
                 }
                 if (playText == "(-6,-3)") {
                     if (!play21) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
                         text2.textContent = "1X"
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text2);
                         play21 = true;
                     }
                 }
 
                 if (playText == "(-6,-7)") {
                     if (!play22) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
                         text2.textContent = "2X"
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text2);
                         play22 = true;
                     }
                 }
 
                 if (playText == "(-2,-7)") {
                     if (!play2f) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text2);
                         play2f = true;
                     }
                 }
@@ -5373,36 +5384,36 @@
                 if (playText == "(7,9)") {
                     console.log(playText);
                     if (!play3s) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text2);
                         play3s = true;
                     }
                 }
                 if (playText == "(4,7)") {
                     if (!play31) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
                         text2.textContent = "1X"
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text2);
                         play31 = true;
                     }
                 }
                 if (playText == "(2,1)") {
                     if (!play32) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
                         text2.textContent = "2X"
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text2);
                         play32 = true;
                     }
 
                 }
                 if (playText == "(8,0)") {
                     if (!play3f) {
-                        document.getElementById('quad3').appendChild(text);
-                        document.getElementById('quad3').appendChild(rect);
-                        document.getElementById('quad3').appendChild(text2);
+                        document.getElementById('quad3points').appendChild(text);
+                        document.getElementById('quad3points').appendChild(rect);
+                        document.getElementById('quad3points').appendChild(text2);
                         play3f = true;
                     }
 
@@ -5617,6 +5628,31 @@
 
 
 
+    }
+
+    function clearQuad3() {
+        var lines = document.getElementById("quad3lines");
+        var points = document.getElementById("quad3points");
+
+        while (lines.firstChild) {
+    
+            lines.removeChild(lines.lastChild);
+        }
+
+
+        while (points.firstChild) {
+            points.removeChild(points.lastChild);
+        }
+
+
+        play2s = false;
+        play21 = false;
+        play22 = false;
+        play2f = false;
+        play3s = false;
+        play31 = false;
+        play32 = false;
+        play3f = false;
     }
 
     var act5P1Check = false;
