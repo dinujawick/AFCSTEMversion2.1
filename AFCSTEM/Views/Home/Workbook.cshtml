@@ -74,13 +74,13 @@
     }
 
 
-    #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act12table1 td, #act12table1 th, #act12table2 td, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act16table1 td,
+    #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act12table1 td, #act12table1 th, #act12table2 td, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
     #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td, #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td, #act17table6 td {
         border: 1px solid black;
     }
 
     #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input, #act12table2 input,
-    #act13table1 input, #act15table1 input, #act15table2 input, #act15table3 input, #act15table4 input, #act16table1 input, #act16table2 input, #act16table3 input, #act16table4 input, #act16table5 input, #act16table6 input, #act17table1 input, #act17table2 input, #act17table3 input, #act17table4 input, #act17table5 input, #act17table6 input {
+    #act13table1 input, #act15table1 input, #act15table2 input, #act15table3 input, #act15table4 input, #act16table1 input, #act16table2 input, #act16table3 input, #act16table4 input, #act16table5 input, #act16table6 input, #act17table1 input, #act17table2 input, #act17table3 input, #act17table4 input, #act15table5 input, #act17table5 input, #act17table6 input {
         border: none;
         width: 100%;
     }
@@ -2978,7 +2978,7 @@
             </b>
 
         </p>
-        <label style="float:right" for="foleyImg">ANGELA FOLEY</label>
+        <label style="float:right;margin-top:30%" for="foleyImg">ANGELA FOLEY</label>
         <img name="foleyImg" id="foleyImg" style="margin-bottom:10px;left:100px;width:30%;height:30%;" src="~/images/Workbooklet/foleyImg.jpg" />
 
         <table style="width:90%" id="act12table2">
@@ -3040,7 +3040,7 @@
         </p>
         <label for="act13q1"> Explain why you multiply the area measurements (front x width) by 2.</label>
         <br />
-        <textarea rows="2" style="width:100%"></textarea>
+        <textarea id="act13q1" rows="2" style="width:100%"></textarea>
         <br />
         <br />
         <table style="width:90%" id="act13table1">
@@ -3078,23 +3078,33 @@
         <br />
         <label for="act13q2">Rank Wayne's, Ailish's and your Total Tackle Zone in order from largest to smallest.</label>
         <br />
-        <table style="width:100%;">
+        <table id="act13table2" style="width:100%;">
             <tr>
                 <td>
-                    <input type="text" /><br />
-                    Largest
+                    <input type="text" />
+                
                 </td>
                 <td><input type="text" /></td>
                 <td>
                     <input type="text" />
-                    <br />Smallest
+                 
                 </td>
+            </tr>
+            <tr style="border:none">
+                <td>Largest</td>
+                <td></td>
+                <td>Smallest</td>
             </tr>
         </table>
 
         <img id="wayneImg" src="~/images/Workbooklet/wayneImg.png" />
         <br />
         <br />
+
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act13btn1" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity13P1(this.id),checkActivity13(),loadBar()">Check Activity!!</button>
+        </div>
+        <br/>
         <br />
         <br />
     </div>
@@ -3154,16 +3164,19 @@
             you perceive
         </label>
         <br />
-        <textarea rows="3" style="width:100%"></textarea>
+        <textarea id="act14text1" rows="3" style="width:100%"></textarea>
         <br />
         <label for="act14q2">
             Imagine an unnamed player’s height of 201cm and weight 105kg. Predict the position they would play. <br />
             Explain your prediction.
         </label>
         <br />
-        <textarea rows="3" style="width:100%"></textarea>
+        <textarea id="act14text2" rows="3" style="width:100%"></textarea>
         <br />
-
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act14btn1" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity14P1(this.id),checkActivity14(),loadBar()">Check Activity!!</button>
+        </div>
     </div>
 </div>
 
@@ -3270,7 +3283,10 @@
         <textarea id="act14con" rows="2"></textarea>
 
         <br />
-
+        <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act14btn2" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity14P2(this.id),checkActivity14(),loadBar()">Check Activity!!</button>
+        </div>
 
 
 
@@ -3314,13 +3330,13 @@
         MEAN is the average of the numbers.
         <br />
         <label for="act14q3">1. Add up the heights:</label>
-        <input name="act14q3" type="number" style="width:60%" />
+        <input id="act14q3"name="act14q3" type="number" style="width:60%" />
         <br />
         <label for="act14q4">2. Divide the total by how many player's were used:</label>
-        <input name="act14q4" type="number" style="width:30%" />
+        <input   id="act14q4" name="act14q4" type="number" style="width:30%" />
         <br />
         <label for="act14q5">3. The MEAN is:</label>
-        <input name="act14q5" type="number" style="width:60%" />
+        <input   id="act14q5" name="act14q5" type="number" style="width:60%" />
 
         <br />
         <br />
@@ -3328,11 +3344,11 @@
         <br />
         <label for="act14q6">1. Put the nuymber (heights) in order (smallest to largest):</label>
         <br />
-        <input name="act14q6" type="text" style="width:100%" />
+        <input  id="act14q6" name="act14q6" type="text" style="width:100%" />
         <br />
         2. Circle the middle number <br />
         <label for="act14q7">3. The MEDIAN is</label>
-        <input name="act14q7" type="number" style="width:60%" />
+        <input   id="act14q7" name="act14q7" type="number" style="width:60%" />
         <br />
         <br />
         MODE is when a number appears most frequently in a set of numbers.
@@ -3342,17 +3358,21 @@
         <br />
         <br />
         RANGE is the difference between the largest and smallest value
+
         <br />
         <label for="act14q8">1. Largest Height:</label>
-        <input name="act14q8" type="number" style="width:60%" />
+        <input   id="act14q8" name="act14q8" type="number" style="width:60%" />
         <br />
         <label for="act14q9">2. Smallest Height:</label>
-        <input name="act14q9" type="number" style="width:60%" />
+        <input  id="act14q9" name="act14q9" type="number" style="width:60%" />
         <br />
         <label for="act14q10">3. The RANGE is:</label>
-        <input name="act14q10" type="number" style="width:60%" />
+        <input   id="act14q10" name="act14q10" type="number" style="width:60%" />
 
-
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act14btn3" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity14P3(this.id),checkActivity14(),loadBar()">Check Activity!!</button>
+        </div>
     </div>
 </div>
 <br/>
@@ -3377,10 +3397,10 @@
             using your knowledge of AFL positions. <br />
         </h3>
         <label style="position:relative;left:300px" for="quad1q1">Quadrant</label>
-        <input name="quad1q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input id="quad1q1" name="quad1q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad1q2">Quadrant</label>
-        <input name="quad1q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
+        <input id="quad1q2" name="quad1q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
 
 
@@ -3448,10 +3468,10 @@
         </div>
 
         <label style="position:relative;left:300px" for="quad1q3">Quadrant</label>
-        <input name="quad1q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input id="quad1q3" name="quad1q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad1q4">Quadrant</label>
-        <input name="quad1q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
+        <input id="quad1q4" name="quad1q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
         <br />
 
@@ -3496,6 +3516,12 @@
         </table>
 
 
+        <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act15btn1" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P1(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
+        </div>
+
+
 
 
 
@@ -3524,10 +3550,10 @@
         </h3>
 
         <label style="position:relative;left:300px" for="quad1q1">Quadrant</label>
-        <input name="quad2q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input id="quad2q1" name="quad2q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad1q2">Quadrant</label>
-        <input name="quad2q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
+        <input id="quad2q2" name="quad2q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
 
 
@@ -3601,10 +3627,10 @@
         </div>
 
         <label style="position:relative;left:300px" for="quad2q3">Quadrant</label>
-        <input name="quad2q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input id="quad2q3" name="quad2q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad2q4">Quadrant</label>
-        <input name="quad2q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
+        <input id="quad2q4" name="quad2q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
         <br />
         <p style="position:relative">Scale: 1 Square = 10 metres</p>
@@ -3645,6 +3671,11 @@
 
 
         </table>
+        <br/>
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act15btn2" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P2(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
+        </div>
+
     </div>
 </div>
 
@@ -3717,17 +3748,17 @@
         <br />
         <div onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
         <br />
-        <br/>
+        <br />
         <b><div id="drawLine">Drawing a point</div></b>
         <br />
         <br />
 
         <br />
         <label style="position:relative;left:300px" for="quad3q1">Quadrant</label>
-        <input name="quad3q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input id="quad3q1" name="quad3q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad3q2">Quadrant</label>
-        <input name="quad3q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
+        <input id="quad3q2" name="quad3q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
         <br />
         <br />
 
@@ -3756,14 +3787,16 @@
         </div>
         <br />
         <label style="position:relative;left:300px" for="quad3q3">Quadrant</label>
-        <input name="quad3q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input  id="quad3q3"name="quad3q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad3q4">Quadrant</label>
-        <input name="quad3q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
+        <input id="quad3q4" name="quad3q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
         <br />
         <br />
 
-
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act15btn3" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P3(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
+        </div>
 
 
 
@@ -3872,7 +3905,9 @@
         <br />
         <br />
 
-
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act15btn4" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P4(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
+        </div>
     </div>
 </div>
 
@@ -3893,7 +3928,7 @@
             RECORD SHEET: GAME 2 <br />
 
         </h3>
-        <table style="width:90%" id="act15table4">
+        <table style="width:90%" id="act15table5">
             <tr style="background-color:#002b5c; color:white;">
                 <th>TURN NUMBER</th>
                 <th>COORDINATE <br /> FROM DICE</th>
@@ -3989,9 +4024,12 @@
         <br />
         <label for="q15rule">Describe your new rule:</label>
         <br />
-        <textarea name="q15rule" style="width:90%" rows="3"></textarea>
+        <textarea id="q15rule"name="q15rule" style="width:90%" rows="3"></textarea>
         <br />
         <br />
+        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+            <button id="act15btn5" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P5(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
+        </div>
     </div>
 </div>
 
@@ -5690,6 +5728,20 @@
             total++;
         }
 
+        if (act13Check) {
+            width += 6.25;
+            total++;
+        }
+        if (act14Check) {
+            width += 6.25;
+            total++;
+        }
+        if (act15Check) {
+            width += 6.25;
+            total++;
+        }
+
+
 
         document.getElementById("myBarNum").innerHTML = total * 6.25 + "%";
         elem.style.width = width + "%";
@@ -5780,9 +5832,15 @@
         if (checkTableBool) {
             act10P2Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
 
 
@@ -5822,9 +5880,15 @@
         if (checkTableBool && text1 != "" & text2 != "") {
             act10P1Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
     }
 
@@ -5862,9 +5926,15 @@
         if (checkTableBool && text1 != "") {
             act10P3Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
     }
 
@@ -5873,6 +5943,9 @@
         if (act10P1Check && act10P2Check && act10P3Check) {
             act10Check = true;
             document.getElementById("act10bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 10 Completed!");
+            }
         }
     }
 
@@ -5912,9 +5985,15 @@
         if (checkTableBool && text1 != "" && text2 != "") {
             act11P1Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
     }
 
@@ -6019,6 +6098,9 @@
         if (act11P1Check) {
             act11Check = true;
             document.getElementById("act11bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 11 Completed!");
+            }
         }
     }
 
@@ -6092,7 +6174,7 @@
         else {
             document.getElementById(id).style.color = "red";
             if (pageLoad) {
-                alert("Completed Correctly!")
+                alert("Please Complete The Answers!")
             }
         }
     }
@@ -6131,9 +6213,15 @@
         if (checkTableBool && text1 != "") {
             act12P1Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
     }
     function checkActivity12P2(id) {
@@ -6158,17 +6246,394 @@
         if (checkTableBool ) {
             act12P2Check = true;
             document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
         }
         else {
             document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
         }
     }
+
+
+
     function checkActivity12() {
         if (act12P1Check && act12P2Check) {
             act12Check = true;
             document.getElementById("act12bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 12 Completed!");
+            }
         }
     }
+
+    var act13P1Check = false;
+    var act13Check = false;
+
+
+    function checkActivity13P1(id) {
+        var table = document.getElementById("act13table1");
+        var table2 = document.getElementById("act13table2");
+        var q1 = document.getElementById("act13q1").value;
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+
+
+        
+        }//end
+
+        for (var i = 0, row; row = table2.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table2.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+
+
+            if (checkTableBool && q1 != "") {
+                act13P1Check = true;
+                document.getElementById(id).style.color = "green";
+                if (pageLoad) {
+                    alert("Completed Correctly!");
+                }
+            }
+            else {
+                document.getElementById(id).style.color = "red";
+                if (pageLoad) {
+                    alert("Please Complete the answers!");
+                }
+            }
+        }
+    
+
+
+
+    function checkActivity13() {
+        if (act13P1Check) {
+            act13Check = true;
+            document.getElementById("act13bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 13 Completed!");
+            }
+        }
+    }
+
+
+    var act14P1Check = false;
+    var act14P2Check = false; 
+    var act14P3Check = false;
+
+    var act14Check = false;
+
+
+
+    function checkActivity14P1(id) {
+        var text1 = document.getElementById("act14text1").value;
+        var text2 = document.getElementById("act14text2").value;
+
+
+        if (text1 != "" && text2 != "") {
+            act14P1Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+    function checkActivity14P2(id) {
+        var text = document.getElementById("act14con").value;
+
+
+
+        if (text != "" && LairdC != 0 && HartiC != 0 && TaliaC != 0 && SmithC != 0 && SloaneC != 0 && CrouchC != 0 && GibbC != 0 && MckayC != 0) {
+            act14P2Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers, remember to plot the players onto the graph!");
+            }
+        }
+
+    }
+
+
+    function checkActivity14P3(id) {
+        var q3 = document.getElementById("act14q3").value;
+        var q4 = document.getElementById("act14q4").value;
+        var q5 = document.getElementById("act14q5").value;;
+        var q6 = document.getElementById("act14q6").value;;
+        var q7 = document.getElementById("act14q7").value;;
+        var q8 = document.getElementById("act14q8").value;;
+        var q9 = document.getElementById("act14q9").value;;
+        var q10 = document.getElementById("act14q10").value;
+
+
+        if (q3 != "" && q4 != "" && q5 != "" && q6 != "" && q7 != "" && q8 != "" && q9 != "" && q10 != "") {
+            act14P3Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+
+    }
+
+    function checkActivity14() {
+        if (act14P1Check == true && act14P2Check == true && act14P3Check == true) {
+            act14Check = true;
+            document.getElementById("act14bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 14 Completed!");
+            }
+        }
+    }
+
+
+    var act15P1Check = false;
+    var act15P2Check = false;
+    var act15P3Check = false;
+    var act15P4Check = false;
+    var act15P5Check = false;
+    var act15Check = false;
+
+
+    function checkActivity15P1(id) {
+        var table = document.getElementById("act15table1");
+        var q1  = document.getElementById("quad1q1").value;
+        var q2 = document.getElementById("quad1q2").value;
+        var q3 = document.getElementById("quad1q3").value;
+        var q4 = document.getElementById("quad1q4").value;
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+        if (checkTableBool == true && q1 == "1" && q2 == "2" && q3 == "3" && q4 == "4") {
+            act15P1Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the Coordinates! Remember to fill in the quadrant labels!");
+            }
+        }
+            
+    }
+
+    function checkActivity15P2(id) {
+
+        var table = document.getElementById("act15table2");
+        var q1 = document.getElementById("quad2q1").value;
+        var q2 = document.getElementById("quad2q2").value;
+        var q3 = document.getElementById("quad2q3").value;
+        var q4 = document.getElementById("quad2q4").value;
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+        if (checkTableBool == true && q1 == "1" && q2 == "2" && q3 == "3" && q4 == "4") {
+            act15P2Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the Coordinates! Remember to fill in the quadrant labels!");
+            }
+        }
+
+
+
+    }
+
+    function checkActivity15P3(id) {
+        var q1 = document.getElementById("quad3q1").value;
+        var q2 = document.getElementById("quad3q2").value;
+        var q3 = document.getElementById("quad3q3").value;
+        var q4 = document.getElementById("quad3q4").value;
+
+
+        if (q1 == "1" && q2 == "2" && q3 == "3" && q4 == "4" && play2s && play21 && play22 && play2f && play3s && play31 && play32 && play3f) {
+            act15P3Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Draw the coordinates! Remember to fill in the quadrant labels!");
+            }
+        }
+
+    }
+    function checkActivity15P4(id) {
+        var table = document.getElementById("act15table4");
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (checkTableBool) {
+            act15P4Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+
+
+
+
+    }
+
+    function checkActivity15P5(id) {
+        var table = document.getElementById("act15table5");
+        var text = document.getElementById("q15rule").value;
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (checkTableBool && text != "") {
+            act15P5Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+
+
+
+
+    }
+
+    function checkActivity15() {
+        if (act15P1Check == true && act15P2Check == true && act15P3Check == true && act15P4Check == true && act15P5Check == true) {
+            act15Check = true;
+            document.getElementById("act15bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 15 Completed!");
+            }
+        
+        }
+    }
+
+  
 
 
 
