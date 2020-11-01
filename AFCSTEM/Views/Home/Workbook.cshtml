@@ -180,7 +180,8 @@
             else if (player.Position == "MID")
             {
                 mid.Add(player);
-            }else if (player.Position == "RUCK")
+            }
+            else if (player.Position == "RUCK")
             {
                 ruck.Add(player);
             }
@@ -191,354 +192,410 @@
         }
     }
 }
-    <style>
-        .row {
+<style>
+    .row {
+        width: 100%;
+    }
+
+    .containRow {
+        margin-top: 80px;
+        border: solid 8px #ffd200;
+    }
+
+    .containInside {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 100%;
+    }
+
+    table {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h3 {
+        color: #002b5c;
+        margin-left: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #col1 {
+        text-align: center;
+        font-size: 20px;
+        width: 10%;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
+
+    #act1Table1, #act1Table3 {
+        border-collapse: separate;
+    }
+
+    .dot {
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        padding-top: 5px;
+        font-size: 25px;
+        background-color: #ffffff;
+    }
+
+    #act1Field {
+        background-image: url('../images/Football_Oval-01.jpg');
+        background-size: 100% 100%;
+        height: 450px;
+    }
+
+    #act1-P2R1 {
+        padding-top: 100px;
+        padding-left: 175px;
+    }
+
+    #act1-P2R2 {
+        padding-top: 45px;
+        padding-left: 140px;
+    }
+
+    #act1-P2R3 {
+        padding-top: 45px;
+        padding-left: 175px;
+    }
+
+    .forward {
+        border: solid 5px #ffd200;
+        font-weight: bold;
+    }
+
+    .midfield {
+        border: solid 5px #e31937;
+        font-weight: bold;
+    }
+
+    .defender {
+        border: solid 5px #002b5c;
+        font-weight: bold;
+    }
+
+    #int {
+        margin-left: 20px;
+        background-color: #ffffff;
+        border: solid 5px black;
+        font-weight: bold;
+    }
+
+    #forward, #midfield, #interchange, #defender {
+        width: 30%;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        height: 35px;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
+
+    #TexImage {
+        position: relative;
+        float: left;
+        width: 35%;
+        height: 45%;
+    }
+
+    #ebImage {
+        position: relative;
+        width: 30%;
+        height: 50%;
+        float: right;
+        margin-right: 10px;
+    }
+
+    #act10table3 {
+        float: left;
+    }
+
+    #goalpic {
+        float: right;
+        width: 45%;
+        height: 45%;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
+    #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
+    #c20, #c21 {
+        border: solid 5px #002b5c;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        color: #33619e;
+    }
+
+    #coinTable td, #texTable td {
+        color: #002b5c;
+    }
+
+    #coin, #coin2 {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+        #coin div, #coin2 div {
             width: 100%;
-        }
-
-        .containRow {
-            margin-top: 80px;
-            border: solid 8px #ffd200;
-        }
-
-        .containInside {
-            margin-left: 10px;
-            margin-right: 10px;
-            width: 100%;
-        }
-
-        table {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        h3 {
-            color: #002b5c;
-            margin-left: 5px;
-            width: 100%;
-            text-align: center;
-        }
-
-        #col1 {
-            text-align: center;
-            font-size: 20px;
-            width: 10%;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
-
-        #act1Table1, #act1Table3 {
-            border-collapse: separate;
-        }
-
-        .dot {
-            height: 55px;
-            width: 55px;
+            height: 100%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
             border-radius: 50%;
-            display: inline-block;
-            text-align: center;
-            padding-top: 5px;
-            font-size: 25px;
-            background-color: #ffffff;
+            -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
         }
 
-        #act1Field {
-            background-image: url('../images/Football_Oval-01.jpg');
-            background-size: 100% 100%;
-            height: 450px;
+    .side-a {
+        background-image: url('../images/Workbooklet/coinheads.PNG');
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+
+    .side-b {
+        background-image: url('../images/Workbooklet/cointails.PNG');
+    }
+
+    #coin, #coin2 {
+        transition: -webkit-transform 1s ease-in;
+        -webkit-transform-style: preserve-3d;
+    }
+
+        #coin div, #coin2 div {
+            position: absolute;
+            -webkit-backface-visibility: hidden;
         }
 
-        #act1-P2R1 {
-            padding-top: 100px;
-            padding-left: 175px;
+    .side-a {
+        z-index: 100;
+    }
+
+    .side-b {
+        -webkit-transform: rotateY(-180deg);
+    }
+
+    #coin.heads {
+        -webkit-animation: flipHeads 3s ease-out forwards;
+        -moz-animation: flipHeads 3s ease-out forwards;
+        -o-animation: flipHeads 3s ease-out forwards;
+        animation: flipHeads 3s ease-out forwards;
+    }
+
+    #coin.tails {
+        -webkit-animation: flipTails 3s ease-out forwards;
+        -moz-animation: flipTails 3s ease-out forwards;
+        -o-animation: flipTails 3s ease-out forwards;
+        animation: flipTails 3s ease-out forwards;
+    }
+
+    #coin2.heads {
+        -webkit-animation: flipHeads 3s ease-out forwards;
+        -moz-animation: flipHeads 3s ease-out forwards;
+        -o-animation: flipHeads 3s ease-out forwards;
+        animation: flipHeads 3s ease-out forwards;
+    }
+
+    #coin2.tails {
+        -webkit-animation: flipTails 3s ease-out forwards;
+        -moz-animation: flipTails 3s ease-out forwards;
+        -o-animation: flipTails 3s ease-out forwards;
+        animation: flipTails 3s ease-out forwards;
+    }
+
+    @@keyframes flipHeads {
+        from {
+            -webkit-transform: rotateY(0);
+            -moz-transform: rotateY(0);
+            transform: rotateY(0);
         }
 
-        #act1-P2R2 {
-            padding-top: 45px;
-            padding-left: 140px;
+        to {
+            -webkit-transform: rotateY(1800deg);
+            -moz-transform: rotateY(1800deg);
+            transform: rotateY(1800deg);
+        }
+    }
+
+    @@keyframes flipTails {
+        from {
+            -webkit-transform: rotateY(0);
+            -moz-transform: rotateY(0);
+            transform: rotateY(0);
         }
 
-        #act1-P2R3 {
-            padding-top: 45px;
-            padding-left: 175px;
+        to {
+            -webkit-transform: rotateY(1980deg);
+            -moz-transform: rotateY(1980deg);
+            transform: rotateY(1980deg);
         }
+    }
 
-        .forward {
-            border: solid 5px #ffd200;
-            font-weight: bold;
-        }
+    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
+    #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
+    #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
+        text-align: center;
+        padding: 3px;
+        border-width: 3px;
+        border-color: #002b5c;
+        font-size: 20px;
+        height: 10px;
+    }
 
-        .midfield {
-            border: solid 5px #e31937;
-            font-weight: bold;
-        }
+    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
+        color: #ffd200;
+    }
 
-        .defender {
-            border: solid 5px #002b5c;
-            font-weight: bold;
-        }
+    #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
+        color: #e31937;
+    }
 
-        #int {
-            margin-left: 20px;
-            background-color: #ffffff;
-            border: solid 5px black;
-            font-weight: bold;
-        }
+    #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
+        color: #004b8d;
+    }
 
-        #forward, #midfield, #interchange, #defender {
-            width: 30%;
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            height: 35px;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
+    .areaHint {
+        font-size: 20px;
+        color: #0c2037;
+    }
 
-        #TexImage {
-            position: relative;
-            float: left;
-            width: 35%;
-            height: 45%;
-        }
+    .areaLabel {
+        font-size: 18px;
+        color: #002b5c;
+    }
 
-        #ebImage {
-            position: relative;
-            width: 30%;
-            height: 50%;
-            float: right;
-            margin-right: 10px;
-        }
+    #act3Table td {
+        text-align: center;
+        padding: 3px;
+        border-width: 4px;
+        border-color: #002b5c;
+        font-size: 20px;
+    }
 
-        #act10table3 {
-            float: left;
-        }
+    #act3Table th {
+        text-align: center;
+        padding: 3px;
+        border-width: 4px;
+        border-color: #002b5c;
+        background-color: #002b5c;
+        font-size: 20px;
+        color: white;
+    }
 
-        #goalpic {
-            float: right;
-            width: 45%;
-            height: 45%;
-            display: inline-block;
-            margin: 0 auto;
-        }
+    #act6table th {
+        text-align: center;
+        padding: 3px;
+        border: 4px solid #002b5c;
+        background-color: #002b5c;
+        font-size: 20px;
+        color: white;
+    }
 
-        #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
-        #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-        #c20, #c21 {
-            border: solid 5px #002b5c;
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            color: #33619e;
-        }
+    #act6table td {
+        position: relative;
+        border: 4px solid #002b5c;
+        padding: 15px;
+    }
 
-        #coinTable td, #texTable td {
-            color: #002b5c;
-        }
-
-        #coin, #coin2 {
-            position: relative;
-            display: inline-block;
-            margin: 0 auto;
-            width: 100px;
-            height: 100px;
-            cursor: pointer;
-        }
-
-            #coin div, #coin2 div {
-                width: 100%;
-                height: 100%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                border-radius: 50%;
-                -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-                -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-                box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-            }
-
-        .side-a {
-            background-image: url('../images/Workbooklet/coinheads.PNG');
-            background-repeat: no-repeat;
-            background-size: auto;
-        }
-
-        .side-b {
-            background-image: url('../images/Workbooklet/cointails.PNG');
-        }
-
-        #coin, #coin2 {
-            transition: -webkit-transform 1s ease-in;
-            -webkit-transform-style: preserve-3d;
-        }
-
-            #coin div, #coin2 div {
-                position: absolute;
-                -webkit-backface-visibility: hidden;
-            }
-
-        .side-a {
-            z-index: 100;
-        }
-
-        .side-b {
-            -webkit-transform: rotateY(-180deg);
-        }
-
-        #coin.heads {
-            -webkit-animation: flipHeads 3s ease-out forwards;
-            -moz-animation: flipHeads 3s ease-out forwards;
-            -o-animation: flipHeads 3s ease-out forwards;
-            animation: flipHeads 3s ease-out forwards;
-        }
-
-        #coin.tails {
-            -webkit-animation: flipTails 3s ease-out forwards;
-            -moz-animation: flipTails 3s ease-out forwards;
-            -o-animation: flipTails 3s ease-out forwards;
-            animation: flipTails 3s ease-out forwards;
-        }
-
-        #coin2.heads {
-            -webkit-animation: flipHeads 3s ease-out forwards;
-            -moz-animation: flipHeads 3s ease-out forwards;
-            -o-animation: flipHeads 3s ease-out forwards;
-            animation: flipHeads 3s ease-out forwards;
-        }
-
-        #coin2.tails {
-            -webkit-animation: flipTails 3s ease-out forwards;
-            -moz-animation: flipTails 3s ease-out forwards;
-            -o-animation: flipTails 3s ease-out forwards;
-            animation: flipTails 3s ease-out forwards;
-        }
-
-        @@keyframes flipHeads {
-            from {
-                -webkit-transform: rotateY(0);
-                -moz-transform: rotateY(0);
-                transform: rotateY(0);
-            }
-
-            to {
-                -webkit-transform: rotateY(1800deg);
-                -moz-transform: rotateY(1800deg);
-                transform: rotateY(1800deg);
-            }
-        }
-
-        @@keyframes flipTails {
-            from {
-                -webkit-transform: rotateY(0);
-                -moz-transform: rotateY(0);
-                transform: rotateY(0);
-            }
-
-            to {
-                -webkit-transform: rotateY(1980deg);
-                -moz-transform: rotateY(1980deg);
-                transform: rotateY(1980deg);
-            }
-        }
-
-        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
-        #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            font-size: 20px;
-            height: 10px;
-        }
-
-        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
-            color: #ffd200;
-        }
-
-        #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
-            color: #e31937;
-        }
-
-        #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
-            color: #004b8d;
-        }
-
-        .areaHint {
-            font-size: 20px;
-            color: #0c2037;
-        }
-
-        .areaLabel {
-            font-size: 18px;
-            color: #002b5c;
-        }
-
-        #act3Body {
-            text-align: center;
-            padding: 3px;
-            border-width: 4px;
-            border-color: #002b5c;
-            font-size: 20px;
-        }
-
-        #act3head {
-            text-align: center;
-            padding: 3px;
-            border-width: 4px;
-            border-color: #002b5c;
-            background-color: #002b5c;
-            font-size: 20px;
-            color: white;
-        }
-
-        .card {
-            text-align: center;
-            margin-top: 20px;
-            margin-left: 25px;
-            width: 16%;
-            height: auto;
-            border-color: #a38956;
+        #act6table td input {
+            position: absolute;
             display: block;
-            border-radius: 20px;
-            background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
-        .imgs {
-            width: 60%;
-            height: auto;
-            border: 1px solid #a38956;
-            border-radius: 15px;
+    #act6Table2 th {
+        text-align: center;
+        padding: 3px;
+        border: 4px solid #002b5c;
+        background-color: #002b5c;
+        color: white;
+        width: 35%;
+    }
+
+    #act6Table2 td {
+        position: relative;
+        border: 4px solid #002b5c;
+        padding: 15px;
+    }
+
+        #act6Table2 td input {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
-        #act8Table1 th, #act8Table2 th, #act8Table3 th, #act9Table1 th, #act9Table2 th, #act9Table3 th, #act9Table4 th, #act9Table5 th {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            background-color: #002b5c;
-            font-size: 18px;
-            color: white;
-        }
+    .card {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 25px;
+        width: 16%;
+        height: auto;
+        border-color: #a38956;
+        display: block;
+        border-radius: 20px;
+        background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
+    }
 
-        #act8Table1 td, #act8Table2 td, #act8Table3 td, #act9Table1 td, #act9Table3 td {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            font-size: 15px;
-        }
+    .imgs {
+        width: 60%;
+        height: auto;
+        border: 1px solid #a38956;
+        border-radius: 15px;
+    }
 
-        #act9Part3 td, #act9Part1Body td, #act9Part2Body td {
-            position: relative;
-        }
+    #act8Field {
+        background-image: url('../images/unit2/activity8/football_oval.jpg');
+        background-size: 100% 100%;
+        height: 500px;
+    }
 
-        #act8Field {
-            background-image: url('../images/unit2/activity8/football_oval.jpg');
-            background-size: 100% 100%;
-            height: 500px;
-        }
+    #act8Table1 th, #act8Table2 th, #act8Table3 th, #act9Table1 th, #act9Table2 th, #act9Table3 th, #act9Table4 th, #act9Table5 th {
+        text-align: center;
+        padding: 3px;
+        border-width: 3px;
+        border-color: #002b5c;
+        background-color: #002b5c;
+        font-size: 18px;
+        color: white;
+    }
+
+    #act8Table1 td, #act8Table2 td, #act8Table3 td, #act9Table1 td, #act9Table3 td {
+        text-align: center;
+        padding: 3px;
+        border-width: 3px;
+        border-color: #002b5c;
+        font-size: 15px;
+    }
+
+    #act9Part3 td, #act9Part1Body td, #act9Part2Body td {
+        position: relative;
+    }
 
         #act9Part3 td input, #act9Part1Body td input, #act9Part2Body td input {
             position: absolute;
@@ -553,71 +610,70 @@
             box-sizing: border-box;
         }
 
-        #act9Table4 td, #act9Table5 td {
-            text-align: center;
-            border: 3px solid #002b5c;
-            font-size: 18px;
-        }
+    #act9Table4 td, #act9Table5 td {
+        text-align: center;
+        border: 3px solid #002b5c;
+        font-size: 18px;
+    }
 
-        textarea {
-            width: 75%;
-        }
+    textarea {
+        width: 75%;
+    }
 
-        .box {
-            background-color: white;
-            border-radius: 20%;
-            border: 1px solid black;
-            width: 10%;
-            height: 110px;
-            margin-right: 35px;
-            text-align: center;
-            font-size: 18px;
-            padding: 1px;
-        }
+    .box {
+        background-color: white;
+        border-radius: 20%;
+        border: 1px solid black;
+        width: 10%;
+        height: 110px;
+        margin-right: 35px;
+        text-align: center;
+        font-size: 18px;
+        padding: 1px;
+    }
 
-        #act8P1R1 {
-            margin-top: 50px;
-            padding-top: 50px;
-            margin-bottom: 30px;
-            margin-left: 118px;
-            width: 100%;
-        }
+    #act8P1R1 {
+        margin-top: 50px;
+        padding-top: 50px;
+        margin-bottom: 30px;
+        margin-left: 118px;
+        width: 100%;
+    }
 
-        #act8P1R2 {
-            margin-bottom: 30px;
-            margin-left: 118px;
-            width: 100%;
-        }
+    #act8P1R2 {
+        margin-bottom: 30px;
+        margin-left: 118px;
+        width: 100%;
+    }
 
-        #act8P1R3 {
-            width: 100%;
-            margin-left: 118px;
-            
-        }
+    #act8P1R3 {
+        width: 100%;
+        margin-left: 118px;
+    }
 
-        #fwd, #def, #mid {
-            border: 2px solid #ffd200;
-            border-radius: 50%;
-            padding: 3px;
-            background-color: #ffd200;
-            color: white;
-        }
+    #fwd, #def, #mid {
+        border: 2px solid #ffd200;
+        border-radius: 50%;
+        padding: 3px;
+        background-color: #ffd200;
+        color: white;
+    }
 
-        .fwd {
-            background-color: #33619e;
-            color: white;
-        }
+    .fwd {
+        background-color: #33619e;
+        color: white;
+    }
 
-        .mid {
-            background-color: #004b8d;
-            color: white;
-        }
+    .mid {
+        background-color: #004b8d;
+        color: white;
+    }
 
-        .def {
-            background-color: #002b5c;
-            color: white;
-        }
-    </style>
+    .def {
+        background-color: #002b5c;
+        color: white;
+    }
+</style>
 
 
 <div style="">
@@ -745,7 +801,7 @@
             <br />
 
             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                <button class="btn btn-outline-primary" onclick="resetAct1P1('act1Table1', 'act1Table2')" style="margin-right:20px;">Retry</button>    
+                <button class="btn btn-outline-primary" onclick="resetAct1P1('act1Table1', 'act1Table2')" style="margin-right:20px;">Retry</button>
                 <button class="btn btn-outline-primary" onclick="checkActivity1P1('act1Table1', 'act1Table2')">Check Activity!!</button>
             </div>
         </div>
@@ -874,13 +930,13 @@
             <p style="font-size:20px;color:#002b5c;margin-left:10px;margin-bottom:40px;align-self:flex-end;">As a class calculate the area of the Centre Square: </p><br />
         </div>
         <div class="col-md-5">
-            <img src="~/images/Unit1/Activity 2/footy_area_calc.png" alt="area formula" style="width:90%;height:90%;margin-bottom:5px;"/>
+            <img src="~/images/Unit1/Activity 2/footy_area_calc.png" alt="area formula" style="width:90%;height:90%;margin-bottom:5px;" />
         </div>
     </div>
-    
+
     <div class="row containInside">
         <div class="col-md-5">
-            <img src="~/images/Unit1/Activity 2/centre square.PNG" style="width:90%;" />
+            <img id="AreaFormula" src="~/images/Unit1/Activity 2/centre square.PNG" style="width:90%;" />
         </div>
         <div class="col-md-7">
             <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
@@ -913,7 +969,7 @@
             <input type="number" id="widGS" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalGS">GS Area = </label>
-            <input type="number" id="aTotalGS" name="Goal Square Total" onchange="addToSort(this.value, this.name)"/>
+            <input type="number" id="aTotalGS" name="Goal Square Total" onchange="addToSort(this.value, this.name)" />
             <label class="areaLabel">m<sup>2</sup></label>
             <br /><br />
 
@@ -925,7 +981,7 @@
             <input type="number" id="widGP" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalGP">GP Area = </label>
-            <input type="number" id="aTotalGP" name="Goal Post Total" onchange="addToSort(this.value, this.name)"/>
+            <input type="number" id="aTotalGP" name="Goal Post Total" onchange="addToSort(this.value, this.name)" />
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6">
@@ -944,7 +1000,7 @@
             <input type="number" id="widBP" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalBP">BP Area = </label>
-            <input type="number" id="aTotalBP" name="Behind Post Total" onchange="addToSort(this.value, this.name)"/>
+            <input type="number" id="aTotalBP" name="Behind Post Total" onchange="addToSort(this.value, this.name)" />
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6" style="text-align:center;">
@@ -964,7 +1020,7 @@
             <label style="font-size:15px;">Which is the largest?</label>
             <input type="text" id="text1" name="largest" />
             <p style="font-size:15px;">Order the areas from smallest to largest:</p>
-            
+
             <div class="row" style="margin-left: 10px;">
                 <div style="border: 1px solid black;width:125px; height:50px; text-align:center;" ondragover="allowDrop(event)" ondrop="act2Drop(event)">
                     <p id="box1" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)"></p>
@@ -1026,77 +1082,79 @@
     </div>
 </div>
 
+<!--Activity 2: part 4-->
+
 <!--Activity 3: part 1-->
 <div class="row containRow">
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 3 (Exploration Task) </h3>
     <div class="row" style="width:100%;">
         <div class="col-md-12">
-            <table class="table table-bordered" style="text-align:center;">
+            <table class="table table-bordered" id="act3Table" style="text-align:center;">
                 <thead>
                     <tr>
-                        <th id="act3head">AFL GROUND</th>
-                        <th id="act3head">LENGTH</th>
-                        <th id="act3head">WIDTH</th>
-                        <th id="act3head">AREA</th>
-                        <th id="act3head">VENUE CAPACITY</th>
+                        <th>AFL GROUND</th>
+                        <th>LENGTH</th>
+                        <th>WIDTH</th>
+                        <th>AREA</th>
+                        <th>VENUE CAPACITY</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td id="act3Body">MCG (Melbourne)</td>
-                        <td id="act3Body">161m</td>
-                        <td id="act3Body">138m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">100,124</td>
+                        <td>MCG (Melbourne)</td>
+                        <td>161m</td>
+                        <td>138m</td>
+                        <td id="MCGArea"></td>
+                        <td>100,124</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">Marvel (Docklands)</td>
-                        <td id="act3Body">160m</td>
-                        <td id="act3Body">129m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">53,343</td>
+                        <td>Marvel (Docklands)</td>
+                        <td>160m</td>
+                        <td>129m</td>
+                        <td id="MarvelArea"></td>
+                        <td>53,343</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">GMHBA (Geelong)</td>
-                        <td id="act3Body">170m</td>
-                        <td id="act3Body">117m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">36,000</td>
+                        <td>GMHBA (Geelong)</td>
+                        <td>170m</td>
+                        <td>117m</td>
+                        <td id="GMHBAArea"></td>
+                        <td>36,000</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">SCG (Sydney)</td>
-                        <td id="act3Body">155m</td>
-                        <td id="act3Body">136m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">48,000</td>
+                        <td>SCG (Sydney)</td>
+                        <td>155m</td>
+                        <td>136m</td>
+                        <td id="SCGArea"></td>
+                        <td>48,000</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">Spotless (GWS)</td>
-                        <td id="act3Body">164m</td>
-                        <td id="act3Body">128m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">23,500</td>
+                        <td>Spotless (GWS)</td>
+                        <td>164m</td>
+                        <td>128m</td>
+                        <td id="SpotlessArea"></td>
+                        <td>23,500</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">Optus (Perth)</td>
-                        <td id="act3Body">165m</td>
-                        <td id="act3Body">130m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">65,156</td>
+                        <td>Optus (Perth)</td>
+                        <td>165m</td>
+                        <td>130m</td>
+                        <td id="OptusArea"></td>
+                        <td>65,156</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">GABBA (Brisbane)</td>
-                        <td id="act3Body">156m</td>
-                        <td id="act3Body">138m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">41,974</td>
+                        <td>GABBA (Brisbane)</td>
+                        <td>156m</td>
+                        <td>138m</td>
+                        <td id="GabbaArea"></td>
+                        <td>41,974</td>
                     </tr>
                     <tr>
-                        <td id="act3Body">Metricon (Gold Coast)</td>
-                        <td id="act3Body">158m</td>
-                        <td id="act3Body">134m</td>
-                        <td id="act3Body"></td>
-                        <td id="act3Body">27,500</td>
+                        <td>Metricon (Gold Coast)</td>
+                        <td>158m</td>
+                        <td>134m</td>
+                        <td id="MetriconArea"></td>
+                        <td>27,500</td>
                     </tr>
                 </tbody>
             </table>
@@ -1300,7 +1358,9 @@
     </div>
 </div>
 
-<!--Activity 5: part 1-->
+<!--Activity 4: part 1-->
+<!--Activity 4: part 2-->
+
 <div class="row containRow" style="margin-bottom:25px;">
     <h3> SCORING IN AFL: Activity 5 (Exploration Task)</h3>
     <div class="col-md-12">
@@ -1449,9 +1509,9 @@
         of the players.
     </p>
 
-    <div class="col-md-12">
-        <div class="row containInside">
-            <table style="width:80%" id="act6table">
+    <div class="row containInside">
+        <div class="col-md-12">
+            <table style="width:90%" id="act6table">
                 <tr style="background-color:#002b5c; color:white;">
                     <th>NAME:</th>
                     <th>GUERSEY NO:</th>
@@ -1461,50 +1521,64 @@
                     <th>RECRUITED FROM:</th>
                 </tr>
                 <tr>
-                    <td><input size="30" /></td>
-                    <td><input size="3" /></td>
-                    <td><input size="3" /></td>
-                    <td><input size="3" /></td>
-                    <td><input size="3" /></td>
-                    <td><input size="30" /></td>
+                    <td><input /></td>
+                    <td><input /></td>
+                    <td><input /></td>
+                    <td><input /></td>
+                    <td><input /></td>
+                    <td><input /></td>
                 </tr>
             </table>
         </div>
-
-        <br />
-        <button class="btn btn-outline-primary" onclick="addPlayer()" id="addPlayerButton" style="position:relative;float:right;">Click to Add Player</button>
-        <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
-        <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-left:10px;">Get STEM ID's</button>
-        <br /><br />
-
-        <table style="width:25%;" id="act6table">
-            <tr color:white;">
-                <th style="background-color:#002b5c; color:white;">AVERAGE HEIGHT</th>
-                <td><input size="3" /></td>
-                <th style="background-color:#002b5c; color:white;">AVERAGE AGE </th>
-                <td><input size="3" /></td>
-            </tr>
-        </table>
-
-        <br />
-        <p style="font-size:20px;">
-            Australian Football League Womens (AFLW) first started in 2017, in pairs arrange your 10 players in the following orders and answer the questions below. <br />
-            <br /><span style="font-size:18px;"><b>TASK: </b>Arrange your 10 players into debut order, i.e. who was the first to debut in the AFLW to who was the last to debut.</span>
-        </p><br />
-
-        <label for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
-        <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
-        <br />
-        <label for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
-        <textarea name="act6q2" rows="2" style="width:65%;"></textarea>
-        <br /><br />
-        <p style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
-        <label for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
-        <textarea name="act6q3" rows="2" style="width:65%;"></textarea>
-        <br />
-        <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
-        <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
     </div>
+
+    <br />
+
+    <div class="row containInside">
+        <div class="col-md-12">
+            <button class="btn btn-outline-primary" onclick="addPlayer()" id="addPlayerButton" style="position:relative;float:right;">Click to Add Player</button>
+            <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
+            <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-left:10px;">Get My Players</button>
+        </div>
+    </div>
+
+    <br /><br />
+
+    <div class="row containInside">
+        <div class="col-md-12">
+            <table style="width:50%;" id="act6Table2">
+                <tr color:white;">
+                    <th>AVERAGE HEIGHT: </th>
+                    <td><input size="5" /></td>
+                    <th>AVERAGE AGE: </th>
+                    <td><input size="5" /></td>
+                </tr>
+            </table>
+        </div>
+    </div><br /><br />
+
+    <div class="row containInside">
+        <div class="col-md-12">
+            <p style="font-size:20px;">
+                Australian Football League Womens (AFLW) first started in 2017, in pairs arrange your 10 players in the following orders and answer the questions below. <br />
+                <br /><span style="font-size:18px;"><b>TASK: </b>Arrange your 10 players into debut order, i.e. who was the first to debut in the AFLW to who was the last to debut.</span>
+            </p><br />
+
+            <label for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
+            <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
+            <br />
+            <label for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
+            <textarea name="act6q2" rows="2" style="width:65%;"></textarea>
+            <br /><br />
+            <p style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
+            <label for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
+            <textarea name="act6q3" rows="2" style="width:65%;"></textarea>
+            <br />
+            <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
+            <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
+        </div>
+    </div>
+
 </div>
 
 <!--Activity 6: part 2-->
@@ -1595,7 +1669,7 @@
                     @for (int i = 0; i < 2; i++)
                     {
                         Player player = mid[i];
-                        <div class="box mid" id=""><span id="mid">MID</span><br/>@player.Name<br />$ @player.Price</div>
+                        <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
                     }
                     @for (int i = 0; i < 2; i++)
                     {
@@ -1638,7 +1712,7 @@
                     }
                 </div>
             </div>
-            
+
             <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:20px;">
                 <label for="teamTotal">TEAM TOTAL: </label>
                 <input name="team Total" id="teamTotal" type="number" style="text-align:center;margin-left:10px;" />
@@ -2475,6 +2549,7 @@
 <script>
     drawGraph();
 
+    // activity 6 add player function
     var playerCount = 1;
     function addPlayer() {
 
@@ -2543,8 +2618,9 @@
     behindCount = 0;
     missCount = 0;
 
+    // jquery functions
     jQuery(document).ready(function ($) {
-
+        // jquery for activity 10 coin flip
         $('#coin, #coin2').on('click', function () {
             if (coinCount < 10) {
                 coinCount++;
@@ -2615,7 +2691,14 @@
                 }, 100);
             }
         });
+
+        // jquery for actvitiy 2, area formula footy
+        $('#AreaFormula').scroll(function () {
+            $('#AreaFormula').animate({ left: '10px' });
+        });
     });
+
+
 
     //
     function allowDrop(ev) {
@@ -2696,7 +2779,7 @@
         var string = sentence;
         var code = "";
         string = string.split(" ");
-        
+
         for (i = 0; i < string.length; i++) {
             var word = string[i];
             var subcode = word.charAt(0);
@@ -2831,7 +2914,7 @@
 
         stillEmpty = this.check('act1Table1');
 
-        // When greater than 21, the table is fully populated. 
+        // When greater than 21, the table is fully populated.
         if (stillEmpty < 21) {
             //when table still has empty cells
             alert('Please complete filling in the table');
@@ -2887,7 +2970,7 @@
                                 }
                             }
                         }
-                    
+
                     } else {
                         // it shouldn't reach this else
                         console.log("SOMETHING WENT WRONG!!!");
@@ -2915,7 +2998,7 @@
                 }
             }
         }
-        
+
         for (a = 0; a < wrong.length; a++) {
             if (wrong[a] != '') {
                 wrongAnswers.push(wrong[a]);
@@ -2970,7 +3053,7 @@
         }
 
         // 0 = the field is all populated else 1 = field is not fully populated //default = 0
-        if (isEmpty == 0) { 
+        if (isEmpty == 0) {
             for (i = 1; i < row1.childNodes.length; i = i + 2) {
                 var cell = row1.childNodes[i];
 
@@ -3099,7 +3182,7 @@
                 if (window.getComputedStyle(cell).visibility == "hidden") {
                     // the table is empty *the table that has all the positions*
                     isEmpty = isEmpty + 1;
-                } 
+                }
             }
         }
         console.log("is empty " + isEmpty)
@@ -3117,7 +3200,7 @@
 
     // act 2 part 2 function for onchange.
     // adds the area calculated into part 3 sorting challenge
-    function addToSort(inputText, id){
+    function addToSort(inputText, id) {
         var box = document.getElementById('box1');
         var box2 = document.getElementById('box2');
         var box3 = document.getElementById('box3');
