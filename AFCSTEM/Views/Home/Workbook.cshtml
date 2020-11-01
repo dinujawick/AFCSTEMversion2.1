@@ -1,10 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using AFCSTEM.Areas.Identity.Data
+@inject AFCSTEM.Models.IPlayerRepository playerModel
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject AFCSTEM.Models.IWorkbookRepository WorkbookModel
-
-
+@inject AFCSTEM.Models.ITeamRepository TeamModel
 
 
 @{ ViewBag.title = "Student Workbook";
@@ -13,6 +13,7 @@
     var user = await UserManager.GetUserAsync(User);
     var student = User.Identity.Name;
     var team = TeamModel.GetTeam(student);
+    var workbook = WorkbookModel.GetWorkbook(student);
     List<Player> selectedPlayers = new List<Player>();
     Player person;
 
@@ -993,7 +994,7 @@
         background-color: #002b5c;
         color: white;
     }
-</style>
+
     textarea {
         width: 75%;
     }
@@ -1307,9 +1308,9 @@
                         <td class="col2" id="interchange" ondragover="allowDrop(event);" ondrop="drop(event);" hidden></td>
                     </tr>
 
-                    </tbody>
-                </table>
-                <br />
+                </tbody>
+            </table>
+            <br />
 
             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
                 <button class="btn btn-outline-primary" onclick="resetAct1P1('act1Table1', 'act1Table2')" style="margin-right:20px;">Retry</button>
@@ -1613,7 +1614,6 @@
 </div>
 
 <!--Activity 2: part 4-->
-
 <!--Activity 3: part 1-->
 <div class="row containRow" id="act3">
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 3 (Exploration Task) </h3>
@@ -2225,51 +2225,51 @@
             <div id="act8Field">
 
                 <div class="row" id="act8P1R1">
-                    @for (int i = 0; i < 2; i++)
+                    @for (int i = 0; i < 2 && i < forward.Count; i++)
                     {
                         Player player = forward[i];
                         <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
                     }
-                    @for (int i = 0; i < 2; i++)
+                    @for (int i = 0; i < 2 && i < mid.Count; i++)
                     {
                         Player player = mid[i];
                         <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
                     }
-                    @for (int i = 0; i < 2; i++)
+                    @for (int i = 0; i < 2 && i < back.Count; i++)
                     {
                         Player player = back[i];
                         <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
                     }
                 </div>
                 <div class="row" id="act8P1R2">
-                    @for (int i = 2; i < 4; i++)
+                    @for (int i = 2; i < 4 && i < forward.Count; i++)
                     {
                         Player player = forward[i];
                         <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
                     }
-                    @for (int i = 0; i < 2; i++)
+                    @for (int i = 0; i < 2 && i < mid.Count; i++)
                     {
                         Player player = ruck[i];
                         <div class="box mid" id=""><span id="mid">RUCK</span><br />@player.Name<br />$ @player.Price</div>
                     }
-                    @for (int i = 2; i < 4; i++)
+                    @for (int i = 2; i < 4 && i < back.Count; i++)
                     {
                         Player player = back[i];
                         <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
                     }
                 </div>
                 <div class="row" id="act8P1R3">
-                    @for (int i = 4; i < 6; i++)
+                    @for (int i = 4; i < 6 && i < forward.Count; i++)
                     {
                         Player player = forward[i];
                         <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
                     }
-                    @for (int i = 2; i < 4; i++)
+                    @for (int i = 2; i < 4 && i < mid.Count; i++)
                     {
                         Player player = mid[i];
                         <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
                     }
-                    @for (int i = 4; i < 6; i++)
+                    @for (int i = 4; i < 6 && i < back.Count; i++)
                     {
                         Player player = back[i];
                         <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
@@ -3449,12 +3449,12 @@
             <tr>
                 <td>
                     <input type="text" />
-                
+
                 </td>
                 <td><input type="text" /></td>
                 <td>
                     <input type="text" />
-                 
+
                 </td>
             </tr>
             <tr style="border:none">
@@ -3471,7 +3471,7 @@
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
             <button id="act13btn1" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity13P1(this.id),checkActivity13(),loadBar()">Check Activity!!</button>
         </div>
-        <br/>
+        <br />
         <br />
         <br />
     </div>
@@ -3540,7 +3540,7 @@
         <br />
         <textarea id="act14text2" rows="3" style="width:100%"></textarea>
         <br />
-        <br/>
+        <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
             <button id="act14btn1" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity14P1(this.id),checkActivity14(),loadBar()">Check Activity!!</button>
         </div>
@@ -3697,13 +3697,13 @@
         MEAN is the average of the numbers.
         <br />
         <label for="act14q3">1. Add up the heights:</label>
-        <input id="act14q3"name="act14q3" type="number" style="width:60%" />
+        <input id="act14q3" name="act14q3" type="number" style="width:60%" />
         <br />
         <label for="act14q4">2. Divide the total by how many player's were used:</label>
-        <input   id="act14q4" name="act14q4" type="number" style="width:30%" />
+        <input id="act14q4" name="act14q4" type="number" style="width:30%" />
         <br />
         <label for="act14q5">3. The MEAN is:</label>
-        <input   id="act14q5" name="act14q5" type="number" style="width:60%" />
+        <input id="act14q5" name="act14q5" type="number" style="width:60%" />
 
         <br />
         <br />
@@ -3711,11 +3711,11 @@
         <br />
         <label for="act14q6">1. Put the nuymber (heights) in order (smallest to largest):</label>
         <br />
-        <input  id="act14q6" name="act14q6" type="text" style="width:100%" />
+        <input id="act14q6" name="act14q6" type="text" style="width:100%" />
         <br />
         2. Circle the middle number <br />
         <label for="act14q7">3. The MEDIAN is</label>
-        <input   id="act14q7" name="act14q7" type="number" style="width:60%" />
+        <input id="act14q7" name="act14q7" type="number" style="width:60%" />
         <br />
         <br />
         MODE is when a number appears most frequently in a set of numbers.
@@ -3728,22 +3728,22 @@
 
         <br />
         <label for="act14q8">1. Largest Height:</label>
-        <input   id="act14q8" name="act14q8" type="number" style="width:60%" />
+        <input id="act14q8" name="act14q8" type="number" style="width:60%" />
         <br />
         <label for="act14q9">2. Smallest Height:</label>
-        <input  id="act14q9" name="act14q9" type="number" style="width:60%" />
+        <input id="act14q9" name="act14q9" type="number" style="width:60%" />
         <br />
         <label for="act14q10">3. The RANGE is:</label>
-        <input   id="act14q10" name="act14q10" type="number" style="width:60%" />
+        <input id="act14q10" name="act14q10" type="number" style="width:60%" />
 
-        <br/>
+        <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
             <button id="act14btn3" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity14P3(this.id),checkActivity14(),loadBar()">Check Activity!!</button>
         </div>
     </div>
 </div>
-<br/>
-<br/>
+<br />
+<br />
 <div style="width:100%;height:20%;background-color:#f15522;border:none" class="row containRow" id="unit4">
     <div style="margin-left:35%;padding:50px;font-size:32px;color:white">UNIT 4: DISTANCES</div>
 </div>
@@ -4038,7 +4038,7 @@
 
 
         </table>
-        <br/>
+        <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
             <button id="act15btn2" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P2(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
         </div>
@@ -4154,7 +4154,7 @@
         </div>
         <br />
         <label style="position:relative;left:300px" for="quad3q3">Quadrant</label>
-        <input  id="quad3q3"name="quad3q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
+        <input id="quad3q3" name="quad3q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
         <label style="position:relative;left:700px" for="quad3q4">Quadrant</label>
         <input id="quad3q4" name="quad3q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
@@ -4165,9 +4165,9 @@
             <button id="act15btn3" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity15P3(this.id),checkActivity15(),loadBar()">Check Activity!!</button>
         </div>
 
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
 
 
     </div>
@@ -4393,7 +4393,7 @@
         <br />
         <label for="q15rule">Describe your new rule:</label>
         <br />
-        <textarea id="q15rule"name="q15rule" style="width:90%" rows="3"></textarea>
+        <textarea id="q15rule" name="q15rule" style="width:90%" rows="3"></textarea>
         <br />
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -6053,7 +6053,7 @@
         var points = document.getElementById("quad3points");
 
         while (lines.firstChild) {
-    
+
             lines.removeChild(lines.lastChild);
         }
 
@@ -6676,7 +6676,7 @@
             }
 
 
-        
+
         }//end
 
         for (var i = 0, row; row = table2.rows[i]; i++) {
@@ -6710,7 +6710,7 @@
                 }
             }
         }
-    
+
 
 
 
@@ -6726,7 +6726,7 @@
 
 
     var act14P1Check = false;
-    var act14P2Check = false; 
+    var act14P2Check = false;
     var act14P3Check = false;
 
     var act14Check = false;
@@ -6857,7 +6857,7 @@
                 alert("Please Complete the Coordinates! Remember to fill in the quadrant labels!");
             }
         }
-            
+
     }
 
     function checkActivity15P2(id) {
@@ -7009,11 +7009,11 @@
             if (pageLoad) {
                 alert("Activity 15 Completed!");
             }
-        
+
         }
     }
 
-  
+
 
 
 
