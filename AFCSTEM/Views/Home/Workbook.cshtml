@@ -1188,13 +1188,11 @@
     </table>
 </div>
 
-
-<!--Activity 1: part 1-->
-
-
 <div style="width:100%;height:20%;background-color:#ffd200;border:none" class="row containRow" id="unit1">
     <div style="margin-left:25%;padding:50px;font-size:32px;">UNIT 1: INTRODUCTION TO AFL</div>
 </div>
+
+<!--Activity 1: part 1-->
 <div class="row containRow" id="act1">
     <h3>AFL Positions: Activity 1 (Class Activity/Discussion)</h3>
     <p style="margin-left:10px;">
@@ -1313,7 +1311,7 @@
             <br />
 
             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                <button class="btn btn-outline-primary" onclick="resetAct1P1('act1Table1', 'act1Table2')" style="margin-right:20px;">Retry</button>
+                <button class="btn btn-outline-primary" onclick="resetAct1P1('act1Table1', 'act1Table2')" style="margin-right:20px;">Retry wrong answers</button>
                 <button class="btn btn-outline-primary" onclick="checkActivity1P1('act1Table1', 'act1Table2')">Check Activity!!</button>
             </div>
         </div>
@@ -7241,6 +7239,7 @@
         var table2 = document.getElementById(id2);
 
         stillEmpty = this.check('act1Table1');
+        console.log(stillEmpty);
 
         // When greater than 21, the table is fully populated.
         if (stillEmpty < 21) {
@@ -7314,6 +7313,7 @@
         var table2 = document.getElementById(table2);
         var wrong = [];
         var wrongAnswers = [];
+        var wrongANSIndex = 0;
 
         for (i = 0; i < table2.rows.length; i++) {
             var row = table2.rows[i];
@@ -7337,12 +7337,16 @@
             var row = table1.rows[x];
             for (y = 0; y < row.cells.length; y++) {
                 var cell = row.cells[y];
-                if (wrongAnswers.indexOf(cell.innerHTML) != -1) {
-                    cell.style.visibility = 'visible';
+                if (cell.innerHTML == '' && wrongANSIndex < wrongAnswers.length) {
+                    cell.innerHTML = wrongAnswers[wrongANSIndex];
+                    wrongANSIndex++;
+                    console.log(wrongANSIndex);
                 }
             }
         }
 
+        console.log(wrongAnswers);
+        console.log("This is the new testing");
     }
 
     // Method for activity 1, part 2 to check if the players in the field are in correct positions
@@ -7507,10 +7511,15 @@
             var row = table.rows[i];
             for (j = 0; j < row.cells.length; j++) {
                 var cell = row.cells[j]
-                if (window.getComputedStyle(cell).visibility == "hidden") {
-                    // the table is empty *the table that has all the positions*
+
+                if (cell.innerHTML == '') {
                     isEmpty = isEmpty + 1;
                 }
+
+                //if (window.getComputedStyle(cell).visibility == "hidden") {
+                    // the table is empty *the table that has all the positions*
+                  //  isEmpty = isEmpty + 1;
+                //}
             }
         }
         console.log("is empty " + isEmpty)
