@@ -18,6 +18,11 @@ namespace AFCSTEM.Models
         public float Act2CSArea { get; set; }
 
         public float Act2CSLength { get; set; }
+        public string Act1Row1 { get; set; }
+        public string Act1Row2 { get; set; }
+        public string Act1Row3 { get; set; }
+        public string Act1Row4 { get; set; }
+        public string Act1Table3 { get; set; }
 
 
 

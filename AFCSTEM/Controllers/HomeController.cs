@@ -6,24 +6,33 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AFCSTEM.Models;
+using Microsoft.Extensions.Hosting;
+
+
+using Microsoft.EntityFrameworkCore;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace AFCSTEM.Controllers
 {
     public class HomeController : Controller
     {
+        
         private readonly IPlayerRepository _playerRepository;
         private readonly IWorkbookRepository _workbookRepository;
-
+        private readonly IHostingEnvironment _hostEnviroment;
         private readonly ITeamRepository _teamRepository;
+        
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IPlayerRepository playerRepository, ILogger<HomeController> logger, ITeamRepository teamRepository, IWorkbookRepository workbook)
+        public HomeController(IPlayerRepository playerRepository, ILogger<HomeController> logger, ITeamRepository teamRepository, IWorkbookRepository workbook,IHostingEnvironment hostEnviroment )
         {
             _logger = logger;
             _playerRepository = playerRepository;
             _teamRepository = teamRepository;
             _workbookRepository = workbook;
+            this._hostEnviroment = hostEnviroment;
         }
 
 
@@ -104,7 +113,7 @@ namespace AFCSTEM.Controllers
         
         [HttpPost]
         public IActionResult SubmitWorkbook(string studentID,
-            string act1table1, string act1table2, float cswidth1, float cslength1, float csarea1)
+            string act1table1, string act1table2, float cswidth1, float cslength1, float csarea1, string act1table3, string act1row1, string act1row2, string act1row3, string act1row4)
         {
 
             Workbook workbook = _workbookRepository.GetWorkbook(studentID);
@@ -115,7 +124,7 @@ namespace AFCSTEM.Controllers
             }
             else
             {
-                _workbookRepository.UpdateWorkbookActivity(workbook, act1table1, act1table2, cswidth1, cslength1, csarea1);
+                _workbookRepository.UpdateWorkbookActivity(workbook, act1table1, act1table2, cswidth1, cslength1, csarea1,act1table3,act1row1,act1row2,act1row3,act1row4);
             }
             return Json(new { success = "Workbook Saved" });
         }
@@ -157,13 +166,34 @@ namespace AFCSTEM.Controllers
         public IActionResult UpdatePlayer(string name, string Position, int Price, int Height, int Age, double KickAvg, int KickTotal, double HandballAvg, int HandballTotal, double DisposalAvg, int DisposalTotal, double MarksAvg, int MarksTotal, double HOAvg,
           int HOTotal, double ClearanceAvg, int ClearanceTotal, double CentreClearanceAvg, int CentreClearanceTotal, double TackleAvg, int TackleTotal, double GoalsAvg, int GoalsTotal, double BehindsAvg, int BehindsTotal, int Matches,string Gender)
         {
+
+           
             Player player = _playerRepository.getPlayerByName(name);
+
+
 
             _playerRepository.updatePlayer(player, Position, Price, Height, Age, KickAvg, KickTotal, HandballAvg, HandballTotal, DisposalAvg, DisposalTotal, MarksAvg, MarksTotal, HOAvg,
           HOTotal, ClearanceAvg, ClearanceTotal, CentreClearanceAvg, CentreClearanceTotal, TackleAvg, TackleTotal, GoalsAvg, GoalsTotal, BehindsAvg, BehindsTotal, Matches,Gender);
           
 
             return Json(new { success = "player updated" });
+        }
+
+        [HttpPost]
+        public async Task<bool> ImagePost(IFormFile ufile)
+        {
+            if (ufile != null && ufile.Length > 0)
+            {
+                var fileName = Path.GetFileName(ufile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\images\Players\", fileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await ufile.CopyToAsync(fileStream);
+                }
+                return true;
+            }
+            return false;
+
         }
 
 
