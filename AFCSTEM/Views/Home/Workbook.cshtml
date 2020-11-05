@@ -196,13 +196,23 @@
     }
 }
 <style>
+    @@font-face {
+        font-family: Industry_inc_base;
+        src: url('fort_foundry_industry_inc_base.otf') format('opentype');
+    }
+
     .row {
         width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     .containRow {
-        margin-top: 80px;
-        border: solid 8px #ffd200;
+        /*margin-top: 5px;*/
+        /*border: solid 8px #ffd200;*/
+        border-top: solid 8px #ffd200;
+        font-family: Industry_inc_base;
+        background-color: gainsboro;
     }
 
     .containInside {
@@ -263,6 +273,7 @@
 
     h3 {
         color: #002b5c;
+        margin-top: 15px;
         margin-left: 5px;
         width: 100%;
         text-align: center;
@@ -517,10 +528,6 @@
         border-color: #002b5c;
         color: #33619e;
     }
-
-
-
-
 
     #act10table3 {
         float: left;
@@ -1314,222 +1321,280 @@
     </div>
 </div>
 
-<!--Activity 1: part 2-->
-<div class="row containRow">
-    <h3>AFL Positions: Activity 1 (Exploration Task)</h3>
-    <p style="font-size: 20px;margin-left:5px;">
-        Abbreviations can be used to shorten a word, in this case we have made abbreviations for the positions on an AFL Field.
-        For Example: Forward Pocket = FP
-    </p>
-    <br />
-    <div class="col-md-12">
-        <div id="act1Field">
-            <div class="row" id="act1-P2R1">
-                <div class="dot forward" id="FP" style="margin-right:60px;margin-top:15px;margin-left:15px;">FP</div>
-                <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;"></div>
-                <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-30px;"></div>
-                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:65px;"></div>
-                <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;"></div>
-                <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style=""></div>
-            </div>
-            <div class="row" id="act1-P2R2">
-                <div class="dot forward" id="FF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:145px;margin-top:-75px;"></div>
-                <div class="dot forward" id="CHF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-75px;"></div>
-                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-100px;"></div>
-                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-25px;"></div>
-                <div class="dot defender" id="CHB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-75px;"></div>
-                <div class="dot defender" id="FB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-75px;"></div>
-            </div>
-            <div class="row" id="act1-P2R3">
-                <div class="dot forward" id="FP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:60px;margin-top:-65px;margin-left:15px;"></div>
-                <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
-                <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-95px;"></div>
-                <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:150px;"></div>
-                <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
-                <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-50px;"></div>
-            </div>
-        </div>
-        <div class="row" id="act1-P2R4" style="width:100%;display:flex;justify-content:center;align-items:center;">
-            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-            <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-        </div>
-        <br />
-        <p style="font-size: 20px;">
-            <b>
-                Using the abbreviations in the table below, label the 22 starting
-                positions on the AFL field by dragging them into the correct position
-            </b>
-        </p>
-        <br />
-        <div class="row">
-            <table class="table table-bordered" id="act1Table3">
-                <tbody>
-                    <tr>
-                        <td rowspan="2" style="color:#004b8d;background-color:#ffd200; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">FORWARDS</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos1">Forward Pocket (FP)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos2">Full Forward (FF)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos3">Forward Pocket (FP)</td>
-                    </tr>
-                    <tr>
-                        <td draggable="true" ondragstart="drag(event);" id="pos4">Half Forward Flank (HFF)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos5">Centre Half Forward (CHF)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos6">Half Forward Flank (HFF)</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" style="color:#004b8d;background-color:#e31937; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">MIDFIELDERS</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos7">Ruck (R)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos8">Centre (C)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos9">Ruck Rover (RR)</td>
-                    </tr>
-                    <tr>
-                        <td draggable="true" ondragstart="drag(event);" id="pos10">Wing (W)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos11">Rover (R)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos12">Wing (W)</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" style="color:white;background-color:#002b5c; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">DEFENDERS</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos13">Half Bank Flank (HBF)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos14">Centre Half Back (CHB)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos15">Half Bank Flank (HBF)</td>
-                    </tr>
-                    <tr>
-                        <td draggable="true" ondragstart="drag(event);" id="pos16">Back Pocket (BP)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos17">Full Back (FB)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos18">Back Pocket (BP)</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" style="border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">Interchange</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos19">Interchange 1 (IP1)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos20">Interchange 2 (IP2)</td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos21">Interchange 3 (IP3)</td>
-                    </tr>
-                    <tr>
-                        <td style="border-color:white;"></td>
-                        <td draggable="true" ondragstart="drag(event);" id="pos22">Interchange 4 (IP4)</td>
-                        <td style="border-color:white;"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <br />
-        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button class="btn btn-outline-primary" onclick="resetAct1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4', 'act1Table3');" style="margin-right:20px;">Retry</button>
-            <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
-        </div>
+<!--LOGO-->
+<div class="row" style="margin-bottom:5px;margin-top:50px;">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <img src="~/images/Header_Footer/Optus_ACF_Partner.png" style="width:90%;"/>
     </div>
 </div>
 
+<!--Activity 1: part 2-->
+<div class="row containRow" style="margin-top:5px;font-family:Industry_inc_base;background-color:gainsboro;">
+    <h3 style="text-align:left;margin-left:35px;margin-top:15px;"><b>AFL Positions: Activity 1</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
+
+    <div style="border:solid 1px grey;margin-left:20px;margin-bottom:20px;margin-right:20px;background-color:white;">
+
+        <p style="font-size: 20px;margin-left:10px;margin-right:10px;">
+            Abbreviations can be used to shorten a word, in this case we have made abbreviations for the positions on an AFL Field.
+            For Example: Forward Pocket = FP
+        </p>
+        <br />
+        <div class="col-md-12">
+            <div id="act1Field">
+                <div class="row" id="act1-P2R1">
+                    <div class="dot forward" id="FP" style="margin-right:60px;margin-top:15px;margin-left:15px;">FP</div>
+                    <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;"></div>
+                    <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-30px;"></div>
+                    <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:65px;"></div>
+                    <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;"></div>
+                    <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style=""></div>
+                </div>
+                <div class="row" id="act1-P2R2">
+                    <div class="dot forward" id="FF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:145px;margin-top:-75px;"></div>
+                    <div class="dot forward" id="CHF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-75px;"></div>
+                    <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-100px;"></div>
+                    <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-25px;"></div>
+                    <div class="dot defender" id="CHB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-75px;"></div>
+                    <div class="dot defender" id="FB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-75px;"></div>
+                </div>
+                <div class="row" id="act1-P2R3">
+                    <div class="dot forward" id="FP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:60px;margin-top:-65px;margin-left:15px;"></div>
+                    <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
+                    <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-95px;"></div>
+                    <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:150px;"></div>
+                    <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
+                    <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-50px;"></div>
+                </div>
+            </div>
+            <div class="row" id="act1-P2R4" style="width:100%;display:flex;justify-content:center;align-items:center;">
+                <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+                <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+                <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+                <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+            </div>
+            <br />
+            <p style="font-size: 20px;">
+                <b>
+                    Using the abbreviations in the table below, label the 22 starting
+                    positions on the AFL field by dragging them into the correct position
+                </b>
+            </p>
+            <br />
+            <div class="row containInside">
+                <table class="table table-bordered" id="act1Table3">
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" style="color:#004b8d;background-color:#ffd200; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">FORWARDS</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos1">Forward Pocket (FP)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos2">Full Forward (FF)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos3">Forward Pocket (FP)</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true" ondragstart="drag(event);" id="pos4">Half Forward Flank (HFF)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos5">Centre Half Forward (CHF)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos6">Half Forward Flank (HFF)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="color:#004b8d;background-color:#e31937; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">MIDFIELDERS</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos7">Ruck (R)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos8">Centre (C)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos9">Ruck Rover (RR)</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true" ondragstart="drag(event);" id="pos10">Wing (W)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos11">Rover (R)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos12">Wing (W)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="color:white;background-color:#002b5c; border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">DEFENDERS</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos13">Half Bank Flank (HBF)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos14">Centre Half Back (CHB)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos15">Half Bank Flank (HBF)</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true" ondragstart="drag(event);" id="pos16">Back Pocket (BP)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos17">Full Back (FB)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos18">Back Pocket (BP)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="border-width:3px; text-align:center;font-size:20px; border-color:#002b5c;">Interchange</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos19">Interchange 1 (IP1)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos20">Interchange 2 (IP2)</td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos21">Interchange 3 (IP3)</td>
+                        </tr>
+                        <tr>
+                            <td style="border-color:white;"></td>
+                            <td draggable="true" ondragstart="drag(event);" id="pos22">Interchange 4 (IP4)</td>
+                            <td style="border-color:white;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+                <button class="btn btn-outline-primary" onclick="resetAct1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4', 'act1Table3');" style="margin-right:20px;">Retry</button>
+                <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
 <!--Activity 2: part 1-->
-<div class="row containRow" id="act2">
-    <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Class Activity / Discussion)</h3><br />
-    <p style="font-size:20px;color:#002b5c; margin-left:10px;">
-        An AFL field has many regions that we can calculate the area of, below are a couple of examples of these regions:
-    </p>
-    <div class="row containInside">
-        <img src="~/images/Unit1/Activity 2/goals.PNG" alt="Goals" style="width: 45%;margin-left:20px" />
-        <img src="~/images/Unit1/Activity 2/Oval.PNG" alt="Oval" style="width: 45%; margin-left:15px;" />
-    </div>
-    <div class="row containInside">
-        <div class="col-md-7" style="display:flex;">
-            <p style="font-size:20px;color:#002b5c;margin-left:10px;margin-bottom:40px;align-self:flex-end;">As a class calculate the area of the Centre Square: </p><br />
-        </div>
-        <div class="col-md-5">
-            <img src="~/images/Unit1/Activity 2/footy_area_calc.png" alt="area formula" style="width:90%;height:90%;margin-bottom:5px;" />
+<div style="border:solid 8px #ffd200;margin-top:20px;">
+    <!--Header with Logo-->
+    <div class="row" style="width:100%;">
+        <div class="col-md-12" style="margin-left:-15px;margin-bottom:0px;">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
     </div>
 
-    <div class="row containInside">
-        <div class="col-md-5">
-            <img id="AreaFormula" src="~/images/Unit1/Activity 2/centre square.PNG" style="width:90%;" />
-        </div>
-        <div class="col-md-7">
-            <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
-            <p class="areaHint">CS Area = Length x Width</p>
+    <!--Activity-->
+    <div class="row containRow" id="act2" style="font-family:Industry_inc_base;background-color:gainsboro;margin-top:0px;">
+        <h3 style="text-align:left;margin-left:35px;"><b>MEASUREMENT OF AFL GROUNDS: Activity 2</b><br /><span style="font-size:20px;">(Class Activity / Discussion)</span></h3><br />
 
-            <label class="areaLabel" for="lenCS">CS Area = </label>
-            <input type="number" id="lenCS" name="Length" onchange="saveWorkbook()" />
-            <label class="areaLabel" for="widCS">m x</label>
-            <input type="number" id="widCS" name="Width" onchange="saveWorkbook()" />
-            <label class="areaLabel">m</label><br />
-            <label class="areaLabel" for="aTotalCS">CS Area = </label>
-            <input type="number" id="aTotalCS" name="Total" onchange="saveWorkbook()" />
-            <label class="areaLabel">m<sup>2</sup></label>
-        </div>
-        <br />
-        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button id="act2p1btn" class="btn btn-outline-primary" onclick="checkActivity2P1(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
-        </div>
-        <br />
-        <br />
+        <div style="border:solid 1px grey;margin-left:20px;margin-bottom:20px;margin-right:20px;background-color:white;">
 
+            <p style="font-size:20px;color:#002b5c; margin-left:10px;">
+                An AFL field has many regions that we can calculate the area of, below are a couple of examples of these regions:
+            </p>
+            <div class="row containInside">
+                <img src="~/images/Unit1/Activity 2/goals.PNG" alt="Goals" style="width: 45%;margin-left:20px" />
+                <img src="~/images/Unit1/Activity 2/Oval.PNG" alt="Oval" style="width: 45%; margin-left:15px;" />
+            </div>
+            <div class="row containInside">
+                <div class="col-md-7" style="display:flex;">
+                    <p style="font-size:20px;color:#002b5c;margin-left:10px;margin-bottom:40px;align-self:flex-end;">As a class calculate the area of the Centre Square: </p><br />
+                </div>
+                <div class="col-md-5">
+                    <img src="~/images/Unit1/Activity 2/footy_area_calc.png" alt="area formula" style="width:90%;height:90%;margin-bottom:5px;" />
+                </div>
+            </div>
+            <div class="row containInside">
+                <div class="col-md-5">
+                    <img id="AreaFormula" src="~/images/Unit1/Activity 2/centre square.PNG" style="width:90%;" />
+                </div>
+                <div class="col-md-7">
+                    <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
+                    <p class="areaHint">CS Area = Length x Width</p>
+
+                    <label class="areaLabel" for="lenCS">CS Area = </label>
+                    <input type="number" id="lenCS" name="Length" onchange="saveWorkbook()" />
+                    <label class="areaLabel" for="widCS">m x</label>
+                    <input type="number" id="widCS" name="Width" onchange="saveWorkbook()" />
+                    <label class="areaLabel">m</label><br />
+                    <label class="areaLabel" for="aTotalCS">CS Area = </label>
+                    <input type="number" id="aTotalCS" name="Total" onchange="saveWorkbook()" />
+                    <label class="areaLabel">m<sup>2</sup></label>
+                </div>
+                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act2p1btn" class="btn btn-outline-primary" onclick="checkActivity2P1(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!--Footer-->
+    <div class="row" style="">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
+
 </div>
 
 <!--Activity 2: part 2-->
-<div class="row containRow">
-    <br />
-    <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Exploration Task)</h3><br />
-    <div class="row containInside">
-        <div class="col-md-6">
-            <p style="color:#002b5c;"><b>GOAL SQUARE AREA (GS AREA)</b></p>
-            <p class="areaHint">GS Area = Length x Width</p>
-
-            <label class="areaLabel" for="lenGS">GS Area = </label>
-            <input type="number" id="lenGS" name="Length" />
-            <label class="areaLabel" for="widGS">m x</label>
-            <input type="number" id="widGS" name="Width" />
-            <label class="areaLabel">m</label><br />
-            <label class="areaLabel" for="aTotalGS">GS Area = </label>
-            <input type="number" id="aTotalGS" name="Goal Square Total" onchange="addToSort(this.value, this.name)" />
-            <label class="areaLabel">m<sup>2</sup></label>
-            <br /><br />
-
-            <p style="color:#002b5c;"><b>GOAL POST AREA (GP AREA)</b></p>
-            <p class="areaHint">GP Area = Length x Width</p>
-            <label class="areaLabel" for="lenGP">GP Area = </label>
-            <input type="number" id="lenGP" name="Length" />
-            <label class="areaLabel" for="widGP">m x</label>
-            <input type="number" id="widGP" name="Width" />
-            <label class="areaLabel">m</label><br />
-            <label class="areaLabel" for="aTotalGP">GP Area = </label>
-            <input type="number" id="aTotalGP" name="Goal Post Total" onchange="addToSort(this.value, this.name)" />
-            <label class="areaLabel">m<sup>2</sup></label>
-        </div>
-        <div class="col-md-6">
-            <img src="~/images/Unit1/Activity 2/goals.PNG" alt="goals" style="width:80%; margin-left:18px;" />
+<div style="border:solid 8px #ffd200;margin-top:20px;">
+    <!--Logo-->
+    <div class="row" style="width:100%;">
+        <div class="col-md-12" style="margin-left:-15px;margin-bottom:0px;">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
     </div>
 
-    <div class="row containInside" style="margin-top:10px;width:100%;">
-        <div class="col-md-6">
-            <p style="color:#002b5c;"><b>BEHIND POST AREA (BP AREA)</b></p>
-            <p class="areaHint">BP Area = Length x Width</p>
+    <!--Activity-->
+    <div class="row containRow">
+        <h3 style="text-align:left;margin-left:35px;"><b>MEASUREMENT OF AFL GROUNDS: Activity 2</b><br /><span style="font-size:20px;">(Exploration Task)</span></h3><br />
 
-            <label class="areaLabel" for="lenBP">BP Area = </label>
-            <input type="number" id="lenBP" name="Length" />
-            <label class="areaLabel" for="widBP">m x</label>
-            <input type="number" id="widBP" name="Width" />
-            <label class="areaLabel">m</label><br />
-            <label class="areaLabel" for="aTotalBP">BP Area = </label>
-            <input type="number" id="aTotalBP" name="Behind Post Total" onchange="addToSort(this.value, this.name)" />
-            <label class="areaLabel">m<sup>2</sup></label>
+        <div style="border:solid 1px grey;margin-left:20px;margin-bottom:20px;margin-right:20px;background-color:white;">
+
+            <div class="row containInside">
+                <div class="col-md-7">
+                    <p style="color:#002b5c;"><b>GOAL SQUARE AREA (GS AREA)</b></p>
+                    <p class="areaHint">GS Area = Length x Width</p>
+
+                    <label class="areaLabel" for="lenGS">GS Area = </label>
+                    <input type="number" id="lenGS" name="Length" />
+                    <label class="areaLabel" for="widGS">m x</label>
+                    <input type="number" id="widGS" name="Width" />
+                    <label class="areaLabel">m</label><br />
+                    <label class="areaLabel" for="aTotalGS">GS Area = </label>
+                    <input type="number" id="aTotalGS" name="Goal Square Total" onchange="addToSort(this.value, this.name)" />
+                    <label class="areaLabel">m<sup>2</sup></label>
+                    <br /><br />
+
+                    <p style="color:#002b5c;"><b>GOAL POST AREA (GP AREA)</b></p>
+                    <p class="areaHint">GP Area = Length x Width</p>
+                    <label class="areaLabel" for="lenGP">GP Area = </label>
+                    <input type="number" id="lenGP" name="Length" />
+                    <label class="areaLabel" for="widGP">m x</label>
+                    <input type="number" id="widGP" name="Width" />
+                    <label class="areaLabel">m</label><br />
+                    <label class="areaLabel" for="aTotalGP">GP Area = </label>
+                    <input type="number" id="aTotalGP" name="Goal Post Total" onchange="addToSort(this.value, this.name)" />
+                    <label class="areaLabel">m<sup>2</sup></label>
+                </div>
+                <div class="col-md-5">
+                    <img src="~/images/Unit1/Activity 2/goals.PNG" alt="goals" style="width:80%; margin-left:23px;" />
+                </div>
+            </div>
+
+            <div class="row containInside" style="margin-top:10px;width:100%;">
+                <div class="col-md-7">
+                    <p style="color:#002b5c;"><b>BEHIND POST AREA (BP AREA)</b></p>
+                    <p class="areaHint">BP Area = Length x Width</p>
+
+                    <label class="areaLabel" for="lenBP">BP Area = </label>
+                    <input type="number" id="lenBP" name="Length" />
+                    <label class="areaLabel" for="widBP">m x</label>
+                    <input type="number" id="widBP" name="Width" />
+                    <label class="areaLabel">m</label><br />
+                    <label class="areaLabel" for="aTotalBP">BP Area = </label>
+                    <input type="number" id="aTotalBP" name="Behind Post Total" onchange="addToSort(this.value, this.name)" />
+                    <label class="areaLabel">m<sup>2</sup></label>
+                </div>
+                <div class="col-md-5" style="text-align:center;">
+                    <img src="~/images/Unit1/Activity 2/goal square.PNG" alt="goal square" style="width:25%;" />
+                </div>
+                <br />
+                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act2p2btn" class="btn btn-outline-primary" onclick="checkActivity2P2(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
+                </div>
+                
+                
+            </div>
+
         </div>
-        <div class="col-md-6" style="text-align:center;">
-            <img src="~/images/Unit1/Activity 2/goal square.PNG" alt="goal square" style="width:25%;" />
-        </div>
-        <br />
-        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button id="act2p2btn" class="btn btn-outline-primary" onclick="checkActivity2P2(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
-        </div>
-        <br />
-        <br />
+
     </div>
+
+    <!--Footer-->
+    <div class="row" style="">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
+
 </div>
 
+
+
 <!--Activity 2: part 3-->
-<div class="row containRow">
+<div class="row containRow" style="margin-top:20px;">
     <h3>MEASUREMENT OF AFL GROUNDS: Activity 2 (Extension / Group Work Challenge)</h3>
     <div class="row containInside">
         <div class="col-md-12">
@@ -1608,7 +1673,9 @@
 </div>
 
 <!--Activity 2: part 4-->
-<div></div>
+<div class="row">
+
+</div>
 
 <!--Activity 3: part 1-->
 <div class="row containRow" id="act3">
@@ -1912,9 +1979,9 @@
     <div class="row containInside">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <img src="~/images/Unit1/Activity 4/Annes_Angles.png" alt="Anne's Angle" style="width:100%;"/>
+            <img src="~/images/Unit1/Activity 4/Annes_Angles.png" alt="Anne's Angle" style="width:100%;" />
         </div>
-        
+
     </div>
 
     <div class="row containInside">
@@ -1930,8 +1997,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                         <td><input type="number" /></td>
                     </tr>
                 </tbody>
@@ -1953,7 +2020,7 @@
     <p>
         <span style="color:green;">PRACTICAL EXTENSION: AFC Goal Bonanza</span><br />
         Using the answers below: <br /><br />
-        ANSWER 10 Angles: 
+        ANSWER 10 Angles:
     </p>
 
     <div class="row containInside">
@@ -2018,42 +2085,42 @@
                 <tbody>
                     <tr>
                         <td>Goal 10</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                         <td>Goal 5</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                     </tr>
                     <tr>
                         <td>Goal 9</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                         <td>Goal 4</td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
                         <td><input type="number" /></td>
                     </tr>
                     <tr>
                         <td>Goal 8</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                         <td>Goal 3</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                     </tr>
                     <tr>
                         <td>Goal 7</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                         <td>Goal 2</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                     </tr>
                     <tr>
                         <td>Goal 6</td>
-                        <td><input type="number"/></td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
                         <td>Goal 1</td>
-                        <td><input type="number"/></td>
+                        <td><input type="number" /></td>
                         <td><input type="number" /></td>
                     </tr>
                     <tr>
@@ -2065,12 +2132,12 @@
             </table>
         </div>
     </div>
-    
+
     <div class="row containInside">
         <p>In AFL is there more chance of scoring a goal or a behind? Why? Explain your results.</p><br />
         <textarea rows="3" style="width:65%;"></textarea>
     </div>
-    
+
 </div>
 
 <!--Activity 5: part 1-->
