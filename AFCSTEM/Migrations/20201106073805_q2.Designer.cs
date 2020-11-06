@@ -4,14 +4,16 @@ using AFCSTEM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201106073805_q2")]
+    partial class q2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -253,70 +255,6 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("Act2t5");
 
                     b.Property<string>("Act2text1");
-
-                    b.Property<string>("act3q4");
-
-                    b.Property<string>("act3q5");
-
-                    b.Property<string>("act3q6");
-
-                    b.Property<string>("act3q7");
-
-                    b.Property<string>("act3q8");
-
-                    b.Property<string>("crowdCapacity");
-
-                    b.Property<float>("gArea");
-
-                    b.Property<float>("gLength");
-
-                    b.Property<float>("gWidth");
-
-                    b.Property<float>("gmhArea");
-
-                    b.Property<float>("gmhLength");
-
-                    b.Property<float>("gmhWidth");
-
-                    b.Property<string>("largestArea");
-
-                    b.Property<float>("mcgArea");
-
-                    b.Property<float>("mcgLength");
-
-                    b.Property<float>("mcgWidth");
-
-                    b.Property<float>("metArea");
-
-                    b.Property<float>("metLength");
-
-                    b.Property<float>("metWidth");
-
-                    b.Property<float>("msArea");
-
-                    b.Property<float>("msLength");
-
-                    b.Property<float>("msWidth");
-
-                    b.Property<float>("osArea");
-
-                    b.Property<float>("osLength");
-
-                    b.Property<float>("osWidth");
-
-                    b.Property<float>("scgArea");
-
-                    b.Property<float>("scgLength");
-
-                    b.Property<float>("scgWidth");
-
-                    b.Property<string>("smallestArea");
-
-                    b.Property<float>("ssArea");
-
-                    b.Property<float>("ssLength");
-
-                    b.Property<float>("ssWidth");
 
                     b.HasKey("StudentId");
 

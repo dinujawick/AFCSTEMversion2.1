@@ -200,6 +200,8 @@
         width: 100%;
     }
 
+ 
+
     .containRow {
         margin-top: 80px;
         border: solid 8px #ffd200;
@@ -1474,24 +1476,24 @@
             <p class="areaHint">GS Area = Length x Width</p>
 
             <label class="areaLabel" for="lenGS">GS Area = </label>
-            <input type="number" id="lenGS" name="Length" />
+            <input  onchange="saveWorkbook()"type="number" id="lenGS" name="Length" />
             <label class="areaLabel" for="widGS">m x</label>
-            <input type="number" id="widGS" name="Width" />
+            <input onchange="saveWorkbook()" type="number" id="widGS" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalGS">GS Area = </label>
-            <input type="number" id="aTotalGS" name="Goal Square Total" onchange="addToSort(this.value, this.name)" />
+            <input type="number" id="aTotalGS" name="Goal Square Total"  onchange="addToSort(this.value, this.name), saveWorkbook()"  />
             <label class="areaLabel">m<sup>2</sup></label>
             <br /><br />
 
             <p style="color:#002b5c;"><b>GOAL POST AREA (GP AREA)</b></p>
             <p class="areaHint">GP Area = Length x Width</p>
             <label class="areaLabel" for="lenGP">GP Area = </label>
-            <input type="number" id="lenGP" name="Length" />
+            <input onchange="saveWorkbook()" type="number" id="lenGP" name="Length" />
             <label class="areaLabel" for="widGP">m x</label>
-            <input type="number" id="widGP" name="Width" />
+            <input onchange="saveWorkbook()" type="number" id="widGP" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalGP">GP Area = </label>
-            <input type="number" id="aTotalGP" name="Goal Post Total" onchange="addToSort(this.value, this.name)" />
+            <input type="number" id="aTotalGP" name="Goal Post Total" onchange="addToSort(this.value, this.name), saveWorkbook()" />
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6">
@@ -1505,12 +1507,12 @@
             <p class="areaHint">BP Area = Length x Width</p>
 
             <label class="areaLabel" for="lenBP">BP Area = </label>
-            <input type="number" id="lenBP" name="Length" />
+            <input  onchange="saveWorkbook()"type="number" id="lenBP" name="Length" />
             <label class="areaLabel" for="widBP">m x</label>
-            <input type="number" id="widBP" name="Width" />
+            <input onchange="saveWorkbook()" type="number" id="widBP" name="Width" />
             <label class="areaLabel">m</label><br />
             <label class="areaLabel" for="aTotalBP">BP Area = </label>
-            <input type="number" id="aTotalBP" name="Behind Post Total" onchange="addToSort(this.value, this.name)" />
+            <input  type="number" id="aTotalBP" name="Behind Post Total"  onchange="addToSort(this.value, this.name), saveWorkbook()"  />
             <label class="areaLabel">m<sup>2</sup></label>
         </div>
         <div class="col-md-6" style="text-align:center;">
@@ -1534,30 +1536,30 @@
             <p style="font-size:20px;"><b>Analysis: </b></p>
 
             <label style="font-size:15px;">Which is the largest?</label>
-            <input type="text" id="text1" name="largest" />
+            <input  onchange="saveWorkbook()" type="text" id="text1" name="largest" />
             <p style="font-size:15px;">Order the areas from smallest to largest:</p>
 
             <div class="row" style="margin-left: 10px;">
                 <div style="border: 1px solid black;width:125px; height:50px; text-align:center;" ondragover="allowDrop(event)" ondrop="act2Drop(event)">
-                    <p id="box1" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)"></p>
+                    <p id="box1" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)" ></p>
                 </div>
                 <div style="border: 1px solid black;width:125px; height:50px; margin-right: 20px; margin-left:20px; text-align:center;" ondragover="allowDrop(event)" ondrop="act2Drop(event)">
-                    <p id="box2" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)"></p>
+                    <p id="box2" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)" ></p>
                 </div>
                 <div style="border: 1px solid black;width:125px; height:50px; text-align:center;" ondragover="allowDrop(event)" ondrop="act2Drop(event)">
-                    <p id="box3" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)"></p>
+                    <p id="box3" style="width:100%;height:100%;padding-top:10px;" draggable="true" ondragstart="drag(event)" ></p>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="rof">
                 <div style="margin-left: 50px;">Smallest</div>
                 <div style="margin-left: 240px;">Largest</div>
             </div>
 
             <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
-            <textarea id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
             <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
-            <textarea id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
             <br /><br />
             <p style="font-size:20px;">Calculate the area of your Goal Square:</p>
@@ -1565,12 +1567,12 @@
             <p class="areaHint">GS Area = Length x Width</p>
 
             <label class="areaLabel" for="lenGS2">GS Area = </label>
-            <input type="number" id="lenGS2" name="Length" />
+            <input onchange="saveWorkbook()" type="number" id="lenGS2" name="Length" />
             <label class="areaLabel" for="widGS2">m x</label>
-            <input type="number" id="widGS2" name="Width" />
+            <input onchange="saveWorkbook()" type="number" id="widGS2" name="Width" />
             <label class="areaLabel"> m</label><br />
             <label class="areaLabel" for="aTotalGS2">GS Area = </label>
-            <input type="number" id="aTotalGS2" name="Total" />
+            <input onchange="saveWorkbook()" type="number" id="aTotalGS2" name="Total" />
             <label class="areaLabel"> m<sup>2</sup></label>
 
             <br /><br />
@@ -1689,12 +1691,12 @@
             <p class="areaLabel">MCG Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">MCG AREA = &#189 X </label>
-            <input type="number" id="mcgLength" name="MCG Length" />
+            <input onchange="saveWorkbook()" type="number" id="mcgLength" name="MCG Length" />
             <label class="areaLabel" for="mcgLength"> X &#189 X </label>
-            <input type="number" id="mcgWidth" name="MCG Width" />
+            <input onchange="saveWorkbook()" type="number" id="mcgWidth" name="MCG Width" />
             <label class="areaLabel" for="mcgWidth"> X π</label><br />
             <label class="areaLabel" for="mcgArea">MCG AREA = </label>
-            <input type="number" id="mcgArea" name="MCG Area" style="margin-left:38px;" />
+            <input onchange="saveWorkbook()" type="number" id="mcgArea" name="MCG Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/MCG.png" alt="MCG" style="width:70%;" />
@@ -1708,12 +1710,12 @@
             <p class="areaHint">MS Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">MS AREA = &#189 X </label>
-            <input type="number" id="msLength" name="MS Length" />
+            <input onchange="saveWorkbook()" type="number" id="msLength" name="MS Length" />
             <label class="areaLabel" for="msLength"> X &#189 X </label>
-            <input type="number" id="msWidth" name="MS Width" />
+            <input onchange="saveWorkbook()" type="number" id="msWidth" name="MS Width" />
             <label class="areaLabel" for="msWidth"> X π</label><br />
             <label class="areaLabel" for="msArea">MS AREA = </label>
-            <input type="number" id="msArea" name="MS Area" style="margin-left:38px;" />
+            <input onchange="saveWorkbook()" type="number" id="msArea" name="MS Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/Bulldogs stadium.png" alt="Marvel Stadium" style="width:70%;" />
@@ -1727,12 +1729,12 @@
             <p class="areaHint">GMH Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">GMH AREA = &#189 X </label>
-            <input type="number" id="gmhLength" name="GMH Length" />
+            <input onchange="saveWorkbook()"type="number" id="gmhLength" name="GMH Length" />
             <label class="areaLabel" for="gmhLength"> X &#189 X </label>
-            <input type="number" id="gmhWidth" name="GMH Width" />
+            <input onchange="saveWorkbook()" type="number" id="gmhWidth" name="GMH Width" />
             <label class="areaLabel" for="gmhWidth"> X π</label><br />
             <label class="areaLabel" for="gmhArea">MS AREA = </label>
-            <input type="number" id="gmhArea" name="GMH Area" style="margin-left:52px;" />
+            <input onchange="saveWorkbook()" type="number" id="gmhArea" name="GMH Area" style="margin-left:52px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/GMBH.png" alt="GMHBA Stadium" style="width:70%;" />
@@ -1746,12 +1748,12 @@
             <p class="areaHint">SCG Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">SCG AREA = &#189 X </label>
-            <input type="number" id="scgLength" name="SCG Length" />
+            <input onchange="saveWorkbook()" type="number" id="scgLength" name="SCG Length" />
             <label class="areaLabel" for="scgLength"> X &#189 X </label>
-            <input type="number" id="scgWidth" name="SCG Width" />
+            <input onchange="saveWorkbook()" type="number" id="scgWidth" name="SCG Width" />
             <label class="areaLabel" for="scgWidth"> X π</label><br />
             <label class="areaLabel" for="scgArea">SCG AREA = </label>
-            <input type="number" id="scgArea" name="SCG Area" style="margin-left:38px;" />
+            <input onchange="saveWorkbook()" type="number" id="scgArea" name="SCG Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/SCG.png" alt="SCG" style="width:70%;" />
@@ -1765,12 +1767,12 @@
             <p class="areaHint">SS Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">SS AREA = &#189 X </label>
-            <input type="number" id="ssLength" name="SS Length" />
+            <input onchange="saveWorkbook()" type="number" id="ssLength" name="SS Length" />
             <label class="areaLabel" for="ssLength"> X &#189 X </label>
-            <input type="number" id="ssWidth" name="SS Width" />
+            <input onchange="saveWorkbook()" type="number" id="ssWidth" name="SS Width" />
             <label class="areaLabel" for="ssWidth"> X π</label><br />
             <label class="areaLabel" for="ssArea">SS AREA = </label>
-            <input type="number" id="ssArea" name="SS Area" style="margin-left:38px;" />
+            <input onchange="saveWorkbook()" type="number" id="ssArea" name="SS Area" style="margin-left:38px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/GWS.png" alt="Spotless Stadium" style="width:70%;" />
@@ -1784,12 +1786,12 @@
             <p class="areaHint">OS Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">OS AREA = &#189 X </label>
-            <input type="number" id="osLength" name="OS Length" />
+            <input  onchange="saveWorkbook()" type="number" id="osLength" name="OS Length" />
             <label class="areaLabel" for="osLength"> X &#189 X </label>
-            <input type="number" id="osWidth" name="OS Width" />
+            <input onchange="saveWorkbook()" type="number" id="osWidth" name="OS Width" />
             <label class="areaLabel" for="osWidth"> X π</label><br />
             <label class="areaLabel" for="osArea">SS AREA = </label>
-            <input type="number" id="osArea" name="OS Area" style="margin-left:41px;" />
+            <input onchange="saveWorkbook()" type="number" id="osArea" name="OS Area" style="margin-left:41px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/Optus.png" alt="Optus Stadium" style="width:70%;" />
@@ -1803,12 +1805,12 @@
             <p class="areaHint">G Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">G AREA = &#189 X </label>
-            <input type="number" id="gLength" name="G Length" />
+            <input onchange="saveWorkbook()" type="number" id="gLength" name="G Length" />
             <label class="areaLabel" for="gLength"> X &#189 X </label>
-            <input type="number" id="gWidth" name="G Width" />
+            <input onchange="saveWorkbook()" type="number" id="gWidth" name="G Width" />
             <label class="areaLabel" for="gWidth"> X π</label><br />
             <label class="areaLabel" for="gArea">SS AREA = </label>
-            <input type="number" id="gArea" name="G Area" style="margin-left:32px;" />
+            <input onchange="saveWorkbook()" type="number" id="gArea" name="G Area" style="margin-left:32px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/Gabba.png" alt="Gabba Stadium" style="width:70%;" />
@@ -1822,12 +1824,12 @@
             <p class="areaHint">MET Area = &#189 L x &#189 W x π</p>
 
             <label class="areaLabel">MET AREA = &#189 X </label>
-            <input type="number" id="metLength" name="met Length" />
+            <input onchange="saveWorkbook()" type="number" id="metLength" name="met Length" />
             <label class="areaLabel" for="metLength"> X &#189 X </label>
-            <input type="number" id="metWidth" name="MET Width" />
+            <input onchange="saveWorkbook()" type="number" id="metWidth" name="MET Width" />
             <label class="areaLabel" for="metWidth"> X π</label><br />
             <label class="areaLabel" for="metArea">MET AREA = </label>
-            <input type="number" id="metArea" name="MET Area" style="margin-left:37px;" />
+            <input onchange="saveWorkbook()" type="number" id="metArea" name="MET Area" style="margin-left:37px;" />
         </div>
         <div class="col-md-3">
             <img src="~/images/Unit1/Activity 3/goalcoast.png" alt="Metricon Stadium" style="width:70%;" />
@@ -1852,32 +1854,32 @@
             <label for="crowdCapacity" style="font-size: 18px;">Which has the largest crowd capacity?</label>
         </div>
         <div class="col-md-8">
-            <input type="text" id="largestArea" name="largest Area" /><br />
-            <input type="text" id="smallestArea" name="smallest Area" style="margin-top:10px;margin-bottom:10px;" /><br />
-            <input type="text" id="crowdCapacity" name="crowd Capacity" />
+            <input onchange="saveWorkbook()" type="text" id="largestArea" name="largest Area" /><br />
+            <input onchange="saveWorkbook()" type="text" id="smallestArea" name="smallest Area" style="margin-top:10px;margin-bottom:10px;" /><br />
+            <input onchange="saveWorkbook()" type="text" id="crowdCapacity" name="crowd Capacity" />
         </div>
     </div>
 
     <div class="row containInside" style="margin-top:25px;">
         <div class="col-md-12">
             <label for="correlation" style="font-size: 18px;">Is there any correlation between area of oval and capacity? Explain.</label>
-            <textarea id="act3q4" name="Correlations" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act3q4" name="Correlations" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="mostLike" style="font-size: 18px;">Which ground would you most like to play on and why?</label>
-            <textarea id="act3q5" name="Most like" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act3q5" name="Most like" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="longDis" style="font-size: 18px;">What ground would suit a team with lots of long-distance runners? Give reasons why.</label>
-            <textarea id="act3q6" name="long distance" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act3q6" name="long distance" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="accurate" style="font-size: 18px;">What ground would suit a team with lots of accurate kickers? Give reasons why.</label>
-            <textarea id="act3q7" name="Accurate" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act3q7" name="Accurate" rows="3" style="width:65%;"></textarea>
             <br />
 
             <label for="defend" style="font-size: 18px;">What grounds would be harder/easier to defend on? Give reasons why.</label>
-            <textarea id="act3q8" name="Defend" rows="3" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act3q8" name="Defend" rows="3" style="width:65%;"></textarea>
             <br />
 
         </div>
@@ -8116,8 +8118,7 @@
         } else {
             box3.innerHTML = inputText;
         }
-        console.log(isEmpty)
-        return isEmpty;
+
     }
 
     function saveWorkbook() {
@@ -8154,9 +8155,7 @@
         console.log(t1a2);
         console.log(t1a1);
 
-        var csWidth = document.getElementById("widCS").value;
-        var csLength = document.getElementById("lenCS").value;
-        var csArea = document.getElementById("aTotalCS").value;
+
 
 
         //activity 1 part 2
@@ -8179,7 +8178,7 @@
             for (j = 0; j < row.cells.length; j++) {
                 var cell = row.cells[j]
                 if (cell.getAttribute("draggable") == "true") {
-                    
+
                     if (cell.style.visibility == "") {
                         t3a1[pos] = "t";
                     }
@@ -8220,6 +8219,78 @@
             pos++
         }
 
+        //act 2
+
+        var csWidth = document.getElementById("widCS").value;
+        var csLength = document.getElementById("lenCS").value;
+        var csArea = document.getElementById("aTotalCS").value;
+
+        var gsLength = document.getElementById("lenGS").value;
+        var gsWidth = document.getElementById("widGS").value;
+        var gsArea = document.getElementById("aTotalGS").value;
+
+        var gpLength = document.getElementById("lenGP").value;
+        var gpWidth = document.getElementById("widGP").value;
+        var gpArea = document.getElementById("aTotalGP").value;
+
+        var bpLength = document.getElementById("lenBP").value;
+        var bpWidth = document.getElementById("widBP").value;
+        var bpArea = document.getElementById("aTotalBP").value;
+
+        var act2text1 = document.getElementById("text1").value;
+        var box1 = document.getElementById("box1").innerHTML;
+        var box2 = document.getElementById("box2").innerHTML;
+        var box3 = document.getElementById("box3").innerHTML;
+        var act2t4 = document.getElementById("act2t4").value;
+        var act2t5 = document.getElementById("act2t5").value;
+        var gs2Length = document.getElementById("lenGS2").value;
+        var gs2Width = document.getElementById("widGS2").value;
+        var gs2Area = document.getElementById("aTotalGS2").value;
+
+        //act 3 
+
+
+        var mcgLength = document.getElementById("mcgLength").value;
+        var mcgWidth = document.getElementById("mcgWidth").value;
+        var mcgArea = document.getElementById("mcgArea").value;
+
+        var msLength = document.getElementById("msLength").value;
+        var msWidth = document.getElementById("msWidth").value;
+        var msArea = document.getElementById("msArea").value;
+
+        var gmhLength = document.getElementById("gmhLength").value;
+        var gmhWidth = document.getElementById("gmhWidth").value;
+        var gmhArea = document.getElementById("gmhArea").value;
+
+        var scgLength = document.getElementById("scgLength").value;
+        var scgWidth = document.getElementById("scgWidth").value;
+        var scgArea = document.getElementById("scgArea").value;
+
+        var ssLength = document.getElementById("ssLength").value;
+        var ssWidth = document.getElementById("ssWidth").value;
+        var ssArea = document.getElementById("ssArea").value;
+
+        var osLength = document.getElementById("osLength").value;
+        var osWidth = document.getElementById("osWidth").value;
+        var osArea = document.getElementById("osArea").value;
+
+        var gLength = document.getElementById("gLength").value;
+        var gWidth = document.getElementById("gWidth").value;
+        var gArea = document.getElementById("gArea").value;
+
+        var metLength = document.getElementById("metLength").value;
+        var metWidth = document.getElementById("metWidth").value;
+        var metArea = document.getElementById("metArea").value;
+
+        var largest = document.getElementById("largestArea").value;
+        var smallest = document.getElementById("smallestArea").value;
+        var capacity = document.getElementById("crowdCapacity").value;
+        var act3q4 = document.getElementById("act3q4").value;
+        var act3q5 = document.getElementById("act3q5").value;
+        var act3q6 = document.getElementById("act3q6").value;
+        var act3q7 = document.getElementById("act3q7").value;
+        var act3q8 = document.getElementById("act3q8").value;
+
 
 
         var final = {
@@ -8234,6 +8305,57 @@
             act1row2: JSON.stringify(row2a1),
             act1row3: JSON.stringify(row3a1),
             act1row4: JSON.stringify(row4a1),
+            act2lengs: gsLength,
+            act2widgs: gsWidth,
+            act2areags: gsArea,
+            act2lengp: gpLength,
+            act2widgp: gpWidth,
+            act2areagp: gpArea,
+            act2lenbp: bpLength,
+            act2widbp: bpWidth,
+            act2areabp: bpArea,
+            act2text1: act2text1,
+            box1: box1,
+            box2: box2,
+            box3: box3,
+            act2t4: act2t4,
+            act2t5: act2t5,
+            act2lengs2: gs2Length,
+            act2widgs2: gs2Width,
+            act2areags2: gs2Area,
+            mcgLength: mcgLength,
+            mcgWidth: mcgWidth,
+            mcgArea: mcgArea,
+            msLength: msLength,
+            msWidth: msWidth,
+            msArea: msArea,
+            gmhLength: gmhLength,
+            gmhWidth: gmhWidth,
+            gmhArea: gmhArea,
+            scgLength: scgLength,
+            scgWidth: scgWidth, 
+            scgArea: scgArea,
+            ssLength: ssLength,
+            ssWidth: ssWidth,
+            ssArea: ssArea,
+            osLength: osLength,
+            osWidth: osWidth,
+            osArea: osArea,
+            gLength: gLength,
+            gWidth: gWidth,
+            gArea: gArea,
+            metLength: metLength,
+            metWidth: metWidth, 
+            metArea: metArea,
+            largestArea: largest,
+            smallestArea: smallest,
+            crowdCapacity: capacity,
+            act3q4: act3q4,
+            act3q5: act3q5,
+            act3q6: act3q6,
+            act3q7: act3q7,
+            act3q8: act3q8,
+
 
         };
 
@@ -8327,7 +8449,7 @@
                         cell.style.visibility = "hidden"
                     }
 
-                    
+
                     pos++;
                 }
             }
@@ -8372,7 +8494,73 @@
 
         document.getElementById("widCS").value = csWidth;
         document.getElementById("lenCS").value = csLength;
-        document.getElementById("aTotalCS").value =  csArea;
+        document.getElementById("aTotalCS").value = csArea;
+
+        document.getElementById("lenGS").value = "@workbook.Act2GSLength";
+        document.getElementById("widGS").value  = "@workbook.Act2GSWidth";
+        document.getElementById("aTotalGS").value  = "@workbook.Act2GSArea";
+
+        document.getElementById("lenGP").value = "@workbook.Act2GPLength";
+        document.getElementById("widGP").value  = "@workbook.Act2GPWidth";
+        document.getElementById("aTotalGP").value  = "@workbook.Act2GPArea";
+
+        document.getElementById("lenBP").value  = "@workbook.Act2BPLength";
+        document.getElementById("widBP").value   = "@workbook.Act2BPWidth";
+        document.getElementById("aTotalBP").value  = "@workbook.Act2BPArea";
+        document.getElementById("text1").value = "@workbook.Act2text1"
+        document.getElementById("box1").innerHTML = "@workbook.Act2box1"
+        document.getElementById("box2").innerHTML = "@workbook.Act2box2"
+        document.getElementById("box3").innerHTML = "@workbook.Act2box3"
+        document.getElementById("act2t4").value = "@workbook.Act2t4"
+        document.getElementById("act2t5").value = "@workbook.Act2t5"
+        document.getElementById("lenGS2").value =  "@workbook.Act2GS2Length"
+        document.getElementById("widGS2").value =  "@workbook.Act2GS2Width"
+        document.getElementById("aTotalGS2").value = "@workbook.Act2GS2Area"
+
+        //act 3 loading
+
+        document.getElementById("mcgLength").value= "@workbook.mcgLength"
+        document.getElementById("mcgWidth").value= "@workbook.mcgWidth"
+        document.getElementById("mcgArea").value= "@workbook.mcgArea"
+
+        document.getElementById("msLength").value= "@workbook.msLength" 
+        document.getElementById("msWidth").value= "@workbook.msWidth"
+        document.getElementById("msArea").value= "@workbook.msArea"
+
+        document.getElementById("gmhLength").value= "@workbook.gmhLength"
+        document.getElementById("gmhWidth").value= "@workbook.gmhWidth"
+        document.getElementById("gmhArea").value= "@workbook.gmhArea"
+
+        document.getElementById("scgLength").value= "@workbook.scgLength"
+        document.getElementById("scgWidth").value= "@workbook.scgWidth"
+        document.getElementById("scgArea").value= "@workbook.scgArea"
+
+        document.getElementById("ssLength").value= "@workbook.ssLength"
+        document.getElementById("ssWidth").value= "@workbook.ssWidth"
+       document.getElementById("ssArea").value= "@workbook.ssArea"
+
+        document.getElementById("osLength").value= "@workbook.osLength"
+        document.getElementById("osWidth").value= "@workbook.osWidth"
+        document.getElementById("osArea").value= "@workbook.osArea"
+
+        document.getElementById("gLength").value= "@workbook.gLength"
+        document.getElementById("gWidth").value= "@workbook.gWidth"
+        document.getElementById("gArea").value= "@workbook.gArea"
+
+        document.getElementById("metLength").value= "@workbook.metLength"
+        document.getElementById("metWidth").value= "@workbook.metWidth"
+        document.getElementById("metArea").value= "@workbook.metArea"
+
+        document.getElementById("largestArea").value= "@workbook.largestArea"
+        document.getElementById("smallestArea").value= "@workbook.smallestArea"
+        document.getElementById("crowdCapacity").value= "@workbook.crowdCapacity"
+        document.getElementById("act3q4").value= "@workbook.act3q4"
+        document.getElementById("act3q5").value= "@workbook.act3q5"
+        document.getElementById("act3q6").value= "@workbook.act3q6"
+        document.getElementById("act3q7").value= "@workbook.act3q7"
+        document.getElementById("act3q8").value= "@workbook.act3q8"
+
+
     }
 
 
