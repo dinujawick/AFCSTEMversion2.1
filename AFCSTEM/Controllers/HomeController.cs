@@ -117,7 +117,8 @@ namespace AFCSTEM.Controllers
             string act1table1, string act1table2, float cswidth1, float cslength1, float csarea1, string act1table3, string act1row1, string act1row2, string act1row3, string act1row4, float act2lengs, float act2widgs,float act2areags,
             float act2lengp, float act2widgp, float act2areagp, float act2lenbp, float act2widbp, float act2areabp, string box1, string box2, string box3, string act2text1, string act2t4, string act2t5, float act2lengs2, float act2widgs2, float act2areags2,
             float mcgLength, float mcgWidth, float mcgArea, float msLength, float msWidth, float msArea, float gmhLength, float gmhWidth, float gmhArea, float scgLength, float scgWidth, float scgArea, float ssLength, float ssWidth, float ssArea,
-            float osLength, float osWidth, float osArea, float gLength, float gWidth, float gArea, float metLength, float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5,string act3q6, string act3q7, string act3q8)
+            float osLength, float osWidth, float osArea, float gLength, float gWidth, float gArea, float metLength, float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5,string act3q6, string act3q7, string act3q8
+            ,string act5table, int act5tablecount, string act5q1, string act5q2, string act5q3, string act5q4, string act5q5)
         {
 
             Workbook workbook = _workbookRepository.GetWorkbook(studentID);
@@ -130,7 +131,7 @@ namespace AFCSTEM.Controllers
             {
                 _workbookRepository.UpdateWorkbookActivity(workbook, act1table1, act1table2, cswidth1, cslength1, csarea1,act1table3,act1row1,act1row2,act1row3,act1row4,act2lengs,act2widgs,act2areags,act2lengp,act2widgp,act2areagp,act2lenbp,act2widbp,act2areabp,act2text1,box1,box2,
                     box3,act2t4,act2t5,act2lengs2,act2widgs2,act2areags2,mcgLength, mcgWidth,mcgArea,msLength,msWidth, msArea,gmhLength,gmhWidth,gmhArea,scgLength,scgWidth,scgArea,ssLength,ssWidth,ssArea,
-                 osLength,osWidth,osArea,gLength,gWidth,gArea, metLength, metWidth, metArea,largestArea,smallestArea,crowdCapacity,act3q4,act3q5,act3q6,act3q7,act3q8);
+                 osLength,osWidth,osArea,gLength,gWidth,gArea, metLength, metWidth, metArea,largestArea,smallestArea,crowdCapacity,act3q4,act3q5,act3q6,act3q7, act3q8, act5table, act5tablecount,  act5q1,  act5q2,  act5q3,  act5q4,  act5q5);
             }
             return Json(new { success = "Workbook Saved" });
         }

@@ -71,7 +71,13 @@ namespace AFCSTEM.Models
         public string act3q6 { get; set; }
         public string act3q7 { get; set; }
         public string act3q8 { get; set; }
-
+        public string act5table { get; set; }
+        public int act5tablecount { get; set; }
+        public string act5q1 { get; set; }
+        public string act5q2 { get; set; }
+        public string act5q3 { get; set; }
+        public string act5q4 { get; set; }
+        public string act5q5 { get; set; }
 
 
 

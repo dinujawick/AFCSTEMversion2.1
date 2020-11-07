@@ -1920,7 +1920,7 @@
         </div>
 
         <table id="coinTable" style="width:60%" class="table table-bordered">
-            <tr style="background-color:#002b5c; color:white;">
+            <tr id="act5no" style="background-color:#002b5c; color:white;">
                 <th>TOSS#</th>
                 <th>HEADS/HEAD(GOAL)</th>
                 <th>HEAD/TAILS(BEHIND)</th>
@@ -1941,12 +1941,12 @@
         <br />
         <label for="act5q1" style="font-size: 18px;">Did you score more goals, points or misses?</label>
         <br />
-        <textarea id="act5q1" name="act5q1" rows="2" style="width:65%;"></textarea>
+        <textarea onchange="saveWorkbook()" id="act5q1" name="act5q1" rows="2" style="width:65%;"></textarea>
         <br />
 
         <label for="act5q2" style="font-size: 18px;">Does this match what you predicted before you collected the data? Explain your results.</label>
         <br />
-        <textarea id="act5q2" name="act5q2" rows="2" style="width:65%;"></textarea>
+        <textarea  onchange="saveWorkbook()"id="act5q2" name="act5q2" rows="2" style="width:65%;"></textarea>
 
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -2009,20 +2009,20 @@
         <div style="float:right">
             <label for="act5q3" style="font-size: 18px;">In what year was Tex’s highest goal per game average?</label>
             <br />
-            <textarea id="act5q3" name="act5q3" rows="1" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act5q3" name="act5q3" rows="1" style="width:65%;"></textarea>
             <label for="act5q4" style="font-size: 18px;">
                 Rank in order Tex’s total average goals per season from highest <br />
                 to lowest?
             </label>
             <br />
-            <textarea id="act5q4" name="act5q4" rows="2" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act5q4" name="act5q4" rows="2" style="width:65%;"></textarea>
             <br />
             <label for="act5q5" style="font-size: 18px;">
                 Tex started playing for the AFC in 2009. Over his 10 years <br />
                 calculate his total goals per season average
             </label>
             <br />
-            <textarea id="act5q5" name="act5q5" rows="2" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act5q5" name="act5q5" rows="2" style="width:65%;"></textarea>
             <br />
         </div>
         <br />
@@ -5907,15 +5907,20 @@
         graph.fillRect(x, 350 - (100 * val), 20, (100 * val));
     }
 
-    var coinCount = 0;
-    goalCount = 0;
-    behindCount = 0;
-    missCount = 0;
+    var coinCount = "@workbook.act5tablecount";
+    if (coinCount != 0) {
+        coinCount--;
+    }
+    
 
     // jquery functions
     jQuery(document).ready(function ($) {
         // jquery for activity 10 coin flip
         $('#coin, #coin2').on('click', function () {
+
+            var goalCount = parseInt(document.getElementById("gc").innerHTML);
+            var behindCount = parseInt(document.getElementById("bc").innerHTML);
+            var missCount = parseInt(document.getElementById("mc").innerHTML);
 
             if (coinCount < 10) {
                 coinCount++;
@@ -5928,13 +5933,15 @@
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 var cell4 = row.insertCell(3);
+               
                 cell.innerHTML = coinCount;
+              
 
                 cell2.setAttribute("id", "hh" + coinCount);
                 cell3.setAttribute("id", "ht" + coinCount);
                 cell4.setAttribute("id", "tt" + coinCount);
 
-
+                
                 $('#coin').removeClass();
                 $('#coin2').removeClass();
                 setTimeout(function () {
@@ -5986,12 +5993,16 @@
 
 
 
-                    $("#gc").text(goalCount);
-                    $("#mc").text(missCount);
-                    $("#bc").text(behindCount);
-
+                    document.getElementById("gc").innerHTML =  goalCount; 
+                    document.getElementById("mc").innerHTML =  missCount;
+                    document.getElementById("bc").innerHTML =  behindCount;
+                  
+                    saveWorkbook();
+                    
+                    
                 }, 100);
             }
+           
         });
 
         // jquery for actvitiy 2, area formula footy
@@ -8247,7 +8258,7 @@
         var gs2Width = document.getElementById("widGS2").value;
         var gs2Area = document.getElementById("aTotalGS2").value;
 
-        //act 3 
+        //act 3
 
 
         var mcgLength = document.getElementById("mcgLength").value;
@@ -8291,6 +8302,39 @@
         var act3q7 = document.getElementById("act3q7").value;
         var act3q8 = document.getElementById("act3q8").value;
 
+        //activity 5
+        var act5table = [];
+        var act5TableCount = -1;
+
+        table = document.getElementById("coinTable");
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            if (row.getAttribute("id") != "act5no") {
+                act5TableCount++;
+            }
+            for (j = 0; j < row.cells.length; j++) {
+                if (row.getAttribute("id") != "act5no") {
+                    var cell = row.cells[j]
+
+                    act5table[pos] = cell.innerHTML;
+
+                    pos++;
+                }
+
+
+            }
+        }
+
+        console.log(act5table);
+        console.log(act5TableCount);
+
+
+        var act5q1 =  document.getElementById("act5q1").value;
+        var act5q2 = document.getElementById("act5q2").value;
+        var act5q3 = document.getElementById("act5q3").value;
+        var act5q4 = document.getElementById("act5q4").value;
+        var act5q5 = document.getElementById("act5q5").value;
 
 
         var final = {
@@ -8333,7 +8377,7 @@
             gmhWidth: gmhWidth,
             gmhArea: gmhArea,
             scgLength: scgLength,
-            scgWidth: scgWidth, 
+            scgWidth: scgWidth,
             scgArea: scgArea,
             ssLength: ssLength,
             ssWidth: ssWidth,
@@ -8345,7 +8389,7 @@
             gWidth: gWidth,
             gArea: gArea,
             metLength: metLength,
-            metWidth: metWidth, 
+            metWidth: metWidth,
             metArea: metArea,
             largestArea: largest,
             smallestArea: smallest,
@@ -8355,6 +8399,13 @@
             act3q6: act3q6,
             act3q7: act3q7,
             act3q8: act3q8,
+            act5table: JSON.stringify(act5table),
+            act5tablecount: act5TableCount,
+            act5q1: act5q1,
+            act5q2: act5q2,
+            act5q3: act5q3,
+            act5q4: act5q4,
+            act5q5: act5q5,
 
 
         };
@@ -8523,7 +8574,7 @@
         document.getElementById("mcgWidth").value= "@workbook.mcgWidth"
         document.getElementById("mcgArea").value= "@workbook.mcgArea"
 
-        document.getElementById("msLength").value= "@workbook.msLength" 
+        document.getElementById("msLength").value= "@workbook.msLength"
         document.getElementById("msWidth").value= "@workbook.msWidth"
         document.getElementById("msArea").value= "@workbook.msArea"
 
@@ -8559,6 +8610,47 @@
         document.getElementById("act3q6").value= "@workbook.act3q6"
         document.getElementById("act3q7").value= "@workbook.act3q7"
         document.getElementById("act3q8").value= "@workbook.act3q8"
+
+        //act5
+
+
+        var act5tablestring = "@workbook.act5table";
+        act5tablestring = act5tablestring.replace(/&quot;/g, '"');
+        act5tablestring = JSON.parse(act5tablestring);
+        var table = document.getElementById("coinTable");
+        var tableCount = "@workbook.act5tablecount";
+        var i = 1;
+        while (i < tableCount) {
+            var row = table.insertRow(i);
+            var cell = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            i++;
+        }
+
+        table = document.getElementById("coinTable");
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                if (row.getAttribute("id") != "act5no") {
+                    var cell = row.cells[j]
+
+                    cell.innerHTML = act5tablestring[pos];
+
+                    pos++;
+                }
+
+
+            }
+        }
+
+        document.getElementById("act5q1").value = "@workbook.act5q1";
+        document.getElementById("act5q2").value= "@workbook.act5q2";
+        document.getElementById("act5q3").value= "@workbook.act5q3";
+        document.getElementById("act5q4").value= "@workbook.act5q4";
+        document.getElementById("act5q5").value= "@workbook.act5q5";
 
 
     }
