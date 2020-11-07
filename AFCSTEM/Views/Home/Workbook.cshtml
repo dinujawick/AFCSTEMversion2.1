@@ -195,891 +195,890 @@
         }
     }
 }
-    <style>
-        @@font-face {
-            font-family: Industry_inc_base;
-            src: url('fort_foundry_industry_inc_base.otf') format('opentype');
+<style>
+    @@font-face {
+        font-family: Industry_inc_base;
+        src: url('fort_foundry_industry_inc_base.otf') format('opentype');
+    }
+
+    .row {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .containRow {
+        border-top: solid 8px #ffd200;
+        font-family: Industry_inc_base;
+        background-color: gainsboro;
+    }
+
+    .containInside {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 100%;
+    }
+
+    #act15table1, #act15table2 {
+        width: 90%;
+        position: relative;
+        overflow: scroll;
+    }
+
+    #scaleImg {
+        width: 70%;
+        height: 20%;
+    }
+
+    #wayneImg {
+        position: relative;
+        left: 300px;
+        width: 40%;
+        height: 40%;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    #medianPic {
+        width: 100%;
+        height: 25%;
+    }
+
+    #act12p, #foleyImg {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+
+    #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act12table1 td, #act12table1 th, #act12table2 td, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
+    #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td, #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td, #act17table6 td {
+        border: 1px solid black;
+    }
+
+    #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input, #act12table2 input,
+    #act13table1 input, #act15table1 input, #act15table2 input, #act15table3 input, #act15table4 input, #act16table1 input, #act16table2 input, #act16table3 input, #act16table4 input, #act16table5 input, #act16table6 input, #act17table1 input, #act17table2 input, #act17table3 input, #act17table4 input, #act15table5 input, #act17table5 input, #act17table6 input {
+        border: none;
+        width: 100%;
+    }
+
+    table {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h3 {
+        color: #002b5c;
+        width: 100%;
+        text-align: left;
+        margin-left: 35px;
+        margin-top: 15px;
+    }
+
+    #play3quad1 {
+        animation: play3quad1 6s infinite;
+    }
+
+    #play2quad1 {
+        animation: play2quad1 6s infinite;
+    }
+
+    #play1quad1 {
+        animation: play1quad1 6s infinite;
+    }
+
+    #play1quad2 {
+        animation: play1quad2 6s infinite;
+    }
+
+    #play2quad2 {
+        animation: play2quad2 6s infinite;
+    }
+
+    #play3quad2 {
+        animation: play3quad2 6s infinite;
+    }
+
+    @@keyframes play1quad2 {
+        0% {
+            opacity: 1;
         }
 
-        .row {
-            width: 100%;
-            margin-left: 0px;
-            margin-right: 0px;
+        25% {
+            transform: translate(-86px,-172px);
+            opacity: 1;
         }
 
-        .containRow {
-            border-top: solid 8px #ffd200;
-            font-family: Industry_inc_base;
-            background-color: gainsboro;
+        50% {
+            transform: translate(43px, -387px);
+            opacity: 1;
         }
 
-        .containInside {
-            margin-left: 10px;
-            margin-right: 10px;
-            width: 100%;
+        75% {
+            transform: translate(344px,-645px);
+            opacity: 0;
         }
 
-        #act15table1, #act15table2 {
-            width: 90%;
-            position: relative;
-            overflow: scroll;
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @@keyframes play2quad2 {
+        0% {
+            opacity: 1;
         }
 
-        #scaleImg {
-            width: 70%;
-            height: 20%;
+        25% {
+            transform: translate(172px,258px);
+            opacity: 1;
         }
 
-        #wayneImg {
-            position: relative;
-            left: 300px;
-            width: 40%;
-            height: 40%;
+        50% {
+            transform: translate(86px, -430px);
+            opacity: 1;
         }
 
-        textarea {
-            resize: none;
+        75% {
+            transform: translate(215px,-516px);
+            opacity: 0;
         }
 
-        #medianPic {
-            width: 100%;
-            height: 25%;
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @@keyframes play3quad2 {
+        0% {
+            opacity: 1;
         }
 
-        #act12p, #foleyImg {
-            position: relative;
-            display: inline-block;
-            margin: 0 auto;
+        25% {
+            transform: translate(0px,-301px);
+            opacity: 1;
         }
 
-
-        #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act12table1 td, #act12table1 th, #act12table2 td, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
-        #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td, #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td, #act17table6 td {
-            border: 1px solid black;
+        50% {
+            transform: translate(215px, -516px);
+            opacity: 1;
         }
 
-        #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input, #act12table2 input,
-        #act13table1 input, #act15table1 input, #act15table2 input, #act15table3 input, #act15table4 input, #act16table1 input, #act16table2 input, #act16table3 input, #act16table4 input, #act16table5 input, #act16table6 input, #act17table1 input, #act17table2 input, #act17table3 input, #act17table4 input, #act15table5 input, #act17table5 input, #act17table6 input {
-            border: none;
-            width: 100%;
+        75% {
+            transform: translate(0px,-516px);
+            opacity: 0;
         }
 
-        table {
-            margin-left: 10px;
-            margin-right: 10px;
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @@keyframes play1quad1 {
+        0% {
+            opacity: 1;
         }
 
-        h3 {
-            color: #002b5c;
-            width: 100%;
-            text-align: left;
-            margin-left: 35px;
-            margin-top: 15px;
+        25% {
+            transform: translate(172px,-129px);
+            opacity: 1;
         }
 
-        #play3quad1 {
-            animation: play3quad1 6s infinite;
+        50% {
+            transform: translate(-43px, -301px);
+            opacity: 1;
         }
 
-        #play2quad1 {
-            animation: play2quad1 6s infinite;
+        75% {
+            transform: translate(-43px,-559px);
+            opacity: 0;
         }
 
-        #play1quad1 {
-            animation: play1quad1 6s infinite;
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @@keyframes play3quad1 {
+        0% {
+            opacity: 1;
         }
 
-        #play1quad2 {
-            animation: play1quad2 6s infinite;
+        25% {
+            transform: translate(-258px,258px);
+            opacity: 1;
         }
 
-        #play2quad2 {
-            animation: play2quad2 6s infinite;
+        50% {
+            transform: translate(86px, -344px);
+            opacity: 1;
         }
 
-        #play3quad2 {
-            animation: play3quad2 6s infinite;
+        75% {
+            transform: translate(-172px,-344px);
+            opacity: 0;
         }
 
-        @@keyframes play1quad2 {
-            0% {
-                opacity: 1;
-            }
+        100% {
+            opacity: 0;
+        }
+    }
 
-            25% {
-                transform: translate(-86px,-172px);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(43px, -387px);
-                opacity: 1;
-            }
-
-            75% {
-                transform: translate(344px,-645px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+    @@keyframes play2quad1 {
+        0% {
+            opacity: 1;
         }
 
-        @@keyframes play2quad2 {
-            0% {
-                opacity: 1;
-            }
-
-            25% {
-                transform: translate(172px,258px);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(86px, -430px);
-                opacity: 1;
-            }
-
-            75% {
-                transform: translate(215px,-516px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+        25% {
+            transform: translate(-254px,-215px);
+            opacity: 1;
         }
 
-        @@keyframes play3quad2 {
-            0% {
-                opacity: 1;
-            }
-
-            25% {
-                transform: translate(0px,-301px);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(215px, -516px);
-                opacity: 1;
-            }
-
-            75% {
-                transform: translate(0px,-516px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+        50% {
+            transform: translate(0px, -301px);
+            opacity: 1;
         }
 
-        @@keyframes play1quad1 {
-            0% {
-                opacity: 1;
-            }
-
-            25% {
-                transform: translate(172px,-129px);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(-43px, -301px);
-                opacity: 1;
-            }
-
-            75% {
-                transform: translate(-43px,-559px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+        75% {
+            transform: translate(-125px,-597.5px);
+            opacity: 0;
         }
 
-        @@keyframes play3quad1 {
-            0% {
-                opacity: 1;
-            }
+        100% {
+            opacity: 0;
+        }
+    }
 
-            25% {
-                transform: translate(-258px,258px);
-                opacity: 1;
-            }
+    #batteryImg {
+        animation: blink-animation 1s steps(5, start) infinite;
+    }
 
-            50% {
-                transform: translate(86px, -344px);
-                opacity: 1;
-            }
+    #timerImg {
+        animation: roll-animation 1s infinite;
+    }
 
-            75% {
-                transform: translate(-172px,-344px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+    @@keyframes roll-animation {
+        from {
+            transform: rotate(0deg)
         }
 
-        @@keyframes play2quad1 {
-            0% {
-                opacity: 1;
-            }
-
-            25% {
-                transform: translate(-254px,-215px);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(0px, -301px);
-                opacity: 1;
-            }
-
-            75% {
-                transform: translate(-125px,-597.5px);
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+        to {
+            transform: rotate(360deg)
         }
+    }
 
-        #batteryImg {
-            animation: blink-animation 1s steps(5, start) infinite;
+    @@keyframes blink-animation {
+        to {
+            visibility: hidden;
         }
+    }
 
-        #timerImg {
-            animation: roll-animation 1s infinite;
-        }
+    #col1 {
+        text-align: center;
+        font-size: 20px;
+        width: 10%;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
 
-        @@keyframes roll-animation {
-            from {
-                transform: rotate(0deg)
-            }
+    #act1Table1, #act1Table3 {
+        border-collapse: separate;
+    }
 
-            to {
-                transform: rotate(360deg)
-            }
-        }
+    #ebFooty.ebFooty {
+        animation-name: footkick;
+        animation-duration: 2s;
+        position: absolute;
+        left: 500px;
+        bottom: 100px;
+    }
 
-        @@keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
-        }
-
-        #col1 {
-            text-align: center;
-            font-size: 20px;
-            width: 10%;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
-
-        #act1Table1, #act1Table3 {
-            border-collapse: separate;
-        }
-
-        #ebFooty.ebFooty {
-            animation-name: footkick;
-            animation-duration: 2s;
-            position: absolute;
+    @@keyframes footkick {
+        from {
             left: 500px;
-            bottom: 100px;
-        }
-
-        @@keyframes footkick {
-            from {
-                left: 500px;
-                width: 100px;
-                height: 100px;
-                bottom: 100px;
-                transform: rotate(0deg);
-                opacity: 1;
-            }
-
-            to {
-                left: 0px;
-                bottom: -400px;
-                height: 200px;
-                width: 200px;
-                transform: rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        #col2 {
-            width: 30%;
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            height: 35px;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
-
-        #act10table3 {
-            float: left;
-        }
-
-        #goalpic {
-            float: right;
-            width: 45%;
-            height: 45%;
-            display: inline-block;
-            margin: 0 auto;
-        }
-
-        #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
-        #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-        #c20, #c21 {
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
-
-        .dot {
-            height: 55px;
-            width: 55px;
-            border-radius: 50%;
-            display: inline-block;
-            text-align: center;
-            padding-top: 5px;
-            font-size: 25px;
-            background-color: #ffffff;
-        }
-
-        #act1Table1 {
-            border-width: 5px;
-            border-color: blue;
-        }
-
-        #coinTable td, #texTable td {
-            color: #002b5c;
-        }
-
-        #act1Field {
-            background-image: url('../images/Football_Oval-01.jpg');
-            background-size: 100% 100%;
-            height: 450px;
-        }
-
-        #act1-P2R1 {
-            padding-top: 100px;
-            padding-left: 175px;
-        }
-
-        #act1-P2R2 {
-            padding-top: 45px;
-            padding-left: 140px;
-        }
-
-        #act1-P2R3 {
-            padding-top: 45px;
-            padding-left: 175px;
-        }
-
-        .forward {
-            border: solid 5px #ffd200;
-            font-weight: bold;
-        }
-
-        .midfield {
-            border: solid 5px #e31937;
-            font-weight: bold;
-        }
-
-        .defender {
-            border: solid 5px #002b5c;
-            font-weight: bold;
-        }
-
-        #int {
-            margin-left: 20px;
-            background-color: #ffffff;
-            border: solid 5px black;
-            font-weight: bold;
-        }
-
-        #forward, #midfield, #interchange, #defender {
-            width: 30%;
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            height: 35px;
-            border-width: 5px;
-            border-color: #002b5c;
-            color: #33619e;
-        }
-
-        #TexImage {
-            position: relative;
-            float: left;
-            width: 30%;
-            height: 40%;
-        }
-
-        #ebImage {
-            position: relative;
-            width: 30%;
-            height: 50%;
-            float: right;
-            margin-bottom: 25px;
-        }
-
-        #act10table3 {
-            float: left;
-        }
-
-        #goalpic {
-            float: right;
-            width: 45%;
-            height: 45%;
-            display: inline-block;
-            margin: 0 auto;
-        }
-
-        #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
-        #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
-        #c20, #c21 {
-            border: solid 5px #002b5c;
-            padding: 2px;
-            text-align: center;
-            font-size: 20px;
-            color: #33619e;
-        }
-
-        #coinTable td, #texTable td {
-            color: #002b5c;
-        }
-
-        #coin, #coin2 {
-            position: relative;
-            display: inline-block;
-            margin: 0 auto;
             width: 100px;
             height: 100px;
-            cursor: pointer;
+            bottom: 100px;
+            transform: rotate(0deg);
+            opacity: 1;
         }
 
-            #coin div, #coin2 div {
-                width: 100%;
-                height: 100%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                border-radius: 50%;
-                -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-                -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-                box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
-            }
-
-        .side-a {
-            background-image: url('../images/Workbooklet/coinheads.PNG');
-            background-repeat: no-repeat;
-            background-size: auto;
+        to {
+            left: 0px;
+            bottom: -400px;
+            height: 200px;
+            width: 200px;
+            transform: rotate(720deg);
+            opacity: 0;
         }
+    }
 
-        .side-b {
-            background-image: url('../images/Workbooklet/cointails.PNG');
-        }
+    #col2 {
+        width: 30%;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        height: 35px;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
 
-        #coin, #coin2 {
-            transition: -webkit-transform 1s ease-in;
-            -webkit-transform-style: preserve-3d;
-        }
+    #act10table3 {
+        float: left;
+    }
 
-            #coin div, #coin2 div {
-                position: absolute;
-                -webkit-backface-visibility: hidden;
-            }
+    #goalpic {
+        float: right;
+        width: 45%;
+        height: 45%;
+        display: inline-block;
+        margin: 0 auto;
+    }
 
-        .side-a {
-            z-index: 100;
-        }
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
+    #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
+    #c20, #c21 {
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
 
-        .side-b {
-            -webkit-transform: rotateY(-180deg);
-        }
+    .dot {
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        padding-top: 5px;
+        font-size: 25px;
+        background-color: #ffffff;
+    }
 
-        #coin.heads {
-            -webkit-animation: flipHeads 3s ease-out forwards;
-            -moz-animation: flipHeads 3s ease-out forwards;
-            -o-animation: flipHeads 3s ease-out forwards;
-            animation: flipHeads 3s ease-out forwards;
-        }
+    #act1Table1 {
+        border-width: 5px;
+        border-color: blue;
+    }
 
-        #coin.tails {
-            -webkit-animation: flipTails 3s ease-out forwards;
-            -moz-animation: flipTails 3s ease-out forwards;
-            -o-animation: flipTails 3s ease-out forwards;
-            animation: flipTails 3s ease-out forwards;
-        }
+    #coinTable td, #texTable td {
+        color: #002b5c;
+    }
 
-        #coin2.heads {
-            -webkit-animation: flipHeads 3s ease-out forwards;
-            -moz-animation: flipHeads 3s ease-out forwards;
-            -o-animation: flipHeads 3s ease-out forwards;
-            animation: flipHeads 3s ease-out forwards;
-        }
+    #act1Field {
+        background-image: url('../images/Football_Oval-01.jpg');
+        background-size: 100% 100%;
+        height: 450px;
+    }
 
-        #coin2.tails {
-            -webkit-animation: flipTails 3s ease-out forwards;
-            -moz-animation: flipTails 3s ease-out forwards;
-            -o-animation: flipTails 3s ease-out forwards;
-            animation: flipTails 3s ease-out forwards;
-        }
+    #act1-P2R1 {
+        padding-top: 100px;
+        padding-left: 175px;
+    }
 
-        @@keyframes flipHeads {
-            from {
-                -webkit-transform: rotateY(0);
-                -moz-transform: rotateY(0);
-                transform: rotateY(0);
-            }
+    #act1-P2R2 {
+        padding-top: 45px;
+        padding-left: 140px;
+    }
 
-            to {
-                -webkit-transform: rotateY(1800deg);
-                -moz-transform: rotateY(1800deg);
-                transform: rotateY(1800deg);
-            }
-        }
+    #act1-P2R3 {
+        padding-top: 45px;
+        padding-left: 175px;
+    }
 
-        @@keyframes flipTails {
-            from {
-                -webkit-transform: rotateY(0);
-                -moz-transform: rotateY(0);
-                transform: rotateY(0);
-            }
+    .forward {
+        border: solid 5px #ffd200;
+        font-weight: bold;
+    }
 
-            to {
-                -webkit-transform: rotateY(1980deg);
-                -moz-transform: rotateY(1980deg);
-                transform: rotateY(1980deg);
-            }
-        }
+    .midfield {
+        border: solid 5px #e31937;
+        font-weight: bold;
+    }
 
-        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
-        #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
-        #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            font-size: 20px;
-            height: 10px;
-        }
+    .defender {
+        border: solid 5px #002b5c;
+        font-weight: bold;
+    }
 
-        #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
-            color: #ffd200;
-        }
+    #int {
+        margin-left: 20px;
+        background-color: #ffffff;
+        border: solid 5px black;
+        font-weight: bold;
+    }
 
-        #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
-            color: #e31937;
-        }
+    #forward, #midfield, #interchange, #defender {
+        width: 30%;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        height: 35px;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
 
-        #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
-            color: #004b8d;
-        }
+    #TexImage {
+        position: relative;
+        float: left;
+        width: 30%;
+        height: 40%;
+    }
 
-        .areaHint {
-            font-size: 20px;
-            color: #0c2037;
-        }
+    #ebImage {
+        position: relative;
+        width: 30%;
+        height: 50%;
+        float: right;
+        margin-bottom: 25px;
+    }
 
-        .areaLabel {
-            font-size: 18px;
-            color: #002b5c;
-        }
+    #act10table3 {
+        float: left;
+    }
 
-        #act3Table td {
-            text-align: center;
-            padding: 3px;
-            border-width: 4px;
-            border-color: #002b5c;
-            font-size: 20px;
-        }
+    #goalpic {
+        float: right;
+        width: 45%;
+        height: 45%;
+        display: inline-block;
+        margin: 0 auto;
+    }
 
-        #act3Table th {
-            text-align: center;
-            padding: 3px;
-            border-width: 4px;
-            border-color: #002b5c;
-            background-color: #002b5c;
-            font-size: 20px;
-            color: white;
-        }
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
+    #c11, #c12, #c13, #c14, #c15, #c16, #c17, #c18, #c19,
+    #c20, #c21 {
+        border: solid 5px #002b5c;
+        padding: 2px;
+        text-align: center;
+        font-size: 20px;
+        color: #33619e;
+    }
 
-        #act6table th {
-            text-align: center;
-            padding: 3px;
-            border: 4px solid #002b5c;
-            background-color: #002b5c;
-            font-size: 20px;
-            color: white;
-        }
+    #coinTable td, #texTable td {
+        color: #002b5c;
+    }
 
-        #act6table td {
-            position: relative;
-            border: 4px solid #002b5c;
-            padding: 15px;
-        }
+    #coin, #coin2 {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
 
-            #act6table td input {
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                margin: 0;
-                height: 100%;
-                width: 100%;
-                border: none;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-
-        #act6Table2 th {
-            text-align: center;
-            padding: 3px;
-            border: 4px solid #002b5c;
-            background-color: #002b5c;
-            color: white;
-            width: 35%;
-        }
-
-        #act6Table2 td {
-            position: relative;
-            border: 4px solid #002b5c;
-            padding: 15px;
-        }
-
-            #act6Table2 td input {
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                margin: 0;
-                height: 100%;
-                width: 100%;
-                border: none;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-
-        .card {
-            text-align: center;
-            margin-top: 20px;
-            margin-left: 25px;
-            width: 16%;
-            height: auto;
-            border-color: #a38956;
-            display: block;
-            border-radius: 20px;
-            background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
-        }
-
-        .imgs {
-            width: 60%;
-            height: auto;
-            border: 1px solid #a38956;
-            border-radius: 15px;
-        }
-
-        #act8Field {
-            background-image: url('../images/unit2/activity8/football_oval.jpg');
-            background-size: 100% 100%;
-            height: 500px;
-        }
-
-        #act8Table1 th, #act8Table2 th, #act8Table3 th, #act9Table1 th, #act9Table2 th, #act9Table3 th, #act9Table4 th, #act9Table5 th {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            background-color: #002b5c;
-            font-size: 18px;
-            color: white;
-        }
-
-        #act8Table1 td, #act8Table2 td, #act8Table3 td, #act9Table1 td, #act9Table3 td {
-            text-align: center;
-            padding: 3px;
-            border-width: 3px;
-            border-color: #002b5c;
-            font-size: 15px;
-        }
-
-        #act9Part3 td, #act9Part1Body td, #act9Part2Body td, #act3Table td, #act4Table3 td {
-            position: relative;
-        }
-
-            #act9Part3 td input, #act9Part1Body td input, #act9Part2Body td input, #act3Table td input, #act4Table3 td input {
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                margin: 0;
-                height: 100%;
-                width: 100%;
-                border: none;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-
-        #act9Table4 td, #act9Table5 td {
-            text-align: center;
-            border: 3px solid #002b5c;
-            font-size: 18px;
-        }
-
-        textarea {
-            width: 75%;
-        }
-
-        .box {
-            background-color: white;
-            border-radius: 20%;
-            border: 1px solid black;
-            width: 10%;
-            height: 110px;
-            margin-right: 35px;
-            text-align: center;
-            font-size: 18px;
-            padding: 1px;
-        }
-
-        #act8P1R1 {
-            margin-top: 50px;
-            padding-top: 50px;
-            margin-bottom: 30px;
-            margin-left: 118px;
+        #coin div, #coin2 div {
             width: 100%;
-        }
-
-        #act8P1R2 {
-            margin-bottom: 30px;
-            margin-left: 118px;
-            width: 100%;
-        }
-
-        #act8P1R3 {
-            width: 100%;
-            margin-left: 118px;
-        }
-
-        #fwd, #def, #mid {
-            border: 2px solid #ffd200;
+            height: 100%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
             border-radius: 50%;
-            padding: 3px;
-            background-color: #ffd200;
-            color: white;
+            -webkit-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            -moz-box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+            box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
         }
 
-        .fwd {
-            background-color: #33619e;
-            color: white;
+    .side-a {
+        background-image: url('../images/Workbooklet/coinheads.PNG');
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+
+    .side-b {
+        background-image: url('../images/Workbooklet/cointails.PNG');
+    }
+
+    #coin, #coin2 {
+        transition: -webkit-transform 1s ease-in;
+        -webkit-transform-style: preserve-3d;
+    }
+
+        #coin div, #coin2 div {
+            position: absolute;
+            -webkit-backface-visibility: hidden;
         }
 
-        .mid {
-            background-color: #004b8d;
-            color: white;
+    .side-a {
+        z-index: 100;
+    }
+
+    .side-b {
+        -webkit-transform: rotateY(-180deg);
+    }
+
+    #coin.heads {
+        -webkit-animation: flipHeads 3s ease-out forwards;
+        -moz-animation: flipHeads 3s ease-out forwards;
+        -o-animation: flipHeads 3s ease-out forwards;
+        animation: flipHeads 3s ease-out forwards;
+    }
+
+    #coin.tails {
+        -webkit-animation: flipTails 3s ease-out forwards;
+        -moz-animation: flipTails 3s ease-out forwards;
+        -o-animation: flipTails 3s ease-out forwards;
+        animation: flipTails 3s ease-out forwards;
+    }
+
+    #coin2.heads {
+        -webkit-animation: flipHeads 3s ease-out forwards;
+        -moz-animation: flipHeads 3s ease-out forwards;
+        -o-animation: flipHeads 3s ease-out forwards;
+        animation: flipHeads 3s ease-out forwards;
+    }
+
+    #coin2.tails {
+        -webkit-animation: flipTails 3s ease-out forwards;
+        -moz-animation: flipTails 3s ease-out forwards;
+        -o-animation: flipTails 3s ease-out forwards;
+        animation: flipTails 3s ease-out forwards;
+    }
+
+    @@keyframes flipHeads {
+        from {
+            -webkit-transform: rotateY(0);
+            -moz-transform: rotateY(0);
+            transform: rotateY(0);
         }
 
-        .def {
-            background-color: #002b5c;
-            color: white;
+        to {
+            -webkit-transform: rotateY(1800deg);
+            -moz-transform: rotateY(1800deg);
+            transform: rotateY(1800deg);
+        }
+    }
+
+    @@keyframes flipTails {
+        from {
+            -webkit-transform: rotateY(0);
+            -moz-transform: rotateY(0);
+            transform: rotateY(0);
         }
 
-        textarea {
-            width: 75%;
+        to {
+            -webkit-transform: rotateY(1980deg);
+            -moz-transform: rotateY(1980deg);
+            transform: rotateY(1980deg);
         }
+    }
 
-        .calcTable input[type="button"] {
-            background-color: #e31937;
-            color: black;
-            width: 100%;
-            border: none;
-        }
+    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6, #pos7, #pos8,
+    #pos9, #pos10, #pos11, #pos12, #pos13, #pos14, #pos15,
+    #pos16, #pos17, #pos18, #pos19, #pos20, #pos21, #pos22 {
+        text-align: center;
+        padding: 3px;
+        border-width: 3px;
+        border-color: #002b5c;
+        font-size: 20px;
+        height: 10px;
+    }
 
-        .calcTable tr {
-            padding: 5px;
-        }
+    #pos1, #pos2, #pos3, #pos4, #pos5, #pos6 {
+        color: #ffd200;
+    }
 
-        .calcTable td {
-            border: none;
-            padding: 10px;
-        }
+    #pos7, #pos8, #pos9, #pos10, #pos11, #pos12 {
+        color: #e31937;
+    }
 
-        .calcTable {
-            width: 100%;
-            height: 100%;
-            padding: 5px;
-        }
+    #pos13, #pos14, #pos15, #pos16, #pos17, #pos18 {
+        color: #004b8d;
+    }
 
-            .calcTable input[type="text"] {
-                background-color: #ffd200;
-                border: solid black 2px;
-                width: 100%
-            }
+    .areaHint {
+        font-size: 20px;
+        color: #0c2037;
+    }
 
-        #mySideNav {
-            height: 100%;
-            width: 10%;
-            position: fixed;
-            z-index: 1;
+    .areaLabel {
+        font-size: 18px;
+        color: #002b5c;
+    }
+
+    #act3Table td {
+        text-align: center;
+        padding: 3px;
+        border-width: 4px;
+        border-color: #002b5c;
+        font-size: 20px;
+    }
+
+    #act3Table th {
+        text-align: center;
+        padding: 3px;
+        border-width: 4px;
+        border-color: #002b5c;
+        background-color: #002b5c;
+        font-size: 20px;
+        color: white;
+    }
+
+    #act6table th {
+        text-align: center;
+        padding: 3px;
+        border: 4px solid #002b5c;
+        background-color: #002b5c;
+        font-size: 20px;
+        color: white;
+    }
+
+    #act6table td {
+        position: relative;
+        border: 4px solid #002b5c;
+        padding: 15px;
+    }
+
+        #act6table td input {
+            position: absolute;
+            display: block;
             top: 0;
             left: 0;
-            background-color: #002b5c;
-            overflow-x: hidden;
-            padding-top: 20px;
-            cursor: pointer;
-        }
-
-
-        #myProgress {
+            margin: 0;
+            height: 100%;
             width: 100%;
-            height: 20%;
-            background-color: #ddd;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
-        #myBar {
-            width: 1%;
-            height: 30px;
-            background-color: #4CAF50;
-        }
+    #act6Table2 th {
+        text-align: center;
+        padding: 3px;
+        border: 4px solid #002b5c;
+        background-color: #002b5c;
+        color: white;
+        width: 35%;
+    }
 
-        #outerBorder {
-            border: solid 8px #ffd200;
-            margin-top: 20px;
-        }
+    #act6Table2 td {
+        position: relative;
+        border: 4px solid #002b5c;
+        padding: 15px;
+    }
 
-        #innerBorder {
-            border: solid 1px grey;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            margin-right: 20px;
-            background-color: white;
-        }
-
-        #header {
+        #act6Table2 td input {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 100%;
             width: 100%;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
-        #headerChild {
-            margin-left: -15px;
-            margin-bottom: 0px;
+    .card {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 25px;
+        width: 16%;
+        height: auto;
+        border-color: #a38956;
+        display: block;
+        border-radius: 20px;
+        background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
+    }
+
+    .imgs {
+        width: 60%;
+        height: auto;
+        border: 1px solid #a38956;
+        border-radius: 15px;
+    }
+
+    #act8Field {
+        background-image: url('../images/unit2/activity8/football_oval.jpg');
+        background-size: 100% 100%;
+        height: 500px;
+    }
+
+    #act8Table1 th, #act8Table2 th, #act8Table3 th, #act9Table1 th, #act9Table2 th, #act9Table3 th, #act9Table4 th, #act9Table5 th {
+        text-align: center;
+        padding: 3px;
+        border: solid 3px #002b5c;
+        background-color: #002b5c;
+        font-size: 18px;
+        color: white;
+    }
+
+    #act8Table1 td, #act8Table2 td, #act8Table3 td, #act9Table1 td, #act9Table3 td {
+        text-align: center;
+        border: solid 3px #002b5c;
+        padding: 3px;
+        font-size: 15px;
+    }
+
+    #act9Part3 td, #act9Part1Body td, #act9Part2Body td, #act3Table td, #act4Table3 td, #act8Table1 td, #act8Table2 td, #act8Table3 td {
+        position: relative;
+    }
+
+        #act9Part3 td input, #act9Part1Body td input, #act9Part2Body td input, #act3Table td input,
+        #act4Table3 td input, #act8Table1 td input, #act8Table2 td input, #act8Table3 td input {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
         }
-    </style>
+
+    #act9Table4 td, #act9Table5 td {
+        text-align: center;
+        border: 3px solid #002b5c;
+        font-size: 18px;
+    }
+
+    textarea {
+        width: 75%;
+    }
+
+    .box {
+        background-color: white;
+        border-radius: 20%;
+        border: 1px solid black;
+        width: 10%;
+        height: 110px;
+        margin-right: 35px;
+        text-align: center;
+        font-size: 18px;
+        padding: 1px;
+    }
+
+    #act8P1R1 {
+        margin-top: 50px;
+        padding-top: 50px;
+        margin-bottom: 30px;
+        margin-left: 118px;
+        width: 100%;
+    }
+
+    #act8P1R2 {
+        margin-bottom: 30px;
+        margin-left: 118px;
+        width: 100%;
+    }
+
+    #act8P1R3 {
+        width: 100%;
+        margin-left: 118px;
+    }
+
+    #fwd, #def, #mid {
+        border: 2px solid #ffd200;
+        border-radius: 50%;
+        padding: 3px;
+        background-color: #ffd200;
+        color: white;
+    }
+
+    .fwd {
+        background-color: #33619e;
+        color: white;
+    }
+
+    .mid {
+        background-color: #004b8d;
+        color: white;
+    }
+
+    .def {
+        background-color: #002b5c;
+        color: white;
+    }
+
+    textarea {
+        width: 75%;
+    }
+
+    .calcTable input[type="button"] {
+        background-color: #e31937;
+        color: black;
+        width: 100%;
+        border: none;
+    }
+
+    .calcTable tr {
+        padding: 5px;
+    }
+
+    .calcTable td {
+        border: none;
+        padding: 10px;
+    }
+
+    .calcTable {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+    }
+
+        .calcTable input[type="text"] {
+            background-color: #ffd200;
+            border: solid black 2px;
+            width: 100%
+        }
+
+    #mySideNav {
+        height: 100%;
+        width: 10%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #002b5c;
+        overflow-x: hidden;
+        padding-top: 20px;
+        cursor: pointer;
+    }
+
+
+    #myProgress {
+        width: 100%;
+        height: 20%;
+        background-color: #ddd;
+    }
+
+    #myBar {
+        width: 1%;
+        height: 30px;
+        background-color: #4CAF50;
+    }
+
+    #outerBorder {
+        border: solid 8px #ffd200;
+        margin-top: 20px;
+    }
+
+    #innerBorder {
+        border: solid 1px grey;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        background-color: white;
+    }
+
+    #header {
+        width: 100%;
+    }
+
+    #headerChild {
+        margin-left: -15px;
+        margin-bottom: 0px;
+    }
+</style>
 
 
 <nav id="mySideNav" class="sidenav nav-link nav-item text-light" style="font-family: 'Titillium Web', sans-serif">
@@ -1787,74 +1786,74 @@
 
             <div class="row containInside" style="width:100%;">
                 <table class="table table-bordered" id="act3Table" style="text-align:center;margin-top:15px;width:100%;margin-right:25px;">
-                        <thead>
-                            <tr>
-                                <th>AFL GROUND</th>
-                                <th>LENGTH</th>
-                                <th>WIDTH</th>
-                                <th>AREA</th>
-                                <th>VENUE CAPACITY</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>MCG (Melbourne)</td>
-                                <td>161m</td>
-                                <td>138m</td>
-                                <td id="MCGArea"><input type="number" /></td>
-                                <td>100,124</td>
-                            </tr>
-                            <tr>
-                                <td>Marvel (Docklands)</td>
-                                <td>160m</td>
-                                <td>129m</td>
-                                <td id="MarvelArea"><input type="number" /></td>
-                                <td>53,343</td>
-                            </tr>
-                            <tr>
-                                <td>GMHBA (Geelong)</td>
-                                <td>170m</td>
-                                <td>117m</td>
-                                <td id="GMHBAArea"><input type="number" /></td>
-                                <td>36,000</td>
-                            </tr>
-                            <tr>
-                                <td>SCG (Sydney)</td>
-                                <td>155m</td>
-                                <td>136m</td>
-                                <td id="SCGArea"><input type="number" /></td>
-                                <td>48,000</td>
-                            </tr>
-                            <tr>
-                                <td>Spotless (GWS)</td>
-                                <td>164m</td>
-                                <td>128m</td>
-                                <td id="SpotlessArea"><input type="number" /></td>
-                                <td>23,500</td>
-                            </tr>
-                            <tr>
-                                <td>Optus (Perth)</td>
-                                <td>165m</td>
-                                <td>130m</td>
-                                <td id="OptusArea"><input type="number" /></td>
-                                <td>65,156</td>
-                            </tr>
-                            <tr>
-                                <td>GABBA (Brisbane)</td>
-                                <td>156m</td>
-                                <td>138m</td>
-                                <td id="GabbaArea"><input type="number" /></td>
-                                <td>41,974</td>
-                            </tr>
-                            <tr>
-                                <td>Metricon (Gold Coast)</td>
-                                <td>158m</td>
-                                <td>134m</td>
-                                <td id="MetriconArea"><input type="number" /></td>
-                                <td>27,500</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <thead>
+                        <tr>
+                            <th>AFL GROUND</th>
+                            <th>LENGTH</th>
+                            <th>WIDTH</th>
+                            <th>AREA</th>
+                            <th>VENUE CAPACITY</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MCG (Melbourne)</td>
+                            <td>161m</td>
+                            <td>138m</td>
+                            <td id="MCGArea"><input type="number" /></td>
+                            <td>100,124</td>
+                        </tr>
+                        <tr>
+                            <td>Marvel (Docklands)</td>
+                            <td>160m</td>
+                            <td>129m</td>
+                            <td id="MarvelArea"><input type="number" /></td>
+                            <td>53,343</td>
+                        </tr>
+                        <tr>
+                            <td>GMHBA (Geelong)</td>
+                            <td>170m</td>
+                            <td>117m</td>
+                            <td id="GMHBAArea"><input type="number" /></td>
+                            <td>36,000</td>
+                        </tr>
+                        <tr>
+                            <td>SCG (Sydney)</td>
+                            <td>155m</td>
+                            <td>136m</td>
+                            <td id="SCGArea"><input type="number" /></td>
+                            <td>48,000</td>
+                        </tr>
+                        <tr>
+                            <td>Spotless (GWS)</td>
+                            <td>164m</td>
+                            <td>128m</td>
+                            <td id="SpotlessArea"><input type="number" /></td>
+                            <td>23,500</td>
+                        </tr>
+                        <tr>
+                            <td>Optus (Perth)</td>
+                            <td>165m</td>
+                            <td>130m</td>
+                            <td id="OptusArea"><input type="number" /></td>
+                            <td>65,156</td>
+                        </tr>
+                        <tr>
+                            <td>GABBA (Brisbane)</td>
+                            <td>156m</td>
+                            <td>138m</td>
+                            <td id="GabbaArea"><input type="number" /></td>
+                            <td>41,974</td>
+                        </tr>
+                        <tr>
+                            <td>Metricon (Gold Coast)</td>
+                            <td>158m</td>
+                            <td>134m</td>
+                            <td id="MetriconArea"><input type="number" /></td>
+                            <td>27,500</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
 
@@ -2491,1101 +2490,1357 @@
     </div>
 </div>
 
+
 <!--Unit 2-->
 <div style="width:100%;height:20%;background-color:#002b5c;border:none" class="row containRow" id="unit2">
     <div style="margin-left:30%;padding:50px;font-size:32px;color:white">UNIT 2: STATISTICS</div>
 </div>
 
+
 <!--Activity 6: part 1-->
-<div class="row containRow" id="act6">
-    <h3><b>AFCW STEM ID PROFILES: </b> Activity 6 (Exploration Task)</h3>
-    <br />
-    <div class="row containInside" id="STEMProfile" hidden>
-        <div class="col-md-12">
-            <div class="row" id="stemIDR1">
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
 
+    <!--Activity-->
+    <div class="row containRow" id="act6">
+        <h3><b>AFCW STEM ID PROFILES: Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
 
+        <div id="innerBorder">
+            <div class="row containInside" id="STEMProfile" hidden>
+                <div class="col-md-12">
+                    <div class="row" id="stemIDR1"></div>
+                    <div class="row" id="stemIDR2"></div>
+                </div>
             </div>
-            <div class="row" id="stemIDR2">
-
-            </div>
-        </div>
-    </div>
-    <br />
-    <p style="font-size:18px; margin-left:10px;">
-        In pairs, choose 10 of the AFCW STEM ID Profiles, fill in the table and calculate the average height and age
-        of the players.
-    </p>
-
-    <div class="row containInside">
-        <div class="col-md-12">
-            <table style="width:90%" id="act6table">
-                <tr style="background-color:#002b5c; color:white;">
-                    <th>NAME:</th>
-                    <th>GUERSEY NO:</th>
-                    <th>HEIGHT:</th>
-                    <th>DEBUT ROUND:</th>
-                    <th>AGE:</th>
-                    <th>RECRUITED FROM:</th>
-                </tr>
-                <tr>
-                    <td><input /></td>
-                    <td><input /></td>
-                    <td><input /></td>
-                    <td><input /></td>
-                    <td><input /></td>
-                    <td><input /></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row containInside">
-        <div class="col-md-12">
-            <button class="btn btn-outline-primary" onclick="addPlayer()" id="addPlayerButton" style="position:relative;float:right;">Click to Add Player</button>
-            <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
-            <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-left:10px;">Get My Players</button>
-        </div>
-    </div>
-
-    <br /><br />
-
-    <div class="row containInside">
-        <div class="col-md-12">
-            <table style="width:50%;" id="act6Table2">
-                <tr color:white;">
-                    <th>AVERAGE HEIGHT: </th>
-                    <td><input size="5" /></td>
-                    <th>AVERAGE AGE: </th>
-                    <td><input size="5" /></td>
-                </tr>
-            </table>
-        </div>
-    </div><br /><br />
-
-    <div class="row containInside">
-        <div class="col-md-12">
-            <p style="font-size:20px;">
-                Australian Football League Womens (AFLW) first started in 2017, in pairs arrange your 10 players in the following orders and answer the questions below. <br />
-                <br /><span style="font-size:18px;"><b>TASK: </b>Arrange your 10 players into debut order, i.e. who was the first to debut in the AFLW to who was the last to debut.</span>
-            </p><br />
-
-            <label for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
-            <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
             <br />
-            <label for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
-            <textarea name="act6q2" rows="2" style="width:65%;"></textarea>
+            <p style="font-size:18px; margin-left:10px;">
+                In pairs, choose 10 of the AFCW STEM ID Profiles, fill in the table and calculate the average height and age
+                of the players.
+            </p>
+
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <table style="width:90%" id="act6table">
+                        <tr style="background-color:#002b5c; color:white;">
+                            <th>NAME:</th>
+                            <th>GUERSEY NO:</th>
+                            <th>HEIGHT:</th>
+                            <th>DEBUT ROUND:</th>
+                            <th>AGE:</th>
+                            <th>RECRUITED FROM:</th>
+                        </tr>
+                        <tr>
+                            <td><input /></td>
+                            <td><input /></td>
+                            <td><input /></td>
+                            <td><input /></td>
+                            <td><input /></td>
+                            <td><input /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <button class="btn btn-outline-primary" onclick="addPlayer()" id="addPlayerButton" style="position:relative;float:right;margin-right:10px;">Click to Add Player</button>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
+                    <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-left:10px;">Get My Players</button>
+                </div>
+            </div>
+
             <br /><br />
-            <p style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
-            <label for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
-            <textarea name="act6q3" rows="2" style="width:65%;"></textarea>
-            <br />
-            <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
-            <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
+
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <table style="width:50%;" id="act6Table2">
+                        <tr color:white;">
+                            <th>AVERAGE HEIGHT: </th>
+                            <td><input size="5" /></td>
+                            <th>AVERAGE AGE: </th>
+                            <td><input size="5" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br /><br />
+
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <p style="font-size:20px;">
+                        Australian Football League Womens (AFLW) first started in 2017, in pairs arrange your 10 players in the following orders and answer the questions below. <br />
+                        <br /><span style="font-size:18px;"><b>TASK: </b>Arrange your 10 players into debut order, i.e. who was the first to debut in the AFLW to who was the last to debut.</span>
+                    </p><br />
+
+                    <label for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
+                    <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
+                    <br />
+                    <label for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
+                    <textarea name="act6q2" rows="2" style="width:65%;"></textarea>
+                    <br /><br />
+                    <p style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
+                    <label for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
+                    <textarea name="act6q3" rows="2" style="width:65%;"></textarea>
+                    <br />
+                    <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
+                    <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
 </div>
+
 
 <!--Activity 6: part 2-->
-<div class="row containRow">
-    <h3>AFCW STEM ID PROFILES: Activity 6 (Exploration Task)</h3>
-
-    <div class="col-md-12">
-        <img src="~/images/Unit2/RANGE.PNG" alt="RANGE" style="width:100%;" />
-        <img src="~/images/Unit2/MEAN.PNG" alt="MEAN" style="width:100%;" />
-
-        <p style="margin-top:25px;"><b>Age Analysis</b></p><br />
-        <label for="playerAge" style="font-size:18px;">How did you calculate your players age? Explain:</label><br />
-        <textarea name="playerAge" rows="1" style="width:65%;"></textarea>
-
-        <label for="ageRange" style="font-size:18px;">What is the age range for the 10 AFCW players you selected? </label><br />
-        <textarea name="ageRange" rows="1" style="width:65%;"></textarea><br />
-
-        <label for="average" style="font-size:18px;">What is the average (mean) age of the 10 AFCW players selected?</label><br />
-        <textarea name="average" rows="1" style="width:65%;"></textarea><br />
-
-        <label for="average" style="font-size:18px;">
-            Does there appear to be a link between the age of the player and when they made their debut?
-            Explain the reasoning behind your answer.
-        </label><br />
-        <textarea name="average" rows="3" style="width:65%;"></textarea><br />
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
     </div>
 
+    <!--Activity-->
+    <div class="row containRow">
+        <h3><b>AFCW STEM ID PROFILES: Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
+
+        <div id="innerBorder">
+            <div class="col-md-12">
+                <img src="~/images/Unit2/RANGE.PNG" alt="RANGE" style="width:100%;margin-top:15px;margin-bottom:10px;" />
+                <img src="~/images/Unit2/MEAN.PNG" alt="MEAN" style="width:100%;" />
+
+                <p style="margin-top:25px;"><b>Age Analysis</b></p><br />
+                <label for="playerAge" style="font-size:18px;">How did you calculate your players age? Explain:</label><br />
+                <textarea name="playerAge" rows="1" style="width:65%;"></textarea>
+
+                <label for="ageRange" style="font-size:18px;">What is the age range for the 10 AFCW players you selected? </label><br />
+                <textarea name="ageRange" rows="1" style="width:65%;"></textarea><br />
+
+                <label for="average" style="font-size:18px;">What is the average (mean) age of the 10 AFCW players selected?</label><br />
+                <textarea name="average" rows="1" style="width:65%;"></textarea><br />
+
+                <label for="average" style="font-size:18px;">
+                    Does there appear to be a link between the age of the player and when they made their debut?
+                    Explain the reasoning behind your answer.
+                </label><br />
+                <textarea name="average" rows="3" style="width:65%;"></textarea><br />
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
 </div>
+
 
 <!--Activity 6: part 3-->
-<div class="row containRow">
-    <h3><b>AFCW STEM ID PROFILESL Activity 6 (Exploration Task)</b></h3>
-    <div class="col-md-12">
-        <p style="margin-top:25px;"><b>Height Analysis</b></p>
-        <br />
-
-        <label for="heightRange" style="font-size:18px;">What is the height range of your chosen 10 AFCW players you selected?</label><br />
-        <textarea name="heightRange" rows="2" style="width:65%;"></textarea><br />
-
-        <label for="tallestPlayer" style="font-size:18px;">Who is the tallest player out of your 10 AFCW players?</label><br />
-        <textarea name="tallestPlayer" rows="2" style="width:65%;"></textarea><br />
-
-        <label for="shortestPlayer" style="font-size:18px;">Who is the shortest player out of your 10 AFCW players?</label><br />
-        <textarea name="shortestPlayer" rows="2" style="width:65%;"></textarea><br />
-
-        <label for="shortestPlayer" style="font-size:18px;">The average height in the 2019 Crows AFLW team was 171cm. Explain where your 10 players sit in comparision:</label><br />
-        <textarea name="shortestPlayer" rows="3" style="width:65%;"></textarea><br />
-    </div>
-</div>
-
-<!--Activity 6: part 4-->
-<div class="=row containRow">
-    <h3><b>AFCW STEM ID PROFILES:</b> Activity 6</h3><br />
-    <div class="col-md-12">
-        <p>
-            On the map below, using the information on your STEMfooty profiles record the location
-            from where the 10 AFCW players have been recruited (record their initials in the state they are from).
-            If they are from overseas, mark the world globe. Erin Phillips has been recorded for you.
-        </p><br />
-
-        <p>
-            Tally the totals for the location of your set of AFCW players. Calculate the percentage of
-            players from each state by using this formula:
-            <br /><span style="color:#e31937;">Percentage per state = Number of players in the state &#247 10 x 100</span>
-        </p>
-    </div>
-
-</div>
-
-<!--Activity 8: Part 1-->
-<div class="row containRow" id="act8">
-    <h3><b>CROW BALL: Activity 8 (Exploration Task)</b></h3>
-
-    <div class="row containInside">
-        <div class="col-md-12">
-            <p style="margin-bottom:25px;">
-                On the field below is your team you have created. Use this team to answer the questions that are to follow.
-            </p>
-
-            <div id="act8Field">
-
-                <div class="row" id="act8P1R1">
-                    @for (int i = 0; i < 2 && i < forward.Count; i++)
-                    {
-                        Player player = forward[i];
-                        <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                    @for (int i = 0; i < 2 && i < mid.Count; i++)
-                    {
-                        Player player = mid[i];
-                        <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                    @for (int i = 0; i < 2 && i < back.Count; i++)
-                    {
-                        Player player = back[i];
-                        <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                </div>
-                <div class="row" id="act8P1R2">
-                    @for (int i = 2; i < 4 && i < forward.Count; i++)
-                    {
-                        Player player = forward[i];
-                        <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                    @for (int i = 0; i < 2 && i < ruck.Count; i++)
-                    {
-                        Player player = ruck[i];
-                        <div class="box mid" id=""><span id="mid">RUCK</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                    @for (int i = 2; i < 4 && i < back.Count; i++)
-                    {
-                        Player player = back[i];
-                        <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                </div>
-                <div class="row" id="act8P1R3">
-                    @for (int i = 4; i < 6 && i < forward.Count; i++)
-                    {
-                        Player player = forward[i];
-                        <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                    @for (int i = 2; i < 4 && i < mid.Count; i++)
-                    {
-                        Player player = mid[i];
-                        <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                    @for (int i = 4; i < 6 && i < back.Count; i++)
-                    {
-                        Player player = back[i];
-                        <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
-                    }
-                </div>
-            </div>
-
-            <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:20px;">
-                <label for="teamTotal">TEAM TOTAL: </label>
-                <input name="team Total" id="teamTotal" type="number" style="text-align:center;margin-left:10px;" />
-
-                <span style="margin-left:25px;"></span>
-
-                <label for="leftOver">LEFT OVER: </label>
-                <input name="left over" id="leftOver" type="number" style="text-align:center;margin-left:10px;" />
-            </div>
-            <br />
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
     </div>
 
-    <div class="row containInside">
-        <div class="col-md-12">
-            <p>
-                The Chief Executive Officer of the Adelaide Football Club, Andrew Fagan, has called you and your partner into
-                his office and asked you to justify your team selection. Explain the players you have chosen and why you have
-                chosen them. Give reasons that would convince him to keep you as the coaches for next year:
-            </p>
-            <textarea name="justification" rows="3"></textarea><br />
-        </div>
-    </div>
+    <!--Activity-->
+    <div class="row containRow">
+        <h3><b>AFCW STEM ID PROFILESL Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
 
-
-</div>
-
-<!--Activity 8: Part 3-->
-<div class="row containRow">
-    <h3><b>AFL CARDS AND CONTENTS: Activity 8 (Exploration Task) </b></h3><br />
-
-    <div class="row containInside">
-        <div class="col-md-12">
-            <p>Which position on your team has the highest average for these statistics:</p>
-            <div class="row">
-                <div class="col-md-5">
-                    <label>KICKS: </label>
-                    <input style="width:100%;" />
+        <div id="innerBorder" style="width:100%;">
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <p style="margin-top:25px;"><b>Height Analysis</b></p>
                     <br />
 
-                    <label>HANDBALLS: </label>
-                    <input style="width:100%;" />
-                    <br /><br />
+                    <label for="heightRange" style="font-size:18px;">What is the height range of your chosen 10 AFCW players you selected?</label><br />
+                    <textarea name="heightRange" rows="2" style="width:65%;"></textarea><br /><br />
+
+                    <label for="tallestPlayer" style="font-size:18px;">Who is the tallest player out of your 10 AFCW players?</label><br />
+                    <textarea name="tallestPlayer" rows="2" style="width:65%;"></textarea><br /><br />
+
+                    <label for="shortestPlayer" style="font-size:18px;">Who is the shortest player out of your 10 AFCW players?</label><br />
+                    <textarea name="shortestPlayer" rows="2" style="width:65%;"></textarea><br /><br />
+
+                    <label for="shortestPlayer" style="font-size:18px;">The average height in the 2019 Crows AFLW team was 171cm. Explain where your 10 players sit in comparision:</label><br />
+                    <textarea name="shortestPlayer" rows="3" style="width:65%;"></textarea><br /><br />
                 </div>
             </div>
+        </div>
+    </div>
 
-            <label>Explain why you think that position has the highest average for each statistic:</label>
-            <textarea rows="2"></textarea>
-            <br /><br />
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
 
-            <label><b>Total Disposals:</b> Add up the total average of kicks and handballs for each position.</label>
-            <table class="table table-bordered" id="act8Table1">
-                <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
-                <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
-            </table>
-            <br />
+</div>
 
-            <label>Explain how this number relates to the average disposals for each position.</label>
-            <textarea rows="2"></textarea>
-            <br />
 
-            <label>Describe what a disposal statistic in AFL is.</label>
-            <textarea rows="2"></textarea>
-            <br /><br />
+<!--Activity 6: part 4-->
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
 
-            <label>
-                <span style="font-size:18px;">Calculate the total cost of your positions and record the average disposals:</span><br />
-                (Add up the price of all 6 players and record the total below, you may like to use a calculator)
-            </label>
-            <table class="table table-bordered" id="act8Table2">
-                <tr><th>POSITION</th><th>TOTAL COST</th><th>TOTAL DISPOSALS</th></tr>
-                <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
-                <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
-                <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
-            </table>
+    <!--Activity-->
+    <div class="row containRow">
+        <h3><b>AFCW STEM ID PROFILES: Activity 6</b><br /><span style="font-size:20px;">Extension / Group Work Challenge</span></h3><br />
+
+        <div id="innerBorder">
+            <div class="col-md-12">
+                <p>
+                    On the map below, using the information on your STEMfooty profiles record the location
+                    from where the 10 AFCW players have been recruited (record their initials in the state they are from).
+                    If they are from overseas, mark the world globe. Erin Phillips has been recorded for you.
+                </p><br />
+
+                <p>
+                    Tally the totals for the location of your set of AFCW players. Calculate the percentage of
+                    players from each state by using this formula:
+                    <br /><span style="color:#e31937;">Percentage per state = Number of players in the state &#247 10 x 100</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
         </div>
     </div>
 </div>
 
-<!--Activity 8: Part 4-->
-<div class="row containRow">
-    <h3><b>AFL CARDS AND CONTENTS: Activity 8 (Exploration Task) </b></h3><br />
 
-    <div class="row containInside">
+<!--Activity 8: Part 1-->
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
+
+    <!--Activity-->
+    <div class="row containRow" id="act8">
+        <h3><b>CROW BALL: Activity 8</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
+
+        <div id="innerBorder">
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <p style="margin-bottom:20px;margin-top:15px;font-size:20px;">
+                        On the field below is your team you have created. Use this team to answer the questions that are to follow.
+                    </p>
+
+                    <div id="act8Field">
+
+                        <div class="row" id="act8P1R1">
+                            @for (int i = 0; i < 2 && i < forward.Count; i++)
+                            {
+                                Player player = forward[i];
+                                <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                            @for (int i = 0; i < 2 && i < mid.Count; i++)
+                            {
+                                Player player = mid[i];
+                                <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                            @for (int i = 0; i < 2 && i < back.Count; i++)
+                            {
+                                Player player = back[i];
+                                <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                        </div>
+                        <div class="row" id="act8P1R2">
+                            @for (int i = 2; i < 4 && i < forward.Count; i++)
+                            {
+                                Player player = forward[i];
+                                <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                            @for (int i = 0; i < 2 && i < ruck.Count; i++)
+                            {
+                                Player player = ruck[i];
+                                <div class="box mid" id=""><span id="mid">RUCK</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                            @for (int i = 2; i < 4 && i < back.Count; i++)
+                            {
+                                Player player = back[i];
+                                <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                        </div>
+                        <div class="row" id="act8P1R3">
+                            @for (int i = 4; i < 6 && i < forward.Count; i++)
+                            {
+                                Player player = forward[i];
+                                <div class="box fwd" id=""><span id="fwd">FWD</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                            @for (int i = 2; i < 4 && i < mid.Count; i++)
+                            {
+                                Player player = mid[i];
+                                <div class="box mid" id=""><span id="mid">MID</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                            @for (int i = 4; i < 6 && i < back.Count; i++)
+                            {
+                                Player player = back[i];
+                                <div class="box def" id=""><span id="def">DEF</span><br />@player.Name<br />$ @player.Price</div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:20px;">
+                        <label for="teamTotal">TEAM TOTAL: </label>
+                        <input name="team Total" id="teamTotal" type="number" style="text-align:center;margin-left:10px;" />
+
+                        <span style="margin-left:25px;"></span>
+
+                        <label for="leftOver">LEFT OVER: </label>
+                        <input name="left over" id="leftOver" type="number" style="text-align:center;margin-left:10px;" />
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="row containInside">
+                <div class="col-md-12">
+                    <p>
+                        The Chief Executive Officer of the Adelaide Football Club, Andrew Fagan, has called you and your partner into
+                        his office and asked you to justify your team selection. Explain the players you have chosen and why you have
+                        chosen them. Give reasons that would convince him to keep you as the coaches for next year:
+                    </p>
+                    <textarea name="justification" rows="3"></textarea><br />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Footer-->
+    <div class="row">
         <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
+</div>
 
-            <label>
-                Which area on the field was the most expensive and how did this correlate to the total average disposals?
-                Explain your results:
-            </label>
-            <textarea rows="2"></textarea>
-            <br />
 
-            <p>Choose another class mates team to compare against. Record their team results below:</p>
+<!--Activity 8: Part 3-->
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
 
-            <label>Class Mate’s Team Name: </label>
-            <input /><br /><br />
+    <!--ACtivity-->
+    <div class="row containRow">
+        <h3><b>AFL CARDS AND CONTENTS: Activity 8</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
 
-            <table class="table table-bordered" id="act8Table3">
-                <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
-                <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
-            </table><br />
+        <div id="innerBorder" style="width:100%;">
+            <div class="row containInside">
+                <p>Which position on your team has the highest average for these statistics:</p>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label>KICKS: </label>
+                        <input style="width:100%;" />
+                        <br />
 
-            <p style="font-size:18px;"><b>Analyse your class mate's team and what do you believe to be the ‘strengths and weaknesses’ of their team:</b></p><br />
+                        <label>HANDBALLS: </label>
+                        <input style="width:100%;" />
+                        <br /><br />
+                    </div>
+                </div>
 
-            <label>Strengths (with explanation).</label><br />
-            <textarea rows="2"></textarea><br />
+                <label>Explain why you think that position has the highest average for each statistic:</label>
+                <textarea rows="2"></textarea>
+            </div>
+            <div class="row containInside" style="margin-top:15px;">
+                <label><b>Total Disposals:</b> Add up the total average of kicks and handballs for each position.</label>
+                <table class="table table-bordered" id="act8Table1" style="margin-right:25px;">
+                    <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
+                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                </table>
+            </div>
+            <div class="row containInside" style="margin-top:15px;">
+                <label>Explain how this number relates to the average disposals for each position.</label>
+                <textarea rows="2"></textarea>
+                
+                <label style="margin-top:15px;">Describe what a disposal statistic in AFL is.</label>
+                <textarea rows="2"></textarea>
+            </div>
+            <div class="row containInside" style="margin-top:15px;">
+                <label>
+                    <span style="font-size:18px;">Calculate the total cost of your positions and record the average disposals:</span><br />
+                    (Add up the price of all 6 players and record the total below, you may like to use a calculator)
+                </label>
+                <table class="table table-bordered" id="act8Table2" style="margin-right:25px;">
+                    <tr><th>POSITION</th><th>TOTAL COST</th><th>TOTAL DISPOSALS</th></tr>
+                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
 
-            <label>Weakness (with explanation).</label><br />
-            <textarea rows="2"></textarea><br /><br />
 
-            <p>
-                After looking at your class mates team, if you had to make 2 changes to your team what would you change
-                and why?
-            </p>
-            <textarea rows="4"></textarea><br />
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
+</div>
 
+
+<!--Activity 8: Part 4-->
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
+
+    <!--activity-->
+    <div class="row containRow">
+        <h3><b>AFL CARDS AND CONTENTS: Activity 8</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
+
+        <div id="innerBorder">
+            <div class="row containInside">
+                <label>
+                    Which area on the field was the most expensive and how did this correlate to the total average disposals?
+                    Explain your results:
+                </label>
+                <textarea rows="2"></textarea>
+            </div>
+            <div class="row containInside" style="margin-top:15px;">
+                <p>
+                    Choose another class mates team to compare against. Record their team results below:<br /><br />
+                    
+                </p>
+                <div class="row">
+                    <label style="margin-right:15px;">Class Mate’s Team Name:</label>
+                    <input />
+                </div>
+                
+
+                <table class="table table-bordered" id="act8Table3" style="margin-right:25px;">
+                    <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
+                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                </table>
+            </div>
+            <div class="row containInside" style="margin-top:15px;">
+                <p style="font-size:18px;"><b>Analyse your class mate's team and what do you believe to be the ‘strengths and weaknesses’ of their team:</b></p>
+
+                <label for="act8In1" style="width:50%;">Strengths (with explanation).</label>
+                <textarea rows="2" id="act8In1"></textarea>
+
+                <label for="act8In2" style="width:50%;margin-top:15px;">Weakness (with explanation).</label>
+                <textarea rows="2" id="act8In2"></textarea>
+
+                <p style="margin-bottom:25px;">
+                    After looking at your class mates team, if you had to make 2 changes to your team what would you change
+                    and why?
+                </p>
+                <textarea rows="4" style="margin-bottom:15px;"></textarea>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
         </div>
     </div>
 </div>
 
 <!--Activity 8: Part 6-->
-<div class="row containRow">
-    <h3> AFL CARDS AND CONTENTS: Activity 8 (Exploration Task)</h3><br />
-    <div class="row containInside">
+<div id=outerBorder>
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
+
+    <div class="row containRow">
+        <h3><b>AFL CARDS AND CONTENTS: Activity 8</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
+
+        <div id="innerBorder">
+            <div class="row containInside">
+                <div class="col-md-12" style="margin-top:15px;">
+                    <label>Which team member collected the most points and why?</label>
+                    <textarea rows="2"></textarea><br />
+
+                    <label>Did the player with the highest value collect the most points? Why/why not – Explain.</label>
+                    <textarea rows="2"></textarea><br /><br />
+
+                    <p style="font-size:18px;">Is this points system the best way to determine the MVP of a team? Explain the positives and negatives.</p><br />
+
+                    <label style="width:50%">Positives (with explanation): </label>
+                    <textarea rows="2"></textarea>
+
+                    <label style="width:50%">Negatives (with explanation): </label>
+                    <textarea rows="2"></textarea>
+
+                    <label>
+                        Could your Full Back win your MVP with your points system? What adjustments could you make to cater for all
+                        positions?
+                    </label>
+                    <textarea rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="row">
         <div class="col-md-12">
-            <label>Which team member collected the most points and why?</label>
-            <textarea rows="2"></textarea><br />
-
-            <label>Did the player with the highest value collect the most points? Why/why not – Explain.</label>
-            <textarea rows="2"></textarea><br /><br />
-
-            <p style="font-size:18px;">Is this points system the best way to determine the MVP of a team? Explain the positives and negatives.</p><br />
-
-            <label style="width:50%">Positives (with explanation): </label>
-            <textarea rows="2"></textarea>
-
-            <label style="width:50%">Negatives (with explanation): </label>
-            <textarea rows="2"></textarea>
-
-            <label>
-                Could your Full Back win your MVP with your points system? What adjustments could you make to cater for all
-                positions?
-            </label>
-            <textarea rows="2"></textarea>
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
         </div>
     </div>
 </div>
+
 
 <!--Activity 9: part 1-->
-<div class="row containRow" id="act9">
-    <h3><b>GOAL KICKING DATA: ACTIVITY 9 (Exploration Task)</b></h3><br />
-    <p>As a class calculate the goal kicking average (mean) from the top 10 AFC 2018 Men's goal kickers list to 1 decimal place</p>
-
-    <div class="row containInside">
-        <div class="col-md-8">
-            <table class="table table-bordered" id="act9Table1">
-                <thead>
-                    <tr>
-                        <th>PLAYERS <br />(Top 10 AFC men's)</th>
-                        <th>GAMES PLAYED IN 2019<br /></th>
-                        <th>GOALS <br /> (Total 2019)</th>
-                        <th>AVERAGE GOALS <br />(Per Game)</th>
-                    </tr>
-                </thead>
-                <tbody id="act9Part1Body">
-                    <tr>
-                        <td>TAYLOR WALKER</td>
-                        <td>22</td>
-                        <td>43</td>
-                        <td><input id="act9Part1TW" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>LACHLAN MURPHY</td>
-                        <td>21</td>
-                        <td>19</td>
-                        <td><input id="act9Part1LM" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>TOM LYNCH</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td><input id="act9Part1TL" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>RORY SLOANE</td>
-                        <td>22</td>
-                        <td>11</td>
-                        <td><input id="act9Part1RS" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>BRAD CROUCH</td>
-                        <td>22</td>
-                        <td>11</td>
-                        <td><input id="act9Part1BC" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>BRODIE SMITH</td>
-                        <td>22</td>
-                        <td>10</td>
-                        <td><input id="act9Part1BS" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>RILEY KNIGHT</td>
-                        <td>15</td>
-                        <td>9</td>
-                        <td><input id="act9Part1RK" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>DARCY FOGARTY</td>
-                        <td>4</td>
-                        <td>9</td>
-                        <td><input id="act9Part1DF" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>ELLIOTT HIMMELBERG</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td><input id="act9Part1EM" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>MATT CROUCH</td>
-                        <td>19</td>
-                        <td>7</td>
-                        <td><input id="act9Part1MC" style="text-align:center;" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4">
-            <img src="~/images/Unit2/Activity9/Act9_Tex_Walker.jpg" alt="Taylor Walker" style="width:100%;" />
-            <p>Taylor Walker</p>
-            <p>2019 Goals: <span>43</span></p>
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
     </div>
 
-    <div class="row containInside">
-        <div class="col-md-6">
-            <p>
-                As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
-                (usually the last digit) graph: <br />
-                For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
-                <span>the left will be 3.</span>
-            </p>
+    <!--Activity-->
+    <div class="row containRow" id="act9">
+        <h3><b>GOAL KICKING DATA: ACTIVITY 9</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
+
+        <div id="innerBorder">
+            <p>As a class calculate the goal kicking average (mean) from the top 10 AFC 2018 Men's goal kickers list to 1 decimal place</p>
+
+            <div class="row containInside">
+                <div class="col-md-8">
+                    <table class="table table-bordered" id="act9Table1">
+                        <thead>
+                            <tr>
+                                <th>PLAYERS <br />(Top 10 AFC men's)</th>
+                                <th>GAMES PLAYED IN 2019<br /></th>
+                                <th>GOALS <br /> (Total 2019)</th>
+                                <th>AVERAGE GOALS <br />(Per Game)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="act9Part1Body">
+                            <tr>
+                                <td>TAYLOR WALKER</td>
+                                <td>22</td>
+                                <td>43</td>
+                                <td><input id="act9Part1TW" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>LACHLAN MURPHY</td>
+                                <td>21</td>
+                                <td>19</td>
+                                <td><input id="act9Part1LM" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>TOM LYNCH</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td><input id="act9Part1TL" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>RORY SLOANE</td>
+                                <td>22</td>
+                                <td>11</td>
+                                <td><input id="act9Part1RS" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>BRAD CROUCH</td>
+                                <td>22</td>
+                                <td>11</td>
+                                <td><input id="act9Part1BC" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>BRODIE SMITH</td>
+                                <td>22</td>
+                                <td>10</td>
+                                <td><input id="act9Part1BS" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>RILEY KNIGHT</td>
+                                <td>15</td>
+                                <td>9</td>
+                                <td><input id="act9Part1RK" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>DARCY FOGARTY</td>
+                                <td>4</td>
+                                <td>9</td>
+                                <td><input id="act9Part1DF" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>ELLIOTT HIMMELBERG</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td><input id="act9Part1EM" style="text-align:center;" /></td>
+                            </tr>
+                            <tr>
+                                <td>MATT CROUCH</td>
+                                <td>19</td>
+                                <td>7</td>
+                                <td><input id="act9Part1MC" style="text-align:center;" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <img src="~/images/Unit2/Activity9/Act9_Tex_Walker.jpg" alt="Taylor Walker" style="width:100%;" />
+                    <p>Taylor Walker</p>
+                    <p>2019 Goals: <span>43</span></p>
+                </div>
+            </div>
+
+            <div class="row containInside">
+                <div class="col-md-6">
+                    <p>
+                        As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
+                        (usually the last digit) graph: <br />
+                        For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
+                        <span>the left will be 3.</span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="row containInside">
+                        <table class="table table-bordered" id="act9Table2" style="margin-right:15px;">
+                            <thead>
+                                <tr>
+                                    <th>STEM:</th>
+                                    <th>LEAF:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <table class="table table-bordered" id="act9Table2">
-                <thead>
-                    <tr>
-                        <th>STEM:</th>
-                        <th>LEAF:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+    </div>
+
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
         </div>
     </div>
 </div>
+
 
 <!--Activity 9: part 2-->
-<div class="row containRow">
-    <h3><b>GOAL KICKING DATA: Activity 9 (Exploration Task)</b></h3><br />
-    <p>Calculate the goal kicking average (mean) from the top 10 AFC 2019 Women's goal kickers list to 1 decimal place.</p><br />
-
-    <div class="row containInside">
-        <div class="col-md-8">
-            <table class="table table-bordered" id="act9Table3">
-                <thead>
-                    <tr>
-                        <th>PLAYERS <br /> (Top 10 AFC women's)</th>
-                        <th>GAMES PLAYED IN 2019 <br /></th>
-                        <th>GOALS <br />(Total 2019)</th>
-                        <th>AVERAGE GOALS <br />(Per Game)</th>
-                    </tr>
-                </thead>
-                <tbody id="act9Part2Body">
-                    <tr>
-                        <td>STEVIE-LEE THOMPSON</td>
-                        <td>9</td>
-                        <td>14</td>
-                        <td><input id="act9Part2ST" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>DANIELLE PONTER</td>
-                        <td>8</td>
-                        <td>13</td>
-                        <td><input id="act9Part2DP" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>ERIN PHILLIPS</td>
-                        <td>9</td>
-                        <td>11</td>
-                        <td><input id="act9Part2EP" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>ELOISE JONES</td>
-                        <td>9</td>
-                        <td>9</td>
-                        <td><input id="act9Part2EJ" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>CHOLE SCHEER</td>
-                        <td>8</td>
-                        <td>8</td>
-                        <td><input id="act9Part2CS" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>AILISH CONSIDINE</td>
-                        <td>8</td>
-                        <td>4</td>
-                        <td><input id="act9Part2AC" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>JESS FOLEY</td>
-                        <td>9</td>
-                        <td>4</td>
-                        <td><input id="act9Part2JF" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>ANNE HATCHARD</td>
-                        <td>9</td>
-                        <td>3</td>
-                        <td><input id="act9Part2AH" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>EBONY MARINOFF</td>
-                        <td>9</td>
-                        <td>3</td>
-                        <td><input id="act9Part2EM" style="text-align:center;" /></td>
-                    </tr>
-                    <tr>
-                        <td>HANNAH MARTIN</td>
-                        <td>8</td>
-                        <td>2</td>
-                        <td><input id="act9Part2HM" style="text-align:center;" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4">
-
-            <p>Erin Phillips</p>
-            <p>2019 Goals: <span>11</span></p>
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
     </div>
 
-    <div class="row containInside">
-        <div class="col-md-4">
-            <p>
-                As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
-                (usually the last digit) graph: <br />
-                For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
-                <span>the left will be 3.</span>
-            </p>
+    <!--activity-->
+    <div class="row containRow">
+        <h3><b>GOAL KICKING DATA: Activity 9</b><br /><span style="font-size:20px;">Exploration Task)</span></h3><br />
+
+        <div id="innerBorder">
+        <div class="row containInside">
+            <p>Calculate the goal kicking average (mean) from the top 10 AFC 2019 Women's goal kickers list to 1 decimal place.</p><br />
+            <div class="col-md-8">
+                <table class="table table-bordered" id="act9Table3">
+                    <thead>
+                        <tr>
+                            <th>PLAYERS <br /> (Top 10 AFC women's)</th>
+                            <th>GAMES PLAYED IN 2019 <br /></th>
+                            <th>GOALS <br />(Total 2019)</th>
+                            <th>AVERAGE GOALS <br />(Per Game)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="act9Part2Body">
+                        <tr>
+                            <td>STEVIE-LEE THOMPSON</td>
+                            <td>9</td>
+                            <td>14</td>
+                            <td><input id="act9Part2ST" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>DANIELLE PONTER</td>
+                            <td>8</td>
+                            <td>13</td>
+                            <td><input id="act9Part2DP" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>ERIN PHILLIPS</td>
+                            <td>9</td>
+                            <td>11</td>
+                            <td><input id="act9Part2EP" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>ELOISE JONES</td>
+                            <td>9</td>
+                            <td>9</td>
+                            <td><input id="act9Part2EJ" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>CHOLE SCHEER</td>
+                            <td>8</td>
+                            <td>8</td>
+                            <td><input id="act9Part2CS" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>AILISH CONSIDINE</td>
+                            <td>8</td>
+                            <td>4</td>
+                            <td><input id="act9Part2AC" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>JESS FOLEY</td>
+                            <td>9</td>
+                            <td>4</td>
+                            <td><input id="act9Part2JF" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>ANNE HATCHARD</td>
+                            <td>9</td>
+                            <td>3</td>
+                            <td><input id="act9Part2AH" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>EBONY MARINOFF</td>
+                            <td>9</td>
+                            <td>3</td>
+                            <td><input id="act9Part2EM" style="text-align:center;" /></td>
+                        </tr>
+                        <tr>
+                            <td>HANNAH MARTIN</td>
+                            <td>8</td>
+                            <td>2</td>
+                            <td><input id="act9Part2HM" style="text-align:center;" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+
+                <p>Erin Phillips</p>
+                <p>2019 Goals: <span>11</span></p>
+            </div>
         </div>
-        <!--Table-->
-        <div class="col-md-5">
-            <table class="table table-bordered" id="act9Table4">
-                <thead>
-                    <tr>
-                        <th>STEM:</th>
-                        <th>LEAF:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td>EG. 2</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div class="row containInside">
+            <div class="col-md-4">
+                <p>
+                    As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
+                    (usually the last digit) graph: <br />
+                    For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
+                    <span>the left will be 3.</span>
+                </p>
+            </div>
+            <!--Table-->
+            <div class="col-md-5">
+                <table class="table table-bordered" id="act9Table4">
+                    <thead>
+                        <tr>
+                            <th>STEM:</th>
+                            <th>LEAF:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td>EG. 2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                        <tr>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 1 - 9 numbers -->
+            <div class="col-md-3">
+                <div class="row" style="width:100%;">
+                    <img src="~/images/Unit2/Activity9/numbers/1.png" style="width:25%;margin-top:5px;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num1" name="1" />
+                    <img src="~/images/Unit2/Activity9/numbers/2.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num2" name="2" />
+                    <img src="~/images/Unit2/Activity9/numbers/3.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num3" name="3" />
+                </div>
+                <div class="row" style="width:100%;">
+                    <img src="~/images/Unit2/Activity9/numbers/4.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num4" name="4" />
+                    <img src="~/images/Unit2/Activity9/numbers/5.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num5" name="5" />
+                    <img src="~/images/Unit2/Activity9/numbers/6.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num6" name="6" />
+                </div>
+                <div class="row" style="width:100%;">
+                    <img src="~/images/Unit2/Activity9/numbers/7.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num7" name="7" />
+                    <img src="~/images/Unit2/Activity9/numbers/8.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num8" name="8" />
+                    <img src="~/images/Unit2/Activity9/numbers/9.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num9" name="9" />
+                </div>
+            </div>
         </div>
-        <!-- 1 - 9 numbers -->
-        <div class="col-md-3">
-            <div class="row" style="width:100%;">
-                <img src="~/images/Unit2/Activity9/numbers/1.png" style="width:25%;margin-top:5px;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num1" name="1" />
-                <img src="~/images/Unit2/Activity9/numbers/2.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num2" name="2" />
-                <img src="~/images/Unit2/Activity9/numbers/3.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num3" name="3" />
-            </div>
-            <div class="row" style="width:100%;">
-                <img src="~/images/Unit2/Activity9/numbers/4.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num4" name="4" />
-                <img src="~/images/Unit2/Activity9/numbers/5.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num5" name="5" />
-                <img src="~/images/Unit2/Activity9/numbers/6.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num6" name="6" />
-            </div>
-            <div class="row" style="width:100%;">
-                <img src="~/images/Unit2/Activity9/numbers/7.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num7" name="7" />
-                <img src="~/images/Unit2/Activity9/numbers/8.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num8" name="8" />
-                <img src="~/images/Unit2/Activity9/numbers/9.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num9" name="9" />
-            </div>
         </div>
     </div>
 
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
+    </div>
 </div>
 
-<!--Activity 9: part 3-->
-<div class="row containRow">
-    <h3><b>GOAL KICKING DATA: Activity 9 (Extension / Group Work Challenge)</b></h3><br />
-    <p style="font-size:20px;color:#002b5c;margin-left:15px;">
-        When there are two sides or groups, we can use a two-sided Stem-and-Leaf plot.<br />
-        Here is an example of a two-sided Stem-and-Leaf Plot.
-    </p>
 
-    <div class="row" style="width:100%;margin-bottom:25px;padding-bottom:10px;height:350px;display:flex;justify-content:center;align-items:center;">
-        <img src="~/images/Unit2/Activity9/pg 28 table.png" alt="Holding" style="height:100%;margin-bottom:15px;" />
+<!--Activity 9: part 3-->
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
     </div>
 
+    <!--activity-->
+    <div class="row containRow">
+        <h3><b>GOAL KICKING DATA: Activity 9 (Extension / Group Work Challenge)</b></h3><br />
 
-    <p style="font-size:20px;color:#002b5c;margin-left:15px;">
-        Using your results from the first activity, create a Stem-and-Leaf plot comparing the ACL Men's (AFL)
-        average goals to the AFC Women's (AFLW) average goals (Round to one decimal place).
-    </p><br />
+        <div id="innerBorder">
+            <p style="font-size:20px;color:#002b5c;margin-left:15px;">
+                When there are two sides or groups, we can use a two-sided Stem-and-Leaf plot.<br />
+                Here is an example of a two-sided Stem-and-Leaf Plot.
+            </p>
 
-    <div class="row containInside" style="width:100%;">
-        <div class="col-md-3">
-            <br />
-            <div class="row" style="width:100%;">
-                <img src="~/images/Unit2/Activity9/numbers/1.png" style="width:25%;margin-top:5px;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num1" name="1" />
-                <img src="~/images/Unit2/Activity9/numbers/2.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num2" name="2" />
-                <img src="~/images/Unit2/Activity9/numbers/3.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num3" name="3" />
+            <div class="row" style="width:100%;margin-bottom:25px;padding-bottom:10px;height:350px;display:flex;justify-content:center;align-items:center;">
+                <img src="~/images/Unit2/Activity9/pg 28 table.png" alt="Holding" style="height:100%;margin-bottom:15px;" />
             </div>
-            <div class="row" style="width:100%;">
-                <img src="~/images/Unit2/Activity9/numbers/4.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num4" name="4" />
-                <img src="~/images/Unit2/Activity9/numbers/5.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num5" name="5" />
-                <img src="~/images/Unit2/Activity9/numbers/6.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num6" name="6" />
-            </div>
-            <div class="row" style="width:100%;">
-                <img src="~/images/Unit2/Activity9/numbers/7.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num7" name="7" />
-                <img src="~/images/Unit2/Activity9/numbers/8.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num8" name="8" />
-                <img src="~/images/Unit2/Activity9/numbers/9.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num9" name="9" />
+
+
+            <p style="font-size:20px;color:#002b5c;margin-left:15px;">
+                Using your results from the first activity, create a Stem-and-Leaf plot comparing the ACL Men's (AFL)
+                average goals to the AFC Women's (AFLW) average goals (Round to one decimal place).
+            </p><br />
+
+            <div class="row containInside" style="width:100%;">
+                <div class="col-md-3">
+                    <br />
+                    <div class="row" style="width:100%;">
+                        <img src="~/images/Unit2/Activity9/numbers/1.png" style="width:25%;margin-top:5px;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num1" name="1" />
+                        <img src="~/images/Unit2/Activity9/numbers/2.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num2" name="2" />
+                        <img src="~/images/Unit2/Activity9/numbers/3.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num3" name="3" />
+                    </div>
+                    <div class="row" style="width:100%;">
+                        <img src="~/images/Unit2/Activity9/numbers/4.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num4" name="4" />
+                        <img src="~/images/Unit2/Activity9/numbers/5.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num5" name="5" />
+                        <img src="~/images/Unit2/Activity9/numbers/6.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num6" name="6" />
+                    </div>
+                    <div class="row" style="width:100%;">
+                        <img src="~/images/Unit2/Activity9/numbers/7.png" style="width:25%;margin-left:15px;" draggable="true" ondragstart="drag(event)" id="num7" name="7" />
+                        <img src="~/images/Unit2/Activity9/numbers/8.png" style="width:25%;margin-left:15px;margin-right:15px;" draggable="true" ondragstart="drag(event)" id="num8" name="8" />
+                        <img src="~/images/Unit2/Activity9/numbers/9.png" style="width:25%;" draggable="true" ondragstart="drag(event)" id="num9" name="9" />
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <table class="table table-bordered" style="width:100%;" id="act9Table5">
+                        <thead>
+                            <tr>
+                                <th>LEAF: <br />(AFC MEN)</th>
+                                <th>STEM:</th>
+                                <th>LEAF: <br />(AFC WOMEN)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="act9Part3">
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                            <tr>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
+                                <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4"></div>
+
             </div>
         </div>
-        <div class="col-md-5">
-            <table class="table table-bordered" style="width:100%;" id="act9Table5">
-                <thead>
-                    <tr>
-                        <th>LEAF: <br />(AFC MEN)</th>
-                        <th>STEM:</th>
-                        <th>LEAF: <br />(AFC WOMEN)</th>
-                    </tr>
-                </thead>
-                <tbody id="act9Part3">
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                    <tr>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                        <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4"></div>
+    </div>
 
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
     </div>
 </div>
 
 <!--Activity 10: part 1-->
-<div class="row containRow" style="margin-bottom:25px;" id="act10">
-    <div class="col-md-12">
-        <h3>
-            <b>GOAL KICKING DATA:</b> Activity 10
-            <br />
-            Exploration Task
-
-        </h3>
-        <br />
-        <p>
-            Practical Activity: ‘Goal Kick Challenge’ Using the STEMfooty numbered cones and footballs. Set up 10 positions with <br />
-            the cones to have shots at goal (outside on your oval).
-
-            <br />
-            Individually take it in turns and have 1 shot from each of the positions and record your results as a ‘Goal or Behind’
-            <br />
-            Record Sheet:
-        </p>
-
-        <table style="width:50%" id="act10table1">
-            <tr style="background-color:#002b5c; color:white;">
-                <th>POSITION:</th>
-                <th>GOAL:</th>
-                <th>BEHIND:</th>
-
-            </tr>
-            <tr>
-                <th>1</th>
-                <td><input type="radio" name="1" /> </td>
-                <td><input type="radio" name="1" /> </td>
-            </tr>
-            <tr>
-                <th>2</th>
-                <td><input type="radio" name="2" /> </td>
-                <td><input type="radio" name="2" /> </td>
-            </tr>
-            <tr>
-                <th>3</th>
-                <td><input type="radio" name="3" /> </td>
-                <td><input type="radio" name="3" /> </td>
-            </tr>
-            <tr>
-                <th>4</th>
-                <td><input type="radio" name="4" /> </td>
-                <td><input type="radio" name="4" /> </td>
-            </tr>
-            <tr>
-                <th>5</th>
-                <td><input type="radio" name="5" /> </td>
-                <td><input type="radio" name="5" /> </td>
-            </tr>
-            <tr>
-                <th>6</th>
-                <td><input type="radio" name="6" /> </td>
-                <td><input type="radio" name="6" /> </td>
-            </tr>
-            <tr>
-                <th>7</th>
-                <td><input type="radio" name="7" /> </td>
-                <td><input type="radio" name="7" /> </td>
-            </tr>
-            <tr>
-                <th>8</th>
-                <td><input type="radio" name="8" /> </td>
-                <td><input type="radio" name="8" /> </td>
-            </tr>
-            <tr>
-                <th>9</th>
-                <td><input type="radio" name="9" /> </td>
-                <td><input type="radio" name="9" /> </td>
-            </tr>
-            <tr>
-                <th>10</th>
-                <td><input type="radio" name="10" /> </td>
-                <td><input type="radio" name="10" /> </td>
-            </tr>
-
-            <tr>
-                <th tr style="background-color:#002b5c; color:white;">Total</th>
-                <td><input type="number" /></td>
-                <td><input type="number" /> </td>
-            </tr>
-
-        </table>
-        <p>
-            <br /><b>Analysis Questions</b><br />
-
-        </p>
-        <br />
-        <label for="act10q1" style="font-size: 18px;">
-            What was the main factor that affected your accuracy? How can you improve this?
-        </label>
-        <br />
-        <textarea id="act10q1" name="act10q1" rows="3" style="width:65%;"></textarea>
-        <br />
-
-        <label for="act10q2" style="font-size: 18px;">
-            Explain what factors affect AFL players’ accuracy in a real AFL game. How are these different to the game <br />
-            you just played?
-        </label>
-        <br />
-        <textarea id="act10q2" name="act10q2" rows="4" style="width:65%;"></textarea>
-        <br />
-        <br />
-
-        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button id="act10btn1" class="btn btn-outline-primary" onclick="checkActivity10P1(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
+    </div>
 
+    <!--activity-->
+    <div class="row containRow" style="margin-bottom:25px;" id="act10">
+        <div class="col-md-12">
+            <h3><b>GOAL KICKING DATA: Activity 10</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
+            
+            <div id="innerBorder">
+            <p>
+                Practical Activity: ‘Goal Kick Challenge’ Using the STEMfooty numbered cones and footballs. Set up 10 positions with <br />
+                the cones to have shots at goal (outside on your oval).
 
+                <br />
+                Individually take it in turns and have 1 shot from each of the positions and record your results as a ‘Goal or Behind’
+                <br />
+                Record Sheet:
+            </p>
+
+            <table style="width:50%" id="act10table1">
+                <tr style="background-color:#002b5c; color:white;">
+                    <th>POSITION:</th>
+                    <th>GOAL:</th>
+                    <th>BEHIND:</th>
+
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td><input type="radio" name="1" /> </td>
+                    <td><input type="radio" name="1" /> </td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><input type="radio" name="2" /> </td>
+                    <td><input type="radio" name="2" /> </td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><input type="radio" name="3" /> </td>
+                    <td><input type="radio" name="3" /> </td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><input type="radio" name="4" /> </td>
+                    <td><input type="radio" name="4" /> </td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><input type="radio" name="5" /> </td>
+                    <td><input type="radio" name="5" /> </td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><input type="radio" name="6" /> </td>
+                    <td><input type="radio" name="6" /> </td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><input type="radio" name="7" /> </td>
+                    <td><input type="radio" name="7" /> </td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><input type="radio" name="8" /> </td>
+                    <td><input type="radio" name="8" /> </td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><input type="radio" name="9" /> </td>
+                    <td><input type="radio" name="9" /> </td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><input type="radio" name="10" /> </td>
+                    <td><input type="radio" name="10" /> </td>
+                </tr>
+
+                <tr>
+                    <th tr style="background-color:#002b5c; color:white;">Total</th>
+                    <td><input type="number" /></td>
+                    <td><input type="number" /> </td>
+                </tr>
+
+            </table>
+            <p>
+                <br /><b>Analysis Questions</b><br />
+
+            </p>
+            <br />
+            <label for="act10q1" style="font-size: 18px;">
+                What was the main factor that affected your accuracy? How can you improve this?
+            </label>
+            <br />
+            <textarea id="act10q1" name="act10q1" rows="3" style="width:65%;"></textarea>
+            <br />
+
+            <label for="act10q2" style="font-size: 18px;">
+                Explain what factors affect AFL players’ accuracy in a real AFL game. How are these different to the game <br />
+                you just played?
+            </label>
+            <br />
+            <textarea id="act10q2" name="act10q2" rows="4" style="width:65%;"></textarea>
+            <br />
+            <br />
+
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                <button id="act10btn1" class="btn btn-outline-primary" onclick="checkActivity10P1(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
     </div>
 </div>
 
 <!--Activity 10: part 2-->
-<div class="row containRow" style="margin-bottom:25px;">
-    <h3>
-        <b>GOAL KICKING DATA:</b> Activity 10
-        <br />
-        Extension / Group Work Challenge
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
+        </div>
+    </div>
 
-    </h3>
+    <!--activity-->
+    <div class="row containRow" style="margin-bottom:25px;">
+        <h3>
+            <b>GOAL KICKING DATA: Activity 10</b><br /><span style="font-size:20px;">Extension / Group Work Challenge</span></h3>
+        <div id="innerBorder">
+        <div class="row containInside">
+            <div class="col-md-12">
+                <p>
+                    <br />Collect 10 students’ Goal Kick Challenge results and record them.
+                    For example:<br />
+                    Nick scored 1 goal 6 behinds. For this activity his results will be recorded as 1.6 as shown below.
+                </p>
+                <table style="width:50%" id="act10table2">
+                    <tr style="background-color:#002b5c; color:white;">
+                        <th>STUDENT NAME:</th>
+                        <th>RESULTS AS A DECIMAL:</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="EG.Nick" /></td>
+                        <td><input type="number" value="1.6"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="Your Results" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" /></td>
+                        <td><input id="gg" type="number" /></td>
+                    </tr>
+                </table>
+                <img id="ebFooty" style="position:absolute; left:500px" width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
+                <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+                    <button id="act10btn2" class="btn btn-outline-primary" onclick="checkActivity10P2(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+</div>
+        </div>
+    </div>
+
+    <!--Footer-->
     <div class="row">
         <div class="col-md-12">
-            <p>
-                <br />Collect 10 students’ Goal Kick Challenge results and record them.
-                For example:<br />
-                Nick scored 1 goal 6 behinds. For this activity his results will be recorded as 1.6 as shown below.
-            </p>
-            <table style="width:50%" id="act10table2">
-                <tr style="background-color:#002b5c; color:white;">
-                    <th>STUDENT NAME:</th>
-                    <th>RESULTS AS A DECIMAL:</th>
-                </tr>
-                <tr>
-                    <td><input type="text" value="EG.Nick" /></td>
-                    <td><input type="number" value="1.6"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" value="Your Results" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" /></td>
-                    <td><input id="gg" type="number" /></td>
-                </tr>
-            </table>
-            <img id="ebFooty" style="position:absolute; left:500px" width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
-            <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                <button id="act10btn2" class="btn btn-outline-primary" onclick="checkActivity10P2(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-
-
-
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
         </div>
-
     </div>
 </div>
 
 <!--Activity 10: part 3-->
-<div class="row containRow" style="margin-bottom:25px;">
-    <div class="col-md-12">
-        <h3>
-            <b>GOAL KICKING DATA:</b> Activity 10
-            <br />
-            Extension / Group Work Challenge
-            <br />
-            <br />
-            <br />
-            Create a Stem and-Leaf-plot comparing the class Goal Kick Challenge results.
-            <br />
-
-        </h3>
-
-        <table style="width:40%;position:relative;" id="act10table3">
-            <tr>
-                <th style="background-color:#00FF00; color:white;">STEM<br />(GOALS)</th>
-                <th style="background-color: #FFFF00; color: #002b5c;">LEAF:<br />(BEHINDS)</th>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-            <tr>
-                <td><input type="number" /></td>
-                <td><input type="number" /></td>
-            </tr>
-
-        </table>
-
-
-        <img id="goalpic" src="~/images/Unit2/Activity 10/goalpic.jpeg" />
-        <br />
-        <br />
-        <br />
-        <button style="margin-top:25px;position:relative" id="stemButton" onclick="runfooty()"> Auto Populate The STEM and LEAF Table</button>
-        <br />
-        <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
-        <br />
-        <textarea id="act10q5" name="act10q3" rows="3" style="width:65%;"></textarea>
-        <br />
-        <br />
-        <img id="medianPic" src="~/images/Workbooklet/medianpic.png" />
-        <br />
-        <br />
-        <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-            <button id="act10btn3" class="btn btn-outline-primary" onclick="checkActivity10P3(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
+<div id="outerBorder">
+    <!--Header with Logo-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headerChild">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
         </div>
-        <br />
-        <br />
+    </div>
+
+    <!--Activity-->
+    <div class="row containRow" style="margin-bottom:25px;">
+        <div class="col-md-12">
+            <h3><b>GOAL KICKING DATA: Activity 10</b><br /><span style="font-size:20px;">Extension / Group Work Challenge</span></h3>
+            <div id="innerBorder">
+                <p>Create a Stem and-Leaf-plot comparing the class Goal Kick Challenge results.</p>
+                <table style="width:40%;position:relative;" id="act10table3">
+                    <tr>
+                        <th style="background-color:#00FF00; color:white;">STEM<br />(GOALS)</th>
+                        <th style="background-color: #FFFF00; color: #002b5c;">LEAF:<br />(BEHINDS)</th>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" /></td>
+                        <td><input type="number" /></td>
+                    </tr>
+
+                </table>
+
+
+                <img id="goalpic" src="~/images/Unit2/Activity 10/goalpic.jpeg" />
+                <br />
+                <br />
+                <br />
+                <button style="margin-top:25px;position:relative" id="stemButton" onclick="runfooty()"> Auto Populate The STEM and LEAF Table</button>
+                <br />
+                <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
+                <br />
+                <textarea id="act10q5" name="act10q3" rows="3" style="width:65%;"></textarea>
+                <br />
+                <br />
+                <img id="medianPic" src="~/images/Workbooklet/medianpic.png" />
+                <br />
+                <br />
+                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
+                    <button id="act10btn3" class="btn btn-outline-primary" onclick="checkActivity10P3(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
+        </div>
     </div>
 </div>
-<br />
-<br />
 
+
+<!--Unit 3-->
 <div style="width:100%;height:20%;background-color:#41ad48;border:none" class="row containRow" id="unit3">
     <div style="margin-left:20%;padding:50px;font-size:32px;color:white">UNIT 3: NUTRITION AND MORPHOLOGY</div>
 </div>
