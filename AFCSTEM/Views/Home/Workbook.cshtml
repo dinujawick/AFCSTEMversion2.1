@@ -2069,7 +2069,7 @@
     <div class="row containInside">
         <div class="col-md-12">
             <table style="width:90%" id="act6table">
-                <tr style="background-color:#002b5c; color:white;">
+                <tr id="firstrow" style="background-color:#002b5c; color:white;">
                     <th>NAME:</th>
                     <th>GUERSEY NO:</th>
                     <th>HEIGHT:</th>
@@ -2078,10 +2078,10 @@
                     <th>RECRUITED FROM:</th>
                 </tr>
                 <tr>
+                    <td><input  /></td>
+                    <td><input  /></td>
                     <td><input /></td>
-                    <td><input /></td>
-                    <td><input /></td>
-                    <td><input /></td>
+                    <td><input  /></td>
                     <td><input /></td>
                     <td><input /></td>
                 </tr>
@@ -2093,9 +2093,10 @@
 
     <div class="row containInside">
         <div class="col-md-12">
-            <button class="btn btn-outline-primary" onclick="addPlayer()" id="addPlayerButton" style="position:relative;float:right;">Click to Add Player</button>
+            <button class="btn btn-outline-primary" onclick="addPlayer(),saveWorkbook()" id="addPlayerButton" style="position:relative;float:right;">Click to Add Player</button>
             <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
             <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-left:10px;">Get My Players</button>
+            <button class="btn btn-outline-primary" style="margin-left:10px;" onclick="saveWorkbook()">Save Players</button>
         </div>
     </div>
 
@@ -2106,9 +2107,9 @@
             <table style="width:50%;" id="act6Table2">
                 <tr color:white;">
                     <th>AVERAGE HEIGHT: </th>
-                    <td><input size="5" /></td>
+                    <td><input id="act6height" size="5" /></td>
                     <th>AVERAGE AGE: </th>
-                    <td><input size="5" /></td>
+                    <td><input id="act6age" size="5" /></td>
                 </tr>
             </table>
         </div>
@@ -2122,17 +2123,17 @@
             </p><br />
 
             <label for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
-            <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act6q1" name="act6q1" rows="2" style="width:65%;"></textarea>
             <br />
             <label for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
-            <textarea name="act6q2" rows="2" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act6q2" name="act6q2" rows="2" style="width:65%;"></textarea>
             <br /><br />
             <p style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
             <label for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
-            <textarea name="act6q3" rows="2" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act6q3" name="act6q3" rows="2" style="width:65%;"></textarea>
             <br />
             <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
-            <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
+            <textarea onchange="saveWorkbook()" id="act6q4"name="act6q4" rows="2" style="width:65%;"></textarea>
         </div>
     </div>
 
@@ -2148,19 +2149,19 @@
 
         <p style="margin-top:25px;"><b>Age Analysis</b></p><br />
         <label for="playerAge" style="font-size:18px;">How did you calculate your players age? Explain:</label><br />
-        <textarea name="playerAge" rows="1" style="width:65%;"></textarea>
+        <textarea onchange="saveWorkbook()" id="act6q5"name="playerAge" rows="1" style="width:65%;"></textarea>
 
         <label for="ageRange" style="font-size:18px;">What is the age range for the 10 AFCW players you selected? </label><br />
-        <textarea name="ageRange" rows="1" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()"  id="act6q6" name="ageRange" rows="1" style="width:65%;"></textarea><br />
 
         <label for="average" style="font-size:18px;">What is the average (mean) age of the 10 AFCW players selected?</label><br />
-        <textarea name="average" rows="1" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()" id="act6q7" name="average" rows="1" style="width:65%;"></textarea><br />
 
         <label for="average" style="font-size:18px;">
             Does there appear to be a link between the age of the player and when they made their debut?
             Explain the reasoning behind your answer.
         </label><br />
-        <textarea name="average" rows="3" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()" id="act6q8" name="average" rows="3" style="width:65%;"></textarea><br />
     </div>
 
 </div>
@@ -2173,16 +2174,16 @@
         <br />
 
         <label for="heightRange" style="font-size:18px;">What is the height range of your chosen 10 AFCW players you selected?</label><br />
-        <textarea name="heightRange" rows="2" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()" id="act6q9" name="heightRange" rows="2" style="width:65%;"></textarea><br />
 
         <label for="tallestPlayer" style="font-size:18px;">Who is the tallest player out of your 10 AFCW players?</label><br />
-        <textarea name="tallestPlayer" rows="2" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()" id="act6q10" name="tallestPlayer" rows="2" style="width:65%;"></textarea><br />
 
         <label for="shortestPlayer" style="font-size:18px;">Who is the shortest player out of your 10 AFCW players?</label><br />
-        <textarea name="shortestPlayer" rows="2" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()" id="act6q11" name="shortestPlayer" rows="2" style="width:65%;"></textarea><br />
 
         <label for="shortestPlayer" style="font-size:18px;">The average height in the 2019 Crows AFLW team was 171cm. Explain where your 10 players sit in comparision:</label><br />
-        <textarea name="shortestPlayer" rows="3" style="width:65%;"></textarea><br />
+        <textarea onchange="saveWorkbook()" id="act6q12" name="shortestPlayer" rows="3" style="width:65%;"></textarea><br />
     </div>
 </div>
 
@@ -5634,6 +5635,7 @@
             var input5 = document.createElement("input");
             var input6 = document.createElement("input");
 
+
             input30.size = 30;
             input31.size = 30;
             input3.size = 3;
@@ -5649,7 +5651,6 @@
             cell6.appendChild(input31);
 
             playerCount++;
-            console.log(playerCount);
         }
     }
 
@@ -5911,7 +5912,7 @@
     if (coinCount != 0) {
         coinCount--;
     }
-    
+
 
     // jquery functions
     jQuery(document).ready(function ($) {
@@ -5933,15 +5934,15 @@
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 var cell4 = row.insertCell(3);
-               
+
                 cell.innerHTML = coinCount;
-              
+
 
                 cell2.setAttribute("id", "hh" + coinCount);
                 cell3.setAttribute("id", "ht" + coinCount);
                 cell4.setAttribute("id", "tt" + coinCount);
 
-                
+
                 $('#coin').removeClass();
                 $('#coin2').removeClass();
                 setTimeout(function () {
@@ -5993,16 +5994,16 @@
 
 
 
-                    document.getElementById("gc").innerHTML =  goalCount; 
+                    document.getElementById("gc").innerHTML =  goalCount;
                     document.getElementById("mc").innerHTML =  missCount;
                     document.getElementById("bc").innerHTML =  behindCount;
-                  
+
                     saveWorkbook();
-                    
-                    
+
+
                 }, 100);
             }
-           
+
         });
 
         // jquery for actvitiy 2, area formula footy
@@ -8260,7 +8261,7 @@
 
         //act 3
 
-
+        
         var mcgLength = document.getElementById("mcgLength").value;
         var mcgWidth = document.getElementById("mcgWidth").value;
         var mcgArea = document.getElementById("mcgArea").value;
@@ -8337,6 +8338,45 @@
         var act5q5 = document.getElementById("act5q5").value;
 
 
+
+        //act6
+
+        var act6table = [];
+
+
+        table = document.getElementById("act6table");
+        var act6tablecount = table.rows.length;
+        pos = 0;
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow") {
+
+                    act6table[pos] = cell.querySelector('input').value;
+                    pos++;
+                }
+
+            }
+        }
+        var act6height = document.getElementById("act6height").value;
+        var act6age = document.getElementById("act6age").value;
+        var act6q1 = document.getElementById("act6q1").value;
+        var act6q2 = document.getElementById("act6q2").value;
+        var act6q3 = document.getElementById("act6q3").value;
+        var act6q4 = document.getElementById("act6q4").value;
+        var act6q5 = document.getElementById("act6q5").value;
+        var act6q6 = document.getElementById("act6q6").value;
+        var act6q7 = document.getElementById("act6q7").value;
+        var act6q8 = document.getElementById("act6q8").value;
+        var act6q9 = document.getElementById("act6q9").value;
+        var act6q10 = document.getElementById("act6q10").value;
+        var act6q11 = document.getElementById("act6q11").value;
+        var act6q12 = document.getElementById("act6q12").value;
+
+
+
         var final = {
             studentID: "@student",
             act1table1: JSON.stringify(t1a1),
@@ -8406,7 +8446,22 @@
             act5q3: act5q3,
             act5q4: act5q4,
             act5q5: act5q5,
-
+            act6table1: JSON.stringify(act6table),
+            act6tablecount: act6tablecount,
+            act6avgheight: act6height,
+            act6avgage: act6age,
+            act6q1:act6q1,
+            act6q2: act6q2,
+            act6q3: act6q3,
+            act6q4: act6q4,
+            act6q5: act6q5,
+            act6q6: act6q6,
+            act6q7: act6q7,
+            act6q8: act6q8,
+            act6q9: act6q9,
+            act6q10: act6q10,
+            act6q11: act6q11,
+            act6q12: act6q12,
 
         };
 
@@ -8650,7 +8705,52 @@
         document.getElementById("act5q2").value= "@workbook.act5q2";
         document.getElementById("act5q3").value= "@workbook.act5q3";
         document.getElementById("act5q4").value= "@workbook.act5q4";
-        document.getElementById("act5q5").value= "@workbook.act5q5";
+        document.getElementById("act5q5").value = "@workbook.act5q5";
+
+
+        //act 6
+      
+        var act6table = "@workbook.act6table1";
+        var act6tablestring = act6table.replace(/&quot;/g, '"');
+
+        var act6tablearray = JSON.parse(act6tablestring);
+        //load table
+
+
+        table = document.getElementById("act6table");
+        var act6tablecount = "@workbook.act6tablecount"-1;
+        pos = 0;
+   
+        while (act6tablecount != playerCount) {
+            this.addPlayer();
+        }
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow") {
+                    cell.querySelector("input").value = act6tablearray[pos];
+                    pos++;
+                }
+
+            }
+        }
+        document.getElementById("act6height").value = "@workbook.act6avgHeight";
+        document.getElementById("act6age").value = "@workbook.act6avgAge";
+        document.getElementById("act6q1").value= "@workbook.act6q1"
+        document.getElementById("act6q2").value= "@workbook.act6q2"
+        document.getElementById("act6q3").value= "@workbook.act6q3"
+        document.getElementById("act6q4").value= "@workbook.act6q4"
+        document.getElementById("act6q5").value= "@workbook.act6q5"
+        document.getElementById("act6q6").value= "@workbook.act6q6"
+        document.getElementById("act6q7").value= "@workbook.act6q7"
+        document.getElementById("act6q8").value= "@workbook.act6q8"
+        document.getElementById("act6q9").value= "@workbook.act6q9"
+        document.getElementById("act6q10").value= "@workbook.act6q10"
+        document.getElementById("act6q11").value= "@workbook.act6q11"
+        document.getElementById("act6q12").value= "@workbook.act6q12"
+
 
 
     }

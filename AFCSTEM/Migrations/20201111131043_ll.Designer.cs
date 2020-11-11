@@ -4,14 +4,16 @@ using AFCSTEM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201111131043_ll")]
+    partial class ll
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,38 +279,6 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("act5table");
 
                     b.Property<int>("act5tablecount");
-
-                    b.Property<string>("act6avgAge");
-
-                    b.Property<string>("act6avgHeight");
-
-                    b.Property<string>("act6q1");
-
-                    b.Property<string>("act6q10");
-
-                    b.Property<string>("act6q11");
-
-                    b.Property<string>("act6q12");
-
-                    b.Property<string>("act6q2");
-
-                    b.Property<string>("act6q3");
-
-                    b.Property<string>("act6q4");
-
-                    b.Property<string>("act6q5");
-
-                    b.Property<string>("act6q6");
-
-                    b.Property<string>("act6q7");
-
-                    b.Property<string>("act6q8");
-
-                    b.Property<string>("act6q9");
-
-                    b.Property<string>("act6table1");
-
-                    b.Property<int>("act6tablecount");
 
                     b.Property<string>("crowdCapacity");
 
