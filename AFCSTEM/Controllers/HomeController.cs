@@ -119,7 +119,7 @@ namespace AFCSTEM.Controllers
             float mcgLength, float mcgWidth, float mcgArea, float msLength, float msWidth, float msArea, float gmhLength, float gmhWidth, float gmhArea, float scgLength, float scgWidth, float scgArea, float ssLength, float ssWidth, float ssArea,
             float osLength, float osWidth, float osArea, float gLength, float gWidth, float gArea, float metLength, float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5,string act3q6, string act3q7, string act3q8
             ,string act5table, int act5tablecount, string act5q1, string act5q2, string act5q3, string act5q4, string act5q5, string act6table1, int act6tablecount, string act6avgheight, string act6avgage, string act6q1, string act6q2, string act6q3, string act6q4, string act6q5, string act6q6, string act6q7, string act6q8, string act6q9
-            , string act6q10, string act6q11, string act6q12)
+            , string act6q10, string act6q11, string act6q12, string act9table1, string act9table2, string act9table3, string act9table4, string act9table5)
         {
 
             Workbook workbook = _workbookRepository.GetWorkbook(studentID);
@@ -133,7 +133,7 @@ namespace AFCSTEM.Controllers
                 _workbookRepository.UpdateWorkbookActivity(workbook, act1table1, act1table2, cswidth1, cslength1, csarea1,act1table3,act1row1,act1row2,act1row3,act1row4,act2lengs,act2widgs,act2areags,act2lengp,act2widgp,act2areagp,act2lenbp,act2widbp,act2areabp,act2text1,box1,box2,
                     box3,act2t4,act2t5,act2lengs2,act2widgs2,act2areags2,mcgLength, mcgWidth,mcgArea,msLength,msWidth, msArea,gmhLength,gmhWidth,gmhArea,scgLength,scgWidth,scgArea,ssLength,ssWidth,ssArea,
                  osLength,osWidth,osArea,gLength,gWidth,gArea, metLength, metWidth, metArea,largestArea,smallestArea,crowdCapacity,act3q4,act3q5,act3q6,act3q7, act3q8, act5table, act5tablecount,  act5q1,  act5q2,  act5q3,  act5q4,  act5q5,
-                  act6table1,  act6tablecount,  act6avgheight,  act6avgage,  act6q1,  act6q2,  act6q3,  act6q4,  act6q5,  act6q6,  act6q7,  act6q8,  act6q9,  act6q10,  act6q11,  act6q12);
+                  act6table1,  act6tablecount,  act6avgheight,  act6avgage,  act6q1,  act6q2,  act6q3,  act6q4,  act6q5,  act6q6,  act6q7,  act6q8,  act6q9,  act6q10,  act6q11,  act6q12,  act9table1,  act9table2,  act9table3,  act9table4,  act9table5);
             }
             return Json(new { success = "Workbook Saved" });
         }
