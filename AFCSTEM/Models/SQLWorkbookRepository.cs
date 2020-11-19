@@ -52,7 +52,7 @@ namespace AFCSTEM.Models
             float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5, string act3q6, string act3q7, string act3q8, string act5table1, int act5tablecount, string act5q1, string act5q2 ,string act5q3, string act5q4, 
             string act5q5, string act6table1, int act6tablecount, string act6avgheight, string act6avgage, string act6q1, string act6q2, string act6q3, string act6q4 , string act6q5, string act6q6, string act6q7, string act6q8, string act6q9 
             , string act6q10, string act6q11 , string act6q12,string act9table1, string act9table2, string act9table3,string act9table4, string act9table5,string act10table1 ,string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
-            ,string act11q1,string act11table1,string act11q2)
+            ,string act11q1,string act11table1,string act11q2,string act12table1, string act12q1,string act12table2)
         {
             workbook.Act1Table1 = ACT1TABLE1;
             workbook.Act1Table2 = ACT1TABLE2;
@@ -151,6 +151,9 @@ namespace AFCSTEM.Models
             workbook.act11q1 = act11q1;
             workbook.act11table1 = act11table1;
             workbook.act11q2 = act11q2;
+            workbook.act12table1 = act12table1;
+            workbook.act12q1 = act12q1;
+            workbook.act12table2 = act12table2;
 
 
 

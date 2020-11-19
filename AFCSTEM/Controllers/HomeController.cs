@@ -120,7 +120,7 @@ namespace AFCSTEM.Controllers
             float osLength, float osWidth, float osArea, float gLength, float gWidth, float gArea, float metLength, float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5,string act3q6, string act3q7, string act3q8
             ,string act5table, int act5tablecount, string act5q1, string act5q2, string act5q3, string act5q4, string act5q5, string act6table1, int act6tablecount, string act6avgheight, string act6avgage, string act6q1, string act6q2, string act6q3, string act6q4, string act6q5, string act6q6, string act6q7, string act6q8, string act6q9
             , string act6q10, string act6q11, string act6q12, string act9table1, string act9table2, string act9table3, string act9table4, string act9table5, string act10table1, string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
-            , string act11q1, string act11table1, string act11q2)
+            , string act11q1, string act11table1, string act11q2, string act12table1, string act12q1, string act12table2)
         {
 
             Workbook workbook = _workbookRepository.GetWorkbook(studentID);
@@ -135,7 +135,7 @@ namespace AFCSTEM.Controllers
                     box3,act2t4,act2t5,act2lengs2,act2widgs2,act2areags2,mcgLength, mcgWidth,mcgArea,msLength,msWidth, msArea,gmhLength,gmhWidth,gmhArea,scgLength,scgWidth,scgArea,ssLength,ssWidth,ssArea,
                  osLength,osWidth,osArea,gLength,gWidth,gArea, metLength, metWidth, metArea,largestArea,smallestArea,crowdCapacity,act3q4,act3q5,act3q6,act3q7, act3q8, act5table, act5tablecount,  act5q1,  act5q2,  act5q3,  act5q4,  act5q5,
                   act6table1,  act6tablecount,  act6avgheight,  act6avgage,  act6q1,  act6q2,  act6q3,  act6q4,  act6q5,  act6q6,  act6q7,  act6q8,  act6q9,  act6q10,  act6q11,  act6q12,  act9table1,  act9table2,  act9table3,  act9table4,  act9table5,  act10table1,  act10q1,  act10q2,  act10table2,  act10table3,  act10q3
-                  , act11q1, act11table1, act11q2);
+                  , act11q1, act11table1, act11q2,  act12table1,  act12q1,  act12table2);
             }
             return Json(new { success = "Workbook Saved" });
         }
