@@ -3514,6 +3514,8 @@
             <text x="805" y="670" fill="black">190</text>
             <text x="880" y="670" fill="black">200</text>
             <text x="955" y="670" fill="black">205</text>
+            <g id="act14onelines"></g>
+            <g id="act14group1"></g>
         </svg>
 
 
@@ -3525,14 +3527,14 @@
             you perceive
         </label>
         <br />
-        <textarea id="act14text1" rows="3" style="width:100%"></textarea>
+        <textarea onchange="saveWorkbook()" id="act14text1" rows="3" style="width:100%"></textarea>
         <br />
         <label for="act14q2">
             Imagine an unnamed player’s height of 201cm and weight 105kg. Predict the position they would play. <br />
             Explain your prediction.
         </label>
         <br />
-        <textarea id="act14text2" rows="3" style="width:100%"></textarea>
+        <textarea onchange="saveWorkbook()" id="act14text2" rows="3" style="width:100%"></textarea>
         <br />
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -3564,6 +3566,10 @@
             <text x="170" y="505" fill="black">170</text>
             <text x="170" y="570" fill="black">165</text>
             <text x="170" y="635" fill="black">160</text>
+            <g id="lairdG"></g>
+            <g id="hartiganG"></g>
+            <g id="tahliaG"></g>
+            <g id="smithG"></g>
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
         </svg>
@@ -3610,6 +3616,10 @@
             <text x="170" y="635" fill="black">160</text>
             <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
             <text x="500" y="690" fill="black">Players</text>
+            <g id="sloaneG"></g>
+            <g id="crouchG"></g>
+            <g id="gibbsG"></g>
+            <g id="mckayG"></g>
         </svg>
         <button style="margin-bottom:50px" onclick="clearGraph('Three')">Clear Graph</button>
         <table style="width:20%" id="act12table2">
@@ -3641,7 +3651,7 @@
             on positional requirements?
         </label>
         <br />
-        <textarea id="act14con" rows="2"></textarea>
+        <textarea onchange="saveWorkbook()" id="act14con" rows="2"></textarea>
 
         <br />
         <br />
@@ -3691,13 +3701,13 @@
         MEAN is the average of the numbers.
         <br />
         <label for="act14q3">1. Add up the heights:</label>
-        <input id="act14q3" name="act14q3" type="number" style="width:60%" />
+        <input onchange="saveWorkbook()" id="act14q3" name="act14q3" type="number" style="width:60%" />
         <br />
         <label for="act14q4">2. Divide the total by how many player's were used:</label>
-        <input id="act14q4" name="act14q4" type="number" style="width:30%" />
+        <input onchange="saveWorkbook()" id="act14q4" name="act14q4" type="number" style="width:30%" />
         <br />
         <label for="act14q5">3. The MEAN is:</label>
-        <input id="act14q5" name="act14q5" type="number" style="width:60%" />
+        <input onchange="saveWorkbook()" id="act14q5" name="act14q5" type="number" style="width:60%" />
 
         <br />
         <br />
@@ -3705,11 +3715,11 @@
         <br />
         <label for="act14q6">1. Put the nuymber (heights) in order (smallest to largest):</label>
         <br />
-        <input id="act14q6" name="act14q6" type="text" style="width:100%" />
+        <input onchange="saveWorkbook()" id="act14q6" name="act14q6" type="text" style="width:100%" />
         <br />
         2. Circle the middle number <br />
         <label for="act14q7">3. The MEDIAN is</label>
-        <input id="act14q7" name="act14q7" type="number" style="width:60%" />
+        <input onchange="saveWorkbook()" id="act14q7" name="act14q7" type="number" style="width:60%" />
         <br />
         <br />
         MODE is when a number appears most frequently in a set of numbers.
@@ -3722,13 +3732,13 @@
 
         <br />
         <label for="act14q8">1. Largest Height:</label>
-        <input id="act14q8" name="act14q8" type="number" style="width:60%" />
+        <input onchange="saveWorkbook()" id="act14q8" name="act14q8" type="number" style="width:60%" />
         <br />
         <label for="act14q9">2. Smallest Height:</label>
-        <input id="act14q9" name="act14q9" type="number" style="width:60%" />
+        <input onchange="saveWorkbook()" id="act14q9" name="act14q9" type="number" style="width:60%" />
         <br />
         <label for="act14q10">3. The RANGE is:</label>
-        <input id="act14q10" name="act14q10" type="number" style="width:60%" />
+        <input onchange="saveWorkbook()" id="act14q10" name="act14q10" type="number" style="width:60%" />
 
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -5431,7 +5441,7 @@
         rect.setAttribute('width', '1000');
         rect.setAttribute('height', '1');
         rect.setAttribute('fill', 'grey');
-        document.getElementById('svgOne').appendChild(rect);
+        document.getElementById('act14onelines').appendChild(rect);
         i += 15.5;
 
     }
@@ -5443,7 +5453,7 @@
         rect.setAttribute('width', '1');
         rect.setAttribute('height', '605');
         rect.setAttribute('fill', 'grey');
-        document.getElementById('svgOne').appendChild(rect);
+        document.getElementById('act14onelines').appendChild(rect);
         i += 13.88;
     }
 
@@ -5453,7 +5463,11 @@
     //functions for act14
     function graphClick(evt) {
         var e = evt.target;
+        if (e.getAttribute('id') != "svgOne") {
+            e = evt.target.parentNode.parentNode;
+        }
         var dim = e.getBoundingClientRect();
+
         var x = evt.clientX - dim.left;
         var y = evt.clientY - dim.top;
 
@@ -5463,8 +5477,30 @@
             rect.setAttribute('cy', y);
             rect.setAttribute('r', '5');
             rect.setAttribute('fill', 'black');
-            document.getElementById('svgOne').appendChild(rect);
+            document.getElementById('act14group1').appendChild(rect);
         }
+
+
+        saveWorkbook();
+
+
+
+
+    }
+
+    function drawPoints(points) {
+        for (var i = 0; i < points.length; i += 2) {
+            var x = points[i];
+            var y = points[i + 1];
+
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', x);
+            rect.setAttribute('cy', y);
+            rect.setAttribute('r', '5');
+            rect.setAttribute('fill', 'black');
+            document.getElementById('act14group1').appendChild(rect);
+        }
+
 
 
 
@@ -5485,55 +5521,58 @@
             rect.setAttribute('fill', colourPlayer);
             if (colourPlayer == "blue") {
                 if (LairdC == 0) {
-                    document.getElementById('svgTwo').appendChild(rect);
+                    document.getElementById('lairdG').appendChild(rect);
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                     text.setAttribute('x', x - 15);
                     text.setAttribute('y', y - 15);
                     text.textContent = "Laird";
                     text.setAttribute('class', "playertext")
-                    document.getElementById('svgTwo').appendChild(text);
+                    document.getElementById('lairdG').appendChild(text);
                     LairdC++;
                 }
             }
             if (colourPlayer == "red") {
                 if (HartiC == 0) {
-                    document.getElementById('svgTwo').appendChild(rect);
+                    document.getElementById('hartiganG').appendChild(rect);
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                     text.setAttribute('x', x - 15);
                     text.setAttribute('y', y - 15);
                     text.textContent = "Hartigan";
                     text.setAttribute('class', "playertext")
-                    document.getElementById('svgTwo').appendChild(text);
+                    document.getElementById('hartiganG').appendChild(text);
                     HartiC++;
                 }
             }
             if (colourPlayer == "yellow") {
                 if (TaliaC == 0) {
-                    document.getElementById('svgTwo').appendChild(rect);
+                    document.getElementById('tahliaG').appendChild(rect);
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                     text.setAttribute('x', x - 15);
                     text.setAttribute('y', y - 15);
                     text.setAttribute('class', "playertext")
                     text.textContent = "Talia";
-                    document.getElementById('svgTwo').appendChild(text);
+                    document.getElementById('tahliaG').appendChild(text);
                     TaliaC++;
                 }
             }
         }
         if (colourPlayer == "green") {
             if (SmithC == 0) {
-                document.getElementById('svgTwo').appendChild(rect);
+                document.getElementById('smithG').appendChild(rect);
                 var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                 text.setAttribute('x', x - 15);
                 text.setAttribute('y', y - 15);
                 text.setAttribute('class', "playertext")
                 text.textContent = "Smith";
 
-                document.getElementById('svgTwo').appendChild(text);
+                document.getElementById('smithG').appendChild(text);
                 SmithC++;
             }
 
         }
+
+        saveWorkbook();
+
     }
 
 
@@ -5554,54 +5593,56 @@
             rect.setAttribute('fill', colourPlayer);
             if (colourPlayer == "blue") {
                 if (SloaneC == 0) {
-                    document.getElementById('svgThree').appendChild(rect)
+                    document.getElementById('sloaneG').appendChild(rect)
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                     text.setAttribute('x', x - 15);
                     text.setAttribute('y', y - 15);
                     text.textContent = "Sloane";
                     text.setAttribute('class', "playertext")
-                    document.getElementById('svgThree').appendChild(text);;
+                    document.getElementById('sloaneG').appendChild(text);;
                     SloaneC++;
                 }
             }
             if (colourPlayer == "red") {
                 if (CrouchC == 0) {
-                    document.getElementById('svgThree').appendChild(rect);
+                    document.getElementById('crouchG').appendChild(rect);
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                     text.setAttribute('x', x - 15);
                     text.setAttribute('y', y - 15);
                     text.textContent = "Crouch";
                     text.setAttribute('class', "playertext")
-                    document.getElementById('svgThree').appendChild(text);
+                    document.getElementById('crouchG').appendChild(text);
                     CrouchC++;
                 }
             }
             if (colourPlayer == "yellow") {
                 if (GibbC == 0) {
-                    document.getElementById('svgThree').appendChild(rect);
+                    document.getElementById('gibbsG').appendChild(rect);
                     var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                     text.setAttribute('x', x - 15);
                     text.setAttribute('y', y - 15);
                     text.textContent = "Gibbs";
                     text.setAttribute('class', "playertext")
-                    document.getElementById('svgThree').appendChild(text);
+                    document.getElementById('gibbsG').appendChild(text);
                     GibbC++;
                 }
             }
         }
         if (colourPlayer == "green") {
             if (MckayC == 0) {
-                document.getElementById('svgThree').appendChild(rect)
+                document.getElementById('mckayG').appendChild(rect)
                 var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
                 text.setAttribute('x', x - 15);
                 text.setAttribute('y', y - 15);
                 text.textContent = "McKay";
                 text.setAttribute('class', "playertext")
-                document.getElementById('svgThree').appendChild(text);
+                document.getElementById('mckayG').appendChild(text);
                 MckayC++;
             }
 
         }
+        saveWorkbook();
+
 
     }
 
@@ -8666,6 +8707,129 @@
             }
         }
 
+        //act 14
+        var act14graph1 = [];
+
+
+        var points = document.getElementById("act14group1").childNodes;
+
+        pos = 0;
+        for (var i = 0; i < points.length; i++) {
+            act14graph1[pos] = points[i].getAttribute("cx");
+            act14graph1[pos + 1] = points[i].getAttribute("cy");
+            pos += 2;
+        }
+
+        var act14graph2 = [];
+
+        var laird = document.getElementById("lairdG").childNodes;
+        var hartigan = document.getElementById("hartiganG").childNodes;
+        var tahlia = document.getElementById("tahliaG").childNodes;
+        var smith = document.getElementById("smithG").childNodes
+        pos = 0;
+
+        if (laird[0] != null) {
+            act14graph2[pos] = laird[0].getAttribute("cx");
+            act14graph2[pos + 1] = laird[0].getAttribute("cy");
+            act14graph2[pos + 2] = "true";
+        }
+        else {
+            act14graph2[pos] = 0
+            act14graph2[pos + 1] = 0
+            act14graph2[pos + 2] = "false";
+        }
+        pos += 3;
+        if (hartigan[0] != null) {
+            act14graph2[pos] = hartigan[0].getAttribute("cx");
+            act14graph2[pos + 1] = hartigan[0].getAttribute("cy");
+            act14graph2[pos + 2] = "true";
+        }
+        else {
+            act14graph2[pos] = 0
+            act14graph2[pos + 1] = 0
+            act14graph2[pos + 2] = "false";
+        }
+        pos += 3;
+        if (tahlia[0] != null) {
+            act14graph2[pos] = tahlia[0].getAttribute("cx");
+            act14graph2[pos + 1] = tahlia[0].getAttribute("cy");
+            act14graph2[pos + 2] = "true";
+        }
+        else {
+            act14graph2[pos] = 0
+            act14graph2[pos + 1] = 0
+            act14graph2[pos + 2] = "false";
+        }
+        pos += 3;
+        if (smith[0] != null) {
+            act14graph2[pos] = smith[0].getAttribute("cx");
+            act14graph2[pos + 1] = smith[0].getAttribute("cy");
+            act14graph2[pos + 2] = "true";
+        }
+        else {
+            act14graph2[pos] = 0
+            act14graph2[pos + 1] = 0
+            act14graph2[pos + 2] = "false";
+        }
+
+
+
+        var act14graph3 = [];
+
+        var sloane = document.getElementById("sloaneG").childNodes;
+        var crouch = document.getElementById("crouchG").childNodes;
+        var gibbs = document.getElementById("gibbsG").childNodes;
+        var mckay = document.getElementById("mckayG").childNodes
+
+
+        pos = 0;
+
+        if (sloane[0] != null) {
+            act14graph3[pos] = sloane[0].getAttribute("cx");
+            act14graph3[pos + 1] = sloane[0].getAttribute("cy");
+            act14graph3[pos + 2] = "true";
+        }
+        else {
+            act14graph3[pos] = 0
+            act14graph3[pos + 1] = 0
+            act14graph3[pos + 2] = "false";
+        }
+        pos += 3;
+        if (crouch[0] != null) {
+            act14graph3[pos] = crouch[0].getAttribute("cx");
+            act14graph3[pos + 1] = crouch[0].getAttribute("cy");
+            act14graph3[pos + 2] = "true";
+        }
+        else {
+            act14graph3[pos] = 0
+            act14graph3[pos + 1] = 0
+            act14graph3[pos + 2] = "false";
+        }
+        pos += 3;
+        if (gibbs[0] != null) {
+            act14graph3[pos] = gibbs[0].getAttribute("cx");
+            act14graph3[pos + 1] = gibbs[0].getAttribute("cy");
+            act14graph3[pos + 2] = "true";
+        }
+        else {
+            act14graph3[pos] = 0
+            act14graph3[pos + 1] = 0
+            act14graph3[pos + 2] = "false";
+        }
+        pos += 3;
+        if (mckay[0] != null) {
+            act14graph3[pos] = mckay[0].getAttribute("cx");
+            act14graph3[pos + 1] = mckay[0].getAttribute("cy");
+            act14graph3[pos + 2] = "true";
+        }
+        else {
+            act14graph3[pos] = 0
+            act14graph3[pos + 1] = 0
+            act14graph3[pos + 2] = "false";
+        }
+
+
+
         var final = {
             studentID: "@student",
             act1table1: JSON.stringify(t1a1),
@@ -8771,6 +8935,23 @@
             act13q1: act13q1,
             act13table1: JSON.stringify(act13table1),
             act13table2: JSON.stringify(act13table2),
+            act14graph1: JSON.stringify(act14graph1),
+            act14graph2: JSON.stringify(act14graph2),
+            act14graph3: JSON.stringify(act14graph3),
+            act14q1: document.getElementById("act14text1").value,
+            act14q2: document.getElementById("act14text2").value,
+            act14q3: document.getElementById("act14con").value,
+            act14q4: document.getElementById("act14q3").value,
+            act14q5: document.getElementById("act14q4").value,
+            act14q6: document.getElementById("act14q5").value,
+            act14q7: document.getElementById("act14q6").value,
+            act14q8: document.getElementById("act14q7").value,
+            act14q9: document.getElementById("act14q8").value,
+            act14q10: document.getElementById("act14q9").value,
+            act14q11: document.getElementById("act14q10").value,
+
+
+
 
         };
 
@@ -9351,6 +9532,167 @@
 
             }
         }
+
+        //act 14
+        var points1 = "@workbook.act14graph1";
+        var act14graph1string= points1.replace(/&quot;/g, '"');
+        act14graph1string = JSON.parse(act14graph1string);
+
+        drawPoints(act14graph1string);
+
+
+        var points2 = "@workbook.act14graph2";
+        var act14graph2string = points2.replace(/&quot;/g, '"');
+        act14graph2string = JSON.parse(act14graph2string);
+
+        var points3 = "@workbook.act14graph3";
+        var act14graph3string = points3.replace(/&quot;/g, '"');
+        act14graph3string = JSON.parse(act14graph3string);
+
+        if (act14graph2string[2] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph2string[0]);
+            rect.setAttribute('cy', act14graph2string[1]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'blue');
+            document.getElementById('lairdG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph2string[0] - 15);
+            text.setAttribute('y', act14graph2string[1] - 15);
+            text.textContent = "Laird";
+            text.setAttribute('class', "playertext")
+            document.getElementById('lairdG').appendChild(text);
+            LairdC++;
+        }
+
+        if (act14graph2string[5] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph2string[3]);
+            rect.setAttribute('cy', act14graph2string[4]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'red');
+            document.getElementById('hartiganG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph2string[3] - 15);
+            text.setAttribute('y', act14graph2string[4] - 15);
+            text.textContent = "Hartigan";
+            text.setAttribute('class', "playertext")
+            document.getElementById('hartiganG').appendChild(text);
+            HartiC++;
+        }
+
+        if (act14graph2string[8] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph2string[6]);
+            rect.setAttribute('cy', act14graph2string[7]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'yellow');
+            document.getElementById('tahliaG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph2string[6] - 15);
+            text.setAttribute('y', act14graph2string[7] - 15);
+            text.textContent = "Tahlia";
+            text.setAttribute('class', "playertext")
+            document.getElementById('tahliaG').appendChild(text);
+            TaliaC++;
+        }
+        console.log(act14graph2string[11]);
+        if (act14graph2string[11] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph2string[9]);
+            rect.setAttribute('cy', act14graph2string[10]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'green');
+            document.getElementById('smithG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph2string[9] - 15);
+            text.setAttribute('y', act14graph2string[10] - 15);
+            text.textContent = "Smith";
+            text.setAttribute('class', "playertext")
+            document.getElementById('smithG').appendChild(text);
+            SmithC++;
+        }
+
+
+        //graph 3
+
+        if (act14graph3string[2] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph3string[0]);
+            rect.setAttribute('cy', act14graph3string[1]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'blue');
+            document.getElementById('sloaneG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph3string[0] - 15);
+            text.setAttribute('y', act14graph3string[1] - 15);
+            text.textContent = "Sloane";
+            text.setAttribute('class', "playertext")
+            document.getElementById('sloaneG').appendChild(text);
+            SloaneC++;
+        }
+
+        if (act14graph3string[5] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph3string[3]);
+            rect.setAttribute('cy', act14graph3string[4]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'red');
+            document.getElementById('crouchG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph3string[3] - 15);
+            text.setAttribute('y', act14graph3string[4] - 15);
+            text.textContent = "Crouch";
+            text.setAttribute('class', "playertext")
+            document.getElementById('crouchG').appendChild(text);
+            CrouchC++;
+        }
+
+        if (act14graph3string[8] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph3string[6]);
+            rect.setAttribute('cy', act14graph3string[7]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'yellow');
+            document.getElementById('gibbsG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph3string[6] - 15);
+            text.setAttribute('y', act14graph3string[7] - 15);
+            text.textContent = "Gibbs";
+            text.setAttribute('class', "playertext")
+            document.getElementById('gibbsG').appendChild(text);
+            GibbC++;
+        }
+        console.log(act14graph3string[11]);
+        if (act14graph3string[11] != "false") {
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rect.setAttribute('cx', act14graph3string[9]);
+            rect.setAttribute('cy', act14graph3string[10]);
+            rect.setAttribute('r', '10');
+            rect.setAttribute('fill', 'green');
+            document.getElementById('mckayG').appendChild(rect);
+            var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', act14graph3string[9] - 15);
+            text.setAttribute('y', act14graph3string[10] - 15);
+            text.textContent = "Mckay";
+            text.setAttribute('class', "playertext")
+            document.getElementById('mckayG').appendChild(text);
+            MckayC++;
+        }
+
+
+        document.getElementById("act14text1").value = "@workbook.act14q1"
+        document.getElementById("act14text2").value = "@workbook.act14q2"
+        document.getElementById("act14con").value = "@workbook.act14q3"
+        document.getElementById("act14q3").value = "@workbook.act14q4"
+        document.getElementById("act14q4").value = "@workbook.act14q5"
+        document.getElementById("act14q5").value = "@workbook.act14q6"
+        document.getElementById("act14q6").value = "@workbook.act14q7"
+        document.getElementById("act14q7").value = "@workbook.act14q8"
+        document.getElementById("act14q8").value = "@workbook.act14q9"
+        document.getElementById("act14q9").value = "@workbook.act14q10"
+        document.getElementById("act14q10").value = "@workbook.act14q11"
+
 
 
 

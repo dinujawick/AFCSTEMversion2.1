@@ -52,7 +52,8 @@ namespace AFCSTEM.Models
             float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5, string act3q6, string act3q7, string act3q8, string act5table1, int act5tablecount, string act5q1, string act5q2 ,string act5q3, string act5q4, 
             string act5q5, string act6table1, int act6tablecount, string act6avgheight, string act6avgage, string act6q1, string act6q2, string act6q3, string act6q4 , string act6q5, string act6q6, string act6q7, string act6q8, string act6q9 
             , string act6q10, string act6q11 , string act6q12,string act9table1, string act9table2, string act9table3,string act9table4, string act9table5,string act10table1 ,string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
-            ,string act11q1,string act11table1,string act11q2,string act12table1, string act12q1,string act12table2,string act13q1,string act13table1, string act13table2)
+            ,string act11q1,string act11table1,string act11q2,string act12table1, string act12q1,string act12table2,string act13q1,string act13table1, string act13table2,string act14graph1,string act14graph2, string act14graph3,
+            string act14q1, string act14q2, string act14q3, string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9,string act14q10, string act14q11)
         {
             workbook.Act1Table1 = ACT1TABLE1;
             workbook.Act1Table2 = ACT1TABLE2;
@@ -157,6 +158,20 @@ namespace AFCSTEM.Models
             workbook.act13q1 = act13q1;
             workbook.act13table1 = act13table1;
             workbook.act13table2 = act13table2;
+            workbook.act14graph1 = act14graph1;
+            workbook.act14graph2 = act14graph2;
+            workbook.act14graph3 = act14graph3;
+            workbook.act14q1 = act14q1;
+            workbook.act14q2 = act14q2;
+            workbook.act14q3 = act14q3;
+            workbook.act14q4 = act14q4;
+            workbook.act14q5 = act14q5;
+            workbook.act14q6 = act14q6;
+            workbook.act14q7 = act14q7;
+            workbook.act14q8 = act14q8;
+            workbook.act14q9 = act14q9;
+            workbook.act14q10 = act14q10;
+            workbook.act14q11 = act14q11;
 
 
 
