@@ -111,6 +111,8 @@ namespace AFCSTEM.Models
         public string act12table1 { get; set; }
         public string act12table2 { get; set; }
         public string act12q1 { get; set; }
-
+        public string act13q1 { get; set; }
+        public string act13table1 { get; set; }
+        public string act13table2 { get; set; }
     }
 }
