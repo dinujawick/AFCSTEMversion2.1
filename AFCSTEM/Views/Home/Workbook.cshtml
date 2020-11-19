@@ -3156,7 +3156,7 @@
             <br />
         </h3>
         <p>
-            Estimate what you think their daily energy intake needs to be<input id="act11q1" type="number" placeholder="........................................" />kJ/day<br />
+            Estimate what you think their daily energy intake needs to be<input id="act11q1" onchange="saveWorkbook()" type="number" placeholder="........................................" />kJ/day<br />
             <br />
             <img id="timerImg" style="left:10px;width:10%;height:10%;position:relative" src="~/images/Workbooklet/24roller.png" />
             <img id="batteryImg" style="left: 10px; width: 20%; height: 20%; position: relative" src="~/images/Workbooklet/battery.png" />
@@ -3167,12 +3167,12 @@
             Player’s Daily Kilojoules Calculation
         </p>
         <table style="width:90%" id="act11table1">
-            <tr style="background-color:#002b5c; color:white;">
+            <tr id="firstrow"style="background-color:#002b5c; color:white;">
                 <th>ACTIVITY:</th>
                 <th>NO.OF HOURS/DAY:</th>
                 <th>KILOJOULES (kJ) USED DURING ACTIVITY</th>
             </tr>
-            <tr>
+            <tr id="firstrow">
                 <th>SLEEPING</th>
                 <td>10 Hrs/Day</td>
                 <td>359.1 x 10 = 3,591kJ</td>
@@ -3180,37 +3180,37 @@
             <tr>
                 <th>DRIVING TO AND FROM AFC</th>
                 <td>1 Hrs/Day</td>
-                <td><input type="text" /></td>
+                <td><input onchange="saveWorkbook()" type="text" /></td>
             </tr>
             <tr>
                 <th>TEAM MEETINGS (SITTING)</th>
                 <td>3 Hrs/Day</td>
-                <td><input type="number" /></td>
+                <td><input onchange="saveWorkbook()" type="number" /></td>
             </tr>
             <tr>
                 <th>AFC TRAINING (HIGH INTENSITY)</th>
                 <td>3 Hrs/Day</td>
-                <td><input type="number" /></td>
+                <td><input onchange="saveWorkbook()" type="number" /></td>
             </tr>
             <tr>
                 <th>GYM / WEIGHTS SESSION</th>
                 <td>1 Hrs/Day</td>
-                <td><input type="number" /></td>
+                <td><input onchange="saveWorkbook()" type="number" /></td>
             </tr>
             <tr>
                 <th>INJURY PREVENTION SESSION</th>
                 <td>2 Hrs/Day</td>
-                <td><input type="number" /></td>
+                <td><input onchange="saveWorkbook()" type="number" /></td>
             </tr>
             <tr>
                 <th>YOGA / STRETCHING </th>
                 <td>1 Hrs/Day</td>
-                <td><input type="number" /></td>
+                <td><input onchange="saveWorkbook()" type="number" /></td>
             </tr>
             <tr>
                 <th>REJUVENATION (RELAXING/TV)</th>
                 <td>3 Hrs/Day</td>
-                <td><input type="number" /></td>
+                <td><input onchange="saveWorkbook()" type="number" /></td>
             </tr>
 
 
@@ -3218,7 +3218,7 @@
         <br />
         <label for="act11q1"><b>Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR.</b> </label>
         <br />
-        <textarea id="act11q2" style="width:100%;" name="act11q1" rows="2"></textarea>
+        <textarea onchange="saveWorkbook()" id="act11q2" style="width:100%;" name="act11q1" rows="2"></textarea>
         <br />
         <br />
         <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -8545,7 +8545,29 @@
         act10q3 = document.getElementById("act10q5").value;
 
 
+        //act 11
 
+        var act11table1 = [];
+
+
+        table = document.getElementById("act11table1");
+        pos = 0;
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    act11table1[pos] = cell.querySelector("input").value;
+                    pos++;
+                }
+
+            }
+        }
+
+        var act11q1 = document.getElementById("act11q1").value;
+        var act11q2 = document.getElementById("act11q2").value;
 
 
 
@@ -8645,6 +8667,9 @@
             act10q1: act10q1,
             act10q2: act10q2,
             act10q3: act10q3,
+            act11table1: JSON.stringify(act11table1),
+            act11q1: act11q1,
+            act11q2: act11q2,
 
         };
 
@@ -9086,6 +9111,33 @@
         document.getElementById("act10q1").value = "@workbook.act10q1";
         document.getElementById("act10q2").value = "@workbook.act10q2";
         document.getElementById("act10q5").value = "@workbook.act10q3";
+
+
+
+        //act 11
+        table = document.getElementById("act11table1");
+
+        var act11table1 = "@workbook.act11table1";
+        var act11table1string = act11table1.replace(/&quot;/g, '"');
+        act11table1string = JSON.parse(act11table1string);
+        pos = 0;
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+                    cell.querySelector("input").value = act11table1string[pos];
+
+
+                    pos++;
+                }
+
+            }
+        }
+
+        document.getElementById("act11q1").value = "@workbook.act11q1";
+         document.getElementById("act11q2").value = "@workbook.act11q2";
 
     }
 
