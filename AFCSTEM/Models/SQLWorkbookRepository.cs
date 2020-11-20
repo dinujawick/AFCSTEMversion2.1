@@ -53,7 +53,8 @@ namespace AFCSTEM.Models
             string act5q5, string act6table1, int act6tablecount, string act6avgheight, string act6avgage, string act6q1, string act6q2, string act6q3, string act6q4 , string act6q5, string act6q6, string act6q7, string act6q8, string act6q9 
             , string act6q10, string act6q11 , string act6q12,string act9table1, string act9table2, string act9table3,string act9table4, string act9table5,string act10table1 ,string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
             ,string act11q1,string act11table1,string act11q2,string act12table1, string act12q1,string act12table2,string act13q1,string act13table1, string act13table2,string act14graph1,string act14graph2, string act14graph3,
-            string act14q1, string act14q2, string act14q3, string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9,string act14q10, string act14q11)
+            string act14q1, string act14q2, string act14q3, string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9,string act14q10, string act14q11,string act15quad1, string act15table1, string act15quad2, string act15table2, string act15quad3
+            ,string act15graphpoints, string act15graphlines,string act15table4,string act15table5, string act15textarea)
         {
             workbook.Act1Table1 = ACT1TABLE1;
             workbook.Act1Table2 = ACT1TABLE2;
@@ -172,6 +173,17 @@ namespace AFCSTEM.Models
             workbook.act14q9 = act14q9;
             workbook.act14q10 = act14q10;
             workbook.act14q11 = act14q11;
+            workbook.act15quad1 = act15quad1;
+            workbook.act15table1 = act15table1;
+            workbook.act15quad2 = act15quad2;
+            workbook.act15table2 = act15table2;
+            workbook.act15quad3 = act15quad3;
+            workbook.act15graphpoints = act15graphpoints;
+            workbook.act15graphlines = act15graphlines;
+            workbook.act15table4 = act15table4;
+            workbook.act15table5 = act15table5;
+            workbook.act15textarea = act15textarea;
+
 
 
 

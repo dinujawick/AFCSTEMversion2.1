@@ -312,6 +312,26 @@ namespace AFCSTEM.Migrations
 
                     b.Property<string>("act14q9");
 
+                    b.Property<string>("act15graphlines");
+
+                    b.Property<string>("act15graphpoints");
+
+                    b.Property<string>("act15quad1");
+
+                    b.Property<string>("act15quad2");
+
+                    b.Property<string>("act15quad3");
+
+                    b.Property<string>("act15table1");
+
+                    b.Property<string>("act15table2");
+
+                    b.Property<string>("act15table4");
+
+                    b.Property<string>("act15table5");
+
+                    b.Property<string>("act15textarea");
+
                     b.Property<string>("act3q4");
 
                     b.Property<string>("act3q5");

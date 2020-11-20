@@ -2,22 +2,17 @@
 
 namespace AFCSTEM.Migrations
 {
-    public partial class q11 : Migration
+    public partial class q15tb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "act11q1",
+                name: "act15table5",
                 table: "Workbook",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "act11q2",
-                table: "Workbook",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "act11table1",
+                name: "act15textarea",
                 table: "Workbook",
                 nullable: true);
         }
@@ -25,15 +20,11 @@ namespace AFCSTEM.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "act11q1",
+                name: "act15table5",
                 table: "Workbook");
 
             migrationBuilder.DropColumn(
-                name: "act11q2",
-                table: "Workbook");
-
-            migrationBuilder.DropColumn(
-                name: "act11table1",
+                name: "act15textarea",
                 table: "Workbook");
         }
     }

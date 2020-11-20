@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201119104651_q142")]
-    partial class q142
+    [Migration("20201120053753_q15tb")]
+    partial class q15tb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -291,6 +291,48 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("act14graph2");
 
                     b.Property<string>("act14graph3");
+
+                    b.Property<string>("act14q1");
+
+                    b.Property<string>("act14q10");
+
+                    b.Property<string>("act14q11");
+
+                    b.Property<string>("act14q2");
+
+                    b.Property<string>("act14q3");
+
+                    b.Property<string>("act14q4");
+
+                    b.Property<string>("act14q5");
+
+                    b.Property<string>("act14q6");
+
+                    b.Property<string>("act14q7");
+
+                    b.Property<string>("act14q8");
+
+                    b.Property<string>("act14q9");
+
+                    b.Property<string>("act15graphlines");
+
+                    b.Property<string>("act15graphpoints");
+
+                    b.Property<string>("act15quad1");
+
+                    b.Property<string>("act15quad2");
+
+                    b.Property<string>("act15quad3");
+
+                    b.Property<string>("act15table1");
+
+                    b.Property<string>("act15table2");
+
+                    b.Property<string>("act15table4");
+
+                    b.Property<string>("act15table5");
+
+                    b.Property<string>("act15textarea");
 
                     b.Property<string>("act3q4");
 
