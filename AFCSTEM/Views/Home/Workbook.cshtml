@@ -8917,7 +8917,7 @@
         pos = 0;
 
         for (var i = 0; i < points.length; i += 3) {
-            console.log(points[i],points[i+1],points[i+2])
+
             act15quadpoints[pos] = points[i + 1].getAttribute("cx");
             act15quadpoints[pos + 1] = points[i + 1].getAttribute("cy");
             act15quadpoints[pos + 2] = points[i + 1].getAttribute("stroke");
@@ -9947,9 +9947,13 @@
         var act15table4 = "@workbook.act15table4";
 
         pos = 0;
+        var act15table4string = act15table4.replace(/&#x2B;/g, "+");
+        act15table4string = act15table4string.replace(/&quot;/g, '"');
 
-        var act15table4string = act15table4.replace(/&quot;/g, '"');
+     
 
+
+        console.log(act15table4string);
         act15table4string = JSON.parse(act15table4string);
         table = document.getElementById("act15table4");
         for (i = 0; i < table.rows.length; i++) {
@@ -10066,6 +10070,17 @@
 
     }
 
+
+
+  
+    $('input').keypress(function (e) {
+        if (e.which == 34) {
+            return false;
+        }
+        else {
+
+        }
+    });
 
 
 
