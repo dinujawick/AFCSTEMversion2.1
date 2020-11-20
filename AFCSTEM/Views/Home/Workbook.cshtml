@@ -195,6 +195,7 @@
         }
     }
 }
+
 <style>
     @@font-face {
         font-family: Industry_Bold;
@@ -276,6 +277,7 @@
     table {
         margin-left: 10px;
         margin-right: 10px;
+        font-family: itcavantgardestd_bk;
     }
 
     h3 {
@@ -284,6 +286,13 @@
         text-align: left;
         margin-left: 35px;
         margin-top: 15px;
+        font-family: Industry_Bold;
+        font-weight: bold;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 20px;
         font-family: Industry_Bold;
         font-weight: bold;
     }
@@ -462,51 +471,6 @@
         }
     }
 
-    #batteryImg {
-        animation: blink-animation 1s steps(5, start) infinite;
-    }
-
-    #timerImg {
-        animation: roll-animation 1s infinite;
-    }
-
-    @@keyframes roll-animation {
-        from {
-            transform: rotate(0deg)
-        }
-
-        to {
-            transform: rotate(360deg)
-        }
-    }
-
-    @@keyframes blink-animation {
-        to {
-            visibility: hidden;
-        }
-    }
-
-    #col1 {
-        text-align: center;
-        font-size: 20px;
-        width: 10%;
-        border-width: 5px;
-        border-color: #002b5c;
-        color: #33619e;
-    }
-
-    #act1Table1, #act1Table3 {
-        border-collapse: separate;
-    }
-
-    #ebFooty.ebFooty {
-        animation-name: footkick;
-        animation-duration: 2s;
-        position: absolute;
-        left: 500px;
-        bottom: 100px;
-    }
-
     @@keyframes footkick {
         from {
             left: 500px;
@@ -525,6 +489,47 @@
             transform: rotate(720deg);
             opacity: 0;
         }
+    }
+
+    @@keyframes roll-animation {
+        from {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(360deg)
+        }
+    }
+
+    @@keyframes blink-animation {
+        to {
+            visibility: hidden;
+        }
+    }
+
+    #batteryImg {
+        animation: blink-animation 1s steps(5, start) infinite;
+    }
+
+    #timerImg {
+        animation: roll-animation 1s infinite;
+    }
+
+    #col1 {
+        text-align: center;
+        font-size: 20px;
+        width: 10%;
+        border-width: 5px;
+        border-color: #002b5c;
+        color: #33619e;
+    }
+
+    #ebFooty.ebFooty {
+        animation-name: footkick;
+        animation-duration: 2s;
+        position: absolute;
+        left: 500px;
+        bottom: 100px;
     }
 
     #col2 {
@@ -548,6 +553,10 @@
         height: 45%;
         display: inline-block;
         margin: 0 auto;
+    }
+
+    #act1Table1, #act1Table3 {
+        border-collapse: separate;
     }
 
     #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10,
@@ -804,13 +813,21 @@
     }
 
     .areaHint {
-        font-size: 20px;
+        font-size: 19px;
         color: #0c2037;
+        font-family: itcavantgardestd_bk;
     }
 
     .areaLabel {
         font-size: 18px;
         color: #002b5c;
+        font-family: itcavantgardestd_bk;
+    }
+
+    .areaTitle {
+        color: #002b5c;
+        font-size: 20px;
+        font-family: itcavantgardestd_bk;
     }
 
     #act3Table td {
@@ -840,7 +857,7 @@
         text-align: center;
         margin-top: 20px;
         margin-left: 25px;
-        width: 16%;
+        width: 22%;
         height: auto;
         border-color: #a38956;
         display: block;
@@ -853,6 +870,25 @@
         height: auto;
         border: 1px solid #a38956;
         border-radius: 15px;
+    }
+
+    #playerNumber {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 35px;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        background-color: #002b5c;
+    }
+
+    #title {
+        color: #002b5c;
+        margin-bottom: 2px;
+        font-family: itcavantgardestd_bk;
     }
 
     #act8Field {
@@ -1045,8 +1081,15 @@
     }
 
     #description{
-        font-size:17px;
+        font-size: 20px;
         font-family: Industry_Bold;
+        color: #002b5c;
+    }
+
+    #question {
+        font-size: 20px;
+        font-family: itcavantgardestd_bk;
+        color: #002b5c;
     }
 
     #act6Table3 th, #act6Table4 th{
@@ -1513,7 +1556,7 @@
                     <img id="AreaFormula" src="~/images/Unit1/Activity 2/centre square.PNG" style="width:90%;" />
                 </div>
                 <div class="col-md-7">
-                    <p style="color:#002b5c;font-size:18px;margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
+                    <p class="areaTitle" style="margin-top:40px;"><b>Centre Sqaure (MCG Area)</b></p>
                     <p class="areaHint">CS Area = Length x Width</p>
 
                     <label class="areaLabel" for="lenCS">CS Area = </label>
@@ -1559,7 +1602,8 @@
 
             <div class="row containInside">
                 <div class="col-md-7">
-                    <p style="color:#002b5c;"><b>GOAL SQUARE AREA (GS AREA)</b></p>
+                    <!--Goal Square-->
+                    <p class="areaTitle"><b>GOAL SQUARE AREA (GS AREA)</b></p>
                     <p class="areaHint">GS Area = Length x Width</p>
 
                     <label class="areaLabel" for="lenGS">GS Area = </label>
@@ -1572,8 +1616,10 @@
                     <label class="areaLabel">m<sup>2</sup></label>
                     <br /><br />
 
-                    <p style="color:#002b5c;"><b>GOAL POST AREA (GP AREA)</b></p>
+                    <!--Goal Post-->
+                    <p class="areaLabel"><b>GOAL POST AREA (GP AREA)</b></p>
                     <p class="areaHint">GP Area = Length x Width</p>
+
                     <label class="areaLabel" for="lenGP">GP Area = </label>
                     <input type="number" id="lenGP" name="Length" />
                     <label class="areaLabel" for="widGP">m x</label>
@@ -1590,7 +1636,8 @@
 
             <div class="row containInside" style="margin-top:10px;width:100%;">
                 <div class="col-md-7">
-                    <p style="color:#002b5c;"><b>BEHIND POST AREA (BP AREA)</b></p>
+                    <!--Behind post-->
+                    <p class="areaTitle"><b>BEHIND POST AREA (BP AREA)</b></p>
                     <p class="areaHint">BP Area = Length x Width</p>
 
                     <label class="areaLabel" for="lenBP">BP Area = </label>
@@ -1609,12 +1656,8 @@
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
                     <button id="act2p2btn" class="btn btn-outline-primary" onclick="checkActivity2P2(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
                 </div>
-
-
             </div>
-
         </div>
-
     </div>
 
     <!--Footer-->
@@ -1644,11 +1687,11 @@
             <div class="row containInside">
                 <div class="col-md-12">
                     <br />
-                    <p style="font-size:20px;"><b>Analysis: </b></p>
+                    <p id="question" style="font-size:25px;"><b>Analysis: </b></p>
 
-                    <label style="font-size:15px;">Which is the largest?</label>
+                    <label id="question">Which is the largest?</label>
                     <input type="text" id="text1" name="largest" />
-                    <p style="font-size:15px;">Order the areas from smallest to largest:</p>
+                    <p id="question">Order the areas from smallest to largest:</p>
 
                     <div class="row" style="margin-left: 10px;">
                         <div style="border: 1px solid black;width:125px; height:50px; text-align:center;" ondragover="allowDrop(event)" ondrop="act2Drop(event)">
@@ -1663,18 +1706,18 @@
                     </div>
 
                     <div class="row">
-                        <div style="margin-left: 50px;">Smallest</div>
-                        <div style="margin-left: 240px;">Largest</div>
+                        <div id="question" style="margin-left: 40px;">Smallest</div>
+                        <div id="question" style="margin-left: 220px;">Largest</div>
                     </div>
 
-                    <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
+                    <p id="question" style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
                     <textarea id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
-                    <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
+                    <p id="question" style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
                     <textarea id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
                     <br /><br />
-                    <p style="font-size:20px;">Calculate the area of your Goal Square:</p>
-                    <p><b>GOAL SQUARE AREA (GS AREA)</b></p>
+                    <p id="question">Calculate the area of your Goal Square:</p>
+                    <p class="areaTitle"><b>GOAL SQUARE AREA (GS AREA)</b></p>
                     <p class="areaHint">GS Area = Length x Width</p>
 
                     <label class="areaLabel" for="lenGS2">GS Area = </label>
@@ -1691,8 +1734,8 @@
             </div>
             <div class="row containInside">
                 <div class="col-md-6">
-                    <p><b>Practical Activity: ‘Measure Your School Oval’</b></p>
-                    <p>
+                    <p id="description" style="color:lawngreen;"><b>Practical Activity: ‘Measure Your School Oval’</b></p>
+                    <p id="description">
                         Now you know the correct measurements for
                         the distance between the goal posts and the
                         goal square. If you have goals on your school
@@ -1700,52 +1743,23 @@
                         and measure their location and compare it
                         to the AFL standards.
                     </p>
-                    <p>
+                    <p id="description">
                         Record the measurements and discuss the
                         results as a class:
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="~/images/Unit1/Activity 2/measure_oval.PNG" alt="measure your oval" style="width:60%;" />
+                    <img src="~/images/Unit1/Activity 2/measure_oval.PNG" alt="measure your oval" style="width:70%;" />
                 </div>
                 <br />
 
-                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;margin-top:25px;">
                     <button id="act2p3btn" class="btn btn-outline-primary" onclick="checkActivity2P3(this.id),checkActivity2(),loadBar()">Check Activity!!</button>
                 </div>
             </div>
 
         </div>
     </div>
-
-    <!--Footer-->
-    <div class="row">
-        <div class="col-md-12">
-            <img src="~/images/Header_Footer/FBAL0320_STEM_Footer.jpg" style="width:100%;margin-left:-15px;margin-right:0px;" />
-        </div>
-    </div>
-</div>
-
-
-<!--Activity 2: part 4-->
-<div id="outerBorder">
-    <!--Header with Logo-->
-    <div class="row" id="header">
-        <div class="col-md-12" id="headerChild">
-            <img src="~/images/Header_Footer/FBAL0320_STEM_Headers_Intro.jpg" style="width:100%;" />
-        </div>
-    </div>
-
-    <!--Activity-->
-    <div class="row containRow">
-        <h3><b></b><br /><span></span></h3>
-        <div id="innerBorder">
-            <div class="row containInside">
-
-            </div>
-        </div>
-    </div>
-
 
     <!--Footer-->
     <div class="row">
@@ -1765,6 +1779,7 @@
         </div>
     </div>
 
+    <!--Activity-->
     <div class="row containRow" id="act3">
         <h3><b>MEASUREMENT OF AFL GROUNDS: Activity 3</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
 
@@ -1845,8 +1860,8 @@
 
             <div class="row containInside" style="width:100%; margin-top:20px;">
                 <div class="col-md-9">
-                    <p class="areaHint"><b>MCG (MCG AREA)</b></p>
-                    <p class="areaLabel">MCG Area = &#189 L x &#189 W x π</p>
+                    <p class="areaTitle"><b>MCG (MCG AREA)</b></p>
+                    <p class="areaHint">MCG Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">MCG AREA = &#189 X </label>
                     <input type="number" id="mcgLength" name="MCG Length" />
@@ -1864,7 +1879,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>MARVEL STADIUM (MS AREA)</b></p>
+                    <p class="areaTitle"><b>MARVEL STADIUM (MS AREA)</b></p>
                     <p class="areaHint">MS Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">MS AREA = &#189 X </label>
@@ -1883,7 +1898,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>GMHBA STADIUM (GMH AREA)</b></p>
+                    <p class="areaTitle"><b>GMHBA STADIUM (GMH AREA)</b></p>
                     <p class="areaHint">GMH Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">GMH AREA = &#189 X </label>
@@ -1902,7 +1917,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>SCG (SCG AREA)</b></p>
+                    <p class="areaTitle"><b>SCG (SCG AREA)</b></p>
                     <p class="areaHint">SCG Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">SCG AREA = &#189 X </label>
@@ -1921,7 +1936,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>SPOTLESS STADIUM (SS AREA)</b></p>
+                    <p class="areaTitle"><b>SPOTLESS STADIUM (SS AREA)</b></p>
                     <p class="areaHint">SS Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">SS AREA = &#189 X </label>
@@ -1940,7 +1955,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>OPTUS STADIUM (OS AREA)</b></p>
+                    <p class="areaTitle"><b>OPTUS STADIUM (OS AREA)</b></p>
                     <p class="areaHint">OS Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">OS AREA = &#189 X </label>
@@ -1959,7 +1974,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>GABBA STADIUM (G AREA)</b></p>
+                    <p class="areaTitle"><b>GABBA STADIUM (G AREA)</b></p>
                     <p class="areaHint">G Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">G AREA = &#189 X </label>
@@ -1978,7 +1993,7 @@
 
             <div class="row containInside" style="width:100%;margin-top:20px;">
                 <div class="col-md-9">
-                    <p><b>METRICON STADIUM (MET AREA)</b></p>
+                    <p class="areaTitle"><b>METRICON STADIUM (MET AREA)</b></p>
                     <p class="areaHint">MET Area = &#189 L x &#189 W x π</p>
 
                     <label class="areaLabel">MET AREA = &#189 X </label>
@@ -2029,9 +2044,9 @@
             <p style="font-size:20px;margin-left:10px;"><b>Exploration Questions:</b></p>
             <div class="row containInside">
                 <div class="col-md-4">
-                    <label for="largestArea" style="font-size: 18px;">Which AFL ground has the largest area? </label>
-                    <label for="smallestArea" style="margin-top: 10px;margin-bottom:10px;font-size: 18px;">Which AFL ground has the smallest area?</label>
-                    <label for="crowdCapacity" style="font-size: 18px;">Which has the largest crowd capacity?</label>
+                    <label id="question" for="largestArea" style="font-size: 18px;">Which AFL ground has the largest area? </label>
+                    <label id="question" for="smallestArea" style="margin-top: 10px;margin-bottom:10px;font-size: 18px;">Which AFL ground has the smallest area?</label>
+                    <label id="question" for="crowdCapacity" style="font-size: 18px;">Which has the largest crowd capacity?</label>
                 </div>
                 <div class="col-md-8">
                     <input type="text" id="largestArea" name="largest Area" /><br />
@@ -2042,23 +2057,23 @@
 
             <div class="row containInside" style="margin-top:25px;">
                 <div class="col-md-12">
-                    <label for="correlation" style="font-size: 18px;">Is there any correlation between area of oval and capacity? Explain.</label>
+                    <label id="question" for="correlation">Is there any correlation between area of oval and capacity? Explain.</label>
                     <textarea id="act3q4" name="Correlations" rows="3" style="width:65%;"></textarea>
                     <br />
 
-                    <label for="mostLike" style="font-size: 18px;">Which ground would you most like to play on and why?</label>
+                    <label id="question" for="mostLike">Which ground would you most like to play on and why?</label>
                     <textarea id="act3q5" name="Most like" rows="3" style="width:65%;"></textarea>
                     <br />
 
-                    <label for="longDis" style="font-size: 18px;">What ground would suit a team with lots of long-distance runners? Give reasons why.</label>
+                    <label id="question" for="longDis">What ground would suit a team with lots of long-distance runners? Give reasons why.</label>
                     <textarea id="act3q6" name="long distance" rows="3" style="width:65%;"></textarea>
                     <br />
 
-                    <label for="accurate" style="font-size: 18px;">What ground would suit a team with lots of accurate kickers? Give reasons why.</label>
+                    <label id="question" for="accurate">What ground would suit a team with lots of accurate kickers? Give reasons why.</label>
                     <textarea id="act3q7" name="Accurate" rows="3" style="width:65%;"></textarea>
                     <br />
 
-                    <label for="defend" style="font-size: 18px;">What grounds would be harder/easier to defend on? Give reasons why.</label>
+                    <label id="question" for="defend">What grounds would be harder/easier to defend on? Give reasons why.</label>
                     <textarea id="act3q8" name="Defend" rows="3" style="width:65%;"></textarea>
                     <br />
 
@@ -2093,7 +2108,7 @@
 
         <div id="innerBorder">
             <div class="row containInside">
-                <p>
+                <p id="description">
                     <span style="color:green;font-size:20px;">Practical Activity: 'Anne's Angles'</span><br />
                     Using your knowledge of categorsing Angles you are going to track and categories Anne Hatchard’s (AFC
                     Women’s Team Member) movements. <br />
@@ -2113,6 +2128,7 @@
 
             </div>
 
+            <!--result table-->
             <div class="row containInside">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
@@ -2137,7 +2153,7 @@
             </div>
 
             <div class="row containInside">
-                <p>What analysis can you draw from looking at Anne’s movements?</p>
+                <p id="question">What analysis can you draw from looking at Anne’s movements?</p>
                 <textarea rows="2" style="width:65%;"></textarea>
             </div>
         </div>
@@ -2166,7 +2182,7 @@
         <h3><b>Scoring In AFL: Activity 4</b><br /><span style="font-size:20px;">Extension / Group Work Challenge [Part B]</span></h3><br />
 
         <div id="innerBorder">
-            <p>
+            <p id="description">
                 <span style="color:green;font-size:20px;">PRACTICAL EXTENSION: AFC Goal Bonanza</span><br />
                 Using the answers below: <br /><br />
                 ANSWER 10 Angles:
@@ -2210,7 +2226,7 @@
             </div>
 
             <div class="row containInside">
-                <p>
+                <p id="description">
                     Measure out the 10 angles (using the digital protractor and large measuring tape) of the AFC goals on
                     the school oval. (Bring in the distance to accommodate the student’s ability). Each student can have a
                     shot on goal from the cones and record their result.<br /><br />
@@ -2281,7 +2297,7 @@
             </div>
 
             <div class="row containInside">
-                <p>In AFL is there more chance of scoring a goal or a behind? Why? Explain your results.</p><br />
+                <p id="question">In AFL is there more chance of scoring a goal or a behind? Why? Explain your results.</p><br />
                 <textarea rows="3" style="width:65%;"></textarea>
             </div>
         </div>
@@ -2311,7 +2327,7 @@
 
         <div id="innerBorder">
             <div class="row containInside">
-                <p style="margin-top:25px;">
+                <p id="description" style="margin-top:25px;">
                     <b style="font-size:20px;">Scoring REMINDER:</b>
                     <br /><br />
                     Heads/heads = goal! (record the result)
@@ -2356,11 +2372,11 @@
                 </table>
             </div>
             <div class="row containInside">
-                <label for="act5q1" style="font-size: 18px;margin-right:15%;">Did you score more goals, points or misses?</label>
+                <label id="question" for="act5q1" style="font-size: 18px;margin-right:15%;">Did you score more goals, points or misses?</label>
                 <textarea id="act5q1" name="act5q1" rows="2" style="width:65%;"></textarea>
                 <br />
 
-                <label for="act5q2" style="font-size: 18px;">Does this match what you predicted before you collected the data? Explain your results.</label>
+                <label id="question" for="act5q2" style="font-size: 18px;">Does this match what you predicted before you collected the data? Explain your results.</label>
                 <textarea id="act5q2" name="act5q2" rows="2" style="width:65%;"></textarea>
 
                 <br />
@@ -2397,7 +2413,7 @@
         <div id="innerBorder">
 
             <div class="col-md-12">
-                <p>
+                <p id="description">
                     <br />
                     Tex Walker is well known for his ability to kick goals. Let’s compare <br />his
                     season average goals with your results from the ‘Goals and Behinds’ Game.
@@ -2438,17 +2454,17 @@
 
                 <img id="TexImage" src="~/images/Unit1/Activity 5/texwact5.jpeg" />
                 <div style="float:right">
-                    <label for="act5q3" style="font-size: 18px;">In what year was Tex’s highest goal per game average?</label>
+                    <label id="question" for="act5q3" style="font-size: 18px;">In what year was Tex’s highest goal per game average?</label>
                     <br />
                     <textarea id="act5q3" name="act5q3" rows="1" style="width:65%;"></textarea>
-                    <label for="act5q4" style="font-size: 18px;">
+                    <label id="question" for="act5q4" style="font-size: 18px;">
                         Rank in order Tex’s total average goals per season from highest <br />
                         to lowest?
                     </label>
                     <br />
                     <textarea id="act5q4" name="act5q4" rows="2" style="width:65%;"></textarea>
                     <br />
-                    <label for="act5q5" style="font-size: 18px;">
+                    <label id="question" for="act5q5" style="font-size: 18px;">
                         Tex started playing for the AFC in 2009. Over his 10 years <br />
                         calculate his total goals per season average
                     </label>
@@ -2504,7 +2520,7 @@
                 </div>
             </div>
             <br />
-            <p style="font-size:18px; margin-left:10px;">
+            <p id="description" style="margin-left:10px;">
                 In pairs, choose 10 of the AFCW STEM ID Profiles, fill in the table and calculate the average height and age
                 of the players.
             </p>
@@ -2513,19 +2529,19 @@
                 <div class="col-md-12">
                     <table style="width:90%" id="act6table">
                         <tr style="background-color:#002b5c; color:white;">
-                            <th>NAME:</th>
-                            <th>GUERSEY NO:</th>
-                            <th>HEIGHT:</th>
-                            <th>DEBUT ROUND:</th>
-                            <th>AGE:</th>
-                            <th>RECRUITED FROM:</th>
+                            <th style="width:30%;">NAME:</th>
+                            <th style="width:10%;">GUERSEY NO:</th>
+                            <th style="width:10%;">HEIGHT:</th>
+                            <th style="width:10%;">DEBUT ROUND:</th>
+                            <th style="width:10%;">AGE:</th>
+                            <th style="width:30%;">RECRUITED FROM:</th>
                         </tr>
                         <tr>
                             <td><input /></td>
+                            <td><input type="number"/></td>
                             <td><input /></td>
                             <td><input /></td>
-                            <td><input /></td>
-                            <td><input /></td>
+                            <td><input type="number"/></td>
                             <td><input /></td>
                         </tr>
                     </table>
@@ -2549,9 +2565,9 @@
                     <table style="width:50%;" id="act6Table2">
                         <tr color:white;">
                             <th>AVERAGE HEIGHT: </th>
-                            <td><input size="5" /></td>
+                            <td style="width:15%;"><input type="number"/></td>
                             <th>AVERAGE AGE: </th>
-                            <td><input size="5" /></td>
+                            <td style="width:15%;"><input type="number"/></td>
                         </tr>
                     </table>
                 </div>
@@ -2560,22 +2576,22 @@
 
             <div class="row containInside">
                 <div class="col-md-12">
-                    <p style="font-size:20px;">
+                    <p id="description" style="font-size:20px;">
                         Australian Football League Womens (AFLW) first started in 2017, in pairs arrange your 10 players in the following orders and answer the questions below. <br />
                         <br /><span style="font-size:18px;"><b>TASK: </b>Arrange your 10 players into debut order, i.e. who was the first to debut in the AFLW to who was the last to debut.</span>
                     </p><br />
 
-                    <label for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
+                    <label id="question" for="act6q1" style="font-size: 18px;"> First player to debut (if there is more than one, explain why?): </label><br />
                     <textarea name="act6q1" rows="2" style="width:65%;"></textarea>
                     <br />
-                    <label for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
+                    <label id="question" for="act6q2" style="font-size: 18px;"> Last player to debut: </label><br />
                     <textarea name="act6q2" rows="2" style="width:65%;"></textarea>
                     <br /><br />
-                    <p style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
-                    <label for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
+                    <p id="question" style="font-size:20px;"><b>TASK: </b>Arrange your 10 players in order from oldest to youngest.</p><br />
+                    <label id="question" for="act6q3" style="font-size: 18px;"> Oldest player to debut: </label><br />
                     <textarea name="act6q3" rows="2" style="width:65%;"></textarea>
                     <br />
-                    <label for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
+                    <label id="question" for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
                     <textarea name="act6q4" rows="2" style="width:65%;"></textarea>
                 </div>
             </div>
@@ -2609,17 +2625,17 @@
                 <img src="~/images/Unit2/RANGE.PNG" alt="RANGE" style="width:100%;margin-top:15px;margin-bottom:10px;" />
                 <img src="~/images/Unit2/MEAN.PNG" alt="MEAN" style="width:100%;" />
 
-                <p style="margin-top:25px;"><b>Age Analysis</b></p><br />
-                <label for="playerAge" style="font-size:18px;">How did you calculate your players age? Explain:</label><br />
+                <p id="question" style="margin-top:25px;"><b>Age Analysis</b></p><br />
+                <label id="question" for="playerAge">How did you calculate your players age? Explain:</label><br />
                 <textarea name="playerAge" rows="1" style="width:65%;"></textarea>
 
-                <label for="ageRange" style="font-size:18px;">What is the age range for the 10 AFCW players you selected? </label><br />
+                <label id="question" for="ageRange">What is the age range for the 10 AFCW players you selected? </label><br />
                 <textarea name="ageRange" rows="1" style="width:65%;"></textarea><br />
 
-                <label for="average" style="font-size:18px;">What is the average (mean) age of the 10 AFCW players selected?</label><br />
+                <label id="question" for="average">What is the average (mean) age of the 10 AFCW players selected?</label><br />
                 <textarea name="average" rows="1" style="width:65%;"></textarea><br />
 
-                <label for="average" style="font-size:18px;">
+                <label id="question" for="average">
                     Does there appear to be a link between the age of the player and when they made their debut?
                     Explain the reasoning behind your answer.
                 </label><br />
@@ -2653,19 +2669,19 @@
         <div id="innerBorder" style="width:100%;">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <p style="margin-top:25px;"><b>Height Analysis</b></p>
+                    <p id="question" style="margin-top:25px;"><b>Height Analysis</b></p>
                     <br />
 
-                    <label for="heightRange" style="font-size:18px;">What is the height range of your chosen 10 AFCW players you selected?</label><br />
+                    <label id="question" for="heightRange">What is the height range of your chosen 10 AFCW players you selected?</label><br />
                     <textarea name="heightRange" rows="2" style="width:65%;"></textarea><br /><br />
 
-                    <label for="tallestPlayer" style="font-size:18px;">Who is the tallest player out of your 10 AFCW players?</label><br />
+                    <label id="question" for="tallestPlayer">Who is the tallest player out of your 10 AFCW players?</label><br />
                     <textarea name="tallestPlayer" rows="2" style="width:65%;"></textarea><br /><br />
 
-                    <label for="shortestPlayer" style="font-size:18px;">Who is the shortest player out of your 10 AFCW players?</label><br />
+                    <label id="question" for="shortestPlayer">Who is the shortest player out of your 10 AFCW players?</label><br />
                     <textarea name="shortestPlayer" rows="2" style="width:65%;"></textarea><br /><br />
 
-                    <label for="shortestPlayer" style="font-size:18px;">The average height in the 2019 Crows AFLW team was 171cm. Explain where your 10 players sit in comparision:</label><br />
+                    <label id="question" for="shortestPlayer">The average height in the 2019 Crows AFLW team was 171cm. Explain where your 10 players sit in comparision:</label><br />
                     <textarea name="shortestPlayer" rows="3" style="width:65%;"></textarea><br /><br />
                 </div>
             </div>
@@ -6619,16 +6635,11 @@
             var input30 = document.createElement("input");
             var input31 = document.createElement("input");
             var input3 = document.createElement("input");
+            input3.type = 'number';
             var input4 = document.createElement("input");
             var input5 = document.createElement("input");
+            input5.type = 'number';
             var input6 = document.createElement("input");
-
-            input30.size = 30;
-            input31.size = 30;
-            input3.size = 3;
-            input4.size = 3;
-            input5.size = 3;
-            input6.size = 3;
 
             cell.appendChild(input30);
             cell2.appendChild(input3);
@@ -6982,12 +6993,7 @@
             $('#AreaFormula').animate({ left: '10px' });
         });
 
-        $.get('MVP', null, function(text){
-            //alert($(text).find('#table2'));
-            var table = $("#table2");
-            var row = table.rows.length;
-            console.log(row);
-        });
+        
     });
 
     //
@@ -7009,11 +7015,6 @@
 
         $('#ebFooty').addClass('ebFooty');
 
-
-
-
-
-
         setTimeout(function () {
             var table = document.getElementById('act10table2');
             var table2 = document.getElementById('act10table3')
@@ -7029,7 +7030,6 @@
                     stemList.push(value);
                 }
             }
-
 
             for (var i = 1, row; row = table2.rows[i]; i++) {
                 var value = parseFloat(stemList[i - 1]).toFixed(1);
@@ -7052,18 +7052,8 @@
             }
 
             $('#ebFooty').removeClass();
-
-
-
-
-
         }
-
             , 1500);
-
-
-
-
     }
 
     function clearQuad3() {
@@ -8144,7 +8134,6 @@
             var newArray = holdArray.split(',');
 
             var row1 = document.getElementById('stemIDR1');
-            var row2 = document.getElementById('stemIDR2');
 
             document.getElementById('STEMProfile').hidden = false;
 
@@ -8159,21 +8148,25 @@
             var divContainer = document.createElement('DIV');
 
             var name = document.createElement('H4');
-            var nBold = document.createElement('B');
+            var nBold = document.createElement('B');    
 
             var height = document.createElement('P');
             var hBold = document.createElement('B');
+            height.id = 'title';
 
             var DOB = document.createElement('P');
             var dobBold = document.createElement('B');
+            DOB.id = 'title';
 
             var debut = document.createElement('P');
             var dBold = document.createElement('B');
+            debut.id = 'title';
 
             var recruit = document.createElement('P');
             var rBold = document.createElement('B');
             var rFrom = document.createElement('P');
-
+            recruit.id = 'title';
+            rFrom.id = 'title';
 
             var pNum = newArray[0];
             var pImgSrc = newArray[1];
@@ -8186,23 +8179,29 @@
 
             numBold.innerHTML = pNum;
             pNumText.appendChild(numBold);
+            pNumText.id = 'playerNumber';
 
-
-            imgSrc.src = "~" + pImgSrc;
+            imgSrc.src = pImgSrc;
             imgSrc.alt = pName;
             imgSrc.className = 'imgs';
 
             nBold.innerHTML = pName;
             name.appendChild(nBold);
 
-            hBold.innerHTML = pHGT;
+            var hArray = pHGT.split(' ');
+            hBold.innerHTML = hArray[0];
             height.appendChild(hBold);
+            height.innerHTML += " " + hArray[1] + " " + hArray[2];
 
-            dobBold.innerHTML = pDOB;
+            var dobArray = pDOB.split(' ');
+            dobBold.innerHTML = dobArray[0];
             DOB.appendChild(dobBold);
+            DOB.innerHTML += " " + dobArray[1];
 
-            dBold.innerHTML = pDebut;
+            var deArray = pDebut.split(' ');
+            dBold.innerHTML = deArray[0];
             debut.appendChild(dBold);
+            debut.innerHTML += " " + deArray[1] + " " + deArray[2] + " " + deArray[3];
 
             rBold.innerHTML = pRecruit;
             recruit.appendChild(rBold);
@@ -8218,32 +8217,7 @@
             cardContainer.appendChild(recruit);
             cardContainer.appendChild(rFrom);
 
-
             row1.appendChild(cardContainer);
-
-            /*
-            console.log(pNum);
-            console.log(pImgSrc);
-            console.log(pName);
-            console.log(pHGT);
-            console.log(pDOB);
-            console.log(pDebut);
-            console.log(pRecruit);
-            console.log(pRFrom);
-
-            <div class="card">
-                    <p id="playerNumber"><b></b></p>
-                    <img src="~" alt="" class="imgs" />
-                    <div class="container">
-                        <h4><b></b></h4>
-                        <p><b id="title"></b></p>
-                        <p><b id="title"></b></p>
-                        <p><b id="title"></b></p>
-                        <p><b id="title"></b></p>
-                        <p></p>
-                    </div>
-                </div>
-            */
         }
     }
 
