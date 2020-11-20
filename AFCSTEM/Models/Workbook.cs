@@ -138,6 +138,12 @@ namespace AFCSTEM.Models
         public string act15table4 { get; set; }
         public string act15table5 { get; set; }
         public string act15textarea { get; set; }
+        public string act16table1 { get; set; }
+        public string act16table2 { get; set; }
+        public string act16table3 { get; set; }
+        public string act16table4 { get; set; }
+        public string act16table5 { get; set; }
+        public string act16table6 { get; set; }
 
 
 
