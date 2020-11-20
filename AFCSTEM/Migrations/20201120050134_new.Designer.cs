@@ -4,14 +4,16 @@ using AFCSTEM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201120050134_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -327,50 +329,6 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("act15table2");
 
                     b.Property<string>("act15table4");
-
-                    b.Property<string>("act15table5");
-
-                    b.Property<string>("act15textarea");
-
-                    b.Property<string>("act16table1");
-
-                    b.Property<string>("act16table2");
-
-                    b.Property<string>("act16table3");
-
-                    b.Property<string>("act16table4");
-
-                    b.Property<string>("act16table5");
-
-                    b.Property<string>("act16table6");
-
-                    b.Property<string>("act17q1");
-
-                    b.Property<string>("act17q2");
-
-                    b.Property<string>("act17q3");
-
-                    b.Property<string>("act17q4");
-
-                    b.Property<string>("act17q5");
-
-                    b.Property<string>("act17q6");
-
-                    b.Property<string>("act17q7");
-
-                    b.Property<string>("act17table1");
-
-                    b.Property<string>("act17table2");
-
-                    b.Property<string>("act17table3");
-
-                    b.Property<string>("act17table4");
-
-                    b.Property<string>("act17table5");
-
-                    b.Property<string>("act17table6");
-
-                    b.Property<string>("act17table7");
 
                     b.Property<string>("act3q4");
 

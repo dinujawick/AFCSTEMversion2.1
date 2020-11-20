@@ -1438,13 +1438,15 @@
 
             <label>Matches</label>
             <input id="editMatches" type="number" />
-            <br/>
-          
+            <br />
+
+     
+
             <button style="float:right" id="updatePlayer" onclick="updatePlayer()">Update Player</button>
 
 
+            </div>
         </div>
-    </div>
     <br />
     <br/>
     <br/>
@@ -2162,15 +2164,13 @@
 
 
 
-
-
             $.post({
                 url: '../Home/UpdatePlayer',
                 data: player,
                 traditional: true
             }).done(function (data) {
                
-
+         
 
 
                 location.reload();
@@ -2179,6 +2179,8 @@
             });
         }
 
+      
+    
 
 
 

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -40,5 +42,7 @@ namespace AFCSTEM.Models
         public int BehindsTotal { get; set; }
         public int Matches { get; set; }
         public bool Hidden { get; set; }
+      
+
     }
 }

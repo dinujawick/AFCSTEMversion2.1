@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201023032322_hiddenplayers")]
-    partial class hiddenplayers
+    [Migration("20201120093242_q16")]
+    partial class q16
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -200,15 +200,271 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("StudentId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Act1Row1");
+
+                    b.Property<string>("Act1Row2");
+
+                    b.Property<string>("Act1Row3");
+
+                    b.Property<string>("Act1Row4");
+
                     b.Property<string>("Act1Table1");
 
                     b.Property<string>("Act1Table2");
+
+                    b.Property<string>("Act1Table3");
+
+                    b.Property<float>("Act2BPArea");
+
+                    b.Property<float>("Act2BPLength");
+
+                    b.Property<float>("Act2BPWidth");
 
                     b.Property<float>("Act2CSArea");
 
                     b.Property<float>("Act2CSLength");
 
                     b.Property<float>("Act2CSWidth");
+
+                    b.Property<float>("Act2GPArea");
+
+                    b.Property<float>("Act2GPLength");
+
+                    b.Property<float>("Act2GPWidth");
+
+                    b.Property<float>("Act2GS2Area");
+
+                    b.Property<float>("Act2GS2Length");
+
+                    b.Property<float>("Act2GS2Width");
+
+                    b.Property<float>("Act2GSArea");
+
+                    b.Property<float>("Act2GSLength");
+
+                    b.Property<float>("Act2GSWidth");
+
+                    b.Property<string>("Act2box1");
+
+                    b.Property<string>("Act2box2");
+
+                    b.Property<string>("Act2box3");
+
+                    b.Property<string>("Act2t4");
+
+                    b.Property<string>("Act2t5");
+
+                    b.Property<string>("Act2text1");
+
+                    b.Property<string>("act10q1");
+
+                    b.Property<string>("act10q2");
+
+                    b.Property<string>("act10q3");
+
+                    b.Property<string>("act10table1");
+
+                    b.Property<string>("act10table2");
+
+                    b.Property<string>("act10table3");
+
+                    b.Property<string>("act11q1");
+
+                    b.Property<string>("act11q2");
+
+                    b.Property<string>("act11table1");
+
+                    b.Property<string>("act12q1");
+
+                    b.Property<string>("act12table1");
+
+                    b.Property<string>("act12table2");
+
+                    b.Property<string>("act13q1");
+
+                    b.Property<string>("act13table1");
+
+                    b.Property<string>("act13table2");
+
+                    b.Property<string>("act14graph1");
+
+                    b.Property<string>("act14graph2");
+
+                    b.Property<string>("act14graph3");
+
+                    b.Property<string>("act14q1");
+
+                    b.Property<string>("act14q10");
+
+                    b.Property<string>("act14q11");
+
+                    b.Property<string>("act14q2");
+
+                    b.Property<string>("act14q3");
+
+                    b.Property<string>("act14q4");
+
+                    b.Property<string>("act14q5");
+
+                    b.Property<string>("act14q6");
+
+                    b.Property<string>("act14q7");
+
+                    b.Property<string>("act14q8");
+
+                    b.Property<string>("act14q9");
+
+                    b.Property<string>("act15graphlines");
+
+                    b.Property<string>("act15graphpoints");
+
+                    b.Property<string>("act15quad1");
+
+                    b.Property<string>("act15quad2");
+
+                    b.Property<string>("act15quad3");
+
+                    b.Property<string>("act15table1");
+
+                    b.Property<string>("act15table2");
+
+                    b.Property<string>("act15table4");
+
+                    b.Property<string>("act15table5");
+
+                    b.Property<string>("act15textarea");
+
+                    b.Property<string>("act16table1");
+
+                    b.Property<string>("act16table2");
+
+                    b.Property<string>("act16table3");
+
+                    b.Property<string>("act16table4");
+
+                    b.Property<string>("act16table5");
+
+                    b.Property<string>("act16table6");
+
+                    b.Property<string>("act3q4");
+
+                    b.Property<string>("act3q5");
+
+                    b.Property<string>("act3q6");
+
+                    b.Property<string>("act3q7");
+
+                    b.Property<string>("act3q8");
+
+                    b.Property<string>("act5q1");
+
+                    b.Property<string>("act5q2");
+
+                    b.Property<string>("act5q3");
+
+                    b.Property<string>("act5q4");
+
+                    b.Property<string>("act5q5");
+
+                    b.Property<string>("act5table");
+
+                    b.Property<int>("act5tablecount");
+
+                    b.Property<string>("act6avgAge");
+
+                    b.Property<string>("act6avgHeight");
+
+                    b.Property<string>("act6q1");
+
+                    b.Property<string>("act6q10");
+
+                    b.Property<string>("act6q11");
+
+                    b.Property<string>("act6q12");
+
+                    b.Property<string>("act6q2");
+
+                    b.Property<string>("act6q3");
+
+                    b.Property<string>("act6q4");
+
+                    b.Property<string>("act6q5");
+
+                    b.Property<string>("act6q6");
+
+                    b.Property<string>("act6q7");
+
+                    b.Property<string>("act6q8");
+
+                    b.Property<string>("act6q9");
+
+                    b.Property<string>("act6table1");
+
+                    b.Property<int>("act6tablecount");
+
+                    b.Property<string>("act9table1");
+
+                    b.Property<string>("act9table2");
+
+                    b.Property<string>("act9table3");
+
+                    b.Property<string>("act9table4");
+
+                    b.Property<string>("act9table5");
+
+                    b.Property<string>("crowdCapacity");
+
+                    b.Property<float>("gArea");
+
+                    b.Property<float>("gLength");
+
+                    b.Property<float>("gWidth");
+
+                    b.Property<float>("gmhArea");
+
+                    b.Property<float>("gmhLength");
+
+                    b.Property<float>("gmhWidth");
+
+                    b.Property<string>("largestArea");
+
+                    b.Property<float>("mcgArea");
+
+                    b.Property<float>("mcgLength");
+
+                    b.Property<float>("mcgWidth");
+
+                    b.Property<float>("metArea");
+
+                    b.Property<float>("metLength");
+
+                    b.Property<float>("metWidth");
+
+                    b.Property<float>("msArea");
+
+                    b.Property<float>("msLength");
+
+                    b.Property<float>("msWidth");
+
+                    b.Property<float>("osArea");
+
+                    b.Property<float>("osLength");
+
+                    b.Property<float>("osWidth");
+
+                    b.Property<float>("scgArea");
+
+                    b.Property<float>("scgLength");
+
+                    b.Property<float>("scgWidth");
+
+                    b.Property<string>("smallestArea");
+
+                    b.Property<float>("ssArea");
+
+                    b.Property<float>("ssLength");
+
+                    b.Property<float>("ssWidth");
 
                     b.HasKey("StudentId");
 
