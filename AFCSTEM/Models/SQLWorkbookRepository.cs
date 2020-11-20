@@ -54,7 +54,8 @@ namespace AFCSTEM.Models
             , string act6q10, string act6q11 , string act6q12,string act9table1, string act9table2, string act9table3,string act9table4, string act9table5,string act10table1 ,string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
             ,string act11q1,string act11table1,string act11q2,string act12table1, string act12q1,string act12table2,string act13q1,string act13table1, string act13table2,string act14graph1,string act14graph2, string act14graph3,
             string act14q1, string act14q2, string act14q3, string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9,string act14q10, string act14q11,string act15quad1, string act15table1, string act15quad2, string act15table2, string act15quad3
-            ,string act15graphpoints, string act15graphlines,string act15table4,string act15table5, string act15textarea,string act16table1, string act16table2, string act16table3, string act16table4, string act16table5, string act16table6)
+            ,string act15graphpoints, string act15graphlines,string act15table4,string act15table5, string act15textarea,string act16table1, string act16table2, string act16table3, string act16table4, string act16table5, string act16table6,
+            string act17table1,string act17table2,string act17table3,string act17table4,string act17table5,string act17table6,string act17table7, string act17q1,string act17q2,string act17q3,string act17q4, string act17q5,string act17q6,string act17q7)
         {
             workbook.Act1Table1 = ACT1TABLE1;
             workbook.Act1Table2 = ACT1TABLE2;
@@ -189,7 +190,20 @@ namespace AFCSTEM.Models
             workbook.act16table4 = act16table4;
             workbook.act16table5 = act16table5;
             workbook.act16table6 = act16table6;
-
+            workbook.act17table1 = act17table1;
+            workbook.act17table2 = act17table2;
+            workbook.act17table3 = act17table3;
+            workbook.act17table4 = act17table4;
+            workbook.act17table5 = act17table5;
+            workbook.act17table6 = act17table6;
+            workbook.act17table7 = act17table7;
+            workbook.act17q1 = act17q1;
+            workbook.act17q2 = act17q2;
+            workbook.act17q3 = act17q3;
+            workbook.act17q4 = act17q4;
+            workbook.act17q5 = act17q5;
+            workbook.act17q6 = act17q6;
+            workbook.act17q7 = act17q7;
 
 
 
