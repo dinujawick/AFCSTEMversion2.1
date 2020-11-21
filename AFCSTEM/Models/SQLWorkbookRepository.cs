@@ -51,7 +51,7 @@ namespace AFCSTEM.Models
             float gmhLength, float gmhWidth, float gmhArea, float scgLength,float scgWidth, float scgArea, float ssLength, float ssWidth, float ssArea, float osLength, float osWidth ,float osArea, float gLength, float gWidth, float gArea, float metLength ,
             float metWidth, float metArea, string largestArea, string smallestArea, string crowdCapacity, string act3q4, string act3q5, string act3q6, string act3q7, string act3q8, string act5table1, int act5tablecount, string act5q1, string act5q2 ,string act5q3, string act5q4, 
             string act5q5, string act6table1, int act6tablecount, string act6avgheight, string act6avgage, string act6q1, string act6q2, string act6q3, string act6q4 , string act6q5, string act6q6, string act6q7, string act6q8, string act6q9 
-            , string act6q10, string act6q11 , string act6q12,string act9table1, string act9table2, string act9table3,string act9table4, string act9table5,string act10table1 ,string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
+            , string act6q10, string act6q11 , string act6q12,string act6table3, string act6table4,string act9table1, string act9table2, string act9table3,string act9table4, string act9table5,string act10table1 ,string act10q1, string act10q2, string act10table2, string act10table3, string act10q3
             ,string act11q1,string act11table1,string act11q2,string act12table1, string act12q1,string act12table2,string act13q1,string act13table1, string act13table2,string act14graph1,string act14graph2, string act14graph3,
             string act14q1, string act14q2, string act14q3, string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9,string act14q10, string act14q11,string act15quad1, string act15table1, string act15quad2, string act15table2, string act15quad3
             ,string act15graphpoints, string act15graphlines,string act15table4,string act15table5, string act15textarea,string act16table1, string act16table2, string act16table3, string act16table4, string act16table5, string act16table6,
@@ -204,6 +204,8 @@ namespace AFCSTEM.Models
             workbook.act17q5 = act17q5;
             workbook.act17q6 = act17q6;
             workbook.act17q7 = act17q7;
+            workbook.act6table3 = act6table3;
+            workbook.act6table4 = act6table4;
 
 
 
