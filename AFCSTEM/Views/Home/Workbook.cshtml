@@ -2134,9 +2134,9 @@
             <div class="row containInside">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <table class="table table-bordered" id="Act4Table1">
+                    <table class="table table-bordered" id="act4Table1">
                         <thead>
-                            <tr>
+                            <tr id="firstrow">
                                 <th>ACUTE ANGLES</th>
                                 <th>OBTUSE ANGLES</th>
                                 <th>REFLEX ANGLES</th>
@@ -2144,9 +2144,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="number" /></td>
-                                <td><input type="number" /></td>
-                                <td><input type="number" /></td>
+                                <td><input onchange="saveWorkbook()"type="number" /></td>
+                                <td><input onchange="saveWorkbook()"type="number" /></td>
+                                <td><input onchange="saveWorkbook()"type="number" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2156,7 +2156,7 @@
 
             <div class="row containInside">
                 <p id="question">What analysis can you draw from looking at Anne’s movements?</p>
-                <textarea rows="2" style="width:65%;"></textarea>
+                <textarea onchange="saveWorkbook()" id="act4q1" rows="2" style="width:65%;"></textarea>
             </div>
         </div>
     </div>
@@ -2239,7 +2239,7 @@
             <div class="row containInside">
                 <table class="table table-bordered" id="act4Table3" style="margin-right:25px;">
                     <thead>
-                        <tr>
+                        <tr id="firstrow">
                             <th>POSITION:</th>
                             <th>GOAL:</th>
                             <th>BEHIND:</th>
@@ -2251,48 +2251,48 @@
                     <tbody>
                         <tr>
                             <td>Goal 10</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                             <td>Goal 5</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                         </tr>
                         <tr>
                             <td>Goal 9</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                             <td>Goal 4</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                         </tr>
                         <tr>
                             <td>Goal 8</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                             <td>Goal 3</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                         </tr>
                         <tr>
                             <td>Goal 7</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                             <td>Goal 2</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                         </tr>
                         <tr>
                             <td>Goal 6</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                             <td>Goal 1</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                         </tr>
                         <tr>
                             <td>TOTAL:</td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
+                            <td><input onchange="saveWorkbook()"type="number" /></td>
                         </tr>
                     </tbody>
                 </table>
@@ -2300,7 +2300,7 @@
 
             <div class="row containInside">
                 <p id="question">In AFL is there more chance of scoring a goal or a behind? Why? Explain your results.</p><br />
-                <textarea rows="3" style="width:65%;"></textarea>
+                <textarea onchange="saveWorkbook()" id="act4q2" rows="3" style="width:65%;"></textarea>
             </div>
         </div>
     </div>
@@ -2892,12 +2892,12 @@
 
                     <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:20px;">
                         <label for="teamTotal">TEAM TOTAL: </label>
-                        <input name="team Total" id="teamTotal" type="number" style="text-align:center;margin-left:10px;" />
+                        <input onchange="saveWorkbook()"name="team Total" id="act8q1" type="number" style="text-align:center;margin-left:10px;" />
 
                         <span style="margin-left:25px;"></span>
 
                         <label for="leftOver">LEFT OVER: </label>
-                        <input name="left over" id="leftOver" type="number" style="text-align:center;margin-left:10px;" />
+                        <input onchange="saveWorkbook()" name="left over" id="act8q2" type="number" style="text-align:center;margin-left:10px;" />
                     </div>
                     <br />
                 </div>
@@ -2910,7 +2910,7 @@
                         his office and asked you to justify your team selection. Explain the players you have chosen and why you have
                         chosen them. Give reasons that would convince him to keep you as the coaches for next year:
                     </p>
-                    <textarea name="justification" rows="3"></textarea><br />
+                    <textarea onchange="saveWorkbook()" id="act8q3" name="act8q3" rows="3"></textarea><br />
                 </div>
             </div>
 
@@ -2946,33 +2946,33 @@
                 <div class="row">
                     <div class="col-md-5">
                         <label>KICKS: </label>
-                        <input style="width:100%;" />
+                        <input onchange="saveWorkbook()" type="number" id="act8q4" style="width:100%;" />
                         <br />
 
                         <label>HANDBALLS: </label>
-                        <input style="width:100%;" />
+                        <input onchange="saveWorkbook()" id="act8q5" style="width:100%;" />
                         <br /><br />
                     </div>
                 </div>
 
                 <label>Explain why you think that position has the highest average for each statistic:</label>
-                <textarea rows="2"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q6" rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
                 <label><b>Total Disposals:</b> Add up the total average of kicks and handballs for each position.</label>
                 <table class="table table-bordered" id="act8Table1" style="margin-right:25px;">
-                    <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
-                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr id="firstrow"><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
+                    <tr><td>FORWARDS</td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>MIDFIELDERS</td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>DEFENDERS</td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
                 </table>
             </div>
             <div class="row containInside" style="margin-top:15px;">
                 <label>Explain how this number relates to the average disposals for each position.</label>
-                <textarea rows="2"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q7" rows="2"></textarea>
 
                 <label style="margin-top:15px;">Describe what a disposal statistic in AFL is.</label>
-                <textarea rows="2"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q8" rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
                 <label>
@@ -2980,10 +2980,10 @@
                     (Add up the price of all 6 players and record the total below, you may like to use a calculator)
                 </label>
                 <table class="table table-bordered" id="act8Table2" style="margin-right:25px;">
-                    <tr><th>POSITION</th><th>TOTAL COST</th><th>TOTAL DISPOSALS</th></tr>
-                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
-                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
-                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr id="firstrow"><th>POSITION</th><th>TOTAL COST</th><th>TOTAL DISPOSALS</th></tr>
+                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
                 </table>
             </div>
         </div>
@@ -3018,7 +3018,7 @@
                     Which area on the field was the most expensive and how did this correlate to the total average disposals?
                     Explain your results:
                 </label>
-                <textarea rows="2"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q9" rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
                 <p>
@@ -3027,31 +3027,31 @@
                 </p>
                 <div class="row">
                     <label style="margin-right:15px;">Class Mate’s Team Name:</label>
-                    <input />
+                    <input  onchange="saveWorkbook()" type="text" id="act8q10" />
                 </div>
 
 
                 <table class="table table-bordered" id="act8Table3" style="margin-right:25px;">
-                    <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
-                    <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                    <tr><td>MIDFIELDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
-                    <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td></tr>
+                    <tr id="firstrow"><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
+                    <tr><td>FORWARDS</td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>MIDFIELDERS</td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
+                    <tr><td>DEFENDERS</td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
                 </table>
             </div>
             <div class="row containInside" style="margin-top:15px;">
                 <p style="font-size:18px;"><b>Analyse your class mate's team and what do you believe to be the ‘strengths and weaknesses’ of their team:</b></p>
 
                 <label for="act8In1" style="width:50%;">Strengths (with explanation).</label>
-                <textarea rows="2" id="act8In1"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q11" rows="2"></textarea>
 
                 <label for="act8In2" style="width:50%;margin-top:15px;">Weakness (with explanation).</label>
-                <textarea rows="2" id="act8In2"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q12" rows="2"></textarea>
 
                 <p style="margin-bottom:25px;">
                     After looking at your class mates team, if you had to make 2 changes to your team what would you change
                     and why?
                 </p>
-                <textarea rows="4" style="margin-bottom:15px;"></textarea>
+                <textarea  onchange="saveWorkbook()" id="act8q13" rows="4" style="margin-bottom:15px;"></textarea>
 
             </div>
         </div>
@@ -3081,24 +3081,24 @@
             <div class="row containInside">
                 <div class="col-md-12" style="margin-top:15px;">
                     <label>Which team member collected the most points and why?</label>
-                    <textarea rows="2"></textarea><br />
+                    <textarea  onchange="saveWorkbook()" id="act8q14" rows="2"></textarea><br />
 
                     <label>Did the player with the highest value collect the most points? Why/why not – Explain.</label>
-                    <textarea rows="2"></textarea><br /><br />
+                    <textarea  onchange="saveWorkbook()" id="act8q15" rows="2"></textarea><br /><br />
 
                     <p style="font-size:18px;">Is this points system the best way to determine the MVP of a team? Explain the positives and negatives.</p><br />
 
                     <label style="width:50%">Positives (with explanation): </label>
-                    <textarea rows="2"></textarea>
+                    <textarea  onchange="saveWorkbook()" id="act8q16" rows="2"></textarea>
 
                     <label style="width:50%">Negatives (with explanation): </label>
-                    <textarea rows="2"></textarea>
+                    <textarea  onchange="saveWorkbook()" id="act8q17" rows="2"></textarea>
 
                     <label>
                         Could your Full Back win your MVP with your points system? What adjustments could you make to cater for all
                         positions?
                     </label>
-                    <textarea rows="2"></textarea>
+                    <textarea  onchange="saveWorkbook()" id="act8q18" rows="2"></textarea>
                 </div>
             </div>
         </div>
@@ -9345,6 +9345,53 @@
         var act3q7 = document.getElementById("act3q7").value;
         var act3q8 = document.getElementById("act3q8").value;
 
+
+
+        //act 4
+        var act4table1 = [];
+
+
+        table = document.getElementById("act4Table1");
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null ) {
+
+                    act4table1[pos] = cell.querySelector('input').value;
+                    pos++;
+                }
+
+            }
+        }
+
+
+     
+
+        var act4table2 = [];
+
+
+        table = document.getElementById("act4Table3");
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    act4table2[pos] = cell.querySelector('input').value;
+                    pos++;
+                }
+
+            }
+        }
+   
+
+
+
+
+
         //activity 5
         var act5table = [];
         var act5TableCount = -1;
@@ -9369,8 +9416,7 @@
             }
         }
 
-        console.log(act5table);
-        console.log(act5TableCount);
+        
 
 
         var act5q1 =  document.getElementById("act5q1").value;
@@ -9462,6 +9508,79 @@
         var act6q10 = document.getElementById("act6p10").value;
         var act6q11 = document.getElementById("act6p11").value;
         var act6q12 = document.getElementById("act6p12").value;
+
+        //act 8
+
+
+        var act8table1 = [];
+
+
+        table = document.getElementById("act8Table1");
+        pos = 0;
+
+
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector('input') != null) {
+                    act8table1[pos] = cell.querySelector('input').value;
+                    pos++;
+                }
+
+            }
+        }
+
+
+        var act8table2 = [];
+
+
+        table = document.getElementById("act8Table2");
+        pos = 0;
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector('input') != null) {
+
+                    act8table2[pos] = cell.querySelector('input').value;
+                    pos++;
+                }
+
+            }
+        }
+
+        var act8table3 = [];
+
+
+        table = document.getElementById("act8Table3");
+        pos = 0;
+
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector('input') != null) {
+
+                    act8table3[pos] = cell.querySelector('input').value;
+                    pos++;
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         //act 9
         var act9table1 = []
@@ -10419,6 +10538,31 @@
             act17q5: document.getElementById("act17q5").value,
             act17q6: document.getElementById("act17q6").value,
             act17q7: document.getElementById("act17q7").value,
+            act8table1: JSON.stringify(act8table1),
+            act8table2: JSON.stringify(act8table2),
+            act8table3: JSON.stringify(act8table3),
+            act8q1: document.getElementById("act8q1").value,
+            act8q2: document.getElementById("act8q2").value,
+            act8q3: document.getElementById("act8q3").value,
+            act8q4: document.getElementById("act8q4").value,
+            act8q5: document.getElementById("act8q5").value,
+            act8q6: document.getElementById("act8q6").value,
+            act8q7: document.getElementById("act8q7").value,
+            act8q8: document.getElementById("act8q8").value,
+            act8q9: document.getElementById("act8q9").value,
+            act8q10: document.getElementById("act8q10").value,
+            act8q11: document.getElementById("act8q11").value,
+            act8q12: document.getElementById("act8q12").value,
+            act8q13: document.getElementById("act8q13").value,
+            act8q14: document.getElementById("act8q14").value,
+            act8q15: document.getElementById("act8q15").value,
+            act8q16: document.getElementById("act8q16").value,
+            act8q17: document.getElementById("act8q17").value,
+            act8q18: document.getElementById("act8q18").value,
+            act4table1: JSON.stringify(act4table1),
+            act4table2: JSON.stringify(act4table2),
+            act4q1: document.getElementById("act4q1").value,
+            act4q2: document.getElementById("act4q2").value,
 
 
 
@@ -10427,7 +10571,7 @@
 
         };
 
-        console.log(final);
+      
 
 
         $.post({
@@ -10436,6 +10580,7 @@
             traditional: true
         }).done(function (data) {
             //alert(data.success);
+            console.log("Saved Workbook");
         }).fail(function (jqXhr, textStatus, errorThrown) {
             alert("error");
         });
@@ -11110,7 +11255,7 @@
             document.getElementById('tahliaG').appendChild(text);
             TaliaC++;
         }
-        console.log(act14graph2string[11]);
+
         if (act14graph2string[11] != "false") {
             var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             rect.setAttribute('cx', act14graph2string[9]);
@@ -11177,7 +11322,7 @@
             document.getElementById('gibbsG').appendChild(text);
             GibbC++;
         }
-        console.log(act14graph3string[11]);
+
         if (act14graph3string[11] != "false") {
             var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             rect.setAttribute('cx', act14graph3string[9]);
@@ -11321,7 +11466,7 @@
 
 
 
-        console.log(act15table4string);
+
         act15table4string = JSON.parse(act15table4string);
         table = document.getElementById("act15table4");
         for (i = 0; i < table.rows.length; i++) {
@@ -11715,7 +11860,7 @@
         }
 
 
-        console.log("here");
+
         document.getElementById("act17q1").value = "@workbook.act17q1";
         document.getElementById("act17q2").value = "@workbook.act17q2";
         document.getElementById("act17q3").value = "@workbook.act17q3";
@@ -11725,6 +11870,132 @@
         document.getElementById("act17q7").value = "@workbook.act17q7";
 
 
+        //act 8
+        var act8table1 = "@workbook.act8table1";
+        var act8table1string = act8table1.replace(/&quot;/g, '"');
+        act8table1string = JSON.parse(act8table1string);
+        table = document.getElementById("act8Table1");
+
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    cell.querySelector("input").value = act8table1string[pos];
+                    pos++;
+                }
+
+            }
+        }
+
+
+
+        var act8table2 = "@workbook.act8table2";
+        var act8table2string = act8table2.replace(/&quot;/g, '"');
+        act8table2string = JSON.parse(act8table2string);
+        table = document.getElementById("act8Table2");
+
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    cell.querySelector("input").value = act8table2string[pos];
+                    pos++;
+                }
+
+            }
+        }
+
+
+        var act8table3 = "@workbook.act8table3";
+        var act8table3string = act8table3.replace(/&quot;/g, '"');
+        act8table3string = JSON.parse(act8table3string);
+        table = document.getElementById("act8Table3");
+
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    cell.querySelector("input").value = act8table3string[pos];
+                    pos++;
+                }
+
+            }
+        }
+
+
+
+        document.getElementById("act8q1").value = "@workbook.act8q1";
+        document.getElementById("act8q2").value = "@workbook.act8q2";
+        document.getElementById("act8q3").value = "@workbook.act8q3";
+        document.getElementById("act8q4").value = "@workbook.act8q4";
+        document.getElementById("act8q5").value = "@workbook.act8q5";
+        document.getElementById("act8q6").value = "@workbook.act8q6";
+        document.getElementById("act8q7").value = "@workbook.act8q7";
+        document.getElementById("act8q8").value = "@workbook.act8q8";
+        document.getElementById("act8q9").value = "@workbook.act8q9";
+        document.getElementById("act8q10").value = "@workbook.act8q10";
+        document.getElementById("act8q11").value = "@workbook.act8q11";
+        document.getElementById("act8q12").value = "@workbook.act8q12";
+        document.getElementById("act8q13").value = "@workbook.act8q13";
+        document.getElementById("act8q14").value = "@workbook.act8q14";
+        document.getElementById("act8q15").value = "@workbook.act8q15";
+        document.getElementById("act8q16").value = "@workbook.act8q16";
+        document.getElementById("act8q17").value = "@workbook.act8q17";
+        document.getElementById("act8q18").value = "@workbook.act8q18";
+
+        //act4
+
+           var act4table1 = "@workbook.act4table1";
+        var act4table1string = act4table1.replace(/&quot;/g, '"');
+        act4table1string = JSON.parse(act4table1string);
+        table = document.getElementById("act4Table1");
+
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    cell.querySelector("input").value = act4table1string[pos];
+                    pos++;
+                }
+
+            }
+        }
+
+
+          var act4table2 = "@workbook.act4table2";
+        var act4table2string = act4table2.replace(/&quot;/g, '"');
+        act4table2string = JSON.parse(act4table2string);
+        table = document.getElementById("act4Table3");
+
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow" && cell.querySelector("input") != null) {
+
+                    cell.querySelector("input").value = act4table2string[pos];
+                    pos++;
+                }
+
+            }
+        }
+
+
+        document.getElementById("act4q1").value = "@workbook.act4q1";
+        document.getElementById("act4q2").value = "@workbook.act4q2";
 
 
 

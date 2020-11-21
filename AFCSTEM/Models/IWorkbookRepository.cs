@@ -22,7 +22,9 @@ namespace AFCSTEM.Models
             string act11q1, string act11table1, string act11q2, string act12table1, string act12q1, string act12table2, string act13q1, string act13table1, string act13table2,string act14graph1, string act14graph2, string act14graph3,
              string act14q1, string act14q2, string act14q3, string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9, string act14q10, string act14q11, string act15quad1, string act15table1, string act15quad2, string act15table2, string act15quad3
             , string act15graphpoints, string act15graphlines, string act15table4, string act15table5, string act15textarea, string act16table1, string act16table2, string act16table3, string act16table4, string act16table5, string act16table6,
-             string act17table1, string act17table2, string act17table3, string act17table4, string act17table5, string act17table6, string act17table7, string act17q1, string act17q2, string act17q3, string act17q4, string act17q5, string act17q6, string act17q7);
+             string act17table1, string act17table2, string act17table3, string act17table4, string act17table5, string act17table6, string act17table7, string act17q1, string act17q2, string act17q3, string act17q4, string act17q5, string act17q6, string act17q7,
+             string act8table1, string act8table2, string act8table3, string act8q1, string act8q2, string act8q3, string act8q4, string act8q5, string act8q6, string act8q7, string act8q8, string act8q9, string act8q10, string act8q11,
+            string act8q12, string act8q13, string act8q14, string act8q15, string act8q16, string act8q17, string act8q18, string act4table1, string act4table2, string act4q1, string act4q2);
 
 
     }

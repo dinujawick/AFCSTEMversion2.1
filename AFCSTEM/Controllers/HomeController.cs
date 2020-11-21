@@ -123,7 +123,8 @@ namespace AFCSTEM.Controllers
             , string act11q1, string act11table1, string act11q2, string act12table1, string act12q1, string act12table2, string act13q1, string act13table1, string act13table2,string act14graph1, string act14graph2, string act14graph3, string act14q1, string act14q2, string act14q3
             , string act14q4, string act14q5, string act14q6, string act14q7, string act14q8, string act14q9, string act14q10, string act14q11, string act15quad1, string act15table1, string act15quad2, string act15table2, string act15quad3
             , string act15graphpoints, string act15graphlines, string act15table4, string act15table5, string act15textarea, string act16table1, string act16table2, string act16table3, string act16table4, string act16table5, string act16table6,
-            string act17table1, string act17table2, string act17table3, string act17table4, string act17table5, string act17table6, string act17table7, string act17q1, string act17q2, string act17q3, string act17q4, string act17q5, string act17q6, string act17q7)
+            string act17table1, string act17table2, string act17table3, string act17table4, string act17table5, string act17table6, string act17table7, string act17q1, string act17q2, string act17q3, string act17q4, string act17q5, string act17q6, string act17q7, string act8table1, string act8table2, string act8table3, string act8q1, string act8q2, string act8q3, string act8q4, string act8q5, string act8q6, string act8q7, string act8q8, string act8q9, string act8q10, string act8q11,
+            string act8q12, string act8q13, string act8q14, string act8q15, string act8q16, string act8q17, string act8q18, string act4table1, string act4table2, string act4q1, string act4q2)
         {
 
             Workbook workbook = _workbookRepository.GetWorkbook(studentID);
@@ -139,7 +140,9 @@ namespace AFCSTEM.Controllers
                  osLength,osWidth,osArea,gLength,gWidth,gArea, metLength, metWidth, metArea,largestArea,smallestArea,crowdCapacity,act3q4,act3q5,act3q6,act3q7, act3q8, act5table, act5tablecount,  act5q1,  act5q2,  act5q3,  act5q4,  act5q5,
                   act6table1,  act6tablecount,  act6avgheight,  act6avgage,  act6q1,  act6q2,  act6q3,  act6q4,  act6q5,  act6q6,  act6q7,  act6q8,  act6q9,  act6q10,  act6q11,  act6q12, act6table3, act6table4,  act9table1,  act9table2,  act9table3,  act9table4,  act9table5,  act10table1,  act10q1,  act10q2,  act10table2,  act10table3,  act10q3
                   , act11q1, act11table1, act11q2,  act12table1,  act12q1,  act12table2,  act13q1,  act13table1,  act13table2,act14graph1,act14graph2,act14graph3,  act14q1,  act14q2,  act14q3,  act14q4,  act14q5,  act14q6,  act14q7,  act14q8,  act14q9,  act14q10,  act14q11,  act15quad1,  act15table1,  act15quad2,  act15table2,  act15quad3
-            ,  act15graphpoints,  act15graphlines,act15table4,act15table5,act15textarea, act16table1,act16table2, act16table3, act16table4,act16table5,act16table6,  act17table1,  act17table2,  act17table3,  act17table4,  act17table5,  act17table6,  act17table7,  act17q1,  act17q2,  act17q3,  act17q4,  act17q5,  act17q6,  act17q7);
+            ,  act15graphpoints,  act15graphlines,act15table4,act15table5,act15textarea, act16table1,act16table2, act16table3, act16table4,act16table5,act16table6,  act17table1,  act17table2,  act17table3,  act17table4,  act17table5,  act17table6,  act17table7,  act17q1,  act17q2,  act17q3,  act17q4,  act17q5,  act17q6,  act17q7,  
+                  act8table1,  act8table2,  act8table3,  act8q1,  act8q2,  act8q3,  act8q4,  act8q5,  act8q6,  act8q7,  act8q8,  act8q9,  act8q10,  act8q11,
+             act8q12,  act8q13,  act8q14,  act8q15,  act8q16,  act8q17,  act8q18,  act4table1,  act4table2,  act4q1,  act4q2);
             }
             return Json(new { success = "Workbook Saved" });
         }

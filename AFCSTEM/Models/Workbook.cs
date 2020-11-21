@@ -71,6 +71,10 @@ namespace AFCSTEM.Models
         public string act3q6 { get; set; }
         public string act3q7 { get; set; }
         public string act3q8 { get; set; }
+        public string act4table1 { get; set; }
+        public string act4table2 { get; set; }
+        public string act4q1 { get; set; }
+        public string act4q2 { get; set; }
         public string act5table { get; set; }
         public int act5tablecount { get; set; }
         public string act5q1 { get; set; }
@@ -96,6 +100,27 @@ namespace AFCSTEM.Models
         public string act6q12 { get; set; }
         public string act6table3 { get; set; }
         public string act6table4 { get; set; }
+        public string act8table1 { get; set; }
+        public string act8table2 { get; set; }
+        public string act8table3 { get; set; }
+        public string act8q1 { get; set; }
+        public string act8q2 { get; set; }
+        public string act8q3 { get; set; }
+        public string act8q4 { get; set; }
+        public string act8q5 { get; set; }
+        public string act8q6 { get; set; }
+        public string act8q7 { get; set; }
+        public string act8q8 { get; set; }
+        public string act8q9 { get; set; }
+        public string act8q10 { get; set; }
+        public string act8q11 { get; set; }
+        public string act8q12{ get; set; }
+        public string act8q13 { get; set; }
+        public string act8q14 { get; set; }
+        public string act8q15 { get; set; }
+        public string act8q16 { get; set; }
+        public string act8q17{ get; set; }
+        public string act8q18 { get; set; }
         public string act9table1 { get; set; }
         public string act9table2 { get; set; }
         public string act9table3 { get; set; }

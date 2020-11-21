@@ -4,14 +4,16 @@ using AFCSTEM.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFCSTEM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201121095321_q8")]
+    partial class q8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -381,14 +383,6 @@ namespace AFCSTEM.Migrations
                     b.Property<string>("act3q7");
 
                     b.Property<string>("act3q8");
-
-                    b.Property<string>("act4q1");
-
-                    b.Property<string>("act4q2");
-
-                    b.Property<string>("act4table1");
-
-                    b.Property<string>("act4table2");
 
                     b.Property<string>("act5q1");
 
