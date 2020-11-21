@@ -2918,12 +2918,12 @@
                     </div>
 
                     <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:20px;">
-                        <label for="teamTotal">TEAM TOTAL: </label>
+                        <label id="question" for="teamTotal">TEAM TOTAL: </label>
                         <input onchange="saveWorkbook()"name="team Total" id="act8q1" type="number" style="text-align:center;margin-left:10px;" />
 
                         <span style="margin-left:25px;"></span>
 
-                        <label for="leftOver">LEFT OVER: </label>
+                        <label id="question" for="leftOver">LEFT OVER: </label>
                         <input onchange="saveWorkbook()" name="left over" id="act8q2" type="number" style="text-align:center;margin-left:10px;" />
                     </div>
                     <br />
@@ -2963,7 +2963,7 @@
         </div>
     </div>
 
-    <!--ACtivity-->
+    <!--Activity-->
     <div class="row containRowU2">
         <h3><b>AFL CARDS AND CONTENTS: Activity 8</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
 
@@ -2972,17 +2972,17 @@
                 <p id="question">Which position on your team has the highest average for these statistics:</p>
                 <div class="row">
                     <div class="col-md-5">
-                        <label>KICKS: </label>
+                        <label id="question">KICKS: </label>
                         <input onchange="saveWorkbook()" type="number" id="act8q4" style="width:100%;" />
                         <br />
 
-                        <label>HANDBALLS: </label>
+                        <label id="question">HANDBALLS: </label>
                         <input onchange="saveWorkbook()" id="act8q5" style="width:100%;" />
                         <br /><br />
                     </div>
                 </div>
 
-                <label>Explain why you think that position has the highest average for each statistic:</label>
+                <label id="question">Explain why you think that position has the highest average for each statistic:</label>
                 <textarea  onchange="saveWorkbook()" id="act8q6" rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
@@ -2995,10 +2995,10 @@
                 </table>
             </div>
             <div class="row containInside" style="margin-top:15px;">
-                <label>Explain how this number relates to the average disposals for each position.</label>
+                <label id="question">Explain how this number relates to the average disposals for each position.</label>
                 <textarea  onchange="saveWorkbook()" id="act8q7" rows="2"></textarea>
 
-                <label style="margin-top:15px;">Describe what a disposal statistic in AFL is.</label>
+                <label id="question" style="margin-top:15px;">Describe what a disposal statistic in AFL is.</label>
                 <textarea  onchange="saveWorkbook()" id="act8q8" rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
@@ -3015,7 +3015,6 @@
             </div>
         </div>
     </div>
-
 
     <!--Footer-->
     <div class="row">
@@ -3053,8 +3052,8 @@
 
                 </p>
                 <div class="row">
-                    <label style="margin-right:15px;">Class Mate’s Team Name:</label>
-                    <input  onchange="saveWorkbook()" type="text" id="act8q10" />
+                    <label id="question" style="margin-right:15px;">Class Mate’s Team Name:</label>
+                    <input onchange="saveWorkbook()" type="text" id="act8q10" />
                 </div>
 
 
@@ -3068,10 +3067,10 @@
             <div class="row containInside" style="margin-top:15px;">
                 <p id="description" style="font-size:18px;"><b>Analyse your class mate's team and what do you believe to be the ‘strengths and weaknesses’ of their team:</b></p>
 
-                <label for="act8In1" style="width:50%;">Strengths (with explanation).</label>
+                <label id="question" for="act8In1" style="width:50%;">Strengths (with explanation).</label>
                 <textarea  onchange="saveWorkbook()" id="act8q11" rows="2"></textarea>
 
-                <label for="act8In2" style="width:50%;margin-top:15px;">Weakness (with explanation).</label>
+                <label id="question" for="act8In2" style="width:50%;margin-top:15px;">Weakness (with explanation).</label>
                 <textarea  onchange="saveWorkbook()" id="act8q12" rows="2"></textarea>
 
                 <p id="question" style="margin-bottom:25px;">
@@ -3102,24 +3101,25 @@
         </div>
     </div>
 
+    <!--Activity-->
     <div class="row containRowU2">
         <h3><b>AFL CARDS AND CONTENTS: Activity 8</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
 
         <div id="innerBorder">
             <div class="row containInside">
                 <div class="col-md-12" style="margin-top:15px;">
-                    <label>Which team member collected the most points and why?</label>
+                    <label id="question">Which team member collected the most points and why?</label>
                     <textarea  onchange="saveWorkbook()" id="act8q14" rows="2"></textarea><br />
 
-                    <label>Did the player with the highest value collect the most points? Why/why not – Explain.</label>
+                    <label id="question">Did the player with the highest value collect the most points? Why/why not – Explain.</label>
                     <textarea  onchange="saveWorkbook()" id="act8q15" rows="2"></textarea><br /><br />
 
                     <p id="description" style="font-size:18px;">Is this points system the best way to determine the MVP of a team? Explain the positives and negatives.</p><br />
 
-                    <label style="width:50%">Positives (with explanation): </label>
+                    <label id="question" style="width:50%">Positives (with explanation): </label>
                     <textarea  onchange="saveWorkbook()" id="act8q16" rows="2"></textarea>
 
-                    <label style="width:50%">Negatives (with explanation): </label>
+                    <label id="question" style="width:50%">Negatives (with explanation): </label>
                     <textarea  onchange="saveWorkbook()" id="act8q17" rows="2"></textarea>
 
                     <label id="question">
