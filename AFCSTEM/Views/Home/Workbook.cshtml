@@ -1082,7 +1082,7 @@
         font-family: Industry_Demi;
     }
 
-    #description {
+    #description, .description {
         font-size: 20px;
         font-family: Industry_Bold;
         color: #002b5c;
@@ -2831,7 +2831,7 @@
         <div id="innerBorder">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <p style="margin-bottom:20px;margin-top:15px;font-size:20px;">
+                    <p id="description" style="margin-bottom:20px;margin-top:15px;">
                         On the field below is your team you have created. Use this team to answer the questions that are to follow.
                     </p>
 
@@ -2891,12 +2891,12 @@
                     </div>
 
                     <div class="row" style="width:100%;display:flex;justify-content:center;align-items:center;margin-top:20px;">
-                        <label for="teamTotal">TEAM TOTAL: </label>
+                        <label id="question" for="teamTotal">TEAM TOTAL: </label>
                         <input name="team Total" id="teamTotal" type="number" style="text-align:center;margin-left:10px;" />
 
                         <span style="margin-left:25px;"></span>
 
-                        <label for="leftOver">LEFT OVER: </label>
+                        <label id="question" for="leftOver">LEFT OVER: </label>
                         <input name="left over" id="leftOver" type="number" style="text-align:center;margin-left:10px;" />
                     </div>
                     <br />
@@ -2905,7 +2905,7 @@
 
             <div class="row containInside">
                 <div class="col-md-12">
-                    <p>
+                    <p id="description">
                         The Chief Executive Officer of the Adelaide Football Club, Andrew Fagan, has called you and your partner into
                         his office and asked you to justify your team selection. Explain the players you have chosen and why you have
                         chosen them. Give reasons that would convince him to keep you as the coaches for next year:
@@ -2942,24 +2942,24 @@
 
         <div id="innerBorder" style="width:100%;">
             <div class="row containInside">
-                <p>Which position on your team has the highest average for these statistics:</p>
+                <p id="question">Which position on your team has the highest average for these statistics:</p>
                 <div class="row">
                     <div class="col-md-5">
-                        <label>KICKS: </label>
+                        <label id="question">KICKS: </label>
                         <input style="width:100%;" />
                         <br />
 
-                        <label>HANDBALLS: </label>
+                        <label id="question">HANDBALLS: </label>
                         <input style="width:100%;" />
                         <br /><br />
                     </div>
                 </div>
 
-                <label>Explain why you think that position has the highest average for each statistic:</label>
+                <label id="question">Explain why you think that position has the highest average for each statistic:</label>
                 <textarea rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
-                <label><b>Total Disposals:</b> Add up the total average of kicks and handballs for each position.</label>
+                <label id="description"><b>Total Disposals:</b> Add up the total average of kicks and handballs for each position.</label>
                 <table class="table table-bordered" id="act8Table1" style="margin-right:25px;">
                     <tr><th>POSITION</th><th>KICKS/HANDBALL TOTAL</th></tr>
                     <tr><td>FORWARDS</td><td><input type="number" style="text-align:center;" /></td></tr>
@@ -2968,14 +2968,14 @@
                 </table>
             </div>
             <div class="row containInside" style="margin-top:15px;">
-                <label>Explain how this number relates to the average disposals for each position.</label>
+                <label id="question">Explain how this number relates to the average disposals for each position.</label>
                 <textarea rows="2"></textarea>
 
-                <label style="margin-top:15px;">Describe what a disposal statistic in AFL is.</label>
+                <label id="question" style="margin-top:15px;">Describe what a disposal statistic in AFL is.</label>
                 <textarea rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
-                <label>
+                <label id="description">
                     <span style="font-size:18px;">Calculate the total cost of your positions and record the average disposals:</span><br />
                     (Add up the price of all 6 players and record the total below, you may like to use a calculator)
                 </label>
@@ -3014,19 +3014,19 @@
 
         <div id="innerBorder">
             <div class="row containInside">
-                <label>
+                <label id="question">
                     Which area on the field was the most expensive and how did this correlate to the total average disposals?
                     Explain your results:
                 </label>
                 <textarea rows="2"></textarea>
             </div>
             <div class="row containInside" style="margin-top:15px;">
-                <p>
+                <p id="description">
                     Choose another class mates team to compare against. Record their team results below:<br /><br />
 
                 </p>
                 <div class="row">
-                    <label style="margin-right:15px;">Class Mate’s Team Name:</label>
+                    <label id="description" style="margin-right:15px;">Class Mate’s Team Name:</label>
                     <input />
                 </div>
 
@@ -3039,15 +3039,15 @@
                 </table>
             </div>
             <div class="row containInside" style="margin-top:15px;">
-                <p style="font-size:18px;"><b>Analyse your class mate's team and what do you believe to be the ‘strengths and weaknesses’ of their team:</b></p>
+                <p id="description" style="font-size:18px;"><b>Analyse your class mate's team and what do you believe to be the ‘strengths and weaknesses’ of their team:</b></p>
 
-                <label for="act8In1" style="width:50%;">Strengths (with explanation).</label>
+                <label id="question" for="act8In1" style="width:50%;">Strengths (with explanation).</label>
                 <textarea rows="2" id="act8In1"></textarea>
 
-                <label for="act8In2" style="width:50%;margin-top:15px;">Weakness (with explanation).</label>
+                <label id="question" for="act8In2" style="width:50%;margin-top:15px;">Weakness (with explanation).</label>
                 <textarea rows="2" id="act8In2"></textarea>
 
-                <p style="margin-bottom:25px;">
+                <p id="question" style="margin-bottom:25px;">
                     After looking at your class mates team, if you had to make 2 changes to your team what would you change
                     and why?
                 </p>
@@ -3065,6 +3065,7 @@
     </div>
 </div>
 
+
 <!--Activity 8: Part 6-->
 <div id=outerBorder>
     <!--Header with Logo-->
@@ -3080,21 +3081,21 @@
         <div id="innerBorder">
             <div class="row containInside">
                 <div class="col-md-12" style="margin-top:15px;">
-                    <label>Which team member collected the most points and why?</label>
+                    <label id="question">Which team member collected the most points and why?</label>
                     <textarea rows="2"></textarea><br />
 
-                    <label>Did the player with the highest value collect the most points? Why/why not – Explain.</label>
+                    <label id="question">Did the player with the highest value collect the most points? Why/why not – Explain.</label>
                     <textarea rows="2"></textarea><br /><br />
 
-                    <p style="font-size:18px;">Is this points system the best way to determine the MVP of a team? Explain the positives and negatives.</p><br />
+                    <p id="description" style="font-size:18px;">Is this points system the best way to determine the MVP of a team? Explain the positives and negatives.</p><br />
 
-                    <label style="width:50%">Positives (with explanation): </label>
+                    <label id="question" style="width:50%">Positives (with explanation): </label>
                     <textarea rows="2"></textarea>
 
-                    <label style="width:50%">Negatives (with explanation): </label>
+                    <label id="question" style="width:50%">Negatives (with explanation): </label>
                     <textarea rows="2"></textarea>
 
-                    <label>
+                    <label id="question">
                         Could your Full Back win your MVP with your points system? What adjustments could you make to cater for all
                         positions?
                     </label>
@@ -3127,7 +3128,7 @@
         <h3><b>GOAL KICKING DATA: ACTIVITY 9</b><br /><span style="font-size:20px;">Exploration Task</span></h3><br />
 
         <div id="innerBorder">
-            <p>As a class calculate the goal kicking average (mean) from the top 10 AFC 2018 Men's goal kickers list to 1 decimal place</p>
+            <p id="description">As a class calculate the goal kicking average (mean) from the top 10 AFC 2018 Men's goal kickers list to 1 decimal place</p>
 
             <div class="row containInside">
                 <div class="col-md-8">
@@ -3206,14 +3207,14 @@
                 </div>
                 <div class="col-md-4">
                     <img src="~/images/Unit2/Activity9/Act9_Tex_Walker.jpg" alt="Taylor Walker" style="width:100%;" />
-                    <p>Taylor Walker</p>
-                    <p>2019 Goals: <span>43</span></p>
+                    <p id="description">Taylor Walker</p>
+                    <p id="description">2019 Goals: <span>43</span></p>
                 </div>
             </div>
 
             <div class="row containInside">
                 <div class="col-md-6">
-                    <p>
+                    <p id="description">
                         As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
                         (usually the last digit) graph: <br />
                         For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
@@ -3379,14 +3380,14 @@
                 </div>
                 <div class="col-md-4">
 
-                    <p>Erin Phillips</p>
-                    <p>2019 Goals: <span>11</span></p>
+                    <p id="description">Erin Phillips</p>
+                    <p id="description">2019 Goals: <span>11</span></p>
                 </div>
             </div>
 
             <div class="row containInside">
                 <div class="col-md-4">
-                    <p>
+                    <p id="description">
                         As a class plot them on a <span>'Stem'</span> (the first digit or digits) and a <span>'Leaf'</span>
                         (usually the last digit) graph: <br />
                         For example: If the average goals for AFL were 2.3, <span>the stem will be 2</span> and
@@ -3491,7 +3492,7 @@
         <h3><b>GOAL KICKING DATA: Activity 9 (Extension / Group Work Challenge)</b></h3><br />
 
         <div id="innerBorder">
-            <p style="font-size:20px;color:#002b5c;margin-left:15px;">
+            <p id="description" style="color:#002b5c;margin-left:15px;">
                 When there are two sides or groups, we can use a two-sided Stem-and-Leaf plot.<br />
                 Here is an example of a two-sided Stem-and-Leaf Plot.
             </p>
@@ -3501,12 +3502,13 @@
             </div>
 
 
-            <p style="font-size:20px;color:#002b5c;margin-left:15px;">
+            <p id="description" style="color:#002b5c;margin-left:15px;">
                 Using your results from the first activity, create a Stem-and-Leaf plot comparing the ACL Men's (AFL)
                 average goals to the AFC Women's (AFLW) average goals (Round to one decimal place).
             </p><br />
 
             <div class="row containInside" style="width:100%;">
+                <!-- 1-9 numbers-->
                 <div class="col-md-3">
                     <br />
                     <div class="row" style="width:100%;">
@@ -3618,10 +3620,9 @@
             <h3><b>GOAL KICKING DATA: Activity 10</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Practical Activity: ‘Goal Kick Challenge’ Using the STEMfooty numbered cones and footballs. Set up 10 positions with <br />
                     the cones to have shots at goal (outside on your oval).
-
                     <br />
                     Individually take it in turns and have 1 shot from each of the positions and record your results as a ‘Goal or Behind’
                     <br />
@@ -3693,19 +3694,19 @@
                     </tr>
 
                 </table>
-                <p>
+                <p id="description">
                     <br /><b>Analysis Questions</b><br />
 
                 </p>
                 <br />
-                <label for="act10q1" style="font-size: 18px;">
+                <label id="question" for="act10q1" style="font-size: 18px;">
                     What was the main factor that affected your accuracy? How can you improve this?
                 </label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="act10q1" name="act10q1" rows="3" style="width:65%;"></textarea>
                 <br />
 
-                <label for="act10q2" style="font-size: 18px;">
+                <label id="question" for="act10q2" style="font-size: 18px;">
                     Explain what factors affect AFL players’ accuracy in a real AFL game. How are these different to the game <br />
                     you just played?
                 </label>
@@ -3748,7 +3749,7 @@
         <div id="innerBorder">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <p>
+                    <p id="description">
                         <br />Collect 10 students’ Goal Kick Challenge results and record them.
                         For example:<br />
                         Nick scored 1 goal 6 behinds. For this activity his results will be recorded as 1.6 as shown below.
@@ -3842,7 +3843,7 @@
             <h3><b>GOAL KICKING DATA: Activity 10</b><br /><span style="font-size:20px;">Extension / Group Work Challenge</span></h3>
 
             <div id="innerBorder">
-                <p>Create a Stem and-Leaf-plot comparing the class Goal Kick Challenge results.</p>
+                <p id="description">Create a Stem and-Leaf-plot comparing the class Goal Kick Challenge results.</p>
                 <table style="width:40%;position:relative;" id="act10table3">
                     <tr id="firstrow">
                         <th style="background-color:#00FF00; color:white;">STEM<br />(GOALS)</th>
@@ -3898,7 +3899,7 @@
                 <br />
                 <button style="margin-top:25px;position:relative" id="stemButton" onclick="runfooty()"> Auto Populate The STEM and LEAF Table</button>
                 <br />
-                <label for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
+                <label id="question" for="act10q3">What is the median (middle value) for your class results? Is this represented on the Stem and-Leaf-plot?</label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="act10q5" name="act10q3" rows="3" style="width:65%;"></textarea>
                 <br />
@@ -3944,7 +3945,7 @@
         <div class="col-md-12">
             <h3><b>DAILY NUTRIENTS: Activity 11</b><br /><span id="subTitle">Exploration Task</span></h3>
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Below is an activity chart for an AFC Men’s player1<br /><br />
                     Estimate what you think their daily energy intake needs to be<input id="act11q1" type="number" placeholder="........................................" />kJ/day<br />
                     <br />
@@ -4006,7 +4007,7 @@
 
                 </table>
                 <br />
-                <label for="act11q1"><b>Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR.</b> </label>
+                <label id="question" for="act11q1"><b>Explain why you think an AFL player uses 359.1 kJ/HR sleeping compared to a Year 7 student who uses 199.5 kJ/HR.</b> </label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="act11q2" style="width:100%;" name="act11q1" rows="2"></textarea>
                 <br />
@@ -4044,13 +4045,13 @@
             <h3><b>DAILY NUTRIENTS: Activity 12</b><br /><span id="subTitle">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Serving size can be tricky and deceiving. Your group challenge is to measure out the following portions using <br />
                     3 methods. You have 3 plastic bowls to put the 3 measurements in to compare.
                 </p>
                 <img id="scaleImg" src="~/images/Workbooklet/act12image.png" />
                 <br />
-                <p>
+                <p id="description">
                     <b>Method:</b><br />
                     1. Guess the amount without any measuring<br />
                     2. Measure out the correct serves/meals using Wayne's visual hand guide on page 11.
@@ -4093,7 +4094,7 @@
 
                 </table>
                 <br />
-                <label for="act12q2">
+                <label id="question" for="act12q2">
                     If you did this activity with cooked and non-cooked rice, what do you think would be the outcome?<br />
                     What would you need to do to ensure it was accurate?
                 </label>
@@ -4134,7 +4135,7 @@
             <h3><b>DAILY NUTRIENTS: Activity 12</b><br /><span id="subTitle">Extensions / Group Work Challenge</span></h3>
 
             <div id="innerBorder">
-                <p id="act12p">
+                <p class="description" id="act12p">
                     <b>
                         Everything we do uses energy. Sometimes we don’t realise some <br />
                         foods are good for physical activity and others are not. <br />
@@ -4158,7 +4159,7 @@
                     </b>
 
                 </p>
-                <label style="float:right;margin-top:30%" for="foleyImg">ANGELA FOLEY</label>
+                <label id="description" style="float:right;margin-top:30%" for="foleyImg">ANGELA FOLEY</label>
                 <img name="foleyImg" id="foleyImg" style="margin-bottom:10px;left:100px;width:30%;height:30%;" src="~/images/Workbooklet/foleyImg.jpg" />
 
                 <table style="width:90%" id="act12table2">
@@ -4230,13 +4231,13 @@
             <h3><b>MEASURE YOUR TACKLE ZONE: Activity 13</b><br /><span id="subTitle">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     <b>
                         PRACTICAL ACTIVITY: <br />
                         Using the tape measure, measure and calculate your Total Tackle Zone.
                     </b>
                 </p>
-                <label for="act13q1"> Explain why you multiply the area measurements (front x width) by 2.</label>
+                <label id="question" for="act13q1"> Explain why you multiply the area measurements (front x width) by 2.</label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="act13q1" rows="2" style="width:100%"></textarea>
                 <br />
@@ -4274,7 +4275,7 @@
                 </table>
                 <br />
                 <br />
-                <label for="act13q2">Rank Wayne's, Ailish's and your Total Tackle Zone in order from largest to smallest.</label>
+                <label id="question" for="act13q2">Rank Wayne's, Ailish's and your Total Tackle Zone in order from largest to smallest.</label>
                 <br />
                 <table id="act13table2" style="width:100%;">
                     <tr>
@@ -4334,7 +4335,7 @@
             <h3><b>AFL PLAYER MORPHOLOGY: Activity 14</b><br /><span id="subTitle">Class Activity / Discussion</span></h3><br />
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Class Activity: Plot the players height and weight as a class on the scatterplot. Record the results in your <br />
                     student workbook.
                 </p>
@@ -4371,7 +4372,7 @@
 
                 <br />
                 <br />
-                <label for="act14q1">
+                <label id="question" for="act14q1">
                     <b>Class Discussion </b><br />
                     Is there a relationship between a player’s field position and their height and weight? Describe any correlations <br />
                     you perceive
@@ -4379,7 +4380,7 @@
                 <br />
                 <textarea id="act14text1" rows="3" style="width:100%"></textarea>
                 <br />
-                <label for="act14q2">
+                <label id="question" for="act14q2">
                     Imagine an unnamed player’s height of 201cm and weight 105kg. Predict the position they would play. <br />
                     Explain your prediction.
                 </label>
@@ -4419,7 +4420,7 @@
             <h3><b>AFL PLAYER MORPHOLOGY: Activity 14</b><br /><span id="subTitle">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Task: plot the heights of Defenders & Midfielders. Identify the outliers. <br /><br /><br /><br />
                     <b> Defenders:</b>
                 </p>
@@ -4470,7 +4471,6 @@
                 <br />
                 <br />
 
-
                 <svg id="svgThree" style="float:right;left:200px;cursor:pointer" width="1000" height="700" onclick="graphClick2(evt)">
                     <rect x="200" y="50" height="585" width="2"></rect>
                     <rect x="200" y="635" height="2" width="900"></rect>
@@ -4516,7 +4516,7 @@
                 </table>
                 <br />
 
-                <label for="act14con">
+                <label id="question" for="act14con">
                     How do outliers change our conclusions
                     on positional requirements?
                 </label>
@@ -4528,10 +4528,6 @@
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
                     <button id="act14btn2" class="btn btn-outline-primary" style="margin-bottom:50px" onclick="checkActivity14P2(this.id),checkActivity14(),loadBar()">Check Activity!!</button>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>
@@ -4590,53 +4586,49 @@
             <h3><b>AFL PLAYER MORPHOLOGY: Activity 14</b><br /><span id="subTitle">Extension / Group Work Challenge</span></h3>
 
             <div id="innerBorder">
-                Height of AFC players: <br />
+                <p id="description">Height of AFC players: <br /></p>
                 <img style="width:100%;height:30%" src="~/images/Workbooklet/act14tables.png" />
                 <br />
-                <p>
+                <p id="description">
                     Using the data above calculate the mean, median, mode and range of the player’s heights <br />
                     (rounded to nearest tenth).<br />
                     MEAN is the average of the numbers.
                 </p>
                 <br />
-                <label for="act14q3">1. Add up the heights:</label>
+                <label id="question" for="act14q3">1. Add up the heights:</label>
                 <input onchange="saveWorkbook()" id="act14q3" name="act14q3" type="number" style="width:60%" />
                 <br />
-                <label for="act14q4">2. Divide the total by how many player's were used:</label>
+                <label id="question" for="act14q4">2. Divide the total by how many player's were used:</label>
                 <input onchange="saveWorkbook()" id="act14q4" name="act14q4" type="number" style="width:30%" />
                 <br />
-                <label for="act14q5">3. The MEAN is:</label>
+                <label id="question" for="act14q5">3. The MEAN is:</label>
                 <input onchange="saveWorkbook()" id="act14q5" name="act14q5" type="number" style="width:60%" />
 
                 <br />
                 <br />
-                MEDIAN is the middle value of a set of numbers.
+                <p id="description">MEDIAN is the middle value of a set of numbers.</p>
                 <br />
-                <label for="act14q6">1. Put the nuymber (heights) in order (smallest to largest):</label>
+                <label id="question" for="act14q6">1. Put the nuymber (heights) in order (smallest to largest):</label>
                 <br />
                 <input onchange="saveWorkbook()" id="act14q6" name="act14q6" type="text" style="width:100%" />
                 <br />
-                2. Circle the middle number <br />
-                <label for="act14q7">3. The MEDIAN is</label>
+                <p id="description">2. Circle the middle number <br /></p>
+                <label id="question" for="act14q7">3. The MEDIAN is</label>
                 <input onchange="saveWorkbook()" id="act14q7" name="act14q7" type="number" style="width:60%" />
                 <br />
                 <br />
-                MODE is when a number appears most frequently in a set of numbers.
-                <br />
-                Tally the player’s heights below to determine the MODE
-
-                <br />
-                <br />
-                RANGE is the difference between the largest and smallest value
-
-                <br />
-                <label for="act14q8">1. Largest Height:</label>
+                <p id="description">
+                    MODE is when a number appears most frequently in a set of numbers.<br />
+                    Tally the player’s heights below to determine the MODE<br /><br />
+                    RANGE is the difference between the largest and smallest value<br />
+                </p>
+                <label id="question" for="act14q8">1. Largest Height:</label>
                 <input onchange="saveWorkbook()" id="act14q8" name="act14q8" type="number" style="width:60%" />
                 <br />
-                <label for="act14q9">2. Smallest Height:</label>
+                <label id="question" for="act14q9">2. Smallest Height:</label>
                 <input onchange="saveWorkbook()" id="act14q9" name="act14q9" type="number" style="width:60%" />
                 <br />
-                <label for="act14q10">3. The RANGE is:</label>
+                <label id="question" for="act14q10">3. The RANGE is:</label>
                 <input onchange="saveWorkbook()" id="act14q10" name="act14q10" type="number" style="width:60%" />
 
                 <br />
@@ -4677,7 +4669,7 @@
             <h3><b>AFL CARTESIAN PLANE DISTANCES: Activity 15</b><br /><span id="subTitle">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     STUDENT ACTIVITY: <br /><br />
                     1. Label the 4 quadrants <br />
                     2. Below is Adelaide Crows player Brodie Smith’s travel path for 3 plays in an AFL match. List the <br />
@@ -4685,10 +4677,10 @@
                     using your knowledge of AFL positions. <br />
                 </p>
 
-                <label style="position:relative;left:300px" for="quad1q1">Quadrant</label>
+                <label id="description" style="position:relative;left:300px" for="quad1q1">Quadrant</label>
                 <input id="quad1q1" name="quad1q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
-                <label style="position:relative;left:700px" for="quad1q2">Quadrant</label>
+                <label id="description" style="position:relative;left:700px" for="quad1q2">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad1q2" name="quad1q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
                 <div id="quad1div">
@@ -4753,14 +4745,14 @@
                     </svg>
                 </div>
 
-                <label style="position:relative;left:300px" for="quad1q3">Quadrant</label>
+                <label id="description" style="position:relative;left:300px" for="quad1q3">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad1q3" name="quad1q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
-                <label style="position:relative;left:700px" for="quad1q4">Quadrant</label>
+                <label id="description" style="position:relative;left:700px" for="quad1q4">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad1q4" name="quad1q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
                 <br />
-                <p style="position:relative">Scale: 1 Square = 10 metres</p>
+                <p id="description" style="position:relative">Scale: 1 Square = 10 metres</p>
 
                 <table id="act15table1">
                     <tr id="firstrow" style="background-color:#002b5c; color:white;">
@@ -4832,16 +4824,16 @@
             <h3><b>AFL CARTESIAN PLANE DISTANCES: Activity 15</b><br /><span id="subTitle">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     STUDENT ACTIVITY: <br /><br />
                     1. Label the 4 quadrants <br />
                     Below is Adelaide Crows Women’s player Chelsea Randall’s travel path for 3 plays in an AFLW match. <br />
                     List the Cartesian coordinates for the 3 plays and identify how far she travels based on the scale <br />
                 </p>
-                <label style="position:relative;left:300px" for="quad1q1">Quadrant</label>
+                <label id="description" style="position:relative;left:300px" for="quad1q1">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad2q1" name="quad2q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
-                <label style="position:relative;left:700px" for="quad1q2">Quadrant</label>
+                <label id="description" style="position:relative;left:700px" for="quad1q2">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad2q2" name="quad2q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
                 <div id="quad2div">
@@ -4912,14 +4904,14 @@
                     </svg>
                 </div>
 
-                <label style="position:relative;left:300px" for="quad2q3">Quadrant</label>
+                <label id="description" style="position:relative;left:300px" for="quad2q3">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad2q3" name="quad2q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
-                <label style="position:relative;left:700px" for="quad2q4">Quadrant</label>
+                <label id="description" style="position:relative;left:700px" for="quad2q4">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad2q4" name="quad2q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
 
                 <br />
-                <p style="position:relative">Scale: 1 Square = 10 metres</p>
+                <p id="description" style="position:relative">Scale: 1 Square = 10 metres</p>
                 <br />
                 <table id="act15table2">
                     <tr id="firstrow" style="background-color:#002b5c; color:white;">
@@ -4989,7 +4981,7 @@
             <h3><b>AFL CARTESIAN PLANE DISTANCES: Activity 15</b><br /><span id="subTitle">Class Activity / Discussion</span></h3><br />
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     STUDENT ACTIVITY: <br /><br />
                     1. Label the 4 quadrants <br />
                     2. Plot the following coordinates for Claude the Crow’s movements. <br />
@@ -5032,7 +5024,7 @@
                     </tr>
                 </table>
 
-                <p>
+                <p id="description">
                     <b>
                         To plot the coordinates, click on the data on a certain column, then click on the graph to plot <br /> that point.
                     </b>
@@ -5040,18 +5032,18 @@
 
                 <br />
                 <br />
-                <div onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
+                <div id="description" onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
                 <br />
                 <br />
-                <div id="drawLine"><b>Drawing a point</b></div>
+                <div class="description" id="drawLine"><b>Drawing a point</b></div>
                 <br />
                 <br />
 
                 <br />
-                <label style="position:relative;left:300px" for="quad3q1">Quadrant</label>
+                <label id="description" style="position:relative;left:300px" for="quad3q1">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad3q1" name="quad3q1" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
-                <label style="position:relative;left:700px" for="quad3q2">Quadrant</label>
+                <label id="description" style="position:relative;left:700px" for="quad3q2">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad3q2" name="quad3q2" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
                 <br />
                 <br />
@@ -5080,10 +5072,10 @@
                     </svg>
                 </div>
                 <br />
-                <label style="position:relative;left:300px" for="quad3q3">Quadrant</label>
+                <label id="description" style="position:relative;left:300px" for="quad3q3">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad3q3" name="quad3q3" type="text" placeholder="_______" style="position:relative;width:5%;left:300px" />
 
-                <label style="position:relative;left:700px" for="quad3q4">Quadrant</label>
+                <label id="description" style="position:relative;left:700px" for="quad3q4">Quadrant</label>
                 <input onchange="saveWorkbook()" id="quad3q4" name="quad3q4" type="text" placeholder="_______" style="position:relative;width:5%;left:700px" />
                 <br />
                 <br />
@@ -5263,7 +5255,7 @@
             <h3><b>AFL CARTESIAN PLANE DISTANCES: Activity 15</b><br /><span id="subTitle">Exploration Task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Game 2 Extension:
                     • Option 1 create a new rule to the game. Play / Trial / Report back to the class. <br />
                     - An example could be a penalty or event occurs when the ball goes out of play. <br />
@@ -5365,7 +5357,7 @@
 
                 <br />
                 <br />
-                <label for="q15rule">Describe your new rule:</label>
+                <label id="description" for="q15rule">Describe your new rule:</label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="q15rule" name="q15rule" style="width:90%" rows="3"></textarea>
                 <br />
@@ -5401,7 +5393,7 @@
             <h3><b>AFL CARTESIAN PLANE DISTANCES: Activity 16</b><br /><span id="subTitle">Exploration</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Watch the FIRST Quarter Movement video as a class and record Wayne’s movements on the A3 sheet, <br />
                     then calculate metres covered in real life: <br />
                     <br />
@@ -5444,7 +5436,7 @@
                     </tr>
                 </table>
                 <br />
-                <p>
+                <p id="description">
                     <b>Record Sheet ‘Where is Wayne?’- SECOND Quarter metres covered in real life </b>
                     <br /> Wayne’s 2nd Quarter metres covered in real life: <br />
                 </p>
@@ -5483,7 +5475,7 @@
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                 </table>
-                <p>
+                <p id="description">
                     <b>Record Sheet ‘Where is Wayne?’- THIRD Quarter metres covered in real life </b>
                     <br /> Wayne’s 3rd Quarter metres covered in real life: <br />
                 </p>
@@ -5522,7 +5514,7 @@
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                 </table>
-                <p>
+                <p id="description">
                     <b>Record Sheet ‘Where is Wayne?’- FOURTH Quarter metres covered in real life </b>
                     <br /> Wayne’s 4th Quarter metres covered in real life: <br />
 
@@ -5562,7 +5554,7 @@
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                 </table>
-                <p><b>Calculate the total distance travelled for Wayne in centimetres and metres</b></p><br />
+                <p id="description"><b>Calculate the total distance travelled for Wayne in centimetres and metres</b></p><br />
                 <table style="width:90%" id="act16table5">
                     <tr style="background-color:#002b5c; color:white;">
                         <th>WHERE IS WAYNE?</th>
@@ -5629,7 +5621,7 @@
             <h3><b>AFL CARTESIAN PLANE DISTANCES: Activity 16</b><br /><span id="subTitle">Extension / Group Work</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     In this activity you only plotted 4 of Wayne’s movements for each quarter, when he would actually <br />
                     complete over 100. GPS units record every player’s game distances for every match. Below are some of <br />
                     the leading distances for the AFC in 2018: <br />
@@ -5732,7 +5724,7 @@
             <h3><b>TRAVELLING TO AFL GAMES: Activity 17</b><br /><span id="subTitle">Class Activity / Discussion</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Visit the Adelaide Crows website and look at the men’s home and <br />
                     away regular season schedule. <br />
                     <a target="_blank" href="https://www.afc.com.au/news/2017-10-31/2018-fixture-roundbyround">www.afc.com.au/news/2017-10-31/2018-fixture-roundbyround</a><br />
@@ -5848,7 +5840,7 @@
             <h3><b>TRAVELLING TO AFL GAMES: Activity 17</b><br /><span id="subTitle">Exploration task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Choose one other Melbourne based AFL Club to research individually. Find their home and away schedule on
                     <a target="_blank" href="https://www.afl.com.au">www.afl.com.au</a> <br />
                     Visit Google maps website: <a target="_blank" href="https://www.google.com.au/maps">www.google.com.au/maps</a><br />
@@ -5932,11 +5924,11 @@
                 </table>
                 <br />
                 <p><b>Compare the AFC distance travelled in 2019 to the other AFL team you have chosen. </b> </p>
-                <label for="act17q1">Compare the distances travelled by the two clubs:</label>
+                <label id="question" for="act17q1">Compare the distances travelled by the two clubs:</label>
                 <br />
                 <textarea id="act17q1" onchange="saveWorkbook()" name="act17q1" rows="2"></textarea>
                 <br />
-                <label for="act17q2">Explain if you think the travelling distance has a positive or negative impact on the two teams.</label>
+                <label id="question" for="act17q2">Explain if you think the travelling distance has a positive or negative impact on the two teams.</label>
                 <br />
                 <textarea id="act17q2" onchange="saveWorkbook()" name="act17q2" rows="2"></textarea>
                 <br />
@@ -5971,7 +5963,7 @@
             <h3><b>TRAVELLING TO AFL GAMES: Activity 17</b><br /><span id="subTitle">Exploration task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     DRIVE TO THE MCG Task: <br />
                     The Adelaide Crows have made the AFL grand final in 2019 and you are travelling to the MCG to watch the <br />
                     game. You and 4 friends have tickets to the game but are unable to book flights so decide to drive the  <br />
@@ -5982,12 +5974,12 @@
                 <img name="act17img1" style="position:relative;margin-left:50px; width:30%;" src="~/images/Workbooklet/corollapic.jpg" />
                 <img name="act17img2" style="position:relative;margin-left:200px;width:30%;" src="~/images/Workbooklet/yarispic.jpg" />
                 <br />
-                <label style="position:relative;margin-left:50px" for="act17img1">Toyota Corolla Sedan</label>
-                <label style="position:relative;margin-left:400px" for="act17img2">Toyota Yaris</label>
+                <label id="description" style="position:relative;margin-left:50px" for="act17img1">Toyota Corolla Sedan</label>
+                <label id="description" style="position:relative;margin-left:400px" for="act17img2">Toyota Yaris</label>
                 <br />
-                <b>Using google maps calculate the distance to travel from your house to the MCG, Melbourne.</b>
+                <p id="question"><b>Using google maps calculate the distance to travel from your house to the MCG, Melbourne.</b></p>
                 <img style="position:relative;margin-left:50px" src="~/images/Workbooklet/mcgpic.PNG" />
-                <p>
+                <p id="description">
                     Choose what model of each car you are going to compare to drive to the final. <br />
                     Go to the following pages and research the fuel economy of the: <br />
                     YARIS: <a target="_blank" href="https://www.toyota.com.au/yaris/range">https://www.toyota.com.au/yaris/range</a> <br />
@@ -6052,7 +6044,7 @@
             <h3><b>TRAVELLING TO AFL GAMES: Activity 17</b><br /><span id="subTitle">Exploration task</span></h3>
 
             <div id="innerBorder">
-                <p style="position:relative">
+                <p id="description" style="position:relative">
                     Calculate:
                     • Cost of the trip if the petrol is $1.42 per litre <br />
                     • Petrol cost per person if 4 people are travelling in the car. <br />
@@ -6087,16 +6079,16 @@
 
                 </table>
                 <br />
-                <label for="act17q3">Describe the benefits of taking the Toyota Yaris with your 4 friends.</label>
+                <label id="question" for="act17q3">Describe the benefits of taking the Toyota Yaris with your 4 friends.</label>
                 <br />
                 <textarea id="act17q3" onchange="saveWorkbook()" style="width:90%" name="act17q3" rows="3"></textarea>
                 <br />
-                <label for="act17q4">Describe the benefits of taking the Toyota Corolla Sedan with your 4 friends.</label>
+                <label id="question" for="act17q4">Describe the benefits of taking the Toyota Corolla Sedan with your 4 friends.</label>
                 <br />
                 <textarea id="act17q4" onchange="saveWorkbook()" style="width:90%" name="act17q4" rows="3"></textarea>
                 <br />
                 <br />
-                <label for="act17q5">Which car is your final choice?</label>
+                <label id="question" for="act17q5">Which car is your final choice?</label>
                 <input id="act17q5" onchange="saveWorkbook()" type="text" style="width:50%" />
                 <br />
                 <br />
@@ -6131,7 +6123,7 @@
             <h3><b>TRAVELLING TO AFL GAMES: Activity 17</b><br /><span id="subTitle">Exploration task</span></h3>
 
             <div id="innerBorder">
-                <p style="position:relative">
+                <p id="description" style="position:relative">
                     Travelling Time: <br />
                     The traffic to Melbourne is going to be busy. Let’s calculate 3 scenarios of <br />
                     how long it will take you travelling at the following speeds: <br />
@@ -6163,7 +6155,7 @@
 
                 </table>
                 <br />
-                <p>
+                <p id="description">
                     <b>
                         Petrol Prices: <br />
                         Petrol prices have fluctuated this year. Calculate the cost of your trip taking your Toyota car of <br />
@@ -6176,9 +6168,6 @@
                     1. Enter in the fuel efficiency for your chosen car. <br />
                     2. Divide the distance / by Km/L = Record in ‘total litres for the trip column’. <br />
                     3. Multiply the ‘total litres for the trip’ x the price of petrol to get the Total Cost. <br />
-
-
-
                 </p>
 
                 <br />
@@ -6220,14 +6209,14 @@
                     </tr>
                 </table>
                 <br />
-                <label for="act17q6">
+                <label id="question" for="act17q6">
                     Calculate the savings if you purchased petrol at $1.16 p/l<br />
                     compared to $1.52 p/l?
                 </label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="act17q6" name="act17q6" style="width:50%" rows="2"></textarea>
                 <br />
-                <p>
+                <p id="description">
                     Round distances to one decimal point and litres required to <br />
                     two decimal points.
                 </p>
@@ -6265,7 +6254,7 @@
             <h3><b>TRAVELLING TO AFL GAMES: Activity 17</b><br /><span id="subTitle">Exploration task</span></h3>
 
             <div id="innerBorder">
-                <p>
+                <p id="description">
                     Class Activity: Carbon Footprint <br />
                     A carbon footprint describes the total amount of greenhouse gas emissions released into the atmosphere as <br />
                     a direct result of a person, event or community. <br />
@@ -6275,7 +6264,7 @@
                 <br />
                 <img style="height:30%;width:80%" src="~/images/Workbooklet/carbonfoot.jpeg" />
 
-                <p>
+                <p id="description">
                     It is estimated that approximately 7,000 people will drive over for the Grand Final if the AFC make it, 2300 <br />
                     will fly, 650 will catch the train, and 2 people will attempt to walk but not make it. <br />
                     Your task is to calculate the carbon footprint for each of the modes of transport for a return trip to <br />
@@ -6317,7 +6306,7 @@
                     </tr>
                 </table>
                 <br />
-                <label for="act17q8">Discuss your results as a class.</label>
+                <label id="question" for="act17q8">Discuss your results as a class.</label>
                 <br />
                 <textarea onchange="saveWorkbook()" id="act17q7" name="act17q8" rows="4"></textarea>
                 <br />
