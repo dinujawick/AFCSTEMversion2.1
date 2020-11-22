@@ -2158,6 +2158,10 @@
                 <p id="question">What analysis can you draw from looking at Anne’s movements?</p>
                 <textarea onchange="saveWorkbook()" id="act4q1" rows="2" style="width:65%;"></textarea>
             </div>
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act4p1btn" class="btn btn-outline-primary" onclick="checkActivity4P1(this.id),checkActivity4(),loadBar()">Check Activity!!</button>
+            </div>
+
         </div>
     </div>
 
@@ -2302,6 +2306,10 @@
                 <p id="question">In AFL is there more chance of scoring a goal or a behind? Why? Explain your results.</p><br />
                 <textarea onchange="saveWorkbook()" id="act4q2" rows="3" style="width:65%;"></textarea>
             </div>
+
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act4p2btn" class="btn btn-outline-primary" onclick="checkActivity4P2(this.id),checkActivity4(),loadBar()">Check Activity!!</button>
+                </div>
         </div>
     </div>
 
@@ -2361,6 +2369,7 @@
                         <th>HEAD/TAILS(BEHIND)</th>
                         <th>TAILS/TAILS(MISS)</th>
                     </tr>
+
                     <tr>
                     </tr>
 
@@ -2565,9 +2574,9 @@
                     <table style="width:50%;" id="act6Table2">
                         <tr style="color:white;">
                             <th>AVERAGE HEIGHT: </th>
-                            <td><input style="width:15%;" onchange="saveWorkbook()" id="act6height" /></td>
+                            <td><input style="width:25%;" onchange="saveWorkbook()" id="act6height" /></td>
                             <th>AVERAGE AGE: </th>
-                            <td><input style="width:15%;" onchange="saveWorkbook()" id="act6age" /></td>
+                            <td><input style="width:25%;" onchange="saveWorkbook()" id="act6age" /></td>
                         </tr>
                     </table>
                 </div>
@@ -2593,6 +2602,9 @@
                     <label id="question" for="act6q4" style="font-size: 18px;"> Youngest player to debut: </label><br />
                     <textarea onchange="saveWorkbook()" id="act6q4" name="act6q4" rows="2" style="width:65%;"></textarea>
                 </div>
+            </div>
+             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act6p1btn" class="btn btn-outline-primary" onclick="checkActivity6P1(this.id),checkActivity6(),loadBar()">Check Activity!!</button>
             </div>
         </div>
 
@@ -2641,6 +2653,10 @@
                 </label><br />
                 <textarea id="act6q8" onchange="saveWorkbook()" name="average" rows="3" style="width:65%;"></textarea><br />
             </div>
+
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                <button id="act6p2btn" class="btn btn-outline-primary" onclick="checkActivity6P2(this.id),checkActivity6(),loadBar()">Check Activity!!</button>
+            </div>
         </div>
     </div>
 
@@ -2685,6 +2701,10 @@
                     <textarea onchange="saveWorkbook()" id="act6p12" name="shortestPlayer" rows="3" style="width:65%;"></textarea><br /><br />
                 </div>
             </div>
+            <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                <button id="act6p3btn" class="btn btn-outline-primary" onclick="checkActivity6P3(this.id),checkActivity6(),loadBar()">Check Activity!!</button>
+            </div>
+
         </div>
     </div>
 
@@ -2802,6 +2822,9 @@
                     </tbody>
                 </table>
             </div>
+                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                <button id="act6p4btn" class="btn btn-outline-primary" onclick="checkActivity6P4(this.id),checkActivity6(),loadBar()">Check Activity!!</button>
+            </div>
         </div>
 
     </div>
@@ -2912,6 +2935,11 @@
                     </p>
                     <textarea onchange="saveWorkbook()" id="act8q3" name="act8q3" rows="3"></textarea><br />
                 </div>
+
+
+                <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act8p1btn" class="btn btn-outline-primary" onclick="checkActivity8P1(this.id),checkActivity8(),loadBar()">Check Activity!!</button>
+                </div>
             </div>
 
         </div>
@@ -2986,6 +3014,10 @@
                     <tr><td>DEFENDERS</td><td><input type="number" style="text-align:center;" /></td><td><input  onchange="saveWorkbook()" type="number" style="text-align:center;" /></td></tr>
                 </table>
             </div>
+
+             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act8p2btn" class="btn btn-outline-primary" onclick="checkActivity8P2(this.id),checkActivity8(),loadBar()">Check Activity!!</button>
+                </div>
         </div>
     </div>
 
@@ -3053,7 +3085,11 @@
                 </p>
                 <textarea  onchange="saveWorkbook()" id="act8q13" rows="4" style="margin-bottom:15px;"></textarea>
 
+
             </div>
+             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act8p3btn" class="btn btn-outline-primary" onclick="checkActivity8P3(this.id),checkActivity8(),loadBar()">Check Activity!!</button>
+                </div>
         </div>
     </div>
 
@@ -3101,6 +3137,12 @@
                     <textarea  onchange="saveWorkbook()" id="act8q18" rows="2"></textarea>
                 </div>
             </div>
+
+             <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act8p4btn" class="btn btn-outline-primary" onclick="checkActivity8P4(this.id),checkActivity8(),loadBar()">Check Activity!!</button>
+                </div>
+
+
         </div>
     </div>
 
@@ -3275,6 +3317,11 @@
                     </div>
                 </div>
             </div>
+
+              <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act9p1btn" class="btn btn-outline-primary" onclick="checkActivity9P1(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
+                </div>
+
         </div>
     </div>
 
@@ -3465,6 +3512,10 @@
                     </div>
                 </div>
             </div>
+
+              <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act8p2btn" class="btn btn-outline-primary" onclick="checkActivity9P2(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
+                </div>
         </div>
     </div>
 
@@ -3591,6 +3642,9 @@
                 <div class="col-md-4"></div>
 
             </div>
+              <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
+                    <button id="act8p1btn" class="btn btn-outline-primary" onclick="checkActivity9P3(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
+                </div>
         </div>
     </div>
 
@@ -7193,7 +7247,23 @@
             width += 6.25;
             total++;
         }
+        if (act4Check) {
+            width += 6.25;
+            total++;
+        }
         if (act5Check) {
+            width += 6.25;
+            total++;
+        }
+        if (act6Check) {
+            width += 6.25;
+            total++;
+        }
+        if (act8Check) {
+            width += 6.25;
+            total++;
+        }
+        if (act9Check) {
             width += 6.25;
             total++;
         }
@@ -7677,6 +7747,656 @@
             }
         }
     }
+
+    //check for activity 4
+
+
+    var act4P1Check = false;
+    var act4P2Check = false;
+    var act4Check = false;
+
+
+
+    function checkActivity4() {
+        if (act4P1Check == true && act4P2Check == true) {
+            act4Check = true;
+
+            document.getElementById("act4bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 4 Completed!")
+            }
+        }
+        
+    }
+
+
+
+    function checkActivity4P1(id) {
+        var table = document.getElementById("act4Table1");
+        var q1 = document.getElementById("act4q1").value;
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }//end
+        if (checkTableBool && q1 != "") {
+            act4P1Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+
+    function checkActivity4P2(id) {
+        var table = document.getElementById("act4Table3");
+        var q1 = document.getElementById("act4q2").value;
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }//end
+        if (checkTableBool && q1 != "") {
+            act4P2Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+    //check for activity 6
+    var act6P1Check = false;
+    var act6P2Check = false;
+    var act6P3Check = false;
+    var act6P4Check = false;
+    var act6Check = false;
+
+
+    function checkActivity6P1(id) {
+        var table = document.getElementById("act6table");
+
+        var q1 = document.getElementById("act6q1").value;
+        var q2 = document.getElementById("act6q2").value;
+        var q3 = document.getElementById("act6q3").value;
+        var q4 = document.getElementById("act6q4").value;
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+
+
+
+            table = document.getElementById("act6Table2");
+
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var i = 0, row; row = table.rows[i]; i++) {
+                    //iterate through rows
+                    //rows would be accessed using the "row" variable assigned in the for loop
+                    for (var j = 0, col; col = row.cells[j]; j++) {
+                        if (col.querySelector('input') != null) {
+                            if (col.querySelector('input').value == "") {
+                                checkTableBool = false;
+                            }
+                        }
+                    }
+                }
+
+
+
+            }//end
+            if (checkTableBool && q1 != "" && q2 != "" && q3 != "" && q4 != "") {
+                act6P1Check = true;
+                document.getElementById(id).style.color = "green";
+                if (pageLoad) {
+                    alert("Completed Correctly!");
+                }
+            }
+            else {
+                document.getElementById(id).style.color = "red";
+                if (pageLoad) {
+                    alert("Please Complete the answers!");
+                }
+            }
+        }
+    }
+
+    function checkActivity6P2(id) {
+
+
+        var q1 = document.getElementById("act6q5").value;
+        var q2 = document.getElementById("act6q6").value;
+        var q3 = document.getElementById("act6q7").value;
+        var q4 = document.getElementById("act6q8").value;
+
+ 
+
+
+      
+            if (q1 != "" && q2 != "" && q3 != "" && q4 != "") {
+                act6P2Check = true;
+                document.getElementById(id).style.color = "green";
+                if (pageLoad) {
+                    alert("Completed Correctly!");
+                }
+            }
+            else {
+                document.getElementById(id).style.color = "red";
+                if (pageLoad) {
+                    alert("Please Complete the answers!");
+                }
+        }
+    }
+
+
+
+    function checkActivity6P3(id) {
+
+
+        var q1 = document.getElementById("act6p9").value;
+        var q2 = document.getElementById("act6p10").value;
+        var q3 = document.getElementById("act6p11").value;
+        var q4 = document.getElementById("act6p12").value;
+
+
+
+
+
+        if (q1 != "" && q2 != "" && q3 != "" && q4 != "") {
+            act6P3Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+
+    function checkActivity6P4(id) {
+        var table = document.getElementById("act6Table3");
+
+ 
+
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+
+
+
+            table = document.getElementById("act6Table4");
+
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var i = 0, row; row = table.rows[i]; i++) {
+                    //iterate through rows
+                    //rows would be accessed using the "row" variable assigned in the for loop
+                    for (var j = 0, col; col = row.cells[j]; j++) {
+                        if (col.querySelector('input') != null) {
+                            if (col.querySelector('input').value == "") {
+                                checkTableBool = false;
+                            }
+                        }
+                    }
+                }
+
+
+
+            }//end
+            if (checkTableBool) {
+                act6P4Check = true;
+                document.getElementById(id).style.color = "green";
+                if (pageLoad) {
+                    alert("Completed Correctly!");
+                }
+            }
+            else {
+                document.getElementById(id).style.color = "red";
+                if (pageLoad) {
+                    alert("Please Complete the answers!");
+                }
+            }
+        }
+    }
+
+
+    function checkActivity6() {
+        if (act6P1Check == true && act6P2Check == true && act6P3Check == true && act6P4Check == true) {
+            act6Check = true;
+
+            document.getElementById("act6bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 6 Completed!")
+            }
+        }
+
+    }
+
+
+    //check for activity8
+    var act8P1Check = false;
+    var act8P2Check = false;
+    var act8P3Check = false;
+    var act8P4Check = false;
+    var act8Check = false;
+
+    function checkActivity8P1(id) {
+
+
+        var q1 = document.getElementById("act8q1").value;
+        var q2 = document.getElementById("act8q2").value;
+        var q3 = document.getElementById("act8q3").value;
+        
+
+
+
+
+
+        if (q1 != "" && q2 != "" && q3 != "" ) {
+            act8P1Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+
+    function checkActivity8P2(id) {
+
+
+        var q1 = document.getElementById("act8q4").value;
+        var q2 = document.getElementById("act8q5").value;
+        var q3 = document.getElementById("act8q6").value;
+        var q4 = document.getElementById("act8q7").value;
+        var q5 = document.getElementById("act8q8").value;
+
+        var table = document.getElementById("act8Table1");
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+            table = document.getElementById("act8Table2");
+
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var i = 0, row; row = table.rows[i]; i++) {
+                    //iterate through rows
+                    //rows would be accessed using the "row" variable assigned in the for loop
+                    for (var j = 0, col; col = row.cells[j]; j++) {
+                        if (col.querySelector('input') != null) {
+                            if (col.querySelector('input').value == "") {
+                                checkTableBool = false;
+                            }
+                        }
+                    }
+                }
+        }
+
+
+
+        if (checkTableBool == true && q1 != "" && q2 != "" && q3 != "" && q4 != "" && q5 != "") {
+            act8P2Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+        
+    function checkActivity8P3(id) {
+
+
+        var q1 = document.getElementById("act8q9").value;
+        var q2 = document.getElementById("act8q10").value;
+        var q3 = document.getElementById("act8q11").value;
+        var q4 = document.getElementById("act8q12").value;
+        var q5 = document.getElementById("act8q13").value;
+
+        var table = document.getElementById("act8Table1");
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        if (checkTableBool == true && q1 != "" && q2 != "" && q3 != "" && q4 != "" && q5 != "") {
+            act8P3Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+
+
+
+
+    }
+
+
+
+
+    function checkActivity8P4(id) {
+
+
+        var q1 = document.getElementById("act8q14").value;
+        var q2 = document.getElementById("act8q15").value;
+        var q3 = document.getElementById("act8q16").value;
+
+        var q4 = document.getElementById("act8q17").value;
+        var q5 = document.getElementById("act8q18").value;
+
+
+
+
+
+        if (q1 != "" && q2 != "" && q3 != "" && q4 != "" && q5 != "" ) {
+            act8P4Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+
+
+    function checkActivity8() {
+        if (act8P1Check == true && act8P2Check == true && act8P3Check == true && act8P4Check == true) {
+            act8Check = true;
+
+            document.getElementById("act8bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 8 Completed!")
+            }
+        }
+
+    }
+
+    //check for activity 9
+
+    var act9P1Check = false;
+    var act9P2Check = false;
+    var act9P3Check = false;
+    var act9Check = false;
+
+    function checkActivity9P1(id) {
+
+
+
+
+        var table = document.getElementById("act9Table1");
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        if (checkTableBool) {
+            act9P1Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+    function checkActivity9P2(id) {
+
+
+
+
+        var table = document.getElementById("act9Table3");
+        var checkTableBool = true;
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.querySelector('input') != null) {
+                        if (col.querySelector('input').value == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        }
+        table = document.getElementById("act9Table4");
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                     if (col.innerHTML == "") {
+                            checkTableBool = false;
+                        }
+                    }
+                }
+            }
+        
+
+
+
+        if (checkTableBool) {
+            act9P2Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+
+
+    function checkActivity9P3(id) {
+
+
+
+
+        var table = document.getElementById("act9Table5");
+        var checkTableBool = true;
+
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    if (col.innerHTML == "") {
+                        checkTableBool = false;
+                    }
+                }
+            }
+        }
+
+
+
+
+        if (checkTableBool) {
+            act9P3Check = true;
+            document.getElementById(id).style.color = "green";
+            if (pageLoad) {
+                alert("Completed Correctly!");
+            }
+        }
+        else {
+            document.getElementById(id).style.color = "red";
+            if (pageLoad) {
+                alert("Please Complete the answers!");
+            }
+        }
+    }
+
+
+    function checkActivity9() {
+        if (act9P1Check == true && act9P2Check == true && act9P3Check == true) {
+            act9Check = true;
+
+            document.getElementById("act9bar").style.color = "green";
+            if (pageLoad) {
+                alert("Activity 9 Completed!")
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
     var act12P1Check = false;
     var act12P2Check = false;
     var act12Check = false;
