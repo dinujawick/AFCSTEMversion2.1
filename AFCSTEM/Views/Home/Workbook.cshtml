@@ -3514,7 +3514,7 @@
             </div>
 
               <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
-                    <button id="act8p2btn" class="btn btn-outline-primary" onclick="checkActivity9P2(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
+                    <button id="act9p2btn" class="btn btn-outline-primary" onclick="checkActivity9P2(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
                 </div>
         </div>
     </div>
@@ -3643,7 +3643,7 @@
 
             </div>
               <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
-                    <button id="act8p1btn" class="btn btn-outline-primary" onclick="checkActivity9P3(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
+                    <button id="act9p3btn" class="btn btn-outline-primary" onclick="checkActivity9P3(this.id),checkActivity9(),loadBar()">Check Activity!!</button>
                 </div>
         </div>
     </div>
@@ -5872,7 +5872,7 @@
                 </table>
                 <br />
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                    <button id="act17btn1" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17p1(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
+                    <button id="act17btn1" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17P1(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
                 </div>
             </div>
         </div>
@@ -5995,7 +5995,7 @@
                 <textarea id="act17q2" onchange="saveWorkbook()" name="act17q2" rows="2"></textarea>
                 <br />
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                    <button id="act17btn2" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17p2(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
+                    <button id="act17btn2" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17P2(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
                 </div>
             </div>
         </div>
@@ -6076,7 +6076,7 @@
                 </table>
                 <br />
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                    <button id="act17btn3" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17p3(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
+                    <button id="act17btn3" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17P3(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
                 </div>
             </div>
         </div>
@@ -6155,7 +6155,7 @@
                 <br />
                 <br />
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
-                    <button id="act17btn4" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17p4(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
+                    <button id="act17btn4" class="btn btn-outline-primary" style="margin-bottom:50px;" onclick="checkActivity17P4(this.id),checkActivity17(),loadBar()">Check Activity!!</button>
                 </div>
             </div>
         </div>
@@ -6396,8 +6396,10 @@
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
-    //put checks above it
-    pageLoad = true;
+
+
+   
+
 
     //for drawing quad1,2 and 3;
     var int1 = -11;
@@ -7617,17 +7619,18 @@
     }
 
     function checkActivity2P3(id) {
-        var length1 = document.getElementById("act2t1").value;
-        var length2 = document.getElementById("act2t2").value;
-        var length3 = document.getElementById("act2t3").value;
+        var length1 = document.getElementById("box1").value;
+        var length2 = document.getElementById("box2").value;
+        var length3 = document.getElementById("box3").value;
         var length4 = document.getElementById("text1").value;
-
+        var length9 = document.getElementById("act2t4").value;
+        var length8 = document.getElementById("act2t5").value;
 
         var length5 = document.getElementById("lenGS2").value;
         var length6 = document.getElementById("widGS2").value;
         var length7 = document.getElementById("aTotalGS2").value;
 
-        if (length1 != "" && length2 != "" && length3 != "" && length4 != "" && length5 == "6.4" && length6 == "6.4" && length7 == "40.96") {
+        if (length1 != "" && length2 != "" && length3 != "" && length4 != "" && length5 == "6.4" && length6 == "6.4" && length7 == "40.96" && length8 != "" && length9 != "") {
             act2P3Check = true;
             document.getElementById(id).style.color = "green";
             if (pageLoad) {
@@ -9490,7 +9493,10 @@
         // When greater than 21, the table is fully populated.
         if (stillEmpty < 21) {
             //when table still has empty cells
-            alert('Please complete filling in the table');
+            if (pageLoad) {
+                alert('Please complete filling in the table');
+            }
+            
         } else {
             for (i = 1; i < table2.rows.length; i++) {
                 var rows = table2.rows[i];
@@ -9767,7 +9773,10 @@
 
 
         } else {
-            alert('Please complete the field');
+            if (pageLoad) {
+                alert('Please complete the field');
+            }
+            
         }
 
 
@@ -11437,7 +11446,8 @@
         document.getElementById("widGP").value  = "@workbook.Act2GPWidth";
         document.getElementById("aTotalGP").value  = "@workbook.Act2GPArea";
 
-        document.getElementById("lenBP").value  = "@workbook.Act2BPLength";
+        document.getElementById("lenBP").value = "@workbook.Act2BPLength";
+
         document.getElementById("widBP").value   = "@workbook.Act2BPWidth";
         document.getElementById("aTotalBP").value  = "@workbook.Act2BPArea";
         document.getElementById("text1").value = "@workbook.Act2text1"
@@ -12729,6 +12739,82 @@
 
         }
     });
+
+
+
+    var pageLoad = false;
+    checkActivity1P1('act1Table1', 'act1Table2');
+    checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');
+    checkActivity1();
+    checkActivity2P1("act2p1btn");
+    checkActivity2P2("act2p2btn");
+    checkActivity2P3("act2p3btn");
+    checkActivity2();
+    checkActivity3P1("act3btn1");
+    checkActivity3P2("act3btn2");
+    checkActivity3();
+    checkActivity4P1("act4p1btn");
+    checkActivity4P2("act4p2btn");
+    checkActivity4();
+    checkActivity5P1("act5p1button");
+    checkActivity5P2("act5btn2");
+    CheckActivity5();
+    checkActivity6P1("act6p1btn");
+    checkActivity6P2("act6p2btn");
+    checkActivity6P3("act6p3btn");
+    checkActivity6P4("act6p4btn");
+    checkActivity6();
+    checkActivity8P1("act8p1btn");
+    checkActivity8P2("act8p2btn");
+    checkActivity8P3("act8p3btn");
+    checkActivity8P4("act8p4btn");
+    checkActivity8();
+    checkActivity9P1("act9p1btn");
+    checkActivity9P2("act9p2btn");
+    checkActivity9P3("act9p3btn");
+    checkActivity9();
+    checkActivity10P1("act10btn1");
+    checkActivity10P2("act10btn2");
+    checkActivity10P3("act10btn3");
+    checkActivity10();
+    checkActivity11P1("act11btn1");
+    checkActivity11();
+    checkActivity12P1("act12btn1");
+    checkActivity12P2("act12btn2");
+    checkActivity12();
+    checkActivity13P1("act13btn1");
+    checkActivity13();
+    checkActivity14P1("act14btn1");
+    checkActivity14P2("act14btn2");
+    checkActivity14P3("act14btn3");
+    checkActivity14();
+    checkActivity15P1("act15btn1");
+    checkActivity15P2("act15btn2");
+    checkActivity15P3("act15btn3");
+    checkActivity15P4("act15btn4");
+    checkActivity15P5("act15btn5");
+    checkActivity15();
+    checkActivity16P1("act16btn1");
+    checkActivity16P2("act16btn2");
+    checkActivity16();
+    checkActivity17P1("act17btn1");
+    checkActivity17P2("act17btn2");
+    checkActivity17P3("act17btn3");
+    checkActivity17P4("act17btn4");
+    checkActivity17P5("act17btn5");
+    checkActivity17P6("act17btn6");
+    checkActivity17();
+    loadBar();
+
+
+
+
+
+
+
+    //put checks above it
+    pageLoad = true;
+
 
 </script>
 
