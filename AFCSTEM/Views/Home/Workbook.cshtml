@@ -288,7 +288,7 @@
     #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input,#act13table1 input, #act15table1 input, 
     #act15table2 input, #act15table3 input, #act15table4 input, #act16table1 input, #act16table2 input, #act16table3 input, #act16table4 input, 
     #act16table5 input, #act16table6 input, #act17table1 input, #act17table2 input, #act17table3 input, #act17table4 input, #act15table5 input, 
-    #act17table5 input, #act17table6 input, #act17table7 input {
+    #act17table5 input, #act17table6 input, #act17table7 input, #act4Table1 input {
         border: none;
         width: 100%;
     }
@@ -602,7 +602,13 @@
 
     #act1Table1 {
         border-width: 5px;
-        border-color: blue;
+        border-color: #002b5c;
+        font-weight:bold;
+    }
+
+
+    #act1Table2{
+        font-weight:bold;
     }
 
     #coinTable td, #texTable td {
@@ -668,14 +674,6 @@
         float: left;
         width: 30%;
         height: 40%;
-    }
-
-    #ebImage {
-        position: relative;
-        width: 30%;
-        height: 50%;
-        float: right;
-        margin-bottom: 25px;
     }
 
     #act10table3 {
@@ -1036,29 +1034,32 @@
     }
 
     .calcTable input[type="button"] {
-        background-color: #e31937;
         color: black;
         width: 100%;
+        font-weight: bold;
+        font-size:18px;
         border: none;
     }
 
-    .calcTable tr {
-        padding: 5px;
-    }
+    
 
     .calcTable td {
         border: none;
-        padding: 10px;
+        height:50px;
+        padding: 15px;
     }
 
     .calcTable {
         width: 100%;
-        height: 100%;
-        padding: 5px;
+
+        height: 300px;
+       
     }
 
         .calcTable input[type="text"] {
-            background-color: #ffd200;
+            background-color: white;
+            font-weight: bold;
+            font-size: 20px;
             border: solid black 2px;
             width: 100%
         }
@@ -1250,16 +1251,17 @@
     </div>
 </nav>
 
-<button id="calButton" style="position: fixed; bottom: 0px;right: 320px;font-size:20px;font:bold;background-color:#e31937" onclick="unhideCal()">+/-</button>
+
+<img id="calButton" style="position: fixed; bottom: 0px;right: 500px;font-size:20px;font:bold;background-color:#e31937" onclick="unhideCal()" src="~/images/Workbooklet/calcPic.jpg" />
 
 <!--Calculator-->
-<div id="calculator" style="display:none;position: fixed; bottom: 1px;right: 50px; ">
-    <table class="calcTable" border="1" style="background-color: #004b8d; border: solid black 3px">
+<div id="calculator" style="display:none;position: fixed; bottom: 1px;right:150px; ">
+    <table id="calcTable" class="calcTable" border="1" style="background-color:black;margin-bottom:10px; border: solid black 3px">
 
         <tr>
-            <td colspan="3"><input disabled type="text" id="result" /></td>
+            <td  colspan="3"><input style="height:150%;margin-top:5%" disabled type="text" id="result" /></td>
             <!-- clr() function will call clr to clear all value -->
-            <td><input type="button" value="c" onclick="clr()" /> </td>
+            <td><input type="button" value=" c " onclick="clr()" /> </td>
         </tr>
         <tr>
             <!-- create button and assign value to each button -->
@@ -1293,7 +1295,7 @@
 
 <!--Unit 1-->
 <div style="width:100%;height:20%;background-color:#ffd200;border:none" class="row containRow" id="unit1">
-    <div style="margin-left:25%;padding:50px;font-size:32px;">UNIT 1: INTRODUCTION TO AFL</div>
+    <div style="margin-left:15%;font-weight:bold;padding:50px;font-size:48px;">UNIT 1: INTRODUCTION TO AFL</div>
 </div>
 
 
@@ -1364,7 +1366,7 @@
                     </table>
                 </div>
                 <br />
-                <p id="description">
+                <p style="font-weight:bold" id="description">
                     Drag your group's answers from the above table to the table below:
                 </p>
                 <div class="row">
@@ -1590,7 +1592,7 @@
                 An AFL field has many regions that we can calculate the area of, below are a couple of examples of these regions:
             </p>
             <div class="row containInside">
-                <img src="~/images/Unit1/Activity 2/goals.PNG" alt="Goals" style="width: 45%;margin-left:20px" />
+                <img src="~/images/Unit1/Activity 2/goals.PNG" alt="Goals" style="height: 100%; width: 45%; margin-left: 20px; margin-top: 50px" />
                 <img src="~/images/Unit1/Activity 2/Oval.PNG" alt="Oval" style="width: 45%; margin-left:15px;" />
             </div>
             <div class="row containInside">
@@ -1762,6 +1764,7 @@
 
                     <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
                     <textarea onchange="saveWorkbook()" id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
+                    <img style="float:right;width:35%" src="~/images/Workbooklet/Picture5.jpg" />
                     <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
                     <textarea onchange="saveWorkbook()" id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
@@ -2127,6 +2130,8 @@
                     <br />
 
                 </div>
+                <img style="margin-left: 125px; width: 70%"src="~/images/Workbooklet/teamgroupaflw.jpg" />
+
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;margin-right:25px;">
                     <button id="act3btn2" class="btn btn-outline-primary" onclick="checkActivity3P2(this.id),checkActivity3(),loadBar()">Check Activity!!</button>
                 </div>
@@ -2184,7 +2189,7 @@
                 <div class="col-md-6">
                     <table class="table table-bordered" id="act4Table1">
                         <thead>
-                            <tr id="firstrow">
+                            <tr style="background-color: #002b5c; color: white;" id="firstrow">
                                 <th>ACUTE ANGLES</th>
                                 <th>OBTUSE ANGLES</th>
                                 <th>REFLEX ANGLES</th>
@@ -2291,7 +2296,7 @@
             <div class="row containInside">
                 <table class="table table-bordered" id="act4Table3" style="margin-right:25px;">
                     <thead>
-                        <tr id="firstrow">
+                        <tr style="background-color: #002b5c; color: white;" id="firstrow">
                             <th>POSITION:</th>
                             <th>GOAL:</th>
                             <th>BEHIND:</th>
@@ -2429,6 +2434,11 @@
                     </tr>
 
                 </table>
+
+
+
+            <img style="width:80%; margin-left: 10%; margin-top: 5%; margin-bottom: 5%"src="~/images/Workbooklet/Picture1.jpg" />
+
             </div>
             <div class="row containInside">
                 <label id="question" for="act5q1" style="font-size: 18px;margin-right:15%;">Did you score more goals, points or misses?</label>
@@ -2551,7 +2561,7 @@
 
 <!--Unit 2-->
 <div style="width:100%;height:20%;background-color:#002b5c;border:none;margin-top:15px;" class="row containRow" id="unit2">
-    <div style="margin-left:30%;padding:50px;font-size:32px;color:white">UNIT 2: STATISTICS</div>
+    <div style="margin-left: 25%; font-weight: bold; padding: 50px; font-size: 48px;color:white">UNIT 2: STATISTICS</div>
 </div>
 
 
@@ -2730,6 +2740,8 @@
         <div id="innerBorder" style="width:100%;">
             <div class="row containInside">
                 <div class="col-md-12">
+                    <img style="margin-left:250px;height:35%"src="~/images/Workbooklet/heightpic1.jpg" />
+                    <img style="margin-left:100px;height:35%" src="~/images/Workbooklet/heightpic2.jpg" />
                     <p id="question" style="margin-top:25px;"><b>Height Analysis</b></p>
                     <br />
 
@@ -3288,7 +3300,7 @@
                                 <td><input onchange="saveWorkbook()" id="act9Part1DF" style="text-align:center;" /></td>
                             </tr>
                             <tr>
-                                <td>ELLIOTT HIMMELBERG</td>
+                                <td>E. HIMMELBERG</td>
                                 <td>7</td>
                                 <td>8</td>
                                 <td><input onchange="saveWorkbook()" id="act9Part1EM" style="text-align:center;" /></td>
@@ -3437,7 +3449,7 @@
                             </thead>
                             <tbody id="act9Part2Body">
                                 <tr>
-                                    <td>STEVIE-LEE THOMPSON</td>
+                                    <td>S.LEE THOMPSON</td>
                                     <td>9</td>
                                     <td>14</td>
                                     <td><input onchange="saveWorkbook()" id="act9Part2ST" style="text-align:center;" /></td>
@@ -3926,10 +3938,11 @@
                             <td><input onchange="saveWorkbook()" id="gg" type="number" /></td>
                         </tr>
                     </table>
-                    <img id="ebFooty" style="position:absolute; left:500px" width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
-                    <img id="ebImage" src="~/images/Unit2/Activity 10/ebact10.jpeg" style="margin-bottom:50px;"/>
-                   
-                    <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:250px;">
+                    <img id="ebFooty" style="position:absolute; left:400px" width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
+
+                    <img style="float: right; width: 75%; margin-left: 50px; margin-bottom: 50px" src="~/images/Workbooklet/hugpic.jpg" />
+
+                    <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:50px;">
                         <button id="act10btn2" class="btn btn-outline-primary" style="margin-right:25px;" onclick="checkActivity10P2(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
                     </div>
                 </div>
@@ -3964,8 +3977,8 @@
                 <p id="description" style="margin-left:15px;margin-top:15px;">Create a Stem and-Leaf-plot comparing the class Goal Kick Challenge results.</p>
                 <table style="width:40%;position:relative;" id="act10table3">
                     <tr id="firstrow">
-                        <th style="background-color:#00FF00; color:white;">STEM<br />(GOALS)</th>
-                        <th style="background-color: #FFFF00; color: #002b5c;">LEAF:<br />(BEHINDS)</th>
+                        <th style="background-color:green; color:white; text-align:center">STEM<br />(GOALS)</th>
+                        <th style="background-color: #FFFF00; color: #002b5c; text-align:center">LEAF:<br />(BEHINDS)</th>
                     </tr>
                     <tr>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
@@ -4039,7 +4052,7 @@
 
 <!--Unit 3-->
 <div style="width:100%;height:20%;background-color:#41ad48;border:none;margin-top:15px;" class="row containRow" id="unit3">
-    <div style="margin-left:20%;padding:50px;font-size:32px;color:white">UNIT 3: NUTRITION AND MORPHOLOGY</div>
+    <div style="margin-left: 5%; font-weight: bold; padding: 50px; font-size: 48px; color: white">UNIT 3: NUTRITION AND MORPHOLOGY</div>
 </div>
 
 
@@ -4058,18 +4071,19 @@
             <h3><b>DAILY NUTRIENTS: Activity 11</b><br /><span id="subTitle">Exploration Task</span></h3>
             <div id="innerBorder">
                 <div class="row containInside" style="margin-top:25px;">
-                <p id="description">
-                    Below is an activity chart for an AFC Men’s player1<br /><br />
-                    Estimate what you think their daily energy intake needs to be<input id="act11q1" style="border:none;margin-left:5px;" type="number" placeholder=" ........................................" />kJ/day<br />
-                    <br />
-                    <img id="timerImg" style="left:10px;width:10%;height:25%;position:relative" src="~/images/Workbooklet/24roller.png" />
-                    <img id="batteryImg" style="left: 10px; width: 20%; height: 20%; position: relative" src="~/images/Workbooklet/battery.png" />
-                    <br />
-                    <br />
-                    Using the values stated in the table on page 96, calculate the total kJ used for each of the activities
-                    <br />
-                    Player’s Daily Kilojoules Calculation
-                </p>
+                    <p id="description">
+                        Below is an activity chart for an AFC Men’s player1<br /><br />
+                        Estimate what you think their daily energy intake needs to be<input id="act11q1" style="border:none;margin-left:5px;" type="number" placeholder=" ........................................" />kJ/day<br />
+                        <br />
+                        <img id="timerImg" style="left:10px;width:10%;height:25%;position:relative" src="~/images/Workbooklet/24roller.png" />
+
+                        <img id="batteryImg" style="left: 10px; width: 20%; height: 30%; position: relative" src="~/images/Workbooklet/batteryImg.jpeg" />
+                        <br />
+                        <br />
+                        Using the values stated in the table on page 96, calculate the total kJ used for each of the activities
+                        <br />
+                        Player’s Daily Kilojoules Calculation
+                    </p>
                 <table class="table table-bordered" style="width:90%" id="act11table1">
                     <tr id="firstrow" style="background-color:#002b5c; color:white;">
                         <th>ACTIVITY:</th>
@@ -4750,7 +4764,7 @@
 
 <!--UNIT 4-->
 <div style="width:100%;height:20%;background-color:#f15522;border:none;margin-top:15px;" class="row containRow" id="unit4">
-    <div style="margin-left:35%;padding:50px;font-size:32px;color:white">UNIT 4: DISTANCES</div>
+    <div style="margin-left: 25%; font-weight: bold; padding: 50px; font-size: 48px; color: white">UNIT 4: DISTANCES</div>
 </div>
 
 
@@ -12823,6 +12837,53 @@
 
 
     }
+
+    dragElement(document.getElementById("calculator"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id)) {
+            /* if present, the header is where you move the DIV from:*/
+            document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+        } else {
+            /* otherwise, move the DIV from anywhere inside the DIV:*/
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+
+            pos2 = pos4 - e.clientY;
+
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+
+        }
+
+        function closeDragElement() {
+            /* stop moving when mouse button is released:*/
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+
+
+
 
     $('input').keypress(function (e) {
         if (e.which == 34) {
