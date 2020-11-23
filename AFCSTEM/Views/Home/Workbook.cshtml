@@ -199,17 +199,17 @@
 <style>
     @@font-face {
         font-family: Industry_Bold;
-        src: url('fort foundry - industry bold.otf') format('opentype');
+        src: url('../fonts/Industry_Bold.otf') format('opentype');
     }
 
     @@font-face {
         font-family: Industry_Demi;
-        src: url('fort foundry - industry demi.otf') format('opentype');
+        src: url('../fonts/industry_demi.otf') format('opentype');
     }
 
     @@font-face {
         font-family: itcavantgardestd_bk;
-        src: url('adobe - itcavantgardestd-bk.otf') format('opentype');
+        src: url('../fonts/itcavantgardestd-bk.otf') format('opentype');
     }
 
     .row {
@@ -7076,15 +7076,7 @@
     var mapIndex = 0;
     // jquery functions
     jQuery(document).ready(function ($) {
-
-        $('.radio-group, #aPlayer').click(function () {
-            console.log('no');
-            $(this).parent().find('.radio').removeClass('selected');
-            $(this).addClass('selected');
-            var val = $(this).innerHTML;
-            console.log(val);
-        });
-
+        
         // jquery for activity 10 coin flip
         $('#coin, #coin2').on('click', function () {
 
@@ -7180,6 +7172,7 @@
             $('#AreaFormula').animate({ left: '10px' });
         });
 
+        // jquery for activity 6, add dot on map
         $("#map").click(function (ev) {
             if (mapIndex < 10) {
                 mouseX = ev.pageX;
@@ -7204,10 +7197,27 @@
             }
             
         });
-
-        
     });
 
+    $(document).ready(function () {
+        console.log('ready');
+        
+        $('.radio').click(function () {
+            console.log("no");
+            $(this).addClass('selected').siblings().removeClass('selected');
+            var val = $(this).innerHTML;
+            console.log(val);
+        });
+        
+        /*
+        $('.radio-group, #aPlayer').click(function () {
+            console.log('no');
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+            var val = $(this).innerHTML;
+            console.log(val);
+        });*/
+    });
     //
     function allowDrop(ev) {
         ev.preventDefault();
@@ -9551,15 +9561,15 @@
             if (divRow.childNodes.length < 10) {
                 var cardDiv = document.createElement('DIV');
                 cardDiv.className = 'radio';
-                cardDiv.id = 'aPlayer';
+                
 
                 var nameDiv = document.createElement("P");
                 var locationDiv = document.createElement("P");
 
                 nameDiv.innerHTML = pName;
                 locationDiv.innerHTML = pRFrom;
-
-
+                //cardDiv.innerHTML = pName + pRFrom;
+                //cardDiv.addEventListener("click", playerClicker());
                 cardDiv.appendChild(nameDiv);
                 cardDiv.appendChild(locationDiv);
 
@@ -9568,6 +9578,10 @@
 
             }
         }
+    }
+
+    function playerClicker() {
+        console.log(object);
     }
 
     //method for act 6 part 4. map activity, to reset the player locations
