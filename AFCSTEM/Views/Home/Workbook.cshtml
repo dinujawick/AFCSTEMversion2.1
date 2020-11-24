@@ -299,12 +299,12 @@
         margin: 0 auto;
     }
 
-    #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act12table1 td, 
-    #act12table1 th, #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td, 
-    #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td, 
-    #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td, 
-    #act17table6 td, #act17table7 td, #act17table7 th {
-        border: 1px solid black;
+    #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act11table1 th, #act12table1 td,
+    #act12table1 th, #act12table2 td, #act12table2 th #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
+    #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td,
+    #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td,
+    #act17table6 td, #act17table7 td, #act17table7 th, #act6Table4 td, #act6Table3 td {
+        border: 1px solid #002b5c;
     }
 
     #act10table1 input, #act10table2 input, #act10table3 input, #act11table1 input, #act12table1 input,#act13table1 input, #act15table1 input, 
@@ -314,6 +314,8 @@
         border: none;
         width: 100%;
     }
+
+    
 
     table {
         margin-left: 10px;
@@ -993,6 +995,9 @@
         font-size: 18px;
     }
 
+ 
+
+    
     textarea {
         width: 75%;
     }
@@ -3369,47 +3374,38 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)" ></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>3</td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
+                                    <td  ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
                                 </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
+
                             </tbody>
+
                         </table>
+                        <button id="deletecolbut" style="width:70px;height:30px;float:right" onclick="deleteItemBool(this)">Delete</button>
                         <div class="col-md-2"></div>
                         <div class="col-md-7" style="margin-top:35px;">
                             <div class="row" style="width:100%;">
@@ -3565,47 +3561,40 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" id="stem"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                </tr>
+
+                                <tr>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td>EG. 2</td>
-                                    <td>3</td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"  onclick="deleteItem(this)"></td>
+                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)" onclick="deleteItem(this)"></td>
                                 </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
-                                <tr>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                    <td ondragover="allowDrop(event)" ondrop="act9Drop(event)"></td>
-                                </tr>
+
                             </tbody>
                         </table>
+
+
+                    <button id="deletecolbut" style="width:70px;height:30px;float:right" onclick="deleteItemBool(this)">Delete</button>
                     </div>
                     <!-- 1 - 9 numbers -->
                     <div class="col-md-3">
@@ -3963,9 +3952,9 @@
                             <td><input onchange="saveWorkbook()" id="gg" type="number" /></td>
                         </tr>
                     </table>
-                    <img id="ebFooty" style="position:absolute; left:400px" width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
+                    <img id="ebFooty" style="position:absolute; left:800px" width="100" height="100" src="~/images/Workbooklet/footy.jpg" />
 
-                    <img style="float: right; width: 75%; margin-left: 50px; margin-bottom: 50px" src="~/images/Workbooklet/hugpic.jpg" />
+                    <img src="~/images/Workbooklet/hugpic.jpg" />
 
                     <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:50px;">
                         <button id="act10btn2" class="btn btn-outline-primary" style="margin-right:25px;" onclick="checkActivity10P2(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
@@ -4211,7 +4200,7 @@
                     </p>
                 </div>
 
-                <table style="width:90%" id="act12table1">
+                <table style="width:90%;" id="act12table1">
                     <tr style="background-color:#002b5c; color:white;">
                         <th>Food:</th>
                         <th>Method 1<br />weight (g)</th>
@@ -4317,7 +4306,7 @@
                     </div>
                 </div>
                 
-                <table class="table table-bordered" style="width:95%" id="act12table2">
+                <table class="table table-bordered" style="width:95%;text-align:center" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
                         <th>FOOD</th>
                         <th>MINUTES PLAYING AFL TO<br />USE THE ENERGY IN A:</th>
@@ -6457,7 +6446,7 @@
 
 
 
-   
+
 
 
     //for drawing quad1,2 and 3;
@@ -7104,7 +7093,7 @@
     var mapIndex = 0;
     // jquery functions
     jQuery(document).ready(function ($) {
-        
+
         // jquery for activity 10 coin flip
         $('#coin, #coin2').on('click', function () {
 
@@ -7223,20 +7212,20 @@
             } else {
 
             }
-            
+
         });
     });
 
     $(document).ready(function () {
         console.log('ready');
-        
+
         $('.radio').click(function () {
             console.log("no");
             $(this).addClass('selected').siblings().removeClass('selected');
             var val = $(this).innerHTML;
             console.log(val);
         });
-        
+
         /*
         $('.radio-group, #aPlayer').click(function () {
             console.log('no');
@@ -7872,7 +7861,7 @@
                 alert("Activity 4 Completed!")
             }
         }
-        
+
     }
 
 
@@ -8024,10 +8013,10 @@
         var q3 = document.getElementById("act6q7").value;
         var q4 = document.getElementById("act6q8").value;
 
- 
 
 
-      
+
+
             if (q1 != "" && q2 != "" && q3 != "" && q4 != "") {
                 act6P2Check = true;
                 document.getElementById(id).style.color = "green";
@@ -8076,7 +8065,7 @@
     function checkActivity6P4(id) {
         var table = document.getElementById("act6Table3");
 
- 
+
 
         var checkTableBool = true;
         for (var i = 0, row; row = table.rows[i]; i++) {
@@ -8159,7 +8148,7 @@
         var q1 = document.getElementById("act8q1").value;
         var q2 = document.getElementById("act8q2").value;
         var q3 = document.getElementById("act8q3").value;
-        
+
 
 
 
@@ -8244,7 +8233,7 @@
             }
         }
     }
-        
+
     function checkActivity8P3(id) {
 
 
@@ -8422,7 +8411,7 @@
                     }
                 }
             }
-        
+
 
 
 
@@ -9581,15 +9570,15 @@
             } else {
 
             }
-            
-            
+
+
             //Stem ID for part 4
             var divRow = document.getElementById('stemIDMap');
-            
+
             if (divRow.childNodes.length < 10) {
                 var cardDiv = document.createElement('DIV');
                 cardDiv.className = 'radio';
-                
+
 
                 var nameDiv = document.createElement("P");
                 var locationDiv = document.createElement("P");
@@ -9618,7 +9607,7 @@
         while (index < mapIndex) {
             $('#mapDot').remove();
             index++;
-        }        
+        }
         mapIndex = 0;
     }
 
@@ -9645,7 +9634,7 @@
             if (pageLoad) {
                 alert('Please complete filling in the table');
             }
-            
+
         } else {
             for (i = 1; i < table2.rows.length; i++) {
                 var rows = table2.rows[i];
@@ -9925,7 +9914,7 @@
             if (pageLoad) {
                 alert('Please complete the field');
             }
-            
+
         }
 
 
@@ -10245,7 +10234,7 @@
         }
 
 
-     
+
 
         var act4table2 = [];
 
@@ -10264,7 +10253,7 @@
 
             }
         }
-   
+
 
 
 
@@ -10294,7 +10283,7 @@
             }
         }
 
-        
+
 
 
         var act5q1 =  document.getElementById("act5q1").value;
@@ -11449,7 +11438,7 @@
 
         };
 
-      
+
 
 
         $.post({
@@ -11797,6 +11786,31 @@
             }
 
         }
+
+
+
+        table = document.getElementById("act9Table2");
+        var act9table1 = "@workbook.act9table2"
+        var act9tablestring = act9table1.replace(/&quot;/g, '"');
+
+        act9tablestring = JSON.parse(act9tablestring);
+        pos = 0;
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j]
+                if (row.getAttribute("id") != "firstrow") {
+                    cell.innerHTML = act9tablestring[pos];
+                    pos++;
+                }
+
+            }
+
+        }
+
+
+
+
 
 
 
@@ -12922,6 +12936,46 @@
             document.onmousemove = null;
         }
     }
+
+    var deleteItemB = false;
+
+    function deleteItem(el) {
+
+        var element = el;
+       
+        if (deleteItemB) {
+            element.innerHTML = ""
+            deleteItemB = false;
+            document.getElementById("deletecolbut").style.color = "blue";
+            saveWorkbook();
+        }
+        
+
+    }
+
+
+    
+
+
+
+
+
+   
+
+    function deleteItemBool(e) {
+        if (deleteItemB) {
+            deleteItemB = false;
+            e.style.color = "blue"
+        }
+        else {
+            deleteItemB = true;
+            e.style.color = "red"
+        }
+    }
+
+    
+
+    
 
 
 
