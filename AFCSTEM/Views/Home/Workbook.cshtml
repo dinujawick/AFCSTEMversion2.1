@@ -2759,7 +2759,7 @@
 
     <!--Activity-->
     <div class="row containRowU2">
-        <h3><b>AFCW STEM ID PROFILESL Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
+        <h3><b>AFCW STEM ID PROFILES: Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
 
         <div id="innerBorder" style="width:100%;">
             <div class="row containInside">
@@ -2820,6 +2820,7 @@
                     <div class="row radio-group" id="stemIDMap" style="margin-top:25px;"></div>
                     <div class="row">
                         <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-top:25px;margin-right:25px;margin-bottom:25px;position:relative;float:right;">Get My Players</button>
+                        <a class="btn btn-outline-primary" style="margin-top: 25px; margin-right: 25px; margin-bottom: 25px; position: relative;" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
                     </div>
                 </div>
             </div>
@@ -4552,27 +4553,35 @@
                     Task: plot the heights of Defenders & Midfielders. Identify the outliers. <br /><br /><br /><br />
                     <b> Defenders:</b>
                 </p>
+                <img style="width:100px;height:100px;float:right;margin-right:25px" onclick="showtip1()" src="~/images/Workbooklet/tooltip.png" />
+                <p id="tooltip2" class="description" style="visibility:hidden">
+                    •To plot on the graph, click the desired players name on the table, then plot.
+                    <br />
+                    •To remove , press the clear graph button.
+
+
+                </p>
                 <div class="row containInside">
                     <svg id="svgTwo" style="float:right;left:200px;cursor:pointer;margin-right:50px;" width="1000" height="700" onclick="graphClick1(evt)">
-                    <rect x="200" y="50" height="585" width="2"></rect>
-                    <rect x="200" y="635" height="2" width="900"></rect>
-                    <text x="170" y="50" fill="black">205</text>
-                    <text x="170" y="115" fill="black">200</text>
-                    <text x="170" y="180" fill="black">195</text>
-                    <text x="170" y="245" fill="black">190</text>
-                    <text x="170" y="310" fill="black">185</text>
-                    <text x="170" y="375" fill="black">180</text>
-                    <text x="170" y="440" fill="black">175</text>
-                    <text x="170" y="505" fill="black">170</text>
-                    <text x="170" y="570" fill="black">165</text>
-                    <text x="170" y="635" fill="black">160</text>
-                    <g id="lairdG"></g>
-                    <g id="hartiganG"></g>
-                    <g id="tahliaG"></g>
-                    <g id="smithG"></g>
-                    <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
-                    <text x="500" y="690" fill="black">Players</text>
-                </svg>
+                        <rect x="200" y="50" height="585" width="2"></rect>
+                        <rect x="200" y="635" height="2" width="900"></rect>
+                        <text x="170" y="50" fill="black">205</text>
+                        <text x="170" y="115" fill="black">200</text>
+                        <text x="170" y="180" fill="black">195</text>
+                        <text x="170" y="245" fill="black">190</text>
+                        <text x="170" y="310" fill="black">185</text>
+                        <text x="170" y="375" fill="black">180</text>
+                        <text x="170" y="440" fill="black">175</text>
+                        <text x="170" y="505" fill="black">170</text>
+                        <text x="170" y="570" fill="black">165</text>
+                        <text x="170" y="635" fill="black">160</text>
+                        <g id="lairdG"></g>
+                        <g id="hartiganG"></g>
+                        <g id="tahliaG"></g>
+                        <g id="smithG"></g>
+                        <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
+                        <text x="500" y="690" fill="black">Players</text>
+                    </svg>
                     <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('Two'),saveWorkbook()">Clear Graph</button>
                 </div>
                 <table class="table table-bordered" style="width:25%" id="act12table2">
@@ -4621,7 +4630,7 @@
                     <g id="mckayG"></g>
                 </svg>
                 <button class="btn btn-outline-primary" style="margin-bottom:50px;margin-left:15px;" onclick="clearGraph('Three'),saveWorkbook()">Clear Graph</button>
-                
+
                 <table class="table table-bordered" style="width:25%" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
                         <td>Player</td>
@@ -4640,14 +4649,11 @@
                         <td>188</td>
                     </tr>
                     <tr>
-                        <td onclick="playerGraph(this)" style="        background-color: #41ad48;
-        cursor: pointer;
-        color: white;
-">McKay</td>
+                        <td onclick="playerGraph(this)" style="background-color: #41ad48;cursor: pointer;color: white;">McKay</td>
                         <td>181</td>
                     </tr>
                 </table>
-                
+
                 <div class="row containInside">
                     <label id="question" style="margin-top:25px;" for="act14con">How do outliers change our conclusions on positional requirements?</label>
                     <textarea onchange="saveWorkbook()" id="act14con" rows="2"></textarea>
@@ -5152,14 +5158,23 @@
                         To plot the coordinates, click on the data on a certain column, then click on the graph to plot <br /> that point.
                     </b>
                 </p>
+              
+            
+              
+           
+                <div class="description" id="tooltip" style="visibility:hidden;position:absolute;margin-left:15px;">
+                    Click the square to select a line or a point.
+                    <br />•To Draw a point, click the graph <br />•To Draw a line, click two positions on the graph
+                    
+                </div>
 
+                <div class="description" style="margin-left: 480px" id="drawLine"><b>Drawing a point:</b></div>
+                <div id="pointdrawn"class="description" style="margin-left:510px">(-1,-1)</div>
+                <div class="description" id="linebox" style="background-color:blue;width:75px;height:75px;margin-left:500px;text-align:center;padding: 20px 0" onclick="drawLineSwap()">o</div>
+                    <img style="width:100px;height:100px;float:right;margin-right:25px" onclick="showtip()"src="~/images/Workbooklet/tooltip.png" />
                 <br />
                 <br />
-                <div id="description" style="margin-left:15px;" onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
-                <div width="50px" height="50px"></div>
-                <br />
-                <br />
-                <div class="description" style="margin-left:15px;" id="drawLine"><b>Drawing a point</b></div>
+                
                 <br />
                 <br />
                 <br />
@@ -6459,8 +6474,25 @@
 <script>
 
 
+    function showtip() {
+        if (document.getElementById("tooltip").style.visibility != "visible") {
+            document.getElementById("tooltip").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("tooltip").style.visibility = "hidden";
+        }
+        
+    }
 
+    function showtip1() {
+        if (document.getElementById("tooltip2").style.visibility != "visible") {
+            document.getElementById("tooltip2").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("tooltip2").style.visibility = "hidden";
+        }
 
+    }
 
     function onLoad() {
         var table = document.getElementById('act1Table1');
@@ -6873,10 +6905,16 @@
     function selectPlay(e) {
         if (e.innerHTML == "(-1,-1)" || e.innerHTML == "(-6,-3)" || e.innerHTML == "(-6,-7)" || e.innerHTML == "(-2,-7)") {
             playColour = "blue";
+            document.getElementById("linebox").style.backgroundColor = "blue";
+            document.getElementById("pointdrawn").innerHTML = e.innerHTML;
+            
         }
 
         else {
             playColour = "red";
+            document.getElementById("linebox").style.backgroundColor = "red";
+            document.getElementById("pointdrawn").innerHTML = e.innerHTML;
+
         }
 
         playText = e.innerHTML;
@@ -6901,11 +6939,16 @@
         if (isPoint) {
             document.getElementById("quad3").setAttribute("onclick", "lineDraw(evt);");
             document.getElementById("drawLine").innerHTML = "Drawing a line"
+            document.getElementById("linebox").innerHTML = "/"
+            document.getElementById("pointdrawn").innerHTML = "&nbsp";
+
             isPoint = false;
         }
         else {
             document.getElementById("quad3").setAttribute("onclick", "quadClick(evt);")
-            document.getElementById("drawLine").innerHTML = "Drawing a point"
+            document.getElementById("drawLine").innerHTML = "Drawing a point:"
+            document.getElementById("linebox").innerHTML = "o"
+            document.getElementById("pointdrawn").innerHTML = playText;
             isPoint = true;
         }
 
@@ -6916,6 +6959,9 @@
         var e = evt.target.parentNode;
         if (e.getAttribute('id') != "quad3") {
             e = evt.target.parentNode.parentNode;
+            if (e.getAttribute('id') != "quad3") {
+                e = evt.target;
+            }
         }
         var dim = e.getBoundingClientRect();
         var zoom = window.getComputedStyle(document.body).zoom
@@ -6923,26 +6969,28 @@
         var y = evt.clientY/zoom - dim.top;
 
 
+        if (x < 946 && y < 1032) {
+            if (lineCount == 0) {
+                lineCount++
+                line1X = x;
+                line1Y = y;
+            }
 
-        if (lineCount == 0) {
-            lineCount++
-            line1X = x;
-            line1Y = y;
+            else {
+                var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", x);
+                line.setAttribute("x2", line1X);
+                line.setAttribute("y1", y);
+                line.setAttribute("y2", line1Y);
+                line.setAttribute("stroke", playColour);
+                line.setAttribute("stroke-width", "2");
+                line.setAttribute("stroke-dasharray", "6");
+                document.getElementById('quad3lines').appendChild(line);
+                lineCount--;
+                saveWorkbook();
+            }
         }
-
-        else {
-            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", x);
-            line.setAttribute("x2", line1X);
-            line.setAttribute("y1", y);
-            line.setAttribute("y2", line1Y);
-            line.setAttribute("stroke", playColour);
-            line.setAttribute("stroke-width", "2");
-            line.setAttribute("stroke-dasharray", "6");
-            document.getElementById('quad3lines').appendChild(line);
-            lineCount--;
-            saveWorkbook();
-        }
+       
 
     }
 
@@ -6952,6 +7000,9 @@
         var e = evt.target.parentNode;
         if (e.getAttribute('id') != "quad3") {
             e = evt.target.parentNode.parentNode;
+            if (e.getAttribute('id') != "quad3") {
+                e = evt.target;
+            }
         }
         var zoom = window.getComputedStyle(document.body).zoom;
         console.log(e);
