@@ -198,8 +198,8 @@
 
 <style>
     body{
-        zoom: 70%;
-        -moz-transform: scale(0.7);
+        zoom: .75   !important;
+        -moz-transform: scale(0.75);
         -moz-transform-origin: left top;
     }
 
@@ -483,7 +483,7 @@
     }
 
     #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act11table1 th, #act12table1 td,
-    #act12table1 th, #act12table2 td, #act12table2 th #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
+    #act12table1 th, #act12table2 td, #act12table2 th, #act13table1 td, #act13table1 th, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
     #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td,
     #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td,
     #act17table6 td, #act17table7 td, #act17table7 th, #act6Table4 td, #act6Table3 td {
@@ -1106,6 +1106,7 @@
         overflow-x: hidden;
         padding-top: 20px;
         cursor: pointer;
+        
     }
 
     #myProgress {
@@ -1251,12 +1252,12 @@
             <li>
                 <a class="nav-link" href="#act17" id="act17bar" style="color:#e31937;">Activity 17</a>
             </li>
-            <br />
+            
             <li>
-                <div style="margin-bottom:5px;color:white">Completion</div>
+                <div style="margin-bottom:5px;margin-top:25px;color:white">Completion</div>
                 <div id="myProgress">
 
-                    <div id="myBar"><div style="color:black;margin-left:135px" id="myBarNum">0%</div></div>
+                    <div id="myBar"><div style="color:black;margin-left:135px;" id="myBarNum">0%</div></div>
                 </div>
             </li>
 
@@ -1780,7 +1781,7 @@
 
                     <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
                     <textarea onchange="saveWorkbook()" id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
-                    <img style="float:right;width:35%" src="~/images/Workbooklet/Picture5.jpg" />
+                    <img name="anneH" style="float:right;width:35%" src="~/images/Workbooklet/Picture5.jpg" />
                     <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
                     <textarea onchange="saveWorkbook()" id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
@@ -1791,6 +1792,7 @@
 
                     <label class="areaLabel" for="lenGS2">GS Area = </label>
                     <input onchange="saveWorkbook()" type="number" id="lenGS2" name="Length" />
+                    <label id="description" style="float:right;margin-right:100px" for="anneH">Anne Hatchard</label>
                     <label class="areaLabel" for="widGS2">m x</label>
                     <input onchange="saveWorkbook()" type="number" id="widGS2" name="Width" />
                     <label class="areaLabel"> m</label><br />
@@ -2541,6 +2543,7 @@
                 <br />
 
                 <img id="TexImage" src="~/images/Unit1/Activity 5/texwact5.jpeg" />
+                <label id="description" style="float:left;margin-top:150px" for="TexImage">Tex Walker</label>
                 <div style="float:right">
                     <label id="question" for="act5q3" style="font-size: 18px;">In what year was Tex’s highest goal per game average?</label>
                     <br />
@@ -2761,8 +2764,10 @@
         <div id="innerBorder" style="width:100%;">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <img style="margin-left:250px;height:35%"src="~/images/Workbooklet/heightpic1.jpg" />
+                    <img style="height:35%" src="~/images/Workbooklet/heightpic1.jpg" />
+                    <label style="float:left;margin-top:15%;margin-left:50px;" id="description">Chelsea Randall</label>
                     <img style="margin-left:100px;height:35%" src="~/images/Workbooklet/heightpic2.jpg" />
+                    <label style="float: right; margin-right: 250px; margin-top: 50px" id="description">Ailish Considine</label>
                     <p id="question" style="margin-top:25px;"><b>Height Analysis</b></p>
                     <br />
 
@@ -3773,7 +3778,7 @@
                     Individually take it in turns and have 1 shot from each of the positions and record your results as a ‘Goal or Behind’<br /><br />
                     Record Sheet:
                 </p>
-
+                <img style="float:right;width:45%" src="~/images/Workbooklet/cones.png" />
                 <table style="width:50%" id="act10table1">
                     <tr id="firstrow" style="background-color:#002b5c; color:white;">
                         <th>POSITION:</th>
@@ -3840,26 +3845,27 @@
 
                 </table>
 
+
                 <div class="row containInside" style="margin-top:25px;">
                     <p id="description">
                         <b>Analysis Questions</b><br />
                     </p>
-                    
+
                     <label id="question" for="act10q1" style="font-size: 18px; width:100%;">
                         What was the main factor that affected your accuracy? How can you improve this?
                     </label>
-                    
+
                     <textarea onchange="saveWorkbook()" id="act10q1" name="act10q1" rows="3" style="width:65%;"></textarea>
-                    
+
 
                     <label id="question" for="act10q2" style="margin-top:15px;">
                         Explain what factors affect AFL players’ accuracy in a real AFL game. How are these different to the game <br />
                         you just played?
                     </label>
-                    
+
                     <textarea onchange="saveWorkbook()" id="act10q2" name="act10q2" rows="4" style="width:65%;"></textarea>
-                    
-                    
+
+
                 </div>
                 <div style="width: 100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
                     <button id="act10btn1" class="btn btn-outline-primary" style="margin-right:25px;" onclick="checkActivity10P1(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
@@ -4300,31 +4306,31 @@
                 
                 <table class="table table-bordered" style="width:95%;text-align:center" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
-                        <th>FOOD</th>
-                        <th>MINUTES PLAYING AFL TO<br />USE THE ENERGY IN A:</th>
-                        <th>MINUTES RESTING AT <br />HALF TIME TO USE THE<br /> ENERGY IN A:</th>
-                        <th>MINUTES TEACHING A <br /> STEM CLASS TO USE THE <br /> ENERGY IN A:</th>
+                        <th><br/>FOOD</th>
+                        <th>MINUTES PLAYING AFL TO USE THE ENERGY IN A:</th>
+                        <th>MINUTES RESTING AT HALF TIME TO USE THE<br /> ENERGY IN A:</th>
+                        <th>MINUTES TEACHING A STEM CLASS TO USE THE <br /> ENERGY IN A:</th>
                     </tr>
                     <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/bananaImg.jpg" /><br />Banana 416kJ</td>
-                        <td><input onchange="saveWorkbook()" type="number" /></td>
-                        <td><input onchange="saveWorkbook()" type="number" /></td>
-                        <td><input onchange="saveWorkbook()" type="number" /></td>
-                    </tr>
-                    <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/marsImg.jpg" /><br />Mars Bar 1007kJ</td>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/bananaImg.jpg" /><br />Banana 416kJ</td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                     <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/pieImg.jpg" /><br />Meat Pie 1951kJ</td>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/marsImg.jpg" /><br />Mars Bar 1007kJ</td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                     <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/snakeImg.jpg" /><br />1 Lolly Snake 140kJ</td>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/pieImg.jpg" /><br />Meat Pie 1951kJ</td>
+                        <td><input onchange="saveWorkbook()" type="number" /></td>
+                        <td><input onchange="saveWorkbook()" type="number" /></td>
+                        <td><input onchange="saveWorkbook()" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/snakeImg.jpg" /><br />1 Lolly Snake 140kJ</td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
@@ -4425,8 +4431,9 @@
                             <td>Smallest</td>
                         </tr>
                     </table>
-
+                    <br/>
                     <img id="wayneImg" src="~/images/Workbooklet/wayneImg.png" />
+                    <label style="float:right" id="description">Wayne Milera</label>
                 </div>
 
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -4466,7 +4473,7 @@
                         Class Activity: Plot the players height and weight as a class on the scatterplot. Record the results in your
                         student workbook.
                     </p>
-                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('One')">Clear Graph</button>
+                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('One'),saveWorkbook()">Clear Graph</button>
                     <svg id="svgOne" style="float:right;left:100px;cursor:pointer;margin-right:50px;" width="1000" height="700" onclick="graphClick(evt)">
                         <text x="170" y="50" fill="black">110</text>
                         <text x="170" y="125" fill="black">105</text>
@@ -4566,7 +4573,7 @@
                     <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
                     <text x="500" y="690" fill="black">Players</text>
                 </svg>
-                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('Two')">Clear Graph</button>
+                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('Two'),saveWorkbook()">Clear Graph</button>
                 </div>
                 <table class="table table-bordered" style="width:25%" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
@@ -4613,7 +4620,7 @@
                     <g id="gibbsG"></g>
                     <g id="mckayG"></g>
                 </svg>
-                <button class="btn btn-outline-primary" style="margin-bottom:50px;margin-left:15px;" onclick="clearGraph('Three')">Clear Graph</button>
+                <button class="btn btn-outline-primary" style="margin-bottom:50px;margin-left:15px;" onclick="clearGraph('Three'),saveWorkbook()">Clear Graph</button>
                 
                 <table class="table table-bordered" style="width:25%" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
@@ -5149,6 +5156,7 @@
                 <br />
                 <br />
                 <div id="description" style="margin-left:15px;" onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
+                <div width="50px" height="50px"></div>
                 <br />
                 <br />
                 <div class="description" style="margin-left:15px;" id="drawLine"><b>Drawing a point</b></div>
@@ -5164,7 +5172,7 @@
                 <br />
                 <br />
 
-                <button class="btn btn-outline-primary" style="margin-bottom:20px;margin-left:25px;"  onclick="clearQuad3()">Clear Graph</button>
+                <button class="btn btn-outline-primary" style="margin-bottom:20px;margin-left:25px;"  onclick="clearQuad3(),saveWorkbook()">Clear Graph</button>
 
                 <div id="quad3div">
                     <svg id="quad3" onclick="quadClick(evt)" style="position:relative;margin-left:25px;" width="1100" height="1050">
@@ -5184,6 +5192,22 @@
 
                         <g id="quad3lines"></g>
                         <g id="quad3points"></g>
+                        <line x1="86.99" y1="471.229" x2="86.99" y2="259.229" style="stroke:yellow;stroke-width:2;stroke-dasharray:6" />
+                        <line x1="86.99" y1="259.229" x2="172" y2="129.89" style="stroke:yellow;stroke-width:2;stroke-dasharray:6" />
+                        <line x1="301.66" y1="341.89" x2="172" y2="129.89" style="stroke:yellow;stroke-width:2;stroke-dasharray:6" />
+                        <circle r="20" cx="86.99" cy="471.229" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <circle r="20" cx="86.99" cy="259.229" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <circle r="20" cx="172" cy="129.89" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <circle r="20" cx="301.66" cy="341.89" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <text x="80.99" y="477.229">X</text>
+                        <text x="111" y="477.229">(-9,1)</text>
+                        <text x="111" y="259.22">(-9,6)</text>
+                        <text x="197" y="129.89">(-7,9)</text>
+                        <text x="325" y="341.89">(-4,4)</text>
+                        <text x="80.99" y="265.229">1X</text>
+                        <text x="166" y="135.89">2X</text>
+                        <text x="294.66" y="347.89">X</text>
+
 
                     </svg>
                 </div>
@@ -6433,6 +6457,12 @@
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
+
+
+
+
+
+
     document.onload = function () {
         console.log('load');
         var table = document.getElementById('act1Table1');
