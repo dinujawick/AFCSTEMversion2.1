@@ -197,7 +197,7 @@
 }
 
 <style>
-    body {
+    body{
         zoom: 70%;
         -moz-transform: scale(0.7);
         -moz-transform-origin: left top;
@@ -6619,10 +6619,13 @@
         if (e.getAttribute('id') != "svgOne") {
             e = evt.target.parentNode.parentNode;
         }
-        var dim = e.getBoundingClientRect();
-
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
+        
+        var zoom = window.getComputedStyle(document.body).zoom
+        var dim = e.getBoundingClientRect() ;
+        
+        var x = (evt.clientX/zoom - dim.left)
+        var y = (evt.clientY/zoom - dim.top)
+        
 
         if (x > 200 && y < 654.5 && y > 50) {
             var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -6663,8 +6666,10 @@
     function graphClick1(evt) {
         var e = evt.target;
         var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
+
+        var zoom = window.getComputedStyle(document.body).zoom;
+        var x = evt.clientX/zoom - dim.left;
+        var y = evt.clientY/zoom - dim.top;
 
         if (x > 200 && y < 654.5 && y > 50) {
             var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -6730,9 +6735,10 @@
 
     function graphClick2(evt) {
         var e = evt.target;
+        var zoom = window.getComputedStyle(document.body).zoom
         var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
+        var x = evt.clientX/zoom - dim.left;
+        var y = evt.clientY/zoom - dim.top;
 
         if (x > 200 && y < 654.5 && y > 50) {
             var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -6884,9 +6890,9 @@
             e = evt.target.parentNode.parentNode;
         }
         var dim = e.getBoundingClientRect();
-
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
+        var zoom = window.getComputedStyle(document.body).zoom
+        var x = evt.clientX/zoom - dim.left;
+        var y = evt.clientY/zoom - dim.top;
 
 
 
@@ -6919,11 +6925,11 @@
         if (e.getAttribute('id') != "quad3") {
             e = evt.target.parentNode.parentNode;
         }
-
+        var zoom = window.getComputedStyle(document.body).zoom;
         console.log(e);
         var dim = e.getBoundingClientRect();
-        var x = evt.clientX - dim.left;
-        var y = evt.clientY - dim.top;
+        var x = evt.clientX/zoom - dim.left;
+        var y = evt.clientY/zoom - dim.top;
 
 
 
