@@ -145,7 +145,7 @@
 <h1 id="titlecard" style="        font-family: 'Titillium Web', sans-serif;
         text-align: center;
         color: #002b5c;">
-     Select Your Team! 
+    Select Your Team!
 </h1>
 
 
@@ -1201,10 +1201,10 @@
                     @foreach (var person in allPlayers)
                     {
                         @if (team != null && (person.ID == team.DEF1 || person.ID == team.DEF2 || person.ID == team.DEF3 || person.ID == team.DEF4 ||
-                                   person.ID == team.DEF5 || person.ID == team.DEF6 || person.ID == team.MID1 || person.ID == team.MID2 ||
-                                   person.ID == team.MID3 || person.ID == team.MID4 || person.ID == team.RUCK1 || person.ID == team.RUCK2 ||
-                                   person.ID == team.FWD1 || person.ID == team.FWD2 || person.ID == team.FWD3 || person.ID == team.FWD4 ||
-                                   person.ID == team.FWD5 || person.ID == team.FWD6))
+                                  person.ID == team.DEF5 || person.ID == team.DEF6 || person.ID == team.MID1 || person.ID == team.MID2 ||
+                                  person.ID == team.MID3 || person.ID == team.MID4 || person.ID == team.RUCK1 || person.ID == team.RUCK2 ||
+                                  person.ID == team.FWD1 || person.ID == team.FWD2 || person.ID == team.FWD3 || person.ID == team.FWD4 ||
+                                  person.ID == team.FWD5 || person.ID == team.FWD6))
                         {
                             <tr style="" id="Stats @person.ID">
                                 <td class="position">@person.Position</td>
@@ -1439,23 +1439,40 @@
             <label>Matches</label>
             <input id="editMatches" type="number" />
             <br />
+            <form id="imgform" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Crowball">
+                <input type="file" name="imgfile" />
+                <input type="submit" value="Update Player" />
+            </form>
 
-     
 
-            <button style="float:right" id="updatePlayer" onclick="updatePlayer()">Update Player</button>
+            
 
 
-            </div>
         </div>
+    </div>
     <br />
-    <br/>
-    <br/>
+    <br />
+    <br />
     <br />
     <br />
     <br />
 </div>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
+
+
+
+    $('#imgform').submit(function (event) {
+        var formId = this.id,
+            form = this;
+        updatePlayer();
+        event.preventDefault();
+        
+        setTimeout(function () {
+            form.submit();
+        }, 3000);
+    }); 
 
     hideAdminDiv();
     colorRow()
@@ -1499,6 +1516,8 @@
             }
         }
     }
+
+
 
     function updatePos() {
         var table = document.getElementById("selectedTable");
@@ -2169,18 +2188,18 @@
                 data: player,
                 traditional: true
             }).done(function (data) {
-               
-         
+                console.log("done");
+                
 
 
-                location.reload();
+
             }).fail(function (jqXhr, textStatus, errorThrown) {
                 alert("error");
             });
         }
 
-      
-    
+
+
 
 
 

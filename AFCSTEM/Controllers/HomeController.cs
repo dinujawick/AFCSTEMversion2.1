@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AFCSTEM.Models;
-using Microsoft.Extensions.Hosting;
-
-
-using Microsoft.EntityFrameworkCore;
-using System.IO;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+
+
+
 
 namespace AFCSTEM.Controllers
 {
@@ -21,7 +20,8 @@ namespace AFCSTEM.Controllers
         
         private readonly IPlayerRepository _playerRepository;
         private readonly IWorkbookRepository _workbookRepository;
-        private readonly IHostingEnvironment _hostEnviroment;
+
+        private readonly IHostingEnvironment _webhost;
         private readonly ITeamRepository _teamRepository;
         
 
@@ -33,7 +33,7 @@ namespace AFCSTEM.Controllers
             _playerRepository = playerRepository;
             _teamRepository = teamRepository;
             _workbookRepository = workbook;
-            this._hostEnviroment = hostEnviroment;
+            _webhost = hostEnviroment;
         }
 
 
@@ -234,5 +234,34 @@ namespace AFCSTEM.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Crowball(IFormFile imgFile)
+        {
+            if(imgFile != null)
+            {
+                var saveImg = Path.Combine(_webhost.WebRootPath, "images/Players", imgFile.FileName);
+                string imgext = Path.GetExtension(imgFile.FileName);
+                if (imgext == ".jpg" || imgext == ".PNG")
+                {
+                    using (var uploadingimg = new FileStream(saveImg, FileMode.Create))
+                    {
+                        await imgFile.CopyToAsync(uploadingimg);
+                        ViewData["Message"] = "The Select File" + imgFile.FileName + "is saved successfull!";
+                    }
+                }
+                else
+                {
+                    ViewData["Message"] = "Only the image file types .jpg and .png are accepted";
+                }
+                
+            }
+            return View();
+        }
     }
+
+
+
+
 }
