@@ -902,6 +902,12 @@
         border: 3px solid #002b5c;
     }
 
+    #act6PlayerTable td{
+        text-align: center;
+        border: 3px solid #002b5c;
+        width: 19%;
+    }
+
     .card {
         text-align: center;
         margin-top: 20px;
@@ -2812,7 +2818,27 @@
         <div id="innerBorder">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <div class="row radio-group" id="stemIDMap" style="margin-top:25px;"></div>
+                    <div class="row radio-group" id="" style="margin-top:25px;">
+                        <!--stemIDMap-->
+                        <table class="table table-bordered" id="act6PlayerTable">
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="row">
                         <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-top:25px;margin-right:25px;margin-bottom:25px;position:relative;float:right;">Get My Players</button>
                     </div>
@@ -7193,7 +7219,7 @@
                 mouseX = ev.pageX;
                 mouseY = ev.pageY
                 console.log(mouseX + ' ' + mouseY);
-                var color = '#000000';
+                var color = 'black';
                 var size = '6px';
                 $("body").append(
                     $('<div></div>')
@@ -7211,6 +7237,15 @@
 
             }
 
+        });
+
+        $('.row .radio-group .radio').click(function () {
+            console.log('no');
+
+            //$(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+            var val = $(this).innerHTML;
+            console.log(this);
         });
     });
 
@@ -7374,7 +7409,6 @@
         document.getElementById("myBarNum").innerHTML = total * 6.25 + "%";
         elem.style.width = width + "%";
     }
-
 
     // Activity 5 check
     var act5P1Check = false;
@@ -9456,32 +9490,30 @@
                 cardContainer.appendChild(rFrom);
 
                 row1.appendChild(cardContainer);
-            } else {
-
             }
 
+            //Stem ID for Activity 6 part 4
+            if (true) {
+                var table = document.getElementById('act6PlayerTable');
+                for (a = 0; a < table.rows.length; a++) {
+                    var row = table.rows[a];
+                    for (b = 0; b < row.cells.length; b++) {
+                        var cell = row.cells[b];
+                        var hold = cell.innerHTML.split(' ');                        
+                        var newWord = hold[0] + ' ' + hold[1];
 
-            //Stem ID for part 4
-            var divRow = document.getElementById('stemIDMap');
+                        // add to the first row, the first 5 players
+                        if (cell.innerHTML == '' && i < 5 && a == 0) {
+                            cell.innerHTML = pName + ' </br>' + '</br>' + pRFrom;
+                            break;
 
-            if (divRow.childNodes.length < 10) {
-                var cardDiv = document.createElement('DIV');
-                cardDiv.className = 'radio';
-
-
-                var nameDiv = document.createElement("P");
-                var locationDiv = document.createElement("P");
-
-                nameDiv.innerHTML = pName;
-                locationDiv.innerHTML = pRFrom;
-                //cardDiv.innerHTML = pName + pRFrom;
-                //cardDiv.addEventListener("click", playerClicker());
-                cardDiv.appendChild(nameDiv);
-                cardDiv.appendChild(locationDiv);
-
-                divRow.appendChild(cardDiv);
-            } else {
-
+                        // add to the 2nd row, the last 5 players
+                        } else if (cell.innerHTML == '' && i > 4 ){ 
+                            cell.innerHTML = pName + ' </br>' + '</br>' + pRFrom;
+                            break;
+                        }
+                    }                    
+                }
             }
         }
     }
