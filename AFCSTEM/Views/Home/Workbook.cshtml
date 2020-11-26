@@ -501,7 +501,7 @@
     table {
         margin-left: 10px;
         margin-right: 10px;
-        font-family: itcavantgardestd_bk;
+        font-family: itcavantgardestd_bk;        
     }
 
     h3 {
@@ -908,34 +908,22 @@
         width: 19%;
     }
 
+        #act6PlayerTable td:hover{
+            background-color: #002b5c;
+            color: white;
+        }
+
     .card {
-        text-align: center;
-        margin-top: 20px;
-        margin-left: 25px;
-        width: 22%;
-        height: auto;
-        border-color: #a38956;
-        display: block;
-        border-radius: 20px;
-        background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
-    }
-
-    .radio {
-        padding: 10px;
-        text-align: center;
-        font-size: 20px;
-        display: block;
-        margin-top: 20px;
-        margin-left: 15px;
-        border: 2px solid #002b5c;
-        width: 18%;
-        border-radius:20%;
-    }
-
-    .radio.selected {
-        background-color: #002b5c;
-        color: white;
-    }
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 25px;
+            width: 22%;
+            height: auto;
+            border-color: #a38956;
+            display: block;
+            border-radius: 20px;
+            background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
+        }
 
     .imgs {
             width: 60%;
@@ -2823,23 +2811,22 @@
         <div id="innerBorder">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <div class="row radio-group" id="" style="margin-top:25px;">
-                        <!--stemIDMap-->
+                    <div class="row" id="stemIDMapPlayers" style="margin-top:25px;">                        
                         <table class="table table-bordered" id="act6PlayerTable">
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
+                                    <td onclick="mapPlayerClick(this)"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -7200,7 +7187,23 @@
     }
 
     var mapIndex = 0;
+    var mapPlayersArray = [];
+    var mapPlayerName = '';
+    var mapPlayerInitial = '';
 
+    function mapPlayerClick(cell) {        
+        console.log(cell.innerHTML);
+        cell.style.backgroundColor = '#002b5c';
+        cell.style.color = 'white';
+        var hold = cell.innerHTML.split(' ');
+        mapPlayerName = hold[0] + ' ' + hold[1];        
+    }
+
+    function getFirstLetter(name) {
+        console.log(name);
+        var hold = name.split(' ');        
+        mapPlayerInitial = hold[0][0] + hold[1][0];        
+    }
 
     // jquery functions
     jQuery(document).ready(function ($) {
@@ -7302,38 +7305,31 @@
 
         // jquery for activity 6, add dot on map
         $("#map").click(function (ev) {
-            if (mapIndex < 10) {
-                console.log('working');
-                mouseX = ev.pageX;
-                mouseY = ev.pageY
-                console.log(mouseX + ' ' + mouseY);
+            if (mapIndex < 10) {                
+                mouseX = ev.pageX / .75;
+                mouseY = ev.pageY / .75;
+                
                 var color = 'black';
                 var size = '6px';
-                $("body").append(
-                    $('<div></div>')
-                        .css('position', 'absolute')
-                        .css('top', mouseY + 'px')
-                        .css('left', mouseX + 'px')
-                        .css('width', size)
-                        .css('height', size)
-                        .css('background-color', color)
-                        .attr('id', 'mapDot')
-                        .html("hello")
-                )
-                mapIndex++;
-            } else {
 
+                if (mapPlayersArray.indexOf(mapPlayerName) == -1) {                   
+                    mapPlayersArray.push(mapPlayerName);
+                    getFirstLetter(mapPlayerName);
+                    $("body").append(
+                        $('<div></div>')
+                            .css('position', 'absolute')
+                            .css('top', mouseY + 'px')
+                            .css('left', mouseX + 'px')
+                            .css('width', size)
+                            .css('height', size)
+                            .css('background-color', color)
+                            .css('font-size', '20px')
+                            .attr('id', 'mapDot')
+                            .html(mapPlayerInitial)
+                    )
+                    mapIndex++;
+                }
             }
-
-        });
-
-        $('.row .radio-group .radio').click(function () {
-            console.log('no');
-
-            //$(this).parent().find('.radio').removeClass('selected');
-            $(this).addClass('selected');
-            var val = $(this).innerHTML;
-            console.log(this);
         });
     });
 
@@ -9612,14 +9608,33 @@
         console.log(object);
     }
 
-    //method for act 6 part 4. map activity, to reset the player locations
+    //method for act 6 part 4. map activity, to reset the player locations, also resetting the table styling.
     function resetMap() {
+        var table = document.getElementById('act6PlayerTable');
         var index = 0;
+        var cellIndex = 0;
         while (index < mapIndex) {
             $('#mapDot').remove();
+            
+            mapPlayersArray.pop();
+            while (cellIndex < 10) {
+                if (cellIndex < 5) {
+                    var cell = table.rows[0].cells[cellIndex];
+                    cell.style.backgroundColor = 'white';
+                    cell.style.color = '#002b5c';
+                    console.log(cell);
+                } else {
+                    var cell2 = table.rows[1].cells[cellIndex - 5];
+                    cell2.style.backgroundColor = 'white';
+                    cell2.style.color = '#002b5c';
+                    console.log(cell2);
+                }
+                cellIndex++;
+            }
             index++;
         }
         mapIndex = 0;
+        
     }
 
 
