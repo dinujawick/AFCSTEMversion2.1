@@ -243,7 +243,7 @@ namespace AFCSTEM.Controllers
             {
                 var saveImg = Path.Combine(_webhost.WebRootPath, "images/Players", imgFile.FileName);
                 string imgext = Path.GetExtension(imgFile.FileName);
-                if (imgext == ".jpg" || imgext == ".PNG")
+                if (imgext == ".jpg" || imgext == ".PNG" || imgext == ".png")
                 {
                     using (var uploadingimg = new FileStream(saveImg, FileMode.Create))
                     {
