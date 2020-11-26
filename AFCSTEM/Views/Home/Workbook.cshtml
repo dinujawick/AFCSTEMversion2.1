@@ -198,8 +198,8 @@
 
 <style>
     body{
-        zoom: 70%;
-        -moz-transform: scale(0.7);
+        zoom: .75   !important;
+        -moz-transform: scale(0.75);
         -moz-transform-origin: left top;
     }
 
@@ -483,7 +483,7 @@
     }
 
     #act10table1 td, #act10table1 th, #act10table2 td, #act10table2 th, #act10table3 th, #act10table3 td, #act11table1 td, #act11table1 th, #act12table1 td,
-    #act12table1 th, #act12table2 td, #act12table2 th #act13table1 td, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
+    #act12table1 th, #act12table2 td, #act12table2 th, #act13table1 td, #act13table1 th, #act15table1 td, #act15table2 td, #act15table3 td, #act15table4 td, #act15table5 td, #act16table1 td,
     #act16table1 th, #act16table2 th, #act16table3 th, #act16table4 th, #act16table5 th, #act16table6 th, #act16table2 td, #act16table3 td,
     #act16table4 td, #act16table5 td, #act16table6 td, #act17table1 td, #act17table2 td, #act17table3 td, #act17table4 td, #act17table5 td,
     #act17table6 td, #act17table7 td, #act17table7 th, #act6Table4 td, #act6Table3 td {
@@ -1112,6 +1112,7 @@
         overflow-x: hidden;
         padding-top: 20px;
         cursor: pointer;
+        
     }
 
     #myProgress {
@@ -1257,12 +1258,12 @@
             <li>
                 <a class="nav-link" href="#act17" id="act17bar" style="color:#e31937;">Activity 17</a>
             </li>
-            <br />
+            
             <li>
-                <div style="margin-bottom:5px;color:white">Completion</div>
+                <div style="margin-bottom:5px;margin-top:25px;color:white">Completion</div>
                 <div id="myProgress">
 
-                    <div id="myBar"><div style="color:black;margin-left:135px" id="myBarNum">0%</div></div>
+                    <div id="myBar"><div style="color:black;margin-left:135px;" id="myBarNum">0%</div></div>
                 </div>
             </li>
 
@@ -1488,34 +1489,34 @@
                 <div id="act1Field">
                     <div class="row" id="act1-P2R1">
                         <div class="dot forward" id="FP" style="margin-right:60px;margin-top:15px;margin-left:15px;">FP</div>
-                        <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;"></div>
-                        <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-30px;"></div>
-                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:65px;"></div>
-                        <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;"></div>
-                        <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style=""></div>
+                        <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" onclick="act1RemoveTable2(this)" style="margin-right:100px;"></div>
+                        <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:75px;margin-top:-30px;"></div>
+                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:100px;margin-top:65px;"></div>
+                        <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:75px;"></div>
+                        <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style=""></div>
                     </div>
                     <div class="row" id="act1-P2R2">
-                        <div class="dot forward" id="FF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:145px;margin-top:-75px;"></div>
-                        <div class="dot forward" id="CHF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-75px;"></div>
-                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-100px;"></div>
-                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-25px;"></div>
-                        <div class="dot defender" id="CHB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:100px;margin-top:-75px;"></div>
-                        <div class="dot defender" id="FB" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-75px;"></div>
+                        <div class="dot forward" id="FF" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:145px;margin-top:-75px;"></div>
+                        <div class="dot forward" id="CHF" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:50px;margin-top:-75px;"></div>
+                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:100px;margin-top:-100px;"></div>
+                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:75px;margin-top:-25px;"></div>
+                        <div class="dot defender" id="CHB" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:100px;margin-top:-75px;"></div>
+                        <div class="dot defender" id="FB" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-top:-75px;"></div>
                     </div>
                     <div class="row" id="act1-P2R3">
-                        <div class="dot forward" id="FP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:60px;margin-top:-65px;margin-left:15px;"></div>
-                        <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
-                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:50px;margin-top:-95px;"></div>
-                        <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:150px;"></div>
-                        <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-right:75px;margin-top:-50px;"></div>
-                        <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);" style="margin-top:-50px;"></div>
+                        <div class="dot forward" id="FP" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:60px;margin-top:-65px;margin-left:15px;"></div>
+                        <div class="dot forward" id="HFF" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:75px;margin-top:-50px;"></div>
+                        <div class="dot midfield" id="MID" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:50px;margin-top:-95px;"></div>
+                        <div class="dot midfield" id="W" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:150px;"></div>
+                        <div class="dot defender" id="HBF" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-right:75px;margin-top:-50px;"></div>
+                        <div class="dot defender" id="BP" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)" style="margin-top:-50px;"></div>
                     </div>
                 </div>
                 <div class="row" id="act1-P2R4" style="width:100%;display:flex;justify-content:center;align-items:center;">
-                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
-                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"></div>
+                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)"></div>
+                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)"></div>
+                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)"></div>
+                    <div class="dot" id="int" ondragover="allowDrop(event);" ondrop="act1Drop(event);"  onclick="act1RemoveTable2(this)"></div>
                 </div>
                 <br />
                 <p id="description">
@@ -1786,7 +1787,7 @@
 
                     <p style="font-size:15px;margin-top:20px;">Is the goal square actually square? Explain why/why not</p>
                     <textarea onchange="saveWorkbook()" id="act2t4" name="goalSquare" rows="3" style="width:65%;"></textarea>
-                    <img style="float:right;width:35%" src="~/images/Workbooklet/Picture5.jpg" />
+                    <img name="anneH" style="float:right;width:35%" src="~/images/Workbooklet/Picture5.jpg" />
                     <p style="font-size:15px;">What would the dimensions need to be to make the goal square an actual square?</p>
                     <textarea onchange="saveWorkbook()" id="act2t5" name="dimensions" rows="3" style="width:65%;"></textarea>
 
@@ -1797,6 +1798,7 @@
 
                     <label class="areaLabel" for="lenGS2">GS Area = </label>
                     <input onchange="saveWorkbook()" type="number" id="lenGS2" name="Length" />
+                    <label id="description" style="float:right;margin-right:100px" for="anneH">Anne Hatchard</label>
                     <label class="areaLabel" for="widGS2">m x</label>
                     <input onchange="saveWorkbook()" type="number" id="widGS2" name="Width" />
                     <label class="areaLabel"> m</label><br />
@@ -2547,6 +2549,7 @@
                 <br />
 
                 <img id="TexImage" src="~/images/Unit1/Activity 5/texwact5.jpeg" />
+                <label id="description" style="float:left;margin-top:150px" for="TexImage">Tex Walker</label>
                 <div style="float:right">
                     <label id="question" for="act5q3" style="font-size: 18px;">In what year was Tex’s highest goal per game average?</label>
                     <br />
@@ -2762,13 +2765,15 @@
 
     <!--Activity-->
     <div class="row containRowU2">
-        <h3><b>AFCW STEM ID PROFILESL Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
+        <h3><b>AFCW STEM ID PROFILES: Activity 6</b><br /><span style="font-size:20px;">Exploration Task</span></h3>
 
         <div id="innerBorder" style="width:100%;">
             <div class="row containInside">
                 <div class="col-md-12">
-                    <img style="margin-left:250px;height:35%"src="~/images/Workbooklet/heightpic1.jpg" />
+                    <img style="height:35%" src="~/images/Workbooklet/heightpic1.jpg" />
+                    <label style="float:left;margin-top:15%;margin-left:50px;" id="description">Chelsea Randall</label>
                     <img style="margin-left:100px;height:35%" src="~/images/Workbooklet/heightpic2.jpg" />
+                    <label style="float: right; margin-right: 250px; margin-top: 50px" id="description">Ailish Considine</label>
                     <p id="question" style="margin-top:25px;"><b>Height Analysis</b></p>
                     <br />
 
@@ -2841,6 +2846,7 @@
                     </div>
                     <div class="row">
                         <button class="btn btn-outline-primary" onclick="getSTEMID();" style="margin-top:25px;margin-right:25px;margin-bottom:25px;position:relative;float:right;">Get My Players</button>
+                        <a class="btn btn-outline-primary" style="margin-top: 25px; margin-right: 25px; margin-bottom: 25px; position: relative;" asp-area="" asp-controller="Home" asp-action="StemID" target="_blank">Go To STEM ID Profiles</a>
                     </div>
                 </div>
             </div>
@@ -3377,7 +3383,7 @@
                         As a class plot them on a <span style="color:#41ad48;">'Stem'</span> (the first digit or digits) and a <span style="color:#ffd200;">'Leaf'</span>
                         (usually the last digit) graph: <br />
                         For example: If the average goals for AFL were 2.3, <span style="color:#41ad48;">the stem will be 2</span> and
-                        <span style="color:#ffd200;">the left will be 3.</span>
+                        <span style="color:#ffd200;">the leaf will be 3.</span>
                     </p>
                     <img src="~/images/Unit2/Activity9/Act9_Paul.jpg" style="width:100%;" />
                     <p id="description" style="font-size:25px;text-align:center;">Paul Seedsman<br /><span id="description">2019 Goals:</span> <span style="font-size:30px;color:#41ad48;">6</span></p>
@@ -3799,7 +3805,7 @@
                     Individually take it in turns and have 1 shot from each of the positions and record your results as a ‘Goal or Behind’<br /><br />
                     Record Sheet:
                 </p>
-
+                <img style="float:right;width:45%" src="~/images/Workbooklet/cones.png" />
                 <table style="width:50%" id="act10table1">
                     <tr id="firstrow" style="background-color:#002b5c; color:white;">
                         <th>POSITION:</th>
@@ -3866,26 +3872,27 @@
 
                 </table>
 
+
                 <div class="row containInside" style="margin-top:25px;">
                     <p id="description">
                         <b>Analysis Questions</b><br />
                     </p>
-                    
+
                     <label id="question" for="act10q1" style="font-size: 18px; width:100%;">
                         What was the main factor that affected your accuracy? How can you improve this?
                     </label>
-                    
+
                     <textarea onchange="saveWorkbook()" id="act10q1" name="act10q1" rows="3" style="width:65%;"></textarea>
-                    
+
 
                     <label id="question" for="act10q2" style="margin-top:15px;">
                         Explain what factors affect AFL players’ accuracy in a real AFL game. How are these different to the game <br />
                         you just played?
                     </label>
-                    
+
                     <textarea onchange="saveWorkbook()" id="act10q2" name="act10q2" rows="4" style="width:65%;"></textarea>
-                    
-                    
+
+
                 </div>
                 <div style="width: 100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
                     <button id="act10btn1" class="btn btn-outline-primary" style="margin-right:25px;" onclick="checkActivity10P1(this.id), checkActivity10(), loadBar()">Check Activity!!</button>
@@ -4326,31 +4333,31 @@
                 
                 <table class="table table-bordered" style="width:95%;text-align:center" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
-                        <th>FOOD</th>
-                        <th>MINUTES PLAYING AFL TO<br />USE THE ENERGY IN A:</th>
-                        <th>MINUTES RESTING AT <br />HALF TIME TO USE THE<br /> ENERGY IN A:</th>
-                        <th>MINUTES TEACHING A <br /> STEM CLASS TO USE THE <br /> ENERGY IN A:</th>
+                        <th><br/>FOOD</th>
+                        <th>MINUTES PLAYING AFL TO USE THE ENERGY IN A:</th>
+                        <th>MINUTES RESTING AT HALF TIME TO USE THE<br /> ENERGY IN A:</th>
+                        <th>MINUTES TEACHING A STEM CLASS TO USE THE <br /> ENERGY IN A:</th>
                     </tr>
                     <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/bananaImg.jpg" /><br />Banana 416kJ</td>
-                        <td><input onchange="saveWorkbook()" type="number" /></td>
-                        <td><input onchange="saveWorkbook()" type="number" /></td>
-                        <td><input onchange="saveWorkbook()" type="number" /></td>
-                    </tr>
-                    <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/marsImg.jpg" /><br />Mars Bar 1007kJ</td>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/bananaImg.jpg" /><br />Banana 416kJ</td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                     <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/pieImg.jpg" /><br />Meat Pie 1951kJ</td>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/marsImg.jpg" /><br />Mars Bar 1007kJ</td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                     </tr>
                     <tr>
-                        <td><img style="width:60%;height:50%;" src="~/images/Workbooklet/snakeImg.jpg" /><br />1 Lolly Snake 140kJ</td>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/pieImg.jpg" /><br />Meat Pie 1951kJ</td>
+                        <td><input onchange="saveWorkbook()" type="number" /></td>
+                        <td><input onchange="saveWorkbook()" type="number" /></td>
+                        <td><input onchange="saveWorkbook()" type="number" /></td>
+                    </tr>
+                    <tr>
+                        <td><img style="width:50%;height:40%;" src="~/images/Workbooklet/snakeImg.jpg" /><br />1 Lolly Snake 140kJ</td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
                         <td><input onchange="saveWorkbook()" type="number" /></td>
@@ -4451,8 +4458,9 @@
                             <td>Smallest</td>
                         </tr>
                     </table>
-
+                    <br/>
                     <img id="wayneImg" src="~/images/Workbooklet/wayneImg.png" />
+                    <label style="float:right" id="description">Wayne Milera</label>
                 </div>
 
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
@@ -4492,7 +4500,7 @@
                         Class Activity: Plot the players height and weight as a class on the scatterplot. Record the results in your
                         student workbook.
                     </p>
-                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('One')">Clear Graph</button>
+                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('One'),saveWorkbook()">Clear Graph</button>
                     <svg id="svgOne" style="float:right;left:100px;cursor:pointer;margin-right:50px;" width="1000" height="700" onclick="graphClick(evt)">
                         <text x="170" y="50" fill="black">110</text>
                         <text x="170" y="125" fill="black">105</text>
@@ -4571,28 +4579,36 @@
                     Task: plot the heights of Defenders & Midfielders. Identify the outliers. <br /><br /><br /><br />
                     <b> Defenders:</b>
                 </p>
+                <img style="width:100px;height:100px;float:right;margin-right:25px" onclick="showtip1()" src="~/images/Workbooklet/tooltip.png" />
+                <p id="tooltip2" class="description" style="visibility:hidden">
+                    •To plot on the graph, click the desired players name on the table, then plot.
+                    <br />
+                    •To remove , press the clear graph button.
+
+
+                </p>
                 <div class="row containInside">
                     <svg id="svgTwo" style="float:right;left:200px;cursor:pointer;margin-right:50px;" width="1000" height="700" onclick="graphClick1(evt)">
-                    <rect x="200" y="50" height="585" width="2"></rect>
-                    <rect x="200" y="635" height="2" width="900"></rect>
-                    <text x="170" y="50" fill="black">205</text>
-                    <text x="170" y="115" fill="black">200</text>
-                    <text x="170" y="180" fill="black">195</text>
-                    <text x="170" y="245" fill="black">190</text>
-                    <text x="170" y="310" fill="black">185</text>
-                    <text x="170" y="375" fill="black">180</text>
-                    <text x="170" y="440" fill="black">175</text>
-                    <text x="170" y="505" fill="black">170</text>
-                    <text x="170" y="570" fill="black">165</text>
-                    <text x="170" y="635" fill="black">160</text>
-                    <g id="lairdG"></g>
-                    <g id="hartiganG"></g>
-                    <g id="tahliaG"></g>
-                    <g id="smithG"></g>
-                    <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
-                    <text x="500" y="690" fill="black">Players</text>
-                </svg>
-                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('Two')">Clear Graph</button>
+                        <rect x="200" y="50" height="585" width="2"></rect>
+                        <rect x="200" y="635" height="2" width="900"></rect>
+                        <text x="170" y="50" fill="black">205</text>
+                        <text x="170" y="115" fill="black">200</text>
+                        <text x="170" y="180" fill="black">195</text>
+                        <text x="170" y="245" fill="black">190</text>
+                        <text x="170" y="310" fill="black">185</text>
+                        <text x="170" y="375" fill="black">180</text>
+                        <text x="170" y="440" fill="black">175</text>
+                        <text x="170" y="505" fill="black">170</text>
+                        <text x="170" y="570" fill="black">165</text>
+                        <text x="170" y="635" fill="black">160</text>
+                        <g id="lairdG"></g>
+                        <g id="hartiganG"></g>
+                        <g id="tahliaG"></g>
+                        <g id="smithG"></g>
+                        <text x="100" y="350" fill="black" transform="rotate(270,100,350)">Height (cm)</text>
+                        <text x="500" y="690" fill="black">Players</text>
+                    </svg>
+                    <button class="btn btn-outline-primary" style="margin-bottom:50px" onclick="clearGraph('Two'),saveWorkbook()">Clear Graph</button>
                 </div>
                 <table class="table table-bordered" style="width:25%" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
@@ -4639,8 +4655,8 @@
                     <g id="gibbsG"></g>
                     <g id="mckayG"></g>
                 </svg>
-                <button class="btn btn-outline-primary" style="margin-bottom:50px;margin-left:15px;" onclick="clearGraph('Three')">Clear Graph</button>
-                
+                <button class="btn btn-outline-primary" style="margin-bottom:50px;margin-left:15px;" onclick="clearGraph('Three'),saveWorkbook()">Clear Graph</button>
+
                 <table class="table table-bordered" style="width:25%" id="act12table2">
                     <tr style="background-color:#002b5c; color:white;">
                         <td>Player</td>
@@ -4659,14 +4675,11 @@
                         <td>188</td>
                     </tr>
                     <tr>
-                        <td onclick="playerGraph(this)" style="        background-color: #41ad48;
-        cursor: pointer;
-        color: white;
-">McKay</td>
+                        <td onclick="playerGraph(this)" style="background-color: #41ad48;cursor: pointer;color: white;">McKay</td>
                         <td>181</td>
                     </tr>
                 </table>
-                
+
                 <div class="row containInside">
                     <label id="question" style="margin-top:25px;" for="act14con">How do outliers change our conclusions on positional requirements?</label>
                     <textarea onchange="saveWorkbook()" id="act14con" rows="2"></textarea>
@@ -5171,13 +5184,23 @@
                         To plot the coordinates, click on the data on a certain column, then click on the graph to plot <br /> that point.
                     </b>
                 </p>
+              
+            
+              
+           
+                <div class="description" id="tooltip" style="visibility:hidden;position:absolute;margin-left:15px;">
+                    Click the square to select a line or a point.
+                    <br />•To Draw a point, click the graph <br />•To Draw a line, click two positions on the graph
+                    
+                </div>
 
+                <div class="description" style="margin-left: 480px" id="drawLine"><b>Drawing a point:</b></div>
+                <div id="pointdrawn"class="description" style="margin-left:510px">(-1,-1)</div>
+                <div class="description" id="linebox" style="background-color:blue;width:75px;height:75px;margin-left:500px;text-align:center;padding: 20px 0" onclick="drawLineSwap()">o</div>
+                    <img style="width:100px;height:100px;float:right;margin-right:25px" onclick="showtip()"src="~/images/Workbooklet/tooltip.png" />
                 <br />
                 <br />
-                <div id="description" style="margin-left:15px;" onclick="drawLineSwap()">Click <b>here</b> to draw a line or a point.</div>
-                <br />
-                <br />
-                <div class="description" style="margin-left:15px;" id="drawLine"><b>Drawing a point</b></div>
+                
                 <br />
                 <br />
                 <br />
@@ -5190,7 +5213,7 @@
                 <br />
                 <br />
 
-                <button class="btn btn-outline-primary" style="margin-bottom:20px;margin-left:25px;"  onclick="clearQuad3()">Clear Graph</button>
+                <button class="btn btn-outline-primary" style="margin-bottom:20px;margin-left:25px;"  onclick="clearQuad3(),saveWorkbook()">Clear Graph</button>
 
                 <div id="quad3div">
                     <svg id="quad3" onclick="quadClick(evt)" style="position:relative;margin-left:25px;" width="1100" height="1050">
@@ -5210,6 +5233,22 @@
 
                         <g id="quad3lines"></g>
                         <g id="quad3points"></g>
+                        <line x1="86.99" y1="471.229" x2="86.99" y2="259.229" style="stroke:yellow;stroke-width:2;stroke-dasharray:6" />
+                        <line x1="86.99" y1="259.229" x2="172" y2="129.89" style="stroke:yellow;stroke-width:2;stroke-dasharray:6" />
+                        <line x1="301.66" y1="341.89" x2="172" y2="129.89" style="stroke:yellow;stroke-width:2;stroke-dasharray:6" />
+                        <circle r="20" cx="86.99" cy="471.229" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <circle r="20" cx="86.99" cy="259.229" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <circle r="20" cx="172" cy="129.89" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <circle r="20" cx="301.66" cy="341.89" stroke="yellow" stroke-width="2" fill="white"></circle>
+                        <text x="80.99" y="477.229">X</text>
+                        <text x="111" y="477.229">(-9,1)</text>
+                        <text x="111" y="259.22">(-9,6)</text>
+                        <text x="197" y="129.89">(-7,9)</text>
+                        <text x="325" y="341.89">(-4,4)</text>
+                        <text x="80.99" y="265.229">1X</text>
+                        <text x="166" y="135.89">2X</text>
+                        <text x="294.66" y="347.89">X</text>
+
 
                     </svg>
                 </div>
@@ -6460,7 +6499,39 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
 
-    
+
+    function showtip() {
+        if (document.getElementById("tooltip").style.visibility != "visible") {
+            document.getElementById("tooltip").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("tooltip").style.visibility = "hidden";
+        }
+        
+    }
+
+    function showtip1() {
+        if (document.getElementById("tooltip2").style.visibility != "visible") {
+            document.getElementById("tooltip2").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("tooltip2").style.visibility = "hidden";
+        }
+
+    }
+
+    function onLoad() {
+        var table = document.getElementById('act1Table1');
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j];
+                if (cell.innerHTML.length < 4) {
+                    cell.style.border = 'none'; //'5px solid #002b5c'
+                }
+            }
+        }
+    }
 
     //for drawing quad1,2 and 3;
     var int1 = -11;
@@ -6860,10 +6931,16 @@
     function selectPlay(e) {
         if (e.innerHTML == "(-1,-1)" || e.innerHTML == "(-6,-3)" || e.innerHTML == "(-6,-7)" || e.innerHTML == "(-2,-7)") {
             playColour = "blue";
+            document.getElementById("linebox").style.backgroundColor = "blue";
+            document.getElementById("pointdrawn").innerHTML = e.innerHTML;
+            
         }
 
         else {
             playColour = "red";
+            document.getElementById("linebox").style.backgroundColor = "red";
+            document.getElementById("pointdrawn").innerHTML = e.innerHTML;
+
         }
 
         playText = e.innerHTML;
@@ -6888,11 +6965,16 @@
         if (isPoint) {
             document.getElementById("quad3").setAttribute("onclick", "lineDraw(evt);");
             document.getElementById("drawLine").innerHTML = "Drawing a line"
+            document.getElementById("linebox").innerHTML = "/"
+            document.getElementById("pointdrawn").innerHTML = "&nbsp";
+
             isPoint = false;
         }
         else {
             document.getElementById("quad3").setAttribute("onclick", "quadClick(evt);")
-            document.getElementById("drawLine").innerHTML = "Drawing a point"
+            document.getElementById("drawLine").innerHTML = "Drawing a point:"
+            document.getElementById("linebox").innerHTML = "o"
+            document.getElementById("pointdrawn").innerHTML = playText;
             isPoint = true;
         }
 
@@ -6903,6 +6985,9 @@
         var e = evt.target.parentNode;
         if (e.getAttribute('id') != "quad3") {
             e = evt.target.parentNode.parentNode;
+            if (e.getAttribute('id') != "quad3") {
+                e = evt.target;
+            }
         }
         var dim = e.getBoundingClientRect();
         var zoom = window.getComputedStyle(document.body).zoom
@@ -6910,26 +6995,28 @@
         var y = evt.clientY/zoom - dim.top;
 
 
+        if (x < 946 && y < 1032) {
+            if (lineCount == 0) {
+                lineCount++
+                line1X = x;
+                line1Y = y;
+            }
 
-        if (lineCount == 0) {
-            lineCount++
-            line1X = x;
-            line1Y = y;
+            else {
+                var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", x);
+                line.setAttribute("x2", line1X);
+                line.setAttribute("y1", y);
+                line.setAttribute("y2", line1Y);
+                line.setAttribute("stroke", playColour);
+                line.setAttribute("stroke-width", "2");
+                line.setAttribute("stroke-dasharray", "6");
+                document.getElementById('quad3lines').appendChild(line);
+                lineCount--;
+                saveWorkbook();
+            }
         }
-
-        else {
-            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", x);
-            line.setAttribute("x2", line1X);
-            line.setAttribute("y1", y);
-            line.setAttribute("y2", line1Y);
-            line.setAttribute("stroke", playColour);
-            line.setAttribute("stroke-width", "2");
-            line.setAttribute("stroke-dasharray", "6");
-            document.getElementById('quad3lines').appendChild(line);
-            lineCount--;
-            saveWorkbook();
-        }
+       
 
     }
 
@@ -6939,6 +7026,9 @@
         var e = evt.target.parentNode;
         if (e.getAttribute('id') != "quad3") {
             e = evt.target.parentNode.parentNode;
+            if (e.getAttribute('id') != "quad3") {
+                e = evt.target;
+            }
         }
         var zoom = window.getComputedStyle(document.body).zoom;
         console.log(e);
@@ -7114,9 +7204,7 @@
 
     // jquery functions
     jQuery(document).ready(function ($) {
-        // java script to remove the borders of ACtivity 1 table 1's that have no data on load
         onLoad();
-
         // jquery for activity 10 coin flip
         $('#coin, #coin2').on('click', function () {
 
@@ -9297,6 +9385,8 @@
     }
 
 
+
+
     //function that evaluates the digit and return result
     function solve() {
         let x = document.getElementById("result").value
@@ -9550,7 +9640,7 @@
         var table2 = document.getElementById(id2);
 
         stillEmpty = this.check('act1Table1');
-        //console.log(stillEmpty);
+        console.log(stillEmpty);
 
         // When greater than 21, the table is fully populated.
         if (stillEmpty < 21) {
@@ -9688,39 +9778,6 @@
         saveWorkbook();
         console.log(wrongAnswers);
         console.log("This is the new testing");
-    }
-
-    // method for activity 1 Part 1, Table 1. Removes the cell's that have no data on reload/load of page.
-    function onLoad() {      
-        var table = document.getElementById('act1Table1');
-        for (i = 0; i < table.rows.length; i++) {
-            var row = table.rows[i];            
-            for (j = 0; j < row.cells.length; j++) {
-                var cell = row.cells[j];               
-                if (cell.innerHTML.length < 4) {                    
-                    cell.style.border = 'none'; //'5px solid #002b5c'
-                }
-            }
-        }
-    }
-
-    //method for activity 1 part 1, table 1. on click of cell, removes the player, places it back into table 1
-    function act1RemoveTable(element) {
-        var table = document.getElementById('act1Table1');
-        var text = element.innerHTML;
-        element.innerHTML = '';
-        for (i = 0; i < table.rows.length; i++) {
-            var row = table.rows[i];
-            for (j = 0; j < row.cells.length; j++) {
-                var cell = row.cells[j];
-                if (cell.innerHTML == "" && text != '') {
-                    cell.innerHTML = text;
-                    cell.style.border = '5px solid #002b5c'
-                    text = '';
-                    break;
-                }
-            }
-        }
     }
 
     // Method for activity 1, part 2 to check if the players in the field are in correct positions
@@ -9965,7 +10022,7 @@
                 //}
             }
         }
-        //console.log("is empty " + isEmpty)
+        console.log("is empty " + isEmpty)
         return isEmpty;
     }
 
@@ -10046,7 +10103,7 @@
                 var cell = row.cells[j]
                 if (cell.getAttribute("draggable") == "true") {
 
-                    if (cell.style.visibility == "") {
+                    if (cell.style.visibility == "visible" || cell.style.visibility == "") {
                         t3a1[pos] = "t";
                     }
                     else {
@@ -11393,6 +11450,8 @@
     // method to load the student's answers
     loadWorkbook();
     function loadWorkbook() {
+
+
 
 
          //load activity 1
@@ -12890,6 +12949,47 @@
         
 
     }
+
+    function act1RemoveTable(element) {
+        var table = document.getElementById('act1Table1');
+        var text = element.innerHTML;
+        element.innerHTML = '';
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j];
+                if (cell.innerHTML == "" && text != '') {
+                    cell.innerHTML = text;
+                    cell.style.border = '5px solid #002b5c'
+                    text = '';
+                    saveWorkbook();
+                    break;
+                }
+            }
+        }
+    }
+
+    function act1RemoveTable2(element) {
+        var table = document.getElementById('act1Table3');
+        var text = element.innerHTML;
+        element.innerHTML = '';
+        for (i = 0; i < table.rows.length; i++) {
+            var row = table.rows[i];
+            for (j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j];
+                if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text)) {
+                    cell.style.visibility = "visible"
+               
+                    text = '';
+                    
+                    break;
+                }
+            }
+        }
+        saveWorkbook();
+    }
+
+
 
 
     function deleteItemBool(e) {
