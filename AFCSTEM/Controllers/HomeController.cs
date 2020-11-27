@@ -248,7 +248,7 @@ namespace AFCSTEM.Controllers
                     using (var uploadingimg = new FileStream(saveImg, FileMode.Create))
                     {
                         await imgFile.CopyToAsync(uploadingimg);
-                        ViewData["Message"] = "The Select File" + imgFile.FileName + "is saved successfull!";
+                        ViewData["Message"] = "The Select File " + imgFile.FileName + " is saved successfull!";
                     }
                 }
                 else
