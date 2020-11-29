@@ -13041,9 +13041,19 @@
             var row = table.rows[i];
             for (j = 0; j < row.cells.length; j++) {
                 var cell = row.cells[j];
+                if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text[0]) && cell.innerHTML.includes(text[1])) {
+                    cell.style.visibility = "visible"
+
+
+                    text = '';
+                 
+                    break;
+                   
+                }
                 if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text)) {
                     cell.style.visibility = "visible"
-               
+                    
+             
                     text = '';
                     
                     break;
