@@ -1570,7 +1570,7 @@
                 <br />
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
                     <button class="btn btn-outline-primary" onclick="resetAct1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4', 'act1Table3');" style="margin-right:20px;">Retry Wrong Answers</button>
-                    <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
+                    <button id="act1btn2" class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
                 </div>
             </div>
 
@@ -9678,6 +9678,7 @@
     var act1P1Check = false;
     var act1P2Check = false;
     var act1Check = false;
+   
 
     // Method for activity 1, part 1 to check if the players in the field are in correct positions
     function checkActivity1P1(id1, id2) {
@@ -9983,9 +9984,9 @@
     }
 
     function checkActivity1() {
-        if (act1P1Check == true && act1P2Check) {
+        if (act1P1Check == true && act1P2Check == true) {
             act1Check = true;
-            document.getElementById("act1bar");
+            document.getElementById("act1bar").style.color = "green";
             if (pageLoad) {
                 alert("Activity 1 Completed!");
             }
@@ -11504,7 +11505,14 @@
     }
 
     // method to load the student's answers
-    loadWorkbook();
+    //check if the workbook, has been saved at all yet
+    var testCheck = "@workbook.act11table1"
+    console.log(testCheck)
+    if (testCheck != "") {
+        loadWorkbook();
+    }
+    
+    
     function loadWorkbook() {
 
 
@@ -13034,30 +13042,33 @@
 
     //undo player in table for activity 1 part2
     function act1RemoveTable2(element) {
+        console.log("Calling a")
         var table = document.getElementById('act1Table3');
         var text = element.innerHTML;
+        var bool = true;
         element.innerHTML = '';
         for (i = 0; i < table.rows.length; i++) {
             var row = table.rows[i];
             for (j = 0; j < row.cells.length; j++) {
-                var cell = row.cells[j];
-                if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text[0]) && cell.innerHTML.includes(text[1])) {
-                    cell.style.visibility = "visible"
-
-
-                    text = '';
-                 
-                    break;
-                   
-                }
-                if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text)) {
-                    cell.style.visibility = "visible"
+                if (bool == true) {
+                    var cell = row.cells[j];
                     
-             
-                    text = '';
-                    
-                    break;
+                  
+                    if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text.charAt(0)) == true && cell.innerHTML.includes(text.charAt(1)) == true && (cell.getAttribute("id") == "pos19" || cell.getAttribute("id") == "pos20" || cell.getAttribute("id") == "pos21" || cell.getAttribute("id") == "pos22" )) {
+                        cell.style.visibility = "visible"
+                        text = '';
+                        bool = false;
+                        break;
+
+                    }
+                    else if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text) == true) {
+                        cell.style.visibility = "visible"
+                        text = '';
+                        bool = false;
+                        break;
+                    }
                 }
+               
             }
         }
         saveWorkbook();
@@ -13151,7 +13162,7 @@
     checkActivity17P6("act17btn6");
     checkActivity17();
     loadBar();
-
+    console.log(act1Check);
     //put checks above it
     pageLoad = true;
 </script>
