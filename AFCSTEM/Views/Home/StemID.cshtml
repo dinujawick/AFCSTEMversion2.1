@@ -7,83 +7,94 @@
 }
 
 
-    <style>
-        @@font-face {
-            font-family: Industry_Bold;
-            src: url('../fonts/Industry_Bold.otf') format('opentype');
+<style>
+    @@font-face {
+        font-family: Industry_Bold;
+        src: url('../fonts/Industry_Bold.otf') format('opentype');
+    }
+
+    @@font-face {
+        font-family: Industry_Demi;
+        src: url('../fonts/industry_demi.otf') format('opentype');
+    }
+
+    @@font-face {
+        font-family: itcavantgardestd_bk;
+        src: url('../fonts/itcavantgardestd-bk.otf') format('opentype');
+    }
+
+    .card {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 20%;
+        height: auto;
+        border-color: #a38956;
+        display: block;
+        border-radius: 20px;
+        background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         }
 
-        @@font-face {
-            font-family: Industry_Demi;
-            src: url('../fonts/industry_demi.otf') format('opentype');
-        }
+    .imgs {
+        width: 60%;
+        height: auto;
+        border: 1px solid #a38956;
+        border-radius: 15px;
+    }
 
-        @@font-face {
-            font-family: itcavantgardestd_bk;
-            src: url('../fonts/itcavantgardestd-bk.otf') format('opentype');
-        }
+    #title {
+        color: #e31937;
+        margin-bottom: 2px;
+        font-family: itcavantgardestd_bk;
+    }
 
-        .card {
-            text-align: center;
-            margin-top:20px;
-            margin-left: 50px;
-            width: 20%;
-            height: auto;
-            border-color: #a38956;
-            display: block;
-            border-radius: 20px;
-            background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
-        }
+    #playerNumber {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 35px;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        background-color: #002b5c;
+        padding-top:5px;
+    }
 
-            .card:hover {
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            }
+    h4 {
+        text-align: center;
+        font-size: 20px;
+        font-family: Industry_Bold;
+        font-weight: bold;
+        color: #002b5c;
+    }
 
-        .imgs {
-            width: 60%;
-            height: auto;
-            border: 1px solid #a38956;
-            border-radius: 15px;
-        }
+    p {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 8px;
+        font-family: itcavantgardestd_bk;
+    }
 
-        #title {
-            color: #e31937;
-            margin-bottom: 2px;
-            font-family: itcavantgardestd_bk;
-        }
+    #eachRow {
+        margin-bottom: 25px;
+    }
+</style>
 
-        #playerNumber {
-            color: white;
-            font-size: 20px;
-            text-align: center;
-            margin-left: 35px;
-            margin-top: 10px;
-            border: 1px solid black;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            background-color: #002b5c;
-        }
+<h3 style="color: #002b5c;">AFCW STEM ID Profiles</h3>
 
-        h4 {
-            text-align: center;
-            font-size: 20px;
-            font-family: Industry_Bold;
-            font-weight: bold;
-        }
-
-        p {
-            text-align: center;
-            font-size: 15px;
-            margin-bottom: 8px;
-        }
-
-        #eachRow {
-            margin-bottom: 25px;
-        }
-    </style>
-
-<h3>AFCW STEM ID Profiles</h3>
+<div style="margin-top:25px;">
+    <p style="text-align:left;font-size:18px;color:#002b5c;">
+        <span style="font-weight:bold;">Task:  </span><br /> 
+        Select 10 players from the selections below. <br /> 
+        Once 10 have been selected click the confirm button at the bottom of the page <br />         
+    </p>
+</div>
 
 <div class="row" style="margin-bottom:50px;margin-top:25px;border:black 1px solid;">
     <div class="col-md-12">
@@ -188,7 +199,7 @@
                     <p>Happy Valley / Glenelg (SA)</p>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="row" id="eachRow">
@@ -492,7 +503,7 @@
                 <button class="btn btn-outline-primary" id="deny" onclick="btnClicked(this.id);" style="margin-left:35px;">Reselect players</button>
             </div>
             <div class="col-md-2"></div>
-            
+
         </div>
 
     </div>
@@ -509,7 +520,7 @@
 
         if (total == 0) {
             players[0] = card;
-            card.style.border = "5px blue solid";
+            card.style.border = "5px #002b5c solid";
             total = total + 1;
         } else if (total > 0 && total < 10) {
             for (i = 0; i < total; i++) {
@@ -523,23 +534,23 @@
             }
             if (same != 1) {
                 players[total] = card;
-                card.style.border = "5px blue solid";
+                card.style.border = "5px #002b5c solid";
                 total = total + 1;
-            }
+            }            
         } else { //when total is 10
             var cardIDArray = [];
             document.getElementById('buttonRow').hidden = false;
             document.getElementById('buttonRow').scrollIntoView();
 
             if (clicked == 1) {//    When all 10 players are selected and when the confirm button is pressed //
-                for (i = 0; i < total; i++) {                    
+                for (i = 0; i < total; i++) {
                     var holdArray = [];
                     var playerID = players[i].id
                     var parent = document.getElementById(playerID);
                     var child = parent.childNodes;
 
                     var pNumber = child[1].childNodes[0].innerHTML;
-                    
+
                     var pIMG = child[3];
                     console.log(child[3]);
                     var imgSrc = pIMG.src.slice(23, pIMG.src.length);
@@ -577,8 +588,20 @@
 
                     localStorage.setItem(i, holdArray);
                 }
+                alert('You have chosen your 10 players, return to workbook');
             } else if (clicked == 2) {
-
+                var indexHold = 0;
+                for (a = 0; a < players.length; a++) {
+                    var current = players[a];
+                    current.style.border = "1px #a38956 solid";
+                    total = 0;
+                    clicked = 0;
+                }
+                while (indexHold < 10) {
+                    players.pop;
+                    indexHold++;
+                    console.log(players);
+                }                              
             } else {
                 for (i = 0; i < total; i++) { // check if currently selected player is already selected
                     var hold = players[i];
@@ -589,7 +612,6 @@
                     }
                 }
             }
-            
         }
     }
 
