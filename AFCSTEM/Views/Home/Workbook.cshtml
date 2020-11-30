@@ -198,6 +198,7 @@
 
 <style>
 
+    /*Fonts for the document*/
     @@font-face {
         font-family: Industry_Bold;
         src: url('../fonts/Industry_Bold.otf') format('opentype');
@@ -213,6 +214,7 @@
         src: url('../fonts/itcavantgardestd-bk.otf') format('opentype');
     }
 
+    /*Animations for activity 15*/
     @@keyframes play1quad2 {
         0% {
             opacity: 1;
@@ -432,8 +434,8 @@
     /* whole document */
     
     body {
-        zoom: .75 !important;
-        -moz-transform: scale(0.75);
+        zoom: .74 !important;
+        -moz-transform: scale(0.74);
         -moz-transform-origin: left top;
     }
 
@@ -1567,7 +1569,7 @@
                 <br />
                 <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:15px;">
                     <button class="btn btn-outline-primary" onclick="resetAct1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4', 'act1Table3');" style="margin-right:20px;">Retry Wrong Answers</button>
-                    <button class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
+                    <button id="act1btn2" class="btn btn-outline-primary" onclick="checkActivity1P2('act1-P2R1', 'act1-P2R2', 'act1-P2R3', 'act1-P2R4');">Check Activity!!</button>
                 </div>
             </div>
 
@@ -2857,7 +2859,7 @@
 
             <!--table 1-->
             <div class="row containInside">
-                <table class="table table-bordered" id="act6Table3" style="margin-right:25px;">
+                <table class="table table-bordered" id="act6Table3" style="margin-right:25px;table-layout:fixed">
                     <thead>
                         <tr id="firstrow">
                             <th colspan="2">SOUTH AUSTRALIA</th>
@@ -2898,7 +2900,7 @@
 
             <!--table 2-->
             <div class="row containInside">
-                <table class="table table-bordered" id="act6Table4" style="margin-right: 25px;">
+                <table class="table table-bordered" id="act6Table4" style="margin-right: 25px;table-layout:fixed;">
                     <thead>
                         <tr id="firstrow">
                             <th colspan="2">WESTERN AUSTRALIA</th>
@@ -2919,14 +2921,14 @@
                             <td>%</td>
                         </tr>
                         <tr>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
-                            <td><input onchange="saveWorkbook()" /></td>
+                            <td><input onchange="saveWorkbook()" type="number"/></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
+                            <td><input onchange="saveWorkbook()" type="number" /></td>
                         </tr>
                     </tbody>
                 </table>
@@ -6211,9 +6213,9 @@
                     • Petrol cost per person if 4 people are travelling in the car. <br />
                     • Round petrol costs to two decimal points. <br />
                 </p>
-                <img style="position:relative;width:20%;height:20%;float:right;margin-right:50px" src="~/images/Workbooklet/footyformula2.PNG" />
+                <img style="position:relative;width:30%;height:20%;float:right;margin-right:50px" src="~/images/Workbooklet/footyformula2.PNG" />
                 <br />
-                <img style="position:relative;margin-bottom:100px;width:20%;height:20%" src="~/images/Workbooklet/footyformula1.PNG" />
+                <img style="position:relative;margin-bottom:100px;width:22%;height:20%" src="~/images/Workbooklet/footyformula1.PNG" />
                 <img style="position:relative;width:40%;height:30%;" src="~/images/Workbooklet/corollapic.jpg" />
                 <br />
                 <table style="width:80%" id="act17table4">
@@ -6507,6 +6509,7 @@
 
     }
 
+    //function for activity1 to remove the border
     function onLoad() {
         var table = document.getElementById('act1Table1');
         for (i = 0; i < table.rows.length; i++) {
@@ -6588,6 +6591,7 @@
         i += 43;
     }
 
+    //function for activity 5 graph, were the users click
     function clearGraph(num) {
         var svgId = "svg" + num;
 
@@ -6638,7 +6642,7 @@
         }
     }
 
-    //drawing the graphs for act 14
+    //drawing the graphs lines for act 14
     for (var i = 50; i < 665; i) {
         var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         rect.setAttribute('x', 200);
@@ -6686,7 +6690,7 @@
         i += 13.88;
     }
 
-    //functions for act14
+    //functions for activity 14 graph plot event
     function graphClick(evt) {
         var e = evt.target;
         if (e.getAttribute('id') != "svgOne") {
@@ -6717,6 +6721,7 @@
 
     }
 
+    //function to draw the points, through the points saved to the data base for activity 14 graph 1
     function drawPoints(points) {
         for (var i = 0; i < points.length; i += 2) {
             var x = points[i];
@@ -6736,6 +6741,8 @@
 
     }
 
+
+    //graph click event for activity 14 part 2 graph 1
     function graphClick1(evt) {
         var e = evt.target;
         var dim = e.getBoundingClientRect();
@@ -6806,6 +6813,7 @@
 
     }
 
+     //graph click event for activity 14 part 2 graph 2
     function graphClick2(evt) {
         var e = evt.target;
         var zoom = window.getComputedStyle(document.body).zoom
@@ -6911,10 +6919,14 @@
         }
     }
 
+    //current plotting colour for activity 15
     var playColour = "blue";
 
+    //current play being plotted for activity 15
     var playText = "(-1,-1)";
 
+
+    //play selection for activity 15
     function selectPlay(e) {
         if (e.innerHTML == "(-1,-1)" || e.innerHTML == "(-6,-3)" || e.innerHTML == "(-6,-7)" || e.innerHTML == "(-2,-7)") {
             playColour = "blue";
@@ -6933,6 +6945,8 @@
         playText = e.innerHTML;
     }
 
+
+    //bools for if each play has been plotted or not
     var play2s = false;
     var play21 = false;
     var play22 = false;
@@ -6947,6 +6961,8 @@
     var line1Y;
 
     var isPoint = true;
+
+    //function for swapping between drawing a line and drawing a point
     function drawLineSwap() {
 
         if (isPoint) {
@@ -7007,6 +7023,7 @@
 
     }
 
+    ///draw the current selected point 
     function quadClick(evt) {
 
 
@@ -7374,6 +7391,7 @@
         document.getElementById("result").value += val
     }
 
+    //animating the footy moving for act10
     function runfooty() {
 
         $('#ebFooty').addClass('ebFooty');
@@ -7419,6 +7437,7 @@
             , 1500);
     }
 
+    //remove the plotted points/lines from the graph
     function clearQuad3() {
         var lines = document.getElementById("quad3lines");
         var points = document.getElementById("quad3points");
@@ -9658,6 +9677,7 @@
     var act1P1Check = false;
     var act1P2Check = false;
     var act1Check = false;
+   
 
     // Method for activity 1, part 1 to check if the players in the field are in correct positions
     function checkActivity1P1(id1, id2) {
@@ -9963,9 +9983,9 @@
     }
 
     function checkActivity1() {
-        if (act1P1Check == true && act1P2Check) {
+        if (act1P1Check == true && act1P2Check == true) {
             act1Check = true;
-            document.getElementById("act1bar");
+            document.getElementById("act1bar").style.color = "green";
             if (pageLoad) {
                 alert("Activity 1 Completed!");
             }
@@ -10084,9 +10104,11 @@
     }
 
 
-    // method to save the student's answers
+    // method to save the student's answers to the database
     function saveWorkbook() {
 
+
+        //activity 1 part 1
         var table = document.getElementById("act1Table2");
         var t1a2 = [];
         var pos = 0;
@@ -10174,7 +10196,7 @@
             pos++
         }
 
-        //act 2
+        //activity 2 saving 
 
         var csWidth = document.getElementById("widCS").value;
         var csLength = document.getElementById("lenCS").value;
@@ -10246,7 +10268,7 @@
 
 
 
-        //act 4
+        //activity 4 saving
         var act4table1 = [];
 
 
@@ -10291,7 +10313,7 @@
 
 
 
-        //activity 5
+        //activity 5 saving 
         var act5table = [];
         var act5TableCount = -1;
 
@@ -10326,7 +10348,7 @@
 
 
 
-        //act6
+        //activity 6 saving
 
         var act6table = [];
 
@@ -10408,7 +10430,7 @@
         var act6q11 = document.getElementById("act6p11").value;
         var act6q12 = document.getElementById("act6p12").value;
 
-        //act 8
+        //activty 8 saving
 
 
         var act8table1 = [];
@@ -10474,7 +10496,7 @@
 
 
 
-        //act 9
+        //activty 9 saving
         var act9table1 = []
         var act9table2 = []
         var act9table3 = []
@@ -11015,6 +11037,9 @@
 
         }
 
+
+        //activity 16
+
         var act16table1 = []
         table = document.getElementById("act16table1");
         pos = 0;
@@ -11278,7 +11303,7 @@
 
 
 
-
+        //array to push to the database
         var final = {
             studentID: "@student",
             act1table1: JSON.stringify(t1a1),
@@ -11479,7 +11504,14 @@
     }
 
     // method to load the student's answers
-    loadWorkbook();
+    //check if the workbook, has been saved at all yet
+    var testCheck = "@workbook.act11table1"
+    console.log(testCheck)
+    if (testCheck != "") {
+        loadWorkbook();
+    }
+    
+    
     function loadWorkbook() {
 
 
@@ -11667,7 +11699,7 @@
         document.getElementById("act3q7").value= "@workbook.act3q7"
         document.getElementById("act3q8").value= "@workbook.act3q8"
 
-        //act5
+        //activty 5
 
 
         var act5tablestring = "@workbook.act5table";
@@ -11709,7 +11741,7 @@
         document.getElementById("act5q5").value = "@workbook.act5q5";
 
 
-        //act 6
+        //activty 6
 
         var act6table = "@workbook.act6table1";
         var act6tablestring = act6table.replace(/&quot;/g, '"');
@@ -12127,6 +12159,8 @@
         var act14graph3string = points3.replace(/&quot;/g, '"');
         act14graph3string = JSON.parse(act14graph3string);
 
+
+        //graph 2
         if (act14graph2string[2] != "false") {
             var rect = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             rect.setAttribute('cx', act14graph2string[0]);
@@ -12342,6 +12376,7 @@
             rect.setAttribute('stroke-width', "2")
             rect.setAttribute('fill', "white");
 
+            //checks to see if point is loaded, so user cannot plot again
             if (pointText == "(-1,-1)") {
                 play2s = true;
             }
@@ -12923,6 +12958,8 @@
     // method to allow calculator to move on scroll
     dragElement(document.getElementById("calculator"));
 
+
+    //drag for calculator
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (document.getElementById(elmnt.id)) {
@@ -12967,6 +13004,7 @@
 
     var deleteItemB = false;
 
+    //delete function for activity 9 tables
     function deleteItem(el) {
 
         var element = el;
@@ -12974,13 +13012,14 @@
         if (deleteItemB) {
             element.innerHTML = ""
             deleteItemB = false;
-            document.getElementById("deletecolbut").style.color = "blue";
+            document.getElementById("deletecolbut").style.color = "black";
             saveWorkbook();
         }
         
 
     }
 
+    //undo player in table for activity 1 part1
     function act1RemoveTable(element) {
         var table = document.getElementById('act1Table1');
         var text = element.innerHTML;
@@ -13000,21 +13039,35 @@
         }
     }
 
+    //undo player in table for activity 1 part2
     function act1RemoveTable2(element) {
+        console.log("Calling a")
         var table = document.getElementById('act1Table3');
         var text = element.innerHTML;
+        var bool = true;
         element.innerHTML = '';
         for (i = 0; i < table.rows.length; i++) {
             var row = table.rows[i];
             for (j = 0; j < row.cells.length; j++) {
-                var cell = row.cells[j];
-                if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text)) {
-                    cell.style.visibility = "visible"
-               
-                    text = '';
+                if (bool == true) {
+                    var cell = row.cells[j];
                     
-                    break;
+                  
+                    if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text.charAt(0)) == true && cell.innerHTML.includes(text.charAt(1)) == true && (cell.getAttribute("id") == "pos19" || cell.getAttribute("id") == "pos20" || cell.getAttribute("id") == "pos21" || cell.getAttribute("id") == "pos22" )) {
+                        cell.style.visibility = "visible"
+                        text = '';
+                        bool = false;
+                        break;
+
+                    }
+                    else if (cell.style.visibility == "hidden" && cell.innerHTML.includes(text) == true) {
+                        cell.style.visibility = "visible"
+                        text = '';
+                        bool = false;
+                        break;
+                    }
                 }
+               
             }
         }
         saveWorkbook();
@@ -13022,11 +13075,11 @@
 
 
 
-
+    //changes the color of the button
     function deleteItemBool(e) {
         if (deleteItemB) {
             deleteItemB = false;
-            e.style.color = "blue"
+            e.style.color = "black"
         }
         else {
             deleteItemB = true;
@@ -13108,7 +13161,7 @@
     checkActivity17P6("act17btn6");
     checkActivity17();
     loadBar();
-
+    console.log(act1Check);
     //put checks above it
     pageLoad = true;
 </script>
