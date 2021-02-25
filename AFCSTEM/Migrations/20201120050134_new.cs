@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AFCSTEM.Migrations
 {
-    public partial class InitialLoad : Migration
+    public partial class @new : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -84,7 +84,8 @@ namespace AFCSTEM.Migrations
                     GoalsTotal = table.Column<int>(nullable: false),
                     BehindsAvg = table.Column<double>(nullable: false),
                     BehindsTotal = table.Column<int>(nullable: false),
-                    Matches = table.Column<int>(nullable: false)
+                    Matches = table.Column<int>(nullable: false),
+                    Hidden = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -118,6 +119,142 @@ namespace AFCSTEM.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.StudentId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Workbook",
+                columns: table => new
+                {
+                    StudentId = table.Column<string>(nullable: false),
+                    Act1Table1 = table.Column<string>(nullable: true),
+                    Act1Table2 = table.Column<string>(nullable: true),
+                    Act1Row1 = table.Column<string>(nullable: true),
+                    Act1Row2 = table.Column<string>(nullable: true),
+                    Act1Row3 = table.Column<string>(nullable: true),
+                    Act1Row4 = table.Column<string>(nullable: true),
+                    Act1Table3 = table.Column<string>(nullable: true),
+                    Act2CSWidth = table.Column<float>(nullable: false),
+                    Act2CSArea = table.Column<float>(nullable: false),
+                    Act2CSLength = table.Column<float>(nullable: false),
+                    Act2GSLength = table.Column<float>(nullable: false),
+                    Act2GSWidth = table.Column<float>(nullable: false),
+                    Act2GSArea = table.Column<float>(nullable: false),
+                    Act2GPLength = table.Column<float>(nullable: false),
+                    Act2GPWidth = table.Column<float>(nullable: false),
+                    Act2GPArea = table.Column<float>(nullable: false),
+                    Act2BPLength = table.Column<float>(nullable: false),
+                    Act2BPWidth = table.Column<float>(nullable: false),
+                    Act2BPArea = table.Column<float>(nullable: false),
+                    Act2box1 = table.Column<string>(nullable: true),
+                    Act2box2 = table.Column<string>(nullable: true),
+                    Act2box3 = table.Column<string>(nullable: true),
+                    Act2text1 = table.Column<string>(nullable: true),
+                    Act2t4 = table.Column<string>(nullable: true),
+                    Act2t5 = table.Column<string>(nullable: true),
+                    Act2GS2Length = table.Column<float>(nullable: false),
+                    Act2GS2Width = table.Column<float>(nullable: false),
+                    Act2GS2Area = table.Column<float>(nullable: false),
+                    mcgLength = table.Column<float>(nullable: false),
+                    mcgWidth = table.Column<float>(nullable: false),
+                    mcgArea = table.Column<float>(nullable: false),
+                    msLength = table.Column<float>(nullable: false),
+                    msWidth = table.Column<float>(nullable: false),
+                    msArea = table.Column<float>(nullable: false),
+                    gmhLength = table.Column<float>(nullable: false),
+                    gmhWidth = table.Column<float>(nullable: false),
+                    gmhArea = table.Column<float>(nullable: false),
+                    scgLength = table.Column<float>(nullable: false),
+                    scgWidth = table.Column<float>(nullable: false),
+                    scgArea = table.Column<float>(nullable: false),
+                    ssLength = table.Column<float>(nullable: false),
+                    ssWidth = table.Column<float>(nullable: false),
+                    ssArea = table.Column<float>(nullable: false),
+                    osLength = table.Column<float>(nullable: false),
+                    osWidth = table.Column<float>(nullable: false),
+                    osArea = table.Column<float>(nullable: false),
+                    gLength = table.Column<float>(nullable: false),
+                    gWidth = table.Column<float>(nullable: false),
+                    gArea = table.Column<float>(nullable: false),
+                    metLength = table.Column<float>(nullable: false),
+                    metWidth = table.Column<float>(nullable: false),
+                    metArea = table.Column<float>(nullable: false),
+                    largestArea = table.Column<string>(nullable: true),
+                    smallestArea = table.Column<string>(nullable: true),
+                    crowdCapacity = table.Column<string>(nullable: true),
+                    act3q4 = table.Column<string>(nullable: true),
+                    act3q5 = table.Column<string>(nullable: true),
+                    act3q6 = table.Column<string>(nullable: true),
+                    act3q7 = table.Column<string>(nullable: true),
+                    act3q8 = table.Column<string>(nullable: true),
+                    act5table = table.Column<string>(nullable: true),
+                    act5tablecount = table.Column<int>(nullable: false),
+                    act5q1 = table.Column<string>(nullable: true),
+                    act5q2 = table.Column<string>(nullable: true),
+                    act5q3 = table.Column<string>(nullable: true),
+                    act5q4 = table.Column<string>(nullable: true),
+                    act5q5 = table.Column<string>(nullable: true),
+                    act6table1 = table.Column<string>(nullable: true),
+                    act6tablecount = table.Column<int>(nullable: false),
+                    act6avgHeight = table.Column<string>(nullable: true),
+                    act6avgAge = table.Column<string>(nullable: true),
+                    act6q1 = table.Column<string>(nullable: true),
+                    act6q2 = table.Column<string>(nullable: true),
+                    act6q3 = table.Column<string>(nullable: true),
+                    act6q4 = table.Column<string>(nullable: true),
+                    act6q5 = table.Column<string>(nullable: true),
+                    act6q6 = table.Column<string>(nullable: true),
+                    act6q7 = table.Column<string>(nullable: true),
+                    act6q8 = table.Column<string>(nullable: true),
+                    act6q9 = table.Column<string>(nullable: true),
+                    act6q10 = table.Column<string>(nullable: true),
+                    act6q11 = table.Column<string>(nullable: true),
+                    act6q12 = table.Column<string>(nullable: true),
+                    act9table1 = table.Column<string>(nullable: true),
+                    act9table2 = table.Column<string>(nullable: true),
+                    act9table3 = table.Column<string>(nullable: true),
+                    act9table4 = table.Column<string>(nullable: true),
+                    act9table5 = table.Column<string>(nullable: true),
+                    act10table1 = table.Column<string>(nullable: true),
+                    act10q1 = table.Column<string>(nullable: true),
+                    act10q2 = table.Column<string>(nullable: true),
+                    act10table2 = table.Column<string>(nullable: true),
+                    act10table3 = table.Column<string>(nullable: true),
+                    act10q3 = table.Column<string>(nullable: true),
+                    act11q1 = table.Column<string>(nullable: true),
+                    act11table1 = table.Column<string>(nullable: true),
+                    act11q2 = table.Column<string>(nullable: true),
+                    act12table1 = table.Column<string>(nullable: true),
+                    act12table2 = table.Column<string>(nullable: true),
+                    act12q1 = table.Column<string>(nullable: true),
+                    act13q1 = table.Column<string>(nullable: true),
+                    act13table1 = table.Column<string>(nullable: true),
+                    act13table2 = table.Column<string>(nullable: true),
+                    act14graph1 = table.Column<string>(nullable: true),
+                    act14graph2 = table.Column<string>(nullable: true),
+                    act14graph3 = table.Column<string>(nullable: true),
+                    act14q1 = table.Column<string>(nullable: true),
+                    act14q2 = table.Column<string>(nullable: true),
+                    act14q3 = table.Column<string>(nullable: true),
+                    act14q4 = table.Column<string>(nullable: true),
+                    act14q5 = table.Column<string>(nullable: true),
+                    act14q6 = table.Column<string>(nullable: true),
+                    act14q7 = table.Column<string>(nullable: true),
+                    act14q8 = table.Column<string>(nullable: true),
+                    act14q9 = table.Column<string>(nullable: true),
+                    act14q10 = table.Column<string>(nullable: true),
+                    act14q11 = table.Column<string>(nullable: true),
+                    act15quad1 = table.Column<string>(nullable: true),
+                    act15table1 = table.Column<string>(nullable: true),
+                    act15quad2 = table.Column<string>(nullable: true),
+                    act15table2 = table.Column<string>(nullable: true),
+                    act15quad3 = table.Column<string>(nullable: true),
+                    act15graphpoints = table.Column<string>(nullable: true),
+                    act15graphlines = table.Column<string>(nullable: true),
+                    act15table4 = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Workbook", x => x.StudentId);
                 });
 
             migrationBuilder.CreateTable(
@@ -288,6 +425,9 @@ namespace AFCSTEM.Migrations
 
             migrationBuilder.DropTable(
                 name: "Teams");
+
+            migrationBuilder.DropTable(
+                name: "Workbook");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -2,10 +2,9 @@
 @using AFCSTEM.Areas.Identity.Data
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject AFCSTEM.Models.IWorkbookRepository WorkbookModel
 
-@{
-    ViewData["Title"] = "Home Page";
-}
+@{ ViewData["Title"] = "Home Page"; }
 
 <style type="text/css">
     .text-center {
@@ -19,10 +18,27 @@
             margin-bottom: 15px;
         }
 
+
         /* Style the button and place it in the middle of the container/image */
         .text-center .btn {
             position: absolute;
-            top: 85%;
+            top: 20%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #e31937;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        /* Style the button and place it in the middle of the container/image */
+        .text-center .btn1 {
+            position: absolute;
+            top: 20%;
             left: 30%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
@@ -38,8 +54,8 @@
         /* Style the button and place it in the middle of the container/image */
         .text-center .btn2 {
             position: absolute;
-            top: 85%;
-            left: 17%;
+            top: 40%;
+            left: 10%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             background-color: #e31937;
@@ -50,12 +66,30 @@
             cursor: pointer;
             border-radius: 5px;
             font-family: 'Titillium Web', sans-serif;
+            margin-bottom: 25px;
         }
-        /* Style the button and place it in the middle of the container/image */
-        .text-center .btn1 {
+
+        .text-center .btn3 {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #e31937;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Titillium Web', sans-serif;
+            margin-bottom: 25px;
+        }
+
+        .text-center .btn4 {
             position: absolute;
             top: 85%;
-            left: 25%;
+            left: 20%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             background-color: #e31937;
@@ -66,22 +100,29 @@
             cursor: pointer;
             border-radius: 5px;
             font-family: 'Titillium Web', sans-serif;
+            margin-bottom: 25px;
         }
 
         .text-center .btn:hover {
             background-color: black;
         }
 </style>
-<div class="text-center">
+<div class="text-center" id="clear">
     <img src="~/Images/Home-page.png" />
     @if (SignInManager.IsSignedIn(User))
     {
-        <a class="btn1" asp-area="" asp-controller="Home" asp-action="Crowball">Go To Crowball</a>
 
-    }
-    else
-    {
-        <a class="btn" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        <a class="btn2" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    }
+<a class="btn4" asp-area="" asp-controller="Home" asp-action="Workbook">Go To Workbook</a> }
+            else
+            {
+<a class="btn" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                <a class="btn2" asp-area="Identity" asp-page="/Account/Register">Register</a>}
 </div>
+
+<script>
+    document.getElementById('clear').addEventListener("load", clearLS());
+    function clearLS() {
+        localStorage.clear();
+        console.log("test");
+    }
+</script>

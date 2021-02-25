@@ -1,0 +1,631 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.title = "STEM ID";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    @@font-face {
+        font-family: Industry_Bold;
+        src: url('../fonts/Industry_Bold.otf') format('opentype');
+    }
+
+    @@font-face {
+        font-family: Industry_Demi;
+        src: url('../fonts/industry_demi.otf') format('opentype');
+    }
+
+    @@font-face {
+        font-family: itcavantgardestd_bk;
+        src: url('../fonts/itcavantgardestd-bk.otf') format('opentype');
+    }
+
+    .card {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 20%;
+        height: auto;
+        border-color: #a38956;
+        display: block;
+        border-radius: 20px;
+        background-image: url("../images/unit2/STEM_ID_Background_1.jpg");
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+    .imgs {
+        width: 60%;
+        height: auto;
+        border: 1px solid #a38956;
+        border-radius: 15px;
+    }
+
+    #title {
+        color: #e31937;
+        margin-bottom: 2px;
+        font-family: itcavantgardestd_bk;
+    }
+
+    #playerNumber {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 35px;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        background-color: #002b5c;
+        padding-top:5px;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 20px;
+        font-family: Industry_Bold;
+        font-weight: bold;
+        color: #002b5c;
+    }
+
+    p {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 8px;
+        font-family: itcavantgardestd_bk;
+    }
+
+    #eachRow {
+        margin-bottom: 25px;
+    }
+</style>
+
+<h3 style="color: #002b5c;">AFCW STEM ID Profiles</h3>
+
+<div style="margin-top:25px;">
+    <p style="text-align:left;font-size:18px;color:#002b5c;">
+        <span style="font-weight:bold;">Task:  </span><br /> 
+        Select 10 players from the selections below. <br /> 
+        Once 10 have been selected click the confirm button at the bottom of the page <br />         
+    </p>
+</div>
+
+<div class="row" style="margin-bottom:50px;margin-top:25px;border:black 1px solid;">
+    <div class="col-md-12">
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Ailish_Considine" onclick="text(this.id)">
+                <p id="playerNumber"><b>16</b></p>
+                <img src="~/images/Players/Ailish_Considine.png" alt="Ailish Considine" class="imgs" />
+                <div class="container">
+                    <h4><b>Ailish Considine</b></h4>
+                    <p><b id="title">HEIGHT:</b> 165 cm</p>
+                    <p><b id="title">D.O.B:</b> 07.07.92</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2019</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Gaelic Football (Ireland)</p>
+                </div>
+            </div>
+            <div class="card" id="Angela_Foley" onclick="text(this.id)">
+                <p id="playerNumber"><b>3</b></p>
+                <img src="~/images/Players/Angela_Foley.png" alt="Angela Foley" class="imgs" />
+                <div class="container">
+                    <h4><b>Angela Foley</b></h4>
+                    <p><b id="title">HEIGHT:</b> 173 cm</p>
+                    <p><b id="title">D.O.B:</b> 13.12.88</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Waratah (NT)</p>
+                </div>
+            </div>
+            <div class="card" id="Anne_Hatchard" onclick="text(this.id)">
+                <p id="playerNumber"><b>33</b></p>
+                <img src="~/images/Players/Anne_Hatchard.png" alt="Anne Hatchard" class="imgs" />
+                <div class="container">
+                    <h4><b>Anne Hatchard</b></h4>
+                    <p><b id="title">HEIGHT:</b> 175 cm</p>
+                    <p><b id="title">D.O.B:</b> 07.03.98</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Chelsea_Randall" onclick="text(this.id)">
+                <p id="playerNumber"><b>26</b></p>
+                <img src="~/images/Players/Chelsea_Randall.png" alt="Chelsea Randall" class="imgs" />
+                <div class="container">
+                    <h4><b>Chelsea Randall</b></h4>
+                    <p><b id="title">HEIGHT:</b> 173 cm</p>
+                    <p><b id="title">D.O.B:</b> 14.06.92</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Swan Districts (WA)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Chelsea_Biddell" onclick="text(this.id)">
+                <p id="playerNumber"><b>12</b></p>
+                <img src="~/images/Players/Chelsea_Biddell.png" alt="Chelsea Biddell" class="imgs" />
+                <div class="container">
+                    <h4><b>Chelsea Biddell</b></h4>
+                    <p><b id="title">HEIGHT:</b> 185 cm</p>
+                    <p><b id="title">D.O.B:</b> 15-07-98</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>West Adelaide (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Chloe_Sheer" onclick="text(this.id)">
+                <p id="playerNumber"><b>4</b></p>
+                <img src="~/images/Players/Chloe_Sheer.png" alt="Chloe Sheer" class="imgs" />
+                <div class="container">
+                    <h4><b>Chloe Sheer</b></h4>
+                    <p><b id="title">HEIGHT:</b> 165 cm</p>
+                    <p><b id="title">D.O.B:</b> 07.09.99</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2019</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>North Adelaide / Modbury (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Courtney_Cramey" onclick="text(this.id)">
+                <p id="playerNumber"><b>22</b></p>
+                <img src="~/images/Players/Courtney_Cramey.png" alt="Courtney Cramey" class="imgs" />
+                <div class="container">
+                    <h4><b>Courtney Cramey</b></h4>
+                    <p><b id="title">HEIGHT:</b> 169 cm</p>
+                    <p><b id="title">D.O.B:</b> 28.11.85</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Caitlin_Gould" onclick="text(this.id)">
+                <p id="playerNumber"><b>1</b></p>
+                <img src="~/images/Players/Caitlin_Gould.png" alt="Caitlin Gould" class="imgs" />
+                <div class="container">
+                    <h4><b>Caitlin Gould</b></h4>
+                    <p><b id="title">HEIGHT:</b> 183 cm</p>
+                    <p><b id="title">D.O.B:</b> 19.09.99</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Happy Valley / Glenelg (SA)</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Courtney_Gum" onclick="text(this.id)">
+                <p id="playerNumber"><b>5</b></p>
+                <img src="~/images/Players/Courtney_Gum.png" alt="Courtney Gum" class="imgs" />
+                <div class="container">
+                    <h4><b>Courtney Gum</b></h4>
+                    <p><b id="title">HEIGHT:</b> 170 cm</p>
+                    <p><b id="title">D.O.B:</b> 25.09.81</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2018 (GWS)</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>GWS Giants (NSW)</p>
+                </div>
+            </div>
+            <div class="card" id="Danielle_Ponter" onclick="text(this.id)">
+                <p id="playerNumber"><b>15</b></p>
+                <img src="~/images/Players/Danielle_Ponter.png" alt="Danielle Ponter" class="imgs" />
+                <div class="container">
+                    <h4><b>Danielle Ponter</b></h4>
+                    <p><b id="title">HEIGHT:</b> 161 cm</p>
+                    <p><b id="title">D.O.B:</b> 01.08.00</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2019</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Essendon VFLW / St.Mary's (NT)</p>
+                </div>
+            </div>
+            <div class="card" id="Dayna_Cox" onclick="text(this.id)">
+                <p id="playerNumber"><b>31</b></p>
+                <img src="~/images/Players/Dayna_Cox.png" alt="Dayna Cox" class="imgs" />
+                <div class="container">
+                    <h4><b>Dayna Cox</b></h4>
+                    <p><b id="title">HEIGHT:</b> 163 cm</p>
+                    <p><b id="title">D.O.B:</b> 12.08.93</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville Park (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Deni_Varnhagen" onclick="text(this.id)">
+                <p id="playerNumber"><b>9</b></p>
+                <img src="~/images/Players/Deni_Varnhagen.png" alt="Deni Varnhagen" class="imgs" />
+                <div class="container">
+                    <h4><b>Deni Varnhagen</b></h4>
+                    <p><b id="title">HEIGHT:</b> 173 cm</p>
+                    <p><b id="title">D.O.B:</b> 26.10.92</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville Park (SA)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Ebony_Marinoff" onclick="text(this.id)">
+                <p id="playerNumber"><b>10</b></p>
+                <img src="~/images/Players/Ebony_Marinoff.png" alt="Ebony Marinoff" class="imgs" />
+                <div class="container">
+                    <h4><b>Ebony Marinoff</b></h4>
+                    <p><b id="title">HEIGHT:</b> 169 cm</p>
+                    <p><b id="title">D.O.B:</b> 15.11.97</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville Park (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Eloise_Jones" onclick="text(this.id)">
+                <p id="playerNumber"><b>2</b></p>
+                <img src="~/images/Players/Eloise_Jones.png" alt="Eloise Jones" class="imgs" />
+                <div class="container">
+                    <h4><b>Eloise Jones</b></h4>
+                    <p><b id="title">HEIGHT:</b> 169 cm</p>
+                    <p><b id="title">D.O.B:</b> 28.04.99</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2018</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville Park / Glenelg (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Erin_Phillips" onclick="text(this.id)">
+                <p id="playerNumber"><b>13</b></p>
+                <img src="~/images/Players/Erin_Phillips.png" alt="Erin Phillips" class="imgs" />
+                <div class="container">
+                    <h4><b>Erin Phillips</b></h4>
+                    <p><b id="title">HEIGHT:</b> 173 cm</p>
+                    <p><b id="title">D.O.B:</b> 19.05.85</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>WNBA (Basketball) (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Hannah_Martin" onclick="text(this.id)">
+                <p id="playerNumber"><b>6</b></p>
+                <img src="~/images/Players/Hannah_Martin.png" alt="Hannah Martin" class="imgs" />
+                <div class="container">
+                    <h4><b>Hannah Martin</b></h4>
+                    <p><b id="title">HEIGHT:</b> 165 cm</p>
+                    <p><b id="title">D.O.B:</b> 27.11.96</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2019</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>West Adelaide / Fitzroy (SA)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Jaimi_Tabb" onclick="text(this.id)">
+                <p id="playerNumber"><b>28</b></p>
+                <img src="~/images/Players/Jaimi_Tabb.png" alt="Jaimi Tabb" class="imgs" />
+                <div class="container">
+                    <h4><b>Jaimi Tabb</b></h4>
+                    <p><b id="title">HEIGHT:</b> 168 cm</p>
+                    <p><b id="title">D.O.B:</b> 09.02.01</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Woodville West Torrens (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Jessica_Foley" onclick="text(this.id)">
+                <p id="playerNumber"><b>24</b></p>
+                <img src="~/images/Players/Jessica_Foley.png" alt="Jessica Foley" class="imgs" />
+                <div class="container">
+                    <h4><b>Jessica Foley</b></h4>
+                    <p><b id="title">HEIGHT:</b> 183 cm</p>
+                    <p><b id="title">D.O.B:</b> 20.04.83</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2019</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Sturt / Fitzroy (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Justine_Mules" onclick="text(this.id)">
+                <p id="playerNumber"><b>23</b></p>
+                <img src="~/images/Players/Justine_Mules.png" alt="Justine Mules" class="imgs" />
+                <div class="container">
+                    <h4><b>Justine Mules</b></h4>
+                    <p><b id="title">HEIGHT:</b> 162 cm</p>
+                    <p><b id="title">D.O.B:</b> 15.12.94</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Morphettville Park (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Madison_Newman" onclick="text(this.id)">
+                <p id="playerNumber"><b>17</b></p>
+                <img src="~/images/Players/Madison_Newman.png" alt="Madison Newman" class="imgs" />
+                <div class="container">
+                    <h4><b>Madison Newman</b></h4>
+                    <p><b id="title">HEIGHT:</b> 168 cm</p>
+                    <p><b id="title">D.O.B:</b> 05.10.00</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>West Adelaide (SA)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Marijana_Rajcic" onclick="text(this.id)">
+                <p id="playerNumber"><b>32</b></p>
+                <img src="~/images/Players/Marijana_Rajcic.png" alt="Marijana Rajcic" class="imgs" />
+                <div class="container">
+                    <h4><b>Marijana Rajcic</b></h4>
+                    <p><b id="title">HEIGHT:</b> 175 cm</p>
+                    <p><b id="title">D.O.B:</b> 15.03.89</p>
+                    <p><b id="title">DEBUT:</b> Rd 3 2018</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Adelaide University / Norwood (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Montana_Mckinnon" onclick="text(this.id)">
+                <p id="playerNumber"><b>21</b></p>
+                <img src="~/images/Players/Montana_Mckinnon.png" alt="Montana Mckinnon" class="imgs" />
+                <div class="container">
+                    <h4><b>Montana Mckinnon</b></h4>
+                    <p><b id="title">HEIGHT:</b> 182 cm</p>
+                    <p><b id="title">D.O.B:</b> 14.07.01</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>South Adelaide (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Najwa_Allen" onclick="text(this.id)">
+                <p id="playerNumber"><b>8</b></p>
+                <img src="~/images/Players/Najwa_Allen.png" alt="Najwa Allen" class="imgs" />
+                <div class="container">
+                    <h4><b>Najwa Allen</b></h4>
+                    <p><b id="title">HEIGHT:</b> 174 cm</p>
+                    <p><b id="title">D.O.B:</b> 25.06.94</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Norwood (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Nicole_Campbell" onclick="text(this.id)">
+                <p id="playerNumber"><b>20</b></p>
+                <img src="~/images/Players/Nicole_Campbell.png" alt="Nicole Campbell" class="imgs" />
+                <div class="container">
+                    <h4><b>Nicole Campbell</b></h4>
+                    <p><b id="title">HEIGHT:</b> 170 cm</p>
+                    <p><b id="title">D.O.B:</b> 20.01.94</p>
+                    <p><b id="title">DEBUT:</b> Yet to Debut</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>South Adelaide (SA)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Nikki_Gore" onclick="text(this.id)">
+                <p id="playerNumber"><b>7</b></p>
+                <img src="~/images/Players/Nikki_Gore.png" alt="Nikki_Gore" class="imgs" />
+                <div class="container">
+                    <h4><b>Nikki Gore</b></h4>
+                    <p><b id="title">HEIGHT:</b> 165 cm</p>
+                    <p><b id="title">D.O.B:</b> 11.12.00</p>
+                    <p><b id="title">DEBUT:</b> Rd 6 2019</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>South Adelaide / Christies Beach (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Renee_Forth" onclick="text(this.id)">
+                <p id="playerNumber"><b>27</b></p>
+                <img src="~/images/Players/Renee_Forth.png" alt="Renee Forth" class="imgs" />
+                <div class="container">
+                    <h4><b>Renee Forth</b></h4>
+                    <p><b id="title">HEIGHT:</b> 166 cm</p>
+                    <p><b id="title">D.O.B:</b> 28.01.87</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2018</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>GWS Giants (NSW)</p>
+                </div>
+            </div>
+            <div class="card" id="Rhiannon_Metcalfe" onclick="text(this.id)">
+                <p id="playerNumber"><b>11</b></p>
+                <img src="~/images/Players/Rhiannon_Metcalfe.png" alt="Rhiannon Metcalfe" class="imgs" />
+                <div class="container">
+                    <h4><b>Rhiannon Metcalfe</b></h4>
+                    <p><b id="title">HEIGHT:</b> 185 cm</p>
+                    <p><b id="title">D.O.B:</b> 27.09.91</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Gungahlin Jets (ACT)</p>
+                </div>
+            </div>
+            <div class="card" id="Ruth_Wallace" onclick="text(this.id)">
+                <p id="playerNumber"><b>18</b></p>
+                <img src="~/images/Players/Ruth_Wallace.png" alt="Ruth Wallace" class="imgs" />
+                <div class="container">
+                    <h4><b>Ruth Wallace</b></h4>
+                    <p><b id="title">HEIGHT:</b> 164 cm</p>
+                    <p><b id="title">D.O.B:</b> 01.02.94</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2018</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Adelaide University / Norwood (SA)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="eachRow">
+            <div class="card" id="Sarah_Allan" onclick="text(this.id)">
+                <p id="playerNumber"><b>39</b></p>
+                <img src="~/images/Players/Sarah_Allan.png" alt="Sarah Allan" class="imgs" />
+                <div class="container">
+                    <h4><b>Sarah Allan</b></h4>
+                    <p><b id="title">HEIGHT:</b> 178 cm</p>
+                    <p><b id="title">D.O.B:</b> 19.11.97</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Salisbury (SA)</p>
+                </div>
+            </div>
+            <div class="card" id="Sophie_Li" onclick="text(this.id)">
+                <p id="playerNumber"><b>19</b></p>
+                <img src="~/images/Players/Sophie_Li.png" alt="Sophie Li" class="imgs" />
+                <div class="container">
+                    <h4><b>Sophie Li</b></h4>
+                    <p><b id="title">HEIGHT:</b> 165 cm</p>
+                    <p><b id="title">D.O.B:</b> 31.03.88</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2018</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Carlton (Vic)</p>
+                </div>
+            </div>
+            <div class="card" id="Stevie-Lee_Thompson" onclick="text(this.id)">
+                <p id="playerNumber"><b>14</b></p>
+                <img src="~/images/Players/Stevie-Lee_Thompson.png" alt="Stevie-Lee Thompson" class="imgs" />
+                <div class="container" id="test">
+                    <h4><b>Stevie-Lee Thompson</b></h4>
+                    <p><b id="title">HEIGHT:</b> 169 cm</p>
+                    <p><b id="title">D.O.B:</b> 23.03.92</p>
+                    <p><b id="title">DEBUT:</b> Rd 1 2017</p>
+                    <p><b id="title">RECRUITED FROM:</b></p>
+                    <p>Wanderers (NT)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="buttonRow" style="margin-bottom:35px;" hidden>
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+                <button class="btn btn-outline-primary" id="confirm" onclick="btnClicked(this.id);">Confirm player selections</button>
+                <button class="btn btn-outline-primary" id="deny" onclick="btnClicked(this.id);" style="margin-left:35px;">Reselect players</button>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var total = 0;
+    var players = [];
+    var clicked = 0; // 1 = submit players clicked 2 = reselect players clicked
+
+    function text(id) {
+        var card = document.getElementById(id);
+        var same = 0;
+
+        if (total == 0) {
+            players[0] = card;
+            card.style.border = "5px #002b5c solid";
+            total = total + 1;
+        } else if (total > 0 && total < 10) {
+            for (i = 0; i < total; i++) {
+                var hold = players[i];
+                if (hold.id == id) {
+                    card.style.border = "1px #a38956 solid";
+                    players.splice(i, 1);
+                    total = total - 1;
+                    same = 1;
+                }
+            }
+            if (same != 1) {
+                players[total] = card;
+                card.style.border = "5px #002b5c solid";
+                total = total + 1;
+            }            
+        } else { //when total is 10
+            var cardIDArray = [];
+            document.getElementById('buttonRow').hidden = false;
+            document.getElementById('buttonRow').scrollIntoView();
+
+            if (clicked == 1) {//    When all 10 players are selected and when the confirm button is pressed //
+                for (i = 0; i < total; i++) {
+                    var holdArray = [];
+                    var playerID = players[i].id
+                    var parent = document.getElementById(playerID);
+                    var child = parent.childNodes;
+
+                    var pNumber = child[1].childNodes[0].innerHTML;
+
+                    var pIMG = child[3];
+                    console.log(child[3]);
+                    var imgSrc = pIMG.src.slice(23, pIMG.src.length);
+
+                    var pContain = child[5].childNodes;
+
+                    var pName = pContain[1].childNodes[0].innerHTML;
+
+                    var pHGTS1 = pContain[3].innerHTML.split('>')
+                    var pHGTS2 = pHGTS1[1].split('<');
+                    var pHGT = pHGTS2[0] + pHGTS1[2];
+
+                    var pDOBS1 = pContain[5].innerHTML.split('>');
+                    var pDOBS2 = pDOBS1[1].split('<');
+                    var pDOB = pDOBS2[0] + pDOBS1[2];
+
+                    var pDebutS1 = pContain[7].innerHTML.split('>');
+                    var pDebutS2 = pDebutS1[1].split('<');
+                    var pDebut = pDebutS2[0] + pDebutS1[2]
+                    console.log(pDebut);
+                    var pRCTS1 = pContain[9].innerHTML.split('>');
+                    var pRCTS2 = pRCTS1[1].split('<');
+                    var pRecruit = pRCTS2[0];
+
+                    var pRFrom = pContain[11].innerHTML;
+
+                    holdArray[0] = pNumber; //players number, player image src, player name, player height, player d.o.b, player debut, player recruit title, recruit from
+                    holdArray[1] = imgSrc;
+                    holdArray[2] = pName;
+                    holdArray[3] = pHGT;
+                    holdArray[4] = pDOB
+                    holdArray[5] = pDebut;
+                    holdArray[6] = pRecruit;
+                    holdArray[7] = pRFrom;
+
+                    localStorage.setItem(i, holdArray);
+                }
+                alert('You have chosen your 10 players, return to workbook');
+                window.close();
+            } else if (clicked == 2) {
+                var indexHold = 0;
+                for (a = 0; a < players.length; a++) {
+                    var current = players[a];
+                    current.style.border = "1px #a38956 solid";
+                    total = 0;
+                    clicked = 0;
+                }
+                while (indexHold < 10) {
+                    players.pop;
+                    indexHold++;
+                    console.log(players);
+                }                              
+            } else {
+                for (i = 0; i < total; i++) { // check if currently selected player is already selected
+                    var hold = players[i];
+                    if (hold.id == id) {
+                        card.style.border = "1px #a38956 solid";
+                        players.splice(i, 1);
+                        total = total - 1;
+                    }
+                }
+            }
+        }
+    }
+
+    function btnClicked(id) {
+        if (id == 'confirm') {
+            clicked = 1;
+            text('submit');
+        } else {
+            clicked = 2;
+            text('reject');
+            console.log(localStorage.getItem('0'));
+        }
+    }
+
+</script>
+

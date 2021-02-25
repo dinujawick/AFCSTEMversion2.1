@@ -8,10 +8,49 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
     <title>@ViewData["Title"] - AFCSTEM</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
+
+
 <body>
     <header>
         <nav style="background-color: #002b5c;font-family:'Titillium Web', sans-serif;" class="navbar navbar-expand-sm 
@@ -27,18 +66,57 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (SignInManager.IsSignedIn(User))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <li class="dropdown nav-item nav-link text-light">
+                                <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit1Home">Unit 1   ⮟</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Whatisfooty">What is Footy?</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit1" asp-action="Activity1">Activity 1</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit1" asp-action="Activity2">Activity 2</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit1" asp-action="Activity3">Activity 3</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit1" asp-action="Activity4">Activity 4</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit1" asp-action="Activity5">Activity 5</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Crowball">Crowball</a>
+                            <li class="dropdown nav-item nav-link text-light">
+                                <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit2Home">Unit 2   ⮟</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity6">Activity 6</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity7">Activity 7</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity8">Activity 8</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity9">Activity 9</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit2" asp-action="Activity10">Activity 10</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="MVP">MVP</a>
+                            <li class="dropdown nav-item nav-link text-light">
+                                <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit3Home">Unit 3   ⮟</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit3" asp-action="Activity11">Activity 11</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit3" asp-action="Activity12">Activity 12</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit3" asp-action="Activity13">Activity 13</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit3" asp-action="Activity14">Activity 14</a>
+
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Survey">Survey</a>
+                            <li class="dropdown nav-item nav-link text-light">
+                                <a class="nav-link nav-item text-light" asp-area="" asp-controller="Home" asp-action="Unit4Home">Unit 4   ⮟</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit4" asp-action="Activity15">Activity 15</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit4" asp-action="Activity16">Activity 16</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Unit4" asp-action="Activity17">Activity 17</a>
+
+                                </div>
                             </li>
+                            <li class="dropdown nav-item nav-link text-light">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Workbook">Workbook  ⮟</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Crowball">CrowBall</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MVP">MVP</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Survey">Surveys</a>
+
+                                </div>
+                            </li>
+                          
+
                         }
                         else
                         {

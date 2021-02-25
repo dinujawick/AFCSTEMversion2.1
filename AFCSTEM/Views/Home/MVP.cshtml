@@ -4,6 +4,7 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject AFCSTEM.Models.ITeamRepository TeamModel
+@inject AFCSTEM.Models.IWorkbookRepository WorkbookModel
 @{
     ViewBag.title = "MVP";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,6 +12,7 @@
     var user = await UserManager.GetUserAsync(User);
     var student = User.Identity.Name;
     var team = TeamModel.GetTeam(student);
+    var workbook = WorkbookModel.GetWorkbook(student);
     List<Player> selectedPlayers = new List<Player>();
     Player person;
 
